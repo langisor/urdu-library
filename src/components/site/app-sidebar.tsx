@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   IconCamera,
   IconChartBar,
@@ -17,12 +17,12 @@ import {
   IconSearch,
   IconSettings,
   IconUsers,
-} from "@tabler/icons-react"
+} from "@tabler/icons-react";
 
-import { NavDocuments } from "@/components/site/nav-documents"
-import { NavMain } from "@/components/site/nav-main"
-import { NavSecondary } from "@/components/site/nav-secondary"
-import { NavUser } from "@/components/site/nav-user"
+import { NavDocuments } from "@/components/site/nav-documents";
+import { NavMain } from "@/components/site/nav-main";
+import { NavSecondary } from "@/components/site/nav-secondary";
+import { NavUser } from "@/components/site/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -31,40 +31,27 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
+ 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Langisor",
+    email: "langisor-app@proton.me",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
     {
-      title: "Dashboard",
-      url: "#",
+      title: "Part I - The Sound System if Urdu",
+      url: "/part-i",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
+      title: "Part II - The Urdu Script",
+      url: "/part-ii",
       icon: IconListDetails,
     },
-    {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
-    },
+
   ],
   navClouds: [
     {
@@ -148,7 +135,7 @@ const data = {
       icon: IconFileWord,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -177,5 +164,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
