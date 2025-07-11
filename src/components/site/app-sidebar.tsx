@@ -3,26 +3,24 @@
 import * as React from "react";
 import {
   IconCamera,
-  IconChartBar,
   IconDashboard,
   IconDatabase,
   IconFileAi,
   IconFileDescription,
   IconFileWord,
-  IconFolder,
   IconHelp,
   IconInnerShadowTop,
   IconListDetails,
   IconReport,
   IconSearch,
   IconSettings,
-  IconUsers,
 } from "@tabler/icons-react";
 
 import { NavDocuments } from "@/components/site/nav-documents";
 import { NavMain } from "@/components/site/nav-main";
 import { NavSecondary } from "@/components/site/nav-secondary";
 import { NavUser } from "@/components/site/nav-user";
+import { MediaTree } from "@/components/site/media-tree";
 import {
   Sidebar,
   SidebarContent,
@@ -33,7 +31,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
- 
 const data = {
   user: {
     name: "Langisor",
@@ -51,7 +48,6 @@ const data = {
       url: "/part-ii",
       icon: IconListDetails,
     },
-
   ],
   navClouds: [
     {
@@ -157,7 +153,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
+        {/* <NavDocuments items={data.documents} /> */}
+        <MediaTree />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
