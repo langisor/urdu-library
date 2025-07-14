@@ -20,7 +20,7 @@ export function UnitCards({ units }: UnitCardsProps) {
               {unit.unitNo} : {unit.title}
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex flex-col gap-4">
             <ChapterSheet
               chapters={unit.chapters}
               unitNo={unit.unitNo}

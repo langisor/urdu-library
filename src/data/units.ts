@@ -171,39 +171,29 @@ export const UnitsData: Unit[] = [
         title: "Locating Places and Objects",
         audios: [
           {
-            no: 11,
+            no: 3,
             type: "Exercise",
-            file: "Pien7788_U02Ch07Ex011.mp3",
+            file: "Pien7788_U02Ch07Ex0x03.mp3",
           },
           {
-            no: 13,
+            no: 5,
             type: "Exercise",
-            file: "Pien7788_U02Ch07Ex013.mp3",
+            file: "Pien7788_U02Ch07Ex0x05.mp3",
+          },
+          {
+            no: 11,
+            type: "Exercise",
+            file: "Pien7788_U02Ch07Ex0x011.mp3",
           },
           {
             no: 17,
             type: "Exercise",
-            file: "Pien7788_U02Ch07Ex017.mp3",
+            file: "Pien7788_U02Ch07Ex0x017.mp3",
           },
           {
             no: 18,
             type: "Exercise",
-            file: "Pien7788_U02Ch07Ex018.mp3",
-          },
-          {
-            no: 3,
-            type: "Vocabulary",
-            file: "Pien7788_U02Ch07V03.mp3",
-          },
-          {
-            no: 4,
-            type: "Vocabulary",
-            file: "Pien7788_U02Ch07V04.mp3",
-          },
-          {
-            no: 5,
-            type: "Vocabulary",
-            file: "Pien7788_U02Ch07V05.mp3",
+            file: "Pien7788_U02Ch07Ex0x018.mp3",
           },
           {
             no: 1,
@@ -214,6 +204,16 @@ export const UnitsData: Unit[] = [
             no: 2,
             type: "Vocabulary",
             file: "Pien7788_U02Ch07V02.mp3",
+          },
+          {
+            no: 3,
+            type: "Vocabulary",
+            file: "Pien7788_U02Ch07V03.mp3",
+          },
+          {
+            no: 4,
+            type: "Vocabulary",
+            file: "Pien7788_U02Ch07V04.mp3",
           },
         ],
       },

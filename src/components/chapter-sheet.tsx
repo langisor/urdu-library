@@ -28,7 +28,10 @@ export function ChapterSheet({
 
   return chapters.map((chapter: Chapter, index) => (
     <Sheet key={index}>
-      <SheetTrigger asChild>
+      <SheetTrigger
+        asChild
+        className="w-full hover:transform hover:scale-105 transition-all text-white bg-amber-500 hover:cursor-pointer"
+      >
         <Button>
           Chapter {chapter.chapterNo} : {chapter.title}
         </Button>
