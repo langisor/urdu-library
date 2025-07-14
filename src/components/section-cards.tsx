@@ -7,6 +7,7 @@ import { UnitsData } from "@/data/units";
 import { ChapterSheet } from "./chapter-sheet";
 import { LessonSheet } from "./lesson-sheet";
 import { UnitCards } from "./unit-cards";
+import { AlphabetsCard } from "./alphabets-card";
 
 export function SectionCards() {
   const [selectedSection, setSelectedSection] =
@@ -27,10 +28,9 @@ export function SectionCards() {
     setSelectedSection(value);
   };
   return (
-    <div className="min-w-4xl grid grid-cols-1 gap-4 px-4">
       <Tabs
         defaultValue={selectedSection}
-        className="w-full"
+        className="w-screen h-screen overflow-y-auto"
         style={style}
         onValueChange={handleTabChange}
       >
@@ -49,6 +49,13 @@ export function SectionCards() {
           >
             Units
           </TabsTrigger>
+          <TabsTrigger
+            value="alphabets"
+            className="hover:bg-gray-100 hover:cursor-pointer"
+            style={selectedSection === "alphabets" ? selectedStyle : {}}
+          >
+            Alphabets
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="sound-and-script">
           {/* <JsonViewerComponent data={SoundAndScriptData} /> */}
@@ -61,7 +68,9 @@ export function SectionCards() {
         <TabsContent value="units">
           <UnitCards units={UnitsData} />
         </TabsContent>
+        <TabsContent value="alphabets">
+          <AlphabetsCard />
+        </TabsContent>
       </Tabs>
-    </div>
   );
 }
