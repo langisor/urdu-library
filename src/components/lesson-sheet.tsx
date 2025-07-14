@@ -36,7 +36,7 @@ export function LessonSheet({ lesson }: LessonSheetProps) {
         <SheetHeader>
           <SheetTitle>Lesson {lesson.lesson}</SheetTitle>
           <SheetDescription>
-            Lesson {lesson.lesson} description
+          
           </SheetDescription>
         </SheetHeader>
         <div className="flex flex-wrap gap-4">

@@ -1,23 +1,27 @@
-interface AudioFile {
+export interface AudioFile {
   no: number;
   type: "Exercise" | "Vocabulary";
   file: string;
 }
-interface Chapter {
+export interface Chapter {
   chapterNo: number;
+  title: string;
   audios: AudioFile[];
 }
 export interface Unit {
   unitNo: number;
+  title: string;
   chapters: Chapter[];
 }
 
 export const UnitsData: Unit[] = [
   {
     unitNo: 1,
+    title: "Me and My School",
     chapters: [
       {
         chapterNo: 1,
+        title: "Introduction",
         audios: [
           {
             no: 1,
@@ -73,6 +77,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 2,
+        title: "Me and My Classmates",
         audios: [
           {
             no: 1,
@@ -83,6 +88,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 3,
+        title: "My Classroom",
         audios: [
           {
             no: 1,
@@ -93,6 +99,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 4,
+        title: "Describing Classroom Items",
         audios: [
           {
             no: 4,
@@ -113,6 +120,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 5,
+        title: "Giving Commands and Making Requests",
         audios: [
           {
             no: 4,
@@ -133,6 +141,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 6,
+        title: "Unit 1 Review Activities",
         audios: [
           {
             no: 2,
@@ -155,9 +164,11 @@ export const UnitsData: Unit[] = [
   },
   {
     unitNo: 2,
+    title: "My Family and My Home",
     chapters: [
       {
         chapterNo: 7,
+        title: "Locating Places and Objects",
         audios: [
           {
             no: 11,
@@ -208,6 +219,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 8,
+        title: "Identifying Family Members",
         audios: [
           {
             no: 4,
@@ -228,6 +240,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 9,
+        title: "Describing Family Members",
         audios: [
           {
             no: 1,
@@ -256,13 +269,88 @@ export const UnitsData: Unit[] = [
           },
         ],
       },
+      {
+        chapterNo: 10,
+        title: "My Home, My Belongings",
+        audios: [
+          {
+            no: 3,
+            type: "Exercise",
+            file: "Pien7788_U02Ch10Ex03.mp3",
+          },
+          {
+            no: 1,
+            type: "Vocabulary",
+            file: "Pien7788_U02Ch10V01.mp3",
+          },
+          {
+            no: 2,
+            type: "Vocabulary",
+            file: "Pien7788_U02Ch10V02.mp3",
+          },
+        ],
+      },
+      {
+        chapterNo: 11,
+        title: "Making Comparisons",
+        audios: [
+          {
+            no: 1,
+            type: "Exercise",
+            file: "Pien7788_U02Ch11Ex01.mp3",
+          },
+          {
+            no: 5,
+            type: "Exercise",
+            file: "Pien7788_U02Ch11Ex05.mp3",
+          },
+          {
+            no: 1,
+            type: "Vocabulary",
+            file: "Pien7788_U02Ch11V01.mp3",
+          },
+        ],
+      },
+      {
+        chapterNo: 12,
+        title: "Unit 2 Review Activities",
+        audios: [
+          {
+            no: 3,
+            type: "Exercise",
+            file: "Pien7788_U02Ch12Ex03.mp3",
+          },
+          {
+            no: 4,
+            type: "Exercise",
+            file: "Pien7788_U02Ch12Ex04_01.mp3",
+          },
+          {
+            no: 4,
+            type: "Exercise",
+            file: "Pien7788_U02Ch12Ex04_02.mp3",
+          },
+          {
+            no: 7,
+            type: "Exercise",
+            file: "Pien7788_U02Ch12Ex07.mp3",
+          },
+          {
+            no: 1,
+            type: "Vocabulary",
+            file: "Pien7788_U02Ch12V01.mp3",
+          },
+        ],
+      },
     ],
   },
   {
     unitNo: 3,
+    title: "Daily Life",
     chapters: [
       {
         chapterNo: 13,
+        title: "My Daily Routine 1",
         audios: [
           {
             no: 2,
@@ -303,6 +391,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 14,
+        title: "My Daily Routine 2",
         audios: [
           {
             no: 7,
@@ -323,6 +412,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 15,
+        title: "Describing Events in Progress",
         audios: [
           {
             no: 3,
@@ -348,6 +438,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 16,
+        title: "Weather and Climate",
         audios: [
           {
             no: 6,
@@ -368,6 +459,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 17,
+        title: "Unit 3 Review Activities",
         audios: [
           {
             no: 3,
@@ -385,9 +477,11 @@ export const UnitsData: Unit[] = [
   },
   {
     unitNo: 4,
+    title: "In the Market",
     chapters: [
       {
         chapterNo: 18,
+        title: "Expressing Likes, Needs, and Desires",
         audios: [
           {
             no: 14,
@@ -433,6 +527,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 19,
+        title: "Choosing Items and Expressing Measures",
         audios: [
           {
             no: 10,
@@ -458,6 +553,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 20,
+        title: "Discussing Prices",
         audios: [
           {
             no: 4,
@@ -473,6 +569,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 21,
+        title: "Unit 4 Review Activities",
         audios: [
           {
             no: 3,
@@ -500,9 +597,11 @@ export const UnitsData: Unit[] = [
   },
   {
     unitNo: 5,
+    title: "My Childhood",
     chapters: [
       {
         chapterNo: 22,
+        title: "My Childhood Home",
         audios: [
           {
             no: 6,
@@ -523,6 +622,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 23,
+        title: "Describing One's Childhood",
         audios: [
           {
             no: 4,
@@ -543,6 +643,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 24,
+        title: "Describing a Scene in the Past",
         audios: [
           {
             no: 2,
@@ -563,10 +664,12 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 25,
+        title: "Expressions of Time",
         audios: [],
       },
       {
         chapterNo: 26,
+        title: "Unit 5 Review Activities",
         audios: [
           {
             no: 3,
@@ -584,9 +687,11 @@ export const UnitsData: Unit[] = [
   },
   {
     unitNo: 6,
+    title: "Rules and Responsibilities",
     chapters: [
       {
         chapterNo: 27,
+        title: "Rules and Regulations",
         audios: [
           {
             no: 1,
@@ -597,6 +702,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 28,
+        title: "Expressing Compulsion",
         audios: [
           {
             no: 3,
@@ -612,6 +718,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 29,
+        title: "Giving and Following Instructions",
         audios: [
           {
             no: 5,
@@ -627,6 +734,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 30,
+        title: "Unit 6 Review Activities",
         audios: [
           {
             no: 3,
@@ -644,9 +752,11 @@ export const UnitsData: Unit[] = [
   },
   {
     unitNo: 7,
+    title: "A Trip to South Asia",
     chapters: [
       {
         chapterNo: 31,
+        title: "My Plans",
         audios: [
           {
             no: 4,
@@ -672,6 +782,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 32,
+        title: "My Travel Plans: Definite and Possible",
         audios: [
           {
             no: 7,
@@ -687,6 +798,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 33,
+        title: "Arranging Transportation and Lodging",
         audios: [
           {
             no: 5,
@@ -712,6 +824,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 34,
+        title: "Finding One's Way",
         audios: [
           {
             no: 3,
@@ -727,6 +840,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 35,
+        title: "Seeking Information for Travel Plans",
         audios: [
           {
             no: 3,
@@ -747,6 +861,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 36,
+        title: "Unit 7 Review Activities",
         audios: [
           {
             no: 3,
@@ -790,9 +905,11 @@ export const UnitsData: Unit[] = [
 
   {
     unitNo: 8,
+    title: "Past Events and Experiences",
     chapters: [
       {
         chapterNo: 37,
+        title: "My Weekend",
         audios: [
           {
             no: 3,
@@ -823,6 +940,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 38,
+        title: "Narrating a Story",
         audios: [
           {
             no: 7,
@@ -838,6 +956,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 39,
+        title: "My Experience and Accomplishments",
         audios: [
           {
             no: 3,
@@ -858,6 +977,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 40,
+        title: "At the Doctor",
         audios: [
           {
             no: 3,
@@ -873,6 +993,7 @@ export const UnitsData: Unit[] = [
       },
       {
         chapterNo: 41,
+        title: "Unit 8 Review Activities",
         audios: [
           {
             no: 3,

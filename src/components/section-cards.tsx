@@ -4,7 +4,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { JsonViewerComponent } from "./json-viewer";
 import { SoundAndScriptData } from "@/data/sound-and-script";
 import { UnitsData } from "@/data/units";
+import { ChapterSheet } from "./chapter-sheet";
 import { LessonSheet } from "./lesson-sheet";
+import { UnitCards } from "./unit-cards";
 
 export function SectionCards() {
   const [selectedSection, setSelectedSection] =
@@ -50,14 +52,14 @@ export function SectionCards() {
         </TabsList>
         <TabsContent value="sound-and-script">
           {/* <JsonViewerComponent data={SoundAndScriptData} /> */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex">
             {SoundAndScriptData.map((lesson) => (
               <LessonSheet key={lesson.lesson} lesson={lesson} />
             ))}
           </div>
         </TabsContent>
         <TabsContent value="units">
-          <JsonViewerComponent data={UnitsData} />
+          <UnitCards units={UnitsData} />
         </TabsContent>
       </Tabs>
     </div>
