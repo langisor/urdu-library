@@ -7,7 +7,7 @@ interface Chapter {
   chapterNo: number;
   audios: AudioFile[];
 }
-interface Unit {
+export interface Unit {
   unitNo: number;
   chapters: Chapter[];
 }
