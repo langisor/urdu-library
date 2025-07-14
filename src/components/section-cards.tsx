@@ -52,7 +52,7 @@ export function SectionCards() {
         </TabsList>
         <TabsContent value="sound-and-script">
           {/* <JsonViewerComponent data={SoundAndScriptData} /> */}
-          <div className="flex">
+          <div className="flex flex-cols-1 gap-4">
             {SoundAndScriptData.map((lesson) => (
               <LessonSheet key={lesson.lesson} lesson={lesson} />
             ))}
