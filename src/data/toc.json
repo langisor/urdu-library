@@ -1,0 +1,551 @@
+{
+    "title": "Beginning Urdu: A Complete Course",
+    "authors": [
+      "Joshua H. Pien",
+      "Fauzia Farooqui"
+    ],
+    "publisher": "Georgetown University Press",
+    "publication_year": 2012,
+    "isbn": "978-1-58901-778-8",
+    "table_of_contents": [
+      {
+        "title": "About Beginning Urdu",
+        "page": "ix"
+      },
+      {
+        "title": "How to Use This Book: For Teachers",
+        "page": "xi"
+      },
+      {
+        "title": "How to Use This Book: For Students",
+        "page": "xiii"
+      },
+      {
+        "title": "Acknowledgments",
+        "page": "xv"
+      },
+      {
+        "title": "About the Urdu Language",
+        "page": "xvi"
+      },
+      {
+        "title": "The Sound System and Script of Urdu",
+        "page": "1",
+        "parts": [
+          {
+            "title": "Part I The Sound System of Urdu",
+            "lessons": [
+              {
+                "title": "Lesson 1: Sounds Similar to English",
+                "page": "1"
+              },
+              {
+                "title": "Lesson 2: The Consonants r, l, v, and the Vowels e and o",
+                "page": "3"
+              },
+              {
+                "title": "Lesson 3: Aspirated and Unaspirated Consonants",
+                "page": "5"
+              },
+              {
+                "title": "Lesson 4: Dental and Retroflex Consonants",
+                "page": "6"
+              },
+              {
+                "title": "Lesson 5: The Consonants and rh and the Vowels ai and au",
+                "page": "7"
+              },
+              {
+                "title": "Lesson 6: The Consonants q, x, and gh",
+                "page": "8"
+              },
+              {
+                "title": "Lesson 7: Nasalized Vowels and Doubled Consonants",
+                "page": "9"
+              }
+            ]
+          },
+          {
+            "title": "Exercise Answers",
+            "page": "10"
+          },
+          {
+            "title": "Part II The Urdu Script",
+            "lessons": [
+              {
+                "title": "Lesson 8: Introduction to the Urdu Script: The be Series",
+                "page": "11"
+              },
+              {
+                "title": "Lesson 9: The jim Series, sukūn and taśdid",
+                "page": "17"
+              },
+              {
+                "title": "Lesson 10: The dal and re Series",
+                "page": "20"
+              },
+              {
+                "title": "Lesson 11: The sin and suād Series",
+                "page": "23"
+              },
+              {
+                "title": "Lesson 12: The Vowels vão, choți ye, and bari ye",
+                "page": "25"
+              },
+              {
+                "title": "Lesson 13: fe, qāf, kāf, gāf, and lām",
+                "page": "28"
+              },
+              {
+                "title": "Lesson 14: mim, choți he, do caśmi he, and nün ghunna",
+                "page": "30"
+              },
+              {
+                "title": "Lesson 15: The to and ain Series",
+                "page": "34"
+              },
+              {
+                "title": "Lesson 16: Additional Signs",
+                "page": "37"
+              }
+            ]
+          },
+          {
+            "title": "The Arabic Definite Article",
+            "page": "40"
+          },
+          {
+            "title": "Exercise Answers",
+            "page": "41"
+          }
+        ]
+      },
+      {
+        "unit": 1,
+        "title": "Me and My School",
+        "chapters": [
+          {
+            "chapter_number": 1,
+            "title": "Introductions",
+            "sub_topics": [
+              "Meeting Somebody New",
+              "Identifying Classroom Items",
+              "Asking and Answering Questions",
+              "Asking Yes-or-No Questions",
+              "Greeting an Acquaintance"
+            ],
+            "page": "47"
+          },
+          {
+            "chapter_number": 2,
+            "title": "Me and My Classmates",
+            "sub_topics": [
+              "Exchanging Basic Personal Information"
+            ],
+            "page": "65"
+          },
+          {
+            "chapter_number": 3,
+            "title": "My Classroom",
+            "sub_topics": [
+              "Listing Items: There Is and There Are",
+              "Noun Types and Forms",
+              "Indefinite Words: koi and kuch"
+            ],
+            "page": "75"
+          },
+          {
+            "chapter_number": 4,
+            "title": "Describing Classroom Items",
+            "sub_topics": [
+              "Describing Items by Their Qualities: Adjectives",
+              "Adjectival Question Words",
+              "Plurality and Respect with Adjectives and Nouns"
+            ],
+            "page": "85"
+          },
+          {
+            "chapter_number": 5,
+            "title": "Giving Commands and Making Requests",
+            "sub_topics": [
+              "The Infinitive",
+              "The Imperative"
+            ],
+            "page": "97"
+          },
+          {
+            "chapter_number": 6,
+            "title": "Unit 1 Review Activities",
+            "page": "105"
+          }
+        ]
+      },
+      {
+        "unit": 2,
+        "title": "My Family and My Home",
+        "chapters": [
+          {
+            "chapter_number": 7,
+            "title": "Locating Places and Objects",
+            "sub_topics": [
+              "Locating Places in the City",
+              "Locating Places within Countries",
+              "Locating Objects in the Home",
+              "Using Postpositions: Oblique Forms"
+            ],
+            "page": "113"
+          },
+          {
+            "chapter_number": 8,
+            "title": "Identifying Family Members",
+            "sub_topics": [
+              "Using the Possessive Postposition kā",
+              "Possessive Pronouns",
+              "Stating the Number of Siblings You Have"
+            ],
+            "page": "143"
+          },
+          {
+            "chapter_number": 9,
+            "title": "Describing Family Members",
+            "sub_topics": [
+              "Describing a Person's Physical Appearance",
+              "Stating a Person's Age",
+              "Oblique Adjectives"
+            ],
+            "page": "155"
+          },
+          {
+            "chapter_number": 10,
+            "title": "My Home, My Belongings",
+            "sub_topics": [
+              "Features of One's Home",
+              "Expressing What One Has: Physical Possessions",
+              "Summary of Constructions for Expressing Possession"
+            ],
+            "page": "169"
+          },
+          {
+            "chapter_number": 11,
+            "title": "Making Comparisons",
+            "sub_topics": [
+              "Comparative Constructions",
+              "Oblique Pronoun Forms",
+              "The Superlative Construction"
+            ],
+            "page": "179"
+          },
+          {
+            "chapter_number": 12,
+            "title": "Unit 2 Review Activities",
+            "page": "189"
+          }
+        ]
+      },
+      {
+        "unit": 3,
+        "title": "Daily Life",
+        "chapters": [
+          {
+            "chapter_number": 13,
+            "title": "My Daily Routine 1",
+            "sub_topics": [
+              "Saying Where You Live and Work",
+              "Describing Routine Activities",
+              "Clock Time",
+              "Using Postpositions with Verbs"
+            ],
+            "page": "201"
+          },
+          {
+            "chapter_number": 14,
+            "title": "My Daily Routine 2",
+            "sub_topics": [
+              "Uses of the Infinitive",
+              "Reflexive Pronouns"
+            ],
+            "page": "223"
+          },
+          {
+            "chapter_number": 15,
+            "title": "Describing Events in Progress",
+            "sub_topics": [
+              "The Present Continuous Verb Tense",
+              "Conjunct Verbs"
+            ],
+            "page": "233"
+          },
+          {
+            "chapter_number": 16,
+            "title": "Weather and Climate",
+            "sub_topics": [
+              "Describing the Weather",
+              "Describing the Climate"
+            ],
+            "page": "247"
+          },
+          {
+            "chapter_number": 17,
+            "title": "Unit 3 Review Activities",
+            "page": "259"
+          }
+        ]
+      },
+      {
+        "unit": 4,
+        "title": "In the Market",
+        "chapters": [
+          {
+            "chapter_number": 18,
+            "title": "Expressing Likes, Needs, and Desires",
+            "sub_topics": [
+              "Expressing Likes and Needs",
+              "Contracted ko Pronoun Forms",
+              "Additional Uses of the Infinitive"
+            ],
+            "page": "267"
+          },
+          {
+            "chapter_number": 19,
+            "title": "Choosing Items and Expressing Measures",
+            "sub_topics": [
+              "Using vālā to Indicate an Item",
+              "Measures"
+            ],
+            "page": "295"
+          },
+          {
+            "chapter_number": 20,
+            "title": "Discussing Prices",
+            "sub_topics": [
+              "Price Constructions"
+            ],
+            "page": "309"
+          },
+          {
+            "chapter_number": 21,
+            "title": "Unit 4 Review Activities",
+            "page": "321"
+          }
+        ]
+      },
+      {
+        "unit": 5,
+        "title": "My Childhood",
+        "chapters": [
+          {
+            "chapter_number": 22,
+            "title": "My Childhood Home",
+            "sub_topics": [
+              "Describing Past Circumstances"
+            ],
+            "page": "335"
+          },
+          {
+            "chapter_number": 23,
+            "title": "Describing One's Childhood",
+            "sub_topics": [
+              "The Past Habitual Verb Tense"
+            ],
+            "page": "345"
+          },
+          {
+            "chapter_number": 24,
+            "title": "Describing a Scene in the Past",
+            "sub_topics": [
+              "The Past Continuous Verb Tense"
+            ],
+            "page": "355"
+          },
+          {
+            "chapter_number": 25,
+            "title": "Expressions of Time",
+            "sub_topics": [
+              "Clock-Related Time Expressions",
+              "Non-Clock-Based Time Expressions"
+            ],
+            "page": "363"
+          },
+          {
+            "chapter_number": 26,
+            "title": "Unit 5 Review Activities",
+            "page": "371"
+          }
+        ]
+      },
+      {
+        "unit": 6,
+        "title": "Rules and Responsibilities",
+        "chapters": [
+          {
+            "chapter_number": 27,
+            "title": "Rules and Regulations",
+            "sub_topics": [
+              "The Verb saknā, 'to Be Able to, Can'",
+              "V-ne denā, 'to Let, Allow'",
+              "The verb pānā, 'to Be Able to'"
+            ],
+            "page": "379"
+          },
+          {
+            "chapter_number": 28,
+            "title": "Expressing Compulsion",
+            "sub_topics": [
+              "Expressions of Compulsion"
+            ],
+            "page": "387"
+          },
+          {
+            "chapter_number": 29,
+            "title": "Giving and Following Instructions",
+            "sub_topics": [
+              "The Subjunctive: Introduction",
+              "Expressing What One Wants Others to Do"
+            ],
+            "page": "395"
+          },
+          {
+            "chapter_number": 30,
+            "title": "Unit 6 Review Activities",
+            "page": "405"
+          }
+        ]
+      },
+      {
+        "unit": 7,
+        "title": "A Trip to South Asia",
+        "chapters": [
+          {
+            "chapter_number": 31,
+            "title": "My Plans",
+            "sub_topics": [
+              "The Future Verb Tense",
+              "Invitations and Plans",
+              "Imminent Events"
+            ],
+            "page": "413"
+          },
+          {
+            "chapter_number": 32,
+            "title": "My Travel Plans: Definite and Possible",
+            "sub_topics": [
+              "Using the Subjunctive with Subordinating Expressions"
+            ],
+            "page": "425"
+          },
+          {
+            "chapter_number": 33,
+            "title": "Arranging Transportation and Lodging",
+            "sub_topics": [
+              "How Long It Takes and How Much It Costs"
+            ],
+            "page": "439"
+          },
+          {
+            "chapter_number": 34,
+            "title": "Finding One's Way",
+            "sub_topics": [
+              "Giving and Following Directions"
+            ],
+            "page": "449"
+          },
+          {
+            "chapter_number": 35,
+            "title": "Seeking Information for Travel Plans",
+            "sub_topics": [
+              "The Conjunction ki"
+            ],
+            "page": "457"
+          },
+          {
+            "chapter_number": 36,
+            "title": "Unit 7 Review Activities",
+            "page": "467"
+          }
+        ]
+      },
+      {
+        "unit": 8,
+        "title": "Past Events and Experiences",
+        "chapters": [
+          {
+            "chapter_number": 37,
+            "title": "My Weekend",
+            "sub_topics": [
+              "The Perfective Verb Tense",
+              "Transitive and Intransitive Verbs",
+              "The Perfective of Transitive Verbs"
+            ],
+            "page": "485"
+          },
+          {
+            "chapter_number": 38,
+            "title": "Narrating a Story",
+            "sub_topics": [
+              "The Past Perfect",
+              "The kar Construction"
+            ],
+            "page": "505"
+          },
+          {
+            "chapter_number": 39,
+            "title": "My Experience and Accomplishments",
+            "sub_topics": [
+              "The Present Perfect Verb Tense",
+              "Stating How Long You Have Been Doing Something",
+              "The Verb cuknā"
+            ],
+            "page": "517"
+          },
+          {
+            "chapter_number": 40,
+            "title": "At the Doctor",
+            "sub_topics": [
+              "Ailments and Physical Conditions",
+              "Expressing the Beginning of an Action",
+              "Compound Verbs"
+            ],
+            "page": "529"
+          },
+          {
+            "chapter_number": 41,
+            "title": "Unit 8 Review Activities",
+            "page": "543"
+          }
+        ]
+      },
+      {
+        "title": "Appendix 1 Numbers",
+        "sub_topics": [
+          "Cardinal Numbers",
+          "Higher Numbers",
+          "Ordinal Numbers"
+        ],
+        "page": "555"
+      },
+      {
+        "title": "Appendix 2 Grammar Supplement",
+        "sub_topics": [
+          "Causative Verbs",
+          "Relative-Correlative Constructions",
+          "The Contrafactual Verb Form",
+          "Additional Meanings and Uses of honā",
+          "The Passive Voice",
+          "Participial Forms"
+        ],
+        "page": "561"
+      },
+      {
+        "title": "Appendix 3 Additional Information for Teachers",
+        "page": "571"
+      },
+      {
+        "title": "Urdu-English Glossary",
+        "page": "575"
+      },
+      {
+        "title": "English-Urdu Glossary",
+        "page": "623"
+      }
+    ]
+  }
