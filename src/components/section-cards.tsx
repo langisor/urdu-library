@@ -74,6 +74,13 @@ export function SectionCards() {
         >
           English Sounds
         </TabsTrigger>
+        <TabsTrigger
+          value="1911-words"
+          className="hover:bg-gray-100 hover:cursor-pointer"
+          style={selectedSection === "1911-words" ? selectedStyle : {}}
+        >
+          1911 Words
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="sound-and-script" style={style}>
         {/* <JsonViewerComponent data={SoundAndScriptData} /> */}
