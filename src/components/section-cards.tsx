@@ -9,6 +9,7 @@ import { LessonSheet } from "./lesson-sheet";
 import { UnitCards } from "./unit-cards";
 import { AlphabetsCard } from "./alphabets-card";
 import { EnglishSoundsCard } from "./english-sounds";
+import { TocCard } from "./toc-card"; 
 
 export function SectionCards() {
   const [selectedSection, setSelectedSection] =
@@ -59,6 +60,13 @@ export function SectionCards() {
           Alphabets
         </TabsTrigger>
         <TabsTrigger
+          value="toc"
+          className="hover:bg-gray-100 hover:cursor-pointer"
+          style={selectedSection === "toc" ? selectedStyle : {}}
+        >
+          Table of Contents
+        </TabsTrigger>
+        <TabsTrigger
           value="english-sounds"
           className="hover:bg-gray-100 hover:cursor-pointer"
           style={selectedSection === "english-sounds" ? selectedStyle : {}}
@@ -79,6 +87,9 @@ export function SectionCards() {
       </TabsContent>
       <TabsContent value="alphabets">
         <AlphabetsCard />
+      </TabsContent>
+      <TabsContent value="toc">
+        <TocCard />
       </TabsContent>
       <TabsContent value="english-sounds">
         <EnglishSoundsCard />

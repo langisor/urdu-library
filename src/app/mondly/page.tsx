@@ -2,15 +2,6 @@
 import { vocabs, getVocabularyItems, getTotalWords, getVocabulary, getAudioUrl } from "@/data/mondly-urdu-vocas"
 import { JsonViewerComponent } from "@/components/json-viewer"
 
-interface ISimpleVocabulary{
-    id: number;
-    wordID: number;
-    audio:string;
-    mText: string;
-    tText: string;
-    phonetic: string;
-    
-}
  
 export default function MondlyPage(){
 
