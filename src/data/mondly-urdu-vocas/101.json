@@ -24,7 +24,8 @@
             10572
         ]
     },
-    "vItems": [{
+    "vItems": [
+        {
             "id": 10565,
             "vocabulary": 101,
             "wordID": 16035,
