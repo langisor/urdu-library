@@ -216,3 +216,8 @@ export function getTotalWords(){
         totalItems
     };
 }
+
+export function getAudioUrl(audioId: string, audio_updated_at: number): string {
+    return `https://d13tz37rv54ob.cloudfront.net/ur/${audioId}?t=${audio_updated_at}`;
+  }
+  

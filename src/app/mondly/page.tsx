@@ -1,14 +1,23 @@
 "use client"
-import { vocabs, getVocabularyItems, getTotalWords } from "@/data/mondly-urdu-vocas"
+import { vocabs, getVocabularyItems, getTotalWords, getVocabulary, getAudioUrl } from "@/data/mondly-urdu-vocas"
 import { JsonViewerComponent } from "@/components/json-viewer"
-function showVocab(vocab: any){
-    console.log(vocab)
+
+interface ISimpleVocabulary{
+    id: number;
+    wordID: number;
+    audio:string;
+    mText: string;
+    tText: string;
+    phonetic: string;
+    
 }
+ 
 export default function MondlyPage(){
+
     return (
         <div>
             <h1>Mondly</h1>
-            <JsonViewerComponent data={ getTotalWords()} />
+            <JsonViewerComponent data={   getVocabularyItems(101)} />
         </div>
     )
 }
