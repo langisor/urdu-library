@@ -13,7 +13,7 @@ import { TocCard } from "./toc-card";
 
 export function SectionCards() {
   const [selectedSection, setSelectedSection] =
-    React.useState("sound-and-script");
+    React.useState("toc");
   const style = {
     width: "100%",
     height: "100%",
@@ -38,6 +38,13 @@ export function SectionCards() {
       className="min-w-screen min-h-screen"
     >
       <TabsList className="">
+      <TabsTrigger
+          value="toc"
+          className="hover:bg-gray-100 hover:cursor-pointer"
+          style={selectedSection === "toc" ? selectedStyle : {}}
+        >
+          Table of Contents
+        </TabsTrigger>
         <TabsTrigger
           value="sound-and-script"
           className="hover:bg-gray-100 hover:cursor-pointer"
@@ -59,13 +66,7 @@ export function SectionCards() {
         >
           Alphabets
         </TabsTrigger>
-        <TabsTrigger
-          value="toc"
-          className="hover:bg-gray-100 hover:cursor-pointer"
-          style={selectedSection === "toc" ? selectedStyle : {}}
-        >
-          Table of Contents
-        </TabsTrigger>
+    
         <TabsTrigger
           value="english-sounds"
           className="hover:bg-gray-100 hover:cursor-pointer"
