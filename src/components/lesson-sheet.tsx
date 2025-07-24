@@ -40,9 +40,7 @@ export function LessonSheet({ lesson }: LessonSheetProps) {
         side="bottom"
       >
         <SheetHeader>
-          <SheetTitle>
-          {title || ""}
-          </SheetTitle>
+          <SheetTitle>{title || ""}</SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <div className="flex flex-wrap gap-4">
