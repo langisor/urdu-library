@@ -23,6 +23,8 @@ export function AlphabetsCard() {
       </Card>
       <div className="p-10 my-20">
         <Card className="">
+          <CardTitle>Alphabets Image</CardTitle>
+
           <CardContent className="flex flex-col gap-3 my-4">
             <Image
               src="/materials/urdu_alphabet.webp"
@@ -35,11 +37,13 @@ export function AlphabetsCard() {
       </div>
       <div className="p-10 my-20">
         <Card>
+          <CardTitle>Alphabets Pronunciation Chart</CardTitle>
           <CardContent>
             <ChartPron />
           </CardContent>
         </Card>
         <Card>
+          <CardTitle>Alphabets Table</CardTitle>
           <CardContent>
             <AlphabetsTable />
           </CardContent>

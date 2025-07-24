@@ -2,11 +2,12 @@
 import Image from "next/image";
 export function ChartPron() {
   return (
-    <div className="relative w-full h-full">
+    <div className="w-full h-full">
       <Image
-        src="/materials/urdu-pronunciation-chart.jpg"
+        src="/materials/urdu-pronunciation-chart.png"
         alt="Chart Pron"
-        fill
+        width={500}
+        height={500}
       />
       </div>
   );
