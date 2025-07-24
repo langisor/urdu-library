@@ -1,5 +1,5 @@
 "use client"
-import toc from "@/data/toc.json"
+import { findLessonByIndex,UnitsData,PartsData,ChaptersData } from "@/lib/helpers"
 import {
   Card,
   CardContent,
@@ -8,18 +8,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import {memo } from "react"
 import { JsonViewerComponent } from "./json-viewer"
 
-export const TocCard = memo(function TocCard() {
-     return (
+export function TocCard() {
+return (
         <Card>
             <CardHeader>
                 <CardTitle>Table of Contents</CardTitle>
             </CardHeader>
             <CardContent>
-                <JsonViewerComponent data={toc} />
+                <JsonViewerComponent data={PartsData} />
             </CardContent>
         </Card>
      )
-})
+}

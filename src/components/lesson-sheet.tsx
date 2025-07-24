@@ -13,12 +13,15 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { LessonNode } from "@/data/sound-and-script";
+import { findLessonByIndex } from "@/lib/helpers";
 
 interface LessonSheetProps {
   lesson: LessonNode;
 }
 
 export function LessonSheet({ lesson }: LessonSheetProps) {
+  const lessonData = findLessonByIndex(lesson.lesson - 1);
+  const title = lessonData?.title;
   const path = `/media/audio-all/Sound and Script/Lesson${lesson.lesson}`;
   const audioFiles = lesson.audios.map((audio) => {
     return {
@@ -30,14 +33,17 @@ export function LessonSheet({ lesson }: LessonSheetProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button>Lesson {lesson.lesson}</Button>
+        <Button> {title || ""}</Button>
       </SheetTrigger>
-      <SheetContent className="w-screen h-screen overflow-y-auto" side="bottom">
+      <SheetContent
+        className="flex flex-col w-screen h-screen overflow-y-auto"
+        side="bottom"
+      >
         <SheetHeader>
-          <SheetTitle>Lesson {lesson.lesson}</SheetTitle>
-          <SheetDescription>
-          
-          </SheetDescription>
+          <SheetTitle>
+          {title || ""}
+          </SheetTitle>
+          <SheetDescription></SheetDescription>
         </SheetHeader>
         <div className="flex flex-wrap gap-4">
           {audioFiles.map((audio) => (

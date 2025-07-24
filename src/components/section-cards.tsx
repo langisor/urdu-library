@@ -9,11 +9,10 @@ import { LessonSheet } from "./lesson-sheet";
 import { UnitCards } from "./unit-cards";
 import { AlphabetsCard } from "./alphabets-card";
 import { EnglishSoundsCard } from "./english-sounds";
-import { TocCard } from "./toc-card"; 
+import { TocCard } from "./toc-card";
 
 export function SectionCards() {
-  const [selectedSection, setSelectedSection] =
-    React.useState("toc");
+  const [selectedSection, setSelectedSection] = React.useState("toc");
   const style = {
     width: "100%",
     height: "100%",
@@ -37,10 +36,10 @@ export function SectionCards() {
       onValueChange={handleTabChange}
       className="min-w-screen min-h-screen"
     >
-      <TabsList className="">
-      <TabsTrigger
+      <TabsList className="flex flex-row gap-4 space-x-4">
+        <TabsTrigger
           value="toc"
-          className="hover:bg-gray-100 hover:cursor-pointer"
+          className="hover:cursor-pointer"
           style={selectedSection === "toc" ? selectedStyle : {}}
         >
           Table of Contents
@@ -66,7 +65,7 @@ export function SectionCards() {
         >
           Alphabets
         </TabsTrigger>
-    
+
         <TabsTrigger
           value="english-sounds"
           className="hover:bg-gray-100 hover:cursor-pointer"
@@ -74,19 +73,12 @@ export function SectionCards() {
         >
           English Sounds
         </TabsTrigger>
-        <TabsTrigger
-          value="1911-words"
-          className="hover:bg-gray-100 hover:cursor-pointer"
-          style={selectedSection === "1911-words" ? selectedStyle : {}}
-        >
-          1911 Words
-        </TabsTrigger>
       </TabsList>
       <TabsContent value="sound-and-script" style={style}>
         {/* <JsonViewerComponent data={SoundAndScriptData} /> */}
-        <div className="flex flex-cols-1 gap-4">
+        <div className="flex flex-col gap-4">
           {SoundAndScriptData.map((lesson) => (
-            <LessonSheet key={lesson.lesson} lesson={lesson} />
+              <LessonSheet key={lesson.lesson} lesson={lesson} />
           ))}
         </div>
       </TabsContent>

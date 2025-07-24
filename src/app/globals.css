@@ -43,6 +43,22 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* fonts */
+:root {
+  --font-inter: var(--font-inter-fallback, sans-serif);
+  --font-noto-sans-arabic: var(--font-noto-sans-arabic-fallback, sans-serif);
+  --font-noto-nastaliq-urdu: var(--font-noto-nastaliq-urdu-fallback, serif);
+  /* Nastaliq often benefits from a serif fallback */
+}
+
+/* Fallback fonts (optional but good practice) */
+:root {
+  --font-inter-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-noto-sans-arabic-fallback: "Noto Sans Arabic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-noto-nastaliq-urdu-fallback: "Noto Nastaliq Urdu", "Times New Roman", Times, serif;
+}
+
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -116,7 +132,54 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* default font */
+body {
+  font-family: var(--font-inter);
+}
+
+/* Language-specific font application */
+/* You'll apply these based on your language state in components */
+.lang-en {
+  font-family: var(--font-inter);
+  direction: ltr;
+  /* Left-to-right */
+}
+
+.lang-ar {
+  font-family: var(--font-noto-sans-arabic);
+  direction: rtl;
+  /* Right-to-left */
+}
+
+.lang-ur {
+  font-family: var(--font-noto-nastaliq-urdu);
+  direction: rtl;
+  font-size: 1rem;
+  /* line-height: 1.5; */
+  letter-spacing: 0.1rem;
+  color: white;
+  background-color: rgb(8, 78, 8);
+  padding: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 15px;
+  width: fit-content;
+
+  /* Right-to-left */
+}
+
+.phonetic {
+  font-family: var(--font-inter);
+  direction: ltr;
+  font-style: italic;
+  color: white;
+  background-color: blue;
+  padding: 0.5rem;
+  border-radius: 15px;
+  width: fit-content;
 }
