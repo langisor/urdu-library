@@ -1,8 +1,8 @@
 "use client";
+import "./table.css";
 export function AlphabetsTable() {
   return (
-    <figure className="wp-block-table">
-      <table>
+      <table className="flex flex-col justify-between space-y-2">
         <thead>
           <tr>
             <th>Urdu Alphabet</th>
@@ -11,11 +11,7 @@ export function AlphabetsTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td />
-            <td />
-            <td />
-          </tr>
+          
           <tr>
             <td className="lang-ur">ا</td>
             <td>Alif</td>
@@ -218,6 +214,5 @@ export function AlphabetsTable() {
           </tr>
         </tbody>
       </table>
-    </figure>
   );
 }

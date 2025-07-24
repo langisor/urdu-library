@@ -33,16 +33,18 @@ export function AlphabetsCard() {
           </CardContent>
         </Card>
       </div>
-      <Card>
-        <CardContent>
-          <ChartPron />
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent>
-          <AlphabetsTable />
-        </CardContent>
-      </Card>
+      <div className="p-10 my-20">
+        <Card>
+          <CardContent>
+            <ChartPron />
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <AlphabetsTable />
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

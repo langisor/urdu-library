@@ -2,12 +2,12 @@
 import Image from "next/image";
 export function ChartPron() {
   return (
-    <div className="flex flex-col gap-3 my-4">
+    <div className="relative w-full h-full">
       <Image
         src="/materials/urdu-pronunciation-chart.jpg"
         alt="Chart Pron"
         fill
       />
-    </div>
+      </div>
   );
 }
