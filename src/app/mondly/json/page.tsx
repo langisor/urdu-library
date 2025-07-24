@@ -16,7 +16,7 @@ interface ISimpleVocabulary{
 function simplifyData(vocabularyId: number){
     const items = getVocabularyItems(vocabularyId);
     if (!items) return null;
-    const rows: ISimpleVocabulary[] = [];
+    let rows: ISimpleVocabulary[] = [];
     for(const item of items){
         const audio = getAudioUrl(item.key,item.audio_updated_at)
         const tText = item.sols[0].text;
@@ -48,7 +48,7 @@ interface IDict {
 function buildDictionary(vocabularyId: number){
     const items = getVocabularyItems(vocabularyId);
     if (!items) return null;
-    const rows: IDict[] = [];
+    let rows: IDict[] = [];
     let id=1;
     for(const item of items){
         const t:string[]= item.sols[0].dictionary.map((sol) => sol.raw);
@@ -66,7 +66,7 @@ function buildDictionary(vocabularyId: number){
     return rows;
 }
 function buildDictionaries(){
-    const dicts: IDict[] = [];
+    let dicts: IDict[] = [];
     for(let i of vocabs){
         const dict = buildDictionary(i.vocabulary.id)
         if(dict){
