@@ -15,12 +15,12 @@ export function UnitCards({ units }: UnitCardsProps) {
     <div className="grid grid-cols-2 gap-4 ">
       {units.map((unit) => (
         <Card key={unit.unitNo} className="p-2 flex gap-2">
+          <CardContent className="flex flex-col gap-4">
           <CardHeader>
             <CardTitle>
               {unit.unitNo} : {unit.title}
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col gap-4">
             <ChapterSheet
               chapters={unit.chapters}
               unitNo={unit.unitNo}
