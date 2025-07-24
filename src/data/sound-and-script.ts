@@ -41,6 +41,10 @@ export const SoundAndScriptData: LessonNode[] = [
         file: "Pien7788_SSL02Ex03.mp3",
       },
       {
+        exercise: 4,
+        file: "Pien7788_SSL02Ex04.mp3",
+      },
+      {
         exercise: 5,
         file: "Pien7788_SSL02Ex05.mp3",
       },

@@ -7,7 +7,7 @@ import { UnitsData } from "@/data/units";
 import { ChapterSheet } from "./chapter-sheet";
 import { LessonSheet } from "./lesson-sheet";
 import { UnitCards } from "./unit-cards";
-import { AlphabetsCard } from "./alphabets-card";
+import { AlphabetsCard } from "./alphabets/alphabets-card";
 import { EnglishSoundsCard } from "./english-sounds";
 import { TocCard } from "./toc-card";
 
