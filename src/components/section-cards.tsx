@@ -9,7 +9,7 @@ import { LessonSheet } from "./lesson-sheet";
 import { UnitCards } from "./unit-cards";
 import { AlphabetsCard } from "./alphabets/alphabets-card";
 import { EnglishSoundsCard } from "./english-sounds";
-import { TocCard } from "./toc-card";
+import { TocCard } from "./toc-tab";
 
 export function SectionCards() {
   const [selectedSection, setSelectedSection] = React.useState("toc");

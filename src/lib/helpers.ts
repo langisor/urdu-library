@@ -4,7 +4,7 @@ const PartsData = toc.table_of_contents[5].parts?.map((part) => part);
 const chapters = toc.table_of_contents[6].chapters?.map((chapter) => {
   return {
     ...chapter,
-    sub_topics: chapter.sub_topics?.map((sub_topic) => sub_topic),
+    topics : chapter.sub_topics?.map((topic) => topic),
   };
 });
 const units_start = toc.table_of_contents[7];
