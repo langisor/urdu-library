@@ -26,7 +26,6 @@ import { Separator } from "@/components/ui/separator"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import tocData from "@/data/toc.json"
 import { Input } from "@/components/ui/input"
-
 interface TableOfContentsItem {
   title: string
   page: string | number
