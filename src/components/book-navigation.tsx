@@ -353,7 +353,7 @@ const BookNavigation: React.FC = () => {
       </div>
     )
   }
-
+  
   const renderChapter = (chapter: Chapter, parentId: string) => {
     const itemId = `${parentId}-chapter-${chapter.chapter_number}`
     const isExpanded = expandedItems.has(itemId)
