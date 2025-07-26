@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import tocData from "@/data/toc-data.json"
+import AudioPlayer from "./audio-player"
 
 interface MediaFile {
   filename: string
@@ -98,6 +99,7 @@ export default function BookNavigation({ onItemSelect, onAudioSelect }: Navigati
 
     return (
       <div className="ml-4 mt-2 space-y-2">
+        {/* Exercises */}
         {exercises.length > 0 && (
           <div>
             <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground mb-1">
@@ -124,7 +126,7 @@ export default function BookNavigation({ onItemSelect, onAudioSelect }: Navigati
                       onClick={() => handleAudioClick(file)}
                       title={`Play ${file.title}`}
                     >
-                      <Play className="h-3 w-3" />
+                      {/* <Play className="h-3 w-3" /> */}
                     </Button>
                   </div>
                 ))}
@@ -132,6 +134,7 @@ export default function BookNavigation({ onItemSelect, onAudioSelect }: Navigati
           </div>
         )}
 
+        {/* Vocabulary */}
         {vocabulary.length > 0 && (
           <div>
             <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground mb-1">
@@ -166,6 +169,7 @@ export default function BookNavigation({ onItemSelect, onAudioSelect }: Navigati
           </div>
         )}
 
+        {/* General Audio */}
         {general.length > 0 && (
           <div>
             <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground mb-1">

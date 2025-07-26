@@ -1,51 +1,27 @@
-// Audio file mapping utility
-export interface AudioFile {
-  filename: string;
-  type: "exercise" | "vocabulary";
-  number: string;
-  title: string;
-  path: string;
-}
+import tocData from "@/data/toc-data.json";
 
-export interface LessonAudio {
-  lessonId: string;
-  exercises: AudioFile[];
-  vocabulary: AudioFile[];
-}
-
-// Parse filename to extract information
-export const parseAudioFilename = (filename: string): AudioFile | null => {
-  // Remove .mp3 extension
-  const nameWithoutExt = filename.replace(".mp3", "");
-
-  // Pattern for unit chapters: Pien7788_U01Ch01Ex01 or Pien7788_U01Ch01V01
-  const unitChapterMatch = nameWithoutExt.match(
-    /Pien7788_U(\d+)Ch(\d+)(Ex|V)(.+)/
-  );
-  if (unitChapterMatch) {
-    const [, unit, chapter, type, number] = unitChapterMatch;
-    return {
-      filename,
-      type: type === "Ex" ? "exercise" : "vocabulary",
-      number: number,
-      title: `${type === "Ex" ? "Exercise" : "Vocabulary"} ${number}`,
-      path: `/media/audio-all/Unit ${unit} Audio/Chapter${chapter}/${filename}`,
-    };
+const getItemMediaFiles = (id: string, type: string) => {
+  // check if type is lesson, chapter
+  if (type === "lesson") {
+    return tocData.toc.sound_and_script.find((item) => {
+      return item.id === id;
+    });
   }
 
-  // Pattern for sound and script lessons: Pien7788_SSL01Ex01
-  const sslMatch = nameWithoutExt.match(/Pien7788_SSL(\d+)Ex(\d+)/);
-  if (sslMatch) {
-    const [, lesson, exercise] = sslMatch;
-    return {
-      filename,
-      type: "exercise",
-      number: exercise,
-      title: `Exercise ${exercise}`,
-      path: `/media/audio-all/Sound and Script/Lesson${lesson}/${filename}`,
-    };
+  if (type === "chapter") {
+    const unit = tocData.toc.units.find((item) => {
+      return item.id === id;
+    });
+    return unit?.chapters.find((item) => {
+      return item.id === id;
+    });
   }
-
-  return null;
 };
- 
+
+const getUnitMediaFiles = (id: string) => {
+  return tocData.toc.units.find((item) => {
+    return item.id === id;
+  });
+};
+
+export { getItemMediaFiles, getUnitMediaFiles };
