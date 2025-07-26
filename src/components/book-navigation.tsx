@@ -1,490 +1,544 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown, ChevronRight, Book } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import {
+  Play,
+  Pause,
+  ArrowLeft,
+  Home,
+  BookOpen,
+  Layers,
+  Volume2,
+  SkipBack,
+  SkipForward,
+} from "lucide-react";
+import audioData from "@/data/auto-generated/audio-files.json";
+import {
+  AudioFile,
+  LessonAudio,
+  getAudioForLesson,
+  parseAudioFilename,
+} from "@/lib/audio-mapper";
+import { AudioPlayer } from "./audio/audio-player";
+type ViewState =
+  | { type: "home" }
+  | { type: "sound-script" }
+  | { type: "sound-script-lesson"; lessonId: string }
+  | { type: "units" }
+  | { type: "unit"; unitId: string }
+  | { type: "chapter"; unitId: string; chapterId: string };
 
-import audioFilesData from "./audio-book-data";
+// type AudioFile = {
+//   filename: string
+//   type: string
+//   title: string
+//   exercise_number?: string
+//   vocabulary_number?: string
+//   path?: string
+// }
 
-// Define types for our data structure
-interface AudioFile {
-  filename: string;
-  title?: string;
-}
+type CurrentAudio = {
+  file: AudioFile;
+  path: string;
+  context: string;
+};
 
-interface Chapter {
-  folder_name: string;
-  files: AudioFile[];
-}
-
-interface Unit {
-  folder_name: string;
-  chapters: Record<string, Chapter>;
-}
-
-interface BookStructure {
-  root_files: AudioFile[];
-  units: Record<string, Unit>;
-  sound_and_script: {
-    lessons: Record<
-      string,
-      {
-        folder_name: string;
-        path: string;
-        files: Array<{
-          filename: string;
-          type: string;
-          exercise_number: string;
-          title: string;
-        }>;
-      }
-    >;
-  };
-}
-
-// The audio book data provided in the JSON file
-const bookMetadata = audioFilesData.structure as BookStructure;
-const bookToc = audioFilesData.structure as BookStructure;
-
-// Main App component
-const BookNavigation = () => {
-  // State to manage the open/close state of the Sound and Script sheet
-  const [isSoundAndScriptSheetOpen, setIsSoundAndScriptSheetOpen] =
-    useState(false);
-  // State to manage the open/close state of the Units sheet
-  const [isUnitsSheetOpen, setIsUnitsSheetOpen] = useState(false);
-  // State to store the currently selected audio file path and title for playback
-  const [currentAudio, setCurrentAudio] = useState<{
-    path: string;
-    title: string;
-  } | null>(null);
-  // State to store the currently selected unit for navigation within the Units sheet
-  const [selectedUnitInSheet, setSelectedUnitInSheet] = useState<string | null>(
-    null
-  );
-  // State to store the currently selected lesson for navigation within the Sound and Script sheet
-  const [selectedLessonInSheet, setSelectedLessonInSheet] = useState<
-    string | null
-  >(null);
-  // State to store the currently selected chapter for navigation within the Units sheet
-  const [selectedChapterInSheet, setSelectedChapterInSheet] = useState<
-    string | null
-  >(null);
-
-  // Ref for the audio element to control playback
+export default function AudioBookNavigator() {
+  const [viewState, setViewState] = useState<ViewState>({ type: "home" });
+  const [currentAudio, setCurrentAudio] = useState<CurrentAudio | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Function to play an audio file
-  const playAudio = (audioFilePath: string, audioTitle: string) => {
-    setCurrentAudio({ path: audioFilePath, title: audioTitle });
-    // Pause any currently playing audio before starting a new one
-    if (audioRef.current) {
-      audioRef.current.pause();
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    const updateDuration = () => setDuration(audio.duration);
+    const handleEnded = () => setIsPlaying(false);
+
+    audio.addEventListener("timeupdate", updateTime);
+    audio.addEventListener("loadedmetadata", updateDuration);
+    audio.addEventListener("ended", handleEnded);
+
+    return () => {
+      audio.removeEventListener("timeupdate", updateTime);
+      audio.removeEventListener("loadedmetadata", updateDuration);
+      audio.removeEventListener("ended", handleEnded);
+    };
+  }, [currentAudio]);
+
+  const playAudio = (file: AudioFile, path: string, context: string) => {
+    setCurrentAudio({ file, path, context });
+    setIsPlaying(true);
+  };
+
+  const togglePlayPause = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
     }
-    // Set the new audio source and play
-    setTimeout(() => {
-      // Small delay to ensure the audio element updates its source
-      if (audioRef.current) {
-        audioRef.current.load(); // Load the new audio source
-        audioRef.current
-          .play()
-          .catch((error) => console.error("Error playing audio:", error));
-      }
-    }, 0);
+    setIsPlaying(!isPlaying);
   };
 
-  // Function to reset sheet navigation when closing
-  const resetSoundAndScriptSheet = () => {
-    setSelectedLessonInSheet(null);
-    setIsSoundAndScriptSheetOpen(false);
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  const resetUnitsSheet = () => {
-    setSelectedUnitInSheet(null);
-    setSelectedChapterInSheet(null);
-    setIsUnitsSheetOpen(false);
-  };
+  const renderHome = () => (
+    <div className="space-y-6">
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">Audio Book Navigator</h1>
+        <p className="text-lg text-muted-foreground">
+          Navigate through your Urdu learning materials
+        </p>
+      </div>
 
-  // Function to get unit icon
-  const getUnitIcon = (unitNumber: number) => {
-    // This is a placeholder - replace with your actual icon components
-    return Book; // Default icon
-  };
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card
+          className="cursor-pointer hover:shadow-lg transition-shadow"
+          onClick={() => setViewState({ type: "sound-script" })}
+        >
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <BookOpen className="h-6 w-6" />
+              Sound and Script
+            </CardTitle>
+            <CardDescription>
+              {audioData.statistics.total_sound_script_lessons} lessons with
+              pronunciation exercises
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex justify-between text-sm text-muted-foreground">
+              <span>Lessons 1-16</span>
+              <Badge variant="secondary">
+                {Object.values(
+                  audioData.structure.sound_and_script.lessons
+                ).reduce((acc, lesson) => acc + lesson.files.length, 0)}{" "}
+                files
+              </Badge>
+            </div>
+          </CardContent>
+        </Card>
 
-  // State for expanded items
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+        <Card
+          className="cursor-pointer hover:shadow-lg transition-shadow"
+          onClick={() => setViewState({ type: "units" })}
+        >
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Layers className="h-6 w-6" />
+              Units
+            </CardTitle>
+            <CardDescription>
+              {audioData.statistics.total_units} units with structured chapters
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex justify-between text-sm text-muted-foreground">
+              <span>
+                {audioData.statistics.total_chapters_with_audio} chapters
+              </span>
+              <Badge variant="secondary">
+                {audioData.statistics.total_exercise_files +
+                  audioData.statistics.total_vocabulary_files}{" "}
+                files
+              </Badge>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
-  // Function to render a unit
-  const renderUnit = (unit: { unit?: number; title?: string }) => {
-    if (unit.unit === undefined) {
-      console.error("Unit number is undefined for:", unit);
-      return null;
-    }
+      {audioData.structure.root_files.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>General Files</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              {audioData.structure.root_files.map((file, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-2 border rounded"
+                >
+                  <span>{file.description}</span>
+                  <AudioPlayer
+                    audioFile={{
+                      filename: file.filename,
+                      type: file.type as "exercise" | "vocabulary",
+                      title: file.description,
+                      number: (index + 1).toString(),
+                      path: file.path,
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
 
-    const itemId = `unit-${unit.unit}`;
-    const isExpanded = expandedItems.has(itemId);
-    const IconComponent = getUnitIcon(unit.unit);
+  const renderSoundScript = () => (
+    <div className="space-y-6">
+      <div className="flex items-center gap-4">
+        <Button
+          variant="outline"
+          onClick={() => setViewState({ type: "home" })}
+        >
+          <ArrowLeft className="h-4 w-4 mr-2" />
+          Back to Home
+        </Button>
+        <h1 className="text-3xl font-bold">Sound and Script Lessons</h1>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {Object.entries(audioData.structure.sound_and_script.lessons).map(
+          ([lessonId, lesson]) => (
+            <Card
+              key={lessonId}
+              className="cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() =>
+                setViewState({ type: "sound-script-lesson", lessonId })
+              }
+            >
+              <CardHeader>
+                <CardTitle>Lesson {lessonId}</CardTitle>
+                <CardDescription>
+                  {lesson.files.length} exercises
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Badge variant="outline">{lesson.folder_name}</Badge>
+              </CardContent>
+            </Card>
+          )
+        )}
+      </div>
+    </div>
+  );
+
+  const renderSoundScriptLesson = (lessonId: number) => {
+    const lesson = Object.values(audioData.structure.sound_and_script.lessons)[
+      lessonId
+    ];
+    if (!lesson) return null;
 
     return (
-      <div key={itemId} className="mb-4">
-        <div
-          className="flex items-center gap-2 p-2 hover:bg-accent rounded-md cursor-pointer"
-          onClick={() => {
-            const newExpanded = new Set(expandedItems);
-            if (isExpanded) {
-              newExpanded.delete(itemId);
-            } else {
-              newExpanded.add(itemId);
-            }
-            setExpandedItems(newExpanded);
-          }}
-        >
-          {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-          <IconComponent className="h-4 w-4" />
-          <span>{unit.title || `Unit ${unit.unit}`}</span>
+      <div className="space-y-6">
+        <div className="flex items-center gap-4">
+          <Button
+            variant="outline"
+            onClick={() => setViewState({ type: "sound-script" })}
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Lessons
+          </Button>
+          <h1 className="text-3xl font-bold">Lesson {lessonId}</h1>
         </div>
-        {isExpanded && (
-          <div className="ml-6 mt-2 space-y-2">
-            {/* Add unit content here */}
-          </div>
+
+        <div className="grid gap-4">
+          {lesson.files.map((file, index) => (
+            <Card key={index}>
+              <CardContent className="flex items-center justify-between p-4">
+                <div>
+                  <h3 className="font-semibold">{file.title}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {file.filename}
+                  </p>
+                </div>
+                <AudioPlayer
+                  audioFile={{
+                    filename: file.filename,
+                    type: file.type as "exercise" | "vocabulary",
+                    title: file.title,
+                    number: (index + 1).toString(),
+                    path: lesson.path + "/" + file.filename,
+                  }}
+                />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const renderUnits = () => (
+    <div className="space-y-6">
+      <div className="flex items-center gap-4">
+        <Button
+          variant="outline"
+          onClick={() => setViewState({ type: "home" })}
+        >
+          <ArrowLeft className="h-4 w-4 mr-2" />
+          Back to Home
+        </Button>
+        <h1 className="text-3xl font-bold">Units</h1>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {Object.entries(audioData.structure.units).map(([unitId, unit]) => {
+          const chapterCount = Object.keys(unit.chapters).length;
+          const fileCount = Object.values(unit.chapters).reduce(
+            (acc, chapter) => acc + chapter.files.length,
+            0
+          );
+
+          return (
+            <Card
+              key={unitId}
+              className="cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => setViewState({ type: "unit", unitId })}
+            >
+              <CardHeader>
+                <CardTitle>Unit {unitId}</CardTitle>
+                <CardDescription>
+                  {chapterCount} chapters • {fileCount} files
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Badge variant="outline">{unit.folder_name}</Badge>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  const renderUnit = (unitId: number) => {
+    const unit = getAudioForLesson(unitId);
+
+    if (!unit) return null;
+
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center gap-4">
+          <Button
+            variant="outline"
+            onClick={() => setViewState({ type: "units" })}
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Units
+          </Button>
+          <h1 className="text-3xl font-bold">Unit {unitId}</h1>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Object.entries(unit).map(([chapterId, chapter]) => (
+            <Card
+              key={chapterId}
+              className="cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() =>
+                setViewState({
+                  type: "chapter",
+                  unitId: unitId.toString(),
+                  chapterId: chapterId.toString(),
+                })
+              }
+            >
+              <CardHeader>
+                <CardTitle>Chapter {chapterId}</CardTitle>
+                <CardDescription>{chapter.files.length} files</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex gap-2">
+                  {chapter.files.some((f: any) => f.type === "exercise") && (
+                    <Badge variant="secondary">Exercises</Badge>
+                  )}
+                  {chapter.files.some((f: any) => f.type === "vocabulary") && (
+                    <Badge variant="outline">Vocabulary</Badge>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const renderChapter = (unitId: string, chapterId: string) => {
+    const chapterFiles = getAudioForLesson(Number(unitId), Number(chapterId));
+    const exercises = chapterFiles.exercises;
+    const vocabulary = chapterFiles.vocabulary;
+
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center gap-4">
+          <Button
+            variant="outline"
+            onClick={() => setViewState({ type: "unit", unitId })}
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Unit {unitId}
+          </Button>
+          <h1 className="text-3xl font-bold">Chapter {chapterId}</h1>
+        </div>
+
+        {exercises.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle>Exercises</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {exercises.map((file, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-2 border rounded"
+                >
+                  <div>
+                    <span className="font-medium">{file.title}</span>
+                    <p className="text-sm text-muted-foreground">
+                      {file.filename}
+                    </p>
+                  </div>
+                  <AudioPlayer audioFile={file} />
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        )}
+
+        {vocabulary.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle>Vocabulary</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {vocabulary.map((file, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-2 border rounded"
+                >
+                  <div>
+                    <span className="font-medium">{file.title}</span>
+                    <p className="text-sm text-muted-foreground">
+                      {file.filename}
+                    </p>
+                  </div>
+                  <AudioPlayer audioFile={file} />
+                </div>
+              ))}
+            </CardContent>
+          </Card>
         )}
       </div>
     );
   };
 
-  // Interface for lesson object
-  interface Lesson {
-    folder_name: string;
-    path: string;
-    files: Array<{
-      filename: string;
-      type: string;
-      exercise_number: string;
-      title: string;
-    }>;
-  }
-
-  // Content for the Sound and Script Sheet
-  const renderSoundAndScriptSheetContent = () => {
-    if (selectedLessonInSheet) {
-      // Get lessons object with proper type assertion
-      const lessonsObj = audioFilesData.structure.sound_and_script
-        .lessons as Record<string, Lesson>;
-
-      // Find the lesson with matching folder_name
-      let lesson: Lesson | null = null;
-      for (const key in lessonsObj) {
-        if (
-          Object.prototype.hasOwnProperty.call(lessonsObj, key) &&
-          lessonsObj[key].folder_name === selectedLessonInSheet
-        ) {
-          lesson = lessonsObj[key];
-          break;
-        }
-      }
-
-      if (!lesson) {
-        return (
-          <div className="p-4">
-            <p>Lesson not found</p>
-          </div>
-        );
-      }
-
-      return (
-        <div className="flex flex-col h-full">
-          <SheetHeader>
-            <SheetTitle>{lesson.folder_name}</SheetTitle>
-            <SheetDescription>Select an audio file to play.</SheetDescription>
-          </SheetHeader>
-          <div className="flex-grow overflow-y-auto p-4 space-y-3">
-            <Button
-              onClick={() => setSelectedLessonInSheet(null)}
-              className="mb-4 bg-yellow-500 hover:bg-yellow-600"
-            >
-              Back to Lessons
-            </Button>
-            {lesson.files.map((file, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between bg-gray-50 p-3 rounded-lg shadow-sm"
-              >
-                <span className="text-gray-800 font-medium">
-                  {file.title || file.filename}
-                </span>
-                <Button
-                  onClick={() =>
-                    playAudio(file.filename, file.title || file.filename)
-                  }
-                  className="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-lg"
-                >
-                  Play
-                </Button>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else {
-      // Display list of lessons
-      return (
-        <div className="flex flex-col h-full">
-          <SheetHeader>
-            <SheetTitle>Sound and Script</SheetTitle>
-            <SheetDescription>
-              Select a lesson to view its audio files.
-            </SheetDescription>
-          </SheetHeader>
-          <div className="flex-grow overflow-y-auto p-4 grid grid-cols-1 gap-4">
-            {Object.entries(
-              audioFilesData.structure.sound_and_script.lessons
-            ).map(([lessonNumber, lesson]) => (
-              <Button
-                key={lessonNumber}
-                onClick={() => setSelectedLessonInSheet(lessonNumber)}
-                className="bg-blue-100 hover:bg-blue-200 text-blue-800"
-              >
-                {lesson.folder_name}
-              </Button>
-            ))}
-          </div>
-        </div>
-      );
-    }
-  };
-
-  // Content for the Units Sheet
-  const renderUnitsSheetContent = () => {
-    if (selectedUnitInSheet && selectedChapterInSheet) {
-      // Display files for a selected chapter
-      // Access units with proper typing
-      const units = (audioFilesData.structure as BookStructure).units;
-      const unit = units[selectedUnitInSheet];
-      if (!unit) return null;
-
-      const chapters = unit.chapters;
-      const chapter = chapters[selectedChapterInSheet];
-      if (!chapter) return null;
-      return (
-        <div className="flex flex-col h-full">
-          <SheetHeader>
-            <SheetTitle>
-              Unit {selectedUnitInSheet} - Chapter {selectedChapterInSheet}
-            </SheetTitle>
-            <SheetDescription>Select an audio file to play.</SheetDescription>
-          </SheetHeader>
-          <div className="flex-grow overflow-y-auto p-4 space-y-3">
-            <Button
-              onClick={() => setSelectedChapterInSheet(null)}
-              className="mb-4 bg-yellow-500 hover:bg-yellow-600"
-            >
-              Back to Chapters
-            </Button>
-            {chapter.files.map((file: any, index: any) => (
-              <div
-                key={index}
-                className="flex items-center justify-between bg-gray-50 p-3 rounded-lg shadow-sm"
-              >
-                <span className="text-gray-800 font-medium">
-                  {file.title || file.filename}
-                </span>
-                <Button
-                  onClick={() =>
-                    playAudio(file.filename, file.title || file.filename)
-                  }
-                  className="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-lg"
-                >
-                  Play
-                </Button>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else if (selectedUnitInSheet) {
-      // Display chapters for a selected unit
-      // Add type assertion to handle string index access
-      const units = audioFilesData.structure.units as Record<string, any>;
-      const unit = units[selectedUnitInSheet];
-      return (
-        <div className="flex flex-col h-full">
-          <SheetHeader>
-            <SheetTitle>{unit.folder_name}</SheetTitle>
-            <SheetDescription>
-              Select a chapter to view its audio files.
-            </SheetDescription>
-          </SheetHeader>
-          <div className="flex-grow overflow-y-auto p-4 grid grid-cols-1 gap-4">
-            <Button
-              onClick={() => setSelectedUnitInSheet(null)}
-              className="mb-4 bg-yellow-500 hover:bg-yellow-600"
-            >
-              Back to Units
-            </Button>
-            {Object.entries(unit.chapters).map(
-              ([chapterNumber, chapter]: any) => (
-                <Button
-                  key={chapterNumber}
-                  onClick={() => setSelectedChapterInSheet(chapterNumber)}
-                  className="bg-green-100 hover:bg-green-200 text-green-800"
-                >
-                  {chapter.folder_name}
-                </Button>
-              )
-            )}
-          </div>
-        </div>
-      );
-    } else {
-      // Display list of units
-      return (
-        <div className="flex flex-col h-full">
-          <SheetHeader>
-            <SheetTitle>Units</SheetTitle>
-            <SheetDescription>
-              Select a unit to view its chapters.
-            </SheetDescription>
-          </SheetHeader>
-          <div className="flex-grow overflow-y-auto p-4 grid grid-cols-1 gap-4">
-            {Object.entries(audioFilesData.structure.units).map(
-              ([unitNumber, unit]) => (
-                <Button
-                  key={unitNumber}
-                  onClick={() => setSelectedUnitInSheet(unitNumber)}
-                  className="bg-blue-100 hover:bg-blue-200 text-blue-800"
-                >
-                  {unit.folder_name}
-                </Button>
-              )
-            )}
-          </div>
-        </div>
-      );
+  const renderCurrentView = () => {
+    switch (viewState.type) {
+      case "home":
+        return renderHome();
+      case "sound-script":
+        return renderSoundScript();
+      case "sound-script-lesson":
+        return renderSoundScriptLesson(Number(viewState.lessonId));
+      case "units":
+        return renderUnits();
+      case "unit":
+        return renderUnit(Number(viewState.unitId));
+      case "chapter":
+        return renderChapter(viewState.unitId, viewState.chapterId);
+      default:
+        return renderHome();
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 flex flex-col items-center justify-center p-4 font-inter">
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-          .font-inter {
-            font-family: 'Inter', sans-serif;
-          }
-        `}
-      </style>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto p-6 pb-32">{renderCurrentView()}</div>
 
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-8 font-inter">
-          Audio Book Navigator
-        </h1>
-        <div className="flex space-x-6 mb-8">
-          <SheetTrigger
-            onClick={() => setIsSoundAndScriptSheetOpen(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            Sound and Script
-          </SheetTrigger>
-          <SheetTrigger
-            onClick={() => setIsUnitsSheetOpen(true)}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
-          >
-            Units
-          </SheetTrigger>
-        </div>
-
-        {audioFilesData.structure.root_files &&
-          audioFilesData.structure.root_files.length > 0 && (
-            <div className="mt-4 w-full max-w-md bg-white p-6 rounded-xl shadow-md">
-              <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-                General Audio Files
-              </h2>
-              {audioFilesData.structure.root_files.map((file, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between bg-gray-50 p-3 rounded-lg mb-2 shadow-sm"
-                >
-                  <span className="text-gray-800 font-medium">
-                    {file.description || file.filename}
-                  </span>
-                  <Button
-                    onClick={() =>
-                      playAudio(
-                        file.filename,
-                        file.description || file.filename
-                      )
-                    }
-                    className="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-lg"
-                  >
-                    Play
-                  </Button>
-                </div>
-              ))}
-            </div>
-          )}
-      </div>
-
-      {/* Sound and Script Sheet */}
-      <Sheet
-        open={isSoundAndScriptSheetOpen}
-        onOpenChange={resetSoundAndScriptSheet}
-      >
-        <SheetContent side="left" className="w-full md:w-1/3">
-          {renderSoundAndScriptSheetContent()}
-        </SheetContent>
-      </Sheet>
-
-      {/* Units Sheet */}
-      <Sheet open={isUnitsSheetOpen} onOpenChange={resetUnitsSheet}>
-        <SheetContent side="right" className="w-full md:w-1/3">
-          {renderUnitsSheetContent()}
-        </SheetContent>
-      </Sheet>
-
-      {/* Audio Player Section */}
+      {/* Audio Player */}
       {currentAudio && (
-        <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 flex flex-col items-center shadow-lg z-50">
-          <h3 className="text-lg font-semibold mb-2">
-            Now Playing: {currentAudio.title}
-          </h3>
+        <>
           <audio
             ref={audioRef}
-            controls
-            src={currentAudio.path}
-            className="w-full max-w-xl"
-            onEnded={() => setCurrentAudio(null)} // Clear current audio when it ends
-            onError={(e) => console.error("Audio error:", e)}
-          >
-            Your browser does not support the audio element.
-          </audio>
-          <Button
-            onClick={() => {
-              setCurrentAudio(null);
-              if (audioRef.current) {
-                audioRef.current.pause();
-              }
-            }}
-            className="mt-3 bg-red-500 hover:bg-red-600 text-white text-sm py-1 px-4 rounded-lg"
-          >
-            Stop Playback
-          </Button>
-        </div>
+            src={`/placeholder.mp3?query=${encodeURIComponent(
+              currentAudio.file.filename
+            )}`}
+            autoPlay
+          />
+
+          <div className="fixed bottom-0 left-0 right-0 bg-background border-t p-4">
+            <div className="container mx-auto">
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setViewState({ type: "home" })}
+                >
+                  <Home className="h-4 w-4" />
+                </Button>
+
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <h4 className="font-semibold">
+                        {currentAudio.file.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {currentAudio.context}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Button variant="outline" size="sm">
+                        <SkipBack className="h-4 w-4" />
+                      </Button>
+                      <Button onClick={togglePlayPause}>
+                        {isPlaying ? (
+                          <Pause className="h-4 w-4" />
+                        ) : (
+                          <Play className="h-4 w-4" />
+                        )}
+                      </Button>
+                      <Button variant="outline" size="sm">
+                        <SkipForward className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-muted-foreground">
+                      {formatTime(currentTime)}
+                    </span>
+                    <Progress
+                      value={duration ? (currentTime / duration) * 100 : 0}
+                      className="flex-1"
+                    />
+                    <span className="text-sm text-muted-foreground">
+                      {formatTime(duration)}
+                    </span>
+                    <Volume2 className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
-};
-
-export default BookNavigation;
+}

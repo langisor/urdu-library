@@ -98,13 +98,3 @@ export const getAudioForLesson = (
 };
 
 // Mock data based on the tree structure - in a real app, this would come from a file manifest
-function getUnitChapterAudioFiles(unitNumber: number, chapterNumber: number) {
-  // search audioFilesData
-}
-function getUnitAudioFiles(unitNumber: number) {
-  const Units = audioFilesData.structure.units;
-  // search audioFilesData
-  for (const unit of Object.keys(Units)) {
-     console.log("unit",unit);
-    }
-}
