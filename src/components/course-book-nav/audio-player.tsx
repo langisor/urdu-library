@@ -1,11 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Play,
   Pause,
@@ -14,47 +11,56 @@ import {
   SkipForward,
   Volume2,
   X,
-  List,
-  Shuffle,
-  Repeat,
-  Repeat1,
-  Trash2,
-  ChevronUp,
-  ChevronDown,
+  Heart,
 } from "lucide-react";
-import type { AudioPlayerProps } from "./audio-data";
-import type { FileType } from "./audio-data";
+import type {
+  AudioPlayerProps,
+  AudioPlayerState,
+  FileTypeColor,
+  KeyboardEventHandler,
+  ClickEventHandler,
+} from "@/types/audio-data";
+import * as React from "react";
+import { useFavorites } from "@/hooks/use-favorites";
 
 export function AudioPlayer({
   currentAudio,
-  queue,
   onClose,
   onHomeClick,
-  onQueueUpdate,
-  onPlayFromQueue,
-}: AudioPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [volume, setVolume] = useState(1);
-  const [showQueue, setShowQueue] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+}: AudioPlayerProps): React.ReactNode | null {
+  const [playerState, setPlayerState] = React.useState<AudioPlayerState>({
+    isPlaying: false,
+    currentTime: 0,
+    duration: 0,
+    volume: 1,
+  });
 
-  useEffect(() => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const favorites = useFavorites();
+
+  const updatePlayerState = React.useCallback(
+    (updates: Partial<AudioPlayerState>): void => {
+      setPlayerState((prev) => ({ ...prev, ...updates }));
+    },
+    []
+  );
+
+  React.useEffect((): (() => void) | void => {
     const video = videoRef.current;
     if (!video) return;
 
-    const updateTime = () => setCurrentTime(video.currentTime);
-    const updateDuration = () => setDuration(video.duration);
-    const handleEnded = () => {
-      setIsPlaying(false);
+    const updateTime = (): void =>
+      updatePlayerState({ currentTime: video.currentTime });
+    const updateDuration = (): void =>
+      updatePlayerState({ duration: video.duration });
+    const handleEnded = (): void => {
+      updatePlayerState({ isPlaying: false });
       handleTrackEnd();
     };
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
-    const handleLoadStart = () => {
-      setCurrentTime(0);
-      setDuration(0);
+    const handlePlay = (): void => updatePlayerState({ isPlaying: true });
+    const handlePause = (): void => updatePlayerState({ isPlaying: false });
+    const handleLoadStart = (): void => {
+      updatePlayerState({ currentTime: 0, duration: 0 });
     };
 
     video.addEventListener("timeupdate", updateTime);
@@ -64,7 +70,7 @@ export function AudioPlayer({
     video.addEventListener("pause", handlePause);
     video.addEventListener("loadstart", handleLoadStart);
 
-    return () => {
+    return (): void => {
       video.removeEventListener("timeupdate", updateTime);
       video.removeEventListener("loadedmetadata", updateDuration);
       video.removeEventListener("ended", handleEnded);
@@ -72,248 +78,163 @@ export function AudioPlayer({
       video.removeEventListener("pause", handlePause);
       video.removeEventListener("loadstart", handleLoadStart);
     };
-  }, [currentAudio]);
+  }, [currentAudio, updatePlayerState]);
 
-  useEffect(() => {
+  React.useEffect((): void => {
     const video = videoRef.current;
     if (!video || !currentAudio) return;
 
     // Auto-play when new audio is loaded
-    const playPromise = video.play();
+    const playPromise: Promise<void> | undefined = video.play();
     if (playPromise !== undefined) {
-      playPromise.catch((error) => {
+      playPromise.catch((error: Error): void => {
         console.log("Auto-play prevented:", error);
-        setIsPlaying(false);
+        updatePlayerState({ isPlaying: false });
       });
     }
-  }, [currentAudio]);
+  }, [currentAudio, updatePlayerState]);
 
-  const handleTrackEnd = () => {
-    if (queue.repeatMode === "one") {
-      // Repeat current track
-      const video = videoRef.current;
-      if (video) {
-        video.currentTime = 0;
-        video.play();
-        setIsPlaying(true);
+  // Keyboard shortcuts
+  React.useEffect((): (() => void) => {
+    const handleKeyDown: KeyboardEventHandler = (
+      event: KeyboardEvent
+    ): void => {
+      // Only handle keyboard shortcuts when audio player is active
+      if (!currentAudio) return;
+
+      // Prevent default behavior if we're handling the key
+      const isHandled: boolean = [
+        "Space",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown",
+      ].includes(event.code);
+
+      // Don't handle shortcuts if user is typing in an input field
+      const activeElement: Element | null = document.activeElement;
+      const isInputFocused: boolean =
+        activeElement !== null &&
+        (activeElement.tagName === "INPUT" ||
+          activeElement.tagName === "TEXTAREA" ||
+          activeElement.getAttribute("contenteditable") === "true");
+
+      if (isInputFocused) return;
+
+      if (isHandled) {
+        event.preventDefault();
       }
-      return;
-    }
 
-    // Move to next track
-    playNext();
-  };
-
-  const playNext = () => {
-    if (queue.items.length === 0) return;
-
-    let nextIndex = queue.currentIndex + 1;
-
-    if (nextIndex >= queue.items.length) {
-      if (queue.repeatMode === "all") {
-        nextIndex = 0;
-      } else {
-        // End of queue
-        setIsPlaying(false);
-        return;
+      switch (event.code) {
+        case "Space":
+          togglePlayPause();
+          break;
+        case "ArrowLeft":
+          skipBackward();
+          break;
+        case "ArrowRight":
+          skipForward();
+          break;
+        case "ArrowUp":
+          adjustVolume(0.1);
+          break;
+        case "ArrowDown":
+          adjustVolume(-0.1);
+          break;
       }
-    }
-
-    onPlayFromQueue(nextIndex);
-  };
-
-  const playPrevious = () => {
-    if (queue.items.length === 0) return;
-
-    let prevIndex = queue.currentIndex - 1;
-
-    if (prevIndex < 0) {
-      if (queue.repeatMode === "all") {
-        prevIndex = queue.items.length - 1;
-      } else {
-        prevIndex = 0;
-      }
-    }
-
-    onPlayFromQueue(prevIndex);
-  };
-
-  const toggleShuffle = () => {
-    const newQueue = { ...queue, isShuffled: !queue.isShuffled };
-
-    if (newQueue.isShuffled) {
-      // Shuffle the queue while keeping current track at current position
-      const currentItem = queue.items[queue.currentIndex];
-      const otherItems = queue.items.filter(
-        (_, index) => index !== queue.currentIndex
-      );
-      const shuffledOthers = [...otherItems].sort(() => Math.random() - 0.5);
-
-      newQueue.items = [currentItem, ...shuffledOthers];
-      newQueue.currentIndex = 0;
-    } else {
-      // Restore original order (this is simplified - in a real app you'd store the original order)
-      newQueue.items = [...queue.items].sort((a, b) =>
-        a.id.localeCompare(b.id)
-      );
-      // Find current item in restored order
-      const currentItem = currentAudio;
-      if (currentItem) {
-        newQueue.currentIndex = newQueue.items.findIndex(
-          (item) => item.file.filename === currentItem.file.filename
-        );
-      }
-    }
-
-    onQueueUpdate(newQueue);
-  };
-
-  const toggleRepeat = () => {
-    let newRepeatMode;
-
-    switch (queue.repeatMode) {
-      case "none":
-        newRepeatMode = "all";
-        break;
-      case "all":
-        newRepeatMode = "one";
-        break;
-      case "one":
-        newRepeatMode = "none";
-        break;
-    }
-
-    onQueueUpdate({
-      ...queue,
-      repeatMode: newRepeatMode as "none" | "one" | "all",
-    });
-  };
-
-  const removeFromQueue = (index: number) => {
-    const newItems = queue.items.filter((_, i) => i !== index);
-    let newCurrentIndex = queue.currentIndex;
-
-    if (index < queue.currentIndex) {
-      newCurrentIndex = queue.currentIndex - 1;
-    } else if (index === queue.currentIndex && newItems.length > 0) {
-      // If removing current item, adjust index
-      if (newCurrentIndex >= newItems.length) {
-        newCurrentIndex = newItems.length - 1;
-      }
-    }
-
-    const newQueue = {
-      ...queue,
-      items: newItems,
-      currentIndex: Math.max(0, newCurrentIndex),
     };
 
-    onQueueUpdate(newQueue);
+    // Add event listener to document
+    document.addEventListener("keydown", handleKeyDown);
 
-    // If we removed the current track and there are still items, play the new current
-    if (index === queue.currentIndex && newItems.length > 0) {
-      onPlayFromQueue(newQueue.currentIndex);
-    } else if (newItems.length === 0) {
-      onClose();
-    }
-  };
+    // Cleanup
+    return (): void => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [currentAudio, playerState.isPlaying, playerState.volume]);
 
-  const moveQueueItem = (fromIndex: number, toIndex: number) => {
-    if (fromIndex === toIndex) return;
+  const handleTrackEnd = React.useCallback((): void => {
+    updatePlayerState({ isPlaying: false });
+  }, [updatePlayerState]);
 
-    const newItems = [...queue.items];
-    const [movedItem] = newItems.splice(fromIndex, 1);
-    newItems.splice(toIndex, 0, movedItem);
-
-    // Adjust current index
-    let newCurrentIndex = queue.currentIndex;
-    if (fromIndex === queue.currentIndex) {
-      newCurrentIndex = toIndex;
-    } else if (
-      fromIndex < queue.currentIndex &&
-      toIndex >= queue.currentIndex
-    ) {
-      newCurrentIndex = queue.currentIndex - 1;
-    } else if (
-      fromIndex > queue.currentIndex &&
-      toIndex <= queue.currentIndex
-    ) {
-      newCurrentIndex = queue.currentIndex + 1;
-    }
-
-    onQueueUpdate({
-      ...queue,
-      items: newItems,
-      currentIndex: newCurrentIndex,
-    });
-  };
-
-  const clearQueue = () => {
-    onQueueUpdate({
-      ...queue,
-      items: [],
-      currentIndex: 0,
-    });
-    onClose();
-  };
-
-  const togglePlayPause = () => {
+  const togglePlayPause = React.useCallback((): void => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (isPlaying) {
+    if (playerState.isPlaying) {
       video.pause();
     } else {
-      const playPromise = video.play();
+      const playPromise: Promise<void> | undefined = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch((error) => {
+        playPromise.catch((error: Error): void => {
           console.error("Play failed:", error);
-          setIsPlaying(false);
+          updatePlayerState({ isPlaying: false });
         });
       }
     }
-  };
+  }, [playerState.isPlaying, updatePlayerState]);
 
-  const handleSeek = (value: number[]) => {
-    const video = videoRef.current;
-    if (!video || !duration) return;
+  const handleSeek = React.useCallback(
+    (value: number[]): void => {
+      const video = videoRef.current;
+      if (!video || !playerState.duration) return;
 
-    const newTime = (value[0] / 100) * duration;
-    video.currentTime = newTime;
-    setCurrentTime(newTime);
-  };
+      const newTime: number = (value[0] / 100) * playerState.duration;
+      video.currentTime = newTime;
+      updatePlayerState({ currentTime: newTime });
+    },
+    [playerState.duration, updatePlayerState]
+  );
 
-  const handleVolumeChange = (value: number[]) => {
-    const video = videoRef.current;
-    if (!video) return;
+  const handleVolumeChange = React.useCallback(
+    (value: number[]): void => {
+      const video = videoRef.current;
+      if (!video) return;
 
-    const newVolume = value[0] / 100;
-    video.volume = newVolume;
-    setVolume(newVolume);
-  };
+      const newVolume: number = value[0] / 100;
+      video.volume = newVolume;
+      updatePlayerState({ volume: newVolume });
+    },
+    [updatePlayerState]
+  );
 
-  const skipBackward = () => {
+  const adjustVolume = React.useCallback(
+    (delta: number): void => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      const newVolume: number = Math.max(
+        0,
+        Math.min(1, playerState.volume + delta)
+      );
+      video.volume = newVolume;
+      updatePlayerState({ volume: newVolume });
+    },
+    [playerState.volume, updatePlayerState]
+  );
+
+  const skipBackward = React.useCallback((): void => {
     const video = videoRef.current;
     if (!video) return;
 
     video.currentTime = Math.max(0, video.currentTime - 10);
-  };
+  }, []);
 
-  const skipForward = () => {
+  const skipForward = React.useCallback((): void => {
     const video = videoRef.current;
     if (!video) return;
 
-    video.currentTime = Math.min(duration, video.currentTime + 10);
-  };
+    video.currentTime = Math.min(playerState.duration, video.currentTime + 10);
+  }, [playerState.duration]);
 
-  const formatTime = (time: number) => {
+  const formatTime = React.useCallback((time: number): string => {
     if (!isFinite(time)) return "0:00";
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
+    const minutes: number = Math.floor(time / 60);
+    const seconds: number = Math.floor(time % 60);
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-  };
+  }, []);
 
-  const getFileTypeColor = (type: FileType) => {
+  const getFileTypeColor = React.useCallback((type: string): FileTypeColor => {
     switch (type) {
       case "exercise":
         return "default";
@@ -324,22 +245,57 @@ export function AudioPlayer({
       default:
         return "outline";
     }
-  };
+  }, []);
 
-  const getRepeatIcon = () => {
-    switch (queue.repeatMode) {
-      case "one":
-        return <Repeat1 className="h-4 w-4" />;
-      case "all":
-        return <Repeat className="h-4 w-4" />;
-      default:
-        return <Repeat className="h-4 w-4" />;
+  const handleProgressClick: ClickEventHandler = React.useCallback(
+    (e: React.MouseEvent): void => {
+      const rect: DOMRect = e.currentTarget.getBoundingClientRect();
+      const percent: number = ((e.clientX - rect.left) / rect.width) * 100;
+      handleSeek([percent]);
+    },
+    [handleSeek]
+  );
+
+  const handleVolumeClick: ClickEventHandler = React.useCallback(
+    (e: React.MouseEvent): void => {
+      const rect: DOMRect = e.currentTarget.getBoundingClientRect();
+      const percent: number = ((e.clientX - rect.left) / rect.width) * 100;
+      handleVolumeChange([percent]);
+    },
+    [handleVolumeChange]
+  );
+
+  const toggleFavorite = React.useCallback((): void => {
+    if (!currentAudio) return;
+
+    const isFav = favorites.isFavorite(
+      currentAudio.file.filename,
+      currentAudio.path
+    );
+
+    if (isFav) {
+      // Find and remove the favorite
+      const favoriteItem = favorites.items.find(
+        (item) =>
+          item.file.filename === currentAudio.file.filename &&
+          item.path === currentAudio.path
+      );
+      if (favoriteItem) {
+        favorites.removeFromFavorites(favoriteItem.id);
+      }
+    } else {
+      // Add to favorites
+      favorites.addToFavorites({
+        file: currentAudio.file,
+        path: currentAudio.path,
+        context: currentAudio.context,
+      });
     }
-  };
+  }, [currentAudio, favorites]);
 
-  const getRepeatColor = () => {
-    return queue.repeatMode !== "none" ? "default" : "outline";
-  };
+  const isFavorited = currentAudio
+    ? favorites.isFavorite(currentAudio.file.filename, currentAudio.path)
+    : false;
 
   if (!currentAudio) return null;
 
@@ -354,112 +310,6 @@ export function AudioPlayer({
         preload="metadata"
         style={{ display: "none" }}
       />
-
-      {/* Queue Panel */}
-      {showQueue && (
-        <div className="fixed bottom-32 right-4 w-96 max-h-96 bg-background border rounded-lg shadow-lg">
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-lg">
-                  Queue ({queue.items.length})
-                </CardTitle>
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={clearQueue}
-                    disabled={queue.items.length === 0}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setShowQueue(false)}
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <ScrollArea className="h-64">
-                <div className="space-y-2">
-                  {queue.items.map((item, index) => (
-                    <div
-                      key={item.id}
-                      className={`flex items-center gap-2 p-2 rounded border ${
-                        index === queue.currentIndex
-                          ? "bg-muted border-primary"
-                          : ""
-                      }`}
-                    >
-                      <div className="flex flex-col gap-1">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() =>
-                            moveQueueItem(index, Math.max(0, index - 1))
-                          }
-                          disabled={index === 0}
-                        >
-                          <ChevronUp className="h-3 w-3" />
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() =>
-                            moveQueueItem(
-                              index,
-                              Math.min(queue.items.length - 1, index + 1)
-                            )
-                          }
-                          disabled={index === queue.items.length - 1}
-                        >
-                          <ChevronDown className="h-3 w-3" />
-                        </Button>
-                      </div>
-
-                      <div
-                        className="flex-1 min-w-0 cursor-pointer"
-                        onClick={() => onPlayFromQueue(index)}
-                      >
-                        <p className="font-medium text-sm truncate">
-                          {item.file.title}
-                        </p>
-                        <p className="text-xs text-muted-foreground truncate">
-                          {item.context}
-                        </p>
-                        <Badge
-                          variant={getFileTypeColor(item.file.type)}
-                          className="text-xs mt-1"
-                        >
-                          {item.file.type}
-                        </Badge>
-                      </div>
-
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => removeFromQueue(index)}
-                      >
-                        <X className="h-3 w-3" />
-                      </Button>
-                    </div>
-                  ))}
-
-                  {queue.items.length === 0 && (
-                    <div className="text-center text-muted-foreground py-8">
-                      Queue is empty
-                    </div>
-                  )}
-                </div>
-              </ScrollArea>
-            </CardContent>
-          </Card>
-        </div>
-      )}
 
       {/* Audio Player UI */}
       <div className="fixed bottom-0 left-0 right-0 bg-background border-t shadow-lg">
@@ -513,11 +363,6 @@ export function AudioPlayer({
                         Vocab {currentAudio.file.vocabulary_number}
                       </Badge>
                     )}
-                    {queue.items.length > 1 && (
-                      <Badge variant="secondary" className="text-xs">
-                        {queue.currentIndex + 1} of {queue.items.length}
-                      </Badge>
-                    )}
                   </div>
                 </div>
 
@@ -526,26 +371,34 @@ export function AudioPlayer({
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={playPrevious}
-                    disabled={queue.items.length <= 1}
-                    title="Previous track"
+                    onClick={toggleFavorite}
+                    title={
+                      isFavorited ? "Remove from favorites" : "Add to favorites"
+                    }
+                    className={
+                      isFavorited ? "text-red-500 hover:text-red-600" : ""
+                    }
                   >
-                    <SkipBack className="h-4 w-4" />
+                    <Heart
+                      className={`h-4 w-4 ${isFavorited ? "fill-current" : ""}`}
+                    />
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={skipBackward}
-                    title="Skip back 10s"
+                    title="Skip back 10s (←)"
                   >
                     <SkipBack className="h-4 w-4" />
                   </Button>
                   <Button
                     onClick={togglePlayPause}
                     size="lg"
-                    title={isPlaying ? "Pause" : "Play"}
+                    title={
+                      playerState.isPlaying ? "Pause (Space)" : "Play (Space)"
+                    }
                   >
-                    {isPlaying ? (
+                    {playerState.isPlaying ? (
                       <Pause className="h-5 w-5" />
                     ) : (
                       <Play className="h-5 w-5" />
@@ -555,16 +408,7 @@ export function AudioPlayer({
                     variant="outline"
                     size="sm"
                     onClick={skipForward}
-                    title="Skip forward 10s"
-                  >
-                    <SkipForward className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={playNext}
-                    disabled={queue.items.length <= 1}
-                    title="Next track"
+                    title="Skip forward 10s (→)"
                   >
                     <SkipForward className="h-4 w-4" />
                   </Button>
@@ -574,70 +418,54 @@ export function AudioPlayer({
               {/* Progress Bar */}
               <div className="flex items-center gap-3">
                 <span className="text-sm text-muted-foreground min-w-[40px]">
-                  {formatTime(currentTime)}
+                  {formatTime(playerState.currentTime)}
                 </span>
                 <div className="flex-1">
                   <Progress
-                    value={duration ? (currentTime / duration) * 100 : 0}
+                    value={
+                      playerState.duration
+                        ? (playerState.currentTime / playerState.duration) * 100
+                        : 0
+                    }
                     className="cursor-pointer"
-                    onClick={(e) => {
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      const percent =
-                        ((e.clientX - rect.left) / rect.width) * 100;
-                      handleSeek([percent]);
-                    }}
+                    onClick={handleProgressClick}
                   />
                 </div>
                 <span className="text-sm text-muted-foreground min-w-[40px]">
-                  {formatTime(duration)}
+                  {formatTime(playerState.duration)}
                 </span>
-
-                {/* Queue Controls */}
-                <div className="flex items-center gap-2 ml-4">
-                  <Button
-                    variant={queue.isShuffled ? "default" : "outline"}
-                    size="sm"
-                    onClick={toggleShuffle}
-                    title="Shuffle"
-                  >
-                    <Shuffle className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant={getRepeatColor()}
-                    size="sm"
-                    onClick={toggleRepeat}
-                    title={`Repeat: ${queue.repeatMode}`}
-                  >
-                    {getRepeatIcon()}
-                  </Button>
-                  <Button
-                    variant={showQueue ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setShowQueue(!showQueue)}
-                    title="Show queue"
-                  >
-                    <List className="h-4 w-4" />
-                  </Button>
-                </div>
 
                 {/* Volume Control */}
                 <div className="flex items-center gap-2 ml-4">
                   <Volume2 className="h-4 w-4 text-muted-foreground" />
                   <div className="w-20">
                     <Progress
-                      value={volume * 100}
+                      value={playerState.volume * 100}
                       className="cursor-pointer"
-                      onClick={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const percent =
-                          ((e.clientX - rect.left) / rect.width) * 100;
-                        handleVolumeChange([percent]);
-                      }}
+                      onClick={handleVolumeClick}
+                      title={`Volume: ${Math.round(
+                        playerState.volume * 100
+                      )}% (↑↓)`}
                     />
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Keyboard Shortcuts Help */}
+        <div className="container mx-auto px-4 pb-2">
+          <div className="text-xs text-muted-foreground text-center">
+            Keyboard shortcuts:{" "}
+            <kbd className="px-1 py-0.5 bg-muted rounded text-xs">Space</kbd>{" "}
+            Play/Pause •
+            <kbd className="px-1 py-0.5 bg-muted rounded text-xs mx-1">←</kbd>{" "}
+            Skip back •
+            <kbd className="px-1 py-0.5 bg-muted rounded text-xs">→</kbd> Skip
+            forward •
+            <kbd className="px-1 py-0.5 bg-muted rounded text-xs mx-1">↑↓</kbd>{" "}
+            Volume
           </div>
         </div>
       </div>

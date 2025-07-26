@@ -1,65 +1,55 @@
-"use client";
+"use client"
 
-import { useState, useMemo, useCallback } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import {
-  SearchIcon,
-  Play,
-  Filter,
-  X,
-  ArrowRight,
-  BookOpen,
-  Layers,
-  FileAudio,
-} from "lucide-react";
+import type React from "react"
+
+import { useState, useMemo, useCallback } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Separator } from "@/components/ui/separator"
+import { SearchIcon, Play, Filter, X, ArrowRight, BookOpen, Layers, FileAudio } from "lucide-react"
 import type {
   SearchComponentProps,
   SearchResult,
   SearchFilters,
-  FileType,
-} from "./audio-data";
+  SearchState,
+  FileTypeColor,
+  MatchType,
+  ChangeEventHandler,
+  SelectChangeHandler,
+  ClickEventHandler,
+} from "@/types/audio-data"
+import type { JSX } from "react/jsx-runtime" // Import JSX to fix the undeclared variable error
+import { AudioFile } from "@/types/audio-data"
 
-export function SearchComponent({
-  audioData,
-  onPlayAudio,
-  onNavigate,
-}: SearchComponentProps) {
-  const [query, setQuery] = useState<string>("");
-  const [filters, setFilters] = useState<SearchFilters>({
-    type: "all" as const,
-    source: "all" as const,
-  });
-  const [showFilters, setShowFilters] = useState(false);
+export function SearchComponent({ audioData, onPlayAudio, onNavigate }: SearchComponentProps): JSX.Element {
+  const [searchState, setSearchState] = useState<SearchState>({
+    query: "",
+    filters: {
+      type: "all",
+      source: "all",
+    },
+    showFilters: false,
+  })
+
+  const updateSearchState = useCallback((updates: Partial<SearchState>): void => {
+    setSearchState((prev) => ({ ...prev, ...updates }))
+  }, [])
 
   // Create searchable index from audio data
-  const searchIndex = useMemo(() => {
-    const results: SearchResult[] = [];
+  const searchIndex = useMemo((): SearchResult[] => {
+    const results: SearchResult[] = []
 
     // Index root files
-    audioData.structure.root_files.forEach((file) => {
+    audioData.structure.root_files.forEach((file ): void => {
       results.push({
         id: `root-${file.filename}`,
         file: {
           filename: file.filename,
-          type: "general",
+          type: file.type as "exercise" | "vocabulary" | "general",
           title: file.description,
         },
         path: file.path,
@@ -67,30 +57,28 @@ export function SearchComponent({
         matchType: "title",
         matchText: file.description,
         relevanceScore: 0,
-      });
-    });
+      })
+    })
 
     // Index Sound and Script lessons
-    Object.entries(audioData.structure.sound_and_script.lessons).forEach(
-      ([lessonId, lesson]) => {
-        lesson.files.forEach((file) => {
-          results.push({
-            id: `ssl-${lessonId}-${file.filename}`,
-            file,
-            path: `${lesson.path}/${file.filename}`,
-            context: `Sound & Script - Lesson ${lessonId}`,
-            matchType: "title",
-            matchText: file.title,
-            relevanceScore: 0,
-          });
-        });
-      }
-    );
+    Object.entries(audioData.structure.sound_and_script.lessons).forEach(([lessonId, lesson]): void => {
+      lesson.files.forEach((file: AudioFile): void => {
+        results.push({
+          id: `ssl-${lessonId}-${file.filename}`,
+          file,
+          path: `${lesson.path}/${file.filename}`,
+          context: `Sound & Script - Lesson ${lessonId}`,
+          matchType: "title",
+          matchText: file.title,
+          relevanceScore: 0,
+        })
+      })
+    })
 
     // Index Units
-    Object.entries(audioData.structure.units).forEach(([unitId, unit]) => {
-      Object.entries(unit.chapters).forEach(([chapterId, chapter]) => {
-        chapter.files.forEach((file) => {
+    Object.entries(audioData.structure.units).forEach(([unitId, unit]): void => {
+      Object.entries(unit.chapters).forEach(([chapterId, chapter]): void => {
+        chapter.files.forEach((file: AudioFile): void => {
           results.push({
             id: `unit-${unitId}-${chapterId}-${file.filename}`,
             file,
@@ -99,178 +87,229 @@ export function SearchComponent({
             matchType: "title",
             matchText: file.title,
             relevanceScore: 0,
-          });
-        });
-      });
-    });
+          })
+        })
+      })
+    })
 
-    return results;
-  }, [audioData]);
+    return results
+  }, [audioData])
 
   // Search function with relevance scoring
-  const searchResults = useMemo(() => {
-    if (!query.trim()) return [];
+  const searchResults = useMemo((): SearchResult[] => {
+    if (!searchState.query.trim()) return []
 
-    const searchTerm = query.toLowerCase().trim();
-    const results: SearchResult[] = [];
+    const searchTerm: string = searchState.query.toLowerCase().trim()
+    const results: SearchResult[] = []
 
-    searchIndex.forEach((item) => {
-      let relevanceScore = 0;
-      let matchType = "title";
-      let matchText = "";
+    searchIndex.forEach((item): void => {
+      let relevanceScore = 0
+      let matchType: MatchType = "title"
+      let matchText = ""
 
       // Check title match
       if (item.file.title.toLowerCase().includes(searchTerm)) {
-        relevanceScore +=
-          item.file.title.toLowerCase() === searchTerm ? 100 : 80;
-        matchType = "title";
-        matchText = item.file.title;
+        relevanceScore += item.file.title.toLowerCase() === searchTerm ? 100 : 80
+        matchType = "title"
+        matchText = item.file.title
       }
 
       // Check filename match
       if (item.file.filename.toLowerCase().includes(searchTerm)) {
-        relevanceScore +=
-          item.file.filename.toLowerCase() === searchTerm ? 90 : 60;
+        relevanceScore += item.file.filename.toLowerCase() === searchTerm ? 90 : 60
         if (relevanceScore < 60) {
-          matchType = "filename";
-          matchText = item.file.filename;
+          matchType = "filename"
+          matchText = item.file.filename
         }
       }
 
       // Check context match
       if (item.context.toLowerCase().includes(searchTerm)) {
-        relevanceScore += 40;
+        relevanceScore += 40
         if (relevanceScore < 40) {
-          matchType = "context";
-          matchText = item.context;
+          matchType = "context"
+          matchText = item.context
         }
       }
 
       // Check exercise number match
-      if (
-        item.file.exercise_number &&
-        item.file.exercise_number.toLowerCase().includes(searchTerm)
-      ) {
-        relevanceScore += 70;
-        matchType = "exercise_number";
-        matchText = `Exercise ${item.file.exercise_number}`;
+      if (item.file.exercise_number && item.file.exercise_number.toLowerCase().includes(searchTerm)) {
+        relevanceScore += 70
+        matchType = "exercise_number"
+        matchText = `Exercise ${item.file.exercise_number}`
       }
 
       // Check vocabulary number match
-      if (
-        item.file.vocabulary_number &&
-        item.file.vocabulary_number.toLowerCase().includes(searchTerm)
-      ) {
-        relevanceScore += 70;
-        matchType = "vocabulary_number";
-        matchText = `Vocabulary ${item.file.vocabulary_number}`;
+      if (item.file.vocabulary_number && item.file.vocabulary_number.toLowerCase().includes(searchTerm)) {
+        relevanceScore += 70
+        matchType = "vocabulary_number"
+        matchText = `Vocabulary ${item.file.vocabulary_number}`
       }
 
       // Apply filters
       if (relevanceScore > 0) {
         // Type filter
-        if (filters.type !== "all" && item.file.type !== filters.type) {
-          return;
+        if (searchState.filters.type !== "all" && item.file.type !== searchState.filters.type) {
+          return
         }
 
         // Source filter
-        if (filters.source !== "all") {
-          if (
-            filters.source === "sound-script" &&
-            !item.context.includes("Sound & Script")
-          ) {
-            return;
+        if (searchState.filters.source !== "all") {
+          if (searchState.filters.source === "sound-script" && !item.context.includes("Sound & Script")) {
+            return
           }
-          if (filters.source === "units" && !item.context.includes("Unit")) {
-            return;
+          if (searchState.filters.source === "units" && !item.context.includes("Unit")) {
+            return
           }
         }
 
         // Unit filter
-        if (filters.unit && !item.context.includes(`Unit ${filters.unit}`)) {
-          return;
+        if (searchState.filters.unit && !item.context.includes(`Unit ${searchState.filters.unit}`)) {
+          return
         }
 
         results.push({
           ...item,
-          matchType: matchType as any,
+          matchType,
           matchText,
           relevanceScore,
-        });
+        })
       }
-    });
+    })
 
     // Sort by relevance score (highest first)
-    return results.sort((a, b) => b.relevanceScore - a.relevanceScore);
-  }, [query, filters, searchIndex]);
+    return results.sort((a: SearchResult, b: SearchResult): number => b.relevanceScore - a.relevanceScore)
+  }, [searchState.query, searchState.filters, searchIndex])
 
-  const getFileTypeColor = (type: FileType) => {
+  const getFileTypeColor = useCallback((type: string): FileTypeColor => {
     switch (type) {
       case "exercise":
-        return "default";
+        return "default"
       case "vocabulary":
-        return "secondary";
+        return "secondary"
       case "general":
-        return "outline";
+        return "outline"
       default:
-        return "outline";
+        return "outline"
     }
-  };
+  }, [])
 
-  const getMatchTypeIcon = (matchType: string) => {
+  const getMatchTypeIcon = useCallback((matchType: MatchType): JSX.Element => {
     switch (matchType) {
       case "title":
-        return <FileAudio className="h-3 w-3" />;
+        return <FileAudio className="h-3 w-3" />
       case "filename":
-        return <FileAudio className="h-3 w-3" />;
+        return <FileAudio className="h-3 w-3" />
       case "context":
-        return <ArrowRight className="h-3 w-3" />;
+        return <ArrowRight className="h-3 w-3" />
       case "exercise_number":
-        return <BookOpen className="h-3 w-3" />;
+        return <BookOpen className="h-3 w-3" />
       case "vocabulary_number":
-        return <Layers className="h-3 w-3" />;
+        return <Layers className="h-3 w-3" />
       default:
-        return <FileAudio className="h-3 w-3" />;
+        return <FileAudio className="h-3 w-3" />
     }
-  };
+  }, [])
 
-  const clearSearch = useCallback(() => {
-    setQuery("");
-    setFilters({
-      type: "all",
-      source: "all",
-    });
-  }, []);
+  const clearSearch = useCallback((): void => {
+    updateSearchState({
+      query: "",
+      filters: {
+        type: "all",
+        source: "all",
+      },
+    })
+  }, [updateSearchState])
 
   const navigateToSource = useCallback(
-    (result: SearchResult) => {
+    (result: SearchResult): void => {
       if (result.context.includes("Sound & Script")) {
-        const lessonMatch = result.context.match(/Lesson (\d+)/);
+        const lessonMatch: RegExpMatchArray | null = result.context.match(/Lesson (\d+)/)
         if (lessonMatch) {
-          onNavigate({ type: "sound-script-lesson", lessonId: lessonMatch[1] });
+          onNavigate({ type: "sound-script-lesson", lessonId: lessonMatch[1] })
         } else {
-          onNavigate({ type: "sound-script" });
+          onNavigate({ type: "sound-script" })
         }
       } else if (result.context.includes("Unit")) {
-        const unitMatch = result.context.match(/Unit (\d+)/);
-        const chapterMatch = result.context.match(/Chapter (\d+)/);
+        const unitMatch: RegExpMatchArray | null = result.context.match(/Unit (\d+)/)
+        const chapterMatch: RegExpMatchArray | null = result.context.match(/Chapter (\d+)/)
         if (unitMatch && chapterMatch) {
-          onNavigate({
-            type: "chapter",
-            unitId: unitMatch[1],
-            chapterId: chapterMatch[1],
-          });
+          onNavigate({ type: "chapter", unitId: unitMatch[1], chapterId: chapterMatch[1] })
         } else if (unitMatch) {
-          onNavigate({ type: "unit", unitId: unitMatch[1] });
+          onNavigate({ type: "unit", unitId: unitMatch[1] })
         } else {
-          onNavigate({ type: "units" });
+          onNavigate({ type: "units" })
         }
       } else {
-        onNavigate({ type: "home" });
+        onNavigate({ type: "home" })
       }
     },
-    [onNavigate]
-  );
+    [onNavigate],
+  )
+
+  const handleQueryChange: ChangeEventHandler = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>): void => {
+      updateSearchState({ query: e.target.value })
+    },
+    [updateSearchState],
+  )
+
+  const handleTypeFilterChange: SelectChangeHandler = useCallback(
+    (value: string): void => {
+      updateSearchState({
+        filters: {
+          ...searchState.filters,
+          type: value as SearchFilters["type"],
+        },
+      })
+    },
+    [searchState.filters, updateSearchState],
+  )
+
+  const handleSourceFilterChange: SelectChangeHandler = useCallback(
+    (value: string): void => {
+      updateSearchState({
+        filters: {
+          ...searchState.filters,
+          source: value as SearchFilters["source"],
+        },
+      })
+    },
+    [searchState.filters, updateSearchState],
+  )
+
+  const handleUnitFilterChange: SelectChangeHandler = useCallback(
+    (value: string): void => {
+      updateSearchState({
+        filters: {
+          ...searchState.filters,
+          unit: value === "all" ? undefined : value,
+        },
+      })
+    },
+    [searchState.filters, updateSearchState],
+  )
+
+  const toggleFilters: ClickEventHandler = useCallback((): void => {
+    updateSearchState({ showFilters: !searchState.showFilters })
+  }, [searchState.showFilters, updateSearchState])
+
+  const getMatchTypeLabel = useCallback((matchType: MatchType): string => {
+    switch (matchType) {
+      case "title":
+        return "Title match"
+      case "filename":
+        return "Filename match"
+      case "context":
+        return "Context match"
+      case "exercise_number":
+        return "Exercise number match"
+      case "vocabulary_number":
+        return "Vocabulary number match"
+      default:
+        return "Match"
+    }
+  }, [])
 
   return (
     <div className="space-y-6">
@@ -281,11 +320,11 @@ export function SearchComponent({
             <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search audio files, lessons, exercises, vocabulary..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              value={searchState.query}
+              onChange={handleQueryChange}
               className="pl-10 pr-10"
             />
-            {query && (
+            {searchState.query && (
               <Button
                 variant="ghost"
                 size="sm"
@@ -296,17 +335,14 @@ export function SearchComponent({
               </Button>
             )}
           </div>
-          <Button
-            variant="outline"
-            onClick={() => setShowFilters(!showFilters)}
-          >
+          <Button variant="outline" onClick={toggleFilters}>
             <Filter className="h-4 w-4 mr-2" />
             Filters
           </Button>
         </div>
 
         {/* Filters */}
-        {showFilters && (
+        {searchState.showFilters && (
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-lg">Search Filters</CardTitle>
@@ -314,15 +350,8 @@ export function SearchComponent({
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">
-                    File Type
-                  </label>
-                  <Select
-                    value={filters.type}
-                    onValueChange={(value) =>
-                      setFilters({ ...filters, type: value as FileType })
-                    }
-                  >
+                  <label className="text-sm font-medium mb-2 block">File Type</label>
+                  <Select value={searchState.filters.type} onValueChange={handleTypeFilterChange}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
@@ -336,26 +365,14 @@ export function SearchComponent({
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">
-                    Source
-                  </label>
-                  <Select
-                    value={filters.source}
-                    onValueChange={(value) =>
-                      setFilters({
-                        ...filters,
-                        source: value as "all" | "sound-script" | "units",
-                      })
-                    }
-                  >
+                  <label className="text-sm font-medium mb-2 block">Source</label>
+                  <Select value={searchState.filters.source} onValueChange={handleSourceFilterChange}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Sources</SelectItem>
-                      <SelectItem value="sound-script">
-                        Sound & Script
-                      </SelectItem>
+                      <SelectItem value="sound-script">Sound & Script</SelectItem>
                       <SelectItem value="units">Units</SelectItem>
                     </SelectContent>
                   </Select>
@@ -363,21 +380,13 @@ export function SearchComponent({
 
                 <div>
                   <label className="text-sm font-medium mb-2 block">Unit</label>
-                  <Select
-                    value={filters.unit || "all"}
-                    onValueChange={(value) =>
-                      setFilters({
-                        ...filters,
-                        unit: value === "all" ? undefined : value,
-                      })
-                    }
-                  >
+                  <Select value={searchState.filters.unit || "all"} onValueChange={handleUnitFilterChange}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Units</SelectItem>
-                      {Object.keys(audioData.structure.units).map((unitId) => (
+                      {Object.keys(audioData.structure.units).map((unitId: string) => (
                         <SelectItem key={unitId} value={unitId}>
                           Unit {unitId}
                         </SelectItem>
@@ -398,16 +407,12 @@ export function SearchComponent({
       </div>
 
       {/* Search Results */}
-      {query && (
+      {searchState.query && (
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold">
               Search Results ({searchResults.length})
-              {query && (
-                <span className="text-muted-foreground ml-2">
-                  for "{query}"
-                </span>
-              )}
+              {searchState.query && <span className="text-muted-foreground ml-2">for "{searchState.query}"</span>}
             </h2>
           </div>
 
@@ -417,30 +422,21 @@ export function SearchComponent({
                 <SearchIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">No results found</h3>
                 <p className="text-muted-foreground">
-                  Try adjusting your search terms or filters to find what you're
-                  looking for.
+                  Try adjusting your search terms or filters to find what you're looking for.
                 </p>
               </CardContent>
             </Card>
           ) : (
             <ScrollArea className="h-[600px]">
               <div className="space-y-3">
-                {searchResults.map((result) => (
-                  <Card
-                    key={result.id}
-                    className="hover:shadow-md transition-shadow"
-                  >
+                {searchResults.map((result: SearchResult) => (
+                  <Card key={result.id} className="hover:shadow-md transition-shadow">
                     <CardContent className="p-4">
                       <div className="flex items-center justify-between">
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-2">
-                            <h3 className="font-semibold truncate">
-                              {result.file.title}
-                            </h3>
-                            <Badge
-                              variant={getFileTypeColor(result.file.type)}
-                              className="text-xs"
-                            >
+                            <h3 className="font-semibold truncate">{result.file.title}</h3>
+                            <Badge variant={getFileTypeColor(result.file.type)} className="text-xs">
                               {result.file.type}
                             </Badge>
                             {result.file.exercise_number && (
@@ -457,44 +453,26 @@ export function SearchComponent({
 
                           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                             {getMatchTypeIcon(result.matchType)}
-                            <span>
-                              {result.matchType === "title" && "Title match"}
-                              {result.matchType === "filename" &&
-                                "Filename match"}
-                              {result.matchType === "context" &&
-                                "Context match"}
-                              {result.matchType === "exercise_number" &&
-                                "Exercise number match"}
-                              {result.matchType === "vocabulary_number" &&
-                                "Vocabulary number match"}
-                            </span>
+                            <span>{getMatchTypeLabel(result.matchType)}</span>
                             <Separator orientation="vertical" className="h-4" />
                             <span>{result.context}</span>
                           </div>
 
-                          <p className="text-sm text-muted-foreground truncate">
-                            {result.file.filename}
-                          </p>
+                          <p className="text-sm text-muted-foreground truncate">{result.file.filename}</p>
                         </div>
 
                         <div className="flex items-center gap-2 ml-4">
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => navigateToSource(result)}
+                            onClick={(): void => navigateToSource(result)}
                             title="Go to source"
                           >
                             <ArrowRight className="h-4 w-4" />
                           </Button>
                           <Button
                             size="sm"
-                            onClick={() =>
-                              onPlayAudio(
-                                result.file,
-                                result.path,
-                                result.context
-                              )
-                            }
+                            onClick={(): void => onPlayAudio(result.file, result.path, result.context)}
                             title="Play now"
                           >
                             <Play className="h-4 w-4 mr-2" />
@@ -512,13 +490,11 @@ export function SearchComponent({
       )}
 
       {/* Search Tips */}
-      {!query && (
+      {!searchState.query && (
         <Card>
           <CardHeader>
             <CardTitle>Search Tips</CardTitle>
-            <CardDescription>
-              Find audio files quickly with these search techniques
-            </CardDescription>
+            <CardDescription>Find audio files quickly with these search techniques</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="grid md:grid-cols-2 gap-4">
@@ -547,5 +523,5 @@ export function SearchComponent({
         </Card>
       )}
     </div>
-  );
+  )
 }
