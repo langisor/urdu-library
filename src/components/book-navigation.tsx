@@ -1,603 +1,489 @@
 "use client";
 
-import type React from "react";
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
 import {
-  ChevronDown,
-  ChevronRight,
-  Book,
-  BookOpen,
-  FileText,
-  Users,
-  Home,
-  ShoppingCart,
-  Baby,
-  Shield,
-  Plane,
-  Clock,
-  FileCheck,
-  Search,
-  X,
-} from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import tocData from "@/data/toc.json";
-import { Input } from "@/components/ui/input";
-import { LessonSheet } from "./lesson-sheet";
-import {  getAudioForLesson, LessonAudio, type AudioFile } from "@/lib/audio-mapper";
-import { LessonNode } from "@/data/sound-and-script";
-interface TableOfContentsItem {
-  title: string;
-  page: string | number;
-  unit?: number;
-  chapter_number?: number;
-  sub_topics?: string[];
-  chapters?: Chapter[];
-  parts?: Part[];
-  lessons?: Lesson[];
+import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChevronDown, ChevronRight, Book } from "lucide-react";
+
+import audioFilesData from "./audio-book-data";
+
+// Define types for our data structure
+interface AudioFile {
+  filename: string;
+  title?: string;
 }
 
 interface Chapter {
-  chapter_number: number;
-  title: string;
-  sub_topics: string[];
-  page: string | number;
+  folder_name: string;
+  files: AudioFile[];
 }
 
-interface Part {
-  title: string;
-  lessons?: Lesson[];
-  page?: string | number;
+interface Unit {
+  folder_name: string;
+  chapters: Record<string, Chapter>;
 }
 
-interface Lesson {
-  title: string;
-  page: string | number;
+interface BookStructure {
+  root_files: AudioFile[];
+  units: Record<string, Unit>;
+  sound_and_script: {
+    lessons: Record<
+      string,
+      {
+        folder_name: string;
+        path: string;
+        files: Array<{
+          filename: string;
+          type: string;
+          exercise_number: string;
+          title: string;
+        }>;
+      }
+    >;
+  };
 }
 
-interface BookData {
-  title: string;
-  authors: string[];
-  publisher: string;
-  publication_year: number;
-  isbn: string;
-  table_of_contents: TableOfContentsItem[];
-}
+// The audio book data provided in the JSON file
+const bookMetadata = audioFilesData.structure as BookStructure;
+const bookToc = audioFilesData.structure as BookStructure;
 
-const getUnitIcon = (unitNumber: number) => {
-  const icons = [
-    Users, // Unit 1: Me and My School
-    Home, // Unit 2: My Family and My Home
-    Clock, // Unit 3: Daily Life
-    ShoppingCart, // Unit 4: In the Market
-    Baby, // Unit 5: My Childhood
-    Shield, // Unit 6: Rules and Responsibilities
-    Plane, // Unit 7: A Trip to South Asia
-    FileCheck, // Unit 8: Past Events and Experiences
-  ];
-  return icons[unitNumber - 1] || Book;
-};
+// Main App component
+const BookNavigation = () => {
+  // State to manage the open/close state of the Sound and Script sheet
+  const [isSoundAndScriptSheetOpen, setIsSoundAndScriptSheetOpen] =
+    useState(false);
+  // State to manage the open/close state of the Units sheet
+  const [isUnitsSheetOpen, setIsUnitsSheetOpen] = useState(false);
+  // State to store the currently selected audio file path and title for playback
+  const [currentAudio, setCurrentAudio] = useState<{
+    path: string;
+    title: string;
+  } | null>(null);
+  // State to store the currently selected unit for navigation within the Units sheet
+  const [selectedUnitInSheet, setSelectedUnitInSheet] = useState<string | null>(
+    null
+  );
+  // State to store the currently selected lesson for navigation within the Sound and Script sheet
+  const [selectedLessonInSheet, setSelectedLessonInSheet] = useState<
+    string | null
+  >(null);
+  // State to store the currently selected chapter for navigation within the Units sheet
+  const [selectedChapterInSheet, setSelectedChapterInSheet] = useState<
+    string | null
+  >(null);
 
-const BookNavigation: React.FC = () => {
+  // Ref for the audio element to control playback
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Function to play an audio file
+  const playAudio = (audioFilePath: string, audioTitle: string) => {
+    setCurrentAudio({ path: audioFilePath, title: audioTitle });
+    // Pause any currently playing audio before starting a new one
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    // Set the new audio source and play
+    setTimeout(() => {
+      // Small delay to ensure the audio element updates its source
+      if (audioRef.current) {
+        audioRef.current.load(); // Load the new audio source
+        audioRef.current
+          .play()
+          .catch((error) => console.error("Error playing audio:", error));
+      }
+    }, 0);
+  };
+
+  // Function to reset sheet navigation when closing
+  const resetSoundAndScriptSheet = () => {
+    setSelectedLessonInSheet(null);
+    setIsSoundAndScriptSheetOpen(false);
+  };
+
+  const resetUnitsSheet = () => {
+    setSelectedUnitInSheet(null);
+    setSelectedChapterInSheet(null);
+    setIsUnitsSheetOpen(false);
+  };
+
+  // Function to get unit icon
+  const getUnitIcon = (unitNumber: number) => {
+    // This is a placeholder - replace with your actual icon components
+    return Book; // Default icon
+  };
+
+  // State for expanded items
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
 
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [searchResults, setSearchResults] = useState<any[]>([]);
-  const [isSearching, setIsSearching] = useState<boolean>(false);
-
-  const bookData = tocData as BookData;
-
-  // Search functionality
-  const searchContent = (query: string) => {
-    if (!query.trim()) {
-      setSearchResults([]);
-      setIsSearching(false);
-      return;
+  // Function to render a unit
+  const renderUnit = (unit: { unit?: number; title?: string }) => {
+    if (unit.unit === undefined) {
+      console.error("Unit number is undefined for:", unit);
+      return null;
     }
 
-    setIsSearching(true);
-    const results: any[] = [];
-    const searchTerm = query.toLowerCase();
-
-    bookData.table_of_contents.forEach((item, index) => {
-      // Search in main item title
-      if (item.title.toLowerCase().includes(searchTerm)) {
-        results.push({
-          type: item.unit ? "unit" : "section",
-          title: item.title,
-          page: item.page,
-          unit: item.unit,
-          id: item.unit ? `unit-${item.unit}` : `item-${index}`,
-          path: item.unit ? `Unit ${item.unit}` : "Section",
-        });
-      }
-
-      // Search in chapters
-      if (item.chapters) {
-        item.chapters.forEach((chapter) => {
-          if (chapter.title.toLowerCase().includes(searchTerm)) {
-            results.push({
-              type: "chapter",
-              title: chapter.title,
-              page: chapter.page,
-              chapter_number: chapter.chapter_number,
-              id: `unit-${item.unit}-chapter-${chapter.chapter_number}`,
-              path: `Unit ${item.unit}: ${item.title} > Chapter ${chapter.chapter_number}`,
-            });
-          }
-
-          // Search in sub-topics
-          if (chapter.sub_topics) {
-            chapter.sub_topics.forEach((topic) => {
-              if (topic.toLowerCase().includes(searchTerm)) {
-                results.push({
-                  type: "sub-topic",
-                  title: topic,
-                  page: chapter.page,
-                  id: `unit-${item.unit}-chapter-${chapter.chapter_number}-topic`,
-                  path: `Unit ${item.unit}: ${item.title} > Chapter ${chapter.chapter_number}: ${chapter.title}`,
-                });
-              }
-            });
-          }
-        });
-      }
-
-      // Search in parts and lessons
-      if (item.parts) {
-        item.parts.forEach((part, partIndex) => {
-          if (part.title.toLowerCase().includes(searchTerm)) {
-            results.push({
-              type: "part",
-              title: part.title,
-              page: part.page,
-              id: `item-${index}-part-${partIndex}`,
-              path: `${item.title} > Part`,
-            });
-          }
-
-          if (part.lessons) {
-            part.lessons.forEach((lesson, lessonIndex) => {
-              if (lesson.title.toLowerCase().includes(searchTerm)) {
-                results.push({
-                  type: "lesson",
-                  title: lesson.title,
-                  page: lesson.page,
-                  id: `item-${index}-part-${partIndex}-lesson-${lessonIndex}`,
-                  path: `${item.title} > ${part.title}`,
-                });
-              }
-            });
-          }
-        });
-      }
-    });
-
-    setSearchResults(results);
-  };
-
-  const clearSearch = () => {
-    setSearchQuery("");
-    setSearchResults([]);
-    setIsSearching(false);
-  };
-
-  const highlightText = (text: string, query: string) => {
-    if (!query.trim()) return text;
-
-    const regex = new RegExp(
-      `(${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
-      "gi"
-    );
-    const parts = text.split(regex);
-
-    return parts.map((part, index) =>
-      regex.test(part) ? (
-        <mark
-          key={index}
-          className="bg-yellow-200 dark:bg-yellow-800 px-1 rounded"
-        >
-          {part}
-        </mark>
-      ) : (
-        part
-      )
-    );
-  };
-
-  const getSearchResultIcon = (type: string) => {
-    switch (type) {
-      case "unit":
-        return Users;
-      case "chapter":
-        return BookOpen;
-      case "lesson":
-        return FileText;
-      case "part":
-        return Book;
-      case "sub-topic":
-        return ChevronRight;
-      default:
-        return FileText;
-    }
-  };
-
-  const renderSearchResults = () => {
-    if (!isSearching) return null;
-
-    return (
-      <div className="space-y-2">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-semibold text-sm text-muted-foreground">
-            Search Results ({searchResults.length})
-          </h3>
-          {searchResults.length === 0 && (
-            <span className="text-sm text-muted-foreground">
-              No results found
-            </span>
-          )}
-        </div>
-
-        {searchResults.map((result, index) => {
-          const IconComponent = getSearchResultIcon(result.type);
-          const isSelected = selectedItem === result.id;
-
-          return (
-            <div
-              key={index}
-              className="border border-border/50 rounded-lg p-3 hover:bg-muted/30 transition-colors"
-            >
-              <Button
-                variant="ghost"
-                size="sm"
-                className={`w-full justify-start text-left h-auto p-0 ${
-                  isSelected ? "text-primary" : ""
-                }`}
-                onClick={() => {
-                  handleItemClick(result.id, result.page);
-                  // Auto-expand parent items for better UX
-                  if (
-                    result.type === "chapter" ||
-                    result.type === "sub-topic"
-                  ) {
-                    setExpandedItems(
-                      (prev) =>
-                        new Set([
-                          ...prev,
-                          `unit-${result.unit || result.id.split("-")[1]}`,
-                        ])
-                    );
-                  }
-                  if (result.type === "lesson") {
-                    const parts = result.id.split("-");
-                    setExpandedItems(
-                      (prev) => new Set([...prev, parts.slice(0, -1).join("-")])
-                    );
-                  }
-                }}
-              >
-                <div className="space-y-2 w-full">
-                  <div className="flex items-center gap-3">
-                    <IconComponent className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium text-sm">
-                        {highlightText(result.title, searchQuery)}
-                      </div>
-                      <div className="text-xs text-muted-foreground mt-1 truncate">
-                        {result.path}
-                      </div>
-                    </div>
-                    <Badge variant="outline" className="text-xs flex-shrink-0">
-                      {result.page}
-                    </Badge>
-                  </div>
-                  {result.type === "chapter" && (
-                    <Badge variant="secondary" className="text-xs w-fit">
-                      Chapter {result.chapter_number}
-                    </Badge>
-                  )}
-                </div>
-              </Button>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
-  const toggleExpanded = (itemId: string) => {
-    const newExpanded = new Set(expandedItems);
-    if (newExpanded.has(itemId)) {
-      newExpanded.delete(itemId);
-    } else {
-      newExpanded.add(itemId);
-    }
-    setExpandedItems(newExpanded);
-  };
-
-  const handleItemClick = (itemId: string, page: string | number) => {
-    setSelectedItem(itemId);
-    // Here you would typically navigate to the page or scroll to content
-    console.log(`Navigate to page: ${page}`);
-  };
-
-  const renderLesson = (lesson: Lesson, parentId: string, index: number) => {
-    const itemId = `${parentId}-lesson-${index}`;
-    const isSelected = selectedItem === itemId;
-
-    // Extract lesson number from the lesson title if it contains "Lesson X:"
-    const lessonMatch = lesson.title.match(/Lesson (\d+):/);
-    const lessonNumber = lessonMatch
-      ? Number.parseInt(lessonMatch[1])
-      : undefined;
-
-    return (
-      <div key={itemId} className="ml-8">
-      
-      </div>
-    );
-  };
-
-  const renderPart = (part: Part, parentId: string, index: number) => {
-    const itemId = `${parentId}-part-${index}`;
+    const itemId = `unit-${unit.unit}`;
     const isExpanded = expandedItems.has(itemId);
-    const hasLessons = part.lessons && part.lessons.length > 0;
-    const lesson = part.lessons?.map((lesson) => lesson)[0];
-    
-    return (
-      <div key={itemId} className="ml-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="w-full justify-start text-left h-auto py-2 px-3 hover:bg-muted/50"
-          onClick={() => hasLessons && toggleExpanded(itemId)}
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-2">
-              {hasLessons &&
-                (isExpanded ? (
-                  <div>
-                  <LessonSheet lesson={lesson as any} />
-                  <ChevronDown className="h-4 w-4" />
-                  </div>
-                ) : (
-                  <ChevronRight className="h-4 w-4" />
-                ))}
-              <FileText className="h-4 w-4 text-muted-foreground" />
-              <span className="font-medium text-sm">{part.title}</span>
-            </div>
-            {part.page && (
-              <Badge variant="outline" className="text-xs">
-                {part.page}
-              </Badge>
-            )}
-          </div>
-        </Button>
+    const IconComponent = getUnitIcon(unit.unit);
 
-        {hasLessons && isExpanded && (
-          <div className="mt-1 space-y-1">
-            {part.lessons!.map((lesson, lessonIndex) =>
-              renderLesson(lesson, itemId, lessonIndex)
-            )}
+    return (
+      <div key={itemId} className="mb-4">
+        <div
+          className="flex items-center gap-2 p-2 hover:bg-accent rounded-md cursor-pointer"
+          onClick={() => {
+            const newExpanded = new Set(expandedItems);
+            if (isExpanded) {
+              newExpanded.delete(itemId);
+            } else {
+              newExpanded.add(itemId);
+            }
+            setExpandedItems(newExpanded);
+          }}
+        >
+          {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+          <IconComponent className="h-4 w-4" />
+          <span>{unit.title || `Unit ${unit.unit}`}</span>
+        </div>
+        {isExpanded && (
+          <div className="ml-6 mt-2 space-y-2">
+            {/* Add unit content here */}
           </div>
         )}
       </div>
     );
   };
 
-  const renderChapter = (chapter: Chapter, parentId: string) => {
-    const itemId = `${parentId}-chapter-${chapter.chapter_number}`;
-    const isExpanded = expandedItems.has(itemId);
-    const isSelected = selectedItem === itemId;
-    const hasSubTopics = chapter.sub_topics && chapter.sub_topics.length > 0;
+  // Interface for lesson object
+  interface Lesson {
+    folder_name: string;
+    path: string;
+    files: Array<{
+      filename: string;
+      type: string;
+      exercise_number: string;
+      title: string;
+    }>;
+  }
 
-    // Extract unit number from parentId
-    const unitMatch = parentId.match(/unit-(\d+)/);
-    const unitNumber = unitMatch ? Number.parseInt(unitMatch[1]) : undefined;
+  // Content for the Sound and Script Sheet
+  const renderSoundAndScriptSheetContent = () => {
+    if (selectedLessonInSheet) {
+      // Get lessons object with proper type assertion
+      const lessonsObj = audioFilesData.structure.sound_and_script
+        .lessons as Record<string, Lesson>;
 
-    return (
-      <div key={itemId} className="ml-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="w-full justify-start text-left h-auto py-2 px-3 hover:bg-muted/50"
-          onClick={() => hasSubTopics && toggleExpanded(itemId)}
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-2">
-              {hasSubTopics &&
-                (isExpanded ? (
-                  <ChevronDown className="h-4 w-4" />
-                ) : (
-                  <ChevronRight className="h-4 w-4" />
-                ))}
-              <FileText className="h-4 w-4 text-muted-foreground" />
-              <span className="font-medium text-sm">{chapter.title}</span>
-            </div>
-            <Badge variant="outline" className="text-xs">
-              {chapter.chapter_number}
-            </Badge>
+      // Find the lesson with matching folder_name
+      let lesson: Lesson | null = null;
+      for (const key in lessonsObj) {
+        if (
+          Object.prototype.hasOwnProperty.call(lessonsObj, key) &&
+          lessonsObj[key].folder_name === selectedLessonInSheet
+        ) {
+          lesson = lessonsObj[key];
+          break;
+        }
+      }
+
+      if (!lesson) {
+        return (
+          <div className="p-4">
+            <p>Lesson not found</p>
           </div>
-        </Button>
+        );
+      }
 
-        {hasSubTopics && isExpanded && (
-          <div className="mt-2 ml-8 space-y-1">
-            {chapter.sub_topics.map((topic, index) => (
+      return (
+        <div className="flex flex-col h-full">
+          <SheetHeader>
+            <SheetTitle>{lesson.folder_name}</SheetTitle>
+            <SheetDescription>Select an audio file to play.</SheetDescription>
+          </SheetHeader>
+          <div className="flex-grow overflow-y-auto p-4 space-y-3">
+            <Button
+              onClick={() => setSelectedLessonInSheet(null)}
+              className="mb-4 bg-yellow-500 hover:bg-yellow-600"
+            >
+              Back to Lessons
+            </Button>
+            {lesson.files.map((file, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 py-1 px-3 text-sm text-muted-foreground"
+                className="flex items-center justify-between bg-gray-50 p-3 rounded-lg shadow-sm"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
-                {topic}
+                <span className="text-gray-800 font-medium">
+                  {file.title || file.filename}
+                </span>
+                <Button
+                  onClick={() =>
+                    playAudio(file.filename, file.title || file.filename)
+                  }
+                  className="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-lg"
+                >
+                  Play
+                </Button>
               </div>
             ))}
           </div>
-        )}
-      </div>
-    );
+        </div>
+      );
+    } else {
+      // Display list of lessons
+      return (
+        <div className="flex flex-col h-full">
+          <SheetHeader>
+            <SheetTitle>Sound and Script</SheetTitle>
+            <SheetDescription>
+              Select a lesson to view its audio files.
+            </SheetDescription>
+          </SheetHeader>
+          <div className="flex-grow overflow-y-auto p-4 grid grid-cols-1 gap-4">
+            {Object.entries(
+              audioFilesData.structure.sound_and_script.lessons
+            ).map(([lessonNumber, lesson]) => (
+              <Button
+                key={lessonNumber}
+                onClick={() => setSelectedLessonInSheet(lessonNumber)}
+                className="bg-blue-100 hover:bg-blue-200 text-blue-800"
+              >
+                {lesson.folder_name}
+              </Button>
+            ))}
+          </div>
+        </div>
+      );
+    }
   };
 
-  const renderUnit = (unit: TableOfContentsItem) => {
-    const itemId = `unit-${unit.unit}`;
-    const isExpanded = expandedItems.has(itemId);
-    const IconComponent = getUnitIcon(unit.unit!);
-      
-      
-    return (
-      <div key={itemId} className="mb-4 flex flex-col gap-4">
-        <Button
-          variant="ghost"
-          size="lg"
-          className="w-full justify-start text-left h-auto py-4 px-4 hover:bg-muted/50 border border-border/50 rounded-lg"
-          onClick={() => toggleExpanded(itemId)}
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-3">
-              {isExpanded ? (
-                <ChevronDown className="h-5 w-5" />
-              ) : (
-                <ChevronRight className="h-5 w-5" />
-              )}
-              <IconComponent className="h-5 w-5 text-primary" />
-              <div>
-                <div className="flex items-center gap-2">
-                  <Badge className="text-xs">Unit {unit.unit}</Badge>
-                  <span className="font-semibold">{unit.title}</span>
-                </div>
+  // Content for the Units Sheet
+  const renderUnitsSheetContent = () => {
+    if (selectedUnitInSheet && selectedChapterInSheet) {
+      // Display files for a selected chapter
+      // Access units with proper typing
+      const units = (audioFilesData.structure as BookStructure).units;
+      const unit = units[selectedUnitInSheet];
+      if (!unit) return null;
+
+      const chapters = unit.chapters;
+      const chapter = chapters[selectedChapterInSheet];
+      if (!chapter) return null;
+      return (
+        <div className="flex flex-col h-full">
+          <SheetHeader>
+            <SheetTitle>
+              Unit {selectedUnitInSheet} - Chapter {selectedChapterInSheet}
+            </SheetTitle>
+            <SheetDescription>Select an audio file to play.</SheetDescription>
+          </SheetHeader>
+          <div className="flex-grow overflow-y-auto p-4 space-y-3">
+            <Button
+              onClick={() => setSelectedChapterInSheet(null)}
+              className="mb-4 bg-yellow-500 hover:bg-yellow-600"
+            >
+              Back to Chapters
+            </Button>
+            {chapter.files.map((file: any, index: any) => (
+              <div
+                key={index}
+                className="flex items-center justify-between bg-gray-50 p-3 rounded-lg shadow-sm"
+              >
+                <span className="text-gray-800 font-medium">
+                  {file.title || file.filename}
+                </span>
+                <Button
+                  onClick={() =>
+                    playAudio(file.filename, file.title || file.filename)
+                  }
+                  className="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-lg"
+                >
+                  Play
+                </Button>
               </div>
-            </div>
+            ))}
           </div>
-        </Button>
-
-        {isExpanded && unit.chapters && (
-          <div className="mt-3 space-y-2">
-            {unit.chapters.map((chapter) => renderChapter(chapter, itemId))}
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const renderRegularItem = (item: TableOfContentsItem, index: number) => {
-    const itemId = `item-${index}`;
-    const isExpanded = expandedItems.has(itemId);
-    const isSelected = selectedItem === itemId;
-    const hasParts = item.parts && item.parts.length > 0;
-
-    return (
-      <div key={itemId} className="mb-2">
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`w-full justify-start text-left h-auto py-3 px-3 ${
-            isSelected ? "bg-primary/10 text-primary" : "hover:bg-muted/50"
-          }`}
-          onClick={() => {
-            handleItemClick(itemId, item.page);
-            if (hasParts) toggleExpanded(itemId);
-          }}
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-2">
-              {hasParts &&
-                (isExpanded ? (
-                  <ChevronDown className="h-4 w-4" />
-                ) : (
-                  <ChevronRight className="h-4 w-4" />
-                ))}
-              <BookOpen className="h-4 w-4 text-muted-foreground" />
-              <span className="font-medium">{item.title}</span>
-            </div>
-            <Badge variant="outline" className="text-xs">
-              {item.page}
-            </Badge>
-          </div>
-        </Button>
-
-        {hasParts && isExpanded && (
-          <div className="mt-2 space-y-1">
-            {item.parts!.map((part, partIndex) =>
-              renderPart(part, itemId, partIndex)
+        </div>
+      );
+    } else if (selectedUnitInSheet) {
+      // Display chapters for a selected unit
+      // Add type assertion to handle string index access
+      const units = audioFilesData.structure.units as Record<string, any>;
+      const unit = units[selectedUnitInSheet];
+      return (
+        <div className="flex flex-col h-full">
+          <SheetHeader>
+            <SheetTitle>{unit.folder_name}</SheetTitle>
+            <SheetDescription>
+              Select a chapter to view its audio files.
+            </SheetDescription>
+          </SheetHeader>
+          <div className="flex-grow overflow-y-auto p-4 grid grid-cols-1 gap-4">
+            <Button
+              onClick={() => setSelectedUnitInSheet(null)}
+              className="mb-4 bg-yellow-500 hover:bg-yellow-600"
+            >
+              Back to Units
+            </Button>
+            {Object.entries(unit.chapters).map(
+              ([chapterNumber, chapter]: any) => (
+                <Button
+                  key={chapterNumber}
+                  onClick={() => setSelectedChapterInSheet(chapterNumber)}
+                  className="bg-green-100 hover:bg-green-200 text-green-800"
+                >
+                  {chapter.folder_name}
+                </Button>
+              )
             )}
           </div>
-        )}
-      </div>
-    );
+        </div>
+      );
+    } else {
+      // Display list of units
+      return (
+        <div className="flex flex-col h-full">
+          <SheetHeader>
+            <SheetTitle>Units</SheetTitle>
+            <SheetDescription>
+              Select a unit to view its chapters.
+            </SheetDescription>
+          </SheetHeader>
+          <div className="flex-grow overflow-y-auto p-4 grid grid-cols-1 gap-4">
+            {Object.entries(audioFilesData.structure.units).map(
+              ([unitNumber, unit]) => (
+                <Button
+                  key={unitNumber}
+                  onClick={() => setSelectedUnitInSheet(unitNumber)}
+                  className="bg-blue-100 hover:bg-blue-200 text-blue-800"
+                >
+                  {unit.folder_name}
+                </Button>
+              )
+            )}
+          </div>
+        </div>
+      );
+    }
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader className="pb-4">
-        <div className="flex items-start gap-4">
-          <Book className="h-8 w-8 text-primary mt-1" />
-          <div className="flex-1">
-            <CardTitle className="text-xl mb-2">{bookData.title}</CardTitle>
-            <div className="space-y-1 text-sm text-muted-foreground">
-              <p>
-                <strong>Authors:</strong> {bookData.authors.join(", ")}
-              </p>
-              <p>
-                <strong>Publisher:</strong> {bookData.publisher} (
-                {bookData.publication_year})
-              </p>
-              <p>
-                <strong>ISBN:</strong> {bookData.isbn}
-              </p>
-            </div>
-          </div>
-        </div>
-      </CardHeader>
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 flex flex-col items-center justify-center p-4 font-inter">
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+          .font-inter {
+            font-family: 'Inter', sans-serif;
+          }
+        `}
+      </style>
 
-      <div className="px-6 pb-4">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            type="text"
-            placeholder="Search chapters, topics, lessons..."
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              searchContent(e.target.value);
-            }}
-            className="pl-10 pr-10"
-          />
-          {searchQuery && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="absolute right-1 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0"
-              onClick={clearSearch}
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          )}
+      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center">
+        <h1 className="text-4xl font-extrabold text-gray-800 mb-8 font-inter">
+          Audio Book Navigator
+        </h1>
+        <div className="flex space-x-6 mb-8">
+          <SheetTrigger
+            onClick={() => setIsSoundAndScriptSheetOpen(true)}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Sound and Script
+          </SheetTrigger>
+          <SheetTrigger
+            onClick={() => setIsUnitsSheetOpen(true)}
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Units
+          </SheetTrigger>
         </div>
+
+        {audioFilesData.structure.root_files &&
+          audioFilesData.structure.root_files.length > 0 && (
+            <div className="mt-4 w-full max-w-md bg-white p-6 rounded-xl shadow-md">
+              <h2 className="text-2xl font-semibold text-gray-700 mb-4">
+                General Audio Files
+              </h2>
+              {audioFilesData.structure.root_files.map((file, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between bg-gray-50 p-3 rounded-lg mb-2 shadow-sm"
+                >
+                  <span className="text-gray-800 font-medium">
+                    {file.description || file.filename}
+                  </span>
+                  <Button
+                    onClick={() =>
+                      playAudio(
+                        file.filename,
+                        file.description || file.filename
+                      )
+                    }
+                    className="bg-purple-500 hover:bg-purple-600 text-white text-sm py-2 px-4 rounded-lg"
+                  >
+                    Play
+                  </Button>
+                </div>
+              ))}
+            </div>
+          )}
       </div>
 
-      <Separator />
+      {/* Sound and Script Sheet */}
+      <Sheet
+        open={isSoundAndScriptSheetOpen}
+        onOpenChange={resetSoundAndScriptSheet}
+      >
+        <SheetContent side="left" className="w-full md:w-1/3">
+          {renderSoundAndScriptSheetContent()}
+        </SheetContent>
+      </Sheet>
 
-      <CardContent className="p-0">
-        <ScrollArea className="h-[600px] p-4">
-          {isSearching ? (
-            renderSearchResults()
-          ) : (
-            <div className="space-y-3">
-              {bookData.table_of_contents.map((item, index) => {
-                if (item.unit) {
-                  return renderUnit(item);
-                } else {
-                  return renderRegularItem(item, index);
-                }
-              })}
-            </div>
-          )}
-        </ScrollArea>
-      </CardContent>
-    </Card>
+      {/* Units Sheet */}
+      <Sheet open={isUnitsSheetOpen} onOpenChange={resetUnitsSheet}>
+        <SheetContent side="right" className="w-full md:w-1/3">
+          {renderUnitsSheetContent()}
+        </SheetContent>
+      </Sheet>
+
+      {/* Audio Player Section */}
+      {currentAudio && (
+        <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 flex flex-col items-center shadow-lg z-50">
+          <h3 className="text-lg font-semibold mb-2">
+            Now Playing: {currentAudio.title}
+          </h3>
+          <audio
+            ref={audioRef}
+            controls
+            src={currentAudio.path}
+            className="w-full max-w-xl"
+            onEnded={() => setCurrentAudio(null)} // Clear current audio when it ends
+            onError={(e) => console.error("Audio error:", e)}
+          >
+            Your browser does not support the audio element.
+          </audio>
+          <Button
+            onClick={() => {
+              setCurrentAudio(null);
+              if (audioRef.current) {
+                audioRef.current.pause();
+              }
+            }}
+            className="mt-3 bg-red-500 hover:bg-red-600 text-white text-sm py-1 px-4 rounded-lg"
+          >
+            Stop Playback
+          </Button>
+        </div>
+      )}
+    </div>
   );
 };
 
