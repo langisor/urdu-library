@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate-audio": "node scripts/generate-audio-manifest.js",
-    "validate-audio": "node scripts/validate-audio-files.js",
-    "watch-audio": "node scripts/watch-audio-files.js",
-    "audio-setup": "npm run generate-audio && npm run validate-audio",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
