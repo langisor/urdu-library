@@ -1,0 +1,2993 @@
+{
+  "title": "Beginning Urdu",
+  "authors": ["Carla F. Petievich"],
+  "publisher": "Georgetown University Press",
+  "publication_year": 2018,
+  "isbn": "978-1626164031",
+  "metadata": {
+    "generated_from": "merged toc.json and audio-files.json",
+    "generated_at": "2025-07-26T08:50:57.000Z",
+    "base_audio_path": "/media/audio-all"
+  },
+  "statistics": {
+    "total_sound_script_lessons": 16,
+    "total_units": 8,
+    "total_chapters": 41,
+    "total_audio_files": 207,
+    "files_by_type": {
+      "exercise": 143,
+      "vocabulary": 63,
+      "general": 1
+    }
+  },
+  "toc": {
+    "preambles": [
+      {
+        "id": "about-beginning-urdu",
+        "title": "About Beginning Urdu",
+        "page": "ix",
+        "type": "preamble",
+        "media_files": []
+      },
+      {
+        "id": "how-to-use-teachers",
+        "title": "How to Use This Book: For Teachers",
+        "page": "xi",
+        "type": "preamble",
+        "media_files": []
+      },
+      {
+        "id": "how-to-use-students",
+        "title": "How to Use This Book: For Students",
+        "page": "xiii",
+        "type": "preamble",
+        "media_files": []
+      },
+      {
+        "id": "acknowledgments",
+        "title": "Acknowledgments",
+        "page": "xv",
+        "type": "preamble",
+        "media_files": []
+      },
+      {
+        "id": "about-urdu-language",
+        "title": "About the Urdu Language",
+        "page": "xvii",
+        "type": "preamble",
+        "media_files": []
+      }
+    ],
+    "general_audio": [
+      {
+        "id": "urdu-alphabet",
+        "title": "Urdu Alphabet",
+        "type": "general",
+        "media_files": [
+          {
+            "filename": "BegUrdu_Alphabet.mp3",
+            "path": "/media/audio-all/BegUrdu_Alphabet.mp3",
+            "type": "general",
+            "title": "BegUrdu Alphabet"
+          }
+        ]
+      }
+    ],
+    "sound_and_script": [
+      {
+        "id": "sound-system-intro",
+        "title": "The Sound System and Script of Urdu",
+        "page": "1",
+        "type": "introduction",
+        "media_files": []
+      },
+      {
+        "id": "part-1",
+        "title": "Part I - The Sound System of Urdu",
+        "page": "1",
+        "type": "part",
+        "lessons": [
+          {
+            "id": "lesson-1",
+            "title": "Lesson 1: Sounds Similar to English",
+            "page": "1",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL01Ex01.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson1/Pien7788_SSL01Ex01.mp3",
+                "type": "exercise",
+                "title": "Lesson 1 - Exercise 1",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_SSL01Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson1/Pien7788_SSL01Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 1 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL01Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson1/Pien7788_SSL01Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 1 - Exercise 3",
+                "exercise_number": "03"
+              }
+            ]
+          },
+          {
+            "id": "lesson-2",
+            "title": "Lesson 2: The Consonants r, l, v, and the Vowels e and o",
+            "page": "3",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL02Ex01.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson2/Pien7788_SSL02Ex01.mp3",
+                "type": "exercise",
+                "title": "Lesson 2 - Exercise 1",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_SSL02Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson2/Pien7788_SSL02Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 2 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL02Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson2/Pien7788_SSL02Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 2 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL02Ex04.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson2/Pien7788_SSL02Ex04.mp3",
+                "type": "exercise",
+                "title": "Lesson 2 - Exercise 4",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_SSL02Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson2/Pien7788_SSL02Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 2 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL02Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson2/Pien7788_SSL02Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 2 - Exercise 6",
+                "exercise_number": "06"
+              },
+              {
+                "filename": "Pien7788_SSL02Ex07.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson2/Pien7788_SSL02Ex07.mp3",
+                "type": "exercise",
+                "title": "Lesson 2 - Exercise 7",
+                "exercise_number": "07"
+              }
+            ]
+          },
+          {
+            "id": "lesson-3",
+            "title": "Lesson 3: Aspirated and Unaspirated Consonants",
+            "page": "5",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL03Ex01.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson3/Pien7788_SSL03Ex01.mp3",
+                "type": "exercise",
+                "title": "Lesson 3 - Exercise 1",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_SSL03Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson3/Pien7788_SSL03Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 3 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL03Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson3/Pien7788_SSL03Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 3 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL03Ex04.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson3/Pien7788_SSL03Ex04.mp3",
+                "type": "exercise",
+                "title": "Lesson 3 - Exercise 4",
+                "exercise_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "lesson-4",
+            "title": "Lesson 4: Dental and Retroflex Consonants",
+            "page": "6",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL04Ex01.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson4/Pien7788_SSL04Ex01.mp3",
+                "type": "exercise",
+                "title": "Lesson 4 - Exercise 1",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_SSL04Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson4/Pien7788_SSL04Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 4 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL04Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson4/Pien7788_SSL04Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 4 - Exercise 3",
+                "exercise_number": "03"
+              }
+            ]
+          },
+          {
+            "id": "lesson-5",
+            "title": "Lesson 5: The Consonants r and rh and the Vowels ai and au",
+            "page": "7",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL05Ex01.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson5/Pien7788_SSL05Ex01.mp3",
+                "type": "exercise",
+                "title": "Lesson 5 - Exercise 1",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_SSL05Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson5/Pien7788_SSL05Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 5 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL05Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson5/Pien7788_SSL05Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 5 - Exercise 3",
+                "exercise_number": "03"
+              }
+            ]
+          },
+          {
+            "id": "lesson-6",
+            "title": "Lesson 6: The Consonants q, x, and gh",
+            "page": "8",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL06Ex01.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson6/Pien7788_SSL06Ex01.mp3",
+                "type": "exercise",
+                "title": "Lesson 6 - Exercise 1",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_SSL06Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson6/Pien7788_SSL06Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 6 - Exercise 2",
+                "exercise_number": "02"
+              }
+            ]
+          },
+          {
+            "id": "lesson-7",
+            "title": "Lesson 7: Nasalized Vowels and Doubled Consonants",
+            "page": "9",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL07Ex01.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson7/Pien7788_SSL07Ex01.mp3",
+                "type": "exercise",
+                "title": "Lesson 7 - Exercise 1",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_SSL07Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson7/Pien7788_SSL07Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 7 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL07Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson7/Pien7788_SSL07Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 7 - Exercise 3",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "part-2",
+        "title": "Part II - The Urdu Script",
+        "page": "11",
+        "type": "part",
+        "lessons": [
+          {
+            "id": "lesson-8",
+            "title": "Lesson 8: Introduction to the Urdu Script: The be Series",
+            "page": "11",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL08Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson8/Pien7788_SSL08Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 8 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL08Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson8/Pien7788_SSL08Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 8 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL08Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson8/Pien7788_SSL08Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 8 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL08Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson8/Pien7788_SSL08Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 8 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-9",
+            "title": "Lesson 9: The jim Series, sukun and tasdid",
+            "page": "17",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL09Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson9/Pien7788_SSL09Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 9 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL09Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson9/Pien7788_SSL09Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 9 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL09Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson9/Pien7788_SSL09Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 9 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL09Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson9/Pien7788_SSL09Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 9 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-10",
+            "title": "Lesson 10: The dal and re Series",
+            "page": "20",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL10Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson10/Pien7788_SSL10Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 10 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL10Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson10/Pien7788_SSL10Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 10 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL10Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson10/Pien7788_SSL10Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 10 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL10Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson10/Pien7788_SSL10Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 10 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-11",
+            "title": "Lesson 11: The sin and suad Series",
+            "page": "23",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL11Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson11/Pien7788_SSL11Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 11 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL11Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson11/Pien7788_SSL11Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 11 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL11Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson11/Pien7788_SSL11Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 11 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL11Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson11/Pien7788_SSL11Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 11 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-12",
+            "title": "Lesson 12: The Vowels vao, choti ye, and bari ye",
+            "page": "25",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL12Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson12/Pien7788_SSL12Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 12 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL12Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson12/Pien7788_SSL12Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 12 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL12Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson12/Pien7788_SSL12Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 12 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL12Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson12/Pien7788_SSL12Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 12 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-13",
+            "title": "Lesson 13: fe, qaf, kaf, gaf, and lam",
+            "page": "28",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL13Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson13/Pien7788_SSL13Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 13 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL13Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson13/Pien7788_SSL13Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 13 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL13Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson13/Pien7788_SSL13Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 13 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL13Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson13/Pien7788_SSL13Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 13 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-14",
+            "title": "Lesson 14: mim, choti he, do casmi he, and nun ghunna",
+            "page": "30",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL14Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson14/Pien7788_SSL14Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 14 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL14Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson14/Pien7788_SSL14Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 14 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL14Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson14/Pien7788_SSL14Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 14 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL14Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson14/Pien7788_SSL14Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 14 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-15",
+            "title": "Lesson 15: The o and u Series",
+            "page": "33",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL15Ex02.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson15/Pien7788_SSL15Ex02.mp3",
+                "type": "exercise",
+                "title": "Lesson 15 - Exercise 2",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_SSL15Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson15/Pien7788_SSL15Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 15 - Exercise 3",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_SSL15Ex05.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson15/Pien7788_SSL15Ex05.mp3",
+                "type": "exercise",
+                "title": "Lesson 15 - Exercise 5",
+                "exercise_number": "05"
+              },
+              {
+                "filename": "Pien7788_SSL15Ex06.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson15/Pien7788_SSL15Ex06.mp3",
+                "type": "exercise",
+                "title": "Lesson 15 - Exercise 6",
+                "exercise_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "lesson-16",
+            "title": "Lesson 16: Additional Signs",
+            "page": "37",
+            "media_files": [
+              {
+                "filename": "Pien7788_SSL16Ex03.mp3",
+                "path": "/media/audio-all/Sound and Script/Lesson16/Pien7788_SSL16Ex03.mp3",
+                "type": "exercise",
+                "title": "Lesson 16 - Exercise 3",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Unit 1: Me and My School",
+        "page": "47",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-1",
+            "title": "Chapter 1: Introductions",
+            "page": "47",
+            "topics": [
+              "Meeting Somebody New",
+              "Identifying Classroom Items",
+              "Asking and Answering Questions",
+              "Asking Yes-or-No Questions",
+              "Greeting an Acquaintance"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U01Ch01Ex01.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U01Ch01Ex02.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U01Ch01Ex07.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01Ex07.mp3",
+                "type": "exercise",
+                "title": "Exercise 07",
+                "exercise_number": "07"
+              },
+              {
+                "filename": "Pien7788_U01Ch01Ex08.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01Ex08.mp3",
+                "type": "exercise",
+                "title": "Exercise 08",
+                "exercise_number": "08"
+              },
+              {
+                "filename": "Pien7788_U01Ch01V01.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U01Ch01V02.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U01Ch01V03.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U01Ch01V04.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              },
+              {
+                "filename": "Pien7788_U01Ch01V05.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01V05.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 05",
+                "vocabulary_number": "05"
+              },
+              {
+                "filename": "Pien7788_U01Ch01V06.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter1/Pien7788_U01Ch01V06.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 06",
+                "vocabulary_number": "06"
+              }
+            ]
+          },
+          {
+            "id": "chapter-2",
+            "title": "Chapter 2: Me and My Classmates",
+            "page": "65",
+            "topics": ["Exchanging Basic Personal Information"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U01Ch02V01.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter2/Pien7788_U01Ch02V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              }
+            ]
+          },
+          {
+            "id": "chapter-3",
+            "title": "Chapter 3: My Classroom",
+            "page": "75",
+            "topics": [
+              "Listing Items: There Is and There Are",
+              "Noun Types and Forms",
+              "Indefinite Words: koi and kuch"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U01Ch03V01.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter3/Pien7788_U01Ch03V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              }
+            ]
+          },
+          {
+            "id": "chapter-4",
+            "title": "Chapter 4: Describing Classroom Items",
+            "page": "85",
+            "topics": [
+              "Describing Items by Their Qualities: Adjectives",
+              "Adjectival Question Words",
+              "Plurality and Respect with Adjectives and Nouns"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U01Ch04Ex04.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter4/Pien7788_U01Ch04Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U01Ch04V01.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter4/Pien7788_U01Ch04V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U01Ch04V02.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter4/Pien7788_U01Ch04V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              }
+            ]
+          },
+          {
+            "id": "chapter-5",
+            "title": "Chapter 5: Giving Commands and Making Requests",
+            "page": "97",
+            "topics": ["The Infinitive", "The Imperative"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U01Ch05Ex04.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter5/Pien7788_U01Ch05Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U01Ch05V01.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter5/Pien7788_U01Ch05V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U01Ch05V02.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter5/Pien7788_U01Ch05V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              }
+            ]
+          },
+          {
+            "id": "chapter-6",
+            "title": "Chapter 6: Unit 1 Review Activities",
+            "page": "105",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U01Ch06Ex02.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter6/Pien7788_U01Ch06Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U01Ch06Ex03.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter6/Pien7788_U01Ch06Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U01Ch06Ex06.mp3",
+                "path": "/media/audio-all/Unit 1 Audio/Chapter6/Pien7788_U01Ch06Ex06.mp3",
+                "type": "exercise",
+                "title": "Exercise 06",
+                "exercise_number": "06"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unit-2",
+        "title": "Unit 2: My Family and Friends",
+        "page": "113",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-7",
+            "title": "Chapter 7: My Family",
+            "page": "113",
+            "topics": [
+              "Talking about Family Members",
+              "Possessive Pronouns",
+              "The Verb hona: Expressing Existence and Relationships"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U02Ch07Ex01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch07Ex02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch07Ex03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch07Ex04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U02Ch07V01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch07V02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch07V03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch07V04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter7/Pien7788_U02Ch07V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-8",
+            "title": "Chapter 8: Describing People",
+            "page": "127",
+            "topics": [
+              "Describing People by Their Qualities: Adjectives",
+              "Adjective-Noun Agreement",
+              "Using Adjectives to Describe People’s Personalities"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U02Ch08Ex01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch08Ex02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch08Ex03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch08Ex04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U02Ch08V01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch08V02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch08V03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch08V04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter8/Pien7788_U02Ch08V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-9",
+            "title": "Chapter 9: Talking about Likes and Dislikes",
+            "page": "137",
+            "topics": [
+              "Expressing Likes and Dislikes",
+              "The Postposition ko",
+              "The Verb lagna: Expressing Feelings and Sensations"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U02Ch09Ex01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch09Ex02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch09Ex03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch09Ex04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U02Ch09V01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch09V02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch09V03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch09V04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter9/Pien7788_U02Ch09V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-10",
+            "title": "Chapter 10: Talking about Daily Routines",
+            "page": "147",
+            "topics": [
+              "Talking about Daily Routines",
+              "The Habitual Present Tense",
+              "Time Expressions"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U02Ch10Ex01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch10Ex02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch10Ex03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch10Ex04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U02Ch10V01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch10V02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch10V03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch10V04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter10/Pien7788_U02Ch10V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-11",
+            "title": "Chapter 11: Making Appointments",
+            "page": "157",
+            "topics": [
+              "Making Appointments",
+              "The Future Tense",
+              "Polite Requests"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U02Ch11Ex01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch11Ex02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch11Ex03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch11Ex04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U02Ch11V01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch11V02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch11V03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U02Ch11V04.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter11/Pien7788_U02Ch11V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-12",
+            "title": "Chapter 12: Unit 2 Review Activities",
+            "page": "167",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U02Ch12Ex01.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter12/Pien7788_U02Ch12Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U02Ch12Ex02.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter12/Pien7788_U02Ch12Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U02Ch12Ex03.mp3",
+                "path": "/media/audio-all/Unit 2 Audio/Chapter12/Pien7788_U02Ch12Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unit-3",
+        "title": "Unit 3: My Home and Neighborhood",
+        "page": "175",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-13",
+            "title": "Chapter 13: My Home",
+            "page": "175",
+            "topics": [
+              "Talking about Your Home",
+              "The Postposition men",
+              "The Verb rahna: Expressing Location and Residence"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U03Ch13Ex01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch13Ex02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch13Ex03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch13Ex04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U03Ch13V01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch13V02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch13V03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch13V04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter13/Pien7788_U03Ch13V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-14",
+            "title": "Chapter 14: Describing Your Neighborhood",
+            "page": "185",
+            "topics": [
+              "Describing Your Neighborhood",
+              "The Postposition ke pas",
+              "The Verb milna: Expressing Meeting and Finding"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U03Ch14Ex01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch14Ex02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch14Ex03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch14Ex04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U03Ch14V01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch14V02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch14V03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch14V04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter14/Pien7788_U03Ch14V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-15",
+            "title": "Chapter 15: Shopping in Your Neighborhood",
+            "page": "195",
+            "topics": [
+              "Shopping in Your Neighborhood",
+              "The Postposition se",
+              "The Verb lena: Expressing Taking and Buying"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U03Ch15Ex01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch15Ex02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch15Ex03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch15Ex04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U03Ch15V01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch15V02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch15V03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch15V04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter15/Pien7788_U03Ch15V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-16",
+            "title": "Chapter 16: Giving Directions",
+            "page": "205",
+            "topics": [
+              "Giving Directions",
+              "The Postposition tak",
+              "The Verb jana: Expressing Going and Leaving"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U03Ch16Ex01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch16Ex02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch16Ex03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch16Ex04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U03Ch16V01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch16V02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch16V03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U03Ch16V04.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter16/Pien7788_U03Ch16V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-17",
+            "title": "Chapter 17: Unit 3 Review Activities",
+            "page": "215",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U03Ch17Ex01.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter17/Pien7788_U03Ch17Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U03Ch17Ex02.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter17/Pien7788_U03Ch17Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U03Ch17Ex03.mp3",
+                "path": "/media/audio-all/Unit 3 Audio/Chapter17/Pien7788_U03Ch17Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unit-4",
+        "title": "Unit 4: Food and Drink",
+        "page": "223",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-18",
+            "title": "Chapter 18: Talking about Food",
+            "page": "223",
+            "topics": [
+              "Talking about Food",
+              "The Postposition ke lie",
+              "The Verb banana: Expressing Making and Preparing"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U04Ch18Ex01.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U04Ch18Ex02.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U04Ch18Ex03.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U04Ch18Ex04.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U04Ch18V01.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U04Ch18V02.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U04Ch18V03.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U04Ch18V04.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter18/Pien7788_U04Ch18V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-19",
+            "title": "Chapter 19: Ordering Food in a Restaurant",
+            "page": "233",
+            "topics": [
+              "Ordering Food in a Restaurant",
+              "The Postposition ke sath",
+              "The Verb khana: Expressing Eating and Drinking"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U04Ch19Ex01.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U04Ch19Ex02.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U04Ch19Ex03.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U04Ch19Ex04.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U04Ch19V01.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U04Ch19V02.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U04Ch19V03.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U04Ch19V04.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter19/Pien7788_U04Ch19V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-20",
+            "title": "Chapter 20: Describing Tastes and Flavors",
+            "page": "243",
+            "topics": [
+              "Describing Tastes and Flavors",
+              "The Postposition ke bare men",
+              "The Verb accha lagna: Expressing Liking the Taste of Food"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U04Ch20Ex01.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U04Ch20Ex02.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U04Ch20Ex03.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U04Ch20Ex04.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U04Ch20V01.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U04Ch20V02.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U04Ch20V03.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U04Ch20V04.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter20/Pien7788_U04Ch20V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-21",
+            "title": "Chapter 21: Unit 4 Review Activities",
+            "page": "253",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U04Ch21Ex01.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter21/Pien7788_U04Ch21Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U04Ch21Ex02.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter21/Pien7788_U04Ch21Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U04Ch21Ex03.mp3",
+                "path": "/media/audio-all/Unit 4 Audio/Chapter21/Pien7788_U04Ch21Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unit-5",
+        "title": "Unit 5: Clothing and Colors",
+        "page": "261",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-22",
+            "title": "Chapter 22: Talking about Clothing",
+            "page": "261",
+            "topics": [
+              "Talking about Clothing",
+              "The Postposition ke andar",
+              "The Verb pahanna: Expressing Wearing and Putting On"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U05Ch22Ex01.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U05Ch22Ex02.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U05Ch22Ex03.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U05Ch22Ex04.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U05Ch22V01.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U05Ch22V02.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U05Ch22V03.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U05Ch22V04.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter22/Pien7788_U05Ch22V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-23",
+            "title": "Chapter 23: Describing Colors",
+            "page": "271",
+            "topics": [
+              "Describing Colors",
+              "The Postposition ke bahar",
+              "The Verb dikhna: Expressing Seeing and Appearing"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U05Ch23Ex01.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U05Ch23Ex02.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U05Ch23Ex03.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U05Ch23Ex04.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U05Ch23V01.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U05Ch23V02.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U05Ch23V03.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U05Ch23V04.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter23/Pien7788_U05Ch23V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-24",
+            "title": "Chapter 24: Shopping for Clothes",
+            "page": "281",
+            "topics": [
+              "Shopping for Clothes",
+              "The Postposition ke upar",
+              "The Verb kharidna: Expressing Buying and Purchasing"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U05Ch24Ex01.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U05Ch24Ex02.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U05Ch24Ex03.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U05Ch24Ex04.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U05Ch24V01.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U05Ch24V02.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U05Ch24V03.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U05Ch24V04.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter24/Pien7788_U05Ch24V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-25",
+            "title": "Chapter 25: Describing Patterns",
+            "page": "291",
+            "topics": [
+              "Describing Patterns",
+              "The Postposition ke niche",
+              "The Verb lagana: Expressing Applying and Attaching"
+            ],
+            "media_files": []
+          },
+          {
+            "id": "chapter-26",
+            "title": "Chapter 26: Unit 5 Review Activities",
+            "page": "299",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U05Ch26Ex01.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter26/Pien7788_U05Ch26Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U05Ch26Ex02.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter26/Pien7788_U05Ch26Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U05Ch26Ex03.mp3",
+                "path": "/media/audio-all/Unit 5 Audio/Chapter26/Pien7788_U05Ch26Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unit-6",
+        "title": "Unit 6: Health and the Human Body",
+        "page": "307",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-27",
+            "title": "Chapter 27: Talking about Health",
+            "page": "307",
+            "topics": [
+              "Talking about Health",
+              "The Postposition ke samne",
+              "The Verb hona: Expressing Having a Condition"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U06Ch27Ex01.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U06Ch27Ex02.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U06Ch27Ex03.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U06Ch27Ex04.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U06Ch27V01.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U06Ch27V02.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U06Ch27V03.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U06Ch27V04.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter27/Pien7788_U06Ch27V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-28",
+            "title": "Chapter 28: Describing Parts of the Body",
+            "page": "317",
+            "topics": [
+              "Describing Parts of the Body",
+              "The Postposition ke andar",
+              "The Verb hona: Expressing Having a Part of the Body"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U06Ch28Ex01.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U06Ch28Ex02.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U06Ch28Ex03.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U06Ch28Ex04.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U06Ch28V01.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U06Ch28V02.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U06Ch28V03.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U06Ch28V04.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter28/Pien7788_U06Ch28V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-29",
+            "title": "Chapter 29: Visiting the Doctor",
+            "page": "327",
+            "topics": [
+              "Visiting the Doctor",
+              "The Postposition ke pas",
+              "The Verb dena: Expressing Giving and Administering"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U06Ch29Ex01.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U06Ch29Ex02.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U06Ch29Ex03.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U06Ch29Ex04.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U06Ch29V01.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U06Ch29V02.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U06Ch29V03.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U06Ch29V04.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter29/Pien7788_U06Ch29V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-30",
+            "title": "Chapter 30: Unit 6 Review Activities",
+            "page": "337",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U06Ch30Ex01.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter30/Pien7788_U06Ch30Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U06Ch30Ex02.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter30/Pien7788_U06Ch30Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U06Ch30Ex03.mp3",
+                "path": "/media/audio-all/Unit 6 Audio/Chapter30/Pien7788_U06Ch30Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unit-7",
+        "title": "Unit 7: Transportation and Travel",
+        "page": "345",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-31",
+            "title": "Chapter 31: Talking about Transportation",
+            "page": "345",
+            "topics": [
+              "Talking about Transportation",
+              "The Postposition se",
+              "The Verb calna: Expressing Moving and Functioning"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U07Ch31Ex01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch31Ex02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch31Ex03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch31Ex04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U07Ch31V01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch31V02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch31V03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch31V04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter31/Pien7788_U07Ch31V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-32",
+            "title": "Chapter 32: Buying Tickets",
+            "page": "355",
+            "topics": [
+              "Buying Tickets",
+              "The Postposition ke lie",
+              "The Verb kharidna: Expressing Buying and Purchasing"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U07Ch32Ex01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch32Ex02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch32Ex03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch32Ex04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U07Ch32V01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch32V02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch32V03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch32V04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter32/Pien7788_U07Ch32V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-33",
+            "title": "Chapter 33: Asking for Directions",
+            "page": "365",
+            "topics": [
+              "Asking for Directions",
+              "The Postposition ke taraf",
+              "The Verb jana: Expressing Going and Leaving"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U07Ch33Ex01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch33Ex02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch33Ex03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch33Ex04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U07Ch33V01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch33V02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch33V03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch33V04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter33/Pien7788_U07Ch33V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-34",
+            "title": "Chapter 34: Describing Places",
+            "page": "375",
+            "topics": [
+              "Describing Places",
+              "The Postposition ke andar",
+              "The Verb hona: Expressing Being Located"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U07Ch34Ex01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch34Ex02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch34Ex03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch34Ex04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U07Ch34V01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch34V02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch34V03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch34V04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter34/Pien7788_U07Ch34V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-35",
+            "title": "Chapter 35: Talking about Travel Plans",
+            "page": "385",
+            "topics": [
+              "Talking about Travel Plans",
+              "The Postposition ke bad",
+              "The Verb calna: Expressing Moving and Functioning"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U07Ch35Ex01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch35Ex02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch35Ex03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch35Ex04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U07Ch35V01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch35V02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch35V03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U07Ch35V04.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter35/Pien7788_U07Ch35V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-36",
+            "title": "Chapter 36: Unit 7 Review Activities",
+            "page": "395",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U07Ch36Ex01.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter36/Pien7788_U07Ch36Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U07Ch36Ex02.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter36/Pien7788_U07Ch36Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U07Ch36Ex03.mp3",
+                "path": "/media/audio-all/Unit 7 Audio/Chapter36/Pien7788_U07Ch36Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unit-8",
+        "title": "Unit 8: Celebrations and Holidays",
+        "page": "403",
+        "type": "unit",
+        "chapters": [
+          {
+            "id": "chapter-37",
+            "title": "Chapter 37: Talking about Celebrations",
+            "page": "403",
+            "topics": [
+              "Talking about Celebrations",
+              "The Postposition ke bare men",
+              "The Verb manana: Expressing Celebrating and Observing"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U08Ch37Ex01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch37Ex02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch37Ex03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch37Ex04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U08Ch37V01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch37V02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch37V03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch37V04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter37/Pien7788_U08Ch37V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-38",
+            "title": "Chapter 38: Describing Holiday Traditions",
+            "page": "413",
+            "topics": [
+              "Describing Holiday Traditions",
+              "The Postposition ke sath",
+              "The Verb banana: Expressing Making and Preparing"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U08Ch38Ex01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch38Ex02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch38Ex03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch38Ex04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U08Ch38V01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch38V02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch38V03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch38V04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter38/Pien7788_U08Ch38V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-39",
+            "title": "Chapter 39: Giving Gifts",
+            "page": "423",
+            "topics": [
+              "Giving Gifts",
+              "The Postposition ke lie",
+              "The Verb dena: Expressing Giving and Administering"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U08Ch39Ex01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch39Ex02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch39Ex03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch39Ex04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U08Ch39V01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch39V02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch39V03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch39V04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter39/Pien7788_U08Ch39V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-40",
+            "title": "Chapter 40: Describing Decorations",
+            "page": "433",
+            "topics": [
+              "Describing Decorations",
+              "The Postposition se",
+              "The Verb sajana: Expressing Decorating and Adorning"
+            ],
+            "media_files": [
+              {
+                "filename": "Pien7788_U08Ch40Ex01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch40Ex02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch40Ex03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch40Ex04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40Ex04.mp3",
+                "type": "exercise",
+                "title": "Exercise 04",
+                "exercise_number": "04"
+              },
+              {
+                "filename": "Pien7788_U08Ch40V01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40V01.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 01",
+                "vocabulary_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch40V02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40V02.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 02",
+                "vocabulary_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch40V03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40V03.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 03",
+                "vocabulary_number": "03"
+              },
+              {
+                "filename": "Pien7788_U08Ch40V04.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter40/Pien7788_U08Ch40V04.mp3",
+                "type": "vocabulary",
+                "title": "Vocabulary 04",
+                "vocabulary_number": "04"
+              }
+            ]
+          },
+          {
+            "id": "chapter-41",
+            "title": "Chapter 41: Unit 8 Review Activities",
+            "page": "443",
+            "topics": ["Review and Practice Exercises"],
+            "media_files": [
+              {
+                "filename": "Pien7788_U08Ch41Ex01.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter41/Pien7788_U08Ch41Ex01.mp3",
+                "type": "exercise",
+                "title": "Exercise 01",
+                "exercise_number": "01"
+              },
+              {
+                "filename": "Pien7788_U08Ch41Ex02.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter41/Pien7788_U08Ch41Ex02.mp3",
+                "type": "exercise",
+                "title": "Exercise 02",
+                "exercise_number": "02"
+              },
+              {
+                "filename": "Pien7788_U08Ch41Ex03.mp3",
+                "path": "/media/audio-all/Unit 8 Audio/Chapter41/Pien7788_U08Ch41Ex03.mp3",
+                "type": "exercise",
+                "title": "Exercise 03",
+                "exercise_number": "03"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "appendices": [
+      {
+        "id": "appendix-1",
+        "title": "Appendix 1: Numbers",
+        "page": "555",
+        "type": "appendix",
+        "sections": ["Cardinal Numbers", "Higher Numbers", "Ordinal Numbers"],
+        "media_files": []
+      },
+      {
+        "id": "appendix-2",
+        "title": "Appendix 2: Grammar Supplement",
+        "page": "561",
+        "type": "appendix",
+        "sections": [
+          "Causative Verbs",
+          "Relative-Correlative Constructions",
+          "The Contrafactual Verb Form",
+          "Additional Meanings and Uses of hona",
+          "The Passive Voice",
+          "Participial Forms"
+        ],
+        "media_files": []
+      },
+      {
+        "id": "appendix-3",
+        "title": "Appendix 3: Additional Information for Teachers",
+        "page": "571",
+        "type": "appendix",
+        "media_files": []
+      }
+    ],
+    "glossaries": [
+      {
+        "id": "urdu-english-glossary",
+        "title": "Urdu–English Glossary",
+        "page": "575",
+        "type": "glossary",
+        "media_files": []
+      },
+      {
+        "id": "english-urdu-glossary",
+        "title": "English–Urdu Glossary",
+        "page": "623",
+        "type": "glossary",
+        "media_files": []
+      }
+    ]
+  }
+}
