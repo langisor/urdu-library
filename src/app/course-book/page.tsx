@@ -1,3 +1,5 @@
+import AudioBookNavigator from "@/components/book-navigation";
+
 export default function CourseBookPage() {
-  return <h1 className="text-3xl font-bold">Course Book Page</h1>;
+  return <AudioBookNavigator />;
 }
