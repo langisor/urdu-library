@@ -55,13 +55,13 @@ export const LessonAudioSheet: React.FC<LessonAudioSheetProps> = ({
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild>
-        <div className="relative">
-          {children}
-          <div className="absolute -top-1 -right-1">
+      <SheetTrigger asChild onClick={() => setIsOpen(true)}>
+        <div className="relative cursor-pointer hover:bg-muted/50 transition-colors">
+          <div className="flex items-center gap-2">
             <div className="h-3 w-3 bg-primary rounded-full flex items-center justify-center">
               <Headphones className="h-2 w-2 text-primary-foreground" />
             </div>
+            <div>{children}</div>
           </div>
         </div>
       </SheetTrigger>

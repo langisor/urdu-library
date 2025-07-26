@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
+import type React from "react";
+import { useState } from "react";
 import {
   ChevronDown,
   ChevronRight,
@@ -18,50 +18,53 @@ import {
   FileCheck,
   Search,
   X,
-} from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import tocData from "@/data/toc.json"
-import { Input } from "@/components/ui/input"
+} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import tocData from "@/data/toc.json";
+import { Input } from "@/components/ui/input";
+import { LessonSheet } from "./lesson-sheet";
+import {  getAudioForLesson, LessonAudio, type AudioFile } from "@/lib/audio-mapper";
+import { LessonNode } from "@/data/sound-and-script";
 interface TableOfContentsItem {
-  title: string
-  page: string | number
-  unit?: number
-  chapter_number?: number
-  sub_topics?: string[]
-  chapters?: Chapter[]
-  parts?: Part[]
-  lessons?: Lesson[]
+  title: string;
+  page: string | number;
+  unit?: number;
+  chapter_number?: number;
+  sub_topics?: string[];
+  chapters?: Chapter[];
+  parts?: Part[];
+  lessons?: Lesson[];
 }
 
 interface Chapter {
-  chapter_number: number
-  title: string
-  sub_topics: string[]
-  page: string | number
+  chapter_number: number;
+  title: string;
+  sub_topics: string[];
+  page: string | number;
 }
 
 interface Part {
-  title: string
-  lessons?: Lesson[]
-  page?: string | number
+  title: string;
+  lessons?: Lesson[];
+  page?: string | number;
 }
 
 interface Lesson {
-  title: string
-  page: string | number
+  title: string;
+  page: string | number;
 }
 
 interface BookData {
-  title: string
-  authors: string[]
-  publisher: string
-  publication_year: number
-  isbn: string
-  table_of_contents: TableOfContentsItem[]
+  title: string;
+  authors: string[];
+  publisher: string;
+  publication_year: number;
+  isbn: string;
+  table_of_contents: TableOfContentsItem[];
 }
 
 const getUnitIcon = (unitNumber: number) => {
@@ -74,31 +77,31 @@ const getUnitIcon = (unitNumber: number) => {
     Shield, // Unit 6: Rules and Responsibilities
     Plane, // Unit 7: A Trip to South Asia
     FileCheck, // Unit 8: Past Events and Experiences
-  ]
-  return icons[unitNumber - 1] || Book
-}
+  ];
+  return icons[unitNumber - 1] || Book;
+};
 
 const BookNavigation: React.FC = () => {
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
-  const [selectedItem, setSelectedItem] = useState<string | null>(null)
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
 
-  const [searchQuery, setSearchQuery] = useState<string>("")
-  const [searchResults, setSearchResults] = useState<any[]>([])
-  const [isSearching, setIsSearching] = useState<boolean>(false)
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [isSearching, setIsSearching] = useState<boolean>(false);
 
-  const bookData = tocData as BookData
+  const bookData = tocData as BookData;
 
   // Search functionality
   const searchContent = (query: string) => {
     if (!query.trim()) {
-      setSearchResults([])
-      setIsSearching(false)
-      return
+      setSearchResults([]);
+      setIsSearching(false);
+      return;
     }
 
-    setIsSearching(true)
-    const results: any[] = []
-    const searchTerm = query.toLowerCase()
+    setIsSearching(true);
+    const results: any[] = [];
+    const searchTerm = query.toLowerCase();
 
     bookData.table_of_contents.forEach((item, index) => {
       // Search in main item title
@@ -110,7 +113,7 @@ const BookNavigation: React.FC = () => {
           unit: item.unit,
           id: item.unit ? `unit-${item.unit}` : `item-${index}`,
           path: item.unit ? `Unit ${item.unit}` : "Section",
-        })
+        });
       }
 
       // Search in chapters
@@ -124,7 +127,7 @@ const BookNavigation: React.FC = () => {
               chapter_number: chapter.chapter_number,
               id: `unit-${item.unit}-chapter-${chapter.chapter_number}`,
               path: `Unit ${item.unit}: ${item.title} > Chapter ${chapter.chapter_number}`,
-            })
+            });
           }
 
           // Search in sub-topics
@@ -137,11 +140,11 @@ const BookNavigation: React.FC = () => {
                   page: chapter.page,
                   id: `unit-${item.unit}-chapter-${chapter.chapter_number}-topic`,
                   path: `Unit ${item.unit}: ${item.title} > Chapter ${chapter.chapter_number}: ${chapter.title}`,
-                })
+                });
               }
-            })
+            });
           }
-        })
+        });
       }
 
       // Search in parts and lessons
@@ -154,7 +157,7 @@ const BookNavigation: React.FC = () => {
               page: part.page,
               id: `item-${index}-part-${partIndex}`,
               path: `${item.title} > Part`,
-            })
+            });
           }
 
           if (part.lessons) {
@@ -166,86 +169,114 @@ const BookNavigation: React.FC = () => {
                   page: lesson.page,
                   id: `item-${index}-part-${partIndex}-lesson-${lessonIndex}`,
                   path: `${item.title} > ${part.title}`,
-                })
+                });
               }
-            })
+            });
           }
-        })
+        });
       }
-    })
+    });
 
-    setSearchResults(results)
-  }
+    setSearchResults(results);
+  };
 
   const clearSearch = () => {
-    setSearchQuery("")
-    setSearchResults([])
-    setIsSearching(false)
-  }
+    setSearchQuery("");
+    setSearchResults([]);
+    setIsSearching(false);
+  };
 
   const highlightText = (text: string, query: string) => {
-    if (!query.trim()) return text
+    if (!query.trim()) return text;
 
-    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi")
-    const parts = text.split(regex)
+    const regex = new RegExp(
+      `(${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
+      "gi"
+    );
+    const parts = text.split(regex);
 
     return parts.map((part, index) =>
       regex.test(part) ? (
-        <mark key={index} className="bg-yellow-200 dark:bg-yellow-800 px-1 rounded">
+        <mark
+          key={index}
+          className="bg-yellow-200 dark:bg-yellow-800 px-1 rounded"
+        >
           {part}
         </mark>
       ) : (
         part
-      ),
-    )
-  }
+      )
+    );
+  };
 
   const getSearchResultIcon = (type: string) => {
     switch (type) {
       case "unit":
-        return Users
+        return Users;
       case "chapter":
-        return BookOpen
+        return BookOpen;
       case "lesson":
-        return FileText
+        return FileText;
       case "part":
-        return Book
+        return Book;
       case "sub-topic":
-        return ChevronRight
+        return ChevronRight;
       default:
-        return FileText
+        return FileText;
     }
-  }
+  };
 
   const renderSearchResults = () => {
-    if (!isSearching) return null
+    if (!isSearching) return null;
 
     return (
       <div className="space-y-2">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-semibold text-sm text-muted-foreground">Search Results ({searchResults.length})</h3>
-          {searchResults.length === 0 && <span className="text-sm text-muted-foreground">No results found</span>}
+          <h3 className="font-semibold text-sm text-muted-foreground">
+            Search Results ({searchResults.length})
+          </h3>
+          {searchResults.length === 0 && (
+            <span className="text-sm text-muted-foreground">
+              No results found
+            </span>
+          )}
         </div>
 
         {searchResults.map((result, index) => {
-          const IconComponent = getSearchResultIcon(result.type)
-          const isSelected = selectedItem === result.id
+          const IconComponent = getSearchResultIcon(result.type);
+          const isSelected = selectedItem === result.id;
 
           return (
-            <div key={index} className="border border-border/50 rounded-lg p-3 hover:bg-muted/30 transition-colors">
+            <div
+              key={index}
+              className="border border-border/50 rounded-lg p-3 hover:bg-muted/30 transition-colors"
+            >
               <Button
                 variant="ghost"
                 size="sm"
-                className={`w-full justify-start text-left h-auto p-0 ${isSelected ? "text-primary" : ""}`}
+                className={`w-full justify-start text-left h-auto p-0 ${
+                  isSelected ? "text-primary" : ""
+                }`}
                 onClick={() => {
-                  handleItemClick(result.id, result.page)
+                  handleItemClick(result.id, result.page);
                   // Auto-expand parent items for better UX
-                  if (result.type === "chapter" || result.type === "sub-topic") {
-                    setExpandedItems((prev) => new Set([...prev, `unit-${result.unit || result.id.split("-")[1]}`]))
+                  if (
+                    result.type === "chapter" ||
+                    result.type === "sub-topic"
+                  ) {
+                    setExpandedItems(
+                      (prev) =>
+                        new Set([
+                          ...prev,
+                          `unit-${result.unit || result.id.split("-")[1]}`,
+                        ])
+                    );
                   }
                   if (result.type === "lesson") {
-                    const parts = result.id.split("-")
-                    setExpandedItems((prev) => new Set([...prev, parts.slice(0, -1).join("-")]))
+                    const parts = result.id.split("-");
+                    setExpandedItems(
+                      (prev) => new Set([...prev, parts.slice(0, -1).join("-")])
+                    );
                   }
                 }}
               >
@@ -253,8 +284,12 @@ const BookNavigation: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <IconComponent className="h-4 w-4 text-muted-foreground flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <div className="font-medium text-sm">{highlightText(result.title, searchQuery)}</div>
-                      <div className="text-xs text-muted-foreground mt-1 truncate">{result.path}</div>
+                      <div className="font-medium text-sm">
+                        {highlightText(result.title, searchQuery)}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-1 truncate">
+                        {result.path}
+                      </div>
                     </div>
                     <Badge variant="outline" className="text-xs flex-shrink-0">
                       {result.page}
@@ -268,61 +303,51 @@ const BookNavigation: React.FC = () => {
                 </div>
               </Button>
             </div>
-          )
+          );
         })}
       </div>
-    )
-  }
+    );
+  };
 
   const toggleExpanded = (itemId: string) => {
-    const newExpanded = new Set(expandedItems)
+    const newExpanded = new Set(expandedItems);
     if (newExpanded.has(itemId)) {
-      newExpanded.delete(itemId)
+      newExpanded.delete(itemId);
     } else {
-      newExpanded.add(itemId)
+      newExpanded.add(itemId);
     }
-    setExpandedItems(newExpanded)
-  }
+    setExpandedItems(newExpanded);
+  };
 
   const handleItemClick = (itemId: string, page: string | number) => {
-    setSelectedItem(itemId)
+    setSelectedItem(itemId);
     // Here you would typically navigate to the page or scroll to content
-    console.log(`Navigate to page: ${page}`)
-  }
+    console.log(`Navigate to page: ${page}`);
+  };
 
   const renderLesson = (lesson: Lesson, parentId: string, index: number) => {
-    const itemId = `${parentId}-lesson-${index}`
-    const isSelected = selectedItem === itemId
+    const itemId = `${parentId}-lesson-${index}`;
+    const isSelected = selectedItem === itemId;
+
+    // Extract lesson number from the lesson title if it contains "Lesson X:"
+    const lessonMatch = lesson.title.match(/Lesson (\d+):/);
+    const lessonNumber = lessonMatch
+      ? Number.parseInt(lessonMatch[1])
+      : undefined;
 
     return (
       <div key={itemId} className="ml-8">
-        <Button
-          variant="ghost"
-          size="sm"
-          className={`w-full justify-start text-left h-auto py-2 px-3 ${
-            isSelected ? "bg-primary/10 text-primary" : "hover:bg-muted/50"
-          }`}
-          onClick={() => handleItemClick(itemId, lesson.page)}
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />
-              <span className="text-sm">{lesson.title}</span>
-            </div>
-            <Badge variant="outline" className="text-xs">
-              {lesson.page}
-            </Badge>
-          </div>
-        </Button>
+      
       </div>
-    )
-  }
+    );
+  };
 
   const renderPart = (part: Part, parentId: string, index: number) => {
-    const itemId = `${parentId}-part-${index}`
-    const isExpanded = expandedItems.has(itemId)
-    const hasLessons = part.lessons && part.lessons.length > 0
-
+    const itemId = `${parentId}-part-${index}`;
+    const isExpanded = expandedItems.has(itemId);
+    const hasLessons = part.lessons && part.lessons.length > 0;
+    const lesson = part.lessons?.map((lesson) => lesson)[0];
+    
     return (
       <div key={itemId} className="ml-4">
         <Button
@@ -333,7 +358,15 @@ const BookNavigation: React.FC = () => {
         >
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-2">
-              {hasLessons && (isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />)}
+              {hasLessons &&
+                (isExpanded ? (
+                  <div>
+                  <LessonSheet lesson={lesson as any} />
+                  <ChevronDown className="h-4 w-4" />
+                  </div>
+                ) : (
+                  <ChevronRight className="h-4 w-4" />
+                ))}
               <FileText className="h-4 w-4 text-muted-foreground" />
               <span className="font-medium text-sm">{part.title}</span>
             </div>
@@ -347,45 +380,46 @@ const BookNavigation: React.FC = () => {
 
         {hasLessons && isExpanded && (
           <div className="mt-1 space-y-1">
-            {part.lessons!.map((lesson, lessonIndex) => renderLesson(lesson, itemId, lessonIndex))}
+            {part.lessons!.map((lesson, lessonIndex) =>
+              renderLesson(lesson, itemId, lessonIndex)
+            )}
           </div>
         )}
       </div>
-    )
-  }
-  
+    );
+  };
+
   const renderChapter = (chapter: Chapter, parentId: string) => {
-    const itemId = `${parentId}-chapter-${chapter.chapter_number}`
-    const isExpanded = expandedItems.has(itemId)
-    const isSelected = selectedItem === itemId
-    const hasSubTopics = chapter.sub_topics && chapter.sub_topics.length > 0
+    const itemId = `${parentId}-chapter-${chapter.chapter_number}`;
+    const isExpanded = expandedItems.has(itemId);
+    const isSelected = selectedItem === itemId;
+    const hasSubTopics = chapter.sub_topics && chapter.sub_topics.length > 0;
+
+    // Extract unit number from parentId
+    const unitMatch = parentId.match(/unit-(\d+)/);
+    const unitNumber = unitMatch ? Number.parseInt(unitMatch[1]) : undefined;
 
     return (
       <div key={itemId} className="ml-4">
         <Button
           variant="ghost"
           size="sm"
-          className={`w-full justify-start text-left h-auto py-3 px-3 ${
-            isSelected ? "bg-primary/10 text-primary" : "hover:bg-muted/50"
-          }`}
-          onClick={() => {
-            handleItemClick(itemId, chapter.page)
-            if (hasSubTopics) toggleExpanded(itemId)
-          }}
+          className="w-full justify-start text-left h-auto py-2 px-3 hover:bg-muted/50"
+          onClick={() => hasSubTopics && toggleExpanded(itemId)}
         >
           <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               {hasSubTopics &&
-                (isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />)}
-              <div className="flex items-center gap-2">
-                <Badge variant="secondary" className="text-xs px-2">
-                  {chapter.chapter_number}
-                </Badge>
-                <span className="font-medium">{chapter.title}</span>
-              </div>
+                (isExpanded ? (
+                  <ChevronDown className="h-4 w-4" />
+                ) : (
+                  <ChevronRight className="h-4 w-4" />
+                ))}
+              <FileText className="h-4 w-4 text-muted-foreground" />
+              <span className="font-medium text-sm">{chapter.title}</span>
             </div>
             <Badge variant="outline" className="text-xs">
-              {chapter.page}
+              {chapter.chapter_number}
             </Badge>
           </div>
         </Button>
@@ -393,7 +427,10 @@ const BookNavigation: React.FC = () => {
         {hasSubTopics && isExpanded && (
           <div className="mt-2 ml-8 space-y-1">
             {chapter.sub_topics.map((topic, index) => (
-              <div key={index} className="flex items-center gap-2 py-1 px-3 text-sm text-muted-foreground">
+              <div
+                key={index}
+                className="flex items-center gap-2 py-1 px-3 text-sm text-muted-foreground"
+              >
                 <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
                 {topic}
               </div>
@@ -401,16 +438,17 @@ const BookNavigation: React.FC = () => {
           </div>
         )}
       </div>
-    )
-  }
+    );
+  };
 
   const renderUnit = (unit: TableOfContentsItem) => {
-    const itemId = `unit-${unit.unit}`
-    const isExpanded = expandedItems.has(itemId)
-    const IconComponent = getUnitIcon(unit.unit!)
-
+    const itemId = `unit-${unit.unit}`;
+    const isExpanded = expandedItems.has(itemId);
+    const IconComponent = getUnitIcon(unit.unit!);
+      
+      
     return (
-      <div key={itemId} className="mb-4">
+      <div key={itemId} className="mb-4 flex flex-col gap-4">
         <Button
           variant="ghost"
           size="lg"
@@ -419,7 +457,11 @@ const BookNavigation: React.FC = () => {
         >
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-3">
-              {isExpanded ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+              {isExpanded ? (
+                <ChevronDown className="h-5 w-5" />
+              ) : (
+                <ChevronRight className="h-5 w-5" />
+              )}
               <IconComponent className="h-5 w-5 text-primary" />
               <div>
                 <div className="flex items-center gap-2">
@@ -432,17 +474,19 @@ const BookNavigation: React.FC = () => {
         </Button>
 
         {isExpanded && unit.chapters && (
-          <div className="mt-3 space-y-2">{unit.chapters.map((chapter) => renderChapter(chapter, itemId))}</div>
+          <div className="mt-3 space-y-2">
+            {unit.chapters.map((chapter) => renderChapter(chapter, itemId))}
+          </div>
         )}
       </div>
-    )
-  }
+    );
+  };
 
   const renderRegularItem = (item: TableOfContentsItem, index: number) => {
-    const itemId = `item-${index}`
-    const isExpanded = expandedItems.has(itemId)
-    const isSelected = selectedItem === itemId
-    const hasParts = item.parts && item.parts.length > 0
+    const itemId = `item-${index}`;
+    const isExpanded = expandedItems.has(itemId);
+    const isSelected = selectedItem === itemId;
+    const hasParts = item.parts && item.parts.length > 0;
 
     return (
       <div key={itemId} className="mb-2">
@@ -453,13 +497,18 @@ const BookNavigation: React.FC = () => {
             isSelected ? "bg-primary/10 text-primary" : "hover:bg-muted/50"
           }`}
           onClick={() => {
-            handleItemClick(itemId, item.page)
-            if (hasParts) toggleExpanded(itemId)
+            handleItemClick(itemId, item.page);
+            if (hasParts) toggleExpanded(itemId);
           }}
         >
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-2">
-              {hasParts && (isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />)}
+              {hasParts &&
+                (isExpanded ? (
+                  <ChevronDown className="h-4 w-4" />
+                ) : (
+                  <ChevronRight className="h-4 w-4" />
+                ))}
               <BookOpen className="h-4 w-4 text-muted-foreground" />
               <span className="font-medium">{item.title}</span>
             </div>
@@ -471,12 +520,14 @@ const BookNavigation: React.FC = () => {
 
         {hasParts && isExpanded && (
           <div className="mt-2 space-y-1">
-            {item.parts!.map((part, partIndex) => renderPart(part, itemId, partIndex))}
+            {item.parts!.map((part, partIndex) =>
+              renderPart(part, itemId, partIndex)
+            )}
           </div>
         )}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <Card className="w-full max-w-4xl mx-auto">
@@ -490,7 +541,8 @@ const BookNavigation: React.FC = () => {
                 <strong>Authors:</strong> {bookData.authors.join(", ")}
               </p>
               <p>
-                <strong>Publisher:</strong> {bookData.publisher} ({bookData.publication_year})
+                <strong>Publisher:</strong> {bookData.publisher} (
+                {bookData.publication_year})
               </p>
               <p>
                 <strong>ISBN:</strong> {bookData.isbn}
@@ -508,8 +560,8 @@ const BookNavigation: React.FC = () => {
             placeholder="Search chapters, topics, lessons..."
             value={searchQuery}
             onChange={(e) => {
-              setSearchQuery(e.target.value)
-              searchContent(e.target.value)
+              setSearchQuery(e.target.value);
+              searchContent(e.target.value);
             }}
             className="pl-10 pr-10"
           />
@@ -536,9 +588,9 @@ const BookNavigation: React.FC = () => {
             <div className="space-y-3">
               {bookData.table_of_contents.map((item, index) => {
                 if (item.unit) {
-                  return renderUnit(item)
+                  return renderUnit(item);
                 } else {
-                  return renderRegularItem(item, index)
+                  return renderRegularItem(item, index);
                 }
               })}
             </div>
@@ -546,7 +598,7 @@ const BookNavigation: React.FC = () => {
         </ScrollArea>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default BookNavigation
+export default BookNavigation;

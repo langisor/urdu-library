@@ -42,7 +42,7 @@ export function SectionCards() {
           className="hover:cursor-pointer"
           style={selectedSection === "toc" ? selectedStyle : {}}
         >
-          Table of Contents
+           Course Book
         </TabsTrigger>
         <TabsTrigger
           value="sound-and-script"
