@@ -1,5 +1,5 @@
 export default function Home() {
  return (
-  <h1>Audio Book Navigator</h1>
+  <h1>Home Page</h1>
  )
 }
