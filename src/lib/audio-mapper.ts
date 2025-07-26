@@ -1,6 +1,3 @@
-import audioFilesData from "@/data/auto-generated/audio-files.json";
-import tocData from "@/data/toc.json";
-
 // Audio file mapping utility
 export interface AudioFile {
   filename: string;
@@ -51,50 +48,4 @@ export const parseAudioFilename = (filename: string): AudioFile | null => {
 
   return null;
 };
-
-// Map audio files to lessons/chapters based on the file structure
-export const getAudioForLesson = (
-  unitNumber?: number,
-  chapterNumber?: number,
-  lessonNumber?: number
-): LessonAudio => {
-  const exercises: AudioFile[] = [];
-  const vocabulary: AudioFile[] = [];
-
-  // This would normally read from the actual file system or a pre-generated manifest
-  // For now, I'll create a mapping based on the tree structure provided
-
-  if (unitNumber && chapterNumber) {
-    // Unit chapter audio files
-    const audioFiles = getUnitChapterAudioFiles(unitNumber, chapterNumber);
-    // audioFiles.forEach((file: string) => {
-    //   const parsed = parseAudioFilename(file);
-    //   if (parsed) {
-    //     if (parsed.type === "exercise") {
-    //       exercises.push(parsed);
-    //     } else {
-    //       vocabulary.push(parsed);
-    //     }
-    //   }
-    // });
-  } else if (lessonNumber) {
-    // Sound and script lesson audio files
-    // const audioFiles = getSoundScriptLessonAudioFiles(lessonNumber);
-    // audioFiles.forEach((file) => {
-    //   const parsed = parseAudioFilename(file);
-    //   if (parsed) {
-    //     exercises.push(parsed);
-    //   }
-    // });
-  }
-
-  return {
-    lessonId: unitNumber
-      ? `unit-${unitNumber}-chapter-${chapterNumber}`
-      : `lesson-${lessonNumber}`,
-    exercises: exercises.sort((a, b) => a.number.localeCompare(b.number)),
-    vocabulary: vocabulary.sort((a, b) => a.number.localeCompare(b.number)),
-  };
-};
-
-// Mock data based on the tree structure - in a real app, this would come from a file manifest
+ 
