@@ -5,6 +5,7 @@ import BookCover from "./book-cover";
 import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs";
 import PreliminaryTab from "./tabs-content/preliminary-tab";
 import PartsTab from "./tabs-content/parts-tab";
+import UnitsTab from "./tabs-content/units-tab";
 
 type tabValue = "cover" | "preliminary" | "appendices" | "parts" | "units";
 
@@ -82,6 +83,9 @@ export default function CourseBookNavigator({
 
         <TabsContent value="parts">
           <PartsTab parts={data.parts} />
+        </TabsContent>
+        <TabsContent value="units">
+          <UnitsTab units={data.units} />
         </TabsContent>
         <TabsContent value="appendices">
           <h2>Appendices</h2>
