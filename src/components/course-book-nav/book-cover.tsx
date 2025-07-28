@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-
+import * as React from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Users, FileAudio, Clock } from "lucide-react";
@@ -32,24 +33,23 @@ export default function BookCover({
     <div className="max-w-4xl mx-auto p-6">
       <Card className="overflow-hidden shadow-2xl border-0 bg-gradient-to-br from-white to-gray-50">
         <div className="flex flex-col lg:flex-row">
-          {/* Book Cover Section */}
-          <div className="lg:w-1/3 p-6 flex justify-center items-start">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative">
-                <Image
-                  src={coverImage}
-                  alt="Beginning Urdu Language Learning Book Cover"
-                  style={{ width: "auto", height: "auto" }}
-                  width={280}
-                  height={360}
-                  className="rounded-lg shadow-xl object-cover"
-                  priority
-                />
+            {/* Book Cover Section */}
+            <div className="lg:w-1/3 p-6 flex justify-center items-start">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative">
+                  <Image
+                    src={coverImage}
+                    alt="Beginning Urdu Language Learning Book Cover"
+                    style={{ width: "auto", height: "auto" }}
+                    width={280}
+                    height={360}
+                    className="rounded-lg shadow-xl object-cover"
+                    priority
+                  />
+                </div>
               </div>
             </div>
-          </div>
-
           {/* Book Information Section */}
           <div className="lg:w-2/3 p-6">
             <CardHeader className="px-0 pt-0">

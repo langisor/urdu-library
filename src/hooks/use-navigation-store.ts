@@ -1,9 +1,9 @@
 import { hookstate, useHookstate } from "@hookstate/core";
-import { Part, Unit, Chapter, Lesson, Appendix } from "./ts-definition";
+import { Part, Unit, Chapter, Lesson, Appendix } from "../data/course-book/ts-definition";
 
 // Define the shape of our navigation state
 interface NavigationState {
-  selectedView: "preliminary" | "parts" | "units" | "appendices" | "home";
+  selectedView: "cover" | "preliminary" | "parts" | "units" | "appendices" | "home";
   selectedPart: Part | null;
   selectedUnit: Unit | null;
   selectedChapter: Chapter | null;
@@ -13,7 +13,7 @@ interface NavigationState {
 
 // Initial state for navigation
 const initialNavigationState: NavigationState = {
-  selectedView: "home",
+  selectedView: "cover",
   selectedPart: null,
   selectedUnit: null,
   selectedChapter: null,
