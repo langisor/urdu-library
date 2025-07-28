@@ -48,9 +48,9 @@ export type MediaDirectoryTree = Directory[];
  * For this example, it returns the hardcoded JSON data.
  * @returns A Promise that resolves to the MediaDirectoryTree.
  */
-export function fetchMediaData(){
+export function fetchMediaData() {
   // In a real application, you would fetch this from an API endpoint:
- return DB as MediaDirectoryTree;
+  return DB as MediaDirectoryTree;
 }
 
 /**
