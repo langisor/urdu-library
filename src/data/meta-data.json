@@ -1,0 +1,23 @@
+{
+  "title": "Beginning Urdu",
+  "authors": ["Carla F. Petievich"],
+  "publisher": "Georgetown University Press",
+  "publication_year": 2018,
+  "isbn": "978-1626164031",
+  "metadata": {
+    "generated_from": "merged toc.json and audio-files.json",
+    "generated_at": "2025-07-26T08:50:57.000Z",
+    "base_audio_path": "/media/audio-all"
+  },
+  "statistics": {
+    "total_sound_script_lessons": 16,
+    "total_units": 8,
+    "total_chapters": 41,
+    "total_audio_files": 207,
+    "files_by_type": {
+      "exercise": 143,
+      "vocabulary": 63,
+      "general": 1
+    }
+  }
+}
