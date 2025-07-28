@@ -4,15 +4,9 @@ import type { IBookData } from "@/data/course-book/ts-definition";
 import BookCover from "./book-cover";
 import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs";
 import PreliminaryTab from "./tabs-content/preliminary-tab";
+import PartsTab from "./tabs-content/parts-tab";
 
-type tabValue =
-  | "cover"
-  | "preliminary"
-  | "appendices"
-  | "parts"
-  | "units"
-  | "lessons"
-  | "chapters";
+type tabValue = "cover" | "preliminary" | "appendices" | "parts" | "units";
 
 export default function CourseBookNavigator({
   bookData,
@@ -59,24 +53,12 @@ export default function CourseBookNavigator({
           >
             Parts
           </TabsTrigger>
-          <TabsTrigger
-            value="lessons"
-            style={selectedView === "lessons" ? selectedTabStyle : undefined}
-          >
-            By Lessons
-          </TabsTrigger>
 
           <TabsTrigger
             value="units"
             style={selectedView === "units" ? selectedTabStyle : undefined}
           >
             Units
-          </TabsTrigger>
-          <TabsTrigger
-            value="chapters"
-            style={selectedView === "chapters" ? selectedTabStyle : undefined}
-          >
-            By Chapters
           </TabsTrigger>
           <TabsTrigger
             value="appendices"
@@ -97,17 +79,12 @@ export default function CourseBookNavigator({
         <TabsContent value="preliminary">
           <PreliminaryTab preliminaryContent={data.preliminaryContent} />
         </TabsContent>
+
+        <TabsContent value="parts">
+          <PartsTab parts={data.parts} />
+        </TabsContent>
         <TabsContent value="appendices">
           <h2>Appendices</h2>
-        </TabsContent>
-        <TabsContent value="units">
-          <h2>Units</h2>
-        </TabsContent>
-        <TabsContent value="lessons">
-          <h2>Lessons</h2>
-        </TabsContent>
-        <TabsContent value="parts">
-          <h2>Parts</h2>
         </TabsContent>
       </Tabs>
     </div>
