@@ -1,29 +1,21 @@
 import {
-  BookData,
+  IBookData,
   Unit,
   Appendix,
   Lesson,
   Chapter,
   Part,
   MediaExercise,
-} from "./definition";
+} from "./ts-definition";
+import BookData from "./toc-and-media.json";
+
 /**
  * Fetches the entire book data from a given URL.
  * @param url The URL of the JSON data.
  * @returns A Promise that resolves to the BookData object, or null if an error occurs.
  */
-export async function fetchBookData(url: string): Promise<BookData | null> {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data: BookData = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching book data:", error);
-    return null;
-  }
+export async function fetchBookData(url?: string): Promise<IBookData | null> {
+  return BookData as unknown as IBookData;
 }
 
 /**
@@ -33,11 +25,12 @@ export async function fetchBookData(url: string): Promise<BookData | null> {
  * @returns The Unit object if found, otherwise undefined.
  */
 export function getUnitByNumber(
-  bookData: BookData,
+  bookData: IBookData,
   unitNumber: number
 ): Unit | undefined {
   return bookData.units.find((unit) => unit.unitNumber === unitNumber);
 }
+
 
 /**
  * Retrieves a specific chapter from a given unit by its chapter number.
@@ -91,7 +84,7 @@ export function getExerciseAudioFiles(chapter: Chapter): string[] {
  * @returns The Appendix object if found, otherwise undefined.
  */
 export function getAppendixByNumber(
-  bookData: BookData,
+  bookData: IBookData,
   appendixNumber: number
 ): Appendix | undefined {
   return bookData.appendices.find(
@@ -104,7 +97,7 @@ export function getAppendixByNumber(
  * @param bookData The complete BookData object.
  * @returns The base URL string.
  */
-export function getMediaBaseUrl(bookData: BookData): string {
+export function getMediaBaseUrl(bookData: IBookData): string {
   return bookData.media.baseUrl;
 }
 
@@ -113,7 +106,7 @@ export function getMediaBaseUrl(bookData: BookData): string {
  * @param bookData The complete BookData object.
  * @returns The alphabet audio file path.
  */
-export function getAlphabetAudioFile(bookData: BookData): string {
+export function getAlphabetAudioFile(bookData: IBookData): string {
   return bookData.media.alphabetAudio;
 }
 

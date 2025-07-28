@@ -1,17 +1,14 @@
 import { Suspense } from "react";
 import { Loading } from "@/components/loading";
+import { fetchBookData } from "@/data/course-book/utils";
+import CourseBookNavigator from "@/components/course-book-nav/navigator";
+import { IBookData } from "@/data/course-book/ts-definition";
 
-async function getBookData() {
-  const res = await fetch("/api/books");
-  const data = await res.json();
-  return data;
-}
-
-export default async function CourseBookPage() {
-  const bookData = await getBookData();
+export default function CourseBookPage() {
+  const resData = fetchBookData("/api/json/course-book") as Promise<IBookData>;
   return (
     <Suspense fallback={<Loading />}>
-      
+      <CourseBookNavigator bookData={resData} />
     </Suspense>
   );
 }

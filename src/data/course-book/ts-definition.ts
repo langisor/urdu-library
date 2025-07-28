@@ -68,7 +68,7 @@ export interface Structure {
   totalMediaFiles: number;
 }
 
-export interface BookData {
+export interface IBookData {
   title: string;
   language: string;
   coverImage: string;

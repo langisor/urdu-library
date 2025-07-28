@@ -1,9 +1,9 @@
 {
   "title": "Beginning Urdu Language Learning Book",
   "language": "English",
-  "coverImage": "public/materials/course-book-cover.jpeg",
+  "coverImage": "/materials/course-book-cover.jpeg",
   "media": {
-    "baseUrl": "public/media/audio-all/",
+    "baseUrl": "/media/audio-all/",
     "alphabetAudio": "BegUrdu_Alphabet.mp3"
   },
   "preliminaryContent": {

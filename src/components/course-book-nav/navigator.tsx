@@ -1,15 +1,23 @@
 "use client";
-import type { BookData } from "@/data/course-book/definition";
+import * as React from "react";
+import type { IBookData } from "@/data/course-book/ts-definition";
+import useNavigationState from "@/data/course-book/use-navigation-store";
+import { usePathname } from "next/navigation";
+import AudioPlayer from "./audio-player";
+import BookCover from "./book-cover";
 
-import { JsonViewerComponent } from "../json-viewer";
-interface NavigatorProps {
-  bookData: BookData;
-}
+export default function CourseBookNavigator({
+  bookData,
+}: {
+  bookData: Promise<IBookData>;
+}) {
+  const data = React.use(bookData);
+  const navigationStates = useNavigationState();
+  const pathname = usePathname();
 
-export default function Navigator({ bookData }: NavigatorProps) {
   return (
-    <div className="flex flex-col h-screen">
-      <JsonViewerComponent data={bookData} />
+    <div className="w-full">
+      <BookCover {...data} />
     </div>
   );
 }
