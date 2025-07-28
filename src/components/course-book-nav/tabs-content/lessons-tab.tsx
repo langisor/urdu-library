@@ -55,7 +55,7 @@ interface LessonItemProps {
 
 function LessonItem({ lesson }: LessonItemProps) {
   const hasExercises = lesson.media?.exercises ? true : false;
-  hasExercises && console.log("hasExercises", lesson.media?.exercises);
+  
   const exerciseStyle = "bg-green-300 p-2 bg-white";
 
   if (!hasExercises) {
