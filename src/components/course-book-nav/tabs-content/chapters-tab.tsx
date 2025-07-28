@@ -27,6 +27,7 @@ export default function ChaptersTab({ chapters }: ChaptersTabProps) {
       defaultValue={chapters[0].chapterNumber.toString()}
     >
       {chapters.map((chapter) => (
+        <div key={chapter.chapterNumber}>
         <AccordionItem value={chapter.chapterNumber.toString()}>
           <AccordionTrigger>
             <Card className="w-full cursor-pointer hover:bg-gray-100">
@@ -45,6 +46,7 @@ export default function ChaptersTab({ chapters }: ChaptersTabProps) {
             <ChapterMedia chapter={chapter} />
           </AccordionContent>
         </AccordionItem>
+        </div>
       ))}
     </Accordion>
   );
