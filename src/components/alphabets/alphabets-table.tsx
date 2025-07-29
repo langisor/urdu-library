@@ -2,7 +2,7 @@
 import "./table.css";
 export function AlphabetsTable() {
   return (
-      <table className="flex flex-col justify-between space-y-2">
+      <table className="w-full flex flex-col justify-between space-y-2">
         <thead>
           <tr>
             <th>Urdu Alphabet</th>

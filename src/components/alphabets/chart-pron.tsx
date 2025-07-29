@@ -6,9 +6,10 @@ export function ChartPron() {
       <Image
         src="/materials/urdu-pronunciation-chart.png"
         alt="Chart Pron"
-        width={500}
-        height={500}
+        width={700}
+        height={700}
+        className="max-w-[700px]"
       />
-      </div>
+    </div>
   );
 }
