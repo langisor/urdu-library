@@ -26,7 +26,7 @@ export function AlphabetsTable() {
   return (
     <div className="w-full p-4">
       <h1>{alphabetsData.title}</h1>
-      <table className="w-full border-collapse border border-gray-500">
+      <table className="w-full border-collapse border border-gray-500 mx-auto">
         <thead>
           <tr>
             <th className="w-16">Alone</th>
@@ -35,33 +35,37 @@ export function AlphabetsTable() {
             <th className="w-16">Final</th>
             <th className="w-16">Romanized</th>
             <th className="w-24">Basic Sound Romanized</th>
-            <th className="w-24">Audio Link</th>
+            <th className="hidden">Audio Link</th>
           </tr>
         </thead>
-        <tbody className="">
+        <tbody className="w-full">
           {alphabetsData.alphabets.map((alphabet) => (
-            <tr key={alphabet.letter_alone} className="">
-              <td className="ur py-2 font-bold w-16 bg-blue-700 text-yellow-500 text-2xl">
+            <tr
+              key={alphabet.letter_alone}
+              className="hover:bg-gray-300 cursor-pointer text-center mt-2 mb-2 border-b border-gray-300"
+              onClick={() => handlePlay(alphabet.audio_link)}
+            >
+              <td className="ur py-2 font-bold w-16 bg-blue-700 text-yellow-500 text-xl">
                 {alphabet.letter_alone}
               </td>
-              <td className="ur py-2 font-bold w-16 text-2xl">
+              <td className="ur py-2 font-bold w-16 text-xl">
                 {alphabet.initial_form}
               </td>
-              <td className="ur py-2 font-bold w-16 bg-blue-700 text-yellow-500 text-2xl">
+              <td className="ur py-2 font-bold w-16 bg-blue-700 text-yellow-500 text-xl">
                 {alphabet.medial_form}
               </td>
-              <td className="ur py-2 font-bold w-16 text-2xl">
+              <td className="ur py-2 font-bold w-16 text-xl">
                 {alphabet.final_form}
               </td>
-              <td className="lang-en py-2 w-24 bg-blue-700 text-yellow-500 text-2xl">
+              <td className="lang-en py-2 w-24 bg-blue-700 text-yellow-500 text-xl">
                 {alphabet.name_romanized}
               </td>
-              <td className="lang-en py-2 w-24 text-2xl">
+              <td className="lang-en py-2 w-24 text-xl">
                 {alphabet.basic_sound_romanized}
               </td>
-              <td className="w-24">
+              <td className="hidden">
                 <audio
-                  className="w-full"
+                  className=""
                   controls
                   src={alphabet.audio_link}
                   ref={audioRef}
