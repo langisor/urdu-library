@@ -40,6 +40,7 @@ export default function AlphabetDrawerTable() {
         }}
         asChild
       >
+        
         <Card className="mb-2 cursor-pointer">
           <CardContent className="flex items-center justify-between">
             <span className="ur text-xl font-bold">
