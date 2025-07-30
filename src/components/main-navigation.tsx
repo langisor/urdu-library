@@ -10,6 +10,7 @@ const linkItems = [
   { href: "/course-book", label: "Course Book" },
   { href: "/alphabets", label: "Alphabets" },
   { href: "/urdu-script-book", label: "Urdu Script Book" },
+  {href: "/urdu-100-vocabularies", label: "Urdu 100 Phrases" },
 ];
 export default function MainNavigation() {
   const pathname = usePathname();
