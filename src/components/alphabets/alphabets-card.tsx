@@ -9,46 +9,45 @@ import Image from "next/image";
 export function AlphabetsCard() {
   const src = `/media/audio-all/BegUrdu_Alphabet.mp3`;
   return (
-    <div className="flex flex-col gap-3">
+    <div className="w-full flex flex-col gap-3 p-4">
       <Card>
         <CardHeader>
           <CardTitle>Alphabets</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="w-full">
           <audio controls>
             <source src={src} type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         </CardContent>
       </Card>
-      <div className="p-10 my-20">
-        <Card className="">
-          <CardTitle>Alphabets Image</CardTitle>
 
-          <CardContent className="flex flex-col gap-3 my-4">
-            <Image
-              src="/materials/urdu_alphabet.webp"
-              alt="Alphabets Image"
-              width={500}
-              height={500}
-            />
-          </CardContent>
-        </Card>
-      </div>
-      <div className="p-10 my-20">
-        <Card>
-          <CardTitle>Alphabets Pronunciation Chart</CardTitle>
-          <CardContent>
-            <ChartPron />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardTitle>Alphabets Table</CardTitle>
-          <CardContent>
-            <AlphabetsTable />
-          </CardContent>
-        </Card>
-      </div>
+      <Card className="w-full">
+        <CardTitle className="hidden"></CardTitle>
+
+        <CardContent className="flex flex-col gap-3 w-full">
+          <Image
+            src="/materials/urdu_alphabet.webp"
+            alt="Alphabets Image"
+            width={700}
+            height={700}
+            className="max-w-[700px]"
+          />
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardTitle>Alphabets Pronunciation Chart</CardTitle>
+        <CardContent>
+          <ChartPron />
+        </CardContent>
+      </Card>
+      <Card>
+        <CardTitle>Alphabets Table</CardTitle>
+        <CardContent>
+          <AlphabetsTable />
+        </CardContent>
+      </Card>
     </div>
   );
 }

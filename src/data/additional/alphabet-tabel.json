@@ -1,0 +1,348 @@
+{
+  "title": "Urdu Alphabets with Writing Forms and Audio Links",
+  "alphabets": [
+    {
+      "letter_alone": "ا",
+      "initial_form": "ا",
+      "medial_form": "ﺎ",
+      "final_form": "ﺎ",
+      "name_romanized": "Alif",
+      "basic_sound_romanized": "a / ā / Silent",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/01.mp3"
+    },
+    {
+      "letter_alone": "ب",
+      "initial_form": "بـ",
+      "medial_form": "ـبـ",
+      "final_form": "ـب",
+      "name_romanized": "Bay",
+      "basic_sound_romanized": "b",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/02.mp3"
+    },
+    {
+      "letter_alone": "پ",
+      "initial_form": "پـ",
+      "medial_form": "ـپـ",
+      "final_form": "ـپ",
+      "name_romanized": "Pay",
+      "basic_sound_romanized": "p",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/03.mp3"
+    },
+    {
+      "letter_alone": "ت",
+      "initial_form": "تـ",
+      "medial_form": "ـتـ",
+      "final_form": "ـت",
+      "name_romanized": "Tay (soft)",
+      "basic_sound_romanized": "t",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/04.mp3"
+    },
+    {
+      "letter_alone": "ٹ",
+      "initial_form": "ٹـ",
+      "medial_form": "ـٹـ",
+      "final_form": "ـٹ",
+      "name_romanized": "Ttay (hard)",
+      "basic_sound_romanized": "ṭ",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/05.mp3"
+    },
+    {
+      "letter_alone": "ث",
+      "initial_form": "ثـ",
+      "medial_form": "ـثـ",
+      "final_form": "ـث",
+      "name_romanized": "Say",
+      "basic_sound_romanized": "s (similar to 'th' in \"think\")",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/06.mp3"
+    },
+    {
+      "letter_alone": "ج",
+      "initial_form": "جـ",
+      "medial_form": "ـجـ",
+      "final_form": "ـج",
+      "name_romanized": "Jeem",
+      "basic_sound_romanized": "j",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/07.mp3"
+    },
+    {
+      "letter_alone": "چ",
+      "initial_form": "چـ",
+      "medial_form": "ـچـ",
+      "final_form": "ـچ",
+      "name_romanized": "Chay",
+      "basic_sound_romanized": "ch",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/08.mp3"
+    },
+    {
+      "letter_alone": "ح",
+      "initial_form": "حـ",
+      "medial_form": "ـحـ",
+      "final_form": "ـح",
+      "name_romanized": "Baṛi Hay (heavy h)",
+      "basic_sound_romanized": "h (from the back of the throat)",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/09.mp3"
+    },
+    {
+      "letter_alone": "خ",
+      "initial_form": "خـ",
+      "medial_form": "ـخـ",
+      "final_form": "ـخ",
+      "name_romanized": "Khay",
+      "basic_sound_romanized": "kh (like 'ch' in Scottish 'loch')",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/10.mp3"
+    },
+    {
+      "letter_alone": "د",
+      "initial_form": "د",
+      "medial_form": "ـد",
+      "final_form": "ـد",
+      "name_romanized": "Daal (soft)",
+      "basic_sound_romanized": "d",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/11.mp3"
+    },
+    {
+      "letter_alone": "ڈ",
+      "initial_form": "ڈ",
+      "medial_form": "ـڈ",
+      "final_form": "ـڈ",
+      "name_romanized": "Ḍaal (hard)",
+      "basic_sound_romanized": "ḍ",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/12.mp3"
+    },
+    {
+      "letter_alone": "ذ",
+      "initial_form": "ذ",
+      "medial_form": "ـذ",
+      "final_form": "ـذ",
+      "name_romanized": "Zaal",
+      "basic_sound_romanized": "z (like 'th' in \"this\")",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/13.mp3"
+    },
+    {
+      "letter_alone": "ر",
+      "initial_form": "ر",
+      "medial_form": "ـر",
+      "final_form": "ـر",
+      "name_romanized": "Ray",
+      "basic_sound_romanized": "r (rolled or trilled)",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/14.mp3"
+    },
+    {
+      "letter_alone": "ڑ",
+      "initial_form": "ڑ",
+      "medial_form": "ـڑ",
+      "final_form": "ـڑ",
+      "name_romanized": "Ṙay (retroflex r)",
+      "basic_sound_romanized": "ṛ",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/15.mp3"
+    },
+    {
+      "letter_alone": "ز",
+      "initial_form": "ز",
+      "medial_form": "ـز",
+      "final_form": "ـز",
+      "name_romanized": "Zey",
+      "basic_sound_romanized": "z",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/16.mp3"
+    },
+    {
+      "letter_alone": "ژ",
+      "initial_form": "ژ",
+      "medial_form": "ـژ",
+      "final_form": "ـژ",
+      "name_romanized": "Zhey",
+      "basic_sound_romanized": "zh (like 's' in \"measure\")",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/17.mp3"
+    },
+    {
+      "letter_alone": "س",
+      "initial_form": "سـ",
+      "medial_form": "ـسـ",
+      "final_form": "ـس",
+      "name_romanized": "Seen",
+      "basic_sound_romanized": "s",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/18.mp3"
+    },
+    {
+      "letter_alone": "ش",
+      "initial_form": "شـ",
+      "medial_form": "ـشـ",
+      "final_form": "ـش",
+      "name_romanized": "Sheen",
+      "basic_sound_romanized": "sh",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/19.mp3"
+    },
+    {
+      "letter_alone": "ص",
+      "initial_form": "صـ",
+      "medial_form": "ـصـ",
+      "final_form": "ـص",
+      "name_romanized": "Suaad (heavy s)",
+      "basic_sound_romanized": "s",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/20.mp3"
+    },
+    {
+      "letter_alone": "ض",
+      "initial_form": "ضـ",
+      "medial_form": "ـضـ",
+      "final_form": "ـض",
+      "name_romanized": "Zuaad (heavy z)",
+      "basic_sound_romanized": "z",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/21.mp3"
+    },
+    {
+      "letter_alone": "ط",
+      "initial_form": "طـ",
+      "medial_form": "ـطـ",
+      "final_form": "ـط",
+      "name_romanized": "Toay (heavy t)",
+      "basic_sound_romanized": "t",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/22.mp3"
+    },
+    {
+      "letter_alone": "ظ",
+      "initial_form": "ظـ",
+      "medial_form": "ـظـ",
+      "final_form": "ـظ",
+      "name_romanized": "Zoay (heavy z)",
+      "basic_sound_romanized": "z",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/23.mp3"
+    },
+    {
+      "letter_alone": "ع",
+      "initial_form": "عـ",
+      "medial_form": "ـعـ",
+      "final_form": "ـع",
+      "name_romanized": "Ain",
+      "basic_sound_romanized": "A glottal stop or a guttural 'a' sound",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/24.mp3"
+    },
+    {
+      "letter_alone": "غ",
+      "initial_form": "غـ",
+      "medial_form": "ـغـ",
+      "final_form": "ـغ",
+      "name_romanized": "Ghayn",
+      "basic_sound_romanized": "gh (like French 'r')",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/25.mp3"
+    },
+    {
+      "letter_alone": "ف",
+      "initial_form": "فـ",
+      "medial_form": "ـفـ",
+      "final_form": "ـف",
+      "name_romanized": "Fey",
+      "basic_sound_romanized": "f",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/26.mp3"
+    },
+    {
+      "letter_alone": "ق",
+      "initial_form": "قـ",
+      "medial_form": "ـقـ",
+      "final_form": "ـق",
+      "name_romanized": "Qaaf",
+      "basic_sound_romanized": "q (guttural k)",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/27.mp3"
+    },
+    {
+      "letter_alone": "ک",
+      "initial_form": "کـ",
+      "medial_form": "ـکـ",
+      "final_form": "ـک",
+      "name_romanized": "Kaaf",
+      "basic_sound_romanized": "k",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/28.mp3"
+    },
+    {
+      "letter_alone": "گ",
+      "initial_form": "گـ",
+      "medial_form": "ـگـ",
+      "final_form": "ـگ",
+      "name_romanized": "Gaaf",
+      "basic_sound_romanized": "g",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/29.mp3"
+    },
+    {
+      "letter_alone": "ل",
+      "initial_form": "لـ",
+      "medial_form": "ـلـ",
+      "final_form": "ـل",
+      "name_romanized": "Laam",
+      "basic_sound_romanized": "l",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/30.mp3"
+    },
+    {
+      "letter_alone": "م",
+      "initial_form": "مـ",
+      "medial_form": "ـمـ",
+      "final_form": "ـم",
+      "name_romanized": "Meem",
+      "basic_sound_romanized": "m",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/31.mp3"
+    },
+    {
+      "letter_alone": "ن",
+      "initial_form": "نـ",
+      "medial_form": "ـنـ",
+      "final_form": "ـن",
+      "name_romanized": "Noon",
+      "basic_sound_romanized": "n",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/32.mp3"
+    },
+    {
+      "letter_alone": "ں",
+      "initial_form": "ں",
+      "medial_form": "ں",
+      "final_form": "ں",
+      "name_romanized": "Noon Ghunna",
+      "basic_sound_romanized": "Nasal 'n' (like 'ng' in \"song\")",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/33.mp3"
+    },
+    {
+      "letter_alone": "و",
+      "initial_form": "و",
+      "medial_form": "ـو",
+      "final_form": "ـو",
+      "name_romanized": "Wao",
+      "basic_sound_romanized": "v / u / oo / o",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/34.mp3"
+    },
+    {
+      "letter_alone": "ہ",
+      "initial_form": "ہـ",
+      "medial_form": "ـہـ",
+      "final_form": "ـہ",
+      "name_romanized": "Choti Hay (light h)",
+      "basic_sound_romanized": "h",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/35.mp3"
+    },
+    {
+      "letter_alone": "ھ",
+      "initial_form": "(used in digraphs)",
+      "medial_form": "(used in digraphs)",
+      "final_form": "(used in digraphs)",
+      "name_romanized": "Do Chashmi Hay",
+      "basic_sound_romanized": "Indicates aspiration (e.g., in Bh, Ph, Th)",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/36.mp3"
+    },
+    {
+      "letter_alone": "ی",
+      "initial_form": "یـ",
+      "medial_form": "ـیـ",
+      "final_form": "ـی",
+      "name_romanized": "Choti Ye",
+      "basic_sound_romanized": "y / ī",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/37.mp3"
+    },
+    {
+      "letter_alone": "ے",
+      "initial_form": "ے",
+      "medial_form": "ے",
+      "final_form": "ے",
+      "name_romanized": "Baṛi Ye",
+      "basic_sound_romanized": "ai / ē",
+      "audio_link": "https://www.book2.nl/csm/alphabet/learn/ur/38.mp3"
+    }
+  ],
+  "additional_note": "Some letters are \"non-connectors\" meaning they do not connect to the letter immediately following them. For these letters (Alif, Daal, Ḍaal, Zaal, Ray, Ṙay, Zey, Zhey, Wao), the initial, medial, and final forms often look the same as their isolated form when they are not connecting to the following letter. However, their connection to the preceding letter will change their appearance (e.g., ـد vs د). The table provides the most common representation for each form. For a more comprehensive learning experience, including how letters combine and specific word examples, you may want to explore the resources linked in the search results, particularly those offering video tutorials."
+}

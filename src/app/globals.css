@@ -157,6 +157,10 @@ body {
   /* Right-to-left */
 }
 
+.ur{
+  font-family: var(--font-noto-nastaliq-urdu);
+  direction: rtl;
+}
 .lang-ur {
   font-family: var(--font-noto-nastaliq-urdu);
   direction: rtl;
