@@ -290,22 +290,13 @@
       "audio_link": "/media/others/alphabets/32.mp3"
     },
     {
-      "letter_alone": "ں",
-      "initial_form": "ں",
-      "medial_form": "ں",
-      "final_form": "ں",
-      "name_romanized": "Noon Ghunna",
-      "basic_sound_romanized": "Nasal 'n' (like 'ng' in \"song\")",
-      "audio_link": "/media/others/alphabets/33.mp3"
-    },
-    {
       "letter_alone": "و",
       "initial_form": "و",
       "medial_form": "ـو",
       "final_form": "ـو",
       "name_romanized": "Wao",
       "basic_sound_romanized": "v / u / oo / o",
-      "audio_link": "/media/others/alphabets/34.mp3"
+      "audio_link": "/media/others/alphabets/33.mp3"
     },
     {
       "letter_alone": "ہ",
@@ -314,8 +305,9 @@
       "final_form": "ـہ",
       "name_romanized": "Choti Hay (light h)",
       "basic_sound_romanized": "h",
-      "audio_link": "/media/others/alphabets/35.mp3"
+      "audio_link": "/media/others/alphabets/34.mp3"
     },
+
     {
       "letter_alone": "ھ",
       "initial_form": "(used in digraphs)",
@@ -323,8 +315,18 @@
       "final_form": "(used in digraphs)",
       "name_romanized": "Do Chashmi Hay",
       "basic_sound_romanized": "Indicates aspiration (e.g., in Bh, Ph, Th)",
+      "audio_link": "/media/others/alphabets/35.mp3"
+    },
+    {
+      "letter_alone": "ء",
+      "initial_form": "ئ",
+      "medial_form": "ئ",
+      "final_form": "N/A",
+      "name_romanized": "Hamza",
+      "basic_sound_romanized": "",
       "audio_link": "/media/others/alphabets/36.mp3"
     },
+
     {
       "letter_alone": "ی",
       "initial_form": "یـ",

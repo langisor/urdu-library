@@ -165,13 +165,7 @@ body {
 .ur {
   font-family: var(--font-noto-nastaliq-urdu);
   direction: rtl;
-  font-size: 3rem;
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
-  text-align: center;
-  margin: auto;
-  padding: 1rem;
-  padding-bottom: 1rem;
+  
 }
 .big-ur {
   font-family: var(--font-noto-nastaliq-urdu);
