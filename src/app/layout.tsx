@@ -30,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${notoSansArabic.variable} ${notoNastaliqUrdu.variable}`}
       >
-        <div className="flex flex-col min-h-screen">
-          <MainNavigation />
-          <div>{children}</div>
+        <div className="min-h-screen">
+          <div className="w-full mb-4">
+            "<MainNavigation />
+          </div>
+          <div className="w-full mt-4">{children}</div>
         </div>
       </body>
     </html>

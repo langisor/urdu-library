@@ -10,7 +10,7 @@ const linkItems = [
   { href: "/course-book", label: "Course Book" },
   { href: "/alphabets", label: "Alphabets" },
   { href: "/urdu-script-book", label: "Urdu Script Book" },
-  {href: "/urdu-100-vocabularies", label: "Urdu 100 Phrases" },
+  { href: "/urdu-100-vocabularies", label: "Urdu 100 Phrases" },
 ];
 export default function MainNavigation() {
   const pathname = usePathname();
@@ -20,13 +20,13 @@ export default function MainNavigation() {
   const hoverStyle =
     "hover:bg-gray-500 hover:text-white hover:border-gray-200 hover:rounded-md";
   return (
-    <header className="flex justify-between items-center p-4">
-      <nav className="flex space-x-4">
+    <header className=" w-full">
+      <nav className="flex min-w-screen justify-between items-center bg-gray-800 p-4">
         {linkItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className={`p-2 ${hoverStyle} ${
+            className={`big-en text-white ${hoverStyle} ${
               pathname === item.href ? selectedStyle : ""
             }`}
           >

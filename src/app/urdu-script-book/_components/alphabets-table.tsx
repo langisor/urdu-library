@@ -14,7 +14,14 @@ interface AlphabetsData {
     audio_link: string;
   }[];
 }
-
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 export function AlphabetsTable() {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
@@ -24,62 +31,63 @@ export function AlphabetsTable() {
     setIsPlaying(true);
   };
   return (
-    <div className="w-full p-4">
+    <div className="">
       <h1>{alphabetsData.title}</h1>
-      <table className="w-full border-collapse border border-gray-500 mx-auto">
-        <thead>
-          <tr>
-            <th className="w-16">Alone</th>
-            <th className="w-16">Initial</th>
-            <th className="w-16">Medial</th>
-            <th className="w-16">Final</th>
-            <th className="w-16">Romanized</th>
-            <th className="w-24">Basic Sound Romanized</th>
-            <th className="hidden">Audio Link</th>
-          </tr>
-        </thead>
-        <tbody className="w-full">
-          {alphabetsData.alphabets.map((alphabet) => (
-            <tr
-              key={alphabet.letter_alone}
-              className="hover:bg-gray-300 cursor-pointer text-center mt-2 mb-2 border-b border-gray-300"
+      <Table className="w-full">
+        <TableHeader>
+          <TableRow className="bg-zinc-700 text-xl font-bold ">
+            <TableHead className="text-white">Letter Alone</TableHead>
+            <TableHead className="text-white">Initial Form</TableHead>
+            <TableHead className="text-white">Medial Form</TableHead>
+            <TableHead className="text-white">Final Form</TableHead>
+            <TableHead className="text-white">Name (Romanized)</TableHead>
+            <TableHead className="text-white">
+              Basic Sound (Romanized)
+            </TableHead>
+            <TableHead className="hidden">Audio</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {alphabetsData.alphabets.map((alphabet, index) => (
+            <TableRow
+              key={index}
+              className="hover:bg-gray-100"
               onClick={() => handlePlay(alphabet.audio_link)}
             >
-              <td className="ur py-2 font-bold w-16 bg-blue-700 text-yellow-500 text-xl">
+              <TableCell className="lang-ur sm:text-4xl">
                 {alphabet.letter_alone}
-              </td>
-              <td className="ur py-2 font-bold w-16 text-xl">
+              </TableCell>
+              <TableCell className="lang-ur sm:text-4xl">
                 {alphabet.initial_form}
-              </td>
-              <td className="ur py-2 font-bold w-16 bg-blue-700 text-yellow-500 text-xl">
+              </TableCell>
+              <TableCell className="lang-ur sm:text-4xl">
                 {alphabet.medial_form}
-              </td>
-              <td className="ur py-2 font-bold w-16 text-xl">
+              </TableCell>
+              <TableCell className="lang-ur sm:text-4xl">
                 {alphabet.final_form}
-              </td>
-              <td className="lang-en py-2 w-24 bg-blue-700 text-yellow-500 text-xl">
+              </TableCell>
+              <TableCell className="romanized text-2xl">
                 {alphabet.name_romanized}
-              </td>
-              <td className="lang-en py-2 w-24 text-xl">
+              </TableCell>
+              <TableCell className="">
                 {alphabet.basic_sound_romanized}
-              </td>
-              <td className="hidden">
-                <audio
-                  className=""
-                  controls
-                  src={alphabet.audio_link}
-                  ref={audioRef}
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                  onEnded={() => setIsPlaying(false)}
+              </TableCell>
+
+              <TableCell className="hidden">
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => handlePlay(alphabet.audio_link)}
+                  disabled={isPlaying}
                 >
-                  Not supported
-                </audio>
-              </td>
-            </tr>
+                  {isPlaying ? "Playing..." : "Play Sound"}
+                </Button>
+                <audio ref={audioRef} />
+              </TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 }

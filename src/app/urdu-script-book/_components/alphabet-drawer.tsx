@@ -30,61 +30,94 @@ export default function AlphabetDrawerTable() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const renderTriggers = () => {
-    return alphabetsData.alphabets.map((alphabet) => (
-      <DrawerTrigger
-        key={alphabet.letter_alone}
-        className="w-full text-left"
-        onClick={() => {
-          setCurrentAlphabetIndex(alphabetsData.alphabets.indexOf(alphabet));
-          setIsOpen(true);
-        }}
-        asChild
-      >
-        
-        <Card className="mb-2 cursor-pointer">
-          <CardContent className="flex items-center justify-between">
-            <span className="ur text-xl font-bold">
-              {alphabet.letter_alone}
-            </span>
-          </CardContent>
-        </Card>
-      </DrawerTrigger>
-    ));
+    return (
+      <div className="grid grid-cols-2 gap-4">
+        {alphabetsData.alphabets.map((alphabet) => (
+          <DrawerTrigger
+            key={alphabet.letter_alone}
+            className="w-full text-center flex items-center justify-center h-48 bg-gray-100 hover:bg-gray-200 transition-colors"
+            onClick={() => {
+              setCurrentAlphabetIndex(
+                alphabetsData.alphabets.indexOf(alphabet)
+              );
+              setIsOpen(true);
+            }}
+            asChild
+          >
+            <Card className="mb-2 cursor-pointer">
+              <CardContent className="flex items-center justify-between">
+                <span className="ur font-bold sm:text-6xl">
+                  {alphabet.letter_alone}
+                </span>
+              </CardContent>
+            </Card>
+          </DrawerTrigger>
+        ))}
+      </div>
+    );
   };
-  
+
   const renderDrawerContent = () => {
     const alphabet = alphabetsData.alphabets[currentAlphabetIndex];
     return (
-      <DrawerContent className="h-screen overflow-y-auto">
+      <DrawerContent className="h-screen w-full overflow-y-auto">
         <DrawerHeader>
-          <DrawerTitle className="text-2xl font-bold">
+          <DrawerTitle className="phonetic">
             {alphabet.name_romanized}
           </DrawerTitle>
         </DrawerHeader>
-        <div className="p-4">
-          <p className="ur text-xl font-bold mb-2">
-            Alone: {alphabet.letter_alone}
-          </p>
-          <p className="ur text-xl font-bold mb-2">
-            Initial: {alphabet.initial_form}
-          </p>
-          <p className="ur text-xl font-bold mb-2">
-            Medial: {alphabet.medial_form}
-          </p>
-          <p className="ur text-xl font-bold mb-2">
-            Final: {alphabet.final_form}
-          </p>
-          <p className="lang-en text-lg mb-4">
-            Basic Sound Romanized: {alphabet.basic_sound_romanized}
-          </p>
-          <Button
-            onClick={() => {
-              const audio = new Audio(alphabet.audio_link);
-              audio.play();
-            }}
-          >
-            Play Sound
-          </Button>
+        <div className="p-4 my-4">
+          <div className="flex flex-col space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card>
+                <CardContent className="text-center">
+                  <h3 className="big-en">
+                    Initial Form
+                  </h3>
+                  <h3 className="big-ur">
+                    {alphabet.initial_form}
+                  </h3>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="text-center">
+                  <h3 className="big-en">
+                    Medial Form
+                  </h3>
+                  <h3 className="big-ur">
+                    {alphabet.medial_form}
+                  </h3>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="text-center">
+                  <h3 className="big-en">
+                    Final Form
+                  </h3>
+                  <p className="big-ur">{alphabet.final_form}</p>
+                </CardContent>
+              </Card>
+            </div>
+            <Card>
+              <CardContent className="mt-4">
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold">Basic Sound</h3>
+                  <p className="text-2xl">{alphabet.basic_sound_romanized}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="mt-4">
+            <Button
+              onClick={() => {
+                const audio = new Audio(alphabet.audio_link);
+                audio.play();
+              }}
+              className="mt-4 w-full bg-blue-500 text-white hover:bg-blue-600"
+            >
+              Play Sound
+            </Button>
+          </div>
         </div>
       </DrawerContent>
     );

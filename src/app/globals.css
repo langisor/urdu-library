@@ -53,11 +53,16 @@
 
 /* Fallback fonts (optional but good practice) */
 :root {
-  --font-inter-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-noto-sans-arabic-fallback: "Noto Sans Arabic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-noto-nastaliq-urdu-fallback: "Noto Nastaliq Urdu", "Times New Roman", Times, serif;
+  --font-inter-fallback: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-noto-sans-arabic-fallback: "Noto Sans Arabic", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-noto-nastaliq-urdu-fallback: "Noto Nastaliq Urdu", "Times New Roman",
+    Times, serif;
 }
-
 
 :root {
   --radius: 0.625rem;
@@ -157,33 +162,74 @@ body {
   /* Right-to-left */
 }
 
-.ur{
+.ur {
   font-family: var(--font-noto-nastaliq-urdu);
   direction: rtl;
-}
-.lang-ur {
-  font-family: var(--font-noto-nastaliq-urdu);
-  direction: rtl;
-  font-size: 1rem;
-  /* line-height: 1.5; */
+  font-size: 3rem;
+  line-height: 1.5;
   letter-spacing: 0.1rem;
-  color: white;
-  background-color: rgb(8, 78, 8);
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  padding-bottom: 1rem;
+}
+.big-ur {
+  font-family: var(--font-noto-nastaliq-urdu);
+  direction: rtl;
+  font-size: 6rem;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: auto;
   padding: 1rem;
   padding-bottom: 1rem;
   border-radius: 15px;
   width: fit-content;
+}
+
+.lang-ur {
+  font-family: var(--font-noto-nastaliq-urdu);
+  direction: rtl;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  padding-bottom: 1rem;
 
   /* Right-to-left */
+}
+.big-en {
+  font-family: var(--font-inter);
+  direction: ltr;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 15px;
+  width: fit-content;
 }
 
 .phonetic {
   font-family: var(--font-inter);
   direction: ltr;
+  font-size: 2rem;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
   font-style: italic;
   color: white;
-  background-color: blue;
-  padding: 0.5rem;
+  background-color: #587894;
   border-radius: 15px;
   width: fit-content;
+}
+
+.romanized{
+  color:darkorange;
+  font-style: italic;
+  background-color: black;
 }
