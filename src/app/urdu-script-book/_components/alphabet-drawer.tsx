@@ -54,7 +54,7 @@ export default function AlphabetDrawerTable() {
   const renderDrawerContent = () => {
     const alphabet = alphabetsData.alphabets[currentAlphabetIndex];
     return (
-      <DrawerContent>
+      <DrawerContent className="h-screen overflow-y-auto">
         <DrawerHeader>
           <DrawerTitle className="text-2xl font-bold">
             {alphabet.name_romanized}
