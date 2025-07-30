@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen">
           <div className="w-full mb-4">
-            "<MainNavigation />
+            <MainNavigation />
           </div>
           <div className="w-full mt-4">{children}</div>
         </div>
