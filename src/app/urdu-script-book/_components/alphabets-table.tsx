@@ -54,21 +54,11 @@ export function AlphabetsTable() {
               className="hover:bg-gray-100"
               onClick={() => handlePlay(alphabet.audio_link)}
             >
-              <TableCell className="lang-ur sm:text-4xl">
-                {alphabet.letter_alone}
-              </TableCell>
-              <TableCell className="lang-ur sm:text-4xl">
-                {alphabet.initial_form}
-              </TableCell>
-              <TableCell className="lang-ur sm:text-4xl">
-                {alphabet.medial_form}
-              </TableCell>
-              <TableCell className="lang-ur sm:text-4xl">
-                {alphabet.final_form}
-              </TableCell>
-              <TableCell className="romanized text-2xl">
-                {alphabet.name_romanized}
-              </TableCell>
+              <TableCell className="ur">{alphabet.letter_alone}</TableCell>
+              <TableCell className="ur">{alphabet.initial_form}</TableCell>
+              <TableCell className="ur">{alphabet.medial_form}</TableCell>
+              <TableCell className="ur">{alphabet.final_form}</TableCell>
+              <TableCell className="ur">{alphabet.name_romanized}</TableCell>
               <TableCell className="">
                 {alphabet.basic_sound_romanized}
               </TableCell>

@@ -20,19 +20,21 @@ export default function MainNavigation() {
   const hoverStyle =
     "hover:bg-gray-500 hover:text-white hover:border-gray-200 hover:rounded-md";
   return (
-    <header className=" w-full">
-      <nav className="flex min-w-screen justify-between items-center bg-gray-800 p-4">
-        {linkItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`big-en text-white ${hoverStyle} ${
-              pathname === item.href ? selectedStyle : ""
-            }`}
-          >
-            {item.label}
-          </Link>
-        ))}
+    <header>
+      <nav className="bg-gray-800">
+        <div className="w-full flex flex-row flex-wrap  md:text-[2rem]">
+          {linkItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-white ml-2 px-2 border rounded-xl  ${hoverStyle} ${
+                pathname === item.href ? selectedStyle : ""
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </nav>
     </header>
   );
