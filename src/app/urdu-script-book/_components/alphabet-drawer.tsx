@@ -51,6 +51,7 @@ export default function AlphabetDrawerTable() {
       </DrawerTrigger>
     ));
   };
+  
   const renderDrawerContent = () => {
     const alphabet = alphabetsData.alphabets[currentAlphabetIndex];
     return (
