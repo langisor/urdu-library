@@ -189,7 +189,7 @@ export default function BasicQuestions() {
                 <strong className="naskh-arabic text-purple-800 dark:text-purple-100">
                   کون سی
                 </strong>{" "}
-                (kaun si) → "أي" (لمؤنث).
+                (kaun si) → &quot;أي&quot; (لمؤنث).
               </li>
             </ul>
 
@@ -442,7 +442,7 @@ export default function BasicQuestions() {
             </li>
             <li className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-sm">
               <h4 className="naskh-arabic text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                ب. استخدام "کیا" لأسئلة (نعم/لا)
+                ب. استخدام &quot;کیا&quot; لأسئلة (نعم/لا)
               </h4>
               <p>
                 تُوضع{" "}
@@ -540,7 +540,7 @@ export default function BasicQuestions() {
           <ul className="list-decimal list-inside text-gray-700 dark:text-gray-300 mb-6 space-y-2">
             {exercises.map((exercise, index) => (
               <li key={index} className="naskh-arabic">
-                "{exercise.arabic}" →{" "}
+                &quot;{exercise.arabic}&quot; →{" "}
                 {showAnswers ? (
                   <span className="font-semibold text-green-700 dark:text-green-300">
                     {exercise.answer}
