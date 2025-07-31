@@ -146,7 +146,7 @@ export default function BasicQuestions() {
           {/* Kya */}
           <div className="mb-8 p-6 bg-blue-50 dark:bg-blue-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-blue-700 dark:text-blue-200 mb-3">
-              أ. کیا (Kya) → "ماذا / هل"
+              أ. کیا (Kya) → &quot;ماذا / هل&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               تُستخدم لطرح أسئلة عامة (نعم/لا) أو لاستفسار عن شيء محدد.
@@ -176,7 +176,7 @@ export default function BasicQuestions() {
           {/* Kaun */}
           <div className="mb-8 p-6 bg-purple-50 dark:bg-purple-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-purple-700 dark:text-purple-200 mb-3">
-              ب. کون (Kaun) → "مَن"
+              ب. کون (Kaun) → &quot;مَن&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن الأشخاص (مفرد/جمع).
@@ -218,7 +218,7 @@ export default function BasicQuestions() {
           {/* Kahan */}
           <div className="mb-8 p-6 bg-green-50 dark:bg-green-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-green-700 dark:text-green-200 mb-3">
-              ج. کہاں (Kahan) → "أين"
+              ج. کہاں (Kahan) → &quot;أين&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن المكان.
@@ -248,7 +248,7 @@ export default function BasicQuestions() {
           {/* Kyun */}
           <div className="mb-8 p-6 bg-red-50 dark:bg-red-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-red-700 dark:text-red-200 mb-3">
-              د. کیوں (Kyun) → "لماذا"
+              د. کیوں (Kyun) → &quot;لماذا&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن السبب.
@@ -278,7 +278,7 @@ export default function BasicQuestions() {
           {/* Kab */}
           <div className="mb-8 p-6 bg-yellow-50 dark:bg-yellow-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-yellow-700 dark:text-yellow-200 mb-3">
-              ه. کب (Kab) → "متى"
+              ه. کب (Kab) → &quot;متى&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن الزمان.
@@ -308,7 +308,7 @@ export default function BasicQuestions() {
           {/* Kaise */}
           <div className="mb-8 p-6 bg-indigo-50 dark:bg-indigo-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-indigo-700 dark:text-indigo-200 mb-3">
-              و. کیسے (Kaise) → "كيف"
+              و. کیسے (Kaise) → &quot;كيف&quot; 
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن الحالة أو الطريقة.
@@ -338,7 +338,7 @@ export default function BasicQuestions() {
           {/* Kitna */}
           <div className="mb-8 p-6 bg-teal-50 dark:bg-teal-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-teal-700 dark:text-teal-200 mb-3">
-              ز. کتنا (Kitna) → "كم"
+              ز. کتنا (Kitna) → &quot;كم&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن الكمية أو العدد.
@@ -387,7 +387,7 @@ export default function BasicQuestions() {
           {/* Kis Liye */}
           <div className="mb-8 p-6 bg-orange-50 dark:bg-orange-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-orange-700 dark:text-orange-200 mb-3">
-              ح. کس لیے (Kis Liye) → "لماذا / من أجل مَن"
+              ح. کس لیے (Kis Liye) → &quot;لماذا / من أجل مَن&quot;  
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن الهدف أو السبب.
@@ -409,7 +409,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Yeh tohfa kis liye hai?)
                 </span>{" "}
-                - "هذه الهدية من أجل مَن؟"
+                - &quot;هذه الهدية من أجل مَن؟&quot;
               </li>
             </ul>
           </div>
@@ -437,7 +437,7 @@ export default function BasicQuestions() {
                 <strong className="text-blue-700 dark:text-blue-300">
                   کون آیا؟
                 </strong>{" "}
-                (Kaun aaya?) → "مَن جاء؟"
+                (Kaun aaya?) → &quot;مَن جاء؟&quot;
               </p>
             </li>
             <li className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-sm">
@@ -484,7 +484,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kaun si film achi hai?)
                 </span>{" "}
-                → "أي فيلم جيد؟".
+                → &quot;أي فيلم جيد؟&quot;.
               </p>
             </li>
             <li className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-sm">
@@ -509,7 +509,7 @@ export default function BasicQuestions() {
                   <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                     (Kis ke saath?)
                   </span>{" "}
-                  → "مع مَن؟".
+                  → &quot;مع مَن؟&quot;.
                 </li>
               </ul>
             </li>
@@ -545,7 +545,7 @@ export default function BasicQuestions() {
                   <span className="font-semibold text-green-700 dark:text-green-300">
                     {exercise.answer}
                   </span>
-                ) : (
+                ) :   (
                   "____________________"
                 )}
               </li>

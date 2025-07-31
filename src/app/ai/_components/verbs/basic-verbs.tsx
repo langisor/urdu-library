@@ -326,7 +326,7 @@ const BasicVerbs = () => {
               <strong className="text-purple-700 dark:text-purple-300 mx-2">
                 صيغة التصريف
               </strong>
-              : مصدر الفعل (بدون "نا") +{" "}
+              : مصدر الفعل (بدون `&quot;`نا`&quot;`) +{" "}
               <strong className="text-purple-700 dark:text-purple-300 mx-2">
                 رہا/رہی/رہے
               </strong>{" "}
@@ -347,7 +347,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Main kha raha hoon)
                 </span>{" "}
-                = "أنا آكل الآن" (مذكر).
+                = &quot;أنا آكل الآن&quot; (مذكر).
               </li>
               <li>
                 <strong className="text-purple-800 dark:text-purple-100">
@@ -356,7 +356,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Woh parh rahi hai)
                 </span>{" "}
-                = "هي تقرأ الآن".
+                = &quot;هي تقرأ الآن&quot;.
               </li>
             </ul>
           </div>
@@ -401,7 +401,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Main ne khaya)
                 </span>{" "}
-                = "أكلتُ" (مذكر).
+                = &quot;أكلتُ&quot; (مذكر).
               </li>
               <li>
                 <strong className="text-green-800 dark:text-green-100">
@@ -410,7 +410,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Us ne parha)
                 </span>{" "}
-                = "هو قرأ".
+                = &quot;هو قرأ&quot;.
               </li>
             </ul>
           </div>
@@ -444,7 +444,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Main parh raha tha)
                 </span>{" "}
-                = "كنتُ أقرأ" (مذكر).
+                = &quot;كنتُ أقرأ&quot; (مذكر).
               </li>
               <li>
                 <strong className="text-red-800 dark:text-red-100 mx-2">
@@ -453,7 +453,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Woh so rahi thi)
                 </span>{" "}
-                = "كانت نائمة".
+                = &quot;كانت نائمة&quot;.
               </li>
             </ul>
           </div>
@@ -492,7 +492,7 @@ const BasicVerbs = () => {
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 (Main parhunga)
               </span>{" "}
-              = "سأقرأ" (مذكر).
+              = &quot;سأقرأ&quot; (مذكر).
             </li>
             <li>
               <strong className="text-teal-800 dark:text-teal-100 mx-2">
@@ -501,7 +501,7 @@ const BasicVerbs = () => {
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 (Woh aayegi)
               </span>{" "}
-              = "ستأتي".
+              = &quot;ستأتي&quot;.
             </li>
           </ul>
         </section>
@@ -532,7 +532,7 @@ const BasicVerbs = () => {
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     (Khao)
                   </span>{" "}
-                  = "كُل!"
+                  = &quot;كُل!&quot;
                 </li>
               </ul>
             </li>
@@ -553,7 +553,7 @@ const BasicVerbs = () => {
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     (Parhiye)
                   </span>{" "}
-                  = "اقرأوا!"
+                  = &quot;اقرأوا!&quot;
                 </li>
               </ul>
             </li>
@@ -573,7 +573,7 @@ const BasicVerbs = () => {
               <strong className="text-teal-800 dark:text-teal-100 mx-2">
                 ہونا
               </strong>{" "}
-              (Hona) = "يكون":
+              (Hona) = &quot;يكون&quot;:
               <ul className="list-circle list-inside ml-4">
                 <li>
                   <strong className="text-teal-800 dark:text-teal-100 mx-2">
@@ -582,7 +582,7 @@ const BasicVerbs = () => {
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     (Main hoon)
                   </span>{" "}
-                  = "أنا أكون".
+                  = &quot;أنا أكون&quot;.
                 </li>
               </ul>
             </li>
@@ -590,7 +590,7 @@ const BasicVerbs = () => {
               <strong className="text-teal-800 dark:text-teal-100 mx-2">
                 چاہیے
               </strong>{" "}
-              (Chahiye) = "يجب":
+              (Chahiye) = &quot;يجب&quot;:
               <ul className="list-circle list-inside ml-4">
                 <li>
                   <strong className="text-teal-800 dark:text-teal-100 mx-2">
@@ -599,7 +599,7 @@ const BasicVerbs = () => {
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     (Mujhe jana chahiye)
                   </span>{" "}
-                  = "يجب أن أذهب".
+                  = &quot;يجب أن أذهب&quot;.
                 </li>
               </ul>
             </li>
