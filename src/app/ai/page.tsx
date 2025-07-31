@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import * as React from "react";
 import BasicGrammar from "./_components/basic-grammar";
-import Verbs from "./_components/verbs";
+import Verbs from "./_components/verbs/main-verbs";
 import Questions from "./_components/questions/main-questions";
 
 export default function AIPage() {

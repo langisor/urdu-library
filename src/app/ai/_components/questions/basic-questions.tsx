@@ -12,8 +12,8 @@ import {
 // Helper component to render a table from an array of objects
 const CustomTable = ({ headers, data }: { headers: string[]; data: any[] }) => {
   return (
-    <div className=" mb-6 shadow-lg rounded-lg overflow-hidden">
-      <Table className="naskh-arabic-bold min-w-full bg-white dark:bg-gray-800 rounded-lg">
+    <div className="w-full mb-6 shadow-lg rounded-lg overflow-hidden">
+      <Table className="naskh-arabic min-w-full bg-white dark:bg-gray-800 rounded-lg">
         <TableHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
           <TableRow>
             {headers.map((header, index) => (
@@ -113,8 +113,8 @@ export default function BasicQuestions() {
   ];
 
   return (
-    <div className="naskh-arabic-bold min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 font-inter p-6 sm:p-10 flex flex-col items-center">
-      <div className="max-w-4xl w-full bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 sm:p-10">
+    <div className="w-full naskh-arabic-bold h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 font-inter p-6 flex flex-col">
+      <div className=" w-full bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 sm:p-10">
         <h1 className="naskh-arabic text-4xl sm:text-5xl font-extrabold text-center text-blue-700 dark:text-blue-400 mb-8 leading-tight">
           أدوات الاستفهام في اللغة الأردية
         </h1>

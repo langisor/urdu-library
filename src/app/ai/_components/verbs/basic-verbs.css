@@ -1,0 +1,30 @@
+td {
+  font-size: 16px !important;
+}
+@media (max-width: 600px) {
+  td,
+  th {
+    font-size: 14px !important;
+    white-space: pre-wrap !important;
+  }
+  li {
+    font-size: 14px !important;
+    white-space: pre-wrap !important;
+  }
+  h2 {
+    font-size: 18px !important;
+    white-space: pre-wrap !important;
+  }
+  h1 {
+    font-size: 20px !important;
+    white-space: pre-wrap !important;
+  }
+  h3 {
+    font-size: 16px !important;
+    white-space: pre-wrap !important;
+  }
+  p {
+    font-size: 14px !important;
+    white-space: pre-wrap !important;
+  }
+}
