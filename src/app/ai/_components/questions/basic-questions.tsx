@@ -159,7 +159,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kya aap ko pani chahiye?)
                 </span>{" "}
-                - "هل تحتاج ماءً؟"
+                - &quot;هل تحتاج ماءً؟&quot;
               </li>
               <li>
                 <strong className="naskh-arabic text-blue-800 dark:text-blue-100">
@@ -168,7 +168,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kya yeh tumhari kitab hai?)
                 </span>{" "}
-                - "هل هذا كتابك؟"
+                - &quot;هل هذا كتابك؟&quot;
               </li>
             </ul>
           </div>
@@ -201,7 +201,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kaun aaya hai?)
                 </span>{" "}
-                - "مَن جاء؟" (مذكر).
+                - &quot;مَن جاء؟&quot; (مذكر).
               </li>
               <li>
                 <strong className="naskh-arabic text-purple-800 dark:text-purple-100">
@@ -210,7 +210,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kaun si kitab chahiye?)
                 </span>{" "}
-                - "أي كتاب تريد؟" (مؤنث).
+                - &quot;أي كتاب تريد؟&quot; (مؤنث).
               </li>
             </ul>
           </div>
@@ -231,7 +231,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Aap kahan rehte hain?)
                 </span>{" "}
-                - "أين تسكن؟"
+                - &quot;أين تسكن؟&quot;
               </li>
               <li>
                 <strong className="naskh-arabic text-green-800 dark:text-green-100">
@@ -240,7 +240,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Toilet kahan hai?)
                 </span>{" "}
-                - "أين الحمام؟"
+                - &quot;أين الحمام؟&quot;
               </li>
             </ul>
           </div>
@@ -261,7 +261,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Tum kyun ro rahe ho?)
                 </span>{" "}
-                - "لماذا تبكي؟"
+                - &quot;لماذا تبكي؟&quot;
               </li>
               <li>
                 <strong className="naskh-arabic text-red-800 dark:text-red-100">
@@ -270,7 +270,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Yeh kyun hua?)
                 </span>{" "}
-                - "لماذا حدث هذا؟"
+                - &quot;لماذا حدث هذا؟&quot;
               </li>
             </ul>
           </div>
@@ -291,7 +291,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Train kab aaye gi?)
                 </span>{" "}
-                - "متى سيأتي القطار؟"
+                - &quot;متى سيأتي القطار؟&quot;
               </li>
               <li>
                 <strong className="naskh-arabic text-yellow-800 dark:text-yellow-100">
@@ -300,7 +300,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Tum kab aaoge?)
                 </span>{" "}
-                - "متى ستأتي؟"
+                - &quot;متى ستأتي؟&quot;
               </li>
             </ul>
           </div>
@@ -321,7 +321,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Aap kaise hain?)
                 </span>{" "}
-                - "كيف حالك؟"
+                - &quot;كيف حالك؟&quot;
               </li>
               <li>
                 <strong className="naskh-arabic text-indigo-800 dark:text-indigo-100">
@@ -330,7 +330,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Yeh kaise kaam karta hai?)
                 </span>{" "}
-                - "كيف يعمل هذا؟"
+                - &quot;كيف يعمل هذا؟&quot;
               </li>
             </ul>
           </div>
@@ -370,7 +370,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kitna paisa chahiye?)
                 </span>{" "}
-                - "كم من المال تحتاج؟" (مذكر).
+                - &quot;كم من المال تحتاج؟&quot; (مذكر).
               </li>
               <li>
                 <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
@@ -379,7 +379,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kiti kitabein hain?)
                 </span>{" "}
-                - "كم عدد الكتب؟" (مؤنث).
+                - &quot;كم عدد الكتب؟&quot; (مؤنث).
               </li>
             </ul>
           </div>
@@ -400,7 +400,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Tum yeh kis liye kar rahe ho?)
                 </span>{" "}
-                - "لماذا تفعل هذا؟"
+                - &quot;لماذا تفعل هذا؟&quot;
               </li>
               <li>
                 <strong className="naskh-arabic text-orange-800 dark:text-orange-100">
@@ -459,7 +459,7 @@ export default function BasicQuestions() {
                 <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                   (Kya tum ne khana khaya?)
                 </span>{" "}
-                → "هل أكلتَ الطعام؟".
+                → &quot;هل أكلتَ الطعام؟&quot;.
               </p>
             </li>
             <li className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-sm">
@@ -500,7 +500,7 @@ export default function BasicQuestions() {
                   <span className="phonetic text-sm text-gray-600 dark:text-gray-400">
                     (Kahan tak?)
                   </span>{" "}
-                  → "إلى أين؟".
+                  → &quot;إلى أين؟&quot;.
                 </li>
                 <li>
                   <strong className="naskh-arabic text-blue-700 dark:text-blue-300">
@@ -545,7 +545,7 @@ export default function BasicQuestions() {
                   <span className="font-semibold text-green-700 dark:text-green-300">
                     {exercise.answer}
                   </span>
-                ) :   (
+                ) : (
                   "____________________"
                 )}
               </li>

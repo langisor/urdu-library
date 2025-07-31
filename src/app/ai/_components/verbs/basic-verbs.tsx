@@ -300,7 +300,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Main parhta hoon)
                 </span>{" "}
-                = "أنا أقرأ" (مذكر).
+                = &quot;أنا أقرأ&quot; (مذكر).
               </li>
               <li>
                 <strong className="text-blue-800 dark:text-blue-100">
@@ -309,7 +309,7 @@ const BasicVerbs = () => {
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   (Woh khati hai)
                 </span>{" "}
-                = "هي تأكل".
+                = &quot;هي تأكل&quot;.
               </li>
             </ul>
           </div>
@@ -427,7 +427,7 @@ const BasicVerbs = () => {
               <strong className="text-red-700 dark:text-red-300 mx-2">
                 صيغة التصريف
               </strong>
-              : مصدر الفعل (بدون "نا") +{" "}
+              : مصدر الفعل (بدون &quot;نا&quot;) +{" "}
               <strong className="text-red-700 dark:text-red-300 mx-2">
                 رہا/رہی/رہے تھا
               </strong>
@@ -471,7 +471,7 @@ const BasicVerbs = () => {
             <strong className="text-teal-700 dark:text-teal-300">
               صيغة التصريف
             </strong>
-            : مصدر الفعل (بدون "نا") +{" "}
+            : مصدر الفعل (بدون &quot;نا&quot;) +{" "}
             <strong className="text-teal-700 dark:text-teal-300">
               وں گا/وگی/یں گے
             </strong>{" "}
@@ -645,7 +645,7 @@ const BasicVerbs = () => {
                 <strong className="text-teal-700 dark:text-teal-300">
                   میں جاتا ہوں
                 </strong>{" "}
-                (لا تقل "جاتا ہوں" فقط).
+                (لا تقل &quot;جاتا ہوں&quot; فقط).
               </p>
             </li>
             <li className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-sm">
@@ -667,7 +667,7 @@ const BasicVerbs = () => {
                 <span className="text-gray-600 dark:text-gray-300">
                   (Main nahi parhta)
                 </span>{" "}
-                = "أنا لا أقرأ".
+                = &quot;أنا لا أقرأ&quot;.
               </p>
             </li>
           </ul>
@@ -697,7 +697,7 @@ const BasicVerbs = () => {
           <ul className="list-decimal list-inside text-gray-700 dark:text-gray-300 mb-6 space-y-2">
             {exercises.map((exercise, index) => (
               <li key={index}>
-                "{exercise.arabic}" →{" "}
+                &quot;{exercise.arabic}&quot; →{" "}
                 {showAnswers ? (
                   <span className="font-semibold text-green-700 dark:text-green-300">
                     {exercise.answer}
