@@ -1,18 +1,25 @@
 import "./globals.css";
-import { Inter, Noto_Nastaliq_Urdu, Noto_Sans_Arabic } from "next/font/google";
+import { Metadata } from "next";
 import MainNavigation from "@/components/main-navigation";
-// Define the fonts with appropriate subsets for performance
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  variable: "--font-noto-sans-arabic",
+import { Inter, Noto_Nastaliq_Urdu, Noto_Naskh_Arabic } from "next/font/google";
+import { cn } from "@/lib/utils";
+const interFont = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
-const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
+const jameelNooriFont = Noto_Nastaliq_Urdu({
   subsets: ["arabic"],
-  variable: "--font-noto-nastaliq-urdu",
-}); // Nastaliq also uses the 'arabic' subset
+  variable: "--font-nastaliq",
+  display: "swap",
+});
+const notoNaskhArabicFont = Noto_Naskh_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-naskh-arabic",
+  display: "swap",
+});
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Multi-Language App",
   description: "Next.js app with English, Urdu, and Arabic.",
 };
@@ -23,13 +30,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/* className={${inter.variable} ${notoSansArabic.variable} 
-      ${notoNastaliqUrdu.variable}}: This applies the CSS variables
-       to the body element. This makes them globally available. */}
-      <body
-        className={`${inter.variable} ${notoSansArabic.variable} ${notoNastaliqUrdu.variable}`}
-      >
+    <html
+      lang="en"
+      className={cn(
+        interFont.variable,
+        jameelNooriFont.variable,
+        notoNaskhArabicFont.variable
+      )}
+    >
+      <body>
         <div className="min-h-screen">
           <div className="w-full mb-4">
             <MainNavigation />

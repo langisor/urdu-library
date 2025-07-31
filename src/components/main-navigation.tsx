@@ -11,6 +11,7 @@ const linkItems = [
   { href: "/alphabets", label: "Alphabets" },
   { href: "/urdu-script-book", label: "Urdu Script Book" },
   { href: "/urdu-100-vocabularies", label: "Urdu 100 Phrases" },
+  { href: "/ai", label: "AI" },
 ];
 export default function MainNavigation() {
   const pathname = usePathname();

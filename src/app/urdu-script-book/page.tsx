@@ -8,9 +8,7 @@ export default function UrduScriptBookPage() {
   const [playMode, setPlayMode] = React.useState(true);
   return (
     <div className="w-full">
-      <h1 className="phonetic font-bold text-center my-4">
-        Interactive Alphabets
-      </h1>
+      <h1 className="inter-bold text-center my-4">Interactive Alphabets</h1>
       <div className="flex items-center p-4">
         <Label htmlFor="play-mode" className="sm:text-3xl">
           Display Mode :{" "}

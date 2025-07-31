@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-inter: var(--font-inter);
+  --font-jameel-noori: var(--font-jameel-noori);
+  --font-nastaliq: var(--font-nastaliq);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -41,27 +44,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-}
-
-/* fonts */
-:root {
-  --font-inter: var(--font-inter-fallback, sans-serif);
-  --font-noto-sans-arabic: var(--font-noto-sans-arabic-fallback, sans-serif);
-  --font-noto-nastaliq-urdu: var(--font-noto-nastaliq-urdu-fallback, serif);
-  /* Nastaliq often benefits from a serif fallback */
-}
-
-/* Fallback fonts (optional but good practice) */
-:root {
-  --font-inter-fallback: system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-noto-sans-arabic-fallback: "Noto Sans Arabic", system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
-  --font-noto-nastaliq-urdu-fallback: "Noto Nastaliq Urdu", "Times New Roman",
-    Times, serif;
 }
 
 :root {
@@ -143,86 +125,52 @@
   }
 }
 
-/* default font */
-body {
-  font-family: var(--font-inter);
-}
-
-/* Language-specific font application */
-/* You'll apply these based on your language state in components */
-.lang-en {
-  font-family: var(--font-inter);
-  direction: ltr;
-  /* Left-to-right */
-}
-
-.lang-ar {
-  font-family: var(--font-noto-sans-arabic);
+.nastaliq {
+  font-family: var(--font-nastaliq);
   direction: rtl;
-  /* Right-to-left */
-}
-
-.ur {
-  font-family: var(--font-noto-nastaliq-urdu);
-  direction: rtl;
-  
-}
-.big-ur {
-  font-family: var(--font-noto-nastaliq-urdu);
-  direction: rtl;
-  font-size: 6rem;
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
-  text-align: center;
-  margin: auto;
-  padding: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 15px;
-  width: fit-content;
-}
-
-.lang-ur {
-  font-family: var(--font-noto-nastaliq-urdu);
-  direction: rtl;
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
-  text-align: center;
-  margin: auto;
-  padding: 1rem;
-  padding-bottom: 1rem;
-
-  /* Right-to-left */
-}
-.big-en {
-  font-family: var(--font-inter);
-  direction: ltr;
-  font-size: 1.5rem;
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
-  text-align: center;
-  margin: auto;
-  padding: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 15px;
-  width: fit-content;
-}
-
-.phonetic {
-  font-family: var(--font-inter);
-  direction: ltr;
   font-size: 2rem;
-  text-align: center;
-  margin: auto;
-  padding: 1rem;
-  font-style: italic;
-  color: white;
-  background-color: #587894;
-  border-radius: 15px;
-  width: fit-content;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wght" 400;
 }
 
-.romanized{
-  color:darkorange;
+.naskh-arabic {
+  font-family: var(--font-naskh-arabic);
+
+  direction: rtl;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wght" 400;
+}
+.nastaliq-bold {
+  font-family: var(--font-nastaliq);
+  direction: rtl;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wght" 700;
+}
+.naskh-arabic-bold {
+  font-family: var(--font-naskh-arabic);
+  direction: rtl;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wght" 700;
+}
+.inter-bold {
+  font-family: var(--font-inter);
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wght" 700;
+}
+.phonetic {
+  font-family: sans-serif;
+  border: 1px solid #ccc;
+  padding: 2px;
   font-style: italic;
-  background-color: black;
+  font-size:1.6rem;
+  color: #530c0c;
 }
