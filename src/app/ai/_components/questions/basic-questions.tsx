@@ -183,15 +183,16 @@ export default function BasicQuestions() {
             </p>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2 font-medium">
               ملاحظة: تتغير حسب الجنس في بعض الحالات:
-              <ul className="list-disc list-inside ml-4">
-                <li>
-                  <strong className="naskh-arabic text-purple-800 dark:text-purple-100">
-                    کون سی
-                  </strong>{" "}
-                  (kaun si) → "أي" (لمؤنث).
-                </li>
-              </ul>
             </p>
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <strong className="naskh-arabic text-purple-800 dark:text-purple-100">
+                  کون سی
+                </strong>{" "}
+                (kaun si) → "أي" (لمؤنث).
+              </li>
+            </ul>
+
             <ul className="list-disc list-inside text-gray-800 dark:text-gray-200">
               <li>
                 <strong className="naskh-arabic text-purple-800 dark:text-purple-100">
@@ -591,8 +592,6 @@ export default function BasicQuestions() {
             </li>
           </ul>
         </section>
-
- 
       </div>
     </div>
   );
