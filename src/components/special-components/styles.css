@@ -1,0 +1,40 @@
+@import url("@/app/fonts");
+
+.text-english {
+    font-family: var(--font-inter);
+    direction: ltr;
+    text-align: left;
+    color: var(--color-text-en);
+}
+.text-arabic {
+    font-family: var(--font-naskh-arabic);
+    direction: rtl;
+    text-align: right;
+    color: var(--color-text-ar);
+}
+.text-urdu {
+    font-family: var(--font-nastaliq);
+    direction: rtl;
+    text-align: right;
+    color: var(--color-text-ur);
+}
+
+.text-romanized {
+    font-family: var(--font-inter);
+    font-style: italic;
+    direction: ltr;
+    text-align: left;
+    color: var(--color-text-ro);
+}
+.text-sm {
+    font-size: 12px;
+}
+.text-md {
+    font-size: 16px;
+}
+.text-lg {
+    font-size: 20px;
+}
+.text-xl {
+    font-size: 24px;
+}

@@ -1,11 +1,15 @@
 "use client";
-import Link from "next/link";
+import VocabularyUnit2Content from "./_components/unit-2/content";
+import VocabularyUnit2Explore from "./_components/unit-2/explore";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import * as React from "react";
-import BasicGrammar from "./_components/basic-grammar";
-import Verbs from "./_components/verbs/main-verbs";
-import Questions from "./_components/questions/main-questions";
 
+function OtherPage() {
+  return <div>Other Page</div>;
+}
 interface TabTrigger {
   id: string;
   value: string;
@@ -19,19 +23,17 @@ interface TabContent {
 }
 
 const tabsTriggers: TabTrigger[] = [
-  { id: "1", value: "basic-grammar", label: "Basic Grammar" },
-  { id: "2", value: "verbs", label: "Verbs" },
-  { id: "3", value: "questions", label: "Questions" },
+  { id: "unit-2-content", value: "unit-2-content", label: "Units 2 Content" },
+  { id: "unit-2-practice", value: "unit-2-practice", label: "Units 2 Practice" },
 ];
 
 const tabsContent: TabContent[] = [
-  { id: "1", value: "basic-grammar", content: <BasicGrammar /> },
-  { id: "2", value: "verbs", content: <Verbs /> },
-  { id: "3", value: "questions", content: <Questions /> },
+  { id: "unit-2-content", value: "unit-2-content", content: <VocabularyUnit2Content /> },
+  { id: "unit-2-practice", value: "unit-2-practice", content: <VocabularyUnit2Explore /> },
 ];
 
-export default function AIPage() {
-  const [tab, setTab] = React.useState("basic-grammar");
+export default function VocabularyPage() {
+  const [tab, setTab] = React.useState("unit-2-content");
   const selectedStyle = {
     backgroundColor: "blue",
     color: "white",
@@ -55,9 +57,14 @@ export default function AIPage() {
 
   return (
     <div className="w-full">
-      <Tabs value={tab} onValueChange={setTab}>
+      <Tabs
+        value={tab}
+        onValueChange={setTab}
+        className=""
+        orientation="vertical"
+      >
         <TabsList>{renderTabTriggers}</TabsList>
-        {renderTabContent}
+        <div>{renderTabContent}</div>
       </Tabs>
     </div>
   );

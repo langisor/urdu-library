@@ -308,7 +308,7 @@ export default function BasicQuestions() {
           {/* Kaise */}
           <div className="mb-8 p-6 bg-indigo-50 dark:bg-indigo-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-indigo-700 dark:text-indigo-200 mb-3">
-              و. کیسے (Kaise) → &quot;كيف&quot; 
+              و. کیسے (Kaise) → &quot;كيف&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن الحالة أو الطريقة.
@@ -345,23 +345,24 @@ export default function BasicQuestions() {
             </p>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2 font-medium">
               ملاحظة: تتغير حسب الجنس:
-              <ul className="list-disc list-inside ml-4">
-                <li>
-                  <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
-                    کتنا
-                  </strong>{" "}
-                  (masc.) /{" "}
-                  <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
-                    کتی
-                  </strong>{" "}
-                  (fem.) /{" "}
-                  <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
-                    کتنی
-                  </strong>{" "}
-                  (fem. جمع).
-                </li>
-              </ul>
             </p>
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
+                  کتنا
+                </strong>{" "}
+                (masc.) /{" "}
+                <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
+                  کتی
+                </strong>{" "}
+                (fem.) /{" "}
+                <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
+                  کتنی
+                </strong>{" "}
+                (fem. جمع).
+              </li>
+            </ul>
+
             <ul className="list-disc list-inside text-gray-800 dark:text-gray-200">
               <li>
                 <strong className="naskh-arabic text-teal-800 dark:text-teal-100">
@@ -387,7 +388,7 @@ export default function BasicQuestions() {
           {/* Kis Liye */}
           <div className="mb-8 p-6 bg-orange-50 dark:bg-orange-900 rounded-lg shadow-md">
             <h3 className="naskh-arabic text-2xl font-semibold text-orange-700 dark:text-orange-200 mb-3">
-              ح. کس لیے (Kis Liye) → &quot;لماذا / من أجل مَن&quot;  
+              ح. کس لیے (Kis Liye) → &quot;لماذا / من أجل مَن&quot;
             </h3>
             <p className="naskh-arabic text-gray-700 dark:text-gray-300 mb-2">
               للسؤال عن الهدف أو السبب.
