@@ -6,8 +6,14 @@ import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs";
 import PreliminaryTab from "./tabs-content/preliminary-tab";
 import PartsTab from "./tabs-content/parts-tab";
 import UnitsTab from "./tabs-content/units-tab";
-
-type tabValue = "cover" | "preliminary" | "appendices" | "parts" | "units";
+import FlashcardCh1Voc1 from "@/components/flash-cards/cards/ch1-voc1";
+type tabValue =
+  | "cover"
+  | "preliminary"
+  | "appendices"
+  | "parts"
+  | "units"
+  | "flashcards";
 
 export default function CourseBookNavigator({
   bookData,
@@ -67,6 +73,12 @@ export default function CourseBookNavigator({
           >
             Appendices
           </TabsTrigger>
+          <TabsTrigger
+            value="flashcards"
+            style={selectedView === "flashcards" ? selectedTabStyle : undefined}
+          >
+            Flashcards
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="cover">
           <BookCover
@@ -89,6 +101,9 @@ export default function CourseBookNavigator({
         </TabsContent>
         <TabsContent value="appendices">
           <h2>Appendices</h2>
+        </TabsContent>
+        <TabsContent value="flashcards">
+          <FlashcardCh1Voc1 />
         </TabsContent>
       </Tabs>
     </div>
