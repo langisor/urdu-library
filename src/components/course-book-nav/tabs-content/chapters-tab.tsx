@@ -33,7 +33,7 @@ export default function ChaptersTab({ chapters }: ChaptersTabProps) {
             <Card className="w-full cursor-pointer hover:bg-gray-100">
               <CardContent>
                 <div className="flex flex-row justify-between gap-1">
-                  <span className="font-bold">{chapter.chapterNumber}</span>
+                  <span className="font-bold text-lg">Chapter  {chapter.chapterNumber}</span>
                   <span className="font-bold text-lg italic">
                     {chapter.title}
                   </span>
@@ -59,7 +59,7 @@ function ChapterMedia({ chapter }: { chapter: Chapter }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Chapter {chapter.chapterNumber}</CardTitle>
+        <CardTitle><h1> {chapter.title}</h1></CardTitle>
       </CardHeader>
       <CardContent>
         {hasExercises && (
@@ -83,11 +83,12 @@ function ChapterVocabulary({
   vocabulary: MediaVocabularyProps[];
 }) {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 bg-blue-100 p-2">
+      <h2 className="font-bold">Vocabulary</h2>
       {vocabulary.map((vocabulary) => (
         <div key={vocabulary.number} className="flex flex-col gap-1">
           <p className="font-bold">{vocabulary.number}</p>
-          <audio controls>
+          <audio controls playsInline>
             <source
               src={`/media/audio-all/${vocabulary.audioFile}`}
               type="audio/mp3"
@@ -101,11 +102,12 @@ function ChapterVocabulary({
 
 function ChapterExercises({ exercises }: { exercises: MediaExercisesProps[] }) {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 bg-green-100 p-2">
+      <h2 className="font-bold">Exercises</h2>
       {exercises.map((exercise) => (
         <div key={exercise.number} className="flex flex-col gap-1">
           <p className="font-bold">{exercise.number}</p>
-          <audio controls>
+          <audio controls playsInline>
             <source
               src={`/media/audio-all/${exercise.audioFile}`}
               type="audio/mp3"
