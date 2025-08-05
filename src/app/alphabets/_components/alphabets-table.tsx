@@ -36,22 +36,22 @@ export function AlphabetsTable() {
       <Table className="w-full">
         <TableHeader>
           <TableRow className="bg-zinc-700 text-xl font-bold ">
-            <TableHead className="border w-full bg-slate-600 text-white text-center self-center ">
+            <TableHead className="border w-full bg-slate-600! text-white text-center self-center ">
               Letter Alone
             </TableHead>
-            <TableHead className="border w-full bg-slate-600 text-white text-center self-center ">
+            <TableHead className="border w-full bg-slate-600! text-white text-center self-center ">
               Initial Form
             </TableHead>
-            <TableHead className="border w-full bg-slate-600 text-white text-center self-center ">
+            <TableHead className="border w-full bg-slate-600! text-white text-center self-center ">
               Medial Form
             </TableHead>
-            <TableHead className="border w-full bg-slate-600 text-white text-center self-center ">
+            <TableHead className="border w-full bg-slate-600! text-white text-center self-center ">
               Final Form
             </TableHead>
-            <TableHead className="border w-full bg-slate-600 text-white text-center self-center ">
+            <TableHead className="border w-full bg-slate-600! text-white text-center self-center ">
               Name (Romanized)
             </TableHead>
-            <TableHead className="border w-full bg-slate-600 text-white text-center self-center ">
+            <TableHead className="border w-full bg-slate-600! text-white text-center self-center ">
               Basic Sound (Romanized)
             </TableHead>
             <TableHead className="hidden">Audio</TableHead>
