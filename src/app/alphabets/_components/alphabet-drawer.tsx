@@ -132,9 +132,12 @@ export default function AlphabetDrawerTable() {
             <Card>
               <CardContent className="mt-4">
                 <div className="mt-4 flex flex-row items-center gap-4">
-                  <span className="inter-bold text-2xl">To Do : Alphabet Notes</span>
+                  <span className="inter-bold text-2xl">
+                    To Do : Alphabet Notes
+                  </span>
                   <span className="inter-bold text-4xl">
-                   
+                    add alphabet pronunciation notes such as (initial, medial,
+                    final)
                   </span>
                 </div>
               </CardContent>
