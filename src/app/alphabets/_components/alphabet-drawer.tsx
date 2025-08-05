@@ -47,7 +47,7 @@ export default function AlphabetDrawerTable() {
           >
             <Card className="mb-2 cursor-pointer">
               <CardContent className="flex items-center justify-between">
-                <span className="ur font-bold sm:text-6xl">
+                <span className="ur  nastaliq font-bold sm:text-6xl">
                   {alphabet.letter_alone}
                 </span>
               </CardContent>
@@ -62,8 +62,8 @@ export default function AlphabetDrawerTable() {
     const alphabet = alphabetsData.alphabets[currentAlphabetIndex];
     return (
       <DrawerContent className="min-h-screen w-full overflow-y-auto">
-        <DrawerHeader className="flex flex-row gap-3">
-          <DrawerTitle className="phonetic">
+        <DrawerHeader className="flex flex-row items-center justify-between">
+          <DrawerTitle className="inter-bold italic text-2xl">
             {alphabet.name_romanized}
           </DrawerTitle>
           <Button
@@ -78,38 +78,54 @@ export default function AlphabetDrawerTable() {
         </DrawerHeader>
         <div className="p-4 my-4">
           <div className="flex flex-col space-y-4">
+            <h1 className="nastaliq-bold text-4xl text-center bg-slate-500 p-4 text-white! rounded-2xl">
+              {alphabet.letter_alone}
+            </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Card>
-                <CardContent className="text-center">
-                  <h3 className="big-en">Initial Form</h3>
-                  <h3 className="big-ur">{alphabet.initial_form}</h3>
+                <CardContent className="text-center flex flex-row items-center justify-between">
+                  <span className="inter-bold">Initial Form</span>
+                  <span className="nastaliq-bold text-4xl">
+                    {alphabet.initial_form}
+                  </span>
                 </CardContent>
               </Card>
               <Card>
-                <CardContent className="text-center">
-                  <h3 className="big-en">Medial Form</h3>
-                  <h3 className="big-ur">{alphabet.medial_form}</h3>
+                <CardContent className="text-center flex flex-row items-center justify-between">
+                  <span className="inter-bold">Medial Form</span>
+                  <span className="nastaliq-bold text-4xl">
+                    {alphabet.medial_form}
+                  </span>
                 </CardContent>
               </Card>
               <Card>
-                <CardContent className="text-center">
-                  <h3 className="big-en">Final Form</h3>
-                  <p className="big-ur">{alphabet.final_form}</p>
+                <CardContent className="text-center flex flex-row items-center justify-between">
+                  <span className="inter-bold">Final Form</span>
+                  <span className="nastaliq-bold text-4xl">
+                    {alphabet.final_form}
+                  </span>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="text-center mx-auto my-auto">
                   <DrawerClose asChild className="flex flex-col">
-                    <Button onClick={() => setIsOpen(false)} className="w-48 h-16 text-3xl">Close</Button>
+                    <Button
+                      onClick={() => setIsOpen(false)}
+                      className="w-48 h-16 text-3xl"
+                    >
+                      Close
+                    </Button>
                   </DrawerClose>
                 </CardContent>
               </Card>
             </div>
             <Card>
               <CardContent className="mt-4">
-                <div className="mt-4">
-                  <h3 className="text-lg font-semibold">Basic Sound</h3>
-                  <p className="text-2xl">{alphabet.basic_sound_romanized}</p>
+                <div className="mt-4 flex flex-row items-center gap-4">
+                  <span className="inter-bold text-2xl">Basic Sound</span>
+                  <span className="inter-bold text-4xl">
+                    {alphabet.basic_sound_romanized}
+                  </span>
                 </div>
               </CardContent>
             </Card>
