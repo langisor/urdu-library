@@ -8,6 +8,8 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetDescription,
+  SheetClose,
 } from "@/components/ui/sheet";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { fetchVocabularies } from "@/server/fetchers";
@@ -20,6 +22,11 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
   const [data, setData] = React.useState<any>(null);
   const [isLoading, setIsLoading] = React.useState(false);
 
+  const handleCloseSheet=()=>{
+    setIsOpen(false);
+    setData(null);
+    setIsLoading(false);
+  }
   async function fetchData() {
     setIsLoading(true);
     const data = await fetchVocabularies(lessonId);
@@ -45,10 +52,16 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
           <Button variant="outline">View Vocabularies</Button>
         </SheetTrigger>
         {/*  make it responsive  / full height and add scrollbar  */}
-        <SheetContent className="sm:min-w-[600px] h-screen overflow-y-auto">
+        <SheetContent className="sm:min-w-[600px] h-screen  overflow-y-auto" side="top">
           <SheetHeader>
             <SheetTitle>Vocabularies</SheetTitle>
+            <SheetDescription>
+              This is a description for the sheet
+            </SheetDescription>
           </SheetHeader>
+          <SheetClose asChild>
+            <Button variant="outline">Close</Button>
+          </SheetClose>
           <CardContent className="h-full overflow-y-auto">
             {isLoading ? <Loading /> : <JsonViewerComponent data={data} />}
           </CardContent>
