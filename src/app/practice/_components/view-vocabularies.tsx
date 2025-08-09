@@ -19,6 +19,7 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [data, setData] = React.useState<any>(null);
   const [isLoading, setIsLoading] = React.useState(false);
+
   async function fetchData() {
     setIsLoading(true);
     const data = await fetchVocabularies(lessonId);
@@ -27,7 +28,6 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
     setIsLoading(false);
   }
   React.useEffect(() => {
-    
     fetchData();
 
     //  clean up if Sheet is closed
@@ -38,7 +38,6 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
       setIsLoading(false);
     };
   }, [lessonId]);
-  if (isLoading) return <Loading />;
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -46,12 +45,12 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
           <Button variant="outline">View Vocabularies</Button>
         </SheetTrigger>
         {/*  make it responsive  / full height and add scrollbar  */}
-        <SheetContent className="sm:max-w-[600px] h-screen overflow-y-auto">
+        <SheetContent className="sm:min-w-[600px] h-screen overflow-y-auto">
           <SheetHeader>
             <SheetTitle>Vocabularies</SheetTitle>
           </SheetHeader>
           <CardContent className="h-full overflow-y-auto">
-            <JsonViewerComponent data={data} />
+            {isLoading ? <Loading /> : <JsonViewerComponent data={data} />}
           </CardContent>
         </SheetContent>
       </Sheet>
@@ -61,7 +60,7 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
 
 function Loading() {
   return (
-    <div className="flex items-center justify-center h-screen transition-all duration-300 text-2xl italic font-bold">
+    <div className="flex items-center justify-center transition-all duration-300 text-2xl italic font-bold">
       Loading...
     </div>
   );
