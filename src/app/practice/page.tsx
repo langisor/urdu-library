@@ -83,17 +83,14 @@ export default function Practice() {
 
           {/* TabsContent for each category */}
           {categories.map((item) => (
-            <>
-              <div className="mt-6">
+            <div key={item.category.id}>
+            
+              <div className="mt-6 flex justify-center">
                 <ViewVocabularies
                   categoryId={item.category.id}
                 ></ViewVocabularies>
               </div>
-              <TabsContent
-                key={item.category.id}
-                value={item.category.id.toString()}
-                className="mt-6"
-              >
+              <TabsContent value={item.category.id.toString()} className="mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {item.lessons.map((lesson) => (
                     <Card
@@ -123,7 +120,7 @@ export default function Practice() {
                   ))}
                 </div>
               </TabsContent>
-            </>
+            </div>
           ))}
         </Tabs>
       </div>

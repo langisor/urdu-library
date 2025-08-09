@@ -12,7 +12,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { JsonViewerComponent } from "@/components/json-viewer";
-import { fetchVocabularies } from "@/app/practice/server/fetchers";
+import { fetchVocabularies } from "@/app/practice/_server/fetchers";
 interface ViewVocabulariesProps {
   categoryId: string | number;
 }
