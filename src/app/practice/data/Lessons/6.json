@@ -49,8 +49,9 @@
             "disabled": false,
             "done": true,
             "stars": 3,
-            "countDone": 0,
-        },
+          "countDone": 0
+},
+
         {
             "id": 602,
             "i": 2,
@@ -66,8 +67,9 @@
             "disabled": false,
             "done": true,
             "stars": 1,
-            "countDone": 0,
-        },
+          "countDone": 0
+},
+
         {
             "id": 603,
             "i": 3,
@@ -83,8 +85,9 @@
             "disabled": false,
             "done": true,
             "stars": 1,
-            "countDone": 0,
-        },
+          "countDone": 0
+},
+
         {
             "id": 604,
             "i": 4,
@@ -100,8 +103,9 @@
             "disabled": false,
             "done": true,
             "stars": 1,
-            "countDone": 0,
-        },
+          "countDone": 0
+},
+
         {
             "id": 605,
             "i": 5,
@@ -117,8 +121,9 @@
             "disabled": false,
             "done": true,
             "stars": 1,
-            "countDone": 0,
-        },
+          "countDone": 0
+},
+
         {
             "id": 606,
             "i": 6,
@@ -134,8 +139,8 @@
             "disabled": false,
             "done": true,
             "stars": 3,
-            "countDone": 0,
-        }
+            "countDone": 0
+}
     ],
     "dialogues": [{
         "id": 601,
@@ -164,7 +169,7 @@
         "disabled": false,
         "done": true,
         "stars": 3,
-        "countDone": 0,
+        "countDone": 0
     }],
     "oxfordTests": [],
     "reviewLessons": []
