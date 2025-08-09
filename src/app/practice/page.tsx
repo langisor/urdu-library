@@ -9,6 +9,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import ViewVocabularies from "./_components/view-vocabularies";
 import { Button } from "@/components/ui/button";
 
 import jsonData from "@/app/practice/data/all.json";
@@ -20,7 +21,6 @@ type Lesson = {
   id: number;
   name: string;
   done: boolean;
-
   disabled: boolean;
   stars: number;
 };
@@ -106,21 +106,18 @@ export default function Practice() {
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="mt-4 w-full flex flex-col gap-2 justify-center">
-                        <Button
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-colors"
-                          disabled={lesson.disabled}
-                        >
-                          Start Lesson
-                        </Button>
-                        <Button
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-colors"
-                          disabled={lesson.disabled}
-                        >
-                          View Vocabularies
-                        </Button>
+                      <Button
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold transition-colors"
+                        disabled={lesson.disabled}
+                      >
+                        Start Lesson
+                      </Button>
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+              <div className="mt-4">
+                <ViewVocabularies lessonId={item.lessons[0].id} />
               </div>
             </TabsContent>
           ))}
