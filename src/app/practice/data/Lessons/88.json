@@ -31,7 +31,7 @@
         "oxfordTests": [],
         "reviewLessons": [],
         "disabled": false,
-        "countDone": 8,
+        "countDone": 0,
         "time": 26057.889999999996
     },
     "lessons": [{
@@ -49,7 +49,7 @@
             "disabled": false,
             "done": true,
             "stars": 3,
-            "countDone": 13
+            "countDone": 0,
         },
         {
             "id": 8802,
@@ -66,7 +66,7 @@
             "disabled": false,
             "done": true,
             "stars": 3,
-            "countDone": 4
+            "countDone": 0,
         },
         {
             "id": 8803,
@@ -83,7 +83,7 @@
             "disabled": false,
             "done": true,
             "stars": 3,
-            "countDone": 5
+            "countDone": 0,
         },
         {
             "id": 8804,
@@ -100,7 +100,7 @@
             "disabled": false,
             "done": true,
             "stars": 2,
-            "countDone": 3
+            "countDone": 0,
         },
         {
             "id": 8805,
@@ -117,7 +117,7 @@
             "disabled": false,
             "done": true,
             "stars": 3,
-            "countDone": 3
+            "countDone": 0,
         },
         {
             "id": 8806,
@@ -134,7 +134,7 @@
             "disabled": false,
             "done": true,
             "stars": 2,
-            "countDone": 9
+            "countDone": 0,
         }
     ],
     "dialogues": [{
@@ -149,7 +149,7 @@
         "done": true,
         "disabled": false,
         "countItem": 15,
-        "countDone": 15,
+        "countDone": 0,
         "countWords": 0,
         "countPhrases": 0
     }],
@@ -164,7 +164,7 @@
         "disabled": false,
         "done": true,
         "stars": 2,
-        "countDone": 3
+        "countDone": 0,
     }],
     "oxfordTests": [],
     "reviewLessons": []

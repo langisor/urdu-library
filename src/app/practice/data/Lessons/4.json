@@ -31,7 +31,7 @@
         "oxfordTests": [],
         "reviewLessons": [],
         "disabled": false,
-        "countDone": 6,
+        "countDone": 0,
         "time": 1595.4
     },
     "lessons": [{
@@ -49,7 +49,7 @@
             "disabled": false,
             "done": true,
             "stars": 1,
-            "countDone": 1
+            "countDone": 0,
         },
         {
             "id": 402,
@@ -66,7 +66,7 @@
             "disabled": false,
             "done": true,
             "stars": 2,
-            "countDone": 1
+            "countDone": 0,
         },
         {
             "id": 403,
@@ -83,7 +83,7 @@
             "disabled": false,
             "done": true,
             "stars": 3,
-            "countDone": 1
+            "countDone": 0,
         },
         {
             "id": 404,
@@ -100,7 +100,7 @@
             "disabled": false,
             "done": true,
             "stars": 1,
-            "countDone": 1
+            "countDone": 0,
         },
         {
             "id": 405,
@@ -117,7 +117,7 @@
             "disabled": false,
             "done": true,
             "stars": 2,
-            "countDone": 1
+            "countDone": 0,
         },
         {
             "id": 406,
@@ -134,7 +134,7 @@
             "disabled": false,
             "done": true,
             "stars": 1,
-            "countDone": 1
+            "countDone": 0,
         }
     ],
     "dialogues": [{
@@ -164,7 +164,7 @@
         "disabled": false,
         "done": false,
         "stars": 0,
-        "countDone": 0
+        "countDone": 0,
     }],
     "oxfordTests": [],
     "reviewLessons": []
