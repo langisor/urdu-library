@@ -12,12 +12,12 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { JsonViewerComponent } from "@/components/json-viewer";
-import { fetchVocabularies } from "@/server/fetchers";
+import { fetchVocabularies } from "@/app/practice/server/fetchers";
 interface ViewVocabulariesProps {
-  lessonId: string | number;
+  categoryId: string | number;
 }
 
-export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
+export default function ViewVocabularies({ categoryId }: ViewVocabulariesProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [data, setData] = React.useState<any>(null);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -29,7 +29,7 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
   }
   async function fetchData() {
     setIsLoading(true);
-    const data = await fetchVocabularies(lessonId);
+    const data = await fetchVocabularies(categoryId);
     setData(data);
     console.log("data: ", data);
     setIsLoading(false);
@@ -44,7 +44,7 @@ export default function ViewVocabularies({ lessonId }: ViewVocabulariesProps) {
       setData(null);
       setIsLoading(false);
     };
-  }, [lessonId]);
+  }, [categoryId]);
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
