@@ -11,6 +11,7 @@ const linkItems = [
   { href: "/alphabets", label: "Alphabets" },
   { href: "/urdu-script-book", label: "Urdu Script Book" },
   { href: "/vocabulary", label: "Vocabulary" },
+  { href: "/practice", label: "Practice" },
   { href: "/grammar", label: "Grammar" },
   { href: "/ai", label: "AI" },
 ];
