@@ -44,7 +44,9 @@ export default function Practice() {
     backgroundColor: "blue",
     color: "white",
   };
-
+  const renderViewVocabulariesButton = () => (
+    <ViewVocabularies categoryId={activeTab} />
+  );
   return (
     <div className="">
       <div className="max-w-7xl mx-auto">
@@ -84,13 +86,11 @@ export default function Practice() {
           {/* TabsContent for each category */}
           {categories.map((item) => (
             <div key={item.category.id}>
-            
-              <div className="mt-6 flex justify-center">
-                <ViewVocabularies
-                  categoryId={item.category.id}
-                ></ViewVocabularies>
-              </div>
-              <TabsContent value={item.category.id.toString()} className="mt-6">
+              <TabsContent
+                value={item.category.id.toString()}
+                className="mt-6 flex flex-col gap-4"
+              >
+                <div className="flex justify-center">{renderViewVocabulariesButton()}</div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {item.lessons.map((lesson) => (
                     <Card

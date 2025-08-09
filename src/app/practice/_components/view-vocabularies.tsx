@@ -45,7 +45,7 @@ export default function ViewVocabularies({ categoryId }: ViewVocabulariesProps) 
       setIsLoading(false);
     };
   }, [categoryId]);
-  return (
+    return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
