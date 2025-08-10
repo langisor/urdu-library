@@ -12,20 +12,17 @@ echo "Starting file renaming process..."
 
 # Loop through all files in the current directory
 for file in *; do
-    # Check if the filename contains the '?t=' pattern using a simple test
-    if [[ "$file" == *"?t="* ]]; then
-        # Use 'sed' to create the new filename.
-        # The 'sed' command searches for the pattern '\?t=.*' and replaces it with nothing.
-        # The '\?' is an escaped question mark to treat it as a literal character.
-        # The '.*' matches all characters after the '?t='.
-        new_name=$(echo "$file" | sed 's/\?t=.*//')
-        
-        # Check if the new name is different from the original
-        if [[ "$file" != "$new_name" ]]; then
-            echo "Renaming '$file' to '$new_name'..."
-            # The 'mv' command renames the file.
-            mv "$file" "$new_name"
-        fi
+    # Create the new filename using 'sed'
+    # The 'sed' command searches for the pattern '\?t=.*$' and replaces it with nothing.
+    # The '\?' is an escaped question mark to treat it as a literal character.
+    # The '.*$' matches all characters after the '?t=' up to the end of the line ('$').
+    new_name=$(echo "$file" | sed 's/\?t=.*$//')
+    
+    # Check if the new name is different from the original and is not empty
+    if [[ "$file" != "$new_name" && -n "$new_name" ]]; then
+        echo "Renaming '$file' to '$new_name'..."
+        # The 'mv' command renames the file.
+        mv "$file" "$new_name"
     fi
 done
 
