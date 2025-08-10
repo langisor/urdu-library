@@ -71,19 +71,38 @@ export default function Navigation() {
             <span className="font-bold">Your App Name</span>
           </Link>
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList >
               {mainNavItems.map((item) => (
-                <NavigationMenuItem key={item.title}>
+                <NavigationMenuItem
+                  key={item.title}
+                  className={`
+                    ${
+                      pathname.startsWith(item.href.split("/")[0]) &&
+                      "bg-accent text-accent-foreground"
+                    }
+                  `}
+                >
                   {item.items ? (
                     <>
-                      <NavigationMenuTrigger>
+                      <NavigationMenuTrigger
+                        className={`${
+                          pathname.startsWith(item.href.split("/")[0]) &&
+                          "bg-accent text-accent-foreground"
+                        }`}
+                      >
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[200px] gap-3 p-2 list-none">
+                        <ul className="grid   gap-3 p-2 list-none">
                           {item.items.map((subItem) => (
                             <li key={subItem.title}>
                               <NavigationMenuLink
+                              className={
+                                `${
+                                  pathname.startsWith(subItem.href.split("/")[0]) &&
+                                  "bg-slate-500 text-white"
+                                }`
+                              }
                                 onClick={() => setOpen(false)}
                                 href={subItem.href}
                               >
@@ -108,8 +127,8 @@ export default function Navigation() {
                       onClick={() => setOpen(false)}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        pathname === item.href &&
-                          "bg-accent text-accent-foreground"
+                        pathname.startsWith(item.href.split("/")[0]) &&
+                          "bg-slate-500 text-white"
                       )}
                       href={item.href}
                     >
@@ -137,7 +156,10 @@ export default function Navigation() {
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="px-4  w-[300px] sm:w-[400px] py-6">
+          <SheetContent
+            side="left"
+            className="px-4  w-[300px] sm:w-[400px] py-6"
+          >
             <SheetTitle className="sr-only"> Menu</SheetTitle>
             <SheetDescription className="sr-only">Menu</SheetDescription>
             <nav className="flex flex-col space-y-4 pt-6">
