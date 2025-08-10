@@ -53,7 +53,7 @@ export function mapVItemsToAudioData(vItems: VItem[]): {
   // Use a reduce function to iterate over the array and build the new object.
   return vItems.reduce((acc, item) => {
     // Generate the key using the getCourseAudio function.
-    const key = getCourseAudio(item.id, item.audio_updated_at || "");
+    const key = getCourseAudio(item.key, item.audio_updated_at || "");
 
     // Extract the necessary values to create the DataValueShape object.
     // The phonetic and targetText are assumed to be from the second solution (sols[1]),
