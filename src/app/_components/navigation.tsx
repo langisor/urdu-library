@@ -6,7 +6,13 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -17,6 +23,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useRouter } from "next/navigation";
 
 interface NavItem {
   title: string;
@@ -53,6 +60,7 @@ const mainNavItems: NavItem[] = [
 export default function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -72,11 +80,14 @@ export default function Navigation() {
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[200px] gap-3 p-4 list-none">
+                        <ul className="grid w-[200px] gap-3 p-2 list-none">
                           {item.items.map((subItem) => (
                             <li key={subItem.title}>
-                              <NavigationMenuLink asChild href={subItem.href}>
-                                <Button
+                              <NavigationMenuLink
+                                onClick={() => setOpen(false)}
+                                href={subItem.href}
+                              >
+                                <span
                                   className={cn(
                                     buttonVariants({ variant: "ghost" }),
                                     "w-full justify-start",
@@ -85,7 +96,7 @@ export default function Navigation() {
                                   )}
                                 >
                                   {subItem.title}
-                                </Button>
+                                </span>
                               </NavigationMenuLink>
                             </li>
                           ))}
@@ -94,21 +105,22 @@ export default function Navigation() {
                     </>
                   ) : (
                     <NavigationMenuLink
-                      href={item.href}
+                      onClick={() => setOpen(false)}
                       className={cn(
                         navigationMenuTriggerStyle(),
                         pathname === item.href &&
                           "bg-accent text-accent-foreground"
                       )}
+                      href={item.href}
                     >
-                      <Button
+                      <span
                         className={cn(
                           buttonVariants({ variant: "ghost" }),
                           "w-full justify-start"
                         )}
                       >
                         {item.title}
-                      </Button>
+                      </span>
                     </NavigationMenuLink>
                   )}
                 </NavigationMenuItem>
@@ -120,20 +132,29 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <button className="flex h-9 w-9 items-center justify-center md:hidden">
+            <Button className="flex h-9 w-9 items-center justify-center md:hidden">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle Menu</span>
-            </button>
+            </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+          <SheetContent side="left" className="px-4  w-[300px] sm:w-[400px]">
+            <SheetTitle className="sr-only"> Menu</SheetTitle>
+            <SheetDescription className="sr-only">Menu</SheetDescription>
             <nav className="flex flex-col space-y-4 pt-6">
               {mainNavItems.map((item) => (
-                <div key={item.title}>
+                <div
+                  key={item.title}
+                  className={`
+                    ${
+                      pathname.startsWith(item.href.split("/")[1]) &&
+                      "bg-slate-500 text-white"
+                    }
+                  `}
+                >
                   <Link
                     href={item.href}
-                    className="font-bold text-lg"
                     onClick={() => item.href && setOpen(false)}
-                    legacyBehavior
+                    className="font-bold text-lg"
                   >
                     {item.title}
                   </Link>
@@ -143,10 +164,6 @@ export default function Navigation() {
                         <li key={subItem.title}>
                           <Link
                             href={subItem.href}
-                            className={cn(
-                              "text-muted-foreground hover:text-foreground",
-                              pathname === subItem.href && "text-primary"
-                            )}
                             onClick={() => setOpen(false)}
                           >
                             {subItem.title}
