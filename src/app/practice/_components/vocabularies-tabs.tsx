@@ -5,11 +5,7 @@ import { JsonViewerComponent } from "@/components/json-viewer";
 import { mapVItemsToAudioData } from "../_lib/helpers";
 import Loading from "@/app/loading";
 import * as React from "react";
-type TabContentProps =
-  | "original-json"
-  | "simplified-json"
-  | "statistics"
-  | "actual-content";
+type TabContentProps = "original-json" | "simplified-json" | "vocabulary-list";
 interface VocabulariesTabsProps {
   data: VocabularyData | null;
   isLoading: boolean;
@@ -20,7 +16,7 @@ export const VocabulariesTabs = ({
   isLoading,
 }: VocabulariesTabsProps) => {
   const [activeTab, setActiveTab] =
-    React.useState<TabContentProps>("original-json");
+    React.useState<TabContentProps>("vocabulary-list");
 
   if (isLoading) {
     return <Loading />;
@@ -37,6 +33,12 @@ export const VocabulariesTabs = ({
     >
       <TabsList>
         <TabsTrigger
+          value="vocabulary-list"
+          style={activeTab === "vocabulary-list" ? selectedTabStyle : undefined}
+        >
+          Vocabulary List
+        </TabsTrigger>
+        <TabsTrigger
           value="original-json"
           style={activeTab === "original-json" ? selectedTabStyle : undefined}
         >
@@ -48,19 +50,10 @@ export const VocabulariesTabs = ({
         >
           Simplified JSON
         </TabsTrigger>
-        <TabsTrigger
-          value="statistics"
-          style={activeTab === "statistics" ? selectedTabStyle : undefined}
-        >
-          Statistics
-        </TabsTrigger>
-        <TabsTrigger
-          value="actual-content"
-          style={activeTab === "actual-content" ? selectedTabStyle : undefined}
-        >
-          Actual Content
-        </TabsTrigger>
       </TabsList>
+      <TabsContent value="vocabulary-list">
+        <JsonViewerComponent data={data} />
+      </TabsContent>
       <TabsContent value="original-json">
         <JsonViewerComponent data={data} />
       </TabsContent>
@@ -69,18 +62,11 @@ export const VocabulariesTabs = ({
 
         <JsonViewerComponent data={audioData} />
       </TabsContent>
-      <TabsContent value="statistics">
-        <JsonViewerComponent data={data} />
-      </TabsContent>
-      <TabsContent value="actual-content">
-        <JsonViewerComponent data={data} />
-      </TabsContent>
     </Tabs>
   );
 };
 
 function AudioPlayers({ audioUrls }: { audioUrls: string[] }) {
-  
   // console.log("audioUrl: ", audioUrls);
   return (
     <div className="grid grid-cols-4 gap-5">

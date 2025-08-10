@@ -30,6 +30,7 @@ export default function MainNavigation() {
             <Link
               key={item.href}
               href={item.href}
+              as={item.href}
               className={`text-white ml-2 px-2 border rounded-xl  ${hoverStyle} ${
                 pathname === item.href ? selectedStyle : ""
               }`}
