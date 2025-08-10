@@ -5,6 +5,7 @@ import { JsonViewerComponent } from "@/components/json-viewer";
 import { mapVItemsToAudioData } from "../_lib/helpers";
 import Loading from "@/app/loading";
 import * as React from "react";
+import VocTable from "./voc-table";
 type TabContentProps = "original-json" | "simplified-json" | "vocabulary-list";
 interface VocabulariesTabsProps {
   data: VocabularyData | null;
@@ -52,7 +53,7 @@ export const VocabulariesTabs = ({
         </TabsTrigger>
       </TabsList>
       <TabsContent value="vocabulary-list">
-        <JsonViewerComponent data={data} />
+        <VocTable _data={Object.entries(audioData)} />
       </TabsContent>
       <TabsContent value="original-json">
         <JsonViewerComponent data={data} />
