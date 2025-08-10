@@ -1,6 +1,5 @@
 "use client";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { DataValueShape } from "../_lib/helpers";
 import { VocabularyData } from "../_lib/voc-interfaces";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { mapVItemsToAudioData } from "../_lib/helpers";
