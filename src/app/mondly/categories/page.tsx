@@ -2,7 +2,7 @@ import Link from "next/link";
 import { promises } from "fs";
 import { CategoriesCards } from "./_components/categories-cards";
 import path from "path";
-import { JsonViewer } from "../../components/json-viewer";
+import { JsonViewerComponent } from "@/components/json-viewer";
 
 
 interface Category {
