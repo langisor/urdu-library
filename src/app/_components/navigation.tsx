@@ -137,7 +137,7 @@ export default function Navigation() {
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="px-4  w-[300px] sm:w-[400px]">
+          <SheetContent side="left" className="px-4  w-[300px] sm:w-[400px] py-6">
             <SheetTitle className="sr-only"> Menu</SheetTitle>
             <SheetDescription className="sr-only">Menu</SheetDescription>
             <nav className="flex flex-col space-y-4 pt-6">
@@ -161,7 +161,15 @@ export default function Navigation() {
                   {item.items && (
                     <ul className="mt-2 ml-4 space-y-2">
                       {item.items.map((subItem) => (
-                        <li key={subItem.title}>
+                        <li
+                          key={subItem.title}
+                          className={`
+                          ${
+                            pathname.startsWith(subItem.href.split("/")[2]) &&
+                            "bg-slate-500 text-white"
+                          }
+                        `}
+                        >
                           <Link
                             href={subItem.href}
                             onClick={() => setOpen(false)}
