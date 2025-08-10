@@ -12,12 +12,13 @@ echo "Starting file renaming process..."
 
 # Loop through all files in the current directory
 for file in *; do
-    # Check if the filename contains the '?t=' pattern
+    # Check if the filename contains the '?t=' pattern using a simple test
     if [[ "$file" == *"?t="* ]]; then
-        # Use shell parameter expansion to get the new filename
-        # This removes the shortest matching pattern '??t=*' from the end of the string.
-        # Example: '_49Nc9pZTyyakVlXUpFnfwIYZ9B6C2eX?t=1688821938' becomes '_49Nc9pZTyyakVlXUpFnfwIYZ9B6C2eX'
-        new_name="${file%%?t=*}"
+        # Use 'sed' to create the new filename.
+        # The 'sed' command searches for the pattern '\?t=.*' and replaces it with nothing.
+        # The '\?' is an escaped question mark to treat it as a literal character.
+        # The '.*' matches all characters after the '?t='.
+        new_name=$(echo "$file" | sed 's/\?t=.*//')
         
         # Check if the new name is different from the original
         if [[ "$file" != "$new_name" ]]; then
