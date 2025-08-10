@@ -20,7 +20,7 @@ export const getCourseAudio = (
   id: string | number,
   audio_updated_at: string | number
 ) => {
-  return `${courseAudioBasePath}${id}?t=/${audio_updated_at}`;
+  return `${courseAudioBasePath}${id}`;
 };
 
 //  Vocabulary helpers
