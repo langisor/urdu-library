@@ -1,5 +1,6 @@
 "use client";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { DataValueShape } from "../_lib/helpers";
 import { VocabularyData } from "../_lib/voc-interfaces";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { mapVItemsToAudioData } from "../_lib/helpers";
@@ -64,7 +65,9 @@ export const VocabulariesTabs = ({
       <TabsContent value="original-json">
         <JsonViewerComponent data={data} />
       </TabsContent>
-      <TabsContent value="simplified-json">
+      <TabsContent value="simplified-json" className="flex flex-col gap-5">
+        <AudioPlayers audioUrls={Object.keys(audioData)} />
+
         <JsonViewerComponent data={audioData} />
       </TabsContent>
       <TabsContent value="statistics">
@@ -76,3 +79,18 @@ export const VocabulariesTabs = ({
     </Tabs>
   );
 };
+
+function AudioPlayers({ audioUrls }: { audioUrls: string[] }) {
+  
+  // console.log("audioUrl: ", audioUrls);
+  return (
+    <div className="grid grid-cols-4 gap-5">
+      {audioUrls.map((audioUrl, index) => (
+        <audio controls playsInline key={index}>
+          <source src={audioUrl} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      ))}
+    </div>
+  );
+}
