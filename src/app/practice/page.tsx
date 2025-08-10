@@ -9,7 +9,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import ViewVocabularies from "./_components/view-vocabularies";
+import ViewVocabularies from "./_components/vocabularies-sheet";
 import { Button } from "@/components/ui/button";
 
 import jsonData from "@/app/practice/data/all.json";
@@ -65,22 +65,25 @@ export default function Practice() {
         >
           {/* TabsList container - flex-wrap allows tabs to wrap on smaller screens */}
           <div className="overflow-x-auto scrollbar-hide pb-2">
-            <TabsList className="w-full justify-start grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4 lg:gap-6 h-auto">
-              {categories.map((item) => (
-                <TabsTrigger
-                  key={item.category.id}
-                  value={item.category.id.toString()}
-                  style={
-                    activeTab === item.category.id.toString()
-                      ? selectedTabStyle
-                      : undefined
-                  }
-                  className="whitespace-nowrap px-2 py-2"
-                >
-                  {item.category.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="flex flex-col gap-4">
+              <TabsList className="w-full justify-start grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4 lg:gap-6 h-auto">
+                {categories.map((item) => (
+                  <TabsTrigger
+                    key={item.category.id}
+                    value={item.category.id.toString()}
+                    style={
+                      activeTab === item.category.id.toString()
+                        ? selectedTabStyle
+                        : undefined
+                    }
+                    className="whitespace-nowrap px-2 py-2"
+                  >
+                    {item.category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+              {renderViewVocabulariesButton()}
+            </div>
           </div>
 
           {/* TabsContent for each category */}
@@ -90,7 +93,6 @@ export default function Practice() {
                 value={item.category.id.toString()}
                 className="mt-6 flex flex-col gap-4"
               >
-                <div className="flex justify-center">{renderViewVocabulariesButton()}</div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {item.lessons.map((lesson) => (
                     <Card

@@ -127,13 +127,15 @@
             "sols": [{
                     "key": "2mluqHOR2YgpJLteTAogPQOq8NOT7OVv",
                     "text": "متجر كتب",
-                    "dictionary": [{
+                    "dictionary": [
+                        {
                             "raw": "متجر",
                             "translations": []
                         },
                         {
                             "raw": "كتب",
-                            "translations": [{
+                            "translations": [
+                                {
                                 "type": "verb",
                                 "name": {
                                     "t": "لکھنا",

@@ -1,0 +1,78 @@
+"use client";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { VocabularyData } from "../_lib/voc-interfaces";
+import { JsonViewerComponent } from "@/components/json-viewer";
+import { mapVItemsToAudioData } from "../_lib/helpers";
+import Loading from "@/app/loading";
+import * as React from "react";
+type TabContentProps =
+  | "original-json"
+  | "simplified-json"
+  | "statistics"
+  | "actual-content";
+interface VocabulariesTabsProps {
+  data: VocabularyData | null;
+  isLoading: boolean;
+}
+
+export const VocabulariesTabs = ({
+  data,
+  isLoading,
+}: VocabulariesTabsProps) => {
+  const [activeTab, setActiveTab] =
+    React.useState<TabContentProps>("original-json");
+
+  if (isLoading) {
+    return <Loading />;
+  }
+  const selectedTabStyle = {
+    backgroundColor: "blue",
+    color: "white",
+  };
+  const audioData = mapVItemsToAudioData(data?.vItems || []);
+  return (
+    <Tabs
+      value={activeTab}
+      onValueChange={(value) => setActiveTab(value as TabContentProps)}
+    >
+      <TabsList>
+        <TabsTrigger
+          value="original-json"
+          style={activeTab === "original-json" ? selectedTabStyle : undefined}
+        >
+          Original JSON
+        </TabsTrigger>
+        <TabsTrigger
+          value="simplified-json"
+          style={activeTab === "simplified-json" ? selectedTabStyle : undefined}
+        >
+          Simplified JSON
+        </TabsTrigger>
+        <TabsTrigger
+          value="statistics"
+          style={activeTab === "statistics" ? selectedTabStyle : undefined}
+        >
+          Statistics
+        </TabsTrigger>
+        <TabsTrigger
+          value="actual-content"
+          style={activeTab === "actual-content" ? selectedTabStyle : undefined}
+        >
+          Actual Content
+        </TabsTrigger>
+      </TabsList>
+      <TabsContent value="original-json">
+        <JsonViewerComponent data={data} />
+      </TabsContent>
+      <TabsContent value="simplified-json">
+        <JsonViewerComponent data={audioData} />
+      </TabsContent>
+      <TabsContent value="statistics">
+        <JsonViewerComponent data={data} />
+      </TabsContent>
+      <TabsContent value="actual-content">
+        <JsonViewerComponent data={data} />
+      </TabsContent>
+    </Tabs>
+  );
+};
