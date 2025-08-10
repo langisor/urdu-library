@@ -4,7 +4,6 @@ import { CategoriesCards } from "./_components/categories-cards";
 import path from "path";
 import { JsonViewerComponent } from "@/components/json-viewer";
 
-
 interface Category {
   id: number;
   name: string;
@@ -16,24 +15,23 @@ interface Category {
   disabled: boolean;
 }
 
-
-const file = "src/lib/json/urdu/categories.json";
+const file = "src/app/mondly/_data/all.json";
 
 async function getCategories() {
   const filepath = path.join(process.cwd(), file);
+  console.log("filepath", filepath);
   const data = await promises.readFile(filepath, "utf-8");
-  return JSON.parse(data).categories;
+  console.log("data", data);
+  // return JSON.parse(data).categories;
 }
 
 export default async function CategoriesPage() {
-  const categories = await getCategories();
-//   console.log("categories", categories);
+  await getCategories();
   return (
     <div>
       <h1>Categories</h1>
-      <hr />
-      
-      <CategoriesCards categories={categories} />
+
+      {/* <CategoriesCards categories={categories} /> */}
     </div>
   );
 }

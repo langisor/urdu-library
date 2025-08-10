@@ -12,8 +12,8 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { JsonViewerComponent } from "@/components/json-viewer";
-import { fetchVocabularies } from "@/app/practice/_server/fetchers";
-import { VocabularyData } from "../_lib/voc-interfaces";
+import { fetchVocabularies } from "../_server/fetchers";
+ 
 import { VocabulariesTabs } from "./vocabularies-tabs";
 interface ViewVocabulariesProps {
   categoryId: string | number;
@@ -23,7 +23,7 @@ export default function ViewVocabularies({
   categoryId,
 }: ViewVocabulariesProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [data, setData] = React.useState<VocabularyData | null>(null);
+  const [data, setData] = React.useState<any | null>(null);
   const [isLoading, setIsLoading] = React.useState(false);
 
   const selectedTabStyle = {

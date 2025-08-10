@@ -2,7 +2,7 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { VocabularyData } from "../_lib/voc-interfaces";
 import { JsonViewerComponent } from "@/components/json-viewer";
-import { mapVItemsToAudioData } from "../_lib/helpers";
+import { mapVItemsToAudioData } from "../_lib/vocabularies-helpers";
 import Loading from "@/app/loading";
 import * as React from "react";
 import VocTable from "./voc-table";

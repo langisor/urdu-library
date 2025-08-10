@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ideas-suggestions</title>
+    <style>
+      /* Basic styles for readability */
+      html {
+        font-size: 18px;
+      }
+      body {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        line-height: 1.5;
+        margin: 0.5rem 0.3rem;
+      }
+
+      pre {
+        border: 2px dashed green;
+        border-radius: 15px;
+        padding: 1rem;
+        white-space: pre-wrap;
+        overflow-x: auto;
+      }
+      code {
+        font-family: monospace;
+        color:#830101
+      }
+      .hljs-comment {
+        color: #0f701f;
+        font-style: italic;
+      }
+      .hljs-keyword {
+        color: #1d0e63;
+        font-weight: bold;
+      }
+      .hljs-type {
+        color: #1d0e63;
+        font-weight: bold;
+      }
+      .hljs-string {
+        color: #1d0e63;
+        font-weight: bold;
+      }
+      h2 {
+        border-left: 10px solid blue;
+        padding-left: 1rem;
+        border-bottom: 1px solid #830101;
+        width: fit-content;
+        font-style: italic;
+      }
+      blockquote {
+        border-left: 10px solid green;
+        padding-left: 1rem;
+        border-bottom: 1px solid #830101;
+        width: fit-content;
+        font-style: italic;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      id="some-suggestions-and-ideas-for-how-you-can-upgrade-the-code-further"
+    >
+      Some suggestions and ideas for how you can upgrade the code further
+    </h1>
+    <h2 id="using-a-discriminated-union-for-quiz-types">
+      Using a Discriminated Union for Quiz Types
+    </h2>
+    <p>
+      Since the <code>type</code> property in the <code>Quiz</code> object seems
+      to be a key indicator for the structure of the quiz, you could use a
+      TypeScript feature called a <strong>discriminated union</strong>. This
+      would allow you to create a specific type for each of the 14 quiz shapes.
+    </p>
+
+    <blockquote>
+      <p>A discriminated union allows you to create a type that can be one of several different shapes, based on the value of a common property. In this case, the common property is the <code>type</code> property.</p>
+      </blockquote>
+    <p>
+      For example, a quiz of <code>type: &quot;T1&quot;</code> seems to have
+      <code>tokens</code>, <code>tokensEqualSize</code>, and
+      <code>ord</code> properties, while a different type might not. By defining
+      a union, your code would be able to know exactly what properties are
+      available for each quiz type, leading to more robust and type-safe code.
+    </p>
+    <pre><code class="lang-ts"><span class="hljs-comment">// Example of a discriminated union</span>
+    export <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">T1Quiz</span> </span>= {
+      <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-string">"T1"</span>;
+      <span class="hljs-comment">// Add all T1 specific properties here</span>
+      tokens: <span class="hljs-type">QuizToken</span>[];
+      tokensEqualSize: boolean;
+      ord: string[];
+    };
+    
+    export <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">T2Quiz</span> </span>= {
+      <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-string">"T2"</span>;
+      <span class="hljs-comment">// Add all T2 specific properties here</span>
+      ...
+    };
+    
+    export <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">Quiz</span> </span>= <span class="hljs-type">T1Quiz</span> | <span class="hljs-type">T2Quiz</span> | ... ; <span class="hljs-comment">// Combine all quiz types into one union</span>
+    </code></pre>
+    <p>
+      This approach is a great way to handle the different shapes of your
+      quizzes and can help prevent runtime errors when accessing properties that
+      don&#39;t exist on a particular quiz type.
+    </p>
+    <h2 id="creating-enums-for-quiz-types-and-difficulty">
+      Creating Enums for Quiz Types and Difficulty
+    </h2>
+    <p>
+      To make your code more readable and maintainable, you could replace the
+      string literals for <code>type</code> and <code>difficulty</code> with
+      TypeScript <code>enums</code>. This would also prevent typos from causing
+      bugs.
+    </p>
+    <pre><code class="lang-ts"><span class="hljs-comment">// Example of an Enum</span>
+    export <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">QuizType</span> </span>{
+      T1 = <span class="hljs-string">"T1"</span>,
+      T2 = <span class="hljs-string">"T2"</span>,
+      <span class="hljs-comment">// ... and so on for all 14 types</span>
+    }
+    
+    export <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Difficulty</span> </span>{
+      BEGINNER = <span class="hljs-string">"beginner"</span>,
+      INTERMEDIATE = <span class="hljs-string">"intermediate"</span>,
+      ADVANCED = <span class="hljs-string">"advanced"</span>,
+    }
+    
+    <span class="hljs-comment">// Then you can use it in your types:</span>
+    export type Quiz = {
+      type: QuizType;
+      <span class="hljs-comment">// ...</span>
+    };
+    
+    export type LessonData = {
+      lesson: {
+        difficulty: Difficulty;
+        <span class="hljs-comment">// ...</span>
+      };
+    };
+    </code></pre>
+    </p>
+  </body>
+</html>
