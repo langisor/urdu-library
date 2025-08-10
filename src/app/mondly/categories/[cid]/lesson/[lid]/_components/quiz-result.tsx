@@ -13,7 +13,6 @@ export function QuizResult() {
     // const state=useQuizzerStore();
   return (
     <div>
-      
       <hr />
       <Card>
         <CardHeader>
@@ -27,7 +26,7 @@ export function QuizResult() {
           </div>
         </CardContent>
         <CardFooter>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
             <Button>Home</Button>
             </Link>
         </CardFooter>

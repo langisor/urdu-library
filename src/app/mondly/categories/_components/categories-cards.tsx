@@ -109,7 +109,7 @@ export function CategoriesCards({ categories }: { categories: Category[] }) {
                 whileTap={{ scale: 0.98 }}
                 layout
               >
-                <Link href={`/categories/${category.id}`}>
+                <Link href={`/categories/${category.id}`} legacyBehavior>
                   <Card
                     className={`p-6 h-full ${
                       category.disabled ? "opacity-60" : ""

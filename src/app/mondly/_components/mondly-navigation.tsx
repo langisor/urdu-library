@@ -32,7 +32,7 @@ export default function MondlyNavigation() {
               className={`text-white    border rounded-xl  ${hoverStyle} ${
                 handlePath(item.href) ? selectedStyle : ""
               }`}
-            >
+              legacyBehavior>
               {item.label}
             </Link>
           ))}

@@ -75,7 +75,10 @@ export default async function LessonPage({
     <div className="container mx-auto px-4">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {lessons.map((lesson: Lesson) => (
-          <Link href={`/categories/${cid}/lesson/${lesson.id}`} key={lesson.id}>
+          <Link
+            href={`/categories/${cid}/lesson/${lesson.id}`}
+            key={lesson.id}
+            legacyBehavior>
            <div className="flex flex-col">
  
       <Card

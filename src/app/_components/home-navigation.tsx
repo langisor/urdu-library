@@ -30,7 +30,7 @@ export default function HomeNavigation() {
               className={`text-white border rounded-xl  ${hoverStyle} ${
                 handlePath(item.href) ? selectedStyle : ""
               }`}
-            >
+              legacyBehavior>
               {item.label}
             </Link>
           ))}

@@ -58,7 +58,7 @@ export default function Navigation() {
       <div className="container flex h-16 items-center px-4">
         {/* Desktop Navigation */}
         <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Link href="/" className="mr-6 flex items-center space-x-2" legacyBehavior>
             <span className="font-bold">Your App Name</span>
           </Link>
           <NavigationMenu>
@@ -83,7 +83,7 @@ export default function Navigation() {
                                     pathname === subItem.href &&
                                       "bg-accent text-accent-foreground"
                                   )}
-                                >
+                                  legacyBehavior>
                                   {subItem.title}
                                 </Link>
                               </NavigationMenuLink>
