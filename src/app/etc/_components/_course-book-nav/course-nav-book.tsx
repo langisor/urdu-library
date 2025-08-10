@@ -6,7 +6,7 @@ import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs";
 import PreliminaryTab from "./tabs-content/preliminary-tab";
 import PartsTab from "./tabs-content/parts-tab";
 import UnitsTab from "./tabs-content/units-tab";
-import FlashcardCh1Voc1 from "@/components/flash-cards/cards/ch1-voc1";
+import FlashcardCh1Voc1 from "@/app/etc/_components/_flash-cards/cards/ch1-voc1";
 type tabValue =
   | "cover"
   | "preliminary"

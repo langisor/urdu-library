@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Metadata } from "next";
-import MainNavigation from "@/components/main-navigation";
+import HomeNavigation from "@/app/_components/home-navigation";
 import { Inter, Noto_Nastaliq_Urdu, Noto_Naskh_Arabic } from "next/font/google";
 import { cn } from "@/lib/utils";
 const interFont = Inter({
@@ -41,9 +41,9 @@ export default function RootLayout({
       <body>
         <div className="min-h-screen">
           <div className="w-full mb-4">
-            <MainNavigation />
+            <HomeNavigation />
           </div>
-          <div className="w-full mt-4">{children}</div>
+          <div className="w-full mt-4 flex flex-col">{children}</div>
         </div>
       </body>
     </html>
