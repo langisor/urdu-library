@@ -40,10 +40,10 @@ export default function RootLayout({
     >
       <body>
         <div className="min-h-screen">
-          <div className="w-full mb-4">
+          <div className="w-full">
             <HomeNavigation />
           </div>
-          <div className="w-full mt-4 flex flex-col">{children}</div>
+          <div className="w-full mt-1 flex flex-col">{children}</div>
         </div>
       </body>
     </html>

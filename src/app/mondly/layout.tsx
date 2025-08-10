@@ -6,7 +6,7 @@ export default function MondlyLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col">
+    <div className="w-full flex flex-col">
       <MondlyNavigation />
       {children}
     </div>
