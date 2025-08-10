@@ -22,7 +22,12 @@ export const getCourseAudio = (
 ) => {
   return `${courseAudioBasePath}${id}`;
 };
-
+export const getAudioUrl = (
+  id: string | number,
+  audio_updated_at: string | number
+) => {
+  return `https://d13tz37rv54ob.cloudfront.net/ur/${id}?t=${audio_updated_at}`;
+};
 //  Vocabulary helpers
 
 /**
