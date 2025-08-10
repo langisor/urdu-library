@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -58,7 +59,7 @@ export default function Navigation() {
       <div className="container flex h-16 items-center px-4">
         {/* Desktop Navigation */}
         <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2" legacyBehavior>
+          <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-bold">Your App Name</span>
           </Link>
           <NavigationMenu>
@@ -71,21 +72,20 @@ export default function Navigation() {
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[200px] gap-3 p-4">
+                        <ul className="grid w-[200px] gap-3 p-4 list-none">
                           {item.items.map((subItem) => (
                             <li key={subItem.title}>
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  href={subItem.href}
+                              <NavigationMenuLink asChild href={subItem.href}>
+                                <Button
                                   className={cn(
                                     buttonVariants({ variant: "ghost" }),
                                     "w-full justify-start",
                                     pathname === subItem.href &&
                                       "bg-accent text-accent-foreground"
                                   )}
-                                  legacyBehavior>
+                                >
                                   {subItem.title}
-                                </Link>
+                                </Button>
                               </NavigationMenuLink>
                             </li>
                           ))}
@@ -93,17 +93,23 @@ export default function Navigation() {
                       </NavigationMenuContent>
                     </>
                   ) : (
-                    <Link href={item.href} legacyBehavior>
-                      <NavigationMenuLink
+                    <NavigationMenuLink
+                      href={item.href}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        pathname === item.href &&
+                          "bg-accent text-accent-foreground"
+                      )}
+                    >
+                      <Button
                         className={cn(
-                          navigationMenuTriggerStyle(),
-                          pathname === item.href &&
-                            "bg-accent text-accent-foreground"
+                          buttonVariants({ variant: "ghost" }),
+                          "w-full justify-start"
                         )}
                       >
                         {item.title}
-                      </NavigationMenuLink>
-                    </Link>
+                      </Button>
+                    </NavigationMenuLink>
                   )}
                 </NavigationMenuItem>
               ))}
@@ -127,7 +133,8 @@ export default function Navigation() {
                     href={item.href}
                     className="font-bold text-lg"
                     onClick={() => item.href && setOpen(false)}
-                    legacyBehavior>
+                    legacyBehavior
+                  >
                     {item.title}
                   </Link>
                   {item.items && (
@@ -141,7 +148,7 @@ export default function Navigation() {
                               pathname === subItem.href && "text-primary"
                             )}
                             onClick={() => setOpen(false)}
-                            legacyBehavior>
+                          >
                             {subItem.title}
                           </Link>
                         </li>
