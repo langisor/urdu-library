@@ -12,7 +12,7 @@ import {
 import ViewVocabularies from "./_components/vocabularies-sheet";
 import { Button } from "@/components/ui/button";
 
-import jsonData from "@/app/practice/data/all.json";
+import jsonData from "@/app/mondly/data/all.json";
 
 import { JsonViewerComponent } from "@/components/json-viewer";
 
