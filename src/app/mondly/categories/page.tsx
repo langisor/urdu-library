@@ -34,7 +34,6 @@ export default async function CategoriesPage() {
       <hr />
       
       <CategoriesCards categories={categories} />
-      {/* <JsonViewer value={categories} /> */}
     </div>
   );
 }
