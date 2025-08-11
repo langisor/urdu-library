@@ -1,6 +1,6 @@
 
 "use client";
-import { IQuiz } from "@/types/lesson";
+import { Quiz } from "@/app/mondly/_types/data-services";
 import { useHookstate, hookstate, State } from "@hookstate/core";
 interface IQuizzerStore {
   currentQuizIndex: number;
