@@ -1,6 +1,7 @@
 import { Suspense } from "react";
-import {Badge} from "@/components/ui/badge";
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
+import Loading from "@/app/loading";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   BookOpen,
   Star,
@@ -12,53 +13,52 @@ import {
 
 import Link from "next/link";
 import { promises } from "fs";
-
+import {
+  LessonData,
+  LessonItem,
+  VocabularyData,
+} from "@/app/mondly/_types/data-services";
 import path from "path";
-import { JsonViewer } from "../../../components/json-viewer";
+import { JsonViewerComponent } from "@/components/json-viewer";
 
-interface Lesson {
-  id: string;
-  i: number;
-  index: number;
-  positionIndex: number;
-  unitNumber: number | null;
-  unitType: number;
-  unitStyle: number;
-  unitScope: number;
-  category: number;
-  categoryID: number;
-  name: string;
-  disabled: number;
-  done: number;
-  stars: number;
-  countDone: number;
-}
+const baseLessonsPath = "src/app/mondly/_data/Lessons/";
+const baseVocabularyPath = "src/app/mondly/_data/Vocabulary/";
 
-const basePath = "src/lib/json/urdu/data/";
-
-function getCategoryFilePath(cid: string) {
-  //  check if id is exactly 1 digits long
-  if (cid.length === 1) {
-    // first char is the directory
-    let dir = `${cid}`;
-    let filename = `${cid}.json`;
-    return `${basePath}${dir}/${filename}`;
-  }
-
-  // check if id is exactly 2 digits long
-  if (cid.length === 2) {
-    // first two chars are the directory
-    let dir = `${cid[0]}${cid[1]}/`;
-
-    let filename = `${cid}.json`;
-    return `${basePath}/${dir}${filename}.json`;
-  } else return "un recognized id";
-}
-
-async function getCategoryLessons(cid: string) {
-  const filepath = getCategoryFilePath(cid);
+async function getVocabularyData(cid: string) {
+  // only 1 file for vocabulary cid01.json
+  const filepath = path.join(process.cwd(), baseVocabularyPath, `${cid}.json`);
   const data = await promises.readFile(filepath, "utf-8");
-  return JSON.parse(data).lessons;
+  const parsedData = JSON.parse(data) as {
+    data: { vocabulary: VocabularyData };
+  };
+  return parsedData.data.vocabulary;
+}
+
+async function getCategoryLessons(_cid: number) {
+  //  create lessons names  [cid01, cid02, cid03, cid04, cid05, cid06]
+
+  const lessonsNames: string[] = [];
+  lessonsNames[0] = `${_cid}01`;
+  lessonsNames[1] = `${_cid}02`;
+  lessonsNames[2] = `${_cid}03`;
+  lessonsNames[3] = `${_cid}04`;
+  lessonsNames[4] = `${_cid}05`;
+  lessonsNames[5] = `${_cid}06`;
+
+  const lessons: LessonItem[] = [];
+  for (const lessonName of lessonsNames) {
+    const filepath = path.join(
+      process.cwd(),
+      baseLessonsPath,
+      `${lessonName}.json`
+    );
+    const data = await promises.readFile(filepath, "utf-8");
+    //  note parsedData is containing lesson object without quizzes:Quiz[]
+    const parsedData = JSON.parse(data) as LessonItem;
+    lessons.push(parsedData);
+  }
+  console.log("lessons", lessons);
+  return lessons as LessonItem[];
 }
 export default async function LessonPage({
   params,
@@ -67,101 +67,17 @@ export default async function LessonPage({
     cid: string;
   }>;
 }) {
-  const [cid] = (await params).cid;
-  // console.log("cid", cid);
+  const _cid = Number((await params).cid);
+  console.log("cid", _cid);
   // await the data fetching function
-  const lessons = await getCategoryLessons(cid);
+  const lessonsData = await getCategoryLessons(_cid);
+  // const vocabularyData = await getVocabularyData(cid);
   return (
-    <div className="container mx-auto px-4">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {lessons.map((lesson: Lesson) => (
-          <Link
-            href={`/categories/${cid}/lesson/${lesson.id}`}
-            key={lesson.id}
-            legacyBehavior>
-           <div className="flex flex-col">
- 
-      <Card
-        className="hover:cursor-pointer  transition-all hover:shadow-lg hover:scale-105"
-        dir="rtl"
-      >
-        <CardHeader className="space-y-1 p-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <BookOpen
-                className={`h-5 w-5 ${
-                  lesson.disabled ? "text-gray-400" : "text-blue-500"
-                }`}
-              />
-              <h3
-                className={`font-semibold tracking-tight text-lg px-2 ${
-                  lesson.disabled ? "text-gray-400" : ""
-                }`}
-              >
-                {lesson.name}
-              </h3>
-            </div>
-            <Badge
-              variant={lesson.done ? "default" :lesson.disabled ? "secondary" : "outline"}
-              className="capitalize"
-            >
-              {lesson.done ? "Completed" :lesson.disabled ? "Locked" : "In Progress"}
-            </Badge>
-          </div>
-        </CardHeader>
-
-        <CardContent className="flex flex-col gap-4">
-          {/* stars */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-1">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-4 w-4 ${
-                    i < lesson.stars!
-                      ? "text-yellow-400 fill-yellow-400"
-                      : "text-gray-300"
-                  }`}
-                />
-              ))}
-            </div>
-            <Badge variant="outline" className="capitalize">
-              {lesson.unitNumber ? `Unit ${lesson.unitNumber}` : "Unitless"}
-            </Badge>
-          </div>
-
-          <div className="space-y-4">
-            <div className="flex justify-between  text-sm">
-              <div className="flex items-center space-x-2">
-                <Trophy className="h-4 w-4 text-orange-500" />
-                {/* <span>{lesson.countQuiz} Quizzes</span> */}
-              </div>
-              <div className="flex items-center space-x-2">
-                <GraduationCap className="h-4 w-4 text-purple-500" />
-                {/* <span>{lesson.countWords} Words</span> */}
-              </div>
-              <div className="flex items-center space-x-2">
-                <BookCheck className="h-4 w-4 text-green-500" />
-                {/* <span>{lesson.countPhrases} Phrases</span> */}
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Progress</span>
-                <span className="font-medium">
-                  {/* {Math.round(lesson.progress.get())}% */}
-                </span>
-              </div>
-              {/* <Progress value={lesson.progress.get()} className="h-2" /> */}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-          </Link>
-        ))}
+    <Suspense fallback={<Loading />}>
+      <div className="flex flex-col gap-4">
+        <JsonViewerComponent data={lessonsData} />
+        {/* <JsonViewerComponent data={vocabularyData} /> */}
       </div>
-    </div>
+    </Suspense>
   );
 }

@@ -137,32 +137,44 @@ export type QuizToken = {
 };
 
 /**
+ * Define  a single Lesson Item
+ 
+ * 
+ */
+export type LessonItem = {
+  id: number;
+  index: number;
+  unitNumber: number | null;
+  unitType: number;
+  unitStyle: number;
+  unitScope: number;
+  category: number;
+  categoryID: number;
+  name: string;
+  isCourse: boolean;
+  disabled: boolean;
+  done: boolean;
+  stars: number;
+  difficulty: string;
+  countQuiz: number;
+  countWords: number;
+  countPhrases: number;
+  countDone: number;
+  quizzes: number[];
+};
+
+/**
  * Defines the top-level 'lesson' object from files like 803.json.
  */
 export type LessonData = {
-  lesson: {
-    id: number;
-    index: number;
-    unitNumber: number | null;
-    unitType: number;
-    unitStyle: number;
-    unitScope: number;
-    category: number;
-    categoryID: number;
-    name: string;
-    isCourse: boolean;
-    disabled: boolean;
-    done: boolean;
-    stars: number;
-    difficulty: string;
-    countQuiz: number;
-    countWords: number;
-    countPhrases: number;
-    countDone: number;
-    quizzes: number[];
-  };
+  lesson: LessonItem;
   quizzes: Quiz[];
 };
+
+/**
+ * Defines the top-level 'lesson' object from files like 803.json.
+ */
+ 
 
 /**
  * Defines a single vocabulary item, which represents a word or phrase.
@@ -230,6 +242,8 @@ export type CategoryItem = {
   time: number;
   words: number;
   phrases: number;
+  stars?: number;
+  done?: boolean;
 };
 
 /**
@@ -313,3 +327,4 @@ export function getCategoryLessons(
   }
   return categoryLessons;
 }
+

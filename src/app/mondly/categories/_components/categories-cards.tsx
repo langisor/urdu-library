@@ -1,220 +1,102 @@
 "use client";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Card } from "@/components/ui/card";
+import * as React from "react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Book, MessageCircle, GraduationCap, TestTube } from "lucide-react";
+import { BookOpen, Star, Trophy, GraduationCap, BookCheck } from "lucide-react";
 import Link from "next/link";
-interface Category {
-  id: number;
-  name: string;
-  countLesson: number;
-  countDialogue: number;
-  countVocabulary: number;
-  countOxfordTest: number;
-  countDone: number;
-  disabled: boolean;
-}
+import { CategoryItem } from "@/app/mondly/_types/data-services";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-    scale: 0.95,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-};
-
-const iconVariants = {
-  initial: { scale: 0 },
-  animate: {
-    scale: 1,
-    transition: { type: "spring", stiffness: 300, damping: 20 },
-  },
-};
-
-const progressVariants = {
-  initial: { width: 0 },
-  animate: (value: number) => ({
-    width: `${value}%`,
-    transition: { duration: 0.8, ease: "easeOut" },
-  }),
-};
-
-export function CategoriesCards({ categories }: { categories: Category[] }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const calculateProgress = (category: Category) => {
-    const total =
-      category.countLesson +
-      category.countDialogue +
-      category.countVocabulary +
-      category.countOxfordTest;
-    return (category.countDone / total) * 100;
-  };
-
+export function CategoriesCards({
+  categories,
+}: {
+  categories: CategoryItem[];
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="min-h-screen bg-gradient-to-br from-background to-muted p-8 text-right"
-      dir="rtl"
-    >
-      <div className="max-w-7xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-12 text-foreground"
-        >
-          الأقسام
-        </motion.h1>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence>
-            {categories.map((category) => (
-              <motion.div
-                key={category.id}
-                variants={cardVariants}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                layout
+    <div className="container mx-auto px-4">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {categories.map((category: CategoryItem) => (
+          <Link href={`/mondly/categories/${category.id}`} key={category.id}>
+            <div className="flex flex-col">
+              <Card
+                className="hover:cursor-pointer  transition-all hover:shadow-lg hover:scale-105"
+                dir="rtl"
               >
-                <Link href={`/categories/${category.id}`} legacyBehavior>
-                  <Card
-                    className={`p-6 h-full ${
-                      category.disabled ? "opacity-60" : ""
-                    } hover:shadow-xl transition-all duration-300 backdrop-blur-sm bg-white/90`}
-                  >
-                    <div className="flex flex-col h-full">
-                      <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="flex justify-between items-start mb-4"
+                <CardHeader className="space-y-1 p-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <BookOpen
+                        className={`h-5 w-5 ${
+                          category.disabled ? "text-gray-400" : "text-blue-500"
+                        }`}
+                      />
+                      <h3
+                        className={`text-2xl font-bold  ${
+                          category.disabled ? "text-gray-400" : ""
+                        }`}
                       >
-                        <h2 className="text-xl font-semibold text-foreground">
-                          {category.name}
-                        </h2>
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ type: "spring", stiffness: 200 }}
-                        >
-                          {category.disabled ? (
-                            <Badge variant="secondary">Locked</Badge>
-                          ) : (
-                            <Badge variant="default">Available</Badge>
-                          )}
-                        </motion.div>
-                      </motion.div>
-
-                      <div className="flex-grow">
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                          {[
-                            {
-                              icon: Book,
-                              count: category.countLesson,
-                              label: "Lessons",
-                            },
-                            {
-                              icon: MessageCircle,
-                              count: category.countDialogue,
-                              label: "Dialogue",
-                            },
-                            {
-                              icon: GraduationCap,
-                              count: category.countVocabulary,
-                              label: "Vocab",
-                            },
-                            {
-                              icon: TestTube,
-                              count: category.countOxfordTest,
-                              label: "Tests",
-                            },
-                          ].map((item, index) => (
-                            <motion.div
-                              key={index}
-                              className="flex items-center gap-2"
-                              variants={iconVariants}
-                              initial="initial"
-                              animate="animate"
-                              whileHover={{ scale: 1.05 }}
-                            >
-                              <item.icon className="w-4 h-4 text-primary" />
-                              <span className="text-sm">
-                                {item.count} {item.label}
-                              </span>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <motion.div
-                        className="mt-auto"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        <div className="flex justify-between text-sm mb-2">
-                          <span>Progress</span>
-                          <motion.span
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                          >
-                            {Math.round(calculateProgress(category))}%
-                          </motion.span>
-                        </div>
-                        <Progress
-                          value={calculateProgress(category)}
-                          className="h-2 relative overflow-hidden"
-                        >
-                          <motion.div
-                            className="absolute top-0 left-0 h-full bg-primary"
-                            initial={{ width: 0 }}
-                            animate={{
-                              width: `${calculateProgress(category)}%`,
-                            }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                          />
-                        </Progress>
-                      </motion.div>
+                        {category.name}
+                      </h3>
                     </div>
-                  </Card>
-                </Link>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="flex flex-col gap-4">
+                  {/* stars */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-4 w-4 ${
+                            i < (category.stars || 1)
+                              ? "text-yellow-400 fill-yellow-400"
+                              : "text-gray-300"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex justify-between  text-sm">
+                      <div className="flex items-center space-x-2">
+                        <Trophy className="h-4 w-4 text-orange-500" />
+                        {/* 
+                            <span>{category.countQuiz} Quizzes</span> */}
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <GraduationCap className="h-4 w-4 text-purple-500" />
+                        {/* 
+                            <span>{category.countWords} Words</span> */}
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <BookCheck className="h-4 w-4 text-green-500" />
+                        {/* 
+                            <span>{category.countPhrases} Phrases</span> */}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">Progress</span>
+                        <span className="font-medium">
+                          {/* {Math.round(category.progress.get())}% */}
+                        </span>
+                      </div>
+                      {/* 
+                          <Progress value={category.progress.get()} className="h-2" />
+                          */}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </Link>
+        ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
