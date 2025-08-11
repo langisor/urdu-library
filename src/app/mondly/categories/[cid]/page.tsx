@@ -1,26 +1,14 @@
 import { Suspense } from "react";
 import Loading from "@/app/loading";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  BookOpen,
-  Star,
-  Trophy,
-  GraduationCap,
-  BookCheck,
-  Play,
-} from "lucide-react";
+ import CategoryDashboard from "./_components/category-dashboard";
 
-import Link from "next/link";
 import { promises } from "fs";
 import {
-  LessonData,
   LessonItem,
   VocabularyData,
-  VocabularyItem,
 } from "@/app/mondly/_types/data-services";
 import path from "path";
-import { JsonViewerComponent } from "@/components/json-viewer";
+// import { JsonViewerComponent } from "@/components/json-viewer";
 
 const baseLessonsPath = "src/app/mondly/_data/Lessons/";
 const baseVocabularyPath = "src/app/mondly/_data/Vocabularies/";
@@ -70,17 +58,16 @@ export default async function LessonPage({
   }>;
 }) {
   const _cid = Number((await params).cid);
-  console.log("cid", _cid);
+  // console.log("cid", _cid);
   // await the data fetching function
   const lessonsData = await getCategoryLessons(_cid);
-  console.log("lessonsData", lessonsData);
+  // console.log("lessonsData", lessonsData);
   const vocabularyData = await getVocabularyData(_cid);
-  console.log("vocabularyData", vocabularyData);
+  // console.log("vocabularyData", vocabularyData);
   return (
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col gap-4">
-        {/* <JsonViewerComponent data={lessonsData} /> */}
-        {/* <JsonViewerComponent data={vocabularyData} /> */}
+        <CategoryDashboard lessonsData={lessonsData} vocabularyData={vocabularyData} />
       </div>
     </Suspense>
   );
