@@ -1,9 +1,7 @@
 import * as React from "react";
-import { JsonViewer } from "@/components/json-viewer";
+import { JsonViewerComponent } from "@/components/json-viewer";
 import Quizzer from "./quizzer";
-import { IQuiz } from "@/types/lesson";
 import { promises } from "fs";
-import { Suspense } from "react";
 import path from "path";
 
 const dataPath = "src/lib/json/urdu/data/";

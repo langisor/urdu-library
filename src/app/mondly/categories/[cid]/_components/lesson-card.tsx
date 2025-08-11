@@ -74,7 +74,7 @@ export default function LessonCard({
       >
         <CardHeader className="relative flex flex-row items-center justify-between space-y-0 pb-2">
           <Badge
-            className="absolute bottom-0 left-0 transform -translate-x-1/2 text-xs bg-blue-600 text-white"
+            className="absolute top-0 left-0 text-xs bg-blue-600 text-white"
             variant="secondary"
           >
             ID: {id}
@@ -82,12 +82,6 @@ export default function LessonCard({
           <CardTitle className="text-2xl font-bold tracking-tight text-right">
             {title}
           </CardTitle>
-          <Badge
-            variant={"destructive"}
-            className={`capitalize text-center text-xl rounded-full ${successBadgeStyle}`}
-          >
-            {status}
-          </Badge>
         </CardHeader>
         <CardContent className="space-y-4">
           <CardDescription className="text-gray-500 leading-relaxed text-right">
@@ -102,6 +96,12 @@ export default function LessonCard({
               className={`h-2 ${getProgressColorClass(progress)}`}
             />
           </div>
+          <Badge
+            variant={"destructive"}
+            className={`capitalize text-center text-xl rounded-full ${successBadgeStyle}`}
+          >
+            {status}
+          </Badge>
         </CardContent>
       </Card>
     </a>
