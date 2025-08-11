@@ -1,5 +1,5 @@
 "use client";
-import { IQuiz } from "@/types/lesson";
+import { Quiz } from "@/app/mondly/_types/data-services";
 
 import {
   Sheet,
@@ -19,7 +19,7 @@ import { useHookstate } from "@hookstate/core";
 import { Badge } from "@/components/ui/badge";
 import { quizzerStore } from "./_components/quizzer-store";
 
-export default function Quizzer({ quizzes }: { quizzes: IQuiz[] }) {
+export default function Quizzer({ quizzes }: { quizzes: Quiz[] }) {
   // hooks
   const globalQuizzerStore=useHookstate(quizzerStore);
 
@@ -79,7 +79,7 @@ export default function Quizzer({ quizzes }: { quizzes: IQuiz[] }) {
   );
 }
 
-function QuizzerSteps({ quiz }: { quiz: IQuiz }) {
+function QuizzerSteps({ quiz }: { quiz: Quiz }) {
   switch (quiz.type) {
     case "C1b":
       return <QUIZZES.QuizC1b quiz={quiz} />;
