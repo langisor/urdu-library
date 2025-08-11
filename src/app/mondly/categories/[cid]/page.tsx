@@ -17,21 +17,24 @@ import {
   LessonData,
   LessonItem,
   VocabularyData,
+  VocabularyItem,
 } from "@/app/mondly/_types/data-services";
 import path from "path";
 import { JsonViewerComponent } from "@/components/json-viewer";
 
 const baseLessonsPath = "src/app/mondly/_data/Lessons/";
-const baseVocabularyPath = "src/app/mondly/_data/Vocabulary/";
+const baseVocabularyPath = "src/app/mondly/_data/Vocabularies/";
 
-async function getVocabularyData(cid: string) {
+async function getVocabularyData(cid: number) {
   // only 1 file for vocabulary cid01.json
-  const filepath = path.join(process.cwd(), baseVocabularyPath, `${cid}.json`);
+  const filepath = path.join(
+    process.cwd(),
+    baseVocabularyPath,
+    `${cid}01.json`
+  );
   const data = await promises.readFile(filepath, "utf-8");
-  const parsedData = JSON.parse(data) as {
-    data: { vocabulary: VocabularyData };
-  };
-  return parsedData.data.vocabulary;
+  const parsedData = JSON.parse(data) as VocabularyData;
+  return parsedData;
 }
 
 async function getCategoryLessons(_cid: number) {
@@ -54,11 +57,10 @@ async function getCategoryLessons(_cid: number) {
     );
     const data = await promises.readFile(filepath, "utf-8");
     //  note parsedData is containing lesson object without quizzes:Quiz[]
-    const parsedData = JSON.parse(data) as LessonItem;
+    const parsedData = JSON.parse(data).lesson as LessonItem;
     lessons.push(parsedData);
   }
-  console.log("lessons", lessons);
-  return lessons as LessonItem[];
+  return lessons;
 }
 export default async function LessonPage({
   params,
@@ -71,11 +73,13 @@ export default async function LessonPage({
   console.log("cid", _cid);
   // await the data fetching function
   const lessonsData = await getCategoryLessons(_cid);
-  // const vocabularyData = await getVocabularyData(cid);
+  console.log("lessonsData", lessonsData);
+  const vocabularyData = await getVocabularyData(_cid);
+  console.log("vocabularyData", vocabularyData);
   return (
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col gap-4">
-        <JsonViewerComponent data={lessonsData} />
+        {/* <JsonViewerComponent data={lessonsData} /> */}
         {/* <JsonViewerComponent data={vocabularyData} /> */}
       </div>
     </Suspense>
