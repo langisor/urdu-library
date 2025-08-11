@@ -38,9 +38,13 @@ export function getImageUrl(imageId: string): string {
   return `https://d37sy4vufic209.cloudfront.net/phrase-images/${imageId}`;
 }
 export function getLocalImageUrl(imageId: string): string {
-  return `/images/course-images/${imageId}`;
+  return `/media/mondly/images/${imageId}`;
 }
 
 export function getAudioUrl(audioId: string, audio_updated_at: number): string {
   return `https://d13tz37rv54ob.cloudfront.net/ur/${audioId}?t=${audio_updated_at}`;
+}
+
+export function getLocalAudioUrl(audioId: string): string {
+  return `/media/mondly/audios/${audioId}`;
 }
