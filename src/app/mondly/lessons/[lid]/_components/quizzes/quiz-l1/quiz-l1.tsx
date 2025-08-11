@@ -1,8 +1,8 @@
 
 "use client"
- import {IQuiz} from "@/types/lesson"
+ import {Quiz} from "@/app/mondly/_types/data-services"
 
- export function QuizL1({ quiz }: { quiz: IQuiz }) {
+ export function QuizL1({ quiz }: { quiz: Quiz }) {
   return (
     <div>
       <h1>{quiz.type}</h1>

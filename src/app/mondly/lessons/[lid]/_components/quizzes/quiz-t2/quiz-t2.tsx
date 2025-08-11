@@ -1,7 +1,7 @@
 "use client" 
-  import { IQuiz } from "@/types/lesson"
+  import { Quiz } from "@/app/mondly/_types/data-services"
 
- export function QuizT2({ quiz }: { quiz: IQuiz }) {
+ export function QuizT2({ quiz }: { quiz: Quiz }) {
   return (
     <div className="flex flex-col gap-4">
       <h1>{quiz.type}</h1>

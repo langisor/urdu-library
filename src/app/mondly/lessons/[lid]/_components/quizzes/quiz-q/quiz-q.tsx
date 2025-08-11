@@ -15,7 +15,7 @@ import { DraggableItem, DroppableZone } from "./dnd";
 import { Button } from "@/components/ui/button";
 import { Volume2, RotateCcw, CheckCircle } from "lucide-react";
 import { getAudioUrl } from "../../quizzes-utils";
-import { IQuiz, Sol, Alt } from "@/types/lesson";
+import { Quiz, SolutionOrAlternate } from "@/app/mondly/_types/data-services";
 import { shuffleArray } from "../../quizzes-utils";
 import { AudioPlayer } from "../audio-player";
 
@@ -23,8 +23,8 @@ interface QuizData {
   id: number;
   lesson: number;
   type: string;
-  sols: Sol[];
-  alts: Alt[];
+  sols: SolutionOrAlternate[];
+  alts: SolutionOrAlternate[];
 }
 interface MatchPair {
   urduKey: string;
@@ -63,7 +63,7 @@ const useSuccessSound = () => {
 };
 
 // this will be a matching quiz
-export function QuizQ({ quiz }: { quiz: IQuiz }) {
+export function QuizQ({ quiz }: { quiz: Quiz }) {
   const [quizData, setQuizData] = React.useState<QuizData | null>(null);
   const [matchPairs, setMatchPairs] = React.useState<MatchPair[]>([]);
   const [droppedItems, setDroppedItems] = React.useState<{

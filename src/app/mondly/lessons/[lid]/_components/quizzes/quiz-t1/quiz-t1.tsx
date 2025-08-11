@@ -15,7 +15,7 @@ import { DraggableItem, DroppableZone } from "../dnd";
 import { Button } from "@/components/ui/button";
 import { Volume2, RotateCcw } from "lucide-react";
 import { getAudioUrl } from "../../quizzes-utils";
-import { IQuiz } from "@/types/lesson";
+import { Quiz } from "@/app/mondly/_types/data-services";
 import { AudioPlayer } from "../audio-player";
 
 interface Option {
@@ -58,7 +58,7 @@ const useSuccessSound = () => {
   return playSound;
 };
 
-function convert(quiz: IQuiz): QuizData {
+function convert(quiz: Quiz): QuizData {
   const audioSrc = getAudioUrl(
     quiz.sols[0].key,
     quiz.sols[0].audio_updated_at!
@@ -78,7 +78,7 @@ function convert(quiz: IQuiz): QuizData {
   return { audioSrc, question_text, options, ords };
 }
 
-export function QuizT1({ quiz }: { quiz: IQuiz }) {
+export function QuizT1({ quiz }: { quiz: Quiz }) {
   const [quizData, setQuizData] = React.useState<QuizData | null>(null);
   const [droppedItems, setDroppedItems] = React.useState<{
     [key: string]: Option;
