@@ -3,49 +3,39 @@ import { JsonViewerComponent } from "@/components/json-viewer";
 import Quizzer from "./quizzer";
 import { promises } from "fs";
 import path from "path";
-
-const dataPath = "src/lib/json/urdu/data/";
-function constructFilePath(lessonID: string) {
-  // check if id is exactly 3 digits long
-  if (lessonID.length === 3) {
-    // first char is the directory
-    return `${dataPath}${lessonID[0]}/${lessonID}.json`;
-  }
-
-  // check if id is exactly 4 digits long
-  if (lessonID.length === 4) {
-    // first two chars are the directory
-    let dir = `${lessonID[0]}${lessonID[1]}/`;
-    // all
-    let filename = lessonID;
-    return `${dataPath}/${dir}${filename}.json`;
-  } else return "un recognized id";
-}
-
-async function getLessonData(lessonID: string) {
-  const filepath = constructFilePath(lessonID);
+import { LessonData } from "@/app/mondly/_types/data-services";
+const baseLessonsPath = "src/app/mondly/_data/Lessons/";
+import { Suspense } from "react";
+import Loading from "@/app/loading";
+/**
+ * Get lesson data include its quizzes
+ * @param lessonID  lesson id as number
+ *
+ */
+async function getLessonData(lessonID: number) {
+  console.log("lessonID", lessonID);
+  const filepath = path.join(
+    process.cwd(),
+    baseLessonsPath,
+    `${lessonID}.json`
+  );
   const data = await promises.readFile(filepath, "utf-8");
-  return JSON.parse(data);
+  const parsedData = JSON.parse(data) as LessonData;
+  return parsedData;
 }
 export default async function Lesson({
   params,
 }: {
-  params: Promise<{ cid: string; lid: string }>;
+  params: Promise<{ lid: string }>;
 }) {
-  const { cid, lid } = await params;
-  const filepath = path.join(process.cwd(), dataPath, `${lid}.json`);
-  const data = await getLessonData(lid);
-  // console.log("data", data.quizzes);
-  // console.log("filepath", filepath);
+  const { lid } = await params;
+  const lessonData = await getLessonData(Number(lid));
   return (
-    <div className=" ">
-      <h1 className="text-2xl bg-blue-700 text-white px-2 py-1 rounded-lg">
-        Lesson: {lid}
-      </h1>
-      <p>Full path: {filepath}</p>
+    <Suspense fallback={<Loading />}>
+      <pre>{JSON.stringify(lessonData, null, 2)}</pre>
 
       {/* <JsonViewer value={data} /> */}
-      <Quizzer quizzes={data.quizzes} />
-    </div>
+      {/* <Quizzer quizzes={data.quizzes} /> */}
+    </Suspense>
   );
 }
