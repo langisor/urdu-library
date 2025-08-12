@@ -238,12 +238,7 @@ export default function MainSiteNavigation() {
         toggleSubMenu={toggleSubMenu}
         menuRef={menuRef}
       />
-      <div className="pt-20 p-4">
-        <h1 className="text-4xl font-bold">Welcome to the site!</h1>
-        <p className="mt-4 text-lg">
-          This is a placeholder for your main content. The navigation above is fully responsive.
-        </p>
-      </div>
+  
     </div>
   );
 }
