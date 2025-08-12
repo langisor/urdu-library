@@ -12,7 +12,7 @@ import {
 import * as QUIZZES from "./_components/quizzes";
 import * as React from "react";
 
-import { ResultCard } from "./_cards/result-card";
+import { ResultCard } from "./_components/cards/result-card";
 import { Button } from "@/components/ui/button";
 
 import { useHookstate } from "@hookstate/core";
