@@ -1,9 +1,12 @@
-import Demo from "./_components/demo";
+import { queryClient } from "@/server/postgres-client";
 
-export default function DemoPage() {
-    return (
-        <div>
-            <Demo />
-        </div>
-    );
+async function getData() {
+  const result = await queryClient`SELECT * FROM  "Category"`;
+  return result;
+}
+
+export default async function Home() {
+  const data = await getData();
+  console.log(data);
+  return <div className="w-full text-center text-3xl">TODO: Home</div>;
 }
