@@ -1,9 +1,9 @@
 import { promises } from "fs";
 import { CategoriesCards } from "./_components/categories-cards";
 import path from "path";
-import {BreadcrumbItem, DynamicBreadcrumb} from "../_components/dynamic-breadcrumb";
+import {DynamicBreadcrumb} from "../_components/dynamic-breadcrumb";
 import { CategoryItem } from "../_types/data-services";
-
+import {BreadcrumbItem, getParentName} from "../_lib/breadcrub-data";
 const file = "src/app/mondly/_data/all.json";
 
 async function getCategories() {
@@ -17,16 +17,13 @@ async function getCategories() {
  return categories;
 }
 
-const breadCrumbItems:BreadcrumbItem[] = [
-  {id:1,name:"Categories"},
-]
+ 
 export default async function CategoriesPage() {
   const categories = await getCategories();
   console.log("categories", categories);
   return (
-    <div>
-      <h1>Categories</h1>
-      <DynamicBreadcrumb items={breadCrumbItems} />
+    <div className="flex flex-col gap-4">
+      <DynamicBreadcrumb   />
       <CategoriesCards categories={categories} />
     </div>
   );

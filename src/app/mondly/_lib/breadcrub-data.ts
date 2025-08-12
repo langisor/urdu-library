@@ -1,3 +1,5 @@
+ 
+
 export const names = [
  {
      id: 1,
@@ -162,24 +164,4 @@ export const names = [
      ]
  }
 ];
-
-
-export function getParentName(elementId: number): string | null {
-    for (const category of names) {
-        const lesson = category.lessons.find(l => l.id === elementId);
-        if (lesson) {
-            return lesson.parentName;
-        }
-
-        const vocabulary = category.vocabularies.find(v => v.id === elementId);
-        if (vocabulary) {
-            return vocabulary.parentName;
-        }
-
-        const dialogue = category.dialogues.find(d => d.id === elementId);
-        if (dialogue) {
-            return dialogue.parentName;
-        }
-    }
-    return null;
-}
+ 
