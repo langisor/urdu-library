@@ -41,7 +41,7 @@ export default function RootLayout({
     >
       <body>
         <V2 />
-        <main className="pt-10 naskh-arabic" dir="ltr">{children}</main>
+        <main className="p-[1rem] pt-[2rem] naskh-arabic  text-right" dir="ltr ">{children}</main>
       </body>
     </html>
   );

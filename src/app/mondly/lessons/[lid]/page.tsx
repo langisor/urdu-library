@@ -32,7 +32,7 @@ export default async function Lesson({
   const lessonData = await getLessonData(Number(lid));
   return (
     <Suspense fallback={<Loading />}>
-      <pre>{JSON.stringify(lessonData, null, 2)}</pre>
+      <pre dir="rtl">{JSON.stringify(lessonData, null, 2)}</pre>
 
       {/* <JsonViewer value={data} /> */}
       {/* <Quizzer quizzes={data.quizzes} /> */}
