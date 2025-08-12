@@ -29,7 +29,7 @@ export function DynamicBreadcrumb() {
     if (pathname !== "/") {
       breadcrumbs.push({
         name: "الرئيسية",
-        href: "/mondly/categories",
+        href: "/",
       });
     }
 
@@ -40,7 +40,7 @@ export function DynamicBreadcrumb() {
       // Add Mondly root
       breadcrumbs.push({
         name: "ماندلي",
-        href: "/mondly/categories",
+        href: "/mondly",
       });
 
       // Handle categories
@@ -53,7 +53,7 @@ export function DynamicBreadcrumb() {
 
         if (category) {
           breadcrumbs.push({
-            name: category.name,
+            name: "الخريطة",
             href: `/mondly/categories`,
           });
 
@@ -61,27 +61,23 @@ export function DynamicBreadcrumb() {
           if (segments[mondlyIndex + 3]) {
             const subcategory = segments[mondlyIndex + 3];
             let subcategoryName = subcategory;
-            let subcategoryHref = `/mondly/categories/${categoryId}`;
             // Capitalize and translate common subcategories
             switch (subcategory) {
               case "lessons":
                 subcategoryName = "الدروس";
-                subcategoryHref = `/mondly/categories/${categoryId}/lessons`;
                 break;
 
               case "vocabulary":
                 subcategoryName = "المفردات";
-                subcategoryHref = `/mondly/categories/${categoryId}/vocabulary`;
                 break;
               case "dialogue":
                 subcategoryName = "الحوار";
-                subcategoryHref = `/mondly/categories/${categoryId}/dialogue`;
                 break;
             }
 
             breadcrumbs.push({
               name: subcategoryName,
-              href: subcategoryHref,
+              href: `/mondly/categories/${categoryId}/${subcategory}`,
             });
 
             // Handle specific lesson/vocabulary/dialogue items
@@ -112,7 +108,7 @@ export function DynamicBreadcrumb() {
 
               breadcrumbs.push({
                 name: itemName,
-                href: subcategoryHref + `/${itemId}`,
+                href: `/mondly/categories/${categoryId}/${subcategory}/${itemId}`,
                 // href: subcategoryHref ,
 
                 isCurrentPage: true,
