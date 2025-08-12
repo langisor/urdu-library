@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Metadata } from "next";
-import Navigation from "@/app/_components/navigation";
+import Navigation from "@/app/_components/main-site-navigation";
 import { Inter, Noto_Nastaliq_Urdu, Noto_Naskh_Arabic } from "next/font/google";
 import { cn } from "@/lib/utils";
 const interFont = Inter({
@@ -40,7 +40,7 @@ export default function RootLayout({
     >
       <body>
         <Navigation />
-        <main>{children}</main>
+        <main className="pt-10">{children}</main>
       </body>
     </html>
   );
