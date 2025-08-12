@@ -40,7 +40,7 @@ export default function RootLayout({
     >
       <body>
         <Navigation />
-        <main className="pt-10">{children}</main>
+        <main className="pt-10 naskh-arabic" dir="ltr">{children}</main>
       </body>
     </html>
   );

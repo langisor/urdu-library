@@ -204,7 +204,7 @@ export default function MainSiteNavigation() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-inter min-h-screen">
+    <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-inter mb-10">
       <header className="fixed top-0 left-0 w-full z-[50] shadow-lg bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
         <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-gray-900 dark:text-white">
