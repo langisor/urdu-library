@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-
+import Link from "next/link";
 interface LessonCardProps {
   id: string | number;
   title: string;
@@ -65,7 +65,7 @@ export default function LessonCard({
   };
 
   return (
-    <a href={link} className="w-full max-w-sm">
+    <Link href={link} className="w-full max-w-sm">
       <Card
         className={`h-full p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
           isVocabularyCard ? "bg-teal-50 border-teal-500 border-2" : ""
@@ -104,6 +104,6 @@ export default function LessonCard({
           </Badge>
         </CardContent>
       </Card>
-    </a>
+    </Link>
   );
 }

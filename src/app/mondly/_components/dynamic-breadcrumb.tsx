@@ -39,7 +39,7 @@ export function DynamicBreadcrumb() {
 
       // Add Mondly root
       breadcrumbs.push({
-        name: "ماندلي",
+        name: "الخريطة",
         href: "/mondly",
       });
 
@@ -53,14 +53,13 @@ export function DynamicBreadcrumb() {
 
         if (category) {
           breadcrumbs.push({
-            name: "الخريطة",
-            href: `/mondly/categories`,
+            name: category.name,
+            href: `/mondly/categories/${categoryId}`,
           });
-
-          // Handle subcategories (lessons, vocabulary, dialogue)
-          if (segments[mondlyIndex + 3]) {
-            const subcategory = segments[mondlyIndex + 3];
-            let subcategoryName = subcategory;
+        
+          const subcategory = segments[mondlyIndex + 3];          // Handle subcategories (lessons, vocabulary, dialogue)
+          if (subcategory) {
+            let subcategoryName =  subcategory;
             // Capitalize and translate common subcategories
             switch (subcategory) {
               case "lessons":
@@ -81,7 +80,7 @@ export function DynamicBreadcrumb() {
             });
 
             // Handle specific lesson/vocabulary/dialogue items
-            if (segments[mondlyIndex + 4]) {
+            if (segments[mondlyIndex + 4] && subcategory) {
               const itemId = parseInt(segments[mondlyIndex + 4]);
               let itemName = segments[mondlyIndex + 4];
 

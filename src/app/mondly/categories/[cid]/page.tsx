@@ -1,15 +1,12 @@
 import { Suspense } from "react";
 import Loading from "@/app/loading";
- import CategoryDashboard from "./_components/category-dashboard";
+import CategoryDashboard from "./_components/category-dashboard";
 
 import { promises } from "fs";
-import {
-  LessonItem,
-  VocabularyData,
-} from "@/app/mondly/_types/data-services";
+import { LessonItem, VocabularyData } from "@/app/mondly/_types/data-services";
 import path from "path";
 // import { JsonViewerComponent } from "@/components/json-viewer";
-import {DynamicBreadcrumb} from "../../_components/dynamic-breadcrumb";
+import { DynamicBreadcrumb } from "../../_components/dynamic-breadcrumb";
 const baseLessonsPath = "src/app/mondly/_data/Lessons/";
 const baseVocabularyPath = "src/app/mondly/_data/Vocabularies/";
 
@@ -50,7 +47,7 @@ async function getCategoryLessons(_cid: number) {
   }
   return lessons;
 }
- 
+
 export default async function LessonPage({
   params,
 }: {
@@ -69,7 +66,10 @@ export default async function LessonPage({
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col gap-4">
         <DynamicBreadcrumb />
-        <CategoryDashboard lessonsData={lessonsData} vocabularyData={vocabularyData} />
+        <CategoryDashboard
+          lessonsData={lessonsData}
+          vocabularyData={vocabularyData}
+        />
       </div>
     </Suspense>
   );
