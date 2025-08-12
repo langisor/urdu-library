@@ -1,12 +1,11 @@
 import * as React from "react";
-import { JsonViewerComponent } from "@/components/json-viewer";
-import Quizzer from "./quizzer";
 import { promises } from "fs";
 import path from "path";
 import { LessonData } from "@/app/mondly/_types/data-services";
 const baseLessonsPath = "src/app/mondly/_data/Lessons/";
 import { Suspense } from "react";
 import Loading from "@/app/loading";
+import { DynamicBreadcrumb } from "@/app/mondly/_components/dynamic-breadcrumb";
 /**
  * Get lesson data include its quizzes
  * @param lessonID  lesson id as number
@@ -32,10 +31,10 @@ export default async function Lesson({
   const lessonData = await getLessonData(Number(lid));
   return (
     <Suspense fallback={<Loading />}>
-      <pre dir="rtl">{JSON.stringify(lessonData, null, 2)}</pre>
-
-      {/* <JsonViewer value={data} /> */}
-      {/* <Quizzer quizzes={data.quizzes} /> */}
+      <div className="flex flex-col gap-4">
+        <DynamicBreadcrumb />
+        <pre dir="rtl">{JSON.stringify(lessonData, null, 2)}</pre>
+      </div>
     </Suspense>
   );
 }

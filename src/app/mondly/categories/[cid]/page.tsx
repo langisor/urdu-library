@@ -9,7 +9,7 @@ import {
 } from "@/app/mondly/_types/data-services";
 import path from "path";
 // import { JsonViewerComponent } from "@/components/json-viewer";
-import {DynamicBreadcrumb,BreadcrumbItem} from "../../_components/dynamic-breadcrumb";
+import {DynamicBreadcrumb} from "../../_components/dynamic-breadcrumb";
 const baseLessonsPath = "src/app/mondly/_data/Lessons/";
 const baseVocabularyPath = "src/app/mondly/_data/Vocabularies/";
 
@@ -50,12 +50,7 @@ async function getCategoryLessons(_cid: number) {
   }
   return lessons;
 }
-
-
-const breadCrumbItems:BreadcrumbItem[] = [
-  {id:1,name:"Categories"},
-  {id:2,name:"Lessons"},
-]
+ 
 export default async function LessonPage({
   params,
 }: {
@@ -73,7 +68,7 @@ export default async function LessonPage({
   return (
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col gap-4">
-        <DynamicBreadcrumb items={breadCrumbItems} />
+        <DynamicBreadcrumb />
         <CategoryDashboard lessonsData={lessonsData} vocabularyData={vocabularyData} />
       </div>
     </Suspense>

@@ -1,3 +1,5 @@
+"use client";
+import { usePathname } from "next/navigation";
 import LessonCard from "./lesson-card";
 import { LessonItem, VocabularyData } from "@/app/mondly/_types/data-services";
 
@@ -7,6 +9,7 @@ interface CategoryDashboardProps {
 }
 export default function CategoryDashboard(data: CategoryDashboardProps) {
   const { lessonsData, vocabularyData } = data;
+  const pathname = usePathname();
   return (
     <div className="p-8 bg-gray-100 min-h-screen" dir="rtl">
       {/* Hero Section */}
@@ -37,7 +40,7 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
                     100
                 )
           }
-          link={`/mondly/vocabulary/${vocabularyData.vocabulary.id}`}
+          link={`${pathname}/vocabulary/${vocabularyData.vocabulary.id}`}
           isVocabularyCard={true}
         />
 
@@ -62,7 +65,7 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
               description={description}
               status={status}
               progress={progress}
-              link={`/mondly/lessons/${lesson.id}`}
+              link={`${pathname}/lessons/${lesson.id}`}
             />
           );
         })}
