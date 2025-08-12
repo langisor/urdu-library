@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Metadata } from "next";
 import Navigation from "@/app/_components/main-site-navigation";
+import V2 from "@/app/_components/v2";
 import { Inter, Noto_Nastaliq_Urdu, Noto_Naskh_Arabic } from "next/font/google";
 import { cn } from "@/lib/utils";
 const interFont = Inter({
@@ -39,7 +40,7 @@ export default function RootLayout({
       )}
     >
       <body>
-        <Navigation />
+        <V2 />
         <main className="pt-10 naskh-arabic" dir="ltr">{children}</main>
       </body>
     </html>
