@@ -1,7 +1,7 @@
 import { promises } from "fs";
 import { CategoriesCards } from "./_components/categories-cards";
 import path from "path";
-
+import BreadcrumbComponent from "../_components/dynamic-breadcrumb";
 import { CategoryItem } from "../_types/data-services";
 
 const file = "src/app/mondly/_data/all.json";
@@ -23,7 +23,7 @@ export default async function CategoriesPage() {
   return (
     <div>
       <h1>Categories</h1>
-
+      <BreadcrumbComponent />
       <CategoriesCards categories={categories} />
     </div>
   );

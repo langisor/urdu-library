@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { BookOpen, Star, Trophy, GraduationCap, BookCheck } from "lucide-react";
 import Link from "next/link";
 import { CategoryItem } from "@/app/mondly/_types/data-services";
-
+ 
 export function CategoriesCards({
   categories,
 }: {
