@@ -29,7 +29,7 @@ export function DynamicBreadcrumb() {
     if (pathname !== "/") {
       breadcrumbs.push({
         name: "الرئيسية",
-        href: "/mondly",
+        href: "/mondly/categories",
       });
     }
 
