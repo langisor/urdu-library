@@ -3,7 +3,6 @@ import { CategoriesCards } from "./_components/categories-cards";
 import path from "path";
 import {DynamicBreadcrumb} from "../_components/dynamic-breadcrumb";
 import { CategoryItem } from "../_types/data-services";
-import {BreadcrumbItem, getParentName} from "../_lib/breadcrub-data";
 const file = "src/app/mondly/_data/all.json";
 
 async function getCategories() {
