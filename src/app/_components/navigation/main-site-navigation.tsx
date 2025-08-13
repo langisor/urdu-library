@@ -26,7 +26,6 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 // import app logo
 import Logo from "@/assets/app.png";
- 
 
 // Lucide React for icons
 import { Menu } from "lucide-react";
@@ -67,7 +66,16 @@ export default function MainHeader() {
         <div className="flex items-center space-x-4">
           {/* Logo or site title */}
           <Link href="/" className="text-xl font-bold">
-            <Image src={Logo} alt="Logo" width={50} height={50} />
+            <div className="flex items-center space-x-2">
+              <Image
+                src={Logo}
+                sizes="100vw"
+                alt="Logo"
+                width={50}
+                height={50}
+              />
+              <span className="italic">Urdu Library</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Menu */}

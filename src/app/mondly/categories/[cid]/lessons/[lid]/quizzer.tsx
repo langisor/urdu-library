@@ -26,7 +26,7 @@ export default function Quizzer({ quizzes }: { quizzes: Quiz[] }) {
   //  effects
   React.useEffect(() => {
     globalQuizzerStore.totalQuizzes.set(quizzes.length);
-  }, []);
+  }, [globalQuizzerStore.totalQuizzes, quizzes.length]);
   function handleNext() {
     if (globalQuizzerStore.currentQuizIndex.get() >= quizzes.length - 1) {
       globalQuizzerStore.completed.set(true);
