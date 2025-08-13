@@ -63,7 +63,7 @@ export default function MainHeader() {
         <div className="flex items-center space-x-4">
           {/* Logo or site title */}
           <Link href="/" className="text-xl font-bold">
-            My App
+            Beginning Urdu
           </Link>
 
           {/* Desktop Navigation Menu */}
