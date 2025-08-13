@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import "./custom.css";
 
 const Chapter1 = () => {
   return (

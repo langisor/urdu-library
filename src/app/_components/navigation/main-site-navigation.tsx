@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
 import Link from "next/link";
-import { useId } from "react";
 import { usePathname } from "next/navigation";
 
 // Shadcn UI components
@@ -32,25 +31,25 @@ import { Menu } from "lucide-react";
 import { mainNavItems } from "./data";
 import { NavItem } from "./types";
 
-  // Helper function to check if a link is active
-  const isActive = (pathname: string, href: string) => {
-    return pathname === href;
-  };
+// Helper function to check if a link is active
+const isActive = (pathname: string, href: string) => {
+  // Check if the current path matches the href
+  const isMatches = pathname === href;
+
+  // Check if the href is a parent or child of the current path
+  const isParentOrChild = pathname.startsWith(`${href}/`);
+
+  return isMatches || isParentOrChild;
+};
 
 // Main header component
 
 export default function MainHeader() {
-    /**
-   * Generate a unique ID for the menu - this is required for accessibility
-   * and ensures that each menu has a unique ID - see ./readme-use-id.md for more info
-   */
-    const menuId = useId();
+ 
   const pathname = usePathname();
 
-
-
-// style active link
-const activeLinkStyle = "text-primary font-bold bg-blue-500";
+  // style active link
+  const activeLinkStyle = "text-primary font-bold bg-blue-500";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -80,7 +79,11 @@ const activeLinkStyle = "text-primary font-bold bg-blue-500";
                                 <NavigationMenuLink asChild>
                                   <Link
                                     href={subItem.href}
-                                    className="block select-none space-y-1 rounded-md p-1 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                    className={navigationMenuTriggerStyle({
+                                      className: isActive(pathname, subItem.href)
+                                        ? activeLinkStyle
+                                        : "",
+                                    })}
                                   >
                                     <div className="text-md font-medium leading-none">
                                       {subItem.title}

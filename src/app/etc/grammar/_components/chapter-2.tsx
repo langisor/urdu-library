@@ -1,5 +1,4 @@
 "use client"
-import "./custom.css";
 
 const Chapter2 = () => {
  return (

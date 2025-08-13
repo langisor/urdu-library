@@ -1,5 +1,4 @@
 "use client"
-import "./custom.css";
 
 import React from "react";
 

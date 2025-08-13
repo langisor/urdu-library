@@ -1,5 +1,4 @@
 "use client"
-import "./custom.css";
 
 export default function Chapter4() {
   return (
