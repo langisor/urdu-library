@@ -9,6 +9,7 @@ async function getLessonQuizzes(lessonID: number) {
     *
   from "Quiz"
   where "lessonID" = ${lessonID}`;
+ 
 
   return result;
 }
