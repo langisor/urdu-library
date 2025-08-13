@@ -1,14 +1,11 @@
-;
 import React, { useState } from "react";
 import { QuizItem } from "./utils";
 import QuizQuestion from "./QuizQuestion";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 
 interface QuizContainerProps {
   quizzes: QuizItem[];
 }
-2
+
 export const QuizContainer: React.FC<QuizContainerProps> = ({ quizzes }) => {
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
 

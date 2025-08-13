@@ -21,7 +21,7 @@ import { quizzerStore } from "./_components/quizzer-store";
 
 export default function Quizzer({ quizzes }: { quizzes: Quiz[] }) {
   // hooks
-  const globalQuizzerStore=useHookstate(quizzerStore);
+  const globalQuizzerStore = useHookstate(quizzerStore);
 
   //  effects
   React.useEffect(() => {
@@ -32,16 +32,22 @@ export default function Quizzer({ quizzes }: { quizzes: Quiz[] }) {
       globalQuizzerStore.completed.set(true);
       return <ResultCard />;
     }
-    globalQuizzerStore.currentQuizIndex.set(globalQuizzerStore.currentQuizIndex.get() + 1);
+    globalQuizzerStore.currentQuizIndex.set(
+      globalQuizzerStore.currentQuizIndex.get() + 1
+    );
   }
   function handlePrevious() {
     if (globalQuizzerStore.currentQuizIndex.get() > 0) {
-      globalQuizzerStore.currentQuizIndex.set(globalQuizzerStore.currentQuizIndex.get() - 1);
+      globalQuizzerStore.currentQuizIndex.set(
+        globalQuizzerStore.currentQuizIndex.get() - 1
+      );
     }
   }
-  function render() {
-    return <QuizzerSteps quiz={quizzes[globalQuizzerStore.currentQuizIndex.value]} />;
-  }
+  const renderQuiz = () => {
+    return (
+      <QuizzerSteps quiz={quizzes[globalQuizzerStore.currentQuizIndex.value]} />
+    );
+  };
   return (
     <>
       <Sheet>
@@ -62,7 +68,9 @@ export default function Quizzer({ quizzes }: { quizzes: Quiz[] }) {
                   {globalQuizzerStore.totalQuizzes.value}
                 </Badge>
                 <Badge>Score: {globalQuizzerStore.score.value}</Badge>
-                <Badge>Earned Marks: {globalQuizzerStore.earnedMarks.value}</Badge>
+                <Badge>
+                  Earned Marks: {globalQuizzerStore.earnedMarks.value}
+                </Badge>
 
                 <Button onClick={handleNext}>Next</Button>
                 <Button onClick={handlePrevious}>Previous</Button>
@@ -72,7 +80,7 @@ export default function Quizzer({ quizzes }: { quizzes: Quiz[] }) {
               Click Next when finish answering the question
             </SheetDescription>
           </SheetHeader>
-          {render()}
+          {renderQuiz()}
         </SheetContent>
       </Sheet>
     </>

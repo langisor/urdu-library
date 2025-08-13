@@ -1,5 +1,3 @@
-;
-
 import React, { useState, useEffect } from "react";
 import { QuizOption } from "./utils";
 import DraggableWord from "./DraggableWord";

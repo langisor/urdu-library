@@ -4,7 +4,7 @@ import MainSiteNavigation from "@/app/_components/navigation/main-site-navigatio
 import { SWRConfig } from "swr";
 import { getUser } from "@/server/actions/getUser";
 export const metadata: Metadata = {
-  title: "Beginning Urdu",
+  title: "Urdu Library",
   description: "A website for learning Urdu.",
 };
 

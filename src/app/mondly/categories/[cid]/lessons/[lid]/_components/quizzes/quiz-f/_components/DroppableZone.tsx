@@ -1,8 +1,8 @@
-;
 import React from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { getImageUrl } from "./utils";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface DroppableZoneProps {
   id: string;
@@ -46,10 +46,13 @@ const DroppableZone: React.FC<DroppableZoneProps> = ({
         )}
       >
         {imgSrc && imageUpdatedAt && (
-          <img
+          <Image
             src={getImageUrl(imgSrc, imageUpdatedAt)}
             alt={altText}
             className="w-full h-full object-cover"
+            width={100}
+            height={100}
+            sizes="100vw,100vh"
           />
         )}
 
