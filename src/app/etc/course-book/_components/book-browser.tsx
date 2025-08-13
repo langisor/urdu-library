@@ -126,16 +126,16 @@ export default function BookBrowser({ data }: { data: BookData }) {
 
   return (
     <div
-      className="flex min-h-screen bg-gray-50 text-gray-900 font-sans text-left"
+      className="flex min-h-screen  font-sans text-left"
      
     >
       {/* Sidebar Toggle Button for Mobile */}
-      <div className="md:hidden fixed top-4 left-4 z-50">
+      <div className="md:hidden fixed top-16 right-4 z-50">
         <Button
           variant="outline"
           size="icon"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="bg-white"
+          className=""
         >
           {isSidebarOpen ? (
             <X className="h-6 w-6" />
