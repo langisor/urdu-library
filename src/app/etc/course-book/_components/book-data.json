@@ -1,0 +1,888 @@
+{
+  "title": "Beginning Urdu Language Learning Book",
+  "language": "English",
+  "coverImage": "/materials/course-book-cover.jpeg",
+  "media": {
+    "baseUrl": "/media/audio-all/",
+    "alphabetAudio": "BegUrdu_Alphabet.mp3"
+  },
+  "totalPages": 555,
+  "structure": {
+    "preliminaryPages": 16,
+    "soundSystemLessons": 12,
+    "scriptLessons": 12,
+    "totalUnits": 8,
+    "totalChapters": 40,
+    "totalAppendices": 2,
+    "totalMediaFiles": 126
+  },
+  "preliminaryContent": {
+    "aboutBeginningUrdu": {
+      "page": "ix"
+    },
+    "howToUseThisBookForTeachers": {
+      "page": "xi"
+    },
+    "howToUseThisBookForStudents": {
+      "page": "xiii"
+    },
+    "acknowledgments": {
+      "page": "xv"
+    },
+    "aboutTheUrduLanguage": {
+      "page": "xvi"
+    },
+    "theSoundSystemAndScriptOfUrdu": {
+      "page": "1"
+    }
+  },
+  "parts": [
+    {
+      "partNumber": 1,
+      "title": "The Sound System of Urdu",
+      "lessons": [
+        {
+          "lessonNumber": 1,
+          "title": "Sounds Similar to English",
+          "page": "1",
+          "media": {
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "ssl/Lesson1/Pien7788_SSL01Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "ssl/Lesson1/Pien7788_SSL01Ex02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "ssl/Lesson1/Pien7788_SSL01Ex03.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "lessonNumber": 2,
+          "title": "The Consonants r, l, v, and the Vowels e and o",
+          "page": "3",
+          "media": {
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "ssl/Lesson2/Pien7788_SSL02Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "ssl/Lesson2/Pien7788_SSL02Ex02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "ssl/Lesson2/Pien7788_SSL02Ex03.mp3"
+              },
+              {
+                "number": 4,
+                "audioFile": "ssl/Lesson2/Pien7788_SSL02Ex04.mp3"
+              },
+              {
+                "number": 5,
+                "audioFile": "ssl/Lesson2/Pien7788_SSL02Ex05.mp3"
+              },
+              {
+                "number": 6,
+                "audioFile": "ssl/Lesson2/Pien7788_SSL02Ex06.mp3"
+              },
+              {
+                "number": 7,
+                "audioFile": "ssl/Lesson2/Pien7788_SSL02Ex07.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "lessonNumber": 3,
+          "title": "The Long and Short Vowels",
+          "page": "6",
+          "media": {
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "ssl/Lesson3/Pien7788_SSL03Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "ssl/Lesson3/Pien7788_SSL03Ex02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "ssl/Lesson3/Pien7788_SSL03Ex03.mp3"
+              },
+              {
+                "number": 4,
+                "audioFile": "ssl/Lesson3/Pien7788_SSL03Ex04.mp3"
+              }
+            ]
+          }
+        }
+      ],
+      "exerciseAnswers": {
+        "page": "10"
+      }
+    },
+    {
+      "partNumber": 2,
+      "title": "The Urdu Script",
+      "lessons": [
+        {
+          "lessonNumber": 8,
+          "title": "Introduction to the Urdu Script: The be Series",
+          "page": "11",
+          "media": {
+            "exercises": [
+              {
+                "number": 2,
+                "audioFile": "ssl/Lesson8/Pien7788_SSL08Ex02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "ssl/Lesson8/Pien7788_SSL08Ex03.mp3"
+              },
+              {
+                "number": 5,
+                "audioFile": "ssl/Lesson8/Pien7788_SSL08Ex05.mp3"
+              },
+              {
+                "number": 6,
+                "audioFile": "ssl/Lesson8/Pien7788_SSL08Ex06.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "lessonNumber": 9,
+          "title": "The jim Series, sukun and tasdid",
+          "page": "17",
+          "media": {
+            "exercises": [
+              {
+                "number": 2,
+                "audioFile": "ssl/Lesson9/Pien7788_SSL09Ex02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "ssl/Lesson9/Pien7788_SSL09Ex03.mp3"
+              },
+              {
+                "number": 5,
+                "audioFile": "ssl/Lesson9/Pien7788_SSL09Ex05.mp3"
+              },
+              {
+                "number": 6,
+                "audioFile": "ssl/Lesson9/Pien7788_SSL09Ex06.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "lessonNumber": 10,
+          "title": "The dal Series, Hamza and Wao",
+          "page": "20",
+          "media": {
+            "exercises": [
+              {
+                "number": 2,
+                "audioFile": "ssl/Lesson10/Pien7788_SSL10Ex02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "ssl/Lesson10/Pien7788_SSL10Ex03.mp3"
+              },
+              {
+                "number": 5,
+                "audioFile": "ssl/Lesson10/Pien7788_SSL10Ex05.mp3"
+              }
+            ]
+          }
+        }
+      ],
+      "arabicDefiniteArticle": {
+        "page": "40"
+      },
+      "exerciseAnswers": {
+        "page": "41"
+      }
+    }
+  ],
+  "units": [
+    {
+      "unitNumber": 1,
+      "title": "Me and My School",
+      "chapters": [
+        {
+          "chapterNumber": 1,
+          "title": "Introductions",
+          "page": "47",
+          "topics": [
+            "Meeting Somebody New",
+            "Identifying Classroom Items",
+            "Asking and Answering Questions",
+            "Asking Yes-or-No Questions",
+            "Greeting an Acquaintance"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01V01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01V02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01V03.mp3"
+              },
+              {
+                "number": 4,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01V04.mp3"
+              },
+              {
+                "number": 5,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01V05.mp3"
+              },
+              {
+                "number": 6,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01V06.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01Ex02.mp3"
+              },
+              {
+                "number": 7,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01Ex07.mp3"
+              },
+              {
+                "number": 8,
+                "audioFile": "Unit1/Chapter1/Pien7788_U01Ch01Ex08.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 2,
+          "title": "Me and My Classmates",
+          "page": "65",
+          "topics": [
+            "Exchanging Basic Personal Information"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter2/Pien7788_U01Ch02V01.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 3,
+          "title": "Learning about My School",
+          "page": "78",
+          "topics": [
+            "Describing Classroom Activities",
+            "Expressing Needs",
+            "Talking about Time"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter3/Pien7788_U01Ch03V01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit1/Chapter3/Pien7788_U01Ch03V02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "Unit1/Chapter3/Pien7788_U01Ch03V03.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter3/Pien7788_U01Ch03Ex01.mp3"
+              },
+              {
+                "number": 4,
+                "audioFile": "Unit1/Chapter3/Pien7788_U01Ch03Ex04.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 4,
+          "title": "My Daily Routine",
+          "page": "86",
+          "topics": [
+            "Talking about Daily Activities"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter4/Pien7788_U01Ch04V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter4/Pien7788_U01Ch04Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit1/Chapter4/Pien7788_U01Ch04Ex02.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 5,
+          "title": "My Preferences",
+          "page": "93",
+          "topics": [
+            "Stating Likes and Dislikes",
+            "Talking about Pastimes"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter5/Pien7788_U01Ch05V01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit1/Chapter5/Pien7788_U01Ch05V02.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter5/Pien7788_U01Ch05Ex01.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 6,
+          "title": "Describing People and Objects",
+          "page": "100",
+          "topics": [
+            "Describing People",
+            "Describing Objects"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit1/Chapter6/Pien7788_U01Ch06V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 2,
+                "audioFile": "Unit1/Chapter6/Pien7788_U01Ch06Ex02.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unitNumber": 2,
+      "title": "My Family and My Home",
+      "chapters": [
+        {
+          "chapterNumber": 7,
+          "title": "Locating Places and Objects",
+          "page": "113",
+          "topics": [
+            "Locating Places in the City",
+            "Locating Places within Countries",
+            "Locating Objects in the Home",
+            "Using Postpositions: Oblique Forms"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07V01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07V02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07V03.mp3"
+              },
+              {
+                "number": 4,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07V04.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 3,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07Ex0x03.mp3"
+              },
+              {
+                "number": 5,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07Ex0x05.mp3"
+              },
+              {
+                "number": 11,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07Ex0x011.mp3"
+              },
+              {
+                "number": 13,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07Ex0x013.mp3"
+              },
+              {
+                "number": 17,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07Ex0x017.mp3"
+              },
+              {
+                "number": 18,
+                "audioFile": "Unit2/Chapter7/Pien7788_U02Ch07Ex0x018.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 8,
+          "title": "Family Members and Relationships",
+          "page": "129",
+          "topics": [
+            "Describing Family Members"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit2/Chapter8/Pien7788_U02Ch08V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 2,
+                "audioFile": "Unit2/Chapter8/Pien7788_U02Ch08Ex02.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 9,
+          "title": "In the Home",
+          "page": "139",
+          "topics": [
+            "Talking about the Rooms in the House"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit2/Chapter9/Pien7788_U02Ch09V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit2/Chapter9/Pien7788_U02Ch09Ex01.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "Unit2/Chapter9/Pien7788_U02Ch09Ex03.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 10,
+          "title": "Food and Dining",
+          "page": "148",
+          "topics": [
+            "Talking about Food",
+            "Ordering Food in a Restaurant",
+            "Describing a Meal"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit2/Chapter10/Pien7788_U02Ch10V01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit2/Chapter10/Pien7788_U02Ch10V02.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit2/Chapter10/Pien7788_U02Ch10Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit2/Chapter10/Pien7788_U02Ch10Ex02.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unitNumber": 3,
+      "title": "People and Places in the City",
+      "chapters": [
+        {
+          "chapterNumber": 11,
+          "title": "The Weather",
+          "page": "163",
+          "topics": [
+            "Describing the Weather"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter11/Pien7788_U03Ch11V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter11/Pien7788_U03Ch11Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit3/Chapter11/Pien7788_U03Ch11Ex02.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 12,
+          "title": "Directions",
+          "page": "173",
+          "topics": [
+            "Giving Directions"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter12/Pien7788_U03Ch12V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter12/Pien7788_U03Ch12Ex01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit3/Chapter12/Pien7788_U03Ch12Ex02.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 13,
+          "title": "Markets and Shops",
+          "page": "180",
+          "topics": [
+            "Talking about Shops",
+            "Shopping for Groceries"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter13/Pien7788_U03Ch13V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter13/Pien7788_U03Ch13Ex01.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 14,
+          "title": "Asking for Information and Help",
+          "page": "189",
+          "topics": [
+            "Asking for Information",
+            "Asking for Help"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter14/Pien7788_U03Ch14V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter14/Pien7788_U03Ch14Ex01.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 15,
+          "title": "People and Professions",
+          "page": "199",
+          "topics": [
+            "Describing People's Jobs"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter15/Pien7788_U03Ch15V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit3/Chapter15/Pien7788_U03Ch15Ex01.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unitNumber": 4,
+      "title": "Around the World",
+      "chapters": [
+        {
+          "chapterNumber": 16,
+          "title": "Countries and Languages",
+          "page": "208",
+          "topics": [
+            "Talking about Countries and Languages"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit4/Chapter16/Pien7788_U04Ch16V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit4/Chapter16/Pien7788_U04Ch16Ex01.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unitNumber": 5,
+      "title": "Past, Present, and Future",
+      "chapters": [
+        {
+          "chapterNumber": 19,
+          "title": "Daily Activities and Pastimes",
+          "page": "249",
+          "topics": [
+            "Describing Daily Activities",
+            "Talking about Pastimes"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit5/Chapter19/Pien7788_U05Ch19V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit5/Chapter19/Pien7788_U05Ch19Ex01.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unitNumber": 6,
+      "title": "Travel and Transportation",
+      "chapters": [
+        {
+          "chapterNumber": 25,
+          "title": "Planning a Trip",
+          "page": "309",
+          "topics": [
+            "Making Travel Plans"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit6/Chapter25/Pien7788_U06Ch25V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit6/Chapter25/Pien7788_U06Ch25Ex01.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unitNumber": 7,
+      "title": "My Health and Well-being",
+      "chapters": [
+        {
+          "chapterNumber": 31,
+          "title": "At the Doctor's",
+          "page": "370",
+          "topics": [
+            "Describing Health Problems",
+            "Making an Appointment"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit7/Chapter31/Pien7788_U07Ch31V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit7/Chapter31/Pien7788_U07Ch31Ex01.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unitNumber": 8,
+      "title": "Culture and Society",
+      "chapters": [
+        {
+          "chapterNumber": 40,
+          "title": "Pakistani and Indian Festivals",
+          "page": "456",
+          "topics": [
+            "Talking about Festivals"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit8/Chapter40/Pien7788_U08Ch40V01.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 1,
+                "audioFile": "Unit8/Chapter40/Pien7788_U08Ch40Ex01.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "chapterNumber": 41,
+          "title": "Visiting a Historical Place",
+          "page": "469",
+          "topics": [
+            "Describing a Historical Place"
+          ],
+          "media": {
+            "vocabulary": [
+              {
+                "number": 1,
+                "audioFile": "Unit8/Chapter41/Pien7788_U08Ch41V01.mp3"
+              },
+              {
+                "number": 2,
+                "audioFile": "Unit8/Chapter41/Pien7788_U08Ch41V02.mp3"
+              },
+              {
+                "number": 3,
+                "audioFile": "Unit8/Chapter41/Pien7788_U08Ch41V03.mp3"
+              },
+              {
+                "number": 4,
+                "audioFile": "Unit8/Chapter41/Pien7788_U08Ch41V04.mp3"
+              }
+            ],
+            "exercises": [
+              {
+                "number": 3,
+                "audioFile": "Unit8/Chapter41/Pien7788_U08Ch41Ex03.mp3"
+              },
+              {
+                "number": 8,
+                "subExercises": [
+                  {
+                    "subNumber": 1,
+                    "audioFile": "Unit8/Chapter41/Pien7788_U08Ch41Ex08_01.mp3"
+                  }
+                ],
+                "questions": "Unit8/Chapter41/Pien7788_U08Ch41Ex08_Questions.mp3"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "appendices": [
+    {
+      "appendixNumber": 1,
+      "title": "Numbers",
+      "page": "555",
+      "sections": [
+        "Cardinal Numbers",
+        "Higher Numbers",
+        "Ordinal Numbers"
+      ]
+    },
+    {
+      "appendixNumber": 2,
+      "title": "Grammar Supplement",
+      "page": "561",
+      "sections": [
+        "Causative Verbs",
+        "Relative-Correlative Constructions",
+        "The Contrafactual Verb Form",
+        "Additional Meanings..."
+      ]
+    }
+  ]
+}

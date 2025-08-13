@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Metadata } from "next";
-import Navigation from "@/app/_components/main-site-navigation";
-import V2 from "@/app/_components/v2";
+import MainSiteNavigation from "@/app/_components/navigation/main-site-navigation";
 import { Inter, Noto_Nastaliq_Urdu, Noto_Naskh_Arabic } from "next/font/google";
 import { cn } from "@/lib/utils";
 const interFont = Inter({
@@ -33,15 +32,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        interFont.variable,
-        jameelNooriFont.variable,
-        notoNaskhArabicFont.variable
-      )}
+      // className={cn(
+      //   interFont.variable,
+      //   jameelNooriFont.variable,
+      //   notoNaskhArabicFont.variable
+      // )}
     >
       <body>
-        <V2 />
-        <main className="p-[1rem] pt-[2rem] naskh-arabic  text-right" dir="ltr ">{children}</main>
+        <MainSiteNavigation />
+        <main className="p-[1rem] pt-[2rem]">{children}</main>
       </body>
     </html>
   );
