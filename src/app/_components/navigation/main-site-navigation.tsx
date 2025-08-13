@@ -16,6 +16,7 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -45,11 +46,16 @@ const isActive = (pathname: string, href: string) => {
 // Main header component
 
 export default function MainHeader() {
- 
   const pathname = usePathname();
+  const [open, setOpen] = React.useState(false);
 
   // style active link
   const activeLinkStyle = "text-primary font-bold bg-blue-500";
+
+  // handle click event by closing the mobile menu
+  const handleClosingSheet = () => {
+    setOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -80,10 +86,14 @@ export default function MainHeader() {
                                   <Link
                                     href={subItem.href}
                                     className={navigationMenuTriggerStyle({
-                                      className: isActive(pathname, subItem.href)
+                                      className: isActive(
+                                        pathname,
+                                        subItem.href
+                                      )
                                         ? activeLinkStyle
                                         : "",
                                     })}
+                                    onClick={handleClosingSheet}
                                   >
                                     <div className="text-md font-medium leading-none">
                                       {subItem.title}
@@ -104,6 +114,7 @@ export default function MainHeader() {
                             ? activeLinkStyle
                             : "",
                         })}
+                        onClick={handleClosingSheet}
                       >
                         <Link href={item.href}>{item.title}</Link>
                       </NavigationMenuLink>
@@ -117,7 +128,7 @@ export default function MainHeader() {
 
         {/* Mobile Navigation Menu */}
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
                 <Menu />
@@ -125,7 +136,10 @@ export default function MainHeader() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px]">
               <SheetHeader>
-                <SheetTitle>Navigation</SheetTitle>
+                <SheetTitle>Beginning Urdu</SheetTitle>
+                <SheetDescription className="sr-only">
+                  Mobile Navigation Menu
+                </SheetDescription>
               </SheetHeader>
               <div className="mt-4 flex flex-col space-y-4">
                 {mainNavItems.map((item: NavItem) => (
@@ -145,6 +159,7 @@ export default function MainHeader() {
                                   ? activeLinkStyle
                                   : ""
                               }`}
+                              onClick={handleClosingSheet}
                             >
                               {subItem.title}
                             </Link>
@@ -158,6 +173,7 @@ export default function MainHeader() {
                         className={`text-lg font-semibold hover:text-primary ${
                           isActive(pathname, item.href) ? activeLinkStyle : ""
                         }`}
+                        onClick={handleClosingSheet}
                       >
                         {item.title}
                       </Link>
