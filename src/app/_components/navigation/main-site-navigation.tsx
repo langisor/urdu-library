@@ -25,7 +25,8 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 // import app logo
-import Logo from "/app.png";
+import Logo from "@/assets/app.png";
+ 
 
 // Lucide React for icons
 import { Menu } from "lucide-react";
