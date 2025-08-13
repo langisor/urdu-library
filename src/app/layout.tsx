@@ -1,8 +1,7 @@
 import "./globals.css";
 import { Metadata } from "next";
 import MainSiteNavigation from "@/app/_components/navigation/main-site-navigation";
-<meta name="apple-mobile-web-app-title" content="urdu-library" />
- 
+<meta name="apple-mobile-web-app-title" content="Urdu Lib" />
 
 export const metadata: Metadata = {
   title: "Beginning Urdu",
