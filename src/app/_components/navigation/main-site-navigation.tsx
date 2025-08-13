@@ -32,17 +32,22 @@ import { Menu } from "lucide-react";
 import { mainNavItems } from "./data";
 import { NavItem } from "./types";
 
+  // Helper function to check if a link is active
+  const isActive = (pathname: string, href: string) => {
+    return pathname === href;
+  };
 
 // Main header component
+
 export default function MainHeader() {
+    /**
+   * Generate a unique ID for the menu - this is required for accessibility
+   * and ensures that each menu has a unique ID - see ./readme-use-id.md for more info
+   */
+    const menuId = useId();
   const pathname = usePathname();
 
-  const menuId = useId();
 
-  // Helper function to check if a link is active
-const isActive = (pathname: string, href: string) => {
-  return pathname === href;
-};
 
 // style active link
 const activeLinkStyle = "text-primary font-bold bg-blue-500";

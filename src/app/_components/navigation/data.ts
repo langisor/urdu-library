@@ -5,11 +5,11 @@ export const mainNavItems: NavItem[] = [
   {
     title: "Mondly",
     href: "/mondly",
-    items: [
-      { title: "Start", href: "/mondly" },
-      { title: "Categories", href: "/mondly/categories" },
-      { title: "Lessons", href: "/mondly/lessons" },
-    ],
+    // items: [
+    //   { title: "Start", href: "/mondly" },
+    //   { title: "Categories", href: "/mondly/categories" },
+    //   { title: "Lessons", href: "/mondly/lessons" },
+    // ],
   },
   {
     title: "ETC",
