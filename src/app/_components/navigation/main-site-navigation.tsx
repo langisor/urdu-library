@@ -52,6 +52,8 @@ export default function MainHeader() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
 
+ 
+
   // style active link
   const activeLinkStyle = "text-primary font-bold bg-blue-500";
 
