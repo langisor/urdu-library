@@ -15,6 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+ 
       <body>
         <MainSiteNavigation />
         <main className="p-[1rem] pt-[2rem]">

@@ -23,6 +23,9 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+// import app logo
+import Logo from "/app.png";
 
 // Lucide React for icons
 import { Menu } from "lucide-react";
@@ -63,7 +66,7 @@ export default function MainHeader() {
         <div className="flex items-center space-x-4">
           {/* Logo or site title */}
           <Link href="/" className="text-xl font-bold">
-            Beginning Urdu
+            <Image src={Logo} alt="Logo" width={50} height={50} />
           </Link>
 
           {/* Desktop Navigation Menu */}
