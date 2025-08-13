@@ -11,7 +11,7 @@ export const _db_columns = {
    "name",
    "countLesson",
    "countVocabulary",
-   "countQuiz",
+ 
    "time",
  ],
  Lesson: [
