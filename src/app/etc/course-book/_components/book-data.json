@@ -125,6 +125,9 @@
           }
         }
       ],
+      "arabicDefiniteArticle": {
+        "page": "9"
+      },
       "exerciseAnswers": {
         "page": "10"
       }
@@ -280,9 +283,7 @@
           "chapterNumber": 2,
           "title": "Me and My Classmates",
           "page": "65",
-          "topics": [
-            "Exchanging Basic Personal Information"
-          ],
+          "topics": ["Exchanging Basic Personal Information"],
           "media": {
             "vocabulary": [
               {
@@ -332,9 +333,7 @@
           "chapterNumber": 4,
           "title": "My Daily Routine",
           "page": "86",
-          "topics": [
-            "Talking about Daily Activities"
-          ],
+          "topics": ["Talking about Daily Activities"],
           "media": {
             "vocabulary": [
               {
@@ -358,10 +357,7 @@
           "chapterNumber": 5,
           "title": "My Preferences",
           "page": "93",
-          "topics": [
-            "Stating Likes and Dislikes",
-            "Talking about Pastimes"
-          ],
+          "topics": ["Stating Likes and Dislikes", "Talking about Pastimes"],
           "media": {
             "vocabulary": [
               {
@@ -385,10 +381,7 @@
           "chapterNumber": 6,
           "title": "Describing People and Objects",
           "page": "100",
-          "topics": [
-            "Describing People",
-            "Describing Objects"
-          ],
+          "topics": ["Describing People", "Describing Objects"],
           "media": {
             "vocabulary": [
               {
@@ -471,9 +464,7 @@
           "chapterNumber": 8,
           "title": "Family Members and Relationships",
           "page": "129",
-          "topics": [
-            "Describing Family Members"
-          ],
+          "topics": ["Describing Family Members"],
           "media": {
             "vocabulary": [
               {
@@ -493,9 +484,7 @@
           "chapterNumber": 9,
           "title": "In the Home",
           "page": "139",
-          "topics": [
-            "Talking about the Rooms in the House"
-          ],
+          "topics": ["Talking about the Rooms in the House"],
           "media": {
             "vocabulary": [
               {
@@ -557,9 +546,7 @@
           "chapterNumber": 11,
           "title": "The Weather",
           "page": "163",
-          "topics": [
-            "Describing the Weather"
-          ],
+          "topics": ["Describing the Weather"],
           "media": {
             "vocabulary": [
               {
@@ -583,9 +570,7 @@
           "chapterNumber": 12,
           "title": "Directions",
           "page": "173",
-          "topics": [
-            "Giving Directions"
-          ],
+          "topics": ["Giving Directions"],
           "media": {
             "vocabulary": [
               {
@@ -609,10 +594,7 @@
           "chapterNumber": 13,
           "title": "Markets and Shops",
           "page": "180",
-          "topics": [
-            "Talking about Shops",
-            "Shopping for Groceries"
-          ],
+          "topics": ["Talking about Shops", "Shopping for Groceries"],
           "media": {
             "vocabulary": [
               {
@@ -632,10 +614,7 @@
           "chapterNumber": 14,
           "title": "Asking for Information and Help",
           "page": "189",
-          "topics": [
-            "Asking for Information",
-            "Asking for Help"
-          ],
+          "topics": ["Asking for Information", "Asking for Help"],
           "media": {
             "vocabulary": [
               {
@@ -655,9 +634,7 @@
           "chapterNumber": 15,
           "title": "People and Professions",
           "page": "199",
-          "topics": [
-            "Describing People's Jobs"
-          ],
+          "topics": ["Describing People's Jobs"],
           "media": {
             "vocabulary": [
               {
@@ -683,9 +660,7 @@
           "chapterNumber": 16,
           "title": "Countries and Languages",
           "page": "208",
-          "topics": [
-            "Talking about Countries and Languages"
-          ],
+          "topics": ["Talking about Countries and Languages"],
           "media": {
             "vocabulary": [
               {
@@ -711,10 +686,7 @@
           "chapterNumber": 19,
           "title": "Daily Activities and Pastimes",
           "page": "249",
-          "topics": [
-            "Describing Daily Activities",
-            "Talking about Pastimes"
-          ],
+          "topics": ["Describing Daily Activities", "Talking about Pastimes"],
           "media": {
             "vocabulary": [
               {
@@ -740,9 +712,7 @@
           "chapterNumber": 25,
           "title": "Planning a Trip",
           "page": "309",
-          "topics": [
-            "Making Travel Plans"
-          ],
+          "topics": ["Making Travel Plans"],
           "media": {
             "vocabulary": [
               {
@@ -768,10 +738,7 @@
           "chapterNumber": 31,
           "title": "At the Doctor's",
           "page": "370",
-          "topics": [
-            "Describing Health Problems",
-            "Making an Appointment"
-          ],
+          "topics": ["Describing Health Problems", "Making an Appointment"],
           "media": {
             "vocabulary": [
               {
@@ -797,9 +764,7 @@
           "chapterNumber": 40,
           "title": "Pakistani and Indian Festivals",
           "page": "456",
-          "topics": [
-            "Talking about Festivals"
-          ],
+          "topics": ["Talking about Festivals"],
           "media": {
             "vocabulary": [
               {
@@ -819,9 +784,7 @@
           "chapterNumber": 41,
           "title": "Visiting a Historical Place",
           "page": "469",
-          "topics": [
-            "Describing a Historical Place"
-          ],
+          "topics": ["Describing a Historical Place"],
           "media": {
             "vocabulary": [
               {
@@ -867,11 +830,7 @@
       "appendixNumber": 1,
       "title": "Numbers",
       "page": "555",
-      "sections": [
-        "Cardinal Numbers",
-        "Higher Numbers",
-        "Ordinal Numbers"
-      ]
+      "sections": ["Cardinal Numbers", "Higher Numbers", "Ordinal Numbers"]
     },
     {
       "appendixNumber": 2,

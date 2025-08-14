@@ -47,6 +47,9 @@ export default function BookBrowser({ data }: { data: BookData }) {
   >({});
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+
+
+ 
   const baseUrl: string = data.media.baseUrl;
 
  
