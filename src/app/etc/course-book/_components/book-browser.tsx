@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, FC } from "react";
 import { Button } from "@/components/ui/button";
+ 
+ 
 import {
   Card,
   CardContent,
@@ -46,6 +48,8 @@ export default function BookBrowser({ data }: { data: BookData }) {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const baseUrl: string = data.media.baseUrl;
+
+ 
 
   const handleItemClick = (
     item: Chapter | Lesson,
@@ -125,10 +129,7 @@ export default function BookBrowser({ data }: { data: BookData }) {
   };
 
   return (
-    <div
-      className="flex min-h-screen  font-sans text-left"
-     
-    >
+    <div className="flex min-h-screen  font-sans text-left">
       {/* Sidebar Toggle Button for Mobile */}
       <div className="md:hidden fixed top-16 right-4 z-50">
         <Button
@@ -147,12 +148,12 @@ export default function BookBrowser({ data }: { data: BookData }) {
 
       {/* Sidebar Navigation */}
       <aside
-        className={`fixed inset-y-0 left-0 w-full md:w-1/4 lg:w-1/5 bg-white border-r border-gray-200 shadow-lg p-4 z-40
+        className={`fixed inset-y-0 left-0 w-full md:w-1/3 lg:w-1/5 bg-white border-r border-gray-200 shadow-lg p-4 z-40
                      transform transition-transform duration-300 md:relative md:translate-x-0
                      ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex items-center mb-6">
-          <LibraryBig className="h-8 w-8 text-indigo-600 mr-3" />
+          <LibraryBig className="h-16 w-16 text-indigo-600 mr-1" />
           <h1 className="text-xl font-bold text-indigo-600 truncate">
             {data.title}
           </h1>
