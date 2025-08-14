@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardContent } from "@/components/ui/card";
+
 import { Button } from "@/components/ui/button";
 import * as React from "react";
 import bookData from "@/app/etc/course-book/_components/book-data.json";
@@ -123,23 +123,12 @@ export default function EtcPage() {
     <div className="container">
       <h1 className="text-2xl font-bold mb-4">Course Book Data</h1>
       <div className="flex-flex-col gap-3">
-        <Card className="mb-4 bg-gradient-to-r from-black-500 via-purple-200 to-pink-500">
-          <CardContent>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-xl font-semibold">Lessons Data</h2>
-              <JsonViewerComponent data={lessons} />
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="mb-4 bg-gradient-to-r from-green-500 via-blue-200 to-purple-500">
-          <CardContent>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-xl font-semibold">Chapters Data</h2>
-              <JsonViewerComponent data={chapterMedia} />
-            </div>
-          </CardContent>
-        </Card>
+        <h2 className="text-xl font-semibold">Lessons Data</h2>
+        <JsonViewerComponent data={lessons} />
       </div>
+
+      <h2 className="text-xl font-semibold">Chapters Data</h2>
+      <JsonViewerComponent data={chapterMedia} />
     </div>
   );
 }
