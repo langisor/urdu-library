@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 import { getAudioUrl } from "./audio-item";
 import { ExpandableChapter } from "./chapter";
 import { Card, CardContent } from "@/components/ui/card";
-
+import Image from "next/image";
 import {
   Sheet,
   SheetContent,
@@ -64,7 +64,7 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
     <div className="min-h-screen bg-gray-100 p-4 font-sans antialiased text-gray-900">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden md:p-8 p-4">
         <header className="mb-8 text-center">
-          <h1 className="text-4xl font-extrabold text-blue-600 mb-2">
+          <h1 className="text-2xl md:text-4xlmd: font-extrabold text-blue-600 mb-2">
             Book Navigation
           </h1>
           <p className="text-gray-600">
@@ -125,8 +125,13 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
 }
 
 function BookCover() {
-  const bookCoverUrl="/materials/course-book-cover.jpeg"
+  const bookCoverUrl = "/materials/course-book-cover.jpeg";
 
-  
-
+  return (
+    <Card className="w-full sm:max-w-[400px]">
+      <CardContent>
+        <Image src={bookCoverUrl} alt="Book Cover" width={400} height={600} />
+      </CardContent>
+    </Card>
+  );
 }
