@@ -54,7 +54,7 @@ export default function MainHeader() {
   const [open, setOpen] = React.useState(false);
   const isMobile = useIsMobile(); // default breakpoint is 768
   // style active link
-  const activeLinkStyle = "text-primary font-bold bg-blue-500";
+  const activeLinkStyle = "w-full text-primary font-bold bg-primary/10";
 
   // handle click event by closing the mobile menu
   const handleClosingSheet = () => {
@@ -216,9 +216,9 @@ function QuickBookCourseLink() {
         src={imgSrc}
         sizes="100vw"
         alt="Course Book"
-        width={60}
-        height={50}
-        className="object-contain rounded-xl p-2 w-16 h-16 cursor-pointer"
+        width={50}
+        height={40}
+        className="object-contain rounded-2xl  h-10  w-10   cursor-pointer"
       />
     </Link>
   );
