@@ -6,7 +6,7 @@ export const getAudioUrl = (item: AudioFile): string => {
   const { unit, chapter, id } = item;
   const unitNumber = String(unit).padStart(2, "0");
   const chapterNumber = String(chapter).padStart(2, "0");
-  return `/public/media/audio-all/Unit${unitNumber}/Chapter${chapterNumber}/${id}`;
+  return `/media/audio-all/Unit${unitNumber}/Chapter${chapterNumber}/${id}`;
 };
 
 // Props for AudioItem component
