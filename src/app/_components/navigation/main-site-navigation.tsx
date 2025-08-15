@@ -52,8 +52,6 @@ export default function MainHeader() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
 
- 
-
   // style active link
   const activeLinkStyle = "text-primary font-bold bg-blue-500";
 
@@ -65,19 +63,20 @@ export default function MainHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ">
           {/* Logo or site title */}
-          <Link href="/" className="text-xl font-bold">
-            <div className="flex items-center space-x-2">
-              <Image
-                src={Logo}
-                sizes="100vw"
-                alt="Logo"
-                width={50}
-                height={50}
-              />
-              <span className="italic">Urdu Library</span>
-            </div>
+          <Link
+            href="/"
+            className="flex flex-row space-x-2 items-end   text-xl font-bold"
+          >
+            <Image
+              src={Logo}
+              // sizes="100vw"
+              alt="Logo"
+              width={60}
+              height={50}
+              className="object-contain rounded-xl p-2 w-16 h-16"
+            />
           </Link>
 
           {/* Desktop Navigation Menu */}
@@ -148,9 +147,12 @@ export default function MainHeader() {
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px]">
+            <SheetContent
+              side="left"
+              className="xs:max-w-full  p-2 flex flex-col"
+            >
               <SheetHeader>
-                <SheetTitle>Beginning Urdu</SheetTitle>
+                <SheetTitle>Urdu Library</SheetTitle>
                 <SheetDescription className="sr-only">
                   Mobile Navigation Menu
                 </SheetDescription>
@@ -160,7 +162,7 @@ export default function MainHeader() {
                   <div key={item.title}>
                     {item.items ? (
                       // Collapsible menu for mobile
-                      <>
+                      <div className="pl-2 ">
                         <p className="text-lg font-semibold">{item.title}</p>
                         <Separator className="my-2" />
                         <div className="flex flex-col space-y-2 pl-4">
@@ -179,12 +181,12 @@ export default function MainHeader() {
                             </Link>
                           ))}
                         </div>
-                      </>
+                      </div>
                     ) : (
                       // Single link for mobile
                       <Link
                         href={item.href}
-                        className={`text-lg font-semibold hover:text-primary ${
+                        className={`text-lg font-semibold  hover:text-primary ${
                           isActive(pathname, item.href) ? activeLinkStyle : ""
                         }`}
                         onClick={handleClosingSheet}

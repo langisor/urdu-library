@@ -15,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
- 
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Urdu Lib" />
+      </head>
       <body>
         <MainSiteNavigation />
         <main className="p-[1rem] pt-[2rem]">
