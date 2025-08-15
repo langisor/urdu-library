@@ -1,8 +1,8 @@
 "use client";
 import { ChevronDown } from "lucide-react";
-import { AudioItem } from "./audio-item";
 import { AudioFile, Chapter } from "./difinitions";
 import { Button } from "@/components/ui/button";
+import { FullscreenPlayer } from "./fullscrren-player";
 // Props for Chapter component
 interface ChapterProps {
   chapter: Chapter;
@@ -21,7 +21,7 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
   onToggle,
 }) => {
   const hasAudio = chapter.vocs.length > 0 || chapter.exers.length > 0;
- 
+
   return (
     <div className="my-2 border-b border-gray-200">
       <Button
@@ -42,33 +42,25 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
         )}
       </Button>
       {expanded && hasAudio && (
-        <div className="p-4 bg-gray-50 rounded-b-lg">
+        <div className="p-4 bg-gray-50 rounded-b-lg ">
           {chapter.vocs.length > 0 && (
-            <div className="mb-4">
-           
+            <div className="mb-4 flex flex-wrap gap-4 ">
               {chapter.vocs.map((voc) => (
-            
-                <AudioItem
+                <FullscreenPlayer
                   key={voc.id}
                   item={voc}
-                  isPlaying={playingAudio?.id === voc.id}
-                  onPlayPause={onPlayPause}
+                  disabled={!hasAudio}
                 />
-               
               ))}
             </div>
           )}
           {chapter.exers.length > 0 && (
-            <div>
-              <h4 className="text-lg font-bold mb-2 text-gray-800">
-                Exercises
-              </h4>
+            <div className="mb-4 flex flex-wrap gap-4  ">
               {chapter.exers.map((exer) => (
-                <AudioItem
+                <FullscreenPlayer
                   key={exer.id}
                   item={exer}
-                  isPlaying={playingAudio?.id === exer.id}
-                  onPlayPause={onPlayPause}
+                  disabled={!hasAudio}
                 />
               ))}
             </div>

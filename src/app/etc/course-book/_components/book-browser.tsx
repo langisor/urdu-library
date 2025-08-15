@@ -99,8 +99,8 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
                 />
               </Button>
               {expandedUnit === unit.unit_number && (
-                <div className="p-4 bg-gray-50 border-t border-gray-200">
-                  
+               
+               <div className="p-4 bg-gray-50 border-t border-gray-200">
                   <div className="space-y-2">
                     {unit.chapters.map((chapter: Chapter) => (
                       <ExpandableChapter

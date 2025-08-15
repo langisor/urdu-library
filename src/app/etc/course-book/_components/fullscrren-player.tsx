@@ -11,9 +11,16 @@ import {
 } from "@/components/ui/sheet";
 import { Card, CardContent } from "@/components/ui/card";
 import { AudioFile } from "./difinitions";
-import { Play, Pause, Repeat } from "lucide-react";
+import { Play, Pause, Repeat, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getAudioUrl } from "./audio-item";
+
+interface FullscreenPlayerProps {
+  item: AudioFile;
+  disabled?: boolean;
+  children?: React.ReactNode;
+}
+
 /**
  * Fullscreen player component: Play an audio file in fullscreen
  * Props: item - as AudioFile
@@ -22,7 +29,12 @@ import { getAudioUrl } from "./audio-item";
  * Events: onPlay, onPause, onStop, onRepeat
  *
  */
-export const FullscreenPlayer: React.FC<{ item: AudioFile }> = ({ item }) => {
+
+export function FullscreenPlayer({
+  item,
+  disabled = false,
+  children,
+}: FullscreenPlayerProps) {
   const [open, setOpen] = React.useState(false);
   const [playing, setPlaying] = React.useState(false);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
@@ -70,42 +82,55 @@ export const FullscreenPlayer: React.FC<{ item: AudioFile }> = ({ item }) => {
     audioRef.current?.pause();
     setPlaying(false);
   };
-
+  const buttonStyle= type === "Vocabulary"
+   ? {
+    backgroundColor: "#8D2B2C",
+    color: "white",
+    cursor: "pointer",
+    } : {
+      backgroundColor: "#6A7D91",
+      color: "white",
+      cursor: "pointer",
+    };
   return (
     <>
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
-          <Button variant="outline">Play</Button>
+        <SheetTrigger asChild disabled={disabled}>
+          <Button variant="outline" className="flex flex-row gap-2" style={buttonStyle}>
+            <Music className="w-4 h-4 mr-2" />
+            {type === "Vocabulary" ? "Vocabulary" : "Exercise"} {number}
+          </Button>
         </SheetTrigger>
-        <SheetContent className="sm:max-w-[425px] h-full w-full" side="bottom">
+        <SheetContent className="sm:max-w-[425px] h-screen w-full" side="bottom">
           <SheetTitle>Audio Player</SheetTitle>
           <SheetDescription></SheetDescription>
-            <audio
-              controls
-              playsInline
-              autoPlay
-              ref={audioRef}
-              onTimeUpdate={handleTimeUpdate}
-              onEnded={handleEnded}
-            >
-              <source src={audioUrl} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <div className="flex items-center justify-between mt-4">
-              <Button variant="outline" onClick={handlePlayPause}>
-                {playing ? <Pause /> : <Play />}
+          <Card>{/* medi informaion */}</Card>
+          <audio
+            controls
+            playsInline
+            autoPlay
+            ref={audioRef}
+            onTimeUpdate={handleTimeUpdate}
+            onEnded={handleEnded}
+          >
+            <source src={audioUrl} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <div className="flex items-center justify-between mt-4">
+            <Button variant="outline" onClick={handlePlayPause}>
+              {playing ? <Pause /> : <Play />}
+            </Button>
+            <Button variant="outline" onClick={handleRepeat}>
+              {repeat ? <Repeat /> : <Repeat />}
+            </Button>
+            <SheetClose asChild>
+              <Button variant="outline" onClick={handleSheetClose}>
+                Close
               </Button>
-              <Button variant="outline" onClick={handleRepeat}>
-                {repeat ? <Repeat /> : <Repeat />}
-              </Button>
-              <SheetClose asChild>
-                <Button variant="outline" onClick={handleSheetClose}>
-                  Close
-                </Button>
-              </SheetClose>
-            </div>
+            </SheetClose>
+          </div>
         </SheetContent>
       </Sheet>
     </>
   );
-};
+}
