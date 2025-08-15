@@ -1,14 +1,7 @@
-import { Suspense } from "react";
-import { Loading } from "@/components/loading";
+import book from "./_components/toc.json";
 import BookBrowser from "./_components/book-browser";
-import { BookData } from "./_components/definitions";
-import data from "./_components/book-data.json";
+import { Unit } from "./_components/difinitions";
 
-export default function CourseBookPage() {
-  
-  return (
-    <Suspense fallback={<Loading />}>
-      <BookBrowser data={data as BookData} />
-    </Suspense>
-  );
+export default function DemoPage() {
+  return <BookBrowser data={book as Unit[]} />;
 }
