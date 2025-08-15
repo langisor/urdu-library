@@ -79,7 +79,7 @@ export const FullscreenPlayer: React.FC<{ item: AudioFile }> = ({ item }) => {
         </SheetTrigger>
         <SheetContent className="sm:max-w-[425px] h-full w-full" side="bottom">
           <SheetTitle>Audio Player</SheetTitle>
-          <SheetDescription>
+          <SheetDescription></SheetDescription>
             <audio
               controls
               playsInline
@@ -104,7 +104,6 @@ export const FullscreenPlayer: React.FC<{ item: AudioFile }> = ({ item }) => {
                 </Button>
               </SheetClose>
             </div>
-          </SheetDescription>
         </SheetContent>
       </Sheet>
     </>
