@@ -51,7 +51,7 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
         audioRef.current.pause();
       }
       const audioUrl = getAudioUrl(item);
-      console.log(audioUrl);
+      // console.log(audioUrl);
       audioRef.current = new Audio(audioUrl);
       audioRef.current.play();
       setPlayingAudio(item);
@@ -106,8 +106,6 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
                       <ExpandableChapter
                         key={chapter.chapter_number}
                         chapter={chapter}
-                        playingAudio={playingAudio}
-                        onPlayPause={handlePlayPause}
                         expanded={expandedChapter === chapter.chapter_number}
                         onToggle={() =>
                           handleChapterToggle(chapter.chapter_number)

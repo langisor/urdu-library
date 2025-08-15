@@ -6,8 +6,7 @@ import { FullscreenPlayer } from "./fullscrren-player";
 // Props for Chapter component
 interface ChapterProps {
   chapter: Chapter;
-  playingAudio: AudioFile | null;
-  onPlayPause: (item: AudioFile) => void;
+   
   expanded: boolean;
   onToggle: () => void;
 }
@@ -15,8 +14,7 @@ interface ChapterProps {
 // Component for a single expandable chapter
 export const ExpandableChapter: React.FC<ChapterProps> = ({
   chapter,
-  playingAudio,
-  onPlayPause,
+  
   expanded,
   onToggle,
 }) => {
