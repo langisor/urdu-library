@@ -2,6 +2,7 @@
 import { ChevronDown } from "lucide-react";
 import { AudioItem } from "./audio-item";
 import { AudioFile, Chapter } from "./difinitions";
+import { Button } from "@/components/ui/button";
 // Props for Chapter component
 interface ChapterProps {
   chapter: Chapter;
@@ -23,7 +24,8 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
 
   return (
     <div className="my-2 border-b border-gray-200">
-      <button
+      <Button
+        variant="outline"
         className="flex items-center justify-between w-full p-4 text-left font-semibold text-gray-800 bg-white rounded-lg transition-all duration-300 hover:bg-gray-50"
         onClick={onToggle}
         disabled={!hasAudio}
@@ -38,7 +40,7 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
             }`}
           />
         )}
-      </button>
+      </Button>
       {expanded && hasAudio && (
         <div className="p-4 bg-gray-50 rounded-b-lg">
           {chapter.vocs.length > 0 && (

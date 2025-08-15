@@ -8,12 +8,7 @@ import { getAudioUrl } from "./audio-item";
 import { ExpandableChapter } from "./chapter";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-  SheetDescription,
-} from "@/components/ui/sheet";
+
 import { Button } from "@/components/ui/button";
 export default function BookBrowser({ data }: { data: Unit[] }) {
   const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
@@ -40,7 +35,7 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
       expandedChapter === chapterNumber ? null : chapterNumber
     );
   };
- 
+
   const handlePlayPause = (item: AudioFile) => {
     if (playingAudio?.id === item.id) {
       // Pause if the same audio is playing
@@ -59,16 +54,16 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
       setPlayingAudio(item);
     }
   };
-  
+
   return (
     <div className="min-h-screen bg-gray-100 p-4 font-sans antialiased text-gray-900">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden md:p-8 p-4">
         <header className="mb-8 text-center">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center gap-4">
             <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-600 mb-2">
               <span>Beginning Urdu Course Book</span>
-              <BookCover />
             </h1>
+            <BookCover />
           </div>
           <p className="text-gray-600">
             Browse and listen to your book's audio content.
@@ -85,7 +80,11 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
                 variant="outline"
                 className="flex items-center justify-between w-full p-6 text-left font-md text-xl text-gray-900 transition-colors duration-200 hover:bg-gray-50"
                 onClick={() => handleUnitToggle(unit.unit_number)}
-                style={expandedUnit === unit.unit_number ? { backgroundColor: "blue", color: "white" } : {}}
+                style={
+                  expandedUnit === unit.unit_number
+                    ? { backgroundColor: "blue", color: "white" }
+                    : {}
+                }
               >
                 <span>{unit.unit_title}</span>
                 <ChevronDown
@@ -133,9 +132,15 @@ function BookCover() {
   const bookCoverUrl = "/materials/course-book-cover.jpeg";
 
   return (
-    <Card className="w-full sm:max-w-[400px]">
-      <CardContent className="p-2">
-        <Image src={bookCoverUrl} alt="Book Cover" width={400} height={400} className="mx-auto max-w-[200px] max-h-[250px]" />
+    <Card className="w-full h-[200px] md:h-[250px] md:w-[200px] sm:w-[150px]">
+      <CardContent className="w-full h-full">
+        <Image
+          src={bookCoverUrl}
+          alt="Book Cover"
+          width={400}
+          height={400}
+          className="w-full h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-t-none"
+        />
       </CardContent>
     </Card>
   );
