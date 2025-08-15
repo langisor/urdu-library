@@ -34,6 +34,7 @@ import { Menu } from "lucide-react";
 // NOTE: Make sure this path is correct for your project structure
 import { mainNavItems } from "./data";
 import { NavItem } from "./types";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Helper function to check if a link is active
 const isActive = (pathname: string, href: string) => {
@@ -51,7 +52,7 @@ const isActive = (pathname: string, href: string) => {
 export default function MainHeader() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
-
+  const isMobile = useIsMobile(); // default breakpoint is 768
   // style active link
   const activeLinkStyle = "text-primary font-bold bg-blue-500";
 
@@ -60,6 +61,7 @@ export default function MainHeader() {
     setOpen(false);
   };
 
+  console.log("isMobile: ", isMobile);
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
@@ -78,7 +80,7 @@ export default function MainHeader() {
               className="object-contain rounded-xl p-2 w-16 h-16"
             />
           </Link>
-
+          {isMobile && <QuickBookCourseLink />}
           {/* Desktop Navigation Menu */}
           <div className="hidden md:flex">
             <NavigationMenu>
@@ -140,7 +142,7 @@ export default function MainHeader() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className="md:hidden">
+        <div className="md:hidden flex  items-center">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
@@ -202,5 +204,22 @@ export default function MainHeader() {
         </div>
       </div>
     </header>
+  );
+}
+
+function QuickBookCourseLink() {
+  const imgSrc = "/materials/course-book-cover.jpeg";
+
+  return (
+    <Link href="/etc/course-book" className="flex items-center justify-center">
+      <Image
+        src={imgSrc}
+        sizes="100vw"
+        alt="Course Book"
+        width={60}
+        height={50}
+        className="object-contain rounded-xl p-2 w-16 h-16 cursor-pointer"
+      />
+    </Link>
   );
 }
