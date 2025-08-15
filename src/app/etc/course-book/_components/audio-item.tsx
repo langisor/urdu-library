@@ -5,9 +5,14 @@ import { Play, Pause, Music } from "lucide-react";
 // Helper function to dynamically construct the audio URL
 export const getAudioUrl = (item: AudioFile): string => {
   const { unit, chapter, id } = item;
-  const unitNumber = String(unit).padStart(2, "0");
+  // const unitNumber = String(unit).padStart(2, "0");
+  const unit_number=unit;
+  console.log("unitNumber", unit_number);
+
   const chapterNumber = String(chapter).padStart(2, "0");
-  return `/media/audio-all/Unit${unitNumber}/Chapter${chapterNumber}/${id}`;
+  console.log("chapterNumber", chapterNumber);
+  console.log("id", id);
+  return `/media/audio-all/Unit${unit_number}/Chapter${chapterNumber}/${id}`;
 };
 
 // Props for AudioItem component

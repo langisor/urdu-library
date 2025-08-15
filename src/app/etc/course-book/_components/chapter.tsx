@@ -21,7 +21,7 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
   onToggle,
 }) => {
   const hasAudio = chapter.vocs.length > 0 || chapter.exers.length > 0;
-  console.log("chapter", chapter);
+ 
   return (
     <div className="my-2 border-b border-gray-200">
       <Button
@@ -45,16 +45,16 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
         <div className="p-4 bg-gray-50 rounded-b-lg">
           {chapter.vocs.length > 0 && (
             <div className="mb-4">
-              <h4 className="text-lg font-bold mb-2 text-gray-800">
-                Vocabulary
-              </h4>
+           
               {chapter.vocs.map((voc) => (
+            
                 <AudioItem
                   key={voc.id}
                   item={voc}
                   isPlaying={playingAudio?.id === voc.id}
                   onPlayPause={onPlayPause}
                 />
+               
               ))}
             </div>
           )}
