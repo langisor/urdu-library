@@ -6,6 +6,14 @@ import { AudioFile, Chapter, Unit } from "./difinitions";
 import { ChevronDown } from "lucide-react";
 import { getAudioUrl } from "./audio-item";
 import { ExpandableChapter } from "./chapter";
+import { Card, CardContent } from "@/components/ui/card";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
 
 export default function BookBrowser({ data }: { data: Unit[] }) {
   const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
@@ -40,6 +48,8 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
       setPlayingAudio(null);
     } else {
       // Play new audio
+
+      // Is it playing
       if (audioRef.current) {
         audioRef.current.pause();
       }
@@ -112,4 +122,11 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
       </div>
     </div>
   );
+}
+
+function BookCover() {
+  const bookCoverUrl="/materials/course-book-cover.jpeg"
+
+  
+
 }
