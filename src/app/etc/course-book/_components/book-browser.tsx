@@ -14,7 +14,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
-
+import { Button } from "@/components/ui/button";
 export default function BookBrowser({ data }: { data: Unit[] }) {
   const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
   const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
@@ -40,7 +40,7 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
       expandedChapter === chapterNumber ? null : chapterNumber
     );
   };
-
+ 
   const handlePlayPause = (item: AudioFile) => {
     if (playingAudio?.id === item.id) {
       // Pause if the same audio is playing
@@ -59,14 +59,17 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
       setPlayingAudio(item);
     }
   };
-
+  
   return (
     <div className="min-h-screen bg-gray-100 p-4 font-sans antialiased text-gray-900">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden md:p-8 p-4">
         <header className="mb-8 text-center">
-          <h1 className="text-2xl md:text-4xlmd: font-extrabold text-blue-600 mb-2">
-            Book Navigation
-          </h1>
+          <div className="flex items-center justify-center">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-600 mb-2">
+              <span>Beginning Urdu Course Book</span>
+              <BookCover />
+            </h1>
+          </div>
           <p className="text-gray-600">
             Browse and listen to your book's audio content.
           </p>
@@ -78,9 +81,11 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
               key={unit.unit_number}
               className="bg-white rounded-xl shadow-md overflow-hidden ring-1 ring-gray-200"
             >
-              <button
-                className="flex items-center justify-between w-full p-6 text-left font-bold text-xl text-gray-900 transition-colors duration-200 hover:bg-gray-50"
+              <Button
+                variant="outline"
+                className="flex items-center justify-between w-full p-6 text-left font-md text-xl text-gray-900 transition-colors duration-200 hover:bg-gray-50"
                 onClick={() => handleUnitToggle(unit.unit_number)}
+                style={expandedUnit === unit.unit_number ? { backgroundColor: "blue", color: "white" } : {}}
               >
                 <span>{unit.unit_title}</span>
                 <ChevronDown
@@ -90,10 +95,10 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
                       : "rotate-0"
                   }`}
                 />
-              </button>
+              </Button>
               {expandedUnit === unit.unit_number && (
                 <div className="p-4 bg-gray-50 border-t border-gray-200">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
                     Chapters
                   </h3>
                   <div className="space-y-2">
@@ -129,8 +134,8 @@ function BookCover() {
 
   return (
     <Card className="w-full sm:max-w-[400px]">
-      <CardContent>
-        <Image src={bookCoverUrl} alt="Book Cover" width={400} height={600} />
+      <CardContent className="p-2">
+        <Image src={bookCoverUrl} alt="Book Cover" width={400} height={400} className="mx-auto max-w-[200px] max-h-[250px]" />
       </CardContent>
     </Card>
   );
