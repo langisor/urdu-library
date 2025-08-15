@@ -8,8 +8,9 @@ import { getAudioUrl } from "./audio-item";
 import { ExpandableChapter } from "./chapter";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-
 import { Button } from "@/components/ui/button";
+
+
 export default function BookBrowser({ data }: { data: Unit[] }) {
   const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
   const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
@@ -37,6 +38,7 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
   };
 
   const handlePlayPause = (item: AudioFile) => {
+    
     if (playingAudio?.id === item.id) {
       // Pause if the same audio is playing
       audioRef.current?.pause();
@@ -49,6 +51,7 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
         audioRef.current.pause();
       }
       const audioUrl = getAudioUrl(item);
+      console.log(audioUrl);
       audioRef.current = new Audio(audioUrl);
       audioRef.current.play();
       setPlayingAudio(item);
@@ -97,9 +100,7 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
               </Button>
               {expandedUnit === unit.unit_number && (
                 <div className="p-4 bg-gray-50 border-t border-gray-200">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
-                    Chapters
-                  </h3>
+                  
                   <div className="space-y-2">
                     {unit.chapters.map((chapter: Chapter) => (
                       <ExpandableChapter

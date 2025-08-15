@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { AudioFile } from "./difinitions";
 import { Play, Pause, Music } from "lucide-react";
 // Helper function to dynamically construct the audio URL
@@ -30,7 +31,8 @@ export const AudioItem: React.FC<AudioItemProps> = ({
           {item.type} {item.number}
         </span>
       </div>
-      <button
+      <Button
+        variant="outline"
         onClick={() => onPlayPause(item)}
         className="flex items-center justify-center w-8 h-8 text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
       >
@@ -39,7 +41,7 @@ export const AudioItem: React.FC<AudioItemProps> = ({
         ) : (
           <Play className="w-4 h-4" />
         )}
-      </button>
+      </Button>
     </div>
   );
 };

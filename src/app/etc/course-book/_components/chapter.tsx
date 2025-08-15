@@ -21,7 +21,7 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
   onToggle,
 }) => {
   const hasAudio = chapter.vocs.length > 0 || chapter.exers.length > 0;
-
+  console.log("chapter", chapter);
   return (
     <div className="my-2 border-b border-gray-200">
       <Button
