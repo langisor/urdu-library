@@ -1,0 +1,1619 @@
+[
+  {
+    "unit_number": 1,
+    "unit_title": "Unit 1 Me and My School",
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "chapter_title": "Introductions",
+        "topics": [
+          "Meeting Somebody New",
+          "Identifying Classroom Items",
+          "Asking and Answering Questions",
+          "Asking Yes-or-No Questions",
+          "Greeting an Acquaintance"
+        ],
+        "vocs": [
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U01Ch01V01.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U01Ch01V02.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Vocabulary",
+            "number": 3,
+            "id": "Pien7788_U01Ch01V03.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Vocabulary",
+            "number": 4,
+            "id": "Pien7788_U01Ch01V04.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Vocabulary",
+            "number": 5,
+            "id": "Pien7788_U01Ch01V05.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Vocabulary",
+            "number": 6,
+            "id": "Pien7788_U01Ch01V06.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Exercise",
+            "number": 1,
+            "id": "Pien7788_U01Ch01Ex01.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Exercise",
+            "number": 2,
+            "id": "Pien7788_U01Ch01Ex02.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U01Ch01Ex07.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 1,
+            "type": "Exercise",
+            "number": 8,
+            "id": "Pien7788_U01Ch01Ex08.mp3"
+          }
+        ],
+        "page": 47
+      },
+      {
+        "chapter_number": 2,
+        "chapter_title": "Me and My Classmates",
+        "topics": [
+          "Exchanging Basic Personal Information"
+        ],
+        "vocs": [
+          {
+            "unit": 1,
+            "chapter": 2,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U01Ch02V01.mp3"
+          }
+        ],
+        "exers": [],
+        "page": 65
+      },
+      {
+        "chapter_number": 3,
+        "chapter_title": "My Classroom",
+        "topics": [
+          "Listing Items: 'There Is' and 'There Are'",
+          "Noun Types and Forms",
+          "Indefinite Words: 'koi' and 'kuch'"
+        ],
+        "vocs": [
+          {
+            "unit": 1,
+            "chapter": 3,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U01Ch03V01.mp3"
+          }
+        ],
+        "exers": [],
+        "page": 75
+      },
+      {
+        "chapter_number": 4,
+        "chapter_title": "Describing Classroom Items",
+        "topics": [
+          "Describing Items by Their Qualities: Adjectives",
+          "Adjectival Question Words",
+          "Plurality and Respect with Adjectives and Nouns"
+        ],
+        "vocs": [
+          {
+            "unit": 1,
+            "chapter": 4,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U01Ch04V01.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 4,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U01Ch04V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 1,
+            "chapter": 4,
+            "type": "Exercise",
+            "number": 4,
+            "id": "Pien7788_U01Ch04Ex04.mp3"
+          }
+        ],
+        "page": 85
+      },
+      {
+        "chapter_number": 5,
+        "chapter_title": "Giving Commands and Making Requests",
+        "topics": [
+          "The Infinitive",
+          "The Imperative"
+        ],
+        "vocs": [
+          {
+            "unit": 1,
+            "chapter": 5,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U01Ch05V01.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 5,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U01Ch05V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 1,
+            "chapter": 5,
+            "type": "Exercise",
+            "number": 4,
+            "id": "Pien7788_U01Ch05Ex04.mp3"
+          }
+        ],
+        "page": 97
+      },
+      {
+        "chapter_number": 6,
+        "chapter_title": "Unit 1 Review Activities",
+        "topics": [],
+        "vocs": [],
+        "exers": [
+          {
+            "unit": 1,
+            "chapter": 6,
+            "type": "Exercise",
+            "number": 2,
+            "id": "Pien7788_U01Ch06Ex02.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 6,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U01Ch06Ex03.mp3"
+          },
+          {
+            "unit": 1,
+            "chapter": 6,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U01Ch06Ex06.mp3"
+          }
+        ],
+        "page": 105
+      }
+    ]
+  },
+  {
+    "unit_number": 2,
+    "unit_title": "Unit 2 My Family and My Home",
+    "chapters": [
+      {
+        "chapter_number": 7,
+        "chapter_title": "Locating Places and Objects",
+        "topics": [
+          "Locating Places in the City",
+          "Locating Places within Countries",
+          "Locating Objects in the Home",
+          "Using Postpositions: Oblique Forms"
+        ],
+        "vocs": [
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U02Ch07V01.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U02Ch07V02.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Vocabulary",
+            "number": 3,
+            "id": "Pien7788_U02Ch07V03.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Vocabulary",
+            "number": 4,
+            "id": "Pien7788_U02Ch07V04.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Exercise",
+            "number": 0,
+            "id": "Pien7788_U02Ch07Ex0x011.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Exercise",
+            "number": 0,
+            "id": "Pien7788_U02Ch07Ex0x013.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Exercise",
+            "number": 0,
+            "id": "Pien7788_U02Ch07Ex0x017.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Exercise",
+            "number": 0,
+            "id": "Pien7788_U02Ch07Ex0x018.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Exercise",
+            "number": 0,
+            "id": "Pien7788_U02Ch07Ex0x03.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 7,
+            "type": "Exercise",
+            "number": 0,
+            "id": "Pien7788_U02Ch07Ex0x05.mp3"
+          }
+        ],
+        "page": 113
+      },
+      {
+        "chapter_number": 8,
+        "chapter_title": "Identifying Family Members",
+        "topics": [
+          "Using the Possessive Postposition 'kā'",
+          "Possessive Pronouns",
+          "Stating the Number of Siblings You Have"
+        ],
+        "vocs": [
+          {
+            "unit": 2,
+            "chapter": 8,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U02Ch08V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 2,
+            "chapter": 8,
+            "type": "Exercise",
+            "number": 4,
+            "id": "Pien7788_U02Ch08Ex04.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 8,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U02Ch08Ex07.mp3"
+          }
+        ],
+        "page": 143
+      },
+      {
+        "chapter_number": 9,
+        "chapter_title": "Describing Family Members",
+        "topics": [
+          "Describing a Person's Physical Appearance",
+          "Stating a Person's Age",
+          "Oblique Adjectives"
+        ],
+        "vocs": [
+          {
+            "unit": 2,
+            "chapter": 9,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U02Ch09V01.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 9,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U02Ch09V02.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 9,
+            "type": "Vocabulary",
+            "number": 3,
+            "id": "Pien7788_U02Ch09V03.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 2,
+            "chapter": 9,
+            "type": "Exercise",
+            "number": 1,
+            "id": "Pien7788_U02Ch09Ex01.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 9,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U02Ch09Ex07.mp3"
+          }
+        ],
+        "page": 155
+      },
+      {
+        "chapter_number": 10,
+        "chapter_title": "My Home, My Belongings",
+        "topics": [
+          "Features of One's Home",
+          "Expressing What One Has: Physical Possessions",
+          "Summary of Constructions for Expressing Possession"
+        ],
+        "vocs": [
+          {
+            "unit": 2,
+            "chapter": 10,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U02Ch10V01.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 10,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U02Ch10V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 2,
+            "chapter": 10,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U02Ch10Ex03.mp3"
+          }
+        ],
+        "page": 169
+      },
+      {
+        "chapter_number": 11,
+        "chapter_title": "Making Comparisons",
+        "topics": [
+          "Comparative Constructions",
+          "Oblique Pronoun Forms",
+          "The Superlative Construction"
+        ],
+        "vocs": [
+          {
+            "unit": 2,
+            "chapter": 11,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U02Ch11V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 2,
+            "chapter": 11,
+            "type": "Exercise",
+            "number": 1,
+            "id": "Pien7788_U02Ch11Ex01.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 11,
+            "type": "Exercise",
+            "number": 5,
+            "id": "Pien7788_U02Ch11Ex05.mp3"
+          }
+        ],
+        "page": 179
+      },
+      {
+        "chapter_number": 12,
+        "chapter_title": "Unit 2 Review Activities",
+        "topics": [],
+        "vocs": [
+          {
+            "unit": 2,
+            "chapter": 12,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U02Ch12V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 2,
+            "chapter": 12,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U02Ch12Ex03.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 12,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 1,
+            "id": "Pien7788_U02Ch12Ex04_01.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 12,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 2,
+            "id": "Pien7788_U02Ch12Ex04_02.mp3"
+          },
+          {
+            "unit": 2,
+            "chapter": 12,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U02Ch12Ex07.mp3"
+          }
+        ],
+        "page": 189
+      }
+    ]
+  },
+  {
+    "unit_number": 3,
+    "unit_title": "Unit 3 Daily Life",
+    "chapters": [
+      {
+        "chapter_number": 13,
+        "chapter_title": "My Daily Routine 1",
+        "topics": [
+          "Saying Where You Live and Work",
+          "Describing Routine Activities",
+          "Clock Time",
+          "Using Postpositions with Verbs"
+        ],
+        "vocs": [
+          {
+            "unit": 3,
+            "chapter": 13,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U03Ch13V01.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 13,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U03Ch13V02.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 13,
+            "type": "Vocabulary",
+            "number": 3,
+            "id": "Pien7788_U03Ch13V03.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 13,
+            "type": "Vocabulary",
+            "number": 4,
+            "id": "Pien7788_U03Ch13V04.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 3,
+            "chapter": 13,
+            "type": "Exercise",
+            "number": 2,
+            "id": "Pien7788_U03Ch13Ex02.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 13,
+            "type": "Exercise",
+            "number": 8,
+            "subNumber": 1,
+            "id": "Pien7788_U03Ch13Ex08_01.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 13,
+            "type": "Exercise",
+            "number": 8,
+            "subNumber": 2,
+            "id": "Pien7788_U03Ch13Ex08_02.mp3"
+          }
+        ],
+        "page": 201
+      },
+      {
+        "chapter_number": 14,
+        "chapter_title": "My Daily Routine 2",
+        "topics": [
+          "Uses of the Infinitive",
+          "Reflexive Pronouns"
+        ],
+        "vocs": [
+          {
+            "unit": 3,
+            "chapter": 14,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U03Ch14V01.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 14,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U03Ch14V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 3,
+            "chapter": 14,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U03Ch14Ex07.mp3"
+          }
+        ],
+        "page": 223
+      },
+      {
+        "chapter_number": 15,
+        "chapter_title": "Describing Events in Progress",
+        "topics": [
+          "The Present Continuous Verb Tense",
+          "Conjunct Verbs"
+        ],
+        "vocs": [
+          {
+            "unit": 3,
+            "chapter": 15,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U03Ch15V01.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 15,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U03Ch15V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 3,
+            "chapter": 15,
+            "type": "Exercise",
+            "number": 3,
+            "subNumber": 1,
+            "id": "Pien7788_U03Ch15Ex03_01.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 15,
+            "type": "Exercise",
+            "number": 3,
+            "subNumber": 2,
+            "id": "Pien7788_U03Ch15Ex03_02.mp3"
+          }
+        ],
+        "page": 233
+      },
+      {
+        "chapter_number": 16,
+        "chapter_title": "Weather and Climate",
+        "topics": [
+          "Describing the Weather",
+          "Describing the Climate"
+        ],
+        "vocs": [
+          {
+            "unit": 3,
+            "chapter": 16,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U03Ch16V01.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 16,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U03Ch16V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 3,
+            "chapter": 16,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U03Ch16Ex06.mp3"
+          }
+        ],
+        "page": 247
+      },
+      {
+        "chapter_number": 17,
+        "chapter_title": "Unit 3 Review Activities",
+        "topics": [],
+        "vocs": [],
+        "exers": [
+          {
+            "unit": 3,
+            "chapter": 17,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U03Ch17Ex03.mp3"
+          },
+          {
+            "unit": 3,
+            "chapter": 17,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U03Ch17Ex06.mp3"
+          }
+        ],
+        "page": 259
+      }
+    ]
+  },
+  {
+    "unit_number": 4,
+    "unit_title": "Unit 4 In the Market",
+    "chapters": [
+      {
+        "chapter_number": 18,
+        "chapter_title": "Expressing Likes, Needs, and Desires",
+        "topics": [
+          "Expressing Likes and Needs",
+          "Contracted 'ko' Pronoun Forms",
+          "Additional Uses of the Infinitive"
+        ],
+        "vocs": [
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U04Ch18V01.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U04Ch18V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Exercise",
+            "number": 14,
+            "subNumber": 1,
+            "id": "Pien7788_U04Ch18Ex014_01.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Exercise",
+            "number": 14,
+            "subNumber": 2,
+            "id": "Pien7788_U04Ch18Ex014_02.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Exercise",
+            "number": 4,
+            "id": "Pien7788_U04Ch18Ex04.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U04Ch18Ex06.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Exercise",
+            "number": 9,
+            "subNumber": 1,
+            "id": "Pien7788_U04Ch18Ex09_01.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 18,
+            "type": "Exercise",
+            "number": 9,
+            "subNumber": 2,
+            "id": "Pien7788_U04Ch18Ex09_02.mp3"
+          }
+        ],
+        "page": 267
+      },
+      {
+        "chapter_number": 19,
+        "chapter_title": "Choosing Items and Expressing Measures",
+        "topics": [
+          "Using 'vālā' to Indicate an Item",
+          "Measures"
+        ],
+        "vocs": [
+          {
+            "unit": 4,
+            "chapter": 19,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U04Ch19V01.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 19,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U04Ch19V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 4,
+            "chapter": 19,
+            "type": "Exercise",
+            "number": 10,
+            "id": "Pien7788_U04Ch19Ex010.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 19,
+            "type": "Exercise",
+            "number": 5,
+            "id": "Pien7788_U04Ch19Ex05.mp3"
+          }
+        ],
+        "page": 295
+      },
+      {
+        "chapter_number": 20,
+        "chapter_title": "Discussing Prices",
+        "topics": [
+          "Price Constructions"
+        ],
+        "vocs": [
+          {
+            "unit": 4,
+            "chapter": 20,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U04Ch20V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 4,
+            "chapter": 20,
+            "type": "Exercise",
+            "number": 4,
+            "id": "Pien7788_U04Ch20Ex04.mp3"
+          }
+        ],
+        "page": 309
+      },
+      {
+        "chapter_number": 21,
+        "chapter_title": "Unit 4 Review Activities",
+        "topics": [],
+        "vocs": [
+          {
+            "unit": 4,
+            "chapter": 21,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U04Ch21V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 4,
+            "chapter": 21,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U04Ch21Ex03.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 21,
+            "type": "Exercise",
+            "number": 5,
+            "id": "Pien7788_U04Ch21Ex05.mp3"
+          },
+          {
+            "unit": 4,
+            "chapter": 21,
+            "type": "Exercise",
+            "number": 9,
+            "id": "Pien7788_U04Ch21Ex09.mp3"
+          }
+        ],
+        "page": 321
+      }
+    ]
+  },
+  {
+    "unit_number": 5,
+    "unit_title": "Unit 5 My Childhood",
+    "chapters": [
+      {
+        "chapter_number": 22,
+        "chapter_title": "My Childhood Home",
+        "topics": [
+          "Describing Past Circumstances"
+        ],
+        "vocs": [
+          {
+            "unit": 5,
+            "chapter": 22,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U05Ch22V01.mp3"
+          },
+          {
+            "unit": 5,
+            "chapter": 22,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U05Ch22V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 5,
+            "chapter": 22,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U05Ch22Ex06.mp3"
+          }
+        ],
+        "page": 335
+      },
+      {
+        "chapter_number": 23,
+        "chapter_title": "Describing One's Childhood",
+        "topics": [
+          "The Past Habitual Verb Tense"
+        ],
+        "vocs": [
+          {
+            "unit": 5,
+            "chapter": 23,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U05Ch23V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 5,
+            "chapter": 23,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 1,
+            "id": "Pien7788_U05Ch23Ex04_01.mp3"
+          },
+          {
+            "unit": 5,
+            "chapter": 23,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 2,
+            "id": "Pien7788_U05Ch23Ex04_02.mp3"
+          }
+        ],
+        "page": 345
+      },
+      {
+        "chapter_number": 24,
+        "chapter_title": "Describing a Scene in the Past",
+        "topics": [
+          "The Past Continuous Verb Tense"
+        ],
+        "vocs": [
+          {
+            "unit": 5,
+            "chapter": 24,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U05Ch24V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 5,
+            "chapter": 24,
+            "type": "Exercise",
+            "number": 2,
+            "id": "Pien7788_U05Ch24Ex02.mp3"
+          },
+          {
+            "unit": 5,
+            "chapter": 24,
+            "type": "Exercise",
+            "number": 4,
+            "id": "Pien7788_U05Ch24Ex04.mp3"
+          }
+        ],
+        "page": 355
+      },
+      {
+        "chapter_number": 25,
+        "chapter_title": "Expressions of Time",
+        "topics": [
+          "Clock-Related Time Expressions",
+          "Non-Clock-Based Time Expressions"
+        ],
+        "vocs": [],
+        "exers": [],
+        "page": 363
+      },
+      {
+        "chapter_number": 26,
+        "chapter_title": "Unit 5 Review Activities",
+        "topics": [],
+        "vocs": [],
+        "exers": [
+          {
+            "unit": 5,
+            "chapter": 26,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U05Ch26Ex03.mp3"
+          },
+          {
+            "unit": 5,
+            "chapter": 26,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U05Ch26Ex06.mp3"
+          }
+        ],
+        "page": 371
+      }
+    ]
+  },
+  {
+    "unit_number": 6,
+    "unit_title": "Unit 6 Rules and Responsibilities",
+    "chapters": [
+      {
+        "chapter_number": 27,
+        "chapter_title": "Rules and Regulations",
+        "topics": [
+          "The Verb 'saknā', 'to Be Able to, Can'",
+          "'V-ne denā', 'to Let, Allow'",
+          "The Verb 'pānā', 'to Be Able to'"
+        ],
+        "vocs": [
+          {
+            "unit": 6,
+            "chapter": 27,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U06Ch27V01.mp3"
+          }
+        ],
+        "exers": [],
+        "page": 379
+      },
+      {
+        "chapter_number": 28,
+        "chapter_title": "Expressing Compulsion",
+        "topics": [
+          "Expressions of Compulsion"
+        ],
+        "vocs": [
+          {
+            "unit": 6,
+            "chapter": 28,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U06Ch28V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 6,
+            "chapter": 28,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U06Ch28Ex03.mp3"
+          }
+        ],
+        "page": 387
+      },
+      {
+        "chapter_number": 29,
+        "chapter_title": "Giving and Following Instructions",
+        "topics": [
+          "The Subjunctive: Introduction",
+          "Expressing What One Wants Others to Do"
+        ],
+        "vocs": [
+          {
+            "unit": 6,
+            "chapter": 29,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U06Ch29V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 6,
+            "chapter": 29,
+            "type": "Exercise",
+            "number": 5,
+            "id": "Pien7788_U06Ch29Ex05.mp3"
+          }
+        ],
+        "page": 395
+      },
+      {
+        "chapter_number": 30,
+        "chapter_title": "Unit 6 Review Activities",
+        "topics": [],
+        "vocs": [],
+        "exers": [
+          {
+            "unit": 6,
+            "chapter": 30,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U06Ch30Ex03.mp3"
+          },
+          {
+            "unit": 6,
+            "chapter": 30,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U06Ch30Ex06.mp3"
+          }
+        ],
+        "page": 405
+      }
+    ]
+  },
+  {
+    "unit_number": 7,
+    "unit_title": "Unit 7 A Trip to South Asia",
+    "chapters": [
+      {
+        "chapter_number": 31,
+        "chapter_title": "My Plans",
+        "topics": [
+          "The Future Verb Tense",
+          "Invitations and Plans"
+        ],
+        "vocs": [
+          {
+            "unit": 7,
+            "chapter": 31,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U07Ch31V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 7,
+            "chapter": 31,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 1,
+            "id": "Pien7788_U07Ch31Ex04_01.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 31,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 2,
+            "id": "Pien7788_U07Ch31Ex04_02.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 31,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U07Ch31Ex06.mp3"
+          }
+        ],
+        "page": 413
+      },
+      {
+        "chapter_number": 32,
+        "chapter_title": "My Travel Plans: Definite and Possible",
+        "topics": [
+          "Using the Subjunctive with Subordinating Expressions"
+        ],
+        "vocs": [
+          {
+            "unit": 7,
+            "chapter": 32,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U07Ch32V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 7,
+            "chapter": 32,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U07Ch32Ex07.mp3"
+          }
+        ],
+        "page": 425
+      },
+      {
+        "chapter_number": 33,
+        "chapter_title": "Arranging Transportation and Lodging",
+        "topics": [
+          "How Long It Takes and How Much It Costs",
+          "Imminent Events"
+        ],
+        "vocs": [
+          {
+            "unit": 7,
+            "chapter": 33,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U07Ch33V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 7,
+            "chapter": 33,
+            "type": "Exercise",
+            "number": 5,
+            "subNumber": 1,
+            "id": "Pien7788_U07Ch33Ex05_01.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 33,
+            "type": "Exercise",
+            "number": 5,
+            "subNumber": 2,
+            "id": "Pien7788_U07Ch33Ex05_02.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 33,
+            "type": "Exercise",
+            "number": 6,
+            "id": "Pien7788_U07Ch33Ex06.mp3"
+          }
+        ],
+        "page": 439
+      },
+      {
+        "chapter_number": 34,
+        "chapter_title": "Finding One's Way",
+        "topics": [
+          "Giving and Following Directions"
+        ],
+        "vocs": [
+          {
+            "unit": 7,
+            "chapter": 34,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U07Ch34V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 7,
+            "chapter": 34,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U07Ch34Ex03.mp3"
+          }
+        ],
+        "page": 449
+      },
+      {
+        "chapter_number": 35,
+        "chapter_title": "Seeking Information for Travel Plans",
+        "topics": [
+          "The Conjunction 'ki'"
+        ],
+        "vocs": [
+          {
+            "unit": 7,
+            "chapter": 35,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U07Ch35V01.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 35,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U07Ch35V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 7,
+            "chapter": 35,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U07Ch35Ex03.mp3"
+          }
+        ],
+        "page": 457
+      },
+      {
+        "chapter_number": 36,
+        "chapter_title": "Unit 7 Review Activities",
+        "topics": [],
+        "vocs": [],
+        "exers": [
+          {
+            "unit": 7,
+            "chapter": 36,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U07Ch36Ex03.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 36,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 1,
+            "id": "Pien7788_U07Ch36Ex04_01.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 36,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 2,
+            "id": "Pien7788_U07Ch36Ex04_02.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 36,
+            "type": "Exercise",
+            "number": 7,
+            "subNumber": 1,
+            "id": "Pien7788_U07Ch36Ex07_01.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 36,
+            "type": "Exercise",
+            "number": 7,
+            "subNumber": 2,
+            "id": "Pien7788_U07Ch36Ex07_02.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 36,
+            "type": "Exercise",
+            "number": 10,
+            "subNumber": 1,
+            "id": "Pien7788_U07Ch36Ex10_01.mp3"
+          },
+          {
+            "unit": 7,
+            "chapter": 36,
+            "type": "Exercise",
+            "number": 10,
+            "subNumber": 2,
+            "id": "Pien7788_U07Ch36Ex10_02.mp3"
+          }
+        ],
+        "page": 467
+      }
+    ]
+  },
+  {
+    "unit_number": 8,
+    "unit_title": "Unit 8 Past Events and Experiences",
+    "chapters": [
+      {
+        "chapter_number": 37,
+        "chapter_title": "My Weekend",
+        "topics": [
+          "The Perfective Verb Tense",
+          "Transitive and Intransitive Verbs",
+          "The Perfective of Transitive Verbs"
+        ],
+        "vocs": [
+          {
+            "unit": 8,
+            "chapter": 37,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U08Ch37V01.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 37,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U08Ch37V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 8,
+            "chapter": 37,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U08Ch37Ex03.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 37,
+            "type": "Exercise",
+            "number": 5,
+            "id": "Pien7788_U08Ch37Ex05.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 37,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U08Ch37Ex07.mp3"
+          }
+        ],
+        "page": 485
+      },
+      {
+        "chapter_number": 38,
+        "chapter_title": "Narrating a Story",
+        "topics": [
+          "The Past Perfect",
+          "The 'kar' Construction"
+        ],
+        "vocs": [
+          {
+            "unit": 8,
+            "chapter": 38,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U08Ch38V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 8,
+            "chapter": 38,
+            "type": "Exercise",
+            "number": 7,
+            "id": "Pien7788_U08Ch38Ex07.mp3"
+          }
+        ],
+        "page": 505
+      },
+      {
+        "chapter_number": 39,
+        "chapter_title": "My Experience and Accomplishments",
+        "topics": [
+          "The Present Perfect Verb Tense",
+          "Stating How Long You Have Been Doing Something",
+          "The Verb 'cuknā'"
+        ],
+        "vocs": [
+          {
+            "unit": 8,
+            "chapter": 39,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U08Ch39V01.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 8,
+            "chapter": 39,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U08Ch39Ex03.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 39,
+            "type": "Exercise",
+            "number": 5,
+            "id": "Pien7788_U08Ch39Ex05.mp3"
+          }
+        ],
+        "page": 517
+      },
+      {
+        "chapter_number": 40,
+        "chapter_title": "At the Doctor",
+        "topics": [
+          "Ailments and Physical Conditions",
+          "Expressing the Beginning of an Action",
+          "Compound Verbs"
+        ],
+        "vocs": [
+          {
+            "unit": 8,
+            "chapter": 40,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U08Ch40V01.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 40,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U08Ch40V02.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 8,
+            "chapter": 40,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 1,
+            "id": "Pien7788_U08Ch40Ex04_01.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 40,
+            "type": "Exercise",
+            "number": 4,
+            "subNumber": 2,
+            "id": "Pien7788_U08Ch40Ex04_02.mp3"
+          }
+        ],
+        "page": 529
+      },
+      {
+        "chapter_number": 41,
+        "chapter_title": "Unit 8 Review Activities",
+        "topics": [],
+        "vocs": [
+          {
+            "unit": 8,
+            "chapter": 41,
+            "type": "Vocabulary",
+            "number": 1,
+            "id": "Pien7788_U08Ch41V01.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 41,
+            "type": "Vocabulary",
+            "number": 2,
+            "id": "Pien7788_U08Ch41V02.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 41,
+            "type": "Vocabulary",
+            "number": 3,
+            "id": "Pien7788_U08Ch41V03.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 41,
+            "type": "Vocabulary",
+            "number": 4,
+            "id": "Pien7788_U08Ch41V04.mp3"
+          }
+        ],
+        "exers": [
+          {
+            "unit": 8,
+            "chapter": 41,
+            "type": "Exercise",
+            "number": 3,
+            "id": "Pien7788_U08Ch41Ex03.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 41,
+            "type": "Exercise",
+            "number": 8,
+            "subNumber": 1,
+            "id": "Pien7788_U08Ch41Ex08_01.mp3"
+          },
+          {
+            "unit": 8,
+            "chapter": 41,
+            "type": "Exercise",
+            "number": 8,
+            "id": "Pien7788_U08Ch41Ex08_Questions.mp3"
+          }
+        ],
+        "page": 543
+      }
+    ]
+  }
+]

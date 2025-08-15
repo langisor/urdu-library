@@ -48,6 +48,7 @@ export function JsonViewerComponent({ data }: { data: any }) {
             fontSize: "1.3rem",
           }}
           value={data}
+          shortenTextAfterLength={0}
           collapsed={isCollapsed ? 10 : 0}
         ></JsonViewer>
       </CardContent>

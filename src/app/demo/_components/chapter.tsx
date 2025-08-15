@@ -1,0 +1,78 @@
+"use client";
+import { ChevronDown } from "lucide-react";
+import { AudioItem } from "./audio-item";
+import { AudioFile, Chapter } from "./difinitions";
+// Props for Chapter component
+interface ChapterProps {
+  chapter: Chapter;
+  playingAudio: AudioFile | null;
+  onPlayPause: (item: AudioFile) => void;
+  expanded: boolean;
+  onToggle: () => void;
+}
+
+// Component for a single expandable chapter
+export const ExpandableChapter: React.FC<ChapterProps> = ({
+  chapter,
+  playingAudio,
+  onPlayPause,
+  expanded,
+  onToggle,
+}) => {
+  const hasAudio = chapter.vocs.length > 0 || chapter.exers.length > 0;
+
+  return (
+    <div className="my-2 border-b border-gray-200">
+      <button
+        className="flex items-center justify-between w-full p-4 text-left font-semibold text-gray-800 bg-white rounded-lg transition-all duration-300 hover:bg-gray-50"
+        onClick={onToggle}
+        disabled={!hasAudio}
+      >
+        <span>
+          Chapter {chapter.chapter_number}: {chapter.chapter_title}
+        </span>
+        {hasAudio && (
+          <ChevronDown
+            className={`w-5 h-5 transform transition-transform duration-300 ${
+              expanded ? "rotate-180" : "rotate-0"
+            }`}
+          />
+        )}
+      </button>
+      {expanded && hasAudio && (
+        <div className="p-4 bg-gray-50 rounded-b-lg">
+          {chapter.vocs.length > 0 && (
+            <div className="mb-4">
+              <h4 className="text-lg font-bold mb-2 text-gray-800">
+                Vocabulary
+              </h4>
+              {chapter.vocs.map((voc) => (
+                <AudioItem
+                  key={voc.id}
+                  item={voc}
+                  isPlaying={playingAudio?.id === voc.id}
+                  onPlayPause={onPlayPause}
+                />
+              ))}
+            </div>
+          )}
+          {chapter.exers.length > 0 && (
+            <div>
+              <h4 className="text-lg font-bold mb-2 text-gray-800">
+                Exercises
+              </h4>
+              {chapter.exers.map((exer) => (
+                <AudioItem
+                  key={exer.id}
+                  item={exer}
+                  isPlaying={playingAudio?.id === exer.id}
+                  onPlayPause={onPlayPause}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
