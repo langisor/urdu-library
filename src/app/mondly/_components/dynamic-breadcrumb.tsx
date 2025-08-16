@@ -36,7 +36,7 @@ export function DynamicBreadcrumb({
         }
       >
         {breadcrumbs.map((breadcrumb, index) => (
-          <div key={index} className="flex items-center gap-2 ">
+          <div key={index + 1} className="flex items-center gap-2 ">
             {breadcrumbDir === "ltr" ? (
               <ArrowLeft className="w-3 h-3" />
             ) : (
@@ -66,6 +66,7 @@ function generateBreadcrumb(pathname: string) {
 
     href: "/mondly/categories",
   });
+  console.log("segments", segments);
   if (segments[3] && isStringInteger(segments[3])) {
     breadcrumbs.push({
       label: getCategoryName(parseInt(segments[3])),
