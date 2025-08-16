@@ -18,26 +18,18 @@
   },
   {
    "index": 2,
-   "id": "questions",
+   "id": "genitive-izafa",
    "section": "grammar",
-   "path": "/markdown/grammar/questions.md",
-   "title": "Questions",
-   "lang": "eng"
+   "path": "/markdown/grammar/genitive-izafa/izafa.md",
+   "title": "Genitive Izafa",
+   "lang": "arb"
   },
   {
    "index": 3,
-   "id": "pronouns",
+   "id": "pronounces",
    "section": "grammar",
-   "path": "/markdown/grammar/pronouns.md",
-   "title": "Pronouns",
-   "lang": "eng"
-  },
-  {
-   "index": 4,
-   "id": "genitive-izafa",
-   "section": "grammar",
-   "path": "/markdown/grammar/genitive-izafa.md",
-   "title": "Genitive Izafa",
+   "path": "/markdown/grammar/pronounces.md",
+   "title": "Pronounces",
    "lang": "eng"
   }
  ]

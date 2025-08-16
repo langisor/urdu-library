@@ -35,14 +35,16 @@ export default async function ArticleIdPage({ params }: ArticleIdProps) {
   const articleData = await fetchMarkdownFile(articleIndex);
   console.log("articleData", articleData);
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div>
-        {/* <h1>{mdIndex.data[articleIndex].title}</h1> */}
-        <MarkdownViewer data={articleData} />
-        <Link href="/etc/ai" className="text-blue-500">
-          <Button>Back To AI Page</Button>
-        </Link>
-      </div>
-    </Suspense>
+    <div className="container mx-auto my-4 flex flex-col gap-4">
+      <Link href="/etc/ai" className="text-blue-500">
+        <Button>Back To AI Page</Button>
+      </Link>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div>
+          {/* <h1>{mdIndex.data[articleIndex].title}</h1> */}
+          <MarkdownViewer data={articleData} />
+        </div>
+      </Suspense>
+    </div>
   );
 }

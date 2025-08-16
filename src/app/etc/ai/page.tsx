@@ -21,11 +21,11 @@ export default async function AIPage() {
           key={article.id}
           className="min-w-[200px] hover:scale-105 transition-all bg-gradient-to-br from-slate-200 to-slate-900 text-white"
         >
-          <CardContent>
-            <Link href={`/etc/ai/${article.index}`}>
+          <Link href={`/etc/ai/${article.index}`}>
+            <CardContent>
               <h2>{article.title}</h2>
-            </Link>
-          </CardContent>
+            </CardContent>
+          </Link>
         </Card>
       ))}
     </div>

@@ -1,6 +1,6 @@
 # A Brief Guide to Basic Urdu Grammar
 
-### **1. Sentence Structure (SOV: Subject-Object-Verb)**
+## **1. Sentence Structure (SOV: Subject-Object-Verb)**
 
 Urdu follows a **Subject → Object → Verb** (SOV) sentence order.
 Example:
