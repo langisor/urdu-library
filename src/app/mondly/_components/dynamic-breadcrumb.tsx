@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import namesData from "@/app/mondly/_components/names.json";
 
-interface DynamicBreadcrumbProps {
-  breadcrumbDir?: "ltr" | "rtl";
-}
+ 
 
 interface BreadcrumbItem {
   label: string; // breadcrumb text
@@ -19,29 +17,21 @@ interface BreadcrumbItem {
  * @param param0 DynamicBreadcrumbProps
  * @returns JSX.Element
  */
-export function DynamicBreadcrumb({
-  breadcrumbDir = "ltr",
-}: DynamicBreadcrumbProps) {
+export function DynamicBreadcrumb( ) {
   const pathname = usePathname();
 
   const breadcrumbs: BreadcrumbItem[] = generateBreadcrumb(pathname);
 
   return (
-    <div className="w-full naskh-text bg-accent p-2 rounded-md" dir={breadcrumbDir}>
+    <div className="w-full naskh-text bg-accent p-2 rounded-md"  >
       <div
         className={
-          breadcrumbDir === "ltr"
-            ? "flex flex-wrap flex-row-reverse"
-            : "flex flex-wrap flex-row "
+          "flex flex-wrap"
         }
       >
         {breadcrumbs.map((breadcrumb, index) => (
           <div key={index} className="flex items-center gap-2 ">
-            {breadcrumbDir === "rtl" ? (
-              <ArrowLeft className="w-3 h-3" />
-            ) : (
-              <ArrowRight className="w-3 h-3" />
-            )}
+            <ArrowLeft className="w-3 h-3" />
             <Link
               href={breadcrumb.href || ""}
               className="flex items-center gap-2"
