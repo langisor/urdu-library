@@ -3,6 +3,24 @@ import { Metadata } from "next";
 import MainSiteNavigation from "@/app/_components/navigation/main-site-navigation";
 import { SWRConfig } from "swr";
 import { getUser } from "@/server/actions/getUser";
+import { Noto_Naskh_Arabic, Noto_Nastaliq_Urdu, Inter } from "next/font/google";
+// fonts
+const NaskhArabic = Noto_Naskh_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-naskh-arabic",
+  weight: "variable",
+});
+const NastaliqUrdu = Noto_Nastaliq_Urdu({
+  subsets: ["arabic"],
+  variable: "--font-nastaliq",
+  weight: "variable",
+});
+const InterFont = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: "variable",
+});
+
 export const metadata: Metadata = {
   title: "Urdu Library",
   description: "A website for learning Urdu.",
@@ -14,7 +32,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${InterFont.variable} ${NaskhArabic.variable} ${NastaliqUrdu.variable}`}
+    >
       <head>
         <meta name="apple-mobile-web-app-title" content="Urdu Lib" />
       </head>

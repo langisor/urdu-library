@@ -125,7 +125,8 @@ function isStringInteger(str: string): boolean {
 // function to get the name of the category
 function getCategoryName(id: number) {
   const category = MondlyCategories.find((category) => category.id === id);
-  return category!.name;
+  console.log("category", category);
+  return category!.name || "";
 }
 
 function getLessonName(cId: number, lId: number) {
