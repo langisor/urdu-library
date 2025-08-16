@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+ 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Chapter1 from "./_components/chapter-1";
 import Chapter2 from "./_components/chapter-2";
