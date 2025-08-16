@@ -1,6 +1,6 @@
  
 
-export const names = [
+export const MondlyCategories = [
  {
      id: 1,
      name: "مرحبا",

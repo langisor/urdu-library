@@ -7,7 +7,6 @@ const file = "src/app/mondly/_data/all.json";
 
 async function getCategories() {
   const filepath = path.join(process.cwd(), file);
-  console.log("filepath", filepath);
   const data = await promises.readFile(filepath, "utf-8");
   const parsedData = JSON.parse(data) as { data: { category: CategoryItem }[] };
   const categories: CategoryItem[] = [];
@@ -20,7 +19,7 @@ export default async function CategoriesPage() {
   // console.log("categories", categories);
   return (
     <div className="flex flex-col gap-4">
-      <DynamicBreadcrumb />
+       <DynamicBreadcrumb breadcrumbDir="ltr" />
       <CategoriesCards categories={categories} />
     </div>
   );

@@ -2,172 +2,144 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { names } from "@/app/mondly/_lib/breadcrub-data";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { MondlyCategories } from "./breadcrub-service";
 
-interface BreadcrumbSegment {
-  name: string;
-  href: string;
-  isCurrentPage?: boolean;
+interface DynamicBreadcrumbProps {
+  breadcrumbDir?: "ltr" | "rtl";
 }
 
-export function DynamicBreadcrumb() {
+interface BreadcrumbItem {
+  label: string; // breadcrumb text
+
+  href: string | undefined;
+}
+/**
+ *  DynamicBreadcrumb component
+ * @param param0 DynamicBreadcrumbProps
+ * @returns JSX.Element
+ */
+export function DynamicBreadcrumb({
+  breadcrumbDir = "ltr",
+}: DynamicBreadcrumbProps) {
   const pathname = usePathname();
 
-  const generateBreadcrumbs = (): BreadcrumbSegment[] => {
-    const segments = pathname.split("/").filter(Boolean);
-    const breadcrumbs: BreadcrumbSegment[] = [];
-
-    // Always start with Home if not on home page
-    if (pathname !== "/") {
-      breadcrumbs.push({
-        name: "الرئيسية",
-        href: "/",
-      });
-    }
-
-    // Handle mondly routes
-    if (segments.includes("mondly")) {
-      const mondlyIndex = segments.indexOf("mondly");
-
-      // Add Mondly root
-      breadcrumbs.push({
-        name: "الخريطة",
-        href: "/mondly",
-      });
-
-      // Handle categories
-      if (
-        segments[mondlyIndex + 1] === "categories" &&
-        segments[mondlyIndex + 2]
-      ) {
-        const categoryId = parseInt(segments[mondlyIndex + 2]);
-        const category = names.find((cat) => cat.id === categoryId);
-
-        if (category) {
-          breadcrumbs.push({
-            name: category.name,
-            href: `/mondly/categories/${categoryId}`,
-          });
-        
-          const subcategory = segments[mondlyIndex + 3];          // Handle subcategories (lessons, vocabulary, dialogue)
-          if (subcategory) {
-            let subcategoryName =  subcategory;
-            // Capitalize and translate common subcategories
-            switch (subcategory) {
-              case "lessons":
-                subcategoryName = "الدروس";
-                break;
-
-              case "vocabulary":
-                subcategoryName = "المفردات";
-                break;
-              case "dialogue":
-                subcategoryName = "الحوار";
-                break;
-            }
-
-            breadcrumbs.push({
-              name: subcategoryName,
-              href: `/mondly/categories/${categoryId}/${subcategory}`,
-            });
-
-            // Handle specific lesson/vocabulary/dialogue items
-            if (segments[mondlyIndex + 4] && subcategory) {
-              const itemId = parseInt(segments[mondlyIndex + 4]);
-              let itemName = segments[mondlyIndex + 4];
-
-              // Find the specific item name
-              if (subcategory === "lessons" && category.lessons) {
-                const lesson = category.lessons.find(
-                  (lesson) => lesson.id === itemId
-                );
-                if (lesson) itemName = lesson.name;
-              } else if (
-                subcategory === "vocabulary" &&
-                category.vocabularies
-              ) {
-                const vocab = category.vocabularies.find(
-                  (vocab) => vocab.id === itemId
-                );
-                if (vocab) itemName = vocab.name;
-              } else if (subcategory === "dialogue" && category.dialogues) {
-                const dialogue = category.dialogues.find(
-                  (dialogue) => dialogue.id === itemId
-                );
-                if (dialogue) itemName = dialogue.name;
-              }
-
-              breadcrumbs.push({
-                name: itemName,
-                href: `/mondly/categories/${categoryId}/${subcategory}/${itemId}`,
-                // href: subcategoryHref ,
-
-                isCurrentPage: true,
-              });
-            } else {
-              // Mark subcategory as current page if it's the last segment
-              breadcrumbs[breadcrumbs.length - 1].isCurrentPage = true;
-            }
-          } else {
-            // Mark category as current page if it's the last segment
-            breadcrumbs[breadcrumbs.length - 1].isCurrentPage = true;
-          }
-        }
-      }
-    } else {
-      // Handle other routes by capitalizing segments
-      segments.forEach((segment, index) => {
-        const href = "/mondly" + segments.slice(0, index + 1).join("/");
-        const isLast = index === segments.length - 1;
-
-        breadcrumbs.push({
-          name: segment.charAt(0).toUpperCase() + segment.slice(1),
-          href,
-          isCurrentPage: isLast,
-        });
-      });
-    }
-
-    return breadcrumbs;
-  };
-
-  const breadcrumbs = generateBreadcrumbs();
-
-  if (breadcrumbs.length <= 1) {
-    return null;
-  }
+  const breadcrumbs: BreadcrumbItem[] = generateBreadcrumb(pathname);
 
   return (
-    <Breadcrumb className="mb-6">
-      <BreadcrumbList>
+    <div className="w-full" dir={breadcrumbDir}>
+      <div
+        className={
+          breadcrumbDir === "ltr"
+            ? "text-left flex flex-wrap flex-row-reverse"
+            : "flex flex-wrap flex-row-reverse text-right"
+        }
+      >
         {breadcrumbs.map((breadcrumb, index) => (
-          <div key={index} className="flex items-center">
-            <BreadcrumbItem>
-              {breadcrumb.isCurrentPage ? (
-                <span className="max-w-20 truncate md:max-w-none bg-blue-500 text-white border-2 rounded-xl p-2">
-                  {breadcrumb.name}
-                </span>
-              ) : (
-                <Link
-                  href={breadcrumb.href}
-                  className="max-w-20 truncate md:max-w-none"
-                >
-                  {breadcrumb.name}
-                </Link>
-              )}
-            </BreadcrumbItem>
-            {index < breadcrumbs.length - 1 && <span className="mx-2">/</span>}
+          <div key={index} className="flex items-center gap-2 ">
+            {breadcrumbDir === "ltr" ? (
+              <ArrowLeft className="w-3 h-3" />
+            ) : (
+              <ArrowRight className="w-3 h-3" />
+            )}
+            <Link
+              href={breadcrumb.href || ""}
+              className="flex items-center gap-2"
+            >
+              <span>{breadcrumb.label}</span>
+            </Link>
           </div>
         ))}
-      </BreadcrumbList>
-    </Breadcrumb>
+      </div>
+    </div>
   );
+}
+
+// /mondly/categories/1/lessons/101
+
+function generateBreadcrumb(pathname: string) {
+  const breadcrumbs: BreadcrumbItem[] = [];
+  const segments: string[] = pathname.split("/");
+  breadcrumbs.push({ label: "المسار", href: "/mondly" });
+  breadcrumbs.push({
+    label: "الأقسام",
+
+    href: "/mondly/categories",
+  });
+  if (segments[3] && isStringInteger(segments[3])) {
+    breadcrumbs.push({
+      label: getCategoryName(parseInt(segments[3])),
+      href: `/mondly/categories/${segments[3]}`,
+    });
+  }
+  switch (segments[4]) {
+    case "lessons":
+      breadcrumbs.push(
+        {
+          label: "الدروس",
+          href: `/mondly/categories/${segments[3]}`,
+        },
+        {
+          label: getLessonName(parseInt(segments[3]), parseInt(segments[5])),
+          href: `/mondly/categories/${segments[3]}/lessons/${segments[5]}`,
+        }
+      );
+
+      break;
+    case "vocabularies":
+      breadcrumbs.push(
+        {
+          label: "المفردات",
+          href: undefined,
+        },
+        {
+          label: getVocabularyName(parseInt(segments[3])),
+          href: `/mondly/categories/${segments[3]}/vocabulary/${segments[5]}`,
+        }
+      );
+
+      break;
+    case "dialogues":
+      breadcrumbs.push(
+        {
+          label: "المحادثة",
+          href: undefined,
+        },
+        {
+          label: getDialogueName(parseInt(segments[3])),
+          href: `/mondly/categories/${segments[3]}/dialogues/${segments[5]}`,
+        }
+      );
+      break;
+    default:
+      break;
+  }
+  return breadcrumbs;
+}
+
+function isStringInteger(str: string): boolean {
+  const num = parseInt(str);
+  return !isNaN(num) && String(num) === str; // Ensure the entire string was parsed as an integer
+}
+
+// function to get the name of the category
+function getCategoryName(id: number) {
+  const category = MondlyCategories.find((category) => category.id === id);
+  return category!.name;
+}
+
+function getLessonName(cId: number, lId: number) {
+  const category = MondlyCategories.find((category) => category.id === cId);
+  return category?.lessons.find((lesson) => lesson.id === lId)?.name || "";
+}
+function getVocabularyName(id: number) {
+  const vocabulary = MondlyCategories.find((category) => category.id === id);
+  return (
+    vocabulary?.vocabularies.find((vocabulary) => vocabulary.id === id)?.name ||
+    ""
+  );
+}
+function getDialogueName(id: number) {
+  const dialogue = MondlyCategories.find((category) => category.id === id);
+  return dialogue?.dialogues.find((dialogue) => dialogue.id === id)?.name || "";
 }

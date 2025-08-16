@@ -1,49 +1,50 @@
 "use client";
 import * as React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
 import { BookOpen, Star, Trophy, GraduationCap, BookCheck } from "lucide-react";
 import Link from "next/link";
 import { CategoryItem } from "@/app/mondly/_types/data-services";
- 
+
 export function CategoriesCards({
   categories,
 }: {
   categories: CategoryItem[];
 }) {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-1">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {categories.map((category: CategoryItem) => (
-          <Link href={`/mondly/categories/${category.id}`} key={category.id}>
+          <Link
+            href={`/mondly/categories/${category.id}`}
+            className="hover:cursor-pointer transition-all hover:scale-105"
+            dir="rtl"
+            key={category.id}
+          >
             <div className="flex flex-col">
-              <Card
-                className="hover:cursor-pointer  transition-all hover:shadow-lg hover:scale-105"
-                dir="rtl"
-              >
-                <CardHeader className="space-y-1 p-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <BookOpen
-                        className={`h-5 w-5 ${
-                          category.disabled ? "text-gray-400" : "text-blue-500"
-                        }`}
-                      />
-                      <h3
-                        className={`text-2xl font-bold  ${
-                          category.disabled ? "text-gray-400" : ""
-                        }`}
-                      >
-                        {category.name}
-                      </h3>
+              <Card className="bg-gradient-to-br from-blue-100 to-blue-600">
+                <CardContent className="flex flex-col gap-4 ">
+                  <CardHeader className="space-y-1 p-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <BookOpen
+                          className={`h-5 w-5 ${
+                            category.disabled
+                              ? "text-gray-400"
+                              : "text-blue-500"
+                          }`}
+                        />
+                        <h3
+                          className={`text-2xl font-bold  ${
+                            category.disabled ? "text-gray-400" : ""
+                          }`}
+                        >
+                          {category.name}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
+                  </CardHeader>
 
-                <CardContent className="flex flex-col gap-4">
                   {/* stars */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-1">
