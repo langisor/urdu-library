@@ -134,3 +134,7 @@
   font-family: var(--font-nastaliq-urdu), sans-serif;
   direction: rtl;
 }
+.inter-text {
+  font-family: var(--font-inter), sans-serif;
+  direction: ltr;
+}
