@@ -19,7 +19,7 @@ export default async function CategoriesPage() {
   // console.log("categories", categories);
   return (
     <div className="flex flex-col gap-4">
-       <DynamicBreadcrumb breadcrumbDir="ltr" />
+       <DynamicBreadcrumb breadcrumbDir="rtl" />
       <CategoriesCards categories={categories} />
     </div>
   );

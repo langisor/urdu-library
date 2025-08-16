@@ -40,7 +40,8 @@
                 "words": 51,
                 "phrases": 38
             },
-            "lessons": [{
+            "lessons": [
+                {
                     "id": 101,
                     "i": 1,
                     "index": 1,
@@ -215,7 +216,8 @@
                 "words": 75,
                 "phrases": 55
             },
-            "lessons": [{
+            "lessons": [
+                {
                     "id": 201,
                     "i": 1,
                     "index": 1,
@@ -318,7 +320,9 @@
                     "countDone": 0
                 }
             ],
-            "vocabularies": [{
+            "vocabularies": 
+            [
+                {
                 "id": 201,
                 "i": 8,
                 "index": 1,

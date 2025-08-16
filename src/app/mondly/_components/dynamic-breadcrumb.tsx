@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { MondlyCategories } from "./breadcrub-service";
+import namesData from "@/app/mondly/_components/names.json";
 
 interface DynamicBreadcrumbProps {
   breadcrumbDir?: "ltr" | "rtl";
@@ -27,17 +27,17 @@ export function DynamicBreadcrumb({
   const breadcrumbs: BreadcrumbItem[] = generateBreadcrumb(pathname);
 
   return (
-    <div className="w-full" dir={breadcrumbDir}>
+    <div className="w-full naskh-text bg-accent p-2 rounded-md" dir={breadcrumbDir}>
       <div
         className={
           breadcrumbDir === "ltr"
-            ? "text-left flex flex-wrap flex-row-reverse"
-            : "flex flex-wrap flex-row-reverse text-right"
+            ? "flex flex-wrap flex-row-reverse"
+            : "flex flex-wrap flex-row "
         }
       >
         {breadcrumbs.map((breadcrumb, index) => (
-          <div key={index + 1} className="flex items-center gap-2 ">
-            {breadcrumbDir === "ltr" ? (
+          <div key={index} className="flex items-center gap-2 ">
+            {breadcrumbDir === "rtl" ? (
               <ArrowLeft className="w-3 h-3" />
             ) : (
               <ArrowRight className="w-3 h-3" />
@@ -46,7 +46,7 @@ export function DynamicBreadcrumb({
               href={breadcrumb.href || ""}
               className="flex items-center gap-2"
             >
-              <span>{breadcrumb.label}</span>
+              <span className="ml-2">{breadcrumb.label}</span>
             </Link>
           </div>
         ))}
@@ -125,23 +125,27 @@ function isStringInteger(str: string): boolean {
 
 // function to get the name of the category
 function getCategoryName(id: number) {
-  const category = MondlyCategories.find((category) => category.id === id);
-  console.log("category", category);
-  return category!.name || "";
+  const actualIndex = id - 1;
+  const categoryName = namesData.data[actualIndex].category.name;
+  return categoryName || "";
 }
 
 function getLessonName(cId: number, lId: number) {
-  const category = MondlyCategories.find((category) => category.id === cId);
-  return category?.lessons.find((lesson) => lesson.id === lId)?.name || "";
+  const actualCategoryIndex = cId - 1;
+  const lessonName = namesData.data[actualCategoryIndex].lessons.find(
+    (lesson) => lesson.id === lId
+  )?.name;
+  return lessonName || "";
 }
 function getVocabularyName(id: number) {
-  const vocabulary = MondlyCategories.find((category) => category.id === id);
-  return (
-    vocabulary?.vocabularies.find((vocabulary) => vocabulary.id === id)?.name ||
-    ""
-  );
+  const actualCategoryIndex = id - 1;
+  const vocabularyName = namesData.data[actualCategoryIndex].vocabularies.find(
+    (vocabulary) => vocabulary.id === id
+  )?.name;
+  return vocabularyName || "";
 }
 function getDialogueName(id: number) {
-  const dialogue = MondlyCategories.find((category) => category.id === id);
-  return dialogue?.dialogues.find((dialogue) => dialogue.id === id)?.name || "";
+  const actualCategoryIndex = id - 1;
+  const dialogueName = namesData.data[actualCategoryIndex].dialogues[0].name;
+  return dialogueName || "";
 }
