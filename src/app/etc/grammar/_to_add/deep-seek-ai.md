@@ -1,940 +1,732 @@
-## دليل موجز لقواعد اللغة الأردية الأساسية
+# A Brief Guide to Basic Urdu Grammar
 
-### **1\. تركيبة الجملة (ترتيب فاعل-مفعول-فعل)**
+### **1. Sentence Structure (SOV: Subject-Object-Verb)**
 
-تتبع اللغة الأردية ترتيب **فاعل → مفعول → فعل** (SOV).  
-مثال:
+Urdu follows a **Subject → Object → Verb** (SOV) sentence order.
+Example:
 
--   "أنا آكل الطعام" → **میں کھانا کھاتا ہوں** (ماين کھانا کھاتا هوں).
-    
+- "I eat food" → **میں کھانا کھاتا ہوں** (main khana khata hoon).
 
-### **2\. الأسماء**
+### **2. Nouns**
 
--   **الجنس**:
-    
-    -   المذكر: تنتهي غالباً بحروف ساكنة (مثل **لڑکا** - لَركا، "ولد").
-        
-    -   المؤنث: تنتهي بـ **ـی** أو **ـا** (مثل **لڑکی** - لَركي، "بنت").
-        
--   **الجمع**:
-    
-    -   المذكر: أضف **ـے** (مثال: لڑکے - لَركے).
-        
-    -   المؤنث: أضف **ـیں** (مثال: لڑکیاں - لَركيان).
-        
-    -   استثناءات: كتاب → كتابیں (كِتابيں، "كتب").
-        
+- **Gender**:
+  - Masculine: Often end in consonants (e.g., **لڑکا** - larka, "boy").
+  - Feminine: End in **ـی** or **ـا** (e.g., **لڑکی** - larki, "girl").
+- **Plural**:
+  - Masculine: Add **ـے** (e.g., لڑکے - larke).
+  - Feminine: Add **ـیں** (e.g., لڑکیاں - larkiyan).
+  - Exception: كتاب → کتابیں (kitabein, "books").
 
-### **3\. الضمائر**
+### **3. Pronouns**
 
--   **الضمائر الشخصية**:
-    
-    -   **میں** (ماين) = أنا، **تم** (تم) = أنت (غير رسمي)، **آپ** (آب) = أنت (رسمي)، **وہ** (وه) = هو/هي/هم.
-        
--   **ضمائر الملكية**:
-    
-    -   **ميرا** (ميرا، مذكر) / **میری** (ميري، مؤنث) = "لي".
-        
-    -   **تمہارا** (تمهارا، مذكر) = "لك" (غير رسمي).
-        
+- **Personal Pronouns**:
+  - **میں** (main) = I.
+  - **تم** (tum) = you (informal).
+  - **آپ** (aap) = you (formal).
+  - **وہ** (woh) = he/she/they.
+- **Possessive Pronouns**:
+  - **ميرا** (mera, masc.) / **میری** (meri, fem.) = "mine/my".
+  - **تمہارا** (tumhara, masc.) = "yours" (informal).
 
-### **4\. الأفعال**
+### **4. Verbs**
 
--   **المصدر**: ينتهي بـ **ـنا** (مثال: **کھانا** - کھانا، "يأكل").
-    
--   **المضارع**:
-    
-    -   المذكر: **کھاتا ہوں** (کھاتا هوں، "أنا آكل").
-        
-    -   المؤنث: **کھاتی ہوں** (کھاتي هوں).
-        
--   **الماضي**:
-    
-    -   المذكر: **کھایا** (کھايا، "أكل").
-        
-    -   المؤنث: **کھائی** (کھائي).
-        
+- **Infinitive**: Ends in **ـنا** (e.g., **کھانا** - khana, "to eat").
+- **Present Tense**:
+  - Masculine: **کھاتا ہوں** (khata hoon, "I eat").
+  - Feminine: **کھاتی ہوں** (khati hoon).
+- **Past Tense**:
+  - Masculine: **کھایا** (khaya, "ate").
+  - Feminine: **کھائی** (khayi).
 
-### **5\. حروف الجر (تُوضع بعد الاسم)**
+### **5. Postpositions (Used After the Noun)**
 
-مثل:
+Examples:
 
--   **پر** (پر) = "على"، **میں** (مين) = "في"، **سے** (سے) = "مِن/بـ".  
-    مثال: **میز پر** (ميز پر، "على الطاولة").
-    
+- **پر** (par) = "on".
+- **میں** (mein) = "in".
+- **سے** (se) = "from/with".
+- Example: **میز پر** (mez par, "on the table").
 
-### **6\. الصفات**
+### **6. Adjectives**
 
-تطابق الاسم في الجنس والعدد:
+Adjectives match the noun in gender and number.
 
--   مذكر: **بڑا گھر** (بَڑا گهر، "منزل كبير").
-    
--   مؤنث: **بڑی کتاب** (بَڑي كتاب، "كتاب كبير").
-    
+- Masculine: **بڑا گھر** (bara ghar, "big house").
+- Feminine: **بڑی کتاب** (bari kitab, "big book").
 
-### **7\. مستوى الاحترام**
+### **7. Respect Levels**
 
--   استخدم **آپ** (آب) للخطاب الرسمي، و**تم** (تم) للغير رسمي.
-    
--   الأفعال تتغير: **آپ کھاتے ہیں** (آب کھاتے هيں) مقابل **تم کھاتے ہو** (تم کھاتے هو).
-    
+- Use **آپ** (aap) for formal address and **تم** (tum) for informal.
+- Verbs change: **آپ کھاتے ہیں** (aap khate hain) vs. **تم کھاتے ہو** (tum khate ho).
 
-### **8\. النفي**
+### **8. Negation**
 
-أضف **نہیں** (نهيں) قبل الفعل:
+Add **نہیں** (nahi) before the verb.
 
--   **میں نہیں کھاتا** (ماين نهيں کھاتا، "أنا لا آكل").
-    
+- **میں نہیں کھاتا** (main nahi khata, "I don't eat").
 
-### **9\. الأسئلة**
+### **9. Questions**
 
-ابدأ بـ **کیا** (كيا) أو غيّر نبرة الصوت:
+Start with **کیا** (kya) or change your tone.
 
--   **کیا آپ کھاتے ہیں؟** (كيا آب کھاتے هيں؟، "هل تأكل؟").
-    
+- **کیا آپ کھاتے ہیں؟** (kya aap khate hain?, "Do you eat?").
 
-### **10\. عبارات شائعة**
+### **10. Common Phrases**
 
--   مرحبًا: **السلام علیکم** (السلام عليكم).
-    
--   شكرًا: **شکریہ** (شكريا).
-    
--   أرقام ١-٣: **ایک** (إيك)، **دو** (دو)، **تین** (تين).
-    
+- Hello: **السلام علیکم** (Assalam-o-Alaikum).
+- Thank you: **شکریہ** (shukriya).
+- Numbers 1-3: **ایک** (ek), **دو** (do), **تین** (teen).
 
-**أمثلة على الجمل**:
+**Example Sentences**:
 
--   "هي تقرأ كتابًا": **وہ کتاب پڑھ رہی ہے** (وه كتاب پڑه رهي هي).
-    
--   "نحن ذاهبون إلى المنزل": **ہم گھر جا رہے ہیں** (هم گهر جا رهے هيں).
-    
+- "She is reading a book": **وہ کتاب پڑھ رہی ہے** (woh kitab parh rahi hai).
+- "We are going home": **ہم گھر جا رہے ہیں** (hum ghar ja rahe hain).
 
 ---
 
-
-## **1\. معنى "مجھے" واستخداماته**
-
--   **"مجھے"** (mujhe) = **"لي / إليَّ / بالنسبة لي"** (ضمير مفعول به للشخص الأول المفرد).
-    
--   تُستخدم للإشارة إلى:
-    
-    -   **الحاجة أو الرغبة** (مثل: "أريد..."، "أحتاج...").
-        
-    -   **المشاعر أو الأحاسيس** (مثل: "أشعر بـ...").
-        
-    -   **التأثر بفعل ما** (مثل: "أُعطِيَ لي...").
-        
-
-___
-
-### **2\. أمثلة شائعة مع "مجھے"**
-
-#### **أ. التعبير عن الرغبة أو الحاجة**
-
--   **مجھے پانی چاہیے۔**  
-    (Mujhe pani chahiye.)  
-    "أحتاج ماءً."
-    
--   **مجھے کتاب چاہیے۔**  
-    (Mujhe kitab chahiye.)  
-    "أريد كتابًا."
-    
-
-#### **ب. التعبير عن المشاعر**
-
--   **مجھے خوشی ہے۔**  
-    (Mujhe khushi hai.)  
-    "أنا سعيد." (حرفياً: "السعادة عندي").
-    
--   **مجھے بخار ہے۔**  
-    (Mujhe bukhar hai.)  
-    "لديَّ حُمّى."
-    
-
-#### **ج. مع الأفعال التي تتطلب مفعولاً به**
-
--   **مجھے یہ بات سمجھائیں۔**  
-    (Mujhe yeh baat samjhayen.)  
-    "اشرح لي هذا الأمر."
-    
--   **مجھے خط لکھو۔**  
-    (Mujhe khat likho.)  
-    "اكتب لي رسالة."
-    
-
-___
-
-### **3\. استخدام "مجھے" مع حروف الجر**
-
-تُضاف **"مجھے"** قبل حروف الجر لتوضيح العلاقة:
-
--   **مجھے آپ سے بات کرنی ہے۔**  
-    (Mujhe aap se baat karni hai.)  
-    "أريد التحدث معك." (حرفياً: "لي معك حديث").
-    
--   **مجھے اس کے لیے وقت چاہیے۔**  
-    (Mujhe us ke liye waqt chahiye.)  
-    "أحتاج وقتًا لهذا."
-    
-
-___
-
-### **4\. الفرق بين "میں" (أنا) و "مجھے" (لي)**
-
--   **میں** = ضمير الفاعل (مبتدأ).  
-    مثال: **میں کھاتا ہوں** (أنا آكل).
-    
--   **مجھے** = ضمير المفعول به أو ما يتأثر بالفعل.  
-    مثال: **مجھے کھانا دو** (أعطوني طعامًا).
-    
-
-___
-
-### **5\. أمثلة إضافية**
-
-| الجملة بالأردية | النطق | الترجمة العربية |
-| --- | --- | --- |
-| **مجھے بھوک لگی ہے۔** | Mujhe bhook lagi hai. | "أشعر بالجوع." |
-| **مجھے اردو سیکھنی ہے۔** | Mujhe Urdu seekhni hai. | "أريد تعلُّم الأردية." |
-| **مجھے وہاں جانا ہے۔** | Mujhe wahan jana hai. | "عليَّ الذهاب هناك." |
-| **مجھے تمہاری مدد چاہیے۔** | Mujhe tumhari madad chahiye. | "أحتاج مساعدتك." |
-| **مجھے یہ پسند نہیں۔** | Mujhe yeh pasand nahi. | "لا أحب هذا." |
-
-___
-
-### **6\. ملاحظات مهمة**
-
--   **"مجھے"** تُستخدم دائمًا **كمفعول به**، ولا تُستخدم كفاعل.
-    
--   في اللهجة العامية، قد تُختصر إلى **"مجھ کو"** (Mujh ko)، لكن **"مجھے"** هي الصيغة الرسمية.
-    
--   عند النفي:
-    
-    -   **مجھے نہیں پتا۔** (Mujhe nahi pata.) = "لا أعرف."
-        
-
-___
-
-### **7\. تمارين مصغرة**
-
-حاول تكوين جمل باستخدام **"مجھے"**:
-
-1.  "أريد مساعدة." → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-2.  "أشعر بالتعب." → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-3.  "أحتاج إلى هاتف." → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-
-**(الإجابات المحتملة):**
-
-1.  مجھے مدد چاہیے۔
-    
-2.  مجھے تھکاوٹ ہے۔
-    
-3.  مجھے فون چاہیے۔
-    
-
-___
-
-## ضمائر الملكية والصفات في اللغة الأردية مع أمثلة توضيحية:
-
-1. ضمائر الملكية (Possessive Pronouns)
-هي كلمات تُستخدم للإشارة إلى ملكية شيء ما بدون ذكر الاسم (ت replace the noun).
-تتغير حسب:
-
-الجنس (مذكر/مؤنث).
-
-العدد (مفرد/جمع).
-
-الشخص (متكلم/مخاطب/غائب).
-
-الضمير	المذكر (مفرد/جمع)	المؤنث (مفرد/جمع)
-میرا / میری (لي)	میرا (mera)	میری (meri)
-تمہارا / تمہاری (لك - informal)	تمہارا (tumhara)	تمہاری (tumhari)
-آپ کا / آپ کی (لك - formal)	آپ کا (aap ka)	آپ کی (aap ki)
-اس کا / اس کی (له/لها)	اس کا (us ka)	اس کی (us ki)
-ہمارا / ہماری (لنا)	ہمارا (hamara)	ہماری (hamari)
-أمثلة:
-
-یہ میرا ہے۔ (Yeh mera hai.) = "هذا لي." (مذكر).
-
-یہ میری ہے۔ (Yeh meri hai.) = "هذه لي." (مؤنث).
-
-وہ تمہاری ہے۔ (Woh tumhari hai.) = "تلك لك." (مؤنث).
-
-2. صفات الملكية (Possessive Adjectives)
-هي كلمات تُستخدم قبل الاسم لوصف ملكيته (مثل: "my book").
-تتغير حسب جنس وعدد الاسم الذي يتبعها:
-
-الصفة	المذكر (مفرد)	المؤنث (مفرد)	الجمع (لكلا الجنسين)
-میرا / میری (لي)	میرا گھر (mera ghar) "منزلي"	میری کتاب (meri kitab) "كتابي"	میرے دوست (mere dost) "أصدقائي"
-تمہارا / تمہاری (لك)	تمہارا فون (tumhara phone) "هاتفك"	تمہاری قلم (tumhari qalam) "قلمك"	تمہارے بچے (tumhare bachhe) "أولادك"
-اس کا / اس کی (له/لها)	اس کا کام (us ka kaam) "عمله"	اس کی بہن (us ki behan) "أخته"	اس کے والدین (us ke walidain) "والداه"
-ملاحظات:
-
-الصفات تأخذ نفس شكل ضمائر الملكية، لكنها تُستخدم قبل الاسم.
-
-للجمع، تُستخدم صيغة "میرے" (mere) بغيّر الجنس:
-
-میرے دوست (mere dost) = "أصدقائي" (لكلا الجنسين).
-
-3. الفرق بين ضمائر الملكية وصفات الملكية
-النوع	الوظيفة	مثال
-ضمائر الملكية	تحل محل الاسم	یہ میرا ہے۔ (هذا لي).
-صفات الملكية	تصف الاسم	میرا گھر بڑا ہے۔ (منزلي كبير).
-4. أمثلة إضافية
-أ. صفات الملكية مع الأسماء:
-ہمارا ملک (hamara mulk) = "بلدنا".
-
-آپ کی مدد (aap ki madad) = "مساعدتك".
-
-اس کی بہن (us ki behan) = "أخته".
-
-ب. ضمائر الملكية في الجمل:
-یہ کتاب میری ہے۔ (Yeh kitab meri hai.) = "هذا الكتاب لي."
-
-وہ کار اس کی ہے۔ (Woh car us ki hai.) = "تلك السيارة له/لها."
-
-ج. أمثلة مع الجمع:
-میرے دوست یہاں ہیں۔ (Mere dost yahan hain.) = "أصدقائي هنا."
-
-تمہارے کپڑے صاف ہیں۔ (Tumhare kapre saaf hain.) = "ملابسك نظيفة."
-
-5. حالات خاصة واستثناءات
-صيغة الجمع للضمائر/الصفات:
-
-ہمارا → ہماری (مؤنث) / ہمارے (جمع).
-
-مثال: ہمارے دوست (hamare dost) = "أصدقاؤنا".
-
-الاسماء المحايدة (بلا جنس):
-
-بعض الأسماء (مثل گھر - منزل) تُعتبر مذكرة حتى لو لم تنتهِ بحروف مذكرة.
-
-مثال: میرا گھر (mera ghar) = "منزلي".
-
-الاسماء المؤنثة غير المنتظمة:
-
-مثل ماں (أم): میری ماں (meri maa) = "أمي".
-
-6. تمارين تطبيقية
-حول الجمل التالية إلى الأردية:
-
-"هذا قلمك (informal)." → ____________________
-
-"هؤلاء أصدقاؤنا." → ____________________
-
-"كتابها على الطاولة." → ____________________
-
-(الإجابات):
-
-یہ تمہاری قلم ہے۔ (Yeh tumhari qalam hai.)
-
-یہ ہمارے دوست ہیں۔ (Yeh hamare dost hain.)
-
-اس کی کتاب میز پر ہے۔ (Us ki kitab mez par hai.)
-
-7. ملخص القواعد
-الصفات: تسبق الاسم وتطابقه في الجنس والعدد.
-
-الضمائر: تحل محل الاسم وتطابق الجنس فقط.
-
-التمييز: إذا جاءت الكلمة قبل اسم → صفة ملكية، وإذا جاءت بدون اسم → ضمير ملكية.
+### **1. The Meaning and Usage of "Mujhe"**
+
+- **"مجھے"** (mujhe) = **"to me / for me"** (the direct object pronoun for the first person singular).
+- It is used to express:
+  - **Need or desire** (e.g., "I want...").
+  - **Feelings or sensations** (e.g., "I feel...").
+  - **Being affected by an action** (e.g., "it was given to me...").
 
 ---
 
-**أدوات الاستفهام في اللغة الأردية** وكيفية استخدامها مع أمثلة:
+### **2. Common Examples with "Mujhe"**
 
-___
+#### **A. Expressing Desire or Need**
 
-### **1\. أدوات الاستفهام الأساسية**
+- **مجھے پانی چاہیے۔** (Mujhe pani chahiye.)
+  "I need water."
+- **مجھے کتاب چاہیے۔** (Mujhe kitab chahiye.)
+  "I want a book."
 
-في الجدول التالي أشهر أدوات الاستفهام مع استخداماتها:
+#### **B. Expressing Feelings**
 
-| الأداة بالأردية | النطق | المعنى |
-| --- | --- | --- |
-| **کیا** | kya | ماذا / هل (للسؤال العام) |
-| **کون** | kaun | مَن |
-| **کہاں** | kahan | أين |
-| **کیوں** | kyun | لماذا |
-| **کب** | kab | متى |
-| **کیسے** | kaise | كيف |
-| **کتنا** | kitna | كم (للكمية أو العدد) |
-| **کس لیے** | kis liye | لماذا (لأي سبب) / من أجل مَن |
+- **مجھے خوشی ہے۔** (Mujhe khushi hai.)
+  "I am happy." (Literally: "Happiness is with me")
+- **مجھے بخار ہے۔** (Mujhe bukhar hai.)
+  "I have a fever."
 
-___
+#### **C. With Verbs That Require an Object**
 
-### **2\. استخدام كل أداة مع أمثلة**
-
-#### **أ. کیا (Kya) → "ماذا / هل"**
-
--   تُستخدم لطرح أسئلة عامة (نعم/لا) أو لاستفسار عن شيء محدد.  
-    **أمثلة:**
-    
--   **کیا آپ کو پانی چاہیے؟**  
-    (Kya aap ko pani chahiye?)  
-    "هل تحتاج ماءً؟"
-    
--   **کیا یہ تمہاری کتاب ہے؟**  
-    (Kya yeh tumhari kitab hai?)  
-    "هل هذا كتابك؟"
-    
-
-#### **ب. کون (Kaun) → "مَن"**
-
--   للسؤال عن الأشخاص (مفرد/جمع).  
-    **ملاحظة:** تتغير حسب الجنس في بعض الحالات:
-    
-    -   **کون سی** (kaun si) → "أي" (لمؤنث).  
-        **أمثلة:**
-        
--   **کون آیا ہے؟**  
-    (Kaun aaya hai?)  
-    "مَن جاء؟" (مذكر).
-    
--   **کون سی کتاب چاہیے؟**  
-    (Kaun si kitab chahiye?)  
-    "أي كتاب تريد؟" (مؤنث).
-    
-
-#### **ج. کہاں (Kahan) → "أين"**
-
--   للسؤال عن المكان.  
-    **أمثلة:**
-    
--   **آپ کہاں رہتے ہیں؟**  
-    (Aap kahan rehte hain?)  
-    "أين تسكن؟"
-    
--   **ٹوائلٹ کہاں ہے؟**  
-    (Toilet kahan hai?)  
-    "أين الحمام؟"
-    
-
-#### **د. کیوں (Kyun) → "لماذا"**
-
--   للسؤال عن السبب.  
-    **أمثلة:**
-    
--   **تم کیوں رو رہے ہو؟**  
-    (Tum kyun ro rahe ho?)  
-    "لماذا تبكي؟"
-    
--   **یہ کیوں ہوا؟**  
-    (Yeh kyun hua?)  
-    "لماذا حدث هذا؟"
-    
-
-#### **ه. کب (Kab) → "متى"**
-
--   للسؤال عن الزمان.  
-    **أمثلة:**
-    
--   **ٹرین کب آئے گی؟**  
-    (Train kab aaye gi?)  
-    "متى سيأتي القطار؟"
-    
--   **تم کب آؤ گے؟**  
-    (Tum kab aaoge?)  
-    "متى ستأتي؟"
-    
-
-#### **و. کیسے (Kaise) → "كيف"**
-
--   للسؤال عن الحالة أو الطريقة.  
-    **أمثلة:**
-    
--   **آپ کیسے ہیں؟**  
-    (Aap kaise hain?)  
-    "كيف حالك؟"
-    
--   **یہ کیسے کام کرتا ہے؟**  
-    (Yeh kaise kaam karta hai?)  
-    "كيف يعمل هذا؟"
-    
-
-#### **ز. کتنا (Kitna) → "كم"**
-
--   للسؤال عن الكمية أو العدد.  
-    **ملاحظة:** تتغير حسب الجنس:
-    
-    -   **کتنا** (masc.) / **کتی** (fem.) / **کتنی** (fem. جمع).  
-        **أمثلة:**
-        
--   **کتنا پیسہ چاہیے؟**  
-    (Kitna paisa chahiye?)  
-    "كم من المال تحتاج؟" (مذكر).
-    
--   **کتی کتابیں ہیں؟**  
-    (Kiti kitabein hain?)  
-    "كم عدد الكتب؟" (مؤنث).
-    
-
-#### **ح. کس لیے (Kis Liye) → "لماذا / من أجل مَن"**
-
--   للسؤال عن الهدف أو السبب.  
-    **أمثلة:**
-    
--   **تم یہ کس لیے کر رہے ہو؟**  
-    (Tum yeh kis liye kar rahe ho?)  
-    "لماذا تفعل هذا؟"
-    
--   **یہ تحفہ کس لیے ہے؟**  
-    (Yeh tohfa kis liye hai?)  
-    "هذه الهدية من أجل مَن؟"
-    
-
-___
-
-### **3\. قواعد هامة**
-
-#### **أ. ترتيب الجملة الاستفهامية**
-
-التركيب العام: **أداة الاستفهام + الفاعل + الفعل**.  
-مثال:
-
--   **کون آیا؟** (Kaun aaya?) → "مَن جاء؟"
-    
-
-#### **ب. استخدام "کیا" لأسئلة (نعم/لا)**
-
--   تُوضع **کیا** في بداية الجملة:
-    
-    -   **کیا تم نے کھانا کھایا؟** (Kya tum ne khana khaya?) → "هل أكلتَ الطعام؟".
-        
-
-#### **ج. التطابق بين الأداة والجنس**
-
--   **کون** → **کون سی** (للمؤنث):
-    
-    -   **کون سی فلم اچھی ہے؟** (Kaun si film achi hai?) → "أي فيلم جيد؟".
-        
-
-#### **د. أدوات الاستفهام مع حروف الجر**
-
--   تُضاف حروف الجر بعد الأداة:
-    
-    -   **کہاں تک؟** (Kahan tak?) → "إلى أين؟".
-        
-    -   **کس کے ساتھ؟** (Kis ke saath?) → "مع مَن؟".
-        
-
-___
-
-### **4\. أمثلة إضافية في جمل**
-
-| الجملة بالأردية | النطق | الترجمة العربية |
-| --- | --- | --- |
-| **یہ کس کی کار ہے؟** | Yeh kis ki car hai? | "لمَن هذه السيارة؟" |
-| **تمہارا نام کیا ہے؟** | Tumhara naam kya hai? | "ما اسمك؟" |
-| **کتاب کہاں ہے؟** | Kitab kahan hai? | "أين الكتاب؟" |
-| **کام کیسے کریں؟** | Kaam kaise karein? | "كيف نعمل؟" |
-| **یہ کتنا وقت لے گا؟** | Yeh kitna waqt lega? | "كم من الوقت سيأخذ هذا؟" |
-
-___
-
-### **5\. تمارين تطبيقية**
-
-**حول الأسئلة التالية إلى الأردية:**
-
-1.  "متى ستبدأ الحفلة؟" → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-2.  "كم تكلف هذه القميص؟" → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-3.  "لماذا أنت غاضب؟" → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-
-**(الإجابات المحتملة):**
-
-1.  **پارٹی کب شروع ہوگی؟** (Party kab shuru hogi?)
-    
-2.  **یہ قمیض کتنی ہے؟** (Yeh qameez kitni hai?)
-    
-3.  **تم کیوں ناراض ہو؟** (Tum kyun naraz ho?)
-    
-
-___
-
-### **6\. ملخص سريع**
-
--   كل أداة استفهام تُستخدم حسب **نوع المعلومة** المطلوبة (زمان، مكان، سبب، إلخ).
-    
--   الترتيب: **أداة الاستفهام → الفاعل → الفعل**.
-    
--   تطابق الجنس مهم في أدوات مثل **کون** و **کتنا**.
-
+- **مجھے یہ بات سمجھائیں۔** (Mujhe yeh baat samjhayen.)
+  "Explain this matter to me."
+- **مجھے خط لکھو۔** (Mujhe khat likho.)
+  "Write me a letter."
 
 ---
 
+### **3. Using "Mujhe" with Postpositions**
 
-## **الأفعال في اللغة الأردية**، بما في ذلك تصريفها، الأزمنة، وقواعد الاستخدام الأساسية:
+**"مجھے"** is added before postpositions to clarify the relationship.
 
+- **مجھے آپ سے بات کرنی ہے۔** (Mujhe aap se baat karni hai.)
+  "I want to talk to you." (Literally: "To me, talking with you is needed")
+- **مجھے اس کے لیے وقت چاہیے۔** (Mujhe us ke liye waqt chahiye.)
+  "I need time for this."
 
-### **1\. أنواع الأفعال**
+---
 
-تنقسم الأفعال في الأردية إلى:
+### **4. The Difference Between "Main" (I) and "Mujhe" (to me)**
 
--   **الفعل الرئيسي (Main Verb)**: مثل **کھانا** (أكل)، **پڑھنا** (قراءة).
-    
--   **الفعل المساعد (Auxiliary Verb)**: مثل **ہونا** (يكون)، **چاہیے** (يجب).
-    
+- **میں** (main) = Subject pronoun. Example: **میں کھاتا ہوں** (I eat).
+- **مجھے** (mujhe) = Object pronoun or the one affected by the verb. Example: **مجھے کھانا دو** (Give me food).
 
-___
+---
 
-### **2\. تصريف الأفعال (الفعل الرئيسي)**
+### **5. Additional Examples**
 
-الأفعال في الأردية **تتغير حسب**:
+| Urdu Sentence | Pronunciation | English Translation |
+| :--- | :--- | :--- |
+| **مجھے بھوک لگی ہے۔** | Mujhe bhook lagi hai. | "I feel hungry." |
+| **مجھے اردو سیکھنی ہے۔** | Mujhe Urdu seekhni hai. | "I want to learn Urdu." |
+| **مجھے وہاں جانا ہے۔** | Mujhe wahan jana hai. | "I have to go there." |
+| **مجھے تمہاری مدد چاہیے۔** | Mujhe tumhari madad chahiye. | "I need your help." |
+| **مجھے یہ پسند نہیں۔** | Mujhe yeh pasand nahi. | "I don't like this." |
 
--   **الزمن** (ماضي، حاضر، مستقبل).
-    
--   **الجنس** (مذكر/مؤنث).
-    
--   **العدد** (مفرد/جمع).
-    
--   **مستوى الاحترام** (رسمي/غير رسمي).
-    
+---
 
-___
+### **6. Important Notes**
 
-### **3\. الزمن الحاضر (Present Tense)**
+- **"مجھے"** is always used as an object and never as a subject.
+- In colloquial speech, it might be shortened to **"مجھ کو"** (Mujh ko), but **"مجھے"** is the formal form.
+- For negation: **مجھے نہیں پتا۔** (Mujhe nahi pata.) = "I don't know."
 
-#### **أ. الفعل البسيط (Simple Present)**
+---
 
-**صيغة التصريف**:
+### **7. Mini-Exercises**
 
--   **جذر الفعل** + **تا/تی/تے** (حسب الجنس والعدد).
-    
+Try to form sentences using **"مجھے"**:
 
-| الضمير | المذكر (مفرد) | المؤنث (مفرد) | الجمع (لكلا الجنسين) |
-| --- | --- | --- | --- |
-| **میں** (أنا) | کھاتا ہوں (khata hoon) | کھاتی ہوں (khati hoon) | — |
-| **تم** (أنت informal) | کھاتے ہو (khate ho) | کھاتی ہو (khati ho) | — |
-| **آپ** (أنت formal) | کھاتے ہیں (khate hain) | — | — |
-| **وہ** (هو/هي) | کھاتا ہے (khata hai) | کھاتی ہے (khati hai) | کھاتے ہیں (khate hain) |
+1. "I want help." → `____________________`
+2. "I feel tired." → `____________________`
+3. "I need a phone." → `____________________`
 
-**أمثلة**:
+**Possible Answers:**
 
--   **میں پڑھتا ہوں** (Main parhta hoon) = "أنا أقرأ" (مذكر).
-    
--   **وہ کھاتی ہے** (Woh khati hai) = "هي تأكل".
-    
+1. مجھے مدد چاہیے۔
+2. مجھے تھکاوٹ ہے۔
+3. مجھے فون چاہیے۔
 
-___
+---
 
-#### **ب. المضارع المستمر (Present Continuous)**
+## Possessive Pronouns and Adjectives in Urdu with Examples
 
-**صيغة التصريف**:
+### 1. Possessive Pronouns
 
--   **مصدر الفعل** (بدون "نا") + **رہا/رہی/رہے** + **ہونا**.
-    
+These are words used to indicate ownership without mentioning the noun (they replace the noun). They change based on:
 
-**أمثلة**:
+- Gender (masculine/feminine).
+- Number (singular/plural).
+- Person (first, second, third).
 
--   **میں کھا رہا ہوں** (Main kha raha hoon) = "أنا آكل الآن" (مذكر).
-    
--   **وہ پڑھ رہی ہے** (Woh parh rahi hai) = "هي تقرأ الآن".
-    
+| Pronoun | Masculine (singular/plural) | Feminine (singular/plural) |
+| :--- | :--- | :--- |
+| میرا / میری (mine) | میرا (mera) | میری (meri) |
+| تمہارا / تمہاری (yours - informal) | تمہارا (tumhara) | تمہاری (tumhari) |
+| آپ کا / آپ کی (yours - formal) | آپ کا (aap ka) | آپ کی (aap ki) |
+| اس کا / اس کی (his/her) | اس کا (us ka) | اس کی (us ki) |
+| ہمارا / ہماری (ours) | ہمارا (hamara) | ہماری (hamari) |
 
-___
+**Examples**:
 
-### **4\. الزمن الماضي (Past Tense)**
+- **یہ میرا ہے۔** (Yeh mera hai.) = "This is mine." (masc.)
+- **یہ میری ہے۔** (Yeh meri hai.) = "This is mine." (fem.)
+- **وہ تمہاری ہے۔** (Woh tumhari hai.) = "That is yours." (fem.)
 
-#### **أ. الماضي البسيط (Simple Past)**
+### 2. Possessive Adjectives
 
-**صيغة التصريف**:
+These are words used before a noun to describe its ownership (e.g., "my book"). They change according to the gender and number of the noun they modify.
 
--   **جذر الفعل** + **یا/ی/یے** (حسب الجنس والعدد).
-    
+| Adjective | Masculine (singular) | Feminine (singular) | Plural (for both genders) |
+| :--- | :--- | :--- | :--- |
+| میرا / میری (my) | میرا گھر (mera ghar) "my house" | میری کتاب (meri kitab) "my book" | میرے دوست (mere dost) "my friends" |
+| تمہارا / تمہاری (your) | تمہارا فون (tumhara phone) "your phone" | تمہاری قلم (tumhari qalam) "your pen" | تمہارے بچے (tumhare bachhe) "your children" |
+| اس کا / اس کی (his/her) | اس کا کام (us ka kaam) "his work" | اس کی بہن (us ki behan) "his sister" | اس کے والدین (us ke walidain) "his parents" |
 
-| الضمير | المذكر (مفرد) | المؤنث (مفرد) | الجمع |
-| --- | --- | --- | --- |
+**Notes**:
+
+- Adjectives take the same form as possessive pronouns but are used before a noun.
+- For plurals, the form "میرے" (mere) is used regardless of the gender of the noun. For example: **میرے دوست** (mere dost) = "my friends" (for both genders).
+
+### 3. Difference Between Possessive Pronouns and Adjectives
+
+| Type | Function | Example |
+| :--- | :--- | :--- |
+| Possessive Pronouns | Replaces the noun | **یہ میرا ہے۔** (This is mine.) |
+| Possessive Adjectives | Describes the noun | **میرا گھر بڑا ہے۔** (My house is big.) |
+
+### 4. Additional Examples
+
+**A. Possessive Adjectives with Nouns:**
+
+- **ہمارا ملک** (hamara mulk) = "our country".
+- **آپ کی مدد** (aap ki madad) = "your help".
+- **اس کی بہن** (us ki behan) = "his sister".
+
+**B. Possessive Pronouns in Sentences:**
+
+- **یہ کتاب میری ہے۔** (Yeh kitab meri hai.) = "This book is mine."
+- **وہ کار اس کی ہے۔** (Woh car us ki hai.) = "That car is his/hers."
+
+**C. Plural Examples:**
+
+- **میرے دوست یہاں ہیں۔** (Mere dost yahan hain.) = "My friends are here."
+- **تمہارے کپڑے صاف ہیں۔** (Tumhare kapre saaf hain.) = "Your clothes are clean."
+
+### 5. Special Cases and Exceptions
+
+- Plural form of pronouns/adjectives: **ہمارا** → **ہماری** (fem.) / **ہمارے** (plural). Example: **ہمارے دوست** (hamare dost) = "our friends".
+- Neutral nouns (without gender): Some nouns like **گھر** (house) are considered masculine even if they don't end in masculine letters. Example: **میرا گھر** (mera ghar) = "my house".
+- Irregular feminine nouns: Like **ماں** (mother), which takes the feminine form: **میری ماں** (meri maa) = "my mother".
+
+### 6. Practice Exercises
+
+Translate the following sentences into Urdu:
+
+1. "This is your pen (informal)." → `____________________`
+2. "These are our friends." → `____________________`
+3. "Her book is on the table." → `____________________`
+
+**Answers**:
+
+1. **یہ تمہاری قلم ہے۔** (Yeh tumhari qalam hai.)
+2. **یہ ہمارے دوست ہیں۔** (Yeh hamare dost hain.)
+3. **اس کی کتاب میز پر ہے۔** (Us ki kitab mez par hai.)
+
+### 7. Summary of Rules
+
+- **Adjectives**: Precede the noun and match it in gender and number.
+- **Pronouns**: Replace the noun and match the gender only.
+- **Distinction**: If the word is followed by a noun, it's a possessive adjective; if it stands alone, it's a possessive pronoun.
+
+---
+
+## Interrogative Words in Urdu
+
+This section explains the use of interrogative words in Urdu with examples.
+
+---
+
+### **1. Basic Interrogative Words**
+
+The table below shows the most common interrogative words and their uses:
+
+| Urdu Word | Pronunciation | Meaning |
+| :--- | :--- | :--- |
+| **کیا** | kya | what / if (for general questions) |
+| **کون** | kaun | who |
+| **کہاں** | kahan | where |
+| **کیوں** | kyun | why |
+| **کب** | kab | when |
+| **کیسے** | kaise | how |
+| **کتنا** | kitna | how much / how many |
+| **کس لیے** | kis liye | why (for what reason) / for whom |
+
+---
+
+### **2. Usage of Each Word with Examples**
+
+#### **A. کیا (Kya) → "What / Is/Are/Do"**
+
+- Used for general yes/no questions or to inquire about something specific.
+  **Examples:**
+  - **کیا آپ کو پانی چاہیے؟** (Kya aap ko pani chahiye?)
+    "Do you need water?"
+  - **کیا یہ تمہاری کتاب ہے؟** (Kya yeh tumhari kitab hai?)
+    "Is this your book?"
+
+#### **B. کون (Kaun) → "Who"**
+
+- To ask about people (singular/plural).
+  - **Note:** It can change form in some cases: **کون سی** (kaun si) → "which" (for feminine nouns).
+  - **Examples:**
+    - **کون آیا ہے؟** (Kaun aaya hai?)
+      "Who came?" (masc.)
+    - **کون سی کتاب چاہیے؟** (Kaun si kitab chahiye?)
+      "Which book do you want?" (fem.)
+
+#### **C. کہاں (Kahan) → "Where"**
+
+- To ask about a place.
+  - **Examples:**
+    - **آپ کہاں رہتے ہیں؟** (Aap kahan rehte hain?)
+      "Where do you live?"
+    - **ٹوائلٹ کہاں ہے؟** (Toilet kahan hai?)
+      "Where is the restroom?"
+
+#### **D. کیوں (Kyun) → "Why"**
+
+- To ask about the reason.
+  - **Examples:**
+    - **تم کیوں رو رہے ہو؟** (Tum kyun ro rahe ho?)
+      "Why are you crying?"
+    - **یہ کیوں ہوا؟** (Yeh kyun hua?)
+      "Why did this happen?"
+
+#### **E. کب (Kab) → "When"**
+
+- To ask about time.
+  - **Examples:**
+    - **ٹرین کب آئے گی؟** (Train kab aaye gi?)
+      "When will the train arrive?"
+    - **تم کب آؤ گے؟** (Tum kab aaoge?)
+      "When will you come?"
+
+#### **F. کیسے (Kaise) → "How"**
+
+- To ask about a state or method.
+  - **Examples:**
+    - **آپ کیسے ہیں؟** (Aap kaise hain?)
+      "How are you?"
+    - **یہ کیسے کام کرتا ہے؟** (Yeh kaise kaam karta hai?)
+      "How does this work?"
+
+#### **G. کتنا (Kitna) → "How much / How many"**
+
+- To ask about quantity or number.
+  - **Note:** It changes form based on gender: **کتنا** (masc.) / **کتی** (fem.) / **کتنی** (fem. plural).
+  - **Examples:**
+    - **کتنا پیسہ چاہیے؟** (Kitna paisa chahiye?)
+      "How much money do you need?" (masc.)
+    - **کتی کتابیں ہیں؟** (Kiti kitabein hain?)
+      "How many books are there?" (fem.)
+
+#### **H. کس لیے (Kis Liye) → "For what reason / For whom"**
+
+- To ask about the purpose or reason.
+  - **Examples:**
+    - **تم یہ کس لیے کر رہے ہو؟** (Tum yeh kis liye kar rahe ho?)
+      "Why are you doing this?"
+    - **یہ تحفہ کس لیے ہے؟** (Yeh tohfa kis liye hai?)
+      "This gift is for whom?"
+
+---
+
+### **3. Important Rules**
+
+#### **A. Interrogative Sentence Structure**
+
+The general structure is: **Interrogative Word + Subject + Verb**.
+Example: **کون آیا؟** (Kaun aaya?) → "Who came?"
+
+#### **B. Using "کیا" for Yes/No Questions**
+
+**کیا** is placed at the beginning of the sentence:
+
+- **کیا تم نے کھانا کھایا؟** (Kya tum ne khana khaya?) → "Did you eat the food?"
+
+#### **C. Gender Agreement**
+
+- **کون** → **کون سی** (for feminine):
+  - **کون سی فلم اچھی ہے؟** (Kaun si film achi hai?) → "Which movie is good?"
+
+#### **D. Interrogative Words with Postpositions**
+
+Postpositions are added after the interrogative word:
+
+- **کہاں تک؟** (Kahan tak?) → "To where?"
+- **کس کے ساتھ؟** (Kis ke saath?) → "With whom?"
+
+---
+
+### **4. More Examples in Sentences**
+
+| Urdu Sentence | Pronunciation | English Translation |
+| :--- | :--- | :--- |
+| **یہ کس کی کار ہے؟** | Yeh kis ki car hai? | "Whose car is this?" |
+| **تمہارا نام کیا ہے؟** | Tumhara naam kya hai? | "What is your name?" |
+| **کتاب کہاں ہے؟** | Kitab kahan hai? | "Where is the book?" |
+| **کام کیسے کریں؟** | Kaam kaise karein? | "How should we work?" |
+| **یہ کتنا وقت لے گا؟** | Yeh kitna waqt lega? | "How much time will this take?" |
+
+---
+
+### **5. Practice Exercises**
+
+**Translate the following questions into Urdu:**
+
+1. "When will the party start?" → `____________________`
+2. "How much does this shirt cost?" → `____________________`
+3. "Why are you angry?" → `____________________`
+
+**Possible Answers:**
+
+1. **پارٹی کب شروع ہوگی؟** (Party kab shuru hogi?)
+2. **یہ قمیض کتنی ہے؟** (Yeh qameez kitni hai?)
+3. **تم کیوں ناراض ہو؟** (Tum kyun naraz ho?)
+
+---
+
+### **6. Quick Summary**
+
+- Each interrogative word is used based on the **type of information** needed (time, place, reason, etc.).
+- Structure: **Interrogative word → Subject → Verb**.
+- Gender agreement is important for words like **کون** and **کتنا**.
+
+---
+
+## Verbs in the Urdu Language
+
+This section provides a detailed explanation of verbs, including their conjugation, tenses, and basic usage rules.
+
+### **1. Types of Verbs**
+
+Verbs in Urdu are divided into:
+
+- **Main Verbs**: E.g., **کھانا** (khana, "to eat"), **پڑھنا** (parhna, "to read").
+- **Auxiliary Verbs**: E.g., **ہونا** (hona, "to be"), **چاہیے** (chahiye, "must").
+
+---
+
+### **2. Verb Conjugation (Main Verbs)**
+
+Urdu verbs **change based on**:
+
+- **Tense** (past, present, future).
+- **Gender** (masculine/feminine).
+- **Number** (singular/plural).
+- **Level of respect** (formal/informal).
+
+---
+
+### **3. Present Tense**
+
+#### **A. Simple Present**
+
+**Conjugation format**:
+
+- **Verb stem** + **تا/تی/تے** (based on gender and number).
+
+| Pronoun | Masculine (singular) | Feminine (singular) | Plural (both genders) |
+| :--- | :--- | :--- | :--- |
+| **میں** (I) | کھاتا ہوں (khata hoon) | کھاتی ہوں (khati hoon) | — |
+| **تم** (you, informal) | کھاتے ہو (khate ho) | کھاتی ہو (khati ho) | — |
+| **آپ** (you, formal) | کھاتے ہیں (khate hain) | — | — |
+| **وہ** (he/she/they) | کھاتا ہے (khata hai) | کھاتی ہے (khati hai) | کھاتے ہیں (khate hain) |
+
+**Examples**:
+
+- **میں پڑھتا ہوں** (Main parhta hoon) = "I read" (masc.).
+- **وہ کھاتی ہے** (Woh khati hai) = "She eats".
+
+#### **B. Present Continuous**
+
+**Conjugation format**:
+
+- **Verb stem** + **رہا/رہی/رہے** + **ہونا**.
+
+**Examples**:
+
+- **میں کھا رہا ہوں** (Main kha raha hoon) = "I am eating now" (masc.).
+- **وہ پڑھ رہی ہے** (Woh parh rahi hai) = "She is reading now".
+
+---
+
+### **4. Past Tense**
+
+#### **A. Simple Past**
+
+**Conjugation format**:
+
+- **Verb stem** + **یا/ی/یے** (based on gender and number).
+
+| Pronoun | Masculine (singular) | Feminine (singular) | Plural |
+| :--- | :--- | :--- | :--- |
 | **میں** | کھایا (khaya) | کھائی (khayi) | — |
 | **تم** | کھایا (khaya) | کھائی (khayi) | — |
 | **وہ** | کھایا (khaya) | کھائی (khayi) | کھائے (khaye) |
 
-**أمثلة**:
+**Examples**:
 
--   **میں نے کھایا** (Main ne khaya) = "أكلتُ" (مذكر).
-    
--   **اس نے پڑھا** (Us ne parha) = "هو قرأ".
-    
+- **میں نے کھایا** (Main ne khaya) = "I ate" (masc.).
+- **اس نے پڑھا** (Us ne parha) = "He read".
 
-___
+#### **B. Past Continuous**
 
-#### **ب. الماضي المستمر (Past Continuous)**
+**Conjugation format**:
 
-**صيغة التصريف**:
+- **Verb stem** + **رہا/رہی/رہے تھا**.
 
--   **مصدر الفعل** (بدون "نا") + **رہا/رہی/رہے تھا**.
-    
+**Examples**:
 
-**أمثلة**:
+- **میں پڑھ رہا تھا** (Main parh raha tha) = "I was reading" (masc.).
+- **وہ سورہی تھی** (Woh so rahi thi) = "She was sleeping".
 
--   **میں پڑھ رہا تھا** (Main parh raha tha) = "كنتُ أقرأ" (مذكر).
-    
--   **وہ سورہی تھی** (Woh so rahi thi) = "كانت نائمة".
-    
+---
 
-___
+### **5. Future Tense**
 
-### **5\. الزمن المستقبل (Future Tense)**
+**Conjugation format**:
 
-**صيغة التصريف**:
+- **Verb stem** + **وں گا/وگی/یں گے** (based on gender and number).
 
--   **مصدر الفعل** (بدون "نا") + **وں گا/وگی/یں گے** (حسب الجنس والعدد).
-    
-
-| الضمير | المذكر (مفرد) | المؤنث (مفرد) | الجمع |
-| --- | --- | --- | --- |
+| Pronoun | Masculine (singular) | Feminine (singular) | Plural |
+| :--- | :--- | :--- | :--- |
 | **میں** | کھاؤں گا (khaunga) | کھاؤں گی (khaungi) | — |
 | **تم** | کھاؤ گے (khao ge) | کھاؤ گی (khao gi) | — |
 | **وہ** | کھائے گا (khayega) | کھائے گی (khayegi) | کھائیں گے (khayenge) |
 
-**أمثلة**:
+**Examples**:
 
--   **میں پڑھوں گا** (Main parhunga) = "سأقرأ" (مذكر).
-    
--   **وہ آئے گی** (Woh aayegi) = "ستأتي".
-    
-
-___
-
-### **6\. الأمر (Imperative Mood)**
-
--   **غير رسمي**: جذر الفعل + **ـو** (للمخاطب المفرد).
-    
-    -   **کھاؤ** (Khao) = "كُل!"
-        
--   **رسمي**: جذر الفعل + **ـئیے** (للمخاطب الجمع/الرسمي).
-    
-    -   **پڑھئیے** (Parhiye) = "اقرأوا!"
-        
-
-___
-
-### **7\. الأفعال المساعدة**
-
--   **ہونا** (Hona) = "يكون":
-    
-    -   **میں ہوں** (Main hoon) = "أنا أكون".
-        
--   **چاہیے** (Chahiye) = "يجب":
-    
-    -   **مجھے جانا چاہیے** (Mujhe jana chahiye) = "يجب أن أذهب".
-        
-
-___
-
-### **8\. قواعد هامة**
-
-#### **أ. تطابق الجنس**
-
--   الأفعال **تتغير مع المؤنث** بإضافة **ـی** (مثال: کھاتی ہے).
-    
-
-#### **ب. الفاعل المخفي**
-
--   في الأردية، **لا يُحذف الضمير** عادةً:
-    
-    -   **میں جاتا ہوں** (لا تقل "جاتا ہوں" فقط).
-        
-
-#### **ج. النفي**
-
-تُضاف **نہیں** قبل الفعل:
-
--   **میں نہیں پڑھتا** (Main nahi parhta) = "أنا لا أقرأ".
-    
-
-___
-
-### **9\. أمثلة شاملة**
-
-| الزمن | الجملة بالأردية | الترجمة |
-| --- | --- | --- |
-| **حاضر** | وہ گانا گاتی ہے۔ | "هي تغني". |
-| **ماضي** | ہم نے فلم دیکھی۔ | "شاهدنا فيلمًا". |
-| **مستقبل** | تم کل آؤ گے۔ | "ستأتي غدًا". |
-| **أمر** | خاموش رہو! | "اصمت!" |
-
-___
-
-### **10\. تمارين**
-
-**حول الجمل التالية إلى الأردية:**
-
-1.  "سأسافر غدًا." → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-2.  "كانوا يلعبون." → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-3.  "لا تأكل هذا!" (رسمي) → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
-
-**(الإجابات):**
-
-1.  **میں کل سفر کروں گا۔** (Main kal safar karunga.)
-    
-2.  **وہ کھیل رہے تھے۔** (Woh khel rahe the.)
-    
-3.  **یہ مت کھائیے!** (Yeh mat khaiye!)
-    
-
-___
-
-### **11\. ملخص سريع**
-
--   الأفعال **تتغير حسب الزمن والجنس والعدد**.
-    
--   **الضمائر** تُستخدم دائمًا (لا تُحذف).
-    
--   **الهيئة الرسمية** تتطلب أفعالًا مختلفة (مثل **پڑھئیے** بدلًا من **پڑھو**).
+- **میں پڑھوں گا** (Main parhunga) = "I will read" (masc.).
+- **وہ آئے گی** (Woh aayegi) = "She will come".
 
 ---
 
-## شرح تفصيلي عن **الإضافة (Genitive Construction)** و**صيغة المَبني للمعلوم (Active Voice)** في اللغة الأردية:
+### **6. Imperative Mood (Commands)**
 
-___
+- **Informal**: Verb stem + **ـو** (for singular address).
+  - **کھاؤ** (Khao) = "Eat!".
+- **Formal**: Verb stem + **ـئیے** (for plural/formal address).
+  - **پڑھئیے** (Parhiye) = "Read!".
 
-### **1\. الإضافة (Genitive Construction / Izafa)**
+---
 
-الإضافة في الأردية هي علاقة بين اسمين يُظهران **الملكية** أو **الوصف**، مثل "كتاب الطالب" أو "بيت الكبير".  
-تستخدم الإضافة لربط اسمين (مضاف + مضاف إليه) باستخدام **حروف الجر الخاصة** (کا، کی، کے).
+### **7. Auxiliary Verbs**
 
-___
+- **ہونا** (Hona) = "to be".
+  - **میں ہوں** (Main hoon) = "I am".
+- **چاہیے** (Chahiye) = "must/should".
+  - **مجھے جانا چاہیے** (Mujhe jana chahiye) = "I must go".
 
-#### **أ. أنواع الإضافة**
+---
 
-1.  **إضافة الملكية**:
-    
-    -   **میرا بھائی** (mera bhai) = "أخي".
-        
-    -   **اس کی کتاب** (us ki kitab) = "كتابه/كتابها".
-        
-2.  **إضافة الوصف**:
-    
-    -   **بڑا گھر** (bara ghar) = "المنزل الكبير".
-        
-    -   **خوبصورت لڑکی** (khubsurat larki) = "البنت الجميلة".
-        
+### **8. Important Rules**
 
-___
+#### **A. Gender Agreement**
 
-#### **ب. حروف الإضافة (کا، کی، کے)**
+- Verbs **change with feminine nouns** by adding **ـی** (e.g., **کھاتی ہے**).
 
-تتغير حسب **جنس وعدد المضاف إليه** (الاسم الثاني):
+#### **B. Subject Pronouns**
 
-| المضاف إليه | المذكر (مفرد) | المؤنث (مفرد) | الجمع (لكلا الجنسين) |
-| --- | --- | --- | --- |
-| **حرف الإضافة** | کا (ka) | کی (ki) | کے (ke) |
+- In Urdu, the pronoun is **not usually omitted**:
+  - **میں جاتا ہوں** (Main jata hoon) (do not just say "jata hoon").
 
-**أمثلة**:
+#### **C. Negation**
 
--   **لڑکے کا نام** (larke ka naam) = "اسم الولد" (مذكر مفرد).
-    
--   **لڑکی کی کتاب** (larki ki kitab) = "كتاب البنت" (مؤنث مفرد).
-    
--   **دوستوں کے گھر** (doston ke ghar) = "منازل الأصدقاء" (جمع).
-    
+Add **نہیں** before the verb:
 
-___
+- **میں نہیں پڑھتا** (Main nahi parhta) = "I don't read".
 
-#### **ج. قواعد هامة في الإضافة**
+---
 
--   **الترتيب**: المضاف (الاسم الأول) → حرف الإضافة → المضاف إليه (الاسم الثاني).  
-    مثال: **گلابی کپڑے** (gulabi kapre) = "الملابس الوردية".
-    
--   **النفي**: تُضاف **نہیں** قبل حرف الإضافة:
-    
-    -   **یہ میرا نہیں بھائی ہے** (Yeh mera nahi bhai hai) = "هذا ليس أخي".
-        
+### **9. Comprehensive Examples**
 
-___
+| Tense | Urdu Sentence | Translation |
+| :--- | :--- | :--- |
+| **Present** | وہ گانا گاتی ہے۔ | "She sings." |
+| **Past** | ہم نے فلم دیکھی۔ | "We watched a movie." |
+| **Future** | تم کل آؤ گے۔ | "You will come tomorrow." |
+| **Imperative** | خاموش رہو! | "Be quiet!" |
 
-### **2\. صيغة المَبني للمعلوم (Active Voice)**
+---
 
-في المَبني للمعلوم، **الفاعل** هو الذي يؤدي الفعل، وتتبع الجملة الترتيب الطبيعي **Subject → Object → Verb (SOV)**.
+### **10. Exercises**
 
-___
+**Translate the following sentences into Urdu:**
 
-#### **أ. خصائص المَبني للمعلوم**
+1. "I will travel tomorrow." → `____________________`
+2. "They were playing." → `____________________`
+3. "Don't eat this!" (formal) → `____________________`
 
-1.  **الفاعل واضح**:
-    
-    -   **لڑکا کھانا کھاتا ہے** (Larka khana khata hai) = "الولد يأكل الطعام".
-        
-2.  **الفعل يتفق مع الفاعل**:
-    
-    -   **لڑکی کھانا کھاتی ہے** (Larki khana khati hai) = "البنت تأكل الطعام".
-        
-3.  **لا يوجد تغيير في الفعل**:
-    
-    -   الفعل يبقى في صورته العادية دون إضافة أي لاحقة خاصة.
-        
+**Answers:**
 
-___
+1. **میں کل سفر کروں گا۔** (Main kal safar karunga.)
+2. **وہ کھیل رہے تھے۔** (Woh khel rahe the.)
+3. **یہ مت کھائیے!** (Yeh mat khaiye!)
 
-#### **ب. تصريف الأفعال في المَبني للمعلوم**
+---
 
-| الزمن | مثال (مذكر مفرد) | مثال (مؤنث مفرد) |
-| --- | --- | --- |
-| **الحاضر** | وہ پڑھتا ہے (Woh parhta hai) "هو يقرأ" | وہ پڑھتی ہے (Woh parhti hai) "هي تقرأ" |
-| **الماضي** | اس نے لکھا (Us ne likha) "هو كتب" | اس نے لکھی (Us ne likhi) "هي كتبت" |
-| **المستقبل** | میں کھاؤں گا (Main khaunga) "سآكل" | میں کھاؤں گی (Main khaungi) "سآكل" |
+### **11. Quick Summary**
 
-___
+- Verbs **change based on tense, gender, and number**.
+- **Pronouns** are always used and not omitted.
+- **Formal forms** of verbs are different from informal ones (e.g., **پڑھئیے** vs. **پڑھو**).
 
-#### **ج. أمثلة مقارنة بين المبني للمعلوم والمبني للمجهول**
+---
 
-| المبني للمعلوم | المبني للمجهول |
-| --- | --- |
-| **استاد نے سبق پڑھایا** (Ustaad ne sabaq parhaya) "المعلم شرح الدرس". | **سبق استاد نے پڑھایا گیا** (Sabq ustaad ne parhaya gaya) "الدرس شُرح من قبل المعلم". |
+## Detailed Explanation of Genitive Construction (Izafa) and Active Voice in Urdu
 
-___
+This section provides a detailed explanation of `Izafa` and `Active Voice` in Urdu.
 
-### **3\. قواعد مشتركة بين الإضافة والمبني للمعلوم**
+---
 
-#### **أ. استخدام الإضافة مع الأفعال**
+### **1. Genitive Construction (Izafa)**
 
--   يمكن استخدام الإضافة في الجمل الفعلية:
-    
-    -   **اس کے پڑھنے کا طریقہ** (Us ke parhne ka tariqa) = "طريقة قراءته".
-        
+The genitive construction in Urdu is a relationship between two nouns that shows **possession** or **description**, such as "the student's book" or "the big house". `Izafa` is used to link two nouns (possessor + possessed) using specific postpositions (**کا**, **کی**, **کے**).
 
-#### **ب. الإضافة في الجمل الفعلية**
+---
 
--   **تمہارا کام ختم ہو گیا** (Tumhara kaam khatam ho gaya) = "عملك انتهى".
-    
+#### **A. Types of Genitive Construction**
 
-___
+1. **Possessive Genitive**:
+    - **میرا بھائی** (mera bhai) = "my brother".
+    - **اس کی کتاب** (us ki kitab) = "his/her book".
+2. **Descriptive Genitive**:
+    - **بڑا گھر** (bara ghar) = "the big house".
+    - **خوبصورت لڑکی** (khubsurat larki) = "the beautiful girl".
 
-### **4\. تمارين تطبيقية**
+---
 
-**1\. حوّل الجمل التالية إلى الإضافة:**
+#### **B. Genitive Postpositions (کا, کی, کے)**
 
--   "كتاب الولد" → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
--   "سيارة الأستاذ" → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
+They change based on the **gender and number of the possessed noun** (the second noun).
 
-**2\. حوّل الجملة إلى المبني للمعلوم:**
+| Possessed Noun | Masculine (singular) | Feminine (singular) | Plural (both genders) |
+| :--- | :--- | :--- | :--- |
+| **Postposition** | کا (ka) | کی (ki) | کے (ke) |
 
--   "الطعام يُؤكل من قبل الولد" → \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-    
+**Examples**:
 
-**(الإجابات):**
+- **لڑکے کا نام** (larke ka naam) = "the boy's name" (masc. singular).
+- **لڑکی کی کتاب** (larki ki kitab) = "the girl's book" (fem. singular).
+- **دوستوں کے گھر** (doston ke ghar) = "the friends' houses" (plural).
 
-1.  **لڑکے کی کتاب** ، **استاد کی کار**
-    
-2.  **لڑکا کھانا کھاتا ہے**
-    
+---
 
-___
+#### **C. Important Rules for `Izafa`**
 
-### **5\. ملخص سريع**
+- **Order**: Possessor (first noun) → Genitive Postposition → Possessed (second noun).
+  - Example: **گلابی کپڑے** (gulabi kapre) = "the pink clothes".
+- **Negation**: Add **نہیں** before the genitive postposition.
+  - **یہ میرا نہیں بھائی ہے** (Yeh mera nahi bhai hai) = "This is not my brother".
 
-| النقطة | الإضافة (Genitive) | المبني للمعلوم (Active Voice) |
-| --- | --- | --- |
-| **الوظيفة** | ربط اسمين (ملكية/وصف) | الفاعل يؤدي الفعل |
-| **الأدوات** | کا، کی، کے | لا يوجد أدوات خاصة |
-| **التصريف** | حسب جنس وعدد الاسم | حسب جنس وعدد الفاعل |
+---
+
+### **2. Active Voice**
+
+In the active voice, the **subject** performs the action, and the sentence follows the natural **Subject → Object → Verb (SOV)** order.
+
+---
+
+#### **A. Characteristics of Active Voice**
+
+1. **Clear Subject**:
+    - **لڑکا کھانا کھاتا ہے** (Larka khana khata hai) = "The boy eats the food".
+2. **Verb Agrees with Subject**:
+    - **لڑکی کھانا کھاتی ہے** (Larki khana khati hai) = "The girl eats the food".
+3. **No Special Verb Form**:
+    - The verb remains in its regular form without any special suffix.
+
+---
+
+#### **B. Verb Conjugation in Active Voice**
+
+| Tense | Example (masculine singular) | Example (feminine singular) |
+| :--- | :--- | :--- |
+| **Present** | وہ پڑھتا ہے (Woh parhta hai) "He reads" | وہ پڑھتی ہے (Woh parhti hai) "She reads" |
+| **Past** | اس نے لکھا (Us ne likha) "He wrote" | اس نے لکھی (Us ne likhi) "She wrote" |
+| **Future** | میں کھاؤں گا (Main khaunga) "I will eat" | میں کھاؤں گی (Main khaungi) "I will eat" |
+
+---
+
+#### **C. Examples Comparing Active and Passive Voice**
+
+| Active Voice | Passive Voice |
+| :--- | :--- |
+| **استاد نے سبق پڑھایا** (Ustaad ne sabaq parhaya) "The teacher taught the lesson." | **سبق استاد نے پڑھایا گیا** (Sabaq ustaad ne parhaya gaya) "The lesson was taught by the teacher." |
+
+---
+
+### **3. Common Rules for `Izafa` and Active Voice**
+
+#### **A. Using `Izafa` with Verbs**
+
+- `Izafa` can be used in verbal sentences:
+  - **اس کے پڑھنے کا طریقہ** (Us ke parhne ka tariqa) = "The method of his reading".
+
+#### **B. `Izafa` in Verbal Sentences**
+
+- **تمہارا کام ختم ہو گیا** (Tumhara kaam khatam ho gaya) = "Your work is finished".
+
+---
+
+### **4. Practice Exercises**
+
+**1. Convert the following phrases to `Izafa`:**
+
+- "The boy's book" → `____________________`
+- "The teacher's car" → `____________________`
+
+**2. Convert the sentence to active voice:**
+
+- "The food is eaten by the boy" → `____________________`
+
+**Answers:**
+
+1. **لڑکے کی کتاب**, **استاد کی کار**
+2. **لڑکا کھانا کھاتا ہے**
+
+---
+
+### **5. Quick Summary**
+
+| Point | Genitive (Izafa) | Active Voice |
+| :--- | :--- | :--- |
+| **Function** | Links two nouns (possession/description) | The subject performs the action |
+| **Tools** | کا, کی, کے | No special tools |
+| **Conjugation** | Based on the gender and number of the possessed noun | Based on the gender and number of the subject |
