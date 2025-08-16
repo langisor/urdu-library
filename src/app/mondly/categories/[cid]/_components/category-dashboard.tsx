@@ -2,7 +2,14 @@
 import { usePathname } from "next/navigation";
 import LessonCard from "./lesson-card";
 import { LessonItem, VocabularyData } from "@/app/mondly/_types/data-services";
-
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Link } from "lucide-react";
 interface CategoryDashboardProps {
   lessonsData: LessonItem[];
   vocabularyData: VocabularyData;
@@ -40,7 +47,7 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
                     100
                 )
           }
-          link={`${pathname}/vocabulary/${vocabularyData.vocabulary.id}`}
+          link={`${pathname}/vocabularies?cid=${vocabularyData.vocabulary.id}`}
           isVocabularyCard={true}
         />
 
@@ -69,6 +76,17 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
             />
           );
         })}
+        {/* render fake Dialogue Card */}
+        <LessonCard
+          key={vocabularyData.vocabulary.name + "dialogue"}
+          id={vocabularyData.vocabulary.id}
+          title={"المحادثة"}
+          description={"TODO: add dialogues"}
+          status={vocabularyData.vocabulary.done ? "مكتمل" : "قيد التقدم"}
+          progress={0}
+          link={`${pathname}/vocabularies?cid=${vocabularyData.vocabulary.id}`}
+          isVocabularyCard={true}
+        />
       </div>
     </div>
   );

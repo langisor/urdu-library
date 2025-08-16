@@ -38,6 +38,7 @@ export default function LessonCard({
   progress,
   link,
   isVocabularyCard = false,
+  
 }: LessonCardProps) {
   // Determine badge color based on status
   const getStatusVariant = (status: LessonStatus) => {
