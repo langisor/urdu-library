@@ -1,11 +1,23 @@
-import { Suspense } from "react";
-import Loading from "@/app/loading";
+"use client";
+import * as React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AdvGrammarTab } from "./_components/advanced/adv-grammar-tab";
+// two tabs QuickTab and AdvancedTab
 
-import Grammar from "./_components/grammar";
+import QuickGrammarTab from "./_components/quick/quick-grammar-tab";
 export default function GrammarApp() {
   return (
-    <Suspense fallback={<Loading />}>
-      <Grammar />
-    </Suspense>
+    <Tabs defaultValue="quick" className="w-full">
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="quick">Quick</TabsTrigger>
+        <TabsTrigger value="advanced">Advanced</TabsTrigger>
+      </TabsList>
+      <TabsContent value="quick">
+        <QuickGrammarTab />
+      </TabsContent>
+      <TabsContent value="advanced">
+        <AdvGrammarTab />
+      </TabsContent>
+    </Tabs>
   );
 }

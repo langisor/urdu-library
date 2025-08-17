@@ -23,7 +23,9 @@ interface AdjectiveItem {
   sup: string;
 }
 type TTab = "introduction" | "nouns" | "verbs" | "modifiers" | "connectors";
-export default function Grammar() {
+
+
+export default function QuickGrammarTab() {
   // State to manage the active tab
   const [activeTab, setActiveTab] = useState<TTab>("introduction");
 
