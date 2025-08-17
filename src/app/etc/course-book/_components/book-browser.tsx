@@ -9,13 +9,7 @@ import { ExpandableChapter } from "./chapter";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-export const getAudioUrl = (item: AudioFile): string => {
-  const { unit, chapter, id } = item;
-  const unit_number = unit;
-  // const chapterNumber = String(chapter).padStart(2, "0");
-  const chapter_number = chapter;
-  return `/media/audio-all/Unit${unit_number}/Chapter${chapter_number}/${id}`;
-};
+ import {getAudioUrl} from "./difinitions"
 
 export default function BookBrowser({ data }: { data: Unit[] }) {
   const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
