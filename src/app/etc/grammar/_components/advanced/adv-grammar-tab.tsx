@@ -6,7 +6,6 @@ import { ChapterPage } from "./definitions";
 import { tocData } from "./definitions";
 import { Card, CardContent } from "@/components/ui/card";
 // main styles
-import "./styles.css";
 export function AdvGrammarTab() {
   const [currentPage, setCurrentPage] = React.useState<ChapterPage>("toc");
 
@@ -37,10 +36,10 @@ export function AdvGrammarTab() {
   };
 
   return (
-    <div>
-      <Card className="">
-        <CardContent>{renderContent()}</CardContent>
-      </Card>
-    </div>
+ 
+      
+        <div className="w-full h-full">{renderContent()}</div>
+     
+ 
   );
 }

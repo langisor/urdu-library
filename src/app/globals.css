@@ -128,10 +128,10 @@
     @apply bg-background text-foreground;
   }
   h1{
-    @apply text-2xl font-bold;
+    @apply text-xl font-bold;
   }
   h2{
-    @apply text-xl font-bold;
+    @apply text-lg font-bold;
     color: var(--primary);
     font-style: italic;
   }

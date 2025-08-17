@@ -16,7 +16,7 @@ export const TableOfContents = ({
   tocData: TOCData[];
   navigateTo: (id: string) => void;
 }) => (
-          <div className="p-8 space-y-4">
+          <div className="p-1 space-y-4">
             <h2 className="text-3xl font-bold mb-4 text-teal-700">
               Urdu Grammar Guide
             </h2>
@@ -29,9 +29,9 @@ export const TableOfContents = ({
                 <Button
                   key={chapter.id}
                   onClick={() => navigateTo(chapter.id)}
-                  className="w-full text-left p-6 bg-teal-50 border border-teal-200 rounded-lg shadow hover:bg-teal-100 transition-colors duration-300"
+                  className="w-full text-left p-1 bg-teal-50 border border-teal-200 rounded-lg shadow hover:bg-teal-100 transition-colors duration-300 "
                 >
-                  <h3 className="text-xl font-semibold text-teal-900">
+                  <h3 className="w-full p-2 text-base font-semibold text-teal-900 ">
                     {chapter.title}
                   </h3>
                 </Button>

@@ -6,16 +6,25 @@ import { AdvGrammarTab } from "./_components/advanced/adv-grammar-tab";
 
 import QuickGrammarTab from "./_components/quick/quick-grammar-tab";
 export default function GrammarApp() {
+  const [tab, setTab] = React.useState<string>("quick");
+  const selectedStyle = {
+    backgroundColor: "blue",
+    color: "white",
+  };
   return (
-    <Tabs defaultValue="quick" className="w-full">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="quick">Quick</TabsTrigger>
-        <TabsTrigger value="advanced">Advanced</TabsTrigger>
+    <Tabs defaultValue={tab} className="w-full h-full" onValueChange={setTab}>
+      <TabsList className="grid grid-cols-2 w-full">
+        <TabsTrigger value="quick" onClick={() => setTab("quick")} style={tab === "quick" ? selectedStyle : undefined}>
+          Quick
+        </TabsTrigger>
+        <TabsTrigger value="advanced" onClick={() => setTab("advanced")} style={tab === "advanced" ? selectedStyle : undefined}>
+          Advanced
+        </TabsTrigger>
       </TabsList>
-      <TabsContent value="quick">
+      <TabsContent value={"quick"} className="w-full h-full">
         <QuickGrammarTab />
       </TabsContent>
-      <TabsContent value="advanced">
+      <TabsContent value={"advanced"} className="w-full h-full">
         <AdvGrammarTab />
       </TabsContent>
     </Tabs>
