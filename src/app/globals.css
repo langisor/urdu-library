@@ -151,6 +151,13 @@
     font-weight: bold;
     text-align: right;
 }
+.arabic-text,
+.naskh-text{
+    font-family: var(--font-naskh), sans-serif;
+    direction: rtl;
+    color: green;
+    text-align: right;
+}
   
 .row-line{
     border-bottom: 1px solid gray;

@@ -74,8 +74,9 @@ export default function LessonCard({
         dir="rtl"
       >
         <CardHeader className="relative flex flex-row items-center justify-between space-y-0 pb-2">
+ 
           <Badge
-            className="absolute top-0 left-0 text-xs bg-blue-600 text-white"
+            className="absolute top-8 left-0 text-xs bg-blue-600 text-white"
             variant="secondary"
           >
             ID: {id}
