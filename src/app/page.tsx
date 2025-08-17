@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="w-full text-center text-3xl">TODO: Home</div>;
+  return <div className="container mx-auto my-4 text-2xl">TODO: Home Page</div>;
 }

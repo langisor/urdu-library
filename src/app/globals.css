@@ -138,6 +138,12 @@
  
    
 } 
+.intro-text{
+    font-family: var(--font-inter), sans-serif;
+    direction: rtl;
+    text-align: left;
+    
+}
 .urdu-text{
     font-family: var(--font-nastaliq), sans-serif;
     direction: rtl;

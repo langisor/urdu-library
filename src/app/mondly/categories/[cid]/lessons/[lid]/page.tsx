@@ -15,7 +15,6 @@ import { Card, CardContent } from "@/components/ui/card";
  *
  */
 async function getLessonData(lessonID: number) {
-  console.log("lessonID", lessonID);
   const filepath = path.join(
     process.cwd(),
     baseLessonsPath,

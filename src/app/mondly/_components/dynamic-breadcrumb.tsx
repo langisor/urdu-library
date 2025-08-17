@@ -56,7 +56,7 @@ function generateBreadcrumb(pathname: string) {
 
     href: "/mondly/categories",
   });
-  console.log("segments", segments);
+ 
   if (segments[3] && isStringInteger(segments[3])) {
     breadcrumbs.push({
       label: getCategoryName(parseInt(segments[3])),
