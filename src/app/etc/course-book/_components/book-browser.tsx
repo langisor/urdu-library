@@ -9,13 +9,13 @@ import { ExpandableChapter } from "./chapter";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
- import {getAudioUrl} from "./difinitions"
+import { getAudioUrl } from "./difinitions";
 
 export default function BookBrowser({ data }: { data: Unit[] }) {
   const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
   const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
   const [playingAudio, setPlayingAudio] = useState<AudioFile | null>(null);
- 
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -62,8 +62,8 @@ export default function BookBrowser({ data }: { data: Unit[] }) {
     <div className="min-h-screen bg-gray-100 p-4 font-sans antialiased text-gray-900">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden md:p-8 p-4">
         <header className="mb-8 text-center">
-          <div className="flex items-center justify-center gap-4">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-blue-600 mb-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-blue-600 mb-2">
               <span>Beginning Urdu Course Book</span>
             </h1>
             <BookCover />
@@ -130,14 +130,14 @@ function BookCover() {
   const bookCoverUrl = "/materials/course-book-cover.jpeg";
 
   return (
-    <Card className="w-full h-[200px] md:h-[250px] md:w-[200px] sm:w-[150px]">
+    <Card className="">
       <CardContent className="w-full h-full">
         <Image
           src={bookCoverUrl}
           alt="Book Cover"
           width={400}
           height={400}
-          className="w-full h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-t-none"
+          className="w-full h-full object-cover   rounded-t-xl md:rounded-l-xl md:rounded-t-none"
         />
       </CardContent>
     </Card>
