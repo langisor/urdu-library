@@ -11,27 +11,23 @@ import {
   Repeat,
 } from "lucide-react";
 import { AudioFile, getAudioUrl } from "./difinitions";
+import { Button } from "react-day-picker";
 
 interface CustomPlayerProps {
   item: AudioFile;
   disabled?: boolean;
 }
 // Main App component to demonstrate the AudioPlayer
-export   function CustomPlayer({ item, disabled }: CustomPlayerProps) {
+export function CustomPlayer({ item, disabled }: CustomPlayerProps) {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 font-sans p-4">
-      <div className="w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8">
-          React Audio Player
-        </h1>
-        <AudioPlayer
-          src={getAudioUrl(item)}
-          title={
-            item.type === "Vocabulary" ? "Vocabulary" : "Exercise" + item.number
-          }
-          disabled={disabled}
-        />
-      </div>
+    <div className="w-full max-w-md">
+      <AudioPlayer
+        src={getAudioUrl(item)}
+        title={
+          item.type === "Vocabulary" ? "Vocabulary" : "Exercise" + item.number
+        }
+        disabled={disabled}
+      />
     </div>
   );
 }
@@ -182,34 +178,34 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
       {/* Main Controls: Skip, Play/Pause, and Repeat */}
       <div className="flex items-center justify-center space-x-4 mb-4">
         {/* Skip Backward Button */}
-        <button
+        <Button
           onClick={skipBackward}
           className="p-3 text-gray-600 dark:text-gray-400 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           aria-label="Rewind 5 seconds"
         >
           <Rewind size={24} />
-        </button>
+        </Button>
 
         {/* Play/Pause Button */}
-        <button
+        <Button
           onClick={togglePlayPause}
           className="p-4 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-colors"
           aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? <Pause size={24} /> : <Play size={24} />}
-        </button>
+        </Button>
 
         {/* Skip Forward Button */}
-        <button
+        <Button
           onClick={skipForward}
           className="p-3 text-gray-600 dark:text-gray-400 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           aria-label="Skip forward 5 seconds"
         >
           <FastForward size={24} />
-        </button>
+        </Button>
 
         {/* Repeat Button */}
-        <button
+        <Button
           onClick={toggleRepeat}
           className={`p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${
             isRepeating ? "text-purple-600" : "text-gray-600 dark:text-gray-400"
@@ -217,7 +213,7 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
           aria-label="Toggle repeat"
         >
           <Repeat size={24} />
-        </button>
+        </Button>
       </div>
 
       {/* Progress Bar & Time */}
@@ -240,13 +236,13 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
 
       {/* Volume Control */}
       <div className="flex items-center space-x-2">
-        <button onClick={() => setVolume(0)} aria-label="Mute">
+        <Button onClick={() => setVolume(0)} aria-label="Mute">
           {volume === 0 ? (
             <VolumeX size={20} className="text-gray-500" />
           ) : (
             <Volume2 size={20} className="text-gray-500" />
           )}
-        </button>
+        </Button>
         <input
           type="range"
           min="0"
