@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-nastaliq: var(--font-nastaliq-urdu);
+  --font-naskh: var(--font-naskh-arabic);
+  --font-inter: var(--font-inter);
   --breakpoint-xxs: 320px;
   --breakpoint-xs: 400px;
   --breakpoint-sm: 600px;
@@ -124,17 +127,48 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1{
+    @apply text-2xl font-bold;
+  }
+  h2{
+    @apply text-xl font-bold;
+    color: var(--primary);
+    font-style: italic;
+  }
+ 
+   
+} 
+.urdu-text{
+    font-family: var(--font-nastaliq), sans-serif;
+    direction: rtl;
+    color: green;
+    text-align: right;
 }
-
-.naskh-text {
-  font-family: var(--font-naskh-arabic), sans-serif;
-  direction: rtl;
+.nastaliq-bold{
+    font-family: var(--font-nastaliq), sans-serif;
+    direction: rtl;
+    color: green;
+    font-weight: bold;
+    text-align: right;
 }
-.nastaliq-text {
-  font-family: var(--font-nastaliq-urdu), sans-serif;
-  direction: rtl;
+  
+.row-line{
+    border-bottom: 1px solid gray;
 }
-.inter-text {
-  font-family: var(--font-inter), sans-serif;
-  direction: ltr;
+.quiz-question{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding:4px;
+    margin-bottom: 1rem;
+}
+.quiz-options{
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+.quiz-options li{
+    margin-bottom: 0.5rem;
+}
+.quiz-answers{
+    font-size: 0.8rem;
+    color: #666;
 }

@@ -1,6 +1,6 @@
 "use client";
-import {ArrowRight,ArrowLeft} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, ArrowLeft } from "lucide-react";
+import { BackButton } from "./back-button";
 import {
   Table,
   TableBody,
@@ -10,19 +10,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void }) => {
+export const Chapter2 = ({
+  navigateTo,
+}: {
+  navigateTo: (page: string) => void;
+}) => {
   return (
     <div className="container">
-      <Button onClick={() => navigateTo("toc")} className="mb-4 text-blue-500 hover:text-blue-700 transition-colors duration-300">
-        &larr; Back to Table of Contents
-      </Button>
-      <h1>
-        Chapter 2: Parts of Speech (Ajzaa-e-Kalaam)
-      </h1>
+      <BackButton navigateTo={navigateTo} />
+      <h1>Chapter 2: Parts of Speech (Ajzaa-e-Kalaam)</h1>
       <p>
         <strong>Introduction:</strong> Words are the workers building sentences!
-        This chapter introduces the different <em>types</em> of workers (parts of
-        speech) in Urdu and their jobs.
+        This chapter introduces the different <em>types</em> of workers (parts
+        of speech) in Urdu and their jobs.
       </p>
 
       <h3>
@@ -49,7 +49,8 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
           <strong>Types:</strong>
           <ul>
             <li>
-              <strong>Common Noun (Ism-e-Aam,
+              <strong>
+                Common Noun (Ism-e-Aam,
                 <span className="urdu-text">اسم عام</span>
                 ):
               </strong>
@@ -60,7 +61,8 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
               (Nahar - River).
             </li>
             <li>
-              <strong>Proper Noun (Ism-e-Khaas,
+              <strong>
+                Proper Noun (Ism-e-Khaas,
                 <span className="urdu-text">اسم خاص</span>
                 ):
               </strong>
@@ -75,14 +77,16 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
           </ul>
         </li>
         <li>
-          <strong>Gender (Tazkeer-o-Taanees,
+          <strong>
+            Gender (Tazkeer-o-Taanees,
             <span className="urdu-text">تذکیر و تانیث</span>
             ):
           </strong>
           Urdu nouns have one of two genders:
           <ul>
             <li>
-              <strong>Masculine (Muzakkar,
+              <strong>
+                Masculine (Muzakkar,
                 <span className="urdu-text">مذکر</span>
                 ):
               </strong>
@@ -92,7 +96,8 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
               (Darwaaza - door).
             </li>
             <li>
-              <strong>Feminine (Muannas,
+              <strong>
+                Feminine (Muannas,
                 <span className="urdu-text">مؤنث</span>
                 ):
               </strong>
@@ -119,9 +124,7 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
         <span className="urdu-text">ضمیر</span>
         ): Stand-ins for Nouns
       </h3>
-      <p>
-        These replace nouns to avoid repetition.
-      </p>
+      <p>These replace nouns to avoid repetition.</p>
       <ul>
         <li>
           <strong>I/Me:</strong>
@@ -159,9 +162,7 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
       <ul>
         <li>
           Example:
-          <span className="urdu-text">
-            خوبصورت پھول
-          </span>
+          <span className="urdu-text">خوبصورت پھول</span>
           (Khoobsurat phool - beautiful flower),
           <span className="urdu-text">بڑا گھر</span>
           (Bara ghar - big house).
@@ -207,9 +208,7 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
         <span className="urdu-text">متعلق فعل</span>
         ): Modifying Actions
       </h3>
-      <p>
-        Adverbs modify a verb, adjective, or another adverb.
-      </p>
+      <p>Adverbs modify a verb, adjective, or another adverb.</p>
       <ul>
         <li>
           Example:
@@ -248,9 +247,7 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
         <span className="urdu-text">حروفِ عطف</span>
         ): Connecting Words
       </h3>
-      <p>
-        Conjunctions join words, phrases, or clauses.
-      </p>
+      <p>Conjunctions join words, phrases, or clauses.</p>
       <ul>
         <li>
           Example:
@@ -268,9 +265,7 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
         <span className="urdu-text">حروفِ ندا</span>
         ): Expressing Emotion
       </h3>
-      <p>
-        Words used to express strong emotion or surprise.
-      </p>
+      <p>Words used to express strong emotion or surprise.</p>
       <ul>
         <li>
           Example:
@@ -286,12 +281,8 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
       <h2>Chapter Review & Quiz</h2>
       <div className="quiz-container">
         <h3>Chapter 2 Quiz</h3>
-        <p>
-          Test your knowledge of the different parts of speech in Urdu.
-        </p>
-        <div className="quiz-question">
-          1. Identify the feminine noun:
-        </div>
+        <p>Test your knowledge of the different parts of speech in Urdu.</p>
+        <div className="quiz-question">1. Identify the feminine noun:</div>
         <ol className="quiz-options">
           <li>
             <span className="urdu-text">دروازہ</span>
@@ -348,9 +339,7 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
           <li>Future Tense</li>
           <li>Infinitive</li>
         </ol>
-        <div className="quiz-question">
-          5. Which word is a postposition?
-        </div>
+        <div className="quiz-question">5. Which word is a postposition?</div>
         <ol className="quiz-options">
           <li>
             <span className="urdu-text">کیوں</span>
@@ -382,9 +371,7 @@ export const Chapter2 = ({ navigateTo }: { navigateTo: (page: string) => void })
           <li>Pronoun</li>
           <li>Noun</li>
         </ol>
-        <div className="quiz-question">
-          7. A verb describes:
-        </div>
+        <div className="quiz-question">7. A verb describes:</div>
         <ol className="quiz-options">
           <li>The action itself</li>
           <li>The receiver of the action</li>
