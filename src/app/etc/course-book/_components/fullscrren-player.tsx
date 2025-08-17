@@ -13,13 +13,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AudioFile } from "./difinitions";
 import { Play, Pause, Repeat, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getAudioUrl } from "./audio-item";
+ 
 
 interface FullscreenPlayerProps {
   item: AudioFile;
   disabled?: boolean;
   children?: React.ReactNode;
 }
+
+export const getAudioUrl = (item: AudioFile): string => {
+  const { unit, chapter, id } = item;
+  const unit_number = unit;
+  // const chapterNumber = String(chapter).padStart(2, "0");
+  const chapter_number = chapter;
+  return `/media/audio-all/Unit${unit_number}/Chapter${chapter_number}/${id}`;
+};
+
 
 /**
  * Fullscreen player component: Play an audio file in fullscreen
