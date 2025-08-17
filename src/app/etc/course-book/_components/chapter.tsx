@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { AudioFile, Chapter } from "./difinitions";
 import { Button } from "@/components/ui/button";
 import { FullscreenPlayer } from "./fullscrren-player";
+import * as React from "react";
 // Props for Chapter component
 interface ChapterProps {
   chapter: Chapter;
@@ -18,6 +19,8 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
   expanded,
   onToggle,
 }) => {
+ 
+
   const hasAudio = chapter.vocs.length > 0 || chapter.exers.length > 0;
 
   return (
