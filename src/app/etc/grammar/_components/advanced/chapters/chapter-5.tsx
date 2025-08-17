@@ -13,22 +13,22 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export const Chapter5 = ({ navigateTo }: { navigateTo: (page: string) => void }) => {
   return (
-    <div className="p-8">
-      <Button
-        onClick={() => navigateTo("toc")}
-        className="mb-4 text-blue-500 hover:text-blue-700 transition-colors duration-300"
-      >
-        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Table of Contents
+    <div className="container">
+      <Button onClick={() => navigateTo("toc")} className="mb-4 text-blue-500 hover:text-blue-700 transition-colors duration-300">
+        &larr; Back to Table of Contents
       </Button>
-      <h1 className="text-4xl font-bold mb-4 text-teal-700">Chapter 5: Advanced Grammar & Stylistics - A Comprehensive Guide</h1>
+      <h1>Chapter 5: Advanced Grammar & Stylistics - A Comprehensive Guide</h1>
       <p>
         This chapter delves into the finer points of Urdu grammar, equipping you
         with tools for sophisticated expression, nuanced meaning, and stylistic
         flair.
       </p>
 
-      <h2 className="text-2xl font-semibold text-teal-600 mb-2 mt-4">1. Case and its Role (<span className="urdu-text">حالت</span>- <em>Haalat</em>)</h2>
-      <ul className="list-disc list-inside space-y-2">
+      <h3>
+        1. Case and its Role (<span className="urdu-text">حالت</span>-{" "}
+        <em>Haalat</em>)
+      </h3>
+      <ul>
         <li>
           <strong>Concept:</strong> Case refers to the grammatical function of a
           noun or pronoun in a sentence (Subject, Direct Object, Indirect
@@ -38,13 +38,13 @@ export const Chapter5 = ({ navigateTo }: { navigateTo: (page: string) => void })
           specific verb agreements to indicate case relationships.
         </li>
       </ul>
-      <h3 className="text-xl font-semibold text-teal-600 mb-2 mt-4">How Forms Change:</h3>
-      <ul className="list-disc list-inside space-y-2">
+      <h4>How Forms Change:</h4>
+      <ul>
         <li>
           <strong>Pronouns:</strong> Pronouns change form significantly based on
           case. (See Chapter 4 for Pronoun Tables - Nominative,
           Accusative/Dative, Ergative, Oblique).
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
+          <ul>
             <li>
               Nominative:
               <span className="urdu-text">وہ کتاب پڑھتا ہے۔</span>
@@ -52,108 +52,325 @@ export const Chapter5 = ({ navigateTo }: { navigateTo: (page: string) => void })
             </li>
             <li>
               Accusative/Dative:
-              <span className="urdu-text"> میں نے <strong>اسے</strong> کتاب دی۔ </span>
-              (To whom? Him - <em>Main ne <strong>use</strong> kitaab di.</em>)
-            </li>
-            <li>
-              Ergative:
-              <span className="urdu-text"> <strong>اس نے</strong> کہا۔ </span>
-              (Who said? He - <em><strong>Us ne</strong> kaha.</em>)
+              <span className="urdu-text">میں نے اس کو دیکھا۔</span>
+              (Whom did I see? Him - <em>Main ne us ko dekha.</em>)
             </li>
           </ul>
         </li>
         <li>
-          <strong>Nouns:</strong> Most nouns have two case forms:
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
-            <li>
-              <strong>Direct Case:</strong> The basic form of the noun, used as the subject of an intransitive verb, or as the object of a transitive verb without a postposition.
-              <span className="urdu-text">لڑکا آیا۔</span>
-              (_Larka aaya._ - The boy came.)
-            </li>
-            <li>
-              <strong>Oblique Case:</strong> The form of the noun used before a postposition.
-              <span className="urdu-text">لڑکے <strong>نے</strong> کہا۔</span>
-              (_Larke ne kaha._ - The boy said.)
-              <span className="urdu-text">لڑکے <strong>کو</strong> کتاب دی۔</span>
-              (_Larke ko kitaab di._ - Gave the book <strong>to the boy</strong>.)
-            </li>
-          </ul>
+          <strong>Nouns:</strong> Nouns can take an oblique form (e.g.,
+          <span className="urdu-text">گھر</span>
+          - <em>ghar</em> &rarr;
+          <span className="urdu-text">گھر میں</span>
+          - <em>ghar mein</em>) or a postposition. This is the primary mechanism
+          for showing case.
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-teal-600 mb-2 mt-4">2. Active and Passive Voice: Changing the Focus</h2>
-      <ul className="list-disc list-inside space-y-2">
+      <h3>
+        2. Active and Passive Voice (<span className="urdu-text">صوتی حالت</span>-{" "}
+        <em>Souti Haalat</em>)
+      </h3>
+      <ul>
         <li>
-          <strong>Active Voice (Fe'l-e-Ma'roof, <span className="urdu-text">فعل معروف</span>):</strong> The subject performs the action.
-          <span className="urdu-text">استاد نے خط لکھا۔</span>
-          (_Ustaad ne khat likha._ - The teacher wrote a letter.)
+          <strong>Active Voice:</strong> The subject performs the action.
+          <br />
+          <span className="urdu-text">وہ خط لکھتا ہے۔</span>
+          (<em>Woh khat likhta hai.</em> - He writes a letter.)
         </li>
         <li>
-          <strong>Passive Voice (Fe'l-e-Majhool, <span className="urdu-text">فعل مجہول</span>):</strong> The subject receives the action. Formed using the verb <span className="urdu-text">جانا</span> (_jaana_ - to go/become).
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
-            <li>
-              <strong>Formation:</strong> Past Participle of the Main Verb + Conjugation of <span className="urdu-text">جانا</span>.
-            </li>
-            <li>
-              <strong>Example:</strong>
-              <span className="urdu-text">خط لکھا گیا۔</span>
-              (_Khat likha gaya._ - The letter was written.)
-              <span className="urdu-text">کھانا کھایا گیا۔</span>
-              (_Khaana khaya gaya._ - The food was eaten.)
-            </li>
-          </ul>
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold text-teal-600 mb-2 mt-4">3. Direct and Indirect Speech</h2>
-      <ul className="list-disc list-inside space-y-2">
-        <li>
-          <strong>Direct Speech (<span className="urdu-text">کلامِ مستقیم</span>):</strong> The exact words of a speaker. In Urdu, this is often marked by <span className="urdu-text">کہ</span> (_ke_) or <span className="urdu-text">کہا کہ</span> (_kaha ke_) and the exact quote.
-          <span className="urdu-text">اس نے کہا کہ "میں جا رہا ہوں۔"</span>
-          (_Us ne kaha ke "Main jaa raha hoon."_ - He said, "I am going.")
-        </li>
-        <li>
-          <strong>Indirect Speech (<span className="urdu-text">کلامِ غیر مستقیم</span>):</strong> Reporting what was said without using the exact words.
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
-            <li>
-              <strong>Example:</strong>
-              <span className="urdu-text">اس نے کہا کہ وہ جا رہا تھا۔</span>
-              (_Us ne kaha ke woh jaa raha tha._ - He said that he was going.)
-            </li>
-          </ul>
+          <strong>Passive Voice:</strong> The subject receives the action. This
+          is formed with the verb
+          <span className="urdu-text">جانا</span>
+          (<em>jaana</em> - to go) or
+          <span className="urdu-text">ہونا</span>
+          (<em>hona</em> - to be) used as an auxiliary verb.
+          <br />
+          <span className="urdu-text">خط لکھا جاتا ہے۔</span>
+          (<em>Khat likha jata hai.</em> - The letter is written.)
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-teal-600 mb-2 mt-4">4. Prefixes and Suffixes</h2>
+      <h3>
+        3. Direct and Indirect Speech (<span className="urdu-text">بلاواسطہ اور بالواسطہ</span>-{" "}
+        <em>Bilaa-wastah aur Bil-wastah Kalaam</em>)
+      </h3>
+      <ul>
+        <li>
+          <strong>Direct Speech:</strong> Quoting someone's exact words.
+          <br />
+          <span className="urdu-text">اس نے کہا، "میں آ رہا ہوں۔"</span>
+          (<em>Us ne kaha, "Main aa raha hoon."</em> - He said, "I am coming.")
+        </li>
+        <li>
+          <strong>Indirect Speech:</strong> Reporting what someone said without
+          using their exact words. The tense and pronouns often change.
+          <br />
+          <span className="urdu-text">اس نے کہا کہ وہ آ رہا تھا۔</span>
+          (<em>Us ne kaha ke woh aa raha tha.</em> - He said that he was coming.)
+        </li>
+      </ul>
+
+      <h3>
+        4. Prefixes and Suffixes (<span className="urdu-text">سابقے اور لاحقے</span>-{" "}
+        <em>Saabiqay aur Laahiqay</em>)
+      </h3>
       <p>
-        These are small word parts that change the meaning or function of a word.
+        These are small word parts added to the beginning or end of a word to
+        change its meaning or function.
       </p>
-      <ul className="list-disc list-inside space-y-2">
+      <h4>Common Prefixes:</h4>
+      <ul>
         <li>
-          <strong>Prefixes (<span className="urdu-text">سابَقے</span>- _Saa'biqe_):</strong> Added to the beginning of a word.
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
-            <li>
-              <strong>نا-</strong> (_na-_): not, non- (<span className="urdu-text">ناکام</span>- unsuccessful, <span className="urdu-text">ناممکن</span>- impossible)
-            </li>
-            <li>
-              <strong>بے-</strong> (_be-_): without (<span className="urdu-text">بے کار</span>- useless, <span className="urdu-text">بے ادب</span>- disrespectful)
-            </li>
-          </ul>
+          <strong>بد-</strong> (<em>bad-</em>): Means "bad, ill, evil."
+          <br />
+          <span className="urdu-text">بدقسمتی</span>
+          (<em>bad-qismati</em> - bad luck) &larr;
+          <span className="urdu-text">قسمت</span>
+          (<em>qismat</em> - luck)
         </li>
         <li>
-          <strong>Suffixes (<span className="urdu-text">لاحَقے</span>- _Laa'hiqe_):</strong> Added to the end of a word.
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
-            <li>
-              <strong>-ی</strong> (_-i_): Forms adjectives or abstract nouns from nouns or other adjectives.
-              <span className="urdu-text">پاکستان</span> <ArrowRight className="ml-2 h-2 w-2" /> <span className="urdu-text">پاکستانی</span> (Pakistani), <span className="urdu-text">دوست</span> <ArrowRight className="ml-2 h-2 w-2" /> <span className="urdu-text">دوستی</span> (Friendship)
-            </li>
-            <li>
-              <strong>-انہ</strong> (_-ana_): Forms adverbs or adjectives meaning "in the manner of".
-              <span className="urdu-text">دوست</span> <ArrowRight className="ml-2 h-2 w-2" /> <span className="urdu-text">دوستانہ</span> (Friendly)
-            </li>
-          </ul>
+          <strong>بے-</strong> (<em>be-</em>): Means "without."
+          <br />
+          <span className="urdu-text">بےعزت</span>
+          (<em>be-izzat</em> - without respect) &larr;
+          <span className="urdu-text">عزت</span>
+          (<em>izzat</em> - respect)
+        </li>
+        <li>
+          <strong>نا-</strong> (<em>na-</em>): Means "not."
+          <br />
+          <span className="urdu-text">نااہل</span>
+          (<em>na-a'hil</em> - not capable) &larr;
+          <span className="urdu-text">اہل</span>
+          (<em>a'hil</em> - capable)
         </li>
       </ul>
+
+      <h4>Common Suffixes:</h4>
+      <ul>
+        <li>
+          <strong>-ی</strong> (<em>-i</em>): Forms adjectives or nouns.
+          <br />
+          <span className="urdu-text">پاکستانی</span>
+          (<em>Pakistani</em>- Pakistani),
+          <span className="urdu-text">دوستی</span>
+          (<em>dosti</em> - Friendship),
+          <span className="urdu-text">آسمانی</span>
+          (<em>aasmani</em> - Heavenly)
+        </li>
+        <li>
+          <strong>-گی</strong> (<em>-gi</em>): Forms abstract nouns.
+          <br />
+          <span className="urdu-text">چھوٹی</span>
+          (<em>chhoti</em>- smallness),
+          <span className="urdu-text">بڑی</span>
+          (<em>bari</em>- bigness/elderness),
+          <span className="urdu-text">جوانی</span>
+          (<em>jawani</em>- youth)
+        </li>
+        <li>
+          <strong>-انہ</strong> (<em>-ana</em>): Forms adverbs or adjectives
+          meaning "in the manner of."
+          <br />
+          <span className="urdu-text">انسانانہ</span>
+          (<em>insaanaana</em>- humanely),
+          <span className="urdu-text">دوستانہ</span>
+          (<em>dostaana</em>- friendly),
+          <span className="urdu-text">شہزادیانہ</span>
+          (<em>shehzadiaana</em>- princess-like)
+        </li>
+        <li>
+          <strong>-دار</strong> (<em>-dar</em>): Possessor of, holder of.
+          <br />
+          <span className="urdu-text">ملک دار</span>
+          (<em>mulk-dar</em>- landowner),
+          <span className="urdu-text">عزت دار</span>
+          (<em>izzat-dar</em>- respectable),
+          <span className="urdu-text">عہدہ دار</span>
+          (<em>ohda-dar</em>- officeholder)
+        </li>
+        <li>
+          <strong>-ستان</strong> (<em>-stan</em>): Place of, land of.
+          <br />
+          <span className="urdu-text">پاکستان</span>
+          (<em>Pakistan</em>- Land of the Pure),
+          <span className="urdu-text">ہندوستان</span>
+          (<em>Hindustan</em>- Land of Hindus),
+          <span className="urdu-text">باغستان</span>
+          (<em>baghistan</em>- orchard)
+        </li>
+      </ul>
+      <h3>
+        5. The use of <span className="urdu-text">کو</span> (<em>ko</em>),{" "}
+        <span className="urdu-text">پر</span> (<em>par</em>),{" "}
+        <span className="urdu-text">سے</span> (<em>se</em>) as case markers.
+      </h3>
+      <ul>
+        <li>
+          <span className="urdu-text">کو</span>
+          (<em>ko</em>): Used to mark the direct object of a transitive verb (for
+          definite nouns) or the indirect object.
+          <br />
+          <span className="urdu-text">میں نے اس کو دیکھا۔</span>
+          (<em>Main ne us ko dekha.</em> - I saw him.)
+          <br />
+          <span className="urdu-text">اس نے مجھے ایک کتاب دی۔</span>
+          (<em>Us ne mujhe ek kitaab di.</em> - He gave a book to me.)
+        </li>
+        <li>
+          <span className="urdu-text">پر</span>
+          (<em>par</em>): Means "on" or "at."
+          <br />
+          <span className="urdu-text">کتاب میز پر ہے۔</span>
+          (<em>Kitaab mez par hai.</em> - The book is on the table.)
+        </li>
+        <li>
+          <span className="urdu-text">سے</span>
+          (<em>se</em>): A versatile postposition meaning "from," "with," "by,"
+          or "than."
+          <br />
+          <span className="urdu-text">وہ گھر سے آیا۔</span>
+          (<em>Woh ghar se aaya.</em> - He came from home.)
+        </li>
+      </ul>
+
+      <h3>6. The Concept of Emphasis and its various forms in Urdu.</h3>
+      <p>
+        Emphasis is used to highlight a specific part of a sentence.
+      </p>
+      <ul>
+        <li>
+          <strong>Particles:</strong>
+          <span className="urdu-text">ہی</span>
+          (<em>hi</em>) and
+          <span className="urdu-text">بھی</span>
+          (<em>bhi</em>).
+          <br />
+          <span className="urdu-text">میں نے ہی کیا ہے۔</span>
+          (<em>Main ne hi kiya hai.</em> - I
+          <strong>myself</strong> did it.)
+          <br />
+          <span className="urdu-text">وہ بھی آیا۔</span>
+          (<em>Woh bhi aaya.</em> - He came
+          <strong>too</strong>.)
+        </li>
+        <li>
+          <strong>Word Order:</strong> Moving a word to a less common position in
+          the sentence.
+        </li>
+        <li>
+          <strong>Repetition:</strong> Repeating a word for emphasis.
+        </li>
+      </ul>
+
+      <h2>Chapter Review & Quiz</h2>
+      <div className="quiz-container">
+        <h3>Chapter 5 Quiz</h3>
+        <div className="quiz-question">
+          1. In the sentence
+          <span className="urdu-text">میں نے اس کو دیکھا۔</span>
+          (<em>Main ne us ko dekha.</em> - I saw him.), what grammatical function
+          does the pronoun
+          <span className="urdu-text">اس کو</span>
+          (<em>us ko</em>) serve?
+        </div>
+        <ol className="quiz-options">
+          <li>Subject</li>
+          <li>Indirect Object</li>
+          <li>Direct Object</li>
+          <li>Instrument</li>
+        </ol>
+
+        <div className="quiz-question">
+          2. The passive voice in Urdu is formed using an auxiliary verb like:
+        </div>
+        <ol className="quiz-options">
+          <li>
+            <span className="urdu-text">لکھنا</span>
+            (<em>likhna</em> - to write)
+          </li>
+          <li>
+            <span className="urdu-text">جانا</span>
+            (<em>jaana</em> - to go)
+          </li>
+          <li>
+            <span className="urdu-text">کرنا</span>
+            (<em>karna</em> - to do)
+          </li>
+          <li>
+            <span className="urdu-text">آنا</span>
+            (<em>aana</em> - to come)
+          </li>
+        </ol>
+
+        <div className="quiz-question">
+          3. Transform this sentence from direct to indirect speech:
+          <span className="urdu-text">اس نے کہا، "میں لاہور جا رہا ہوں۔"</span>
+          (<em>Us ne kaha, "Main Lahore ja raha hoon."</em> - He said, "I am going
+          to Lahore.")
+        </div>
+        <div className="quiz-question">
+          4. Which prefix is used to mean "without"?
+        </div>
+        <ol className="quiz-options">
+          <li>
+            <span className="urdu-text">بد-</span>
+            (<em>bad-</em>)
+          </li>
+          <li>
+            <span className="urdu-text">نا-</span>
+            (<em>na-</em>)
+          </li>
+          <li>
+            <span className="urdu-text">بے-</span>
+            (<em>be-</em>)
+          </li>
+          <li>
+            <span className="urdu-text">کم-</span>
+            (<em>kam-</em>)
+          </li>
+        </ol>
+
+        <div className="quiz-question">
+          5. What is the meaning of the suffix
+          <span className="urdu-text">-ستان</span>
+          (<em>-stan</em>)?
+        </div>
+        <div className="quiz-question">
+          6. In Urdu, the postposition
+          <span className="urdu-text">سے</span>
+          (<em>se</em>) is used to show a relationship. Give a sentence showing
+          its use to mean "from."
+        </div>
+        <div className="quiz-question">
+          7. Identify the emphatic particle in the sentence:
+          <span className="urdu-text">میں نے یہ کام ہی کیا ہے۔</span>
+          (<em>Main ne yeh kaam hi kiya hai.</em> - I did this work myself.)
+        </div>
+        <ol className="quiz-options">
+          <li>
+            <span className="urdu-text">میں</span>
+          </li>
+          <li>
+            <span className="urdu-text">یہ</span>
+          </li>
+          <li>
+            <span className="urdu-text">ہی</span>
+          </li>
+          <li>
+            <span className="urdu-text">کام</span>
+          </li>
+        </ol>
+        <div className="quiz-answers">
+          (Answers: 1c, 2b, 3.
+          <span className="urdu-text">اس نے کہا کہ وہ لاہور جا رہا تھا۔</span>
+          (<em>Us ne kaha ke woh Lahore ja raha tha.</em>), 4c, 5. Place of, Land
+          of, 6.
+          <span className="urdu-text">وہ گھر سے آیا۔</span>
+          (<em>Woh ghar se aaya.</em> - He came from home.), 7c)
+        </div>
+      </div>
     </div>
   );
 };

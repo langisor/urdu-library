@@ -13,15 +13,13 @@ import { ArrowLeft } from "lucide-react";
 
 export const Chapter3 = ({ navigateTo }: { navigateTo: (page: string) => void }) => {
   return (
-    <div className="p-8">
-      <Button
-        onClick={() => navigateTo("toc")}
-        className="mb-4 text-blue-500 hover:text-blue-700 transition-colors duration-300"
-      >
-        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Table of Contents
+    <div className="container">
+      <Button onClick={() => navigateTo("toc")} className="mb-4 text-blue-500 hover:text-blue-700 transition-colors duration-300">
+        &larr; Back to Table of Contents
       </Button>
-      <h1 className="text-4xl font-bold mb-4 text-teal-700">
-        Chapter 3: Sentence Structure (جملوں کی ساخت - _Jumlon ki Saakht_)
+      <h1>
+        Chapter 3: Sentence Structure (جملوں کی ساخت - <em>Jumlon ki Saakht</em>
+        )
       </h1>
       <p>
         Mastering vocabulary is essential, but the real magic of Urdu happens
@@ -33,108 +31,276 @@ export const Chapter3 = ({ navigateTo }: { navigateTo: (page: string) => void })
         components and patterns.
       </p>
 
-      <h2 className="text-2xl font-semibold text-teal-600 mb-2 mt-4">1. Components of a Sentence (جملے کے اجزاء - _Jumlay ke Ajza_)</h2>
+      <h3>1. Components of a Sentence (جملے کے اجزاء - <em>Jumlay ke Ajza</em>)</h3>
       <p>
         Every complete Urdu sentence fundamentally consists of two core parts:
       </p>
-      <ul className="list-disc list-inside space-y-2">
+      <ul>
         <li>
-          <strong>Subject (فاعل - _Faa'il_):</strong> This is the person, place,
-          thing, or concept that performs the action or about which something is
-          stated. It usually comes first.
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
+          <strong>Subject (فاعل - <em>Faa'il</em>):</strong> This is the person,
+          place, thing, or concept that performs the action or about which
+          something is stated. It usually comes first.
+          <ul>
             <li>
               Example:
               <span className="urdu-text">لڑکا</span>
-              (_Larka_ - The boy),
+              (<em>Larka</em> - The boy),
               <span className="urdu-text">کتا</span>
-              (_Kutta_ - The dog),
+              (<em>Kutta</em> - The dog),
               <span className="urdu-text">وہ کتاب</span>
-              (_Woh kitaab_ - That book),
+              (<em>Woh kitaab</em> - That book),
               <span className="urdu-text">ہم</span>
-              (_Hum_ - We)
+              (<em>Hum</em> - We).
             </li>
           </ul>
         </li>
         <li>
-          <strong>Predicate (خبر - _Khabar_):</strong> This part tells us
-          something <em>about</em> the subject. It contains the action (verb) or
-          describes the state of the subject. It typically follows the subject.
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
+          <strong>Predicate (خبر - <em>Khabar</em>):</strong> This is the part
+          of the sentence that contains the verb and provides information about
+          the subject. In Urdu, the verb typically comes at the very end of the
+          sentence.
+          <ul>
             <li>
               Example:
-              <span className="urdu-text">پڑھتا ہے۔</span>
-              (_Parhta hai._ - reads.),
-              <span className="urdu-text">سیب ہے۔</span>
-              (_Seb hai._ - is an apple.),
-              <span className="urdu-text">خوش ہیں۔</span>
-              (_Khush hain._ - are happy.)
+              <span className="urdu-text">سو رہا ہے۔</span>
+              (<em>So raha hai.</em> - Is sleeping.),
+              <span className="urdu-text">بہت تیز دوڑتا ہے۔</span>
+              (<em>Bohat tez daurta hai.</em> - Runs very fast.),
+              <span className="urdu-text">پرانی ہے۔</span>
+              (<em>Purani hai.</em> - Is old.).
             </li>
           </ul>
-        </li>
-        <li>
-          <strong>Object (مفعول - _Maf'ool_):</strong> Often included within the
-          predicate, this is the person or thing that receives the action of the
-          verb.
-          <ul className="list-circle list-inside ml-4 mt-2 space-y-1">
-            <li>
-              Example:
-              <span className="urdu-text">
-                لڑکا <strong>کتاب</strong> پڑھتا ہے۔
-              </span>
-              (_Larka <strong>kitaab</strong> parhta hai._ - The boy reads <strong>a book</strong>.)
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <p className="mt-4">
-        <strong>Key Point:</strong> Identifying the <em>Faa'il</em> (Subject) and <em>Khabar</em> (Predicate) is the first step to understanding or constructing any Urdu sentence.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-teal-600 mb-2 mt-4">2. Basic Sentence Patterns: SOV Order</h2>
-      <p>
-        Urdu has a flexible but common sentence structure:
-        <strong>Subject-Object-Verb (SOV)</strong>. This differs from English (SVO).
-      </p>
-      <ul className="list-disc list-inside space-y-2">
-        <li>
-          <strong>S + O + V:</strong>
-          <span className="urdu-text">میں کتاب پڑھتا ہوں۔</span>
-          (_Main kitaab parhta hoon._ - I a book read.)
-        </li>
-        <li>
-          <strong>S + V:</strong> (Intransitive sentences)
-          <span className="urdu-text">وہ آتا ہے۔</span>
-          (_Woh aata hai._ - He comes.)
-        </li>
-        <li>
-          <strong>Questions (S + O + V):</strong>
-          <span className="urdu-text">کیا آپ سکول جاتے ہیں؟</span>
-          (_Kya aap school jaate hain?_ - Do you go to school?)
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-teal-600 mb-2 mt-4">3. Types of Sentences</h2>
+      <h3>2. Basic Sentence Patterns (بنیادی جملے کے نمونے - <em>Buniyadi Jumlay ke Namoonay</em>)</h3>
       <p>
-        Sentences can be classified by their structure and purpose:
+        Urdu follows a Subject-Object-Verb (SOV) word order, which is different
+        from English's Subject-Verb-Object (SVO).
       </p>
-      <ul className="list-disc list-inside space-y-2">
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Pattern</th>
+              <th>Urdu Example</th>
+              <th>Romanization</th>
+              <th>Literal Translation (for understanding)</th>
+              <th>Correct English Translation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Subject + Verb</td>
+              <td>
+                <span className="urdu-text">وہ آتا ہے۔</span>
+              </td>
+              <td>
+                <em>Woh aata hai.</em>
+              </td>
+              <td>He comes.</td>
+              <td>He comes.</td>
+            </tr>
+            <tr>
+              <td>Subject + Object + Verb</td>
+              <td>
+                <span className="urdu-text">علی کتاب پڑھتا ہے۔</span>
+              </td>
+              <td>
+                <em>Ali kitaab parhta hai.</em>
+              </td>
+              <td>Ali book reads.</td>
+              <td>Ali reads a book.</td>
+            </tr>
+            <tr>
+              <td>Subject + Adjective + Verb</td>
+              <td>
+                <span className="urdu-text">کھانا ٹھنڈا ہے۔</span>
+              </td>
+              <td>
+                <em>Khana thanda hai.</em>
+              </td>
+              <td>Food cold is.</td>
+              <td>The food is cold.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. Sentence Types</h3>
+      <ul>
         <li>
-          <strong>Simple Sentence (Jumla-e-Mufrad, <span className="urdu-text">جملہ مفرد</span>):</strong> One independent clause.
-          <span className="urdu-text">موسم اچھا ہے۔</span>
-          (_Mausam acha hai._ - The weather is good.)
+          <strong>Declarative Sentences (خبری جملے - <em>Khabari Jumlay</em>):</strong>
+          Make a statement.
+          <ul>
+            <li>
+              Example:
+              <span className="urdu-text">وہ سکول جاتا ہے۔</span>
+              (<em>Woh school jata hai.</em> - He goes to school.)
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>Compound Sentence (Jumla-e-Murakkab, <span className="urdu-text">جملہ مرکب</span>):</strong> Two or more independent clauses joined by a conjunction.
-          <span className="urdu-text">میں آیا لیکن وہ نہیں آیا۔</span>
-          (_Main aaya lekin woh nahin aaya._ - I came, but he didn't.)
+          <strong>Interrogative Sentences (سوالیہ جملے - <em>Sawaliya Jumlay</em>):</strong>
+          Ask a question. Often use
+          <span className="urdu-text">کیا</span>
+          (<em>kya</em> - what) at the beginning or an interrogative pronoun
+          (who, where, when, why) within the sentence.
+          <ul>
+            <li>
+              Example:
+              <span className="urdu-text">کیا وہ سکول جاتا ہے؟</span>
+              (<em>Kya woh school jata hai?</em> - Does he go to school?)
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>Complex Sentence (Jumla-e-Pechida, <span className="urdu-text">جملہ پیچیدہ</span>):</strong> Contains at least one independent and one or more dependent clauses.
-          <span className="urdu-text">اگر وہ آئے گا، تو ہم چلیں گے۔</span>
-          (_Agar woh aaye ga, to hum chalenge._ - If he comes, then we'll go.)
+          <strong>Negative Sentences (منفی جملے - <em>Manfi Jumlay</em>):</strong>
+          Deny something. Use the particle
+          <span className="urdu-text">نہیں</span>
+          (<em>nahin</em> - not) before the verb.
+          <ul>
+            <li>
+              Example:
+              <span className="urdu-text">وہ سکول نہیں جاتا ہے۔</span>
+              (<em>Woh school nahin jata hai.</em> - He does not go to school.)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Imperative Sentences (حکمیہ جملے - <em>Hukmiya Jumlay</em>):</strong>
+          Give a command or request. The verb form changes.
+          <ul>
+            <li>
+              Example (Polite):
+              <span className="urdu-text">براہ مہربانی یہاں آئیں۔</span>
+              (<em>Baraa-e meherbani yahan aaiye.</em> - Please come here.)
+            </li>
+            <li>
+              Example (Informal):
+              <span className="urdu-text">یہاں آؤ۔</span>
+              (<em>Yahan aao.</em> - Come here.)
+            </li>
+          </ul>
         </li>
       </ul>
+
+      <h3>4. Compound & Complex Sentences</h3>
+      <ul>
+        <li>
+          <strong>Compound Sentences:</strong> Two or more independent clauses
+          joined by a conjunction like
+          <span className="urdu-text">اور</span>
+          (<em>aur</em> - and) or
+          <span className="urdu-text">لیکن</span>
+          (<em>lekin</em> - but).
+          <ul>
+            <li>
+              Example:
+              <span className="urdu-text">میں آیا اور اس نے مجھ سے بات کی۔</span>
+              (<em>Main aaya aur us ne mujh se baat ki.</em> - I came and he
+              talked to me.)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Complex Sentences:</strong> One independent clause and at least
+          one dependent (subordinate) clause, often introduced by words like
+          <span className="urdu-text">جب</span>
+          (<em>jab</em> - when),
+          <span className="urdu-text">اگر</span>
+          (<em>agar</em> - if),
+          <span className="urdu-text">کیونکہ</span>
+          (<em>kyunki</em> - because).
+          <ul>
+            <li>
+              Example:
+              <span className="urdu-text">جب میں آیا، وہ چلا گیا۔</span>
+              (<em>Jab main aaya, woh chala gaya.</em> - When I came, he left.)
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Chapter Review & Quiz</h2>
+      <div className="quiz-container">
+        <h3>Chapter 3 Quiz</h3>
+        <p>
+          Test your understanding of Urdu sentence structure.
+        </p>
+        <div className="quiz-question">
+          1. Break down the sentence into its subject (S) and predicate (P):
+          <span className="urdu-text">پرندہ اُڑ رہا ہے۔</span>
+          (<em>Parinda urh raha hai.</em> - The bird is flying.)
+        </div>
+        <div className="quiz-question">
+          2. Change the word order of this sentence to the standard
+          Subject-Object-Verb pattern:
+          <span className="urdu-text">کھاتا ہے سیب لڑکا۔</span>
+          (<em>Khata hai seb larka.</em> - The boy eats an apple.)
+        </div>
+        <div className="quiz-question">
+          3. What kind of sentence is this:
+          <span className="urdu-text">اگر بارش ہوتی، تو میں نہیں جاتا۔</span>
+          (<em>Agar barish hoti, to main nahin jata.</em> - If it rained, I would
+          not go.)
+        </div>
+        <div className="quiz-question">
+          4. Form an interrogative (question) sentence from:
+          <span className="urdu-text">وہ پڑھ رہا ہے۔</span>
+          (<em>Woh parh raha hai.</em> - He is reading.)
+        </div>
+        <div className="quiz-question">
+          5. Make this sentence negative:
+          <span className="urdu-text">میں سکول جاتا ہوں۔</span>
+          (<em>Main school jata hoon.</em> - I go to school.)
+        </div>
+        <div className="quiz-question">
+          6. Give the polite imperative form for
+          <span className="urdu-text">کھانا</span>
+          (<em>khana</em> - to eat).
+        </div>
+        <div className="quiz-question">
+          7. Complete the conditional:
+          <span className="urdu-text">اگر وقت ہوتا، ...</span>
+          (<em>Agar waqt hota, ...</em> - If there was time, ...) (Give a suitable
+          result clause)
+        </div>
+        <div className="quiz-question">
+          8. Add a relative clause to describe
+          <span className="urdu-text">کتاب</span>
+          (<em>kitaab</em> - book):
+          <span className="urdu-text">میں نے کتاب خریدی۔</span>
+          (<em>Main ne kitaab khareedi.</em> - I bought the book.) Use
+          <span className="urdu-text">وہ</span>
+          (<em>woh</em> - that) and
+          <span className="urdu-text">پرانی</span>
+          (<em>purani</em> - old).
+        </div>
+        <div className="quiz-answers">
+          (Answers: 1. S:
+          <span className="urdu-text">پرندہ</span>
+          (<em>Parinda</em>), P:
+          <span className="urdu-text">اُڑ رہا ہے۔</span>
+          (<em>Urh raha hai.</em>); 2.
+          <span className="urdu-text">لڑکا سیب کھاتا ہے۔</span>
+          (<em>Larka seb khata hai.</em>); 3. Complex Sentence; 4.
+          <span className="urdu-text">کیا وہ پڑھ رہا ہے؟</span>
+          (<em>Kya woh parh raha hai?</em>); 5.
+          <span className="urdu-text">میں سکول نہیں جاتا ہوں۔</span>
+          (<em>Main school nahi jata hoon.</em>); 6.
+          <span className="urdu-text">کھائیے۔</span>
+          (<em>Khaiye.</em>); 7. ...
+          <span className="urdu-text">تو میں آتا۔</span>
+          (... <em>to main aata.</em> - ... then I would come.) OR ...
+          <span className="urdu-text">تو ہم چلتے۔</span>
+          (... <em>to hum chalte.</em> - ... then we would go.) (Any suitable unreal
+          result); 8.
+          <span className="urdu-text">میں نے وہ کتاب خریدی جو بہت پرانی تھی۔</span>
+          (<em>Main ne woh kitaab khareedi jo bohat purani thi.</em> - I bought
+          that book which was very old.)
+        </div>
+      </div>
     </div>
   );
 };
