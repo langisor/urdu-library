@@ -11,8 +11,7 @@ import {
   Repeat,
 } from "lucide-react";
 import { AudioFile, getAudioUrl } from "./difinitions";
-import { Button } from "react-day-picker";
-
+import { Button } from "@/components/ui/button";
 interface CustomPlayerProps {
   item: AudioFile;
   disabled?: boolean;
@@ -179,6 +178,7 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
       <div className="flex items-center justify-center space-x-4 mb-4">
         {/* Skip Backward Button */}
         <Button
+          variant="outline"
           onClick={skipBackward}
           className="p-3 text-gray-600 dark:text-gray-400 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           aria-label="Rewind 5 seconds"
@@ -197,6 +197,7 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
 
         {/* Skip Forward Button */}
         <Button
+          variant="outline"
           onClick={skipForward}
           className="p-3 text-gray-600 dark:text-gray-400 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           aria-label="Skip forward 5 seconds"
@@ -206,6 +207,7 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
 
         {/* Repeat Button */}
         <Button
+          variant="outline"
           onClick={toggleRepeat}
           className={`p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${
             isRepeating ? "text-purple-600" : "text-gray-600 dark:text-gray-400"
@@ -236,7 +238,11 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
 
       {/* Volume Control */}
       <div className="flex items-center space-x-2">
-        <Button onClick={() => setVolume(0)} aria-label="Mute">
+        <Button
+          variant="outline"
+          onClick={() => setVolume(0)}
+          aria-label="Mute"
+        >
           {volume === 0 ? (
             <VolumeX size={20} className="text-gray-500" />
           ) : (

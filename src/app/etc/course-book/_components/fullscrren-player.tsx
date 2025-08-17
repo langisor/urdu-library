@@ -40,8 +40,11 @@ export function FullscreenPlayer({
         <SheetTrigger asChild disabled={disabled}>
           <Button
             variant="outline"
+            
             className={
-              item.type === "Vocabulary" ? "bg-blue-500" : "bg-green-500"
+              item.type === "Vocabulary"
+                ? "bg-yellow-700 text-white"
+                : "bg-gray-500 text-white"
             }
           >
             <Music className="w-4 h-4 mr-2" />
