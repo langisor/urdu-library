@@ -1,18 +1,15 @@
 "use client";
 import * as React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 import * as chapters from "./chapters";
 import { TableOfContents } from "./toc";
-import { BackButton } from "./back-button";
-// The main App component that will contain all the website's functionality.
-// We'll use a `switch` statement to handle navigation between chapters.
+import { ChapterPage } from "./definitions";
+ 
 export function AdvGrammarTab() {
-  const [currentPage, setCurrentPage] = React.useState("toc");
+  const [currentPage, setCurrentPage] = React.useState<ChapterPage>("toc");
 
   // A simple function to navigate to a new page/chapter.
   const navigateTo = (page: string) => {
-    setCurrentPage(page);
+    setCurrentPage(page as ChapterPage);
   };
 
   // The TOC data, extracted from the provided markdown file.
@@ -35,43 +32,21 @@ export function AdvGrammarTab() {
   const renderContent = () => {
     switch (currentPage) {
       case "toc":
-        return <TableOfContents tocData={tocData} navigateTo={navigateTo} />;
+        return (
+          <TableOfContents tocData={tocData} navigateTo={navigateTo} />
+        );
       case "chapter1":
-        return (
-          <div className="flex flex-col gap-2">
-       
-            <chapters.Chapter1 navigateTo={navigateTo} />
-          </div>
-        );
+        return <chapters.Chapter1 navigateTo={navigateTo} />;
       case "chapter2":
-        return (
-          <div className="flex flex-col gap-2">
-           
-            <chapters.Chapter2 navigateTo={navigateTo} />
-          </div>
-        );
+        return <chapters.Chapter2 navigateTo={navigateTo} />;
       case "chapter3":
-        return (
-          <div className="flex flex-col gap-2">
-        
-            <chapters.Chapter3 navigateTo={navigateTo} />
-          </div>
-        );
+        return <chapters.Chapter3 navigateTo={navigateTo} />;
       case "chapter4":
-        return (
-          <div className="flex flex-col gap-2">
-          
-            <chapters.Chapter4 navigateTo={navigateTo} />
-          </div>
-        );
+        return <chapters.Chapter4 navigateTo={navigateTo} />;
       case "chapter5":
-        return (
-          <div className="flex flex-col gap-2">
-       
-            <chapters.Chapter5 navigateTo={navigateTo} />
-          </div>
-        );
-
+        return <chapters.Chapter5 navigateTo={navigateTo} />;
+      case "chapter6":
+        return <chapters.Chapter6 navigateTo={navigateTo} />;
       default:
         return null;
     }
@@ -79,7 +54,7 @@ export function AdvGrammarTab() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800 antialiased p-4 sm:p-8">
-      <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+      <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl">
         {renderContent()}
       </div>
     </div>

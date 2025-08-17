@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
- 
+ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -16,24 +16,26 @@ export const TableOfContents = ({
   tocData: TOCData[];
   navigateTo: (id: string) => void;
 }) => (
-  <div className="p-8">
-    <h1 className="text-4xl font-bold mb-6 text-center text-teal-700">
-      Basic Urdu Grammar
-    </h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {tocData.map((chapter) => (
-        <Card
-          key={chapter.id}
-          onClick={() => navigateTo(chapter.id)}
-          className="cursor-pointer hover:bg-teal-100 transition-colors duration-300"
-        >
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold text-teal-800">
-              {chapter.title}
+          <div className="p-8 space-y-4">
+            <h2 className="text-3xl font-bold mb-4 text-teal-700">
+              Urdu Grammar Guide
             </h2>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </div>
+            <p className="text-lg text-gray-600 mb-8">
+              Welcome to your interactive guide to learning Urdu grammar. Select
+              a chapter to begin your journey!
+            </p>
+            <div className="space-y-4">
+              {tocData.map((chapter) => (
+                <Button
+                  key={chapter.id}
+                  onClick={() => navigateTo(chapter.id)}
+                  className="w-full text-left p-6 bg-teal-50 border border-teal-200 rounded-lg shadow hover:bg-teal-100 transition-colors duration-300"
+                >
+                  <h3 className="text-xl font-semibold text-teal-900">
+                    {chapter.title}
+                  </h3>
+                </Button>
+              ))}
+            </div>
+          </div>
 );
