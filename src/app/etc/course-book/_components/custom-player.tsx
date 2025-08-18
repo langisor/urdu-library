@@ -125,7 +125,7 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const audio = audioRef.current;
     const newTime = parseFloat(e.target.value);
-    audio && (audio.currentTime = newTime);
+    if (audio) audio.currentTime = newTime;
     setCurrentTime(newTime);
   };
 
@@ -133,21 +133,21 @@ const AudioPlayer = ({ src, title, disabled }: AudioPlayerProps) => {
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseFloat(e.target.value);
     const audio = audioRef.current;
-    audio && (audio.volume = newVolume);
+    if (audio) audio.volume = newVolume;
     setVolume(newVolume);
   };
 
   // Function to skip backward by 5 seconds
   const skipBackward = () => {
     const audio = audioRef.current;
-    audio && (audio.currentTime = Math.max(0, audio.currentTime - 5));
+    if (audio) audio.currentTime = Math.max(0, audio.currentTime - 5);
   };
 
   // Function to skip forward by 5 seconds
   const skipForward = () => {
     const audio = audioRef.current;
-    audio &&
-      (audio.currentTime = Math.min(audio.duration, audio.currentTime + 5));
+    if (audio)
+      audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
   };
 
   // Function to toggle repeat functionality

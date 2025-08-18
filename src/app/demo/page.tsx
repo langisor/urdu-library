@@ -6,7 +6,7 @@ import { Quiz } from "@/app/mondly/_types/data-services";
 import { getQuizzes, TQuizType, GetQuizzesProps } from "./services";
 
 export default async function DemoPage() {
-  let quizQueryProps: GetQuizzesProps = {
+  const quizQueryProps: GetQuizzesProps = {
     type: TQuizType.T1,
     limit: 1,
   };
