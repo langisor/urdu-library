@@ -4,7 +4,6 @@ import { getVocabulyData } from "./_components/services";
 import { Card, CardContent } from "@/components/ui/card";
 // get vocabularies from the database
 import { VocsTable } from "./_components/vocs-table";
- 
 
 interface Props {
   params: Promise<{ cid: string }>;
@@ -17,7 +16,7 @@ export default async function VocabulariesPage({
 }: Props) {
   const cid = (await params).cid;
   const vid = (await searchParams).vid;
-
+  
   const { categoryName, vocabulary, vItemData } = await getVocabulyData(vid);
 
   return (

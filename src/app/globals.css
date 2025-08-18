@@ -127,63 +127,59 @@
   body {
     @apply bg-background text-foreground;
   }
-  h1{
+  h1 {
     @apply text-xl font-bold;
   }
-  h2{
+  h2 {
     @apply text-lg font-bold;
     color: var(--primary);
     font-style: italic;
   }
- 
-   
-} 
-.intro-text{
-    font-family: var(--font-inter), sans-serif;
-    direction: rtl;
-    text-align: left;
-    
 }
-.urdu-text{
-    font-family: var(--font-nastaliq), sans-serif;
-    direction: rtl;
-    color: green;
-    text-align: right;
+.intro-text {
+  font-family: var(--font-inter), sans-serif;
+  direction: rtl;
+  text-align: left;
 }
-.nastaliq-bold{
-    font-family: var(--font-nastaliq), sans-serif;
-    direction: rtl;
-    color: green;
-    font-weight: bold;
-    text-align: right;
+.nastaleeq-text,
+.urdu-text {
+  font-family: var(--font-nastaliq), sans-serif;
+  direction: rtl;
+
+  text-align: right;
+}
+.nastaliq-bold {
+  font-family: var(--font-nastaliq), sans-serif;
+  direction: rtl;
+
+  font-weight: bold;
+  text-align: right;
 }
 .arabic-text,
-.naskh-text{
-    font-family: var(--font-naskh), sans-serif;
-    direction: rtl;
-    color: green;
-    text-align: right;
+.naskh-text {
+  font-family: var(--font-naskh), sans-serif;
+  direction: rtl;
+
+  text-align: right;
 }
-  
-.row-line{
-    border-bottom: 1px solid gray;
+
+.row-line {
+  border-bottom: 1px solid gray;
 }
-.quiz-question{
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding:4px;
-    margin-bottom: 1rem;
+.quiz-question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 4px;
+  margin-bottom: 1rem;
 }
-.quiz-options{
-    list-style-type: none;
-    margin-bottom: 1rem;
+.quiz-options {
+  list-style-type: none;
+  margin-bottom: 1rem;
 }
-.quiz-options li{
-    margin-bottom: 0.5rem;
+.quiz-options li {
+  margin-bottom: 0.5rem;
 }
-.quiz-answers{
-    font-size: 0.8rem;
-    color: #666;
-    
+.quiz-answers {
+  font-size: 0.8rem;
+  color: #666;
 }
- 
