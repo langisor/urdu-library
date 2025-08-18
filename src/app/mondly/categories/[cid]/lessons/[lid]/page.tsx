@@ -9,6 +9,7 @@ import { JsonViewerComponent } from "@/components/json-viewer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import lesson_names from "@/app/mondly/_data/lesson-names.json";
+import Quizzer from "./quizzer";
 
 async function getLessonData(lessonID: number) {
   const lesson = (
@@ -52,7 +53,7 @@ export default async function Lesson({
       <div className="flex flex-col gap-4">
         {/* <DynamicBreadcrumb /> */}
         <Card>
-          <CardContent>
+          <CardContent className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-4">
               <p className="text-lg font-semibold">
                 Category ID: {lesson.categoryID}
@@ -79,6 +80,7 @@ export default async function Lesson({
                 Count Done: {lesson.countDone}
               </p>
             </div>
+            <Quizzer quizzes={quizzesData} />
           </CardContent>
         </Card>
 

@@ -14,6 +14,7 @@ export type RegularSolution = {
   key: string;
   text: string;
   audio_updated_at?: number;
+  text_tokens?: QuizToken[];
   phonetic?: string;
   dictionary?: DictionaryEntry[];
   type?: string; // This is now an optional property for non-verb items
@@ -26,6 +27,7 @@ export type VerbSolution = {
   key: string;
   text: string;
   audio_updated_at?: number;
+  text_tokens?: QuizToken[];
   phonetic?: string;
   dictionary?: DictionaryEntry[];
   type: "verb"; // This is the discriminant, specifically "verb"
