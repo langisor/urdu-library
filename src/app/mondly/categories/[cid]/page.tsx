@@ -9,6 +9,14 @@ import {
 } from "@/app/mondly/_types/data-services";
 import cat_names from "@/app/mondly/_data/category-names.json";
 
+
+ 
+export async  function generateStaticParams() {
+  return cat_names.map((item) => ({
+    cid: item.id.toString(),
+  }));
+}
+
 async function getCategoryLessons(_cid: number) {
   const category = await queryClient`
    SELECT * FROM "Category" WHERE id = ${_cid}
@@ -31,16 +39,7 @@ async function getCategoryLessons(_cid: number) {
   return { lessonsData, vocabularyData };
 }
 
-/**
- *
- * @param param0 generateStaticParams
- * @returns
- */
-export function generateStaticParams() {
-  return cat_names.map((item) => ({
-    cid: item.id.toString(),
-  }));
-}
+
 export default async function CategoryPage({
   params,
 }: {

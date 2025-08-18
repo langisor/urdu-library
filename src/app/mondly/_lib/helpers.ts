@@ -1,6 +1,6 @@
 //  Global helpers
-const courseImageBasePath = "/media/mondly/images/";
-const courseAudioBasePath = "/media/mondly/audios/";
+const courseImageBasePath =  `${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/images/`
+const courseAudioBasePath = `${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/audios/`
 
 export const getCourseImage = (id: string | number) => {
   return courseImageBasePath + id;
@@ -8,7 +8,7 @@ export const getCourseImage = (id: string | number) => {
 
 export const getCourseAudio = (
   id: string | number,
-  audio_updated_at: string | number
+   
 ) => {
   return `${courseAudioBasePath}${id}`;
 };

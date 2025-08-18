@@ -8,6 +8,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import lesson_names from "@/app/mondly/_data/lesson-names.json";
 import Quizzer from "./quizzer";
 
+
+ 
+export async function generateStaticParams() {
+  return lesson_names.map((item) => ({
+    lid: item.id.toString(),
+  }));
+}
+
+
+
 async function getLessonData(lessonID: number) {
   const lesson = (
     await queryClient`
@@ -27,12 +37,6 @@ async function getLessonData(lessonID: number) {
   return { lesson, quizzesData };
 }
 
- 
-// export async function generateStaticParams() {
-//   return lesson_names.map((item) => ({
-//     lid: item.id.toString(),
-//   }));
-// }
 
 export default async function Lesson({
   params,

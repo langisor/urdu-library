@@ -1,7 +1,6 @@
 import { promises } from "fs";
 import { CategoriesCards } from "./_components/categories-cards";
 import path from "path";
-import { DynamicBreadcrumb } from "../_components/dynamic-breadcrumb";
 import { CategoryItem } from "../_types/data-services";
 const file = "src/app/mondly/_data/all.json";
 import { queryClient } from "@/lib/postgres-client";
@@ -24,7 +23,6 @@ export default async function CategoriesPage() {
   const categories = await getCategories();
   return (
     <div className="flex flex-col gap-4">
-       {/* <DynamicBreadcrumb  /> */}
       <CategoriesCards categories={categories} />
       {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
     </div>
