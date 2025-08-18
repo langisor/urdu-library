@@ -5,7 +5,7 @@ import Loading from "@/app/loading";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-// import lesson_names from "@/app/mondly/_data/lesson-names.json";
+import lesson_names from "@/app/mondly/_data/lesson-names.json";
 import Quizzer from "./quizzer";
 
 async function getLessonData(lessonID: number) {
@@ -28,11 +28,11 @@ async function getLessonData(lessonID: number) {
 }
 
  
-// export async function generateStaticParams() {
-//   return lesson_names.map((item) => ({
-//     lid: item.id.toString(),
-//   }));
-// }
+export async function generateStaticParams() {
+  return lesson_names.map((item) => ({
+    lid: item.id.toString(),
+  }));
+}
 
 export default async function Lesson({
   params,
