@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Urdu Library',
     short_name: 'UrduLib',
     description: 'A resource for learning Urdu.',
-    start_url: '/app-favicon/',
+    start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#000000',
