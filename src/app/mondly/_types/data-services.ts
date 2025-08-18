@@ -174,19 +174,45 @@ export type LessonData = {
 /**
  * Defines the top-level 'lesson' object from files like 803.json.
  */
- 
 
-/**
- * Defines a single vocabulary item, which represents a word or phrase.
- */
-export type VocabularyItem = {
+export interface VocabularyItem {
   id: number;
   vocabulary: number;
   wordID: number;
   key: string;
-  sols: SolutionOrAlternate[];
-  alts?: SolutionOrAlternate[];
-  audio_updated_at?: number;
+  sols: Sol[];
+  audio_updated_at: number;
+}
+export interface Sol {
+  key: string;
+  text: string;
+  dictionary: Dictionary[];
+  phonetic?: string;
+}
+
+export interface Dictionary {
+  raw: string;
+  translations: any[];
+}
+
+/**
+ * Defines a single vocabulary itself, which represents a word or phrase.
+ */
+export type Vocabulary = {
+  id: number;
+  index: number;
+  category: number;
+  categoryID: number;
+  isCourse: boolean;
+  name: string | null;
+  disabled: boolean;
+  done: boolean;
+  stars: number;
+  countItem: number;
+  countWords: number;
+  countPhrases: number;
+  countDone: number;
+  vItems: number[];
 };
 
 /**
@@ -209,7 +235,7 @@ export type VocabularyData = {
     countDone: number;
     vItems: number[];
   };
-  vItems: VocabularyItem[];
+  Items: VocabularyItem[];
 };
 
 /**
@@ -287,13 +313,13 @@ export function isVerbSolution(
  * @param vocabularyItem A VocabularyItem object.
  * @returns An array of RegularSolution objects.
  */
-export function getRegularSolutions(
-  vocabularyItem: VocabularyItem
-): RegularSolution[] {
-  return vocabularyItem.sols.filter(
-    (sol): sol is RegularSolution => !isVerbSolution(sol)
-  );
-}
+// export function getRegularSolutions(
+//   vocabularyItem: VocabularyItem
+// ): RegularSolution[] {
+//   return vocabularyItem.sols?.filter(
+//     (sol): sol is RegularSolution => !isVerbSolution(sol)
+//   );
+// }
 
 /**
  * A function to find a specific vocabulary item by its ID.
@@ -327,4 +353,3 @@ export function getCategoryLessons(
   }
   return categoryLessons;
 }
-

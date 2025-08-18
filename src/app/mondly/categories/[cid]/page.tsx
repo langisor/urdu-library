@@ -3,13 +3,25 @@ import Loading from "@/app/loading";
 import CategoryDashboard from "./_components/category-dashboard";
 
 import { promises } from "fs";
-import { LessonItem, VocabularyData } from "@/app/mondly/_types/data-services";
+import {
+  LessonItem,
+  VocabularyData,
+  CategoryItem,
+} from "@/app/mondly/_types/data-services";
 import path from "path";
 // import { JsonViewerComponent } from "@/components/json-viewer";
 import { DynamicBreadcrumb } from "../../_components/dynamic-breadcrumb";
 const baseLessonsPath = "src/app/mondly/_data/Lessons/";
 const baseVocabularyPath = "src/app/mondly/_data/Vocabularies/";
 
+async function getCategoryIDs() {
+  const ids: number[] = [];
+  const filepath = path.join(process.cwd(), "src/app/mondly/_data/all.json");
+  const data = await promises.readFile(filepath, "utf-8");
+  const parsedData = JSON.parse(data) as { data: { category: CategoryItem }[] };
+  for (const item of parsedData.data) ids.push(item.category.id);
+  return ids;
+}
 async function getVocabularyData(cid: number) {
   // only 1 file for vocabulary cid01.json
   const filepath = path.join(
@@ -48,6 +60,12 @@ async function getCategoryLessons(_cid: number) {
   return lessons;
 }
 
+export async function generateStaticParams() {
+  console.log("generateStaticParams in categories/[cid]/page.tsx");
+  const ids = await getCategoryIDs();
+  return ids.map((id) => ({ cid: id.toString() }));
+}
+
 export default async function LessonPage({
   params,
 }: {
@@ -56,6 +74,7 @@ export default async function LessonPage({
   }>;
 }) {
   const _cid = Number((await params).cid);
+
   // console.log("cid", _cid);
   // await the data fetching function
   const lessonsData = await getCategoryLessons(_cid);
@@ -65,7 +84,7 @@ export default async function LessonPage({
   return (
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col gap-4">
-        <DynamicBreadcrumb />
+        {/* <DynamicBreadcrumb /> */}
         <CategoryDashboard
           lessonsData={lessonsData}
           vocabularyData={vocabularyData}

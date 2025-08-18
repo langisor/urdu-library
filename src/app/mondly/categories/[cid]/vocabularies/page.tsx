@@ -6,22 +6,24 @@ import { Card, CardContent } from "@/components/ui/card";
 // get vocabularies from the database
 import { VocsTable } from "./_components/vocs-table";
 
+interface Props {
+  params: Promise<{ cid: string }>;
+  searchParams: Promise<{ vid: string }>;
+}
+
 export default async function VocabulariesPage({
   params,
-}: {
-  params: Promise<{ vid: string }>;
-}) {
-  const {vid} = (await params) ;
+  searchParams,
+}: Props) {
+  const cid = (await params).cid;
+  const vid = (await searchParams).vid;
 
-  console.log("vid",  vid);
-  const { categoryName, vocabulary, vItemDataArray } = await getVocabulyData(
-    vid
-  );
+  const { categoryName, vocabulary, vItemData } = await getVocabulyData(vid);
 
   return (
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col gap-4 naskh-text">
-        <DynamicBreadcrumb />
+        {/* <DynamicBreadcrumb /> */}
         <h1 className="text-base sm:text-xl font-extrabold mb-4 text-gray-900">
           {categoryName} - مفردات الوحدة
         </h1>
@@ -33,13 +35,13 @@ export default async function VocabulariesPage({
               <span className="font-semibold"> العبارات : </span>
               <span className="font-semibold">{vocabulary.countPhrases}</span>
               <span className="font-semibold"> الإجمالي : </span>
-              <span className="font-semibold">{vItemDataArray.length}</span>
+              <span className="font-semibold">{vItemData.length}</span>
             </div>
           </CardContent>
         </Card>
         <Card className="w-full h-screen overflow-y-scroll">
           <CardContent>
-            <VocsTable vocs={vItemDataArray} />
+            <VocsTable vocs={vItemData} />
           </CardContent>
         </Card>
       </div>
