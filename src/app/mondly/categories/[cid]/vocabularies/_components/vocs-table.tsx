@@ -8,31 +8,36 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { IVocabulary } from "@/app/mondly/_types/vocabulary";
+
 import { Music, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SolutionOrAlternate } from "@/app/mondly/_types/data-services";
+
+interface IVocabulary {
+  id: number;
+  key: string;
+  sols: SolutionOrAlternate[];
+}
+
 interface VocsTableProps {
   vocs: IVocabulary[];
 }
 export function VocsTable({ vocs }: VocsTableProps) {
   const [isPlaying, setIsPlaying] = React.useState(false);
-   
+
   const playAudio = (audioUrl: string) => {
-    if (isPlaying ) {
+    if (isPlaying) {
       return;
     }
     const audio = new Audio(audioUrl);
     setIsPlaying(true);
     audio.play();
     audio.onended = () => setIsPlaying(false);
-   
   };
- 
 
   const public_url = process.env.NEXT_PUBLIC_URL;
   return (
     <div className="flex flex-col gap-4 w-full">
-      
       <Table className="w-full border">
         <TableHeader className="bg-gray-100 rounded-xl">
           <TableRow>
@@ -53,12 +58,9 @@ export function VocsTable({ vocs }: VocsTableProps) {
                 <Button
                   variant="outline"
                   className="w-12 h-12 bg-blue-500 text-white rounded-full text-center"
-                
                   disabled={isPlaying}
                   onClick={() =>
-                    playAudio(
-                      `${public_url}/media/mondly/audios/${voc.key}`
-                    )
+                    playAudio(`${public_url}/media/mondly/audios/${voc.key}`)
                   }
                 >
                   <Play className="w-4 h-4" />
