@@ -16,7 +16,7 @@ export const mainNavItems: NavItem[] = [
     href: "/etc",
     items: [
       { title: "Start", href: "/etc" },
-      { title: "AI", href: "/etc/ai" },
+     
       { title: "Course Book", href: "/etc/course-book" },
       { title: "Alphabets", href: "/etc/alphabets" },
       { title: "Grammar", href: "/etc/grammar" },
