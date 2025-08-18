@@ -1,19 +1,22 @@
 import { Suspense } from "react";
 import Loading from "@/app/loading";
 import { DynamicBreadcrumb } from "@/app/mondly/_components/dynamic-breadcrumb";
-import { getVocabularies, getCategoryName } from "./_components/services";
+import { getVocabulyData } from "./_components/services";
 import { Card, CardContent } from "@/components/ui/card";
 // get vocabularies from the database
 import { VocsTable } from "./_components/vocs-table";
-interface VocabulariesPageProps {
-  searchParams: Promise<{ cid: string }>;
-}
+
 export default async function VocabulariesPage({
-  searchParams,
-}: VocabulariesPageProps) {
-  const { cid } = await searchParams;
-  const categoryName = await getCategoryName(cid);
-  const { vocabulary, vItemDataArray } = await getVocabularies({ cid });
+  params,
+}: {
+  params: Promise<{ vid: string }>;
+}) {
+  const {vid} = (await params) ;
+
+  console.log("vid",  vid);
+  const { categoryName, vocabulary, vItemDataArray } = await getVocabulyData(
+    vid
+  );
 
   return (
     <Suspense fallback={<Loading />}>

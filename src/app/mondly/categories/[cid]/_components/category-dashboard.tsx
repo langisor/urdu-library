@@ -47,7 +47,7 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
                     100
                 )
           }
-          link={`${pathname}/vocabularies?cid=${vocabularyData.vocabulary.id}`}
+          link={`${pathname}/vocabularies?vid=${vocabularyData.vocabulary.id}`}
           isVocabularyCard={true}
         />
 

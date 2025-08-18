@@ -1,37 +1,34 @@
-import {queryClient} from "@/lib/postgres-client";
-import {Row} from "postgres";
-interface GetVocabulariesProps {
- cid: string;
-}
+import { queryClient } from "@/lib/postgres-client";
+import { Row } from "postgres";
+ import {IVocabulary} from "@/app/mondly/_types/vocabulary";
 
-export async function getVocabularies({ cid }: GetVocabulariesProps) {
- let vocabulary: Row[] = [];
- vocabulary = await queryClient`
-   SELECT * FROM "Vocabulary" WHERE "id" = ${cid};
+export async function getVocabulyData( vid: string) {
+   
+  const vocNo = Number(vid);
+  console.log("vocNo", vocNo);
+  const vocabulary = await queryClient`
+   SELECT * FROM "Vocabulary" WHERE "id" = ${vocNo};
  `;
- // get vItems
- const vItems = vocabulary[0].vItems as number[];
- const vItemDataArray: Row[] = [];
- const column = ["vItemData"];
- for (const vItem of vItems) {
-   const vItemData = await queryClient`
-     SELECT ${queryClient(column)} FROM "Item" WHERE "id" = ${vItem};
-   `;
-   vItemDataArray.push(vItemData[0]);
+  const [categoryID, vItems] =[vocabulary[0].categoryID,vocabulary[0].vItems];
+//  get the category name 
+const categoryName = await queryClient`
+   SELECT "name" FROM "Category" WHERE "id" = ${categoryID};
+ `;
+ console.log("categoryName", categoryName); 
+//  get the vItems 
+ const vItemDataResult:any[] = [];
+ for(const vItem of vItems){
+  vItemDataResult.push(await queryClient`SELECT * FROM "VocabularyItem" WHERE "id" = ${vItem};`);
  }
-  // extract vItemData 
-  const extractedVItemDataArray = vItemDataArray.map((vItemData) => vItemData.vItemData);
- return { vocabulary: vocabulary[0], vItemDataArray: extractedVItemDataArray };
+ const vItemDataArray = vItemDataResult.map((row:any) => row.vItemData);
+console.log("vItemDataArray", vItemDataArray);
+ const vocData={
+  categoryName:categoryName[0].name,
+  vocabulary:vocabulary[0],
+  vItemDataArray:vItemDataArray
+ }
+return vocData;
 }
+   
 
-export async function getCategoryName(cid:string){
- // first, get the category id (category) from Vocabulary table
- const categoryId=await queryClient`
-   SELECT "category" FROM "Vocabulary" WHERE "id" = ${cid};
- `;
- // second, get the category name from Category table
- const categoryName=await queryClient`
-   SELECT "name" FROM "Category" WHERE "id" = ${categoryId[0].category};
- `;
- return categoryName[0].name;
-}
+ 
