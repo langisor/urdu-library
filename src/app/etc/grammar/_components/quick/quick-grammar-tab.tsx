@@ -24,7 +24,6 @@ interface AdjectiveItem {
 }
 type TTab = "introduction" | "nouns" | "verbs" | "modifiers" | "connectors";
 
-
 export default function QuickGrammarTab() {
   // State to manage the active tab
   const [activeTab, setActiveTab] = useState<TTab>("introduction");
@@ -39,9 +38,7 @@ export default function QuickGrammarTab() {
   // State for the Adjectives section
   const [adjectives, setAdjectives] =
     useState<Record<string, AdjectiveItem>>(adjectivesData);
-  const [selectedAdjective, setSelectedAdjective] = useState<string>(
-    "اچھا"
-  );
+  const [selectedAdjective, setSelectedAdjective] = useState<string>("اچھا");
 
   // Function to handle tab changes
   const handleTabChange = (tabName: string) => {
@@ -83,10 +80,6 @@ export default function QuickGrammarTab() {
 
   return (
     <>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
       <div className="max-w-6xl mx-auto p-4 md:p-8">
         <header className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-amber-700 mb-2">
