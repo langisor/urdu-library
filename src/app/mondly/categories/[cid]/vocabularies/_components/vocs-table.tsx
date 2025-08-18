@@ -28,6 +28,7 @@ export function VocsTable({ vocs }: VocsTableProps) {
   const [targetFont, setTargetFont] = React.useState<
     "naskh-text" | "nastaleeq-text"
   >("naskh-text");
+  const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
   React.useEffect(() => {
     // Set the target font based on the user's preference
@@ -49,18 +50,31 @@ export function VocsTable({ vocs }: VocsTableProps) {
 
   // Function to play audio
   const playAudio = (audioUrl: string) => {
-    console.log("Playing audio:", audioUrl);
-    // url path
-    const path = getCourseAudio(audioUrl);
-    // If audio is already playing, do not play again
+    // Check if audio is already playing
     if (isPlaying) {
+      console.warn("Audio is already playing.");
       return;
     }
-    const audio = new Audio(path);
+    const audioSrc = getCourseAudio(audioUrl);
+    console.log("Audio source:", audioSrc);
+    audioRef.current = new Audio(audioSrc);
+    audioRef.current.play();
     setIsPlaying(true);
-    audio.play();
-    audio.onended = () => setIsPlaying(false);
+    audioRef.current.onended = () => {
+      setIsPlaying(false);
+    };
   };
+  // Ensure audio is paused when component unmounts
+  React.useEffect(() => {
+    console.log("Cleaning up audio player");
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+        setIsPlaying(false);
+      }
+    };
+  }, []);
 
   return (
     <div className="flex flex-col gap-4 w-full">

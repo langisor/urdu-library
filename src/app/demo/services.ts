@@ -25,20 +25,7 @@ export interface GetQuizzesProps {
  lessonID?: string;
 }
 
-/**
-* Get quizzes from the database
-* @param {GetQuizzesProps} props - The props object
-* @param {string} props.quizID - The quiz ID
-* @param {TQuizType} props.type - The quiz type
-* @param {number} props.limit - The limit of quizzes
-* @param {string} props.lessonID - The lesson ID
-* @description If quizID is provided, return the quiz with the given ID.
-* @description If lessonID is provided, return all quizzes for the given lesson.
-* @description If type is provided, return 5 quizzes for the given type (if limit is not provided) or limit number of quizzes for the given type.
-* @description If no filter is provided, return all quizzes.
-* @returns {Promise<RowList>} - The quizzes
-*/
-
+ 
 export async function getQuizzes({
  type,
  limit = 5,
