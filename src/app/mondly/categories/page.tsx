@@ -17,7 +17,7 @@ async function getCategories() {
   const categories = await queryClient`
   SELECT * FROM "Category"
   `;
-  return categories[0] as CategoryItem[];
+  return categories  as unknown as CategoryItem[];
 }
 
 export default async function CategoriesPage() {
@@ -26,6 +26,7 @@ export default async function CategoriesPage() {
     <div className="flex flex-col gap-4">
        {/* <DynamicBreadcrumb  /> */}
       <CategoriesCards categories={categories} />
+      {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
     </div>
   );
 }
