@@ -28,11 +28,11 @@ async function getLessonData(lessonID: number) {
 }
 
  
-export async function generateStaticParams() {
-  return lesson_names.map((item) => ({
-    lid: item.id.toString(),
-  }));
-}
+// export async function generateStaticParams() {
+//   return lesson_names.map((item) => ({
+//     lid: item.id.toString(),
+//   }));
+// }
 
 export default async function Lesson({
   params,
