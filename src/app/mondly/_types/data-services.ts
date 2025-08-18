@@ -241,7 +241,7 @@ export type VocabularyData = {
 /**
  * Defines the structure for a learning category.
  */
-export type CategoryItem = {
+export type CategoryItem ={
   id: number;
   i: number;
   positionIndex: number;

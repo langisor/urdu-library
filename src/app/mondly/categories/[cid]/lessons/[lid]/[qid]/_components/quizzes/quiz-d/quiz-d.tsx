@@ -25,10 +25,8 @@ export function QuizD({ quiz }: { quiz: Quiz }) {
   const [isComplete, setIsComplete] = React.useState(false);
 
   React.useEffect(() => {
-    console.log("useEffect");
   }, []);
   const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
-    console.log("start dragging", event.currentTarget.id);
     event.dataTransfer.setData("text/plain", event.currentTarget.id);
 
     setDragging(event.currentTarget.id);
@@ -36,7 +34,6 @@ export function QuizD({ quiz }: { quiz: Quiz }) {
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
-    console.log("dragging over: ", event.currentTarget.id);
   };
 
   const handleDragEnd = (event: React.DragEvent<HTMLDivElement>) => {
@@ -44,11 +41,9 @@ export function QuizD({ quiz }: { quiz: Quiz }) {
     setDragging(null);
     // suspense
     setTimeout(() => {
-      console.log("suspense from handleDragEnd");
     }, 1000);
   };
   const handleNext = () => {
-    console.log("handleNext");
     
   };
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
@@ -63,10 +58,8 @@ export function QuizD({ quiz }: { quiz: Quiz }) {
   };
 
   const handleShuffle = () => {
-     console.log("handleShuffle");
   };
   const renderCards = () => {
-   console.log("renderCards"); 
   }
 
   return (

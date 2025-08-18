@@ -16,7 +16,6 @@ async function getCategories() {
 
 export default async function CategoriesPage() {
   const categories = await getCategories();
-  // console.log("categories", categories);
   return (
     <div className="flex flex-col gap-4">
        {/* <DynamicBreadcrumb  /> */}

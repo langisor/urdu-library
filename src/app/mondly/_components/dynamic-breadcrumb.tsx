@@ -117,7 +117,6 @@ function isStringInteger(str: string): boolean {
 function getCategoryName(id: number) {
   const actualIndex = id - 1;
   const categoryName = namesData.data[actualIndex].category.name;
-  console.log("categoryName", categoryName)
   return categoryName || "";
 }
 

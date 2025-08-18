@@ -5,7 +5,6 @@ export default async function DialoguesPage({
   params: Promise<{ cid: string }>;
 }) {
   const { cid } = await params;
-  console.log("cid", cid);
   return (
     <div className="flex flex-col gap-4">
       <DynamicBreadcrumb />

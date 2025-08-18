@@ -1,7 +1,5 @@
-"use client";
-import { usePathname } from "next/navigation";
 import LessonCard from "./lesson-card";
-import { LessonItem, VocabularyData } from "@/app/mondly/_types/data-services";
+import { LessonItem, Vocabulary } from "@/app/mondly/_types/data-services";
 import {
   Card,
   CardContent,
@@ -12,11 +10,10 @@ import {
 import { Link } from "lucide-react";
 interface CategoryDashboardProps {
   lessonsData: LessonItem[];
-  vocabularyData: VocabularyData;
+  vocabularyData: Vocabulary;
 }
 export default function CategoryDashboard(data: CategoryDashboardProps) {
   const { lessonsData, vocabularyData } = data;
-  const pathname = usePathname();
   return (
     <div className="p-8 bg-gray-100 min-h-screen" dir="rtl">
       {/* Hero Section */}
@@ -33,21 +30,19 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
         {/* Render Vocabulary Card with a unique style */}
         <LessonCard
-          key={vocabularyData.vocabulary.id}
-          id={vocabularyData.vocabulary.id}
+          key={vocabularyData.id}
+          id={vocabularyData.id}
           title={"المفردات الرئيسية"}
-          description={`تحتوي هذه المجموعة على ${vocabularyData.vocabulary.countWords} كلمة و ${vocabularyData.vocabulary.countPhrases} عبارة.`}
-          status={vocabularyData.vocabulary.done ? "مكتمل" : "قيد التقدم"}
+          description={`تحتوي هذه المجموعة على ${vocabularyData.countWords} كلمة و ${vocabularyData.countPhrases} عبارة.`}
+          status={vocabularyData.done ? "مكتمل" : "قيد التقدم"}
           progress={
-            vocabularyData.vocabulary.done
+            vocabularyData.done
               ? 100
               : Math.floor(
-                  (vocabularyData.vocabulary.countDone /
-                    vocabularyData.vocabulary.countItem) *
-                    100
+                  (vocabularyData.countDone / vocabularyData.countItem) * 100
                 )
           }
-          link={`${pathname}/vocabularies?vid=${vocabularyData.vocabulary.id}`}
+          link={`/mondly/categories/${vocabularyData.id}/vocabularies?vid=${vocabularyData.id}`}
           isVocabularyCard={true}
         />
 
@@ -72,19 +67,19 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
               description={description}
               status={status}
               progress={progress}
-              link={`${pathname}/lessons/${lesson.id}`}
+              link={`/mondly/categories/${lesson.categoryID}/lessons/${lesson.id}`}
             />
           );
         })}
         {/* render fake Dialogue Card */}
         <LessonCard
-          key={vocabularyData.vocabulary.name + "dialogue"}
-          id={vocabularyData.vocabulary.id}
+          key={vocabularyData.name + "dialogue"}
+          id={vocabularyData.id}
           title={"المحادثة"}
           description={"TODO: add dialogues"}
-          status={vocabularyData.vocabulary.done ? "مكتمل" : "قيد التقدم"}
+          status={vocabularyData.done ? "مكتمل" : "قيد التقدم"}
           progress={0}
-          link={`${pathname}/vocabularies?cid=${vocabularyData.vocabulary.id}`}
+          link={`/mondly/categories/${vocabularyData.id}/vocabularies?did=${vocabularyData.id}`}
           isVocabularyCard={true}
         />
       </div>

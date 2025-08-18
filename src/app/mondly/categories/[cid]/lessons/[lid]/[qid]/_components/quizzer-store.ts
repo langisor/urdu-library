@@ -24,7 +24,6 @@ export const useQuizzerStore = () => {
 };
 export const setQuizzerStore = (store: IQuizzerStore) => {
   quizzerStore.set(store);
-  console.log("setQuizzerStore", store);
 };
  
 export const resetQuizzerStore = () => {

@@ -8,13 +8,11 @@ export async function getVocabulyData(vid: string) {
   )[0] as Vocabulary;
   //  get cat id
   const catId = vocabulary.categoryID;
-  console.log("catId", catId);
   const catName = (
     await queryClient`
   SELECT name FROM "Category" WHERE id = ${catId}
   `
   )[0] as { name: string };
-  console.log("catName", catName);
   // get  vItemData
   const vItemIds = vocabulary.vItems;
   const vItemDataArray = [];
@@ -26,10 +24,8 @@ export async function getVocabulyData(vid: string) {
     )[0].vItemData as VocabularyItem;
     vItemDataArray.push(vItemData);
   }
-  console.log("vItemDataArray", vItemDataArray);
   // extract vItemData from vItemDataArray
   const vItemData = vItemDataArray.map((item) => item);
-  console.log("vItemData", vItemData);
 
   return {
     categoryName: catName.name,

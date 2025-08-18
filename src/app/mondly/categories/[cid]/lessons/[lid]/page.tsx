@@ -1,7 +1,6 @@
-import * as React from "react";
-import { promises } from "fs";
-import path from "path";
-import { LessonData } from "@/app/mondly/_types/data-services";
+import { queryClient } from "@/lib/postgres-client";
+import { LessonItem, Quiz } from "@/app/mondly/_types/data-services";
+import {Button} from "@/components/ui/button";
 const baseLessonsPath = "src/app/mondly/_data/Lessons/";
 import { Suspense } from "react";
 import Loading from "@/app/loading";
@@ -9,83 +8,93 @@ import { DynamicBreadcrumb } from "@/app/mondly/_components/dynamic-breadcrumb";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-/**
- * Get lesson data include its quizzes
- * @param lessonID  lesson id as number
- *
- */
+import lesson_names from "@/app/mondly/_data/lesson-names.json";
+
 async function getLessonData(lessonID: number) {
-  const filepath = path.join(
-    process.cwd(),
-    baseLessonsPath,
-    `${lessonID}.json`
-  );
-  const data = await promises.readFile(filepath, "utf-8");
-  const parsedData = JSON.parse(data) as LessonData;
-  return parsedData;
+  const lesson = (
+    await queryClient`
+    SELECT * FROM "Lesson" WHERE "id" = ${lessonID}
+    `
+  )[0] as LessonItem;
+  // get quizzes ids
+  const quizzesIds = lesson.quizzes as number[];
+  const quizzesData: Quiz[] = [];
+  for (const quizId of quizzesIds) {
+    const quiz = await queryClient`
+      SELECT * FROM "Quiz" WHERE "id" = ${quizId}
+      `;
+    quizzesData.push(quiz[0] as Quiz);
+  }
+
+  return { lesson, quizzesData };
 }
+
+/**
+ *
+ * @param param0 generateStaticParams
+ * @returns
+ */
+export async function generateStaticParams() {
+  return lesson_names.map((item) => ({
+    lid: item.id.toString(),
+  }));
+}
+
 export default async function Lesson({
   params,
 }: {
   params: Promise<{ lid: string }>;
 }) {
   const { lid } = await params;
-  const lessonData = await getLessonData(Number(lid));
-  const quizzes = lessonData.quizzes;
+  const { lesson, quizzesData } = await getLessonData(Number(lid));
   return (
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col gap-4">
-        <DynamicBreadcrumb />
+        {/* <DynamicBreadcrumb /> */}
         <Card>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
               <p className="text-lg font-semibold">
-                Category ID: {lessonData.lesson.categoryID}
+                Category ID: {lesson.categoryID}
+              </p>
+              <p className="text-lg font-semibold">Lesson ID: {lesson.id}</p>
+              <p className="text-lg font-semibold">
+                Lesson Name: {lesson.name}
               </p>
               <p className="text-lg font-semibold">
-                Lesson ID: {lessonData.lesson.id}
+                Quiz Count: {lesson.countQuiz}
               </p>
               <p className="text-lg font-semibold">
-                Lesson Name: {lessonData.lesson.name}
+                Word Count: {lesson.countWords}
               </p>
               <p className="text-lg font-semibold">
-                Quiz Count: {lessonData.lesson.countQuiz}
+                Phrase Count: {lesson.countPhrases}
+              </p>
+              <p className="text-lg font-semibold">Done: {lesson.done}</p>
+              <p className="text-lg font-semibold">Stars: {lesson.stars}</p>
+              <p className="text-lg font-semibold">
+                Difficulty: {lesson.difficulty}
               </p>
               <p className="text-lg font-semibold">
-                Word Count: {lessonData.lesson.countWords}
-              </p>
-              <p className="text-lg font-semibold">
-                Phrase Count: {lessonData.lesson.countPhrases}
-              </p>
-              <p className="text-lg font-semibold">
-                Done: {lessonData.lesson.done}
-              </p>
-              <p className="text-lg font-semibold">
-                Stars: {lessonData.lesson.stars}
-              </p>
-              <p className="text-lg font-semibold">
-                Difficulty: {lessonData.lesson.difficulty}
-              </p>
-              <p className="text-lg font-semibold">
-                Count Done: {lessonData.lesson.countDone}
+                Count Done: {lesson.countDone}
               </p>
             </div>
           </CardContent>
         </Card>
-      
-            {quizzes.map((quiz) => (
-              <div key={quiz.id} className="mb-4 flex flex-col gap-4">
-                <Badge
-                  variant="outline"
-                  className="text-lg font-semibold text-center bg-blue-500 text-white"
-                >
-                  {quiz.type}
-                </Badge>
-                <JsonViewerComponent data={quiz} />
-              </div>
-            ))}
-       
+
+        {quizzesData.map((quiz) => (
+          <div key={quiz.id} className=" w-full h-full mb-4 flex flex-col gap-4">
+            <Badge
+              variant="outline"
+              className="text-lg font-semibold text-center bg-blue-500 text-white"
+            >
+              {quiz.type}
+            </Badge>
+            <JsonViewerComponent data={quiz} />
+          </div>
+        ))}
       </div>
     </Suspense>
   );
 }
+
