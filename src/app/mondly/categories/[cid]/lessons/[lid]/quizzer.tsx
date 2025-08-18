@@ -9,15 +9,15 @@ import {
   SheetDescription,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import * as QUIZZES from "./[qid]/_components/quizzes";
+import * as QUIZZES from "./_components/quizzes";
 import * as React from "react";
 
-import { ResultCard } from "./[qid]/_components/cards/result-card";
+import { ResultCard } from "./_components/cards/result-card";
 import { Button } from "@/components/ui/button";
 
 import { useHookstate } from "@hookstate/core";
 import { Badge } from "@/components/ui/badge";
-import { quizzerStore } from "./[qid]/_components/quizzer-store";
+import { quizzerStore } from "./_components/quizzer-store";
 
 export default function Quizzer({ quizzes }: { quizzes: Quiz[] }) {
   // hooks

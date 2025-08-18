@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getAudioUrl, getCourseAudio } from "@/app/mondly/_lib/helpers";
+import {  getCourseAudio } from "@/app/mondly/_lib/helpers";
 import { Music, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SolutionOrAlternate } from "@/app/mondly/_types/data-services";
@@ -75,7 +75,7 @@ export function VocsTable({ vocs }: VocsTableProps) {
       }
     };
   }, []);
-
+  console.log("VocsTable rendered with vocs:", vocs);
   return (
     <div className="flex flex-col gap-4 w-full">
       <div className="flex  mb-4 border border-gray-200 p-2 rounded-lg w-fit">
