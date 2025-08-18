@@ -9,11 +9,6 @@ import {
 } from "@/app/mondly/_types/data-services";
 import cat_names from "@/app/mondly/_data/category-names.json";
 
-// import { JsonViewerComponent } from "@/components/json-viewer";
-import { DynamicBreadcrumb } from "../../_components/dynamic-breadcrumb";
-const baseLessonsPath = "src/app/mondly/_data/Lessons/";
-const baseVocabularyPath = "src/app/mondly/_data/Vocabularies/";
-
 async function getCategoryLessons(_cid: number) {
   const category = await queryClient`
    SELECT * FROM "Category" WHERE id = ${_cid}
