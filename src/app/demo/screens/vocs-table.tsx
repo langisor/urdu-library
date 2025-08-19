@@ -19,11 +19,11 @@ import { getCourseAudio } from "@/app/mondly/_lib/helpers";
 import { Music, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UrduIcon } from "@/assets/custom-icons/urdu-icon";
-import { VocsQuiz } from "./vocs-quiz";
-import { Vocabulary, VocabularyItem } from "./types";
+import { HomeScreen } from "./home-screen";
+import { QuizItem } from "./utils";
 
 interface VocsTableProps {
-  vocs: VocabularyItem[];
+  vocs: QuizItem[];
 }
 export function VocsTable({ vocs }: VocsTableProps) {
   const [isPlaying, setIsPlaying] = React.useState(false);
@@ -83,7 +83,7 @@ export function VocsTable({ vocs }: VocsTableProps) {
   }, []);
   // console.log("VocsTable rendered with vocs:", vocs);
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <div className="flex flex-col gap-4 w-full" dir="rtl">
       <div className="flex  mb-4 border border-gray-200 p-2 rounded-lg w-fit">
         <Button
           variant="outline"
@@ -108,6 +108,7 @@ export function VocsTable({ vocs }: VocsTableProps) {
           </SheetTrigger>
           <SheetContent side="top" className="w-screen h-full">
             <SheetTitle className="text-lg font-semibold mb-4">Quiz</SheetTitle>
+            <HomeScreen vocabularies={vocs} />
             <SheetClose asChild>
               <Button
                 variant="outline"
@@ -117,13 +118,11 @@ export function VocsTable({ vocs }: VocsTableProps) {
                 Close
               </Button>
             </SheetClose>
-            <div className="flex flex-col items-center justify-center h-full">
-              <VocsQuiz vocs={vocs} />
-            </div>
+            <div className="flex flex-col items-center justify-center h-full"></div>
           </SheetContent>
         </Sheet>
       </div>
-      <Table className="w-full border text-md sm:text-lg">
+      <Table className="w-full border text-lg sm:text-xl">
         <TableHeader className="bg-gray-100 rounded-xl">
           <TableRow>
             <TableHead className="text-center">المفردة</TableHead>
