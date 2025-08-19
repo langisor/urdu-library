@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Loading from "@/app/loading";
 import { getVocabulyData } from "./_components/services";
 import { Card, CardContent } from "@/components/ui/card";
- 
+import { Vocabulary,VocabularyItem } from "./_components/types";
 import { VocsTable } from "./_components/vocs-table";
 
 interface Props {
@@ -17,7 +17,7 @@ export default async function VocabulariesPage({
   const cid = (await params).cid;
   const vid = (await searchParams).vid;
   
-  const { categoryName, vocabulary, vItemData } = await getVocabulyData(vid);
+  const { categoryName, vocabulary, vItemData } = await getVocabulyData(vid) 
 
   return (
     <Suspense fallback={<Loading />}>

@@ -1,4 +1,4 @@
-import { IVocabulary } from "./types";
+import { IVocabulary, VocabularyItem } from "./types";
 export const shuffleArray = <T extends any[]>(array: T): T => {
     let currentIndex = array.length, randomIndex;
 
@@ -19,7 +19,7 @@ export const shuffleArray = <T extends any[]>(array: T): T => {
 };
 
 // Helper function to generate a set of unique random options
-export const getFourRandomOptions = (correctItem: string, allItems: IVocabulary[]): string[] => {
+export const getFourRandomOptions = (correctItem: string, allItems: VocabularyItem[]): string[] => {
     const options = new Set<string>();
     options.add(correctItem);
 

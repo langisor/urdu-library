@@ -1,5 +1,5 @@
 import { queryClient } from "@/lib/postgres-client";
-import { Vocabulary, VocabularyItem } from "@/app/mondly/_types/data-services";
+import { Vocabulary,VocabularyItem } from "./types";
 export async function getVocabulyData(vid: string) {
   const vocabulary = (
     await queryClient`

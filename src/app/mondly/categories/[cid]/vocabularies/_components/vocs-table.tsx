@@ -1,6 +1,13 @@
 "use client";
 import * as React from "react";
 import {
+  Sheet,
+  SheetContent,
+  SheetClose,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
   Table,
   TableBody,
   TableCell,
@@ -8,26 +15,24 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {  getCourseAudio } from "@/app/mondly/_lib/helpers";
+import { getCourseAudio } from "@/app/mondly/_lib/helpers";
 import { Music, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SolutionOrAlternate } from "@/app/mondly/_types/data-services";
 import { UrduIcon } from "@/assets/custom-icons/urdu-icon";
-
-interface IVocabulary {
-  id: number;
-  key: string;
-  sols: SolutionOrAlternate[];
-}
+import { VocsQuiz } from "./vocs-quiz";
+import { Vocabulary, VocabularyItem } from "./types";
 
 interface VocsTableProps {
-  vocs: IVocabulary[];
+  vocs: VocabularyItem[];
 }
 export function VocsTable({ vocs }: VocsTableProps) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [targetFont, setTargetFont] = React.useState<
     "naskh-text" | "nastaleeq-text"
   >("naskh-text");
+  // reference to sheet status
+  const [sheetOpen, setSheetOpen] = React.useState(false);
+  // reference to audio element
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
   React.useEffect(() => {
@@ -87,6 +92,35 @@ export function VocsTable({ vocs }: VocsTableProps) {
           <UrduIcon className="ml-2 bg-blue-200" />
           {targetFont === "naskh-text" ? "Naskh Font" : "Nastaleeq Font"}
         </Button>
+        <span className="mx-2 text-gray-500">|</span>
+        <Sheet open={sheetOpen} onOpenChange={ setSheetOpen }>
+          <SheetTrigger asChild>
+            <Button
+              variant="outline"
+              className="text-sm text-gray-700 hover:bg-gray-100"
+            >
+              <span className="flex items-center justify-center">
+                <Music className="w-4 h-4 mr-1" />
+                أختبر نفسك
+              </span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="top" className="w-screen h-full">
+            <SheetTitle className="text-lg font-semibold mb-4">Quiz</SheetTitle>
+            <SheetClose asChild>
+              <Button
+                variant="outline"
+                className="absolute top-2 right-2 text-gray-700 hover:bg-gray-100"
+                onClick={() => setSheetOpen(false)}
+              >
+                Close
+              </Button>
+            </SheetClose>
+            <div className="flex flex-col items-center justify-center h-full">
+              <VocsQuiz vocs={vocs} />
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
       <Table className="w-full border text-md sm:text-lg">
         <TableHeader className="bg-gray-100 rounded-xl">
