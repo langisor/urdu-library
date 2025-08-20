@@ -15,10 +15,10 @@ interface QuestionCardProps {
 
 export const QuestionCard: React.FC<QuestionCardProps> = ({
   question,
-  questionNumber,
-  totalQuestions,
-  onAnswer,
-  onNext,
+  questionNumber, // Question number
+  totalQuestions, // Total number of questions
+  onAnswer, // Function to handle answer selection
+  onNext, // Function to handle next question
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
@@ -63,16 +63,26 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
       {/* Question Content */}
       <div className="p-8">
-        <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">
+        <h2
+          className="text-2xl font-semibold text-gray-800 mb-6 text-center"
+          dir="auto"
+        >
           {question.question}
         </h2>
 
         {/* Audio Player for audio questions */}
         {question.type === "audio-to-text" && (
-          <div className="mb-8">
+          <div
+            className="mb-8 flex items-center justify-center gap-4 p-2"
+            dir="auto"
+          >
+            <p className="text-gray-600 mb-2 text-xl">
+              {question.word.sols[0].text}
+            </p>
+
             <AudioPlayer
-              audioUrl={getCourseAudio(question.audioUrl!)}
-              text={question.word.sols[0].text}
+              audioUrl={question.audioUrl}
+              text={""}
               autoPlay={true}
             />
           </div>

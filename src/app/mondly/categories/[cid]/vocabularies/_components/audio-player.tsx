@@ -21,6 +21,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const [hasPlayed, setHasPlayed] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  console.log("audio-player: audioUrl", audioUrl);
   // Simulate audio since we don't have real audio files
   // const simulateAudio = () => {
   //   setIsPlaying(true);
@@ -92,12 +93,12 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           )}
         </Button>
 
-        {hasPlayed ? (
+        {  hasPlayed ? (
           <p className="text-sm text-gray-600 text-center border flex gap-2">
-            <span className="font-medium">{text}</span>
-            <span>
+            <span className="text-md">{text}</span>
+            {autoPlay ? <></> : <span>
               <BookCheck className="w-8 h-8" />
-            </span>
+            </span>}
           </p>
         ) : (
           <p className="text-xs text-gray-500">
@@ -131,7 +132,10 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
       ) : (
         <Play className="w-8 h-8 ml-1" />
       )}
-      {hasPlayed && <BookCheck className="w-8 h-8 ml-2" />}
+      {
+        // if audio not auto played then show book check icon when it has been played
+        !autoPlay && hasPlayed ? <BookCheck className="w-8 h-8 ml-2" /> : <></>
+      }
     </Button>
   );
 };
