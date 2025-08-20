@@ -1,0 +1,20 @@
+//  Global helpers
+const courseImageBasePath =  `${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/images/`
+const courseAudioBasePath = `${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/audios/`
+
+export const getCourseImage = (id: string | number) => {
+  return courseImageBasePath + id;
+};
+
+export const getCourseAudio = (
+  id: string | number,
+   
+) => {
+  return `${courseAudioBasePath}${id}`;
+};
+export const getAudioUrl = (
+  id: string | number,
+  audio_updated_at: string | number
+) => {
+  return `https://d13tz37rv54ob.cloudfront.net/ur/${id}?t=${audio_updated_at}`;
+};
