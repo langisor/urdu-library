@@ -22,16 +22,16 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Simulate audio since we don't have real audio files
-  const simulateAudio = () => {
-    setIsPlaying(true);
-    onPlay?.();
+  // const simulateAudio = () => {
+  //   setIsPlaying(true);
+  //   onPlay?.();
 
-    // Simulate audio duration
-    setTimeout(() => {
-      setIsPlaying(false);
-      setHasPlayed(true);
-    }, 2000);
-  };
+  //   // Simulate audio duration
+  //   setTimeout(() => {
+  //     setIsPlaying(false);
+  //     setHasPlayed(true);
+  //   }, 2000);
+  // };
 
   useEffect(() => {
     if (autoPlay && !hasPlayed) {

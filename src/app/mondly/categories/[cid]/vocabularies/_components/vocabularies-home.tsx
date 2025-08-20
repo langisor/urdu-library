@@ -96,13 +96,4 @@ export function VocabulariesHomePage({ vocs }: VocabulariesHomePageProps) {
 
 
 }
-
-
-{/* 
-      <div className="flex  mb-4 border border-gray-200 p-2 rounded-lg w-fit">
-        
-       
-       
-       
-      </div>
-       */}
+ 

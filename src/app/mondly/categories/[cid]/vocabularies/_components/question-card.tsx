@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Question } from '../_lib/types';
-import { AudioPlayer } from './audio-player';
-import { CheckCircle, XCircle } from 'lucide-react';
-
+import React, { useState } from "react";
+import { Question } from "../_lib/types";
+import { AudioPlayer } from "./audio-player";
+import { CheckCircle, XCircle } from "lucide-react";
+import { getCourseAudio } from "../_lib/helpers";
 interface QuestionCardProps {
   question: Question;
   questionNumber: number;
@@ -25,11 +25,11 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
   const handleAnswerSelect = (answer: string) => {
     if (selectedAnswer) return;
-    
+
     setSelectedAnswer(answer);
     setShowFeedback(true);
     onAnswer(answer);
-    
+
     setTimeout(() => {
       onNext();
       setSelectedAnswer(null);
@@ -48,10 +48,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             Question {questionNumber} of {totalQuestions}
           </span>
           <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-medium">
-            {question.type.replace('-', ' → ').toUpperCase()}
+            {question.type.replace("-", " → ").toUpperCase()}
           </div>
         </div>
-        
+
         {/* Progress bar */}
         <div className="w-full bg-white/20 rounded-full h-2">
           <div
@@ -68,10 +68,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </h2>
 
         {/* Audio Player for audio questions */}
-        {question.type === 'audio-to-text' && (
+        {question.type === "audio-to-text" && (
           <div className="mb-8">
             <AudioPlayer
-              audioUrl={question.audioUrl}
+              audioUrl={getCourseAudio(question.audioUrl!)}
               text={question.word.sols[0].text}
               autoPlay={true}
             />
@@ -79,19 +79,19 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         )}
 
         {/* Display source text for text-to-text questions */}
-        {question.type !== 'audio-to-text' && (
+        {question.type !== "audio-to-text" && (
           <div className="mb-8 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl text-center">
             <p className="text-2xl font-bold text-gray-800">
-              {question.type === 'arabic-to-urdu' 
-                ? question.word.sols[0].text 
-                : question.word.sols[1].text
-              }
+              {question.type === "arabic-to-urdu"
+                ? question.word.sols[0].text
+                : question.word.sols[1].text}
             </p>
-            {question.type === 'urdu-to-arabic' && question.word.sols[1].phonetic && (
-              <p className="text-sm text-gray-600 mt-2">
-                ({question.word.sols[1].phonetic})
-              </p>
-            )}
+            {question.type === "urdu-to-arabic" &&
+              question.word.sols[1].phonetic && (
+                <p className="text-sm text-gray-600 mt-2">
+                  ({question.word.sols[1].phonetic})
+                </p>
+              )}
           </div>
         )}
 
@@ -100,11 +100,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           {question.options.map((option, index) => {
             const isSelected = selectedAnswer === option;
             const isCorrectOption = option === question.correctAnswer;
-            
-            let buttonClass = "p-4 rounded-xl border-2 transition-all duration-300 text-left font-medium ";
-            
+
+            let buttonClass =
+              "p-4 rounded-xl border-2 transition-all duration-300 text-left font-medium ";
+
             if (!showFeedback) {
-              buttonClass += "border-gray-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md transform hover:-translate-y-1";
+              buttonClass +=
+                "border-gray-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md transform hover:-translate-y-1";
             } else if (isCorrectOption) {
               buttonClass += "border-green-500 bg-green-50 text-green-800";
             } else if (isSelected && !isCorrectOption) {
@@ -124,8 +126,12 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                   <span className="text-lg">{option}</span>
                   {showFeedback && (
                     <>
-                      {isCorrectOption && <CheckCircle className="w-6 h-6 text-green-600" />}
-                      {isSelected && !isCorrectOption && <XCircle className="w-6 h-6 text-red-600" />}
+                      {isCorrectOption && (
+                        <CheckCircle className="w-6 h-6 text-green-600" />
+                      )}
+                      {isSelected && !isCorrectOption && (
+                        <XCircle className="w-6 h-6 text-red-600" />
+                      )}
                     </>
                   )}
                 </div>
@@ -136,15 +142,27 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
         {/* Feedback */}
         {showFeedback && (
-          <div className={`mt-6 p-4 rounded-xl ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+          <div
+            className={`mt-6 p-4 rounded-xl ${
+              isCorrect
+                ? "bg-green-50 border border-green-200"
+                : "bg-red-50 border border-red-200"
+            }`}
+          >
             <div className="flex items-center space-x-2">
               {isCorrect ? (
                 <CheckCircle className="w-6 h-6 text-green-600" />
               ) : (
                 <XCircle className="w-6 h-6 text-red-600" />
               )}
-              <p className={`font-medium ${isCorrect ? 'text-green-800' : 'text-red-800'}`}>
-                {isCorrect ? 'Correct!' : `Incorrect. The correct answer is: ${question.correctAnswer}`}
+              <p
+                className={`font-medium ${
+                  isCorrect ? "text-green-800" : "text-red-800"
+                }`}
+              >
+                {isCorrect
+                  ? "Correct!"
+                  : `Incorrect. The correct answer is: ${question.correctAnswer}`}
               </p>
             </div>
             {question.word.sols[1].phonetic && (
