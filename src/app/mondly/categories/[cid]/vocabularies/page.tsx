@@ -27,7 +27,7 @@ async function getchVocabulariesData(vid: string) {
   `;
   const vocRowItemsData = [];
 
-  for (let item of vocObject.vItems) {
+  for (const  item of vocObject.vItems) {
     const data = await queryClient`
     select "vItemData" from "Item" where id=${item}
     `;
