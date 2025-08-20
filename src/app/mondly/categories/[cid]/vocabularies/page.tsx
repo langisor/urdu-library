@@ -105,7 +105,7 @@ function TestYourSelfButton({ vocs }: TestYourSelfButtonProps) {
         </Button>
       </SheetTrigger>
 
-      <SheetContent side="bottom" className="w-full h-full">
+      <SheetContent side="bottom" className="w-full h-full overflow-y-scroll">
         <SheetTitle className="sr-only"></SheetTitle>
         <SheetDescription className="sr-only"></SheetDescription>
         <VocabulariesQuizzer vocs={vocs} />
