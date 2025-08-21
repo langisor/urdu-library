@@ -59,7 +59,6 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     if (!isPlaying) {
       // simulateAudio();
       audioRef.current = new Audio(audioUrl);
-
       audioRef.current.play();
       setIsPlaying(true);
       audioRef.current.onended = () => {

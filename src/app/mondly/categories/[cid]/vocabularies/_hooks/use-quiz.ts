@@ -42,7 +42,7 @@ export const useQuiz = (words: QuizWord[]) => {
         question: "Listen to the audio and select the correct translation:",
         correctAnswer: urduText,
         options: generateRandomOptions(urduText, words),
-        audioUrl: `https://example.com/audio/${word.key}.mp3`, // Simulated URL
+        audioUrl: `/`, // Simulated URL
       });
 
       // Arabic to Urdu Question

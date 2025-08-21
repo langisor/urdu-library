@@ -1,93 +1,153 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
-export   function AudioPlayer({ src, autoPlay = false }: { src: string; autoPlay?: boolean }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  // Effect to set up event listeners on the audio element
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    // Handle when audio metadata is loaded
-    const handleLoadedMetadata = () => {
-      setLoaded(true);
-    };
-
-    // Handle when the audio playback ends
-    const handleEnded = () => {
-      setIsPlaying(false);
-    };
-
-    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-    audio.addEventListener("ended", handleEnded);
-
-    // Cleanup function to remove event listeners on unmount
-    return () => {
-      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-      audio.removeEventListener("ended", handleEnded);
-    };
-  }, [src, autoPlay]);
-
-  return (
-    <div className="flex items-center gap-2">
-      {isPlaying ? <PauseIcon /> : <PlayIcon />}
-      {loaded ? (
-        <LoadingIcon />
-      ) : (
-        <audio
-          ref={audioRef}
-          src={src}
-          playsInline
-          muted
-          autoPlay={autoPlay}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-          onLoadedData={() => setLoaded(true)}
-          onEnded={() => setIsPlaying(false)}
-        />
-      )}
-    </div>
-  );
+import React, { useState, useRef, useEffect } from "react";
+import { useIsMobile } from "../_hooks/use-mobile";
+import { Play, BookCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+interface AudioPlayerProps {
+  audioUrl?: string;
+  text: string;
+  autoPlay?: boolean;
+  onPlay?: () => void;
 }
 
-// SVG icons for play and pause buttons
-const PlayIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className="text-white"
-  >
-    <path d="M18.985 11.026L5.004 2.155C4.249 1.624 3 2.164 3 3.129V20.871C3 21.836 4.249 22.376 5.004 21.845L18.985 12.974C19.74 12.443 19.74 11.557 18.985 11.026Z" />
-  </svg>
-);
+export const AudioPlayer: React.FC<AudioPlayerProps> = ({
+  audioUrl,
+  text,
+  autoPlay = false,
+  onPlay,
+}) => {
+  const isMobile = useIsMobile();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasPlayed, setHasPlayed] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-const PauseIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className="text-white"
-  >
-    <rect x="6" y="5" width="4" height="14" rx="1.5" />
-    <rect x="14" y="5" width="4" height="14" rx="1.5" />
-  </svg>
-);
-const LoadingIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className="text-white"
-  >
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-  </svg>
-);
+  console.log("audio-player: audioUrl", audioUrl);
+  // Simulate audio since we don't have real audio files
+  // const simulateAudio = () => {
+  //   setIsPlaying(true);
+  //   onPlay?.();
+
+  //   // Simulate audio duration
+  //   setTimeout(() => {
+  //     setIsPlaying(false);
+  //     setHasPlayed(true);
+  //   }, 2000);
+  // };
+
+  useEffect(() => {
+    // check if iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    audioRef.current = new Audio(audioUrl);
+    if (isIOS) {
+      autoPlay = false;
+      audioRef.current.setAttribute("muted", "true");
+      audioRef.current.setAttribute("playsInline", "true");
+    }
+    if (autoPlay && !hasPlayed) {
+      // setTimeout(simulateAudio, 500);
+
+      audioRef.current.play();
+      setIsPlaying(true);
+      audioRef.current.onended = () => {
+        setIsPlaying(false);
+        setHasPlayed(true);
+      };
+    }
+  }, [autoPlay, hasPlayed]);
+
+  const handlePlay = () => {
+    if (!isPlaying) {
+      // simulateAudio();
+      audioRef.current = new Audio(audioUrl);
+      audioRef.current.play();
+      setIsPlaying(true);
+      audioRef.current.onended = () => {
+        setIsPlaying(false);
+        setHasPlayed(true);
+      };
+    }
+  };
+
+  //  Desktop
+  if (!isMobile)
+    return (
+      <div className="flex  items-center justify-center space-y-4 p-1 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+        <Button
+          onClick={handlePlay}
+          disabled={isPlaying}
+          className={`
+          flex items-center justify-center w-16 h-16 rounded-full transition-all duration-300 transform hover:scale-105
+          ${
+            isPlaying
+              ? "bg-orange-500 text-white cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl"
+          }
+        `}
+        >
+          {isPlaying ? (
+            <div className="flex space-x-1">
+              <div className="w-1 h-6 bg-white animate-pulse"></div>
+              <div
+                className="w-1 h-6 bg-white animate-pulse"
+                style={{ animationDelay: "0.2s" }}
+              ></div>
+              <div
+                className="w-1 h-6 bg-white animate-pulse"
+                style={{ animationDelay: "0.4s" }}
+              ></div>
+            </div>
+          ) : (
+            <Play className="w-8 h-8 ml-1" />
+          )}
+        </Button>
+
+        {hasPlayed ? (
+          <p className="text-sm text-gray-600 text-center border flex gap-2">
+            <span className="text-md">{text}</span>
+            {autoPlay ? (
+              <></>
+            ) : (
+              <span>
+                <BookCheck className="w-8 h-8" />
+              </span>
+            )}
+          </p>
+        ) : (
+          <p className="text-xs text-gray-500">
+            {isPlaying ? "Playing audio..." : "Click to play pronunciation"}
+          </p>
+        )}
+      </div>
+    );
+
+  // mobile
+  return (
+    <Button
+      onClick={handlePlay}
+      disabled={isPlaying}
+      className={`
+          flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-105
+          ${
+            isPlaying
+              ? "bg-orange-500 text-white cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl"
+          }
+        `}
+    >
+      {isPlaying ? (
+        <div className="flex space-x-1">
+          <div
+            className="w-1 h-1 bg-white animate-pulse"
+            style={{ animationDelay: "0.4s" }}
+          ></div>
+        </div>
+      ) : (
+        <Play className="w-8 h-8 ml-1" />
+      )}
+      {
+        // if audio not auto played then show book check icon when it has been played
+        !autoPlay && hasPlayed ? <BookCheck className="w-8 h-8 ml-2" /> : <></>
+      }
+    </Button>
+  );
+};

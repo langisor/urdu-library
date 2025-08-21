@@ -12,7 +12,7 @@ export interface Question {
   // audio-ar : user see urdu word and hears audio and has to choose the correct arabic  option
   // ar-ur: user see arabic word and has to choose the correct urdu option
   type: QuestionType;
-  queston:string;
+  question:string;
   text:string;
   options:string[];
   correctAnswer: string;

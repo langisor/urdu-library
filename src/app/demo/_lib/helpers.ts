@@ -21,3 +21,9 @@ export const getWords = (vocs: VocabularyItem[]) => {
   }
   return words;
 };
+
+
+export const getAudioUrl = ( src:string): string => {
+  return `media/mondly/audios/${src}`;
+};
+  

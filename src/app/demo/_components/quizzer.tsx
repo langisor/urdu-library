@@ -1,97 +1,61 @@
 "use client";
-
-import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-  SheetTrigger,
-  SheetDescription,
-  SheetClose,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { VocabularyItem, Quiz } from "../_lib/types";
+ 
+import { VocabularyItem } from "../_lib/types";
 import { useQuiz } from "../_hooks/useQuiz";
 import { useState } from "react";
-import { AudioPlayer } from "./audio-player";
+import { QuestionCard } from "./question-card";
+import { QuizResults } from "./question-results";
+import { QuizStart } from "./question-start";
+import { CustomAlert } from "./custom-alert";
 
 export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
-  const quizzes = useQuiz(vocs);
-  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
-  const [score, setScore] = useState<number>(0);
-  const [answered, setAnswered] = useState<boolean>(false);
-
-  const handleAnswer = (answer: string) => {
-    if (answer === quizzes[currentQuestion].question.correctAnswer) {
-      setScore(score + 1);
-    } else {
-      // delay 4 seconds and highlight the correct answer
-      setTimeout(() => {
-        setAnswered(true);
-      }, 4000);
-    }
-    setCurrentQuestion(currentQuestion + 1);
-  };
-  const renderQuestion = () => {
-    const question = quizzes[currentQuestion];
-    if (question.question.type === "audio-ur") {
+  const {
+    quizState,
+    startQuiz,
+    answerQuestion,
+    nextQuestion,
+    resetQuiz,
+    handleExitQuiz,
+  } = useQuiz(vocs);
+  const [showAlert, setShowAlert] = useState(true);
+  const renderCurrentView = () => {
+    if (quizState.completed) {
       return (
-        <Card>
-          <CardTitle>{question.question.text}</CardTitle>
-          <CardContent>
-            <AudioPlayer src={question.question.audioFile!} autoPlay={false} />
-            <ul>
-              {question.question.options.map((option) => (
-                <li key={option}>
-                  <Button
-                    onClick={() => handleAnswer(option)}
-                    className={
-                      answered && option !== question.question.correctAnswer
-                        ? "bg-red-600 text-white"
-                        : "bg-green-900 text-white"
-                    }
-                  >
-                    {option}
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+        <QuizResults
+          score={quizState.score}
+          totalQuestions={quizState.questions.length}
+          startTime={quizState.startTime}
+          onRestart={resetQuiz}
+        />
       );
     }
-    if (question.question.type === "ar-ur") {
-      return (
-        <Card>
-          <CardTitle> {question.question.text}</CardTitle>
-          <CardContent>
-            <ul>
-              {question.question.options.map((option) => (
-                <li key={option}>
-                  <Button onClick={() => handleAnswer(option)}>{option}</Button>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      );
-    }
-  };
 
+    if (quizState.questions.length === 0) {
+      return <QuizStart onStart={startQuiz} totalWords={vocs.length} />;
+    }
+
+    const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
+
+    return (
+      <div className="container">
+        <QuestionCard
+          question={currentQuestion}
+          questionNumber={quizState.currentQuestionIndex + 1}
+          totalQuestions={quizState.questions.length}
+          onAnswer={answerQuestion}
+          onNext={nextQuestion}
+        />
+        <CustomAlert
+          title="خروج من الاختبار"
+          description="هل انت متأكد من الخروج من الاختبار؟"
+          onConfirm={handleExitQuiz}
+        />
+      </div>
+    );
+  };
   return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button>ابدا التدرب على المفردات ({vocs.length})</Button>
-      </SheetTrigger>
-      <SheetContent
-        side="bottom"
-        className="w-full h-full overflow-y-scroll"
-        dir="rtl"
-      >
-        <SheetTitle>Quiz</SheetTitle>
-        <SheetDescription></SheetDescription>
-        {renderQuestion()}
-      </SheetContent>
-    </Sheet>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <div className="container mx-auto px-4 py-8">{renderCurrentView()}</div>
+    </div>
   );
 }
