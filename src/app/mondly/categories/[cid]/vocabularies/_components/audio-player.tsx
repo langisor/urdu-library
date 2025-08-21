@@ -27,14 +27,14 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   };
 
   useEffect(() => {
-    checkIfIOS();
+     
     audioRef.current = new Audio(audioUrl);
     if (checkIfIOS()) {
-      autoPlay = false;
+      audioRef.current.setAttribute("autoplay", "false")
       audioRef.current.setAttribute("muted", "true");
       audioRef.current.setAttribute("playsInline", "true");
     }
-    if (autoPlay && !hasPlayed) {
+    if (!hasPlayed) {
       // setTimeout(simulateAudio, 500);
 
       audioRef.current.play();
@@ -44,7 +44,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         setHasPlayed(true);
       };
     }
-  }, [ hasPlayed]);
+  }, [ ]);
 
   const handlePlay = () => {
     if (!isPlaying) {
