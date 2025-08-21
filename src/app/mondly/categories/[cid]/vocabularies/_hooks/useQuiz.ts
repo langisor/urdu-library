@@ -100,13 +100,6 @@ export function useQuiz(vocs: VocabularyItem[], count = 10) {
   // return quizzes;
   const questions = [...generateAudioUrQuestions(), ...generateArUrQuestions()];
 
-  const shuffledQuestions = shuffleArray(questions);
-  const quizzes = shuffledQuestions.map((question, index) => {
-    return {
-      id: `${question.type}-${index}`,
-      question: question,
-    };
-  });
   const startQuiz = () => {
     const questions = [
       ...generateAudioUrQuestions(),

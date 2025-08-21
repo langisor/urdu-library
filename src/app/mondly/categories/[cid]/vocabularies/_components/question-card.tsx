@@ -23,18 +23,18 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const { playCorrectTune, playIncorrectTune } = useTune();
+  const [tuneHasPlayed, setTuneHasPlayed] = useState(false);
 
   const handleAnswerSelect = (answer: string) => {
     if (selectedAnswer) return;
-
+    
     setSelectedAnswer(answer);
+    const isCorrect = answer === question.correctAnswer;
+    isCorrect ? playCorrectTune() : playIncorrectTune();
+    console.log("after selectedAnswer ", selectedAnswer);
+    setTuneHasPlayed(true);
     setShowFeedback(true);
-    if (answer === question.correctAnswer) {
-    setTimeout(()=>  playCorrectTune(),100);
-    }
-    if (answer !== question.correctAnswer) {
-    setTimeout(()=>  playIncorrectTune(),100);
-    }
+
     onAnswer(answer);
 
     setTimeout(() => {
@@ -45,7 +45,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   };
 
   const isCorrect = selectedAnswer === question.correctAnswer;
-
+  console.log("isCorrect", isCorrect);
+  console.log("selectedAnswer", selectedAnswer);
+   
   return (
     <div
       className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
@@ -119,7 +121,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             return (
               <button
                 key={index}
-                onClick={() => handleAnswerSelect(option)}
+                onClick={() => {
+                  handleAnswerSelect(option);
+                }}
                 disabled={showFeedback}
                 className={buttonClass}
               >

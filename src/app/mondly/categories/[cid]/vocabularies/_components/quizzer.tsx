@@ -28,6 +28,15 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
   } = useQuiz(vocs);
 
   const [showAlert, setShowAlert] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [terminateQuiz, setTerminateQuiz] = useState(false);
+
+  const handleTerminateQuiz = () => {
+    setOpen(false);
+    handleExitQuiz();
+    setTerminateQuiz(true);
+  };
+ 
   const renderCurrentView = () => {
     if (quizState.completed) {
       return (
@@ -58,7 +67,9 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
         <CustomAlert
           title="خروج من الاختبار"
           description="هل انت متأكد من الخروج من الاختبار؟"
-          onConfirm={handleExitQuiz}
+          onConfirm={() => {
+            handleTerminateQuiz();
+          }}
         />
       </div>
     );
@@ -66,7 +77,7 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button className="bg-blue-500 text-white hover:cursor-pointer">
             حفظ الكلمات - اختبر نفسك
@@ -79,9 +90,11 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
           {renderCurrentView()}
         </SheetContent>
       </Sheet>
-      <div className="container mx-auto px-4 py-8">
-        <VocsTable vocs={vocs} />
-      </div>
+      {terminateQuiz && (
+        <div className="container mx-auto px-4 py-8">
+          <VocsTable vocs={vocs} />
+        </div>
+      )}
     </div>
   );
 }

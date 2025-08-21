@@ -21,7 +21,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const [hasPlayed, setHasPlayed] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  console.log("audio-player: audioUrl", audioUrl);
+  // console.log("audio-player: audioUrl", audioUrl);
   // Simulate audio since we don't have real audio files
   // const simulateAudio = () => {
   //   setIsPlaying(true);
