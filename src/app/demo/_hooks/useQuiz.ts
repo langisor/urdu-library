@@ -3,11 +3,7 @@ import { useState, useEffect } from "react";
 import { Question, WordItem, VocabularyItem } from "../_lib/types";
 import { shuffleArray } from "../_lib/helpers";
 
-interface UseQuizProps {
-  vocs: VocabularyItem[];
-  length?: number;
-}
-const getWords = ({ vocs, length = 10 }: UseQuizProps): WordItem[] => {
+const getWords = (vocs: VocabularyItem[]) => {
   const words: WordItem[] = [];
   for (const voc of vocs) {
     words.push({
@@ -19,18 +15,25 @@ const getWords = ({ vocs, length = 10 }: UseQuizProps): WordItem[] => {
   }
   return words;
 };
-export function useQuiz({ vocs }: UseQuizProps) {
+
+export function useQuiz({
+  vocs,
+  length = 10,
+}: {
+  vocs: VocabularyItem[];
+  length?: number;
+}) {
   const [words, setWords] = useState<WordItem[]>([]);
 
   useEffect(() => {
-    const words = getWords({ vocs });
+    const words = getWords(vocs);
     setWords(words);
   }, [vocs]);
 
   // create a list of urdu optins except the correct answer
   const getUrduOptions = (w: WordItem) => {
     // create a list of all urdu values except the correct answer
-    const words = getWords({ vocs });
+    const words = getWords(vocs);
     const urduOptions: string[] = [];
     for (const word of words) {
       if (word.wordID !== w.wordID) {
@@ -43,7 +46,7 @@ export function useQuiz({ vocs }: UseQuizProps) {
   // create a list of arabic options except the correct answer
   const getArabicOptions = (w: WordItem) => {
     // create a list of all arabic values except the correct answer
-    const words = getWords({ vocs });
+    const words = getWords(vocs);
     const arabicOptions: string[] = [];
     for (const word of words) {
       if (word.wordID !== w.wordID) {

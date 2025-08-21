@@ -10,27 +10,45 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { WordItem } from "../_lib/types";
-
-interface QuizzerProps{
-    words:WordItem[];
+import { VocabularyItem } from "../_lib/types";
+import { useQuiz } from "../_hooks/useQuiz";
+interface QuizzerProps {
+  vocs: VocabularyItem[];
 }
-export function Quizzer({words}:QuizzerProps){
-    return(
-        <Sheet>
-            <SheetTrigger asChild>
-                <Button>Quiz</Button>
-            </SheetTrigger>
-            <SheetContent>
-                <SheetTitle>Quiz</SheetTitle>
-                <SheetDescription>
-                    <Card>
-                        <CardContent>
-                            
-                        </CardContent>
-                    </Card>
-                </SheetDescription>
-            </SheetContent>
-        </Sheet>
-    )
+export function Quizzer({ vocs }: QuizzerProps) {
+  const { questions } = useQuiz({ vocs });
+
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button>ابدا التدرب على المفردات ({vocs.length})</Button>
+      </SheetTrigger>
+      <SheetContent side="bottom" className="w-full h-full overflow-y-scroll">
+        <SheetTitle>Quiz</SheetTitle>
+        <SheetDescription></SheetDescription>
+        <Card>
+          <CardContent>
+            {questions.map((q) => (
+              <div key={q.id}>
+                <p>{q.queston}</p>
+                <ul>
+                  {q.options.map((option) => (
+                    <li key={option}>
+                      <span
+                        className={
+                          q.correctAnswer === option ? "text-green-500" : ""
+                        }
+                      >
+                        {option}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </SheetContent>
+    </Sheet>
+  );
 }
