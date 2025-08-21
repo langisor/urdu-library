@@ -30,8 +30,11 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     
     setSelectedAnswer(answer);
     const isCorrect = answer === question.correctAnswer;
-    isCorrect ? playCorrectTune() : playIncorrectTune();
-    console.log("after selectedAnswer ", selectedAnswer);
+    if(isCorrect){
+      playCorrectTune();
+    }else{
+      playIncorrectTune();
+    }
     setTuneHasPlayed(true);
     setShowFeedback(true);
 
@@ -45,8 +48,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   };
 
   const isCorrect = selectedAnswer === question.correctAnswer;
-  console.log("isCorrect", isCorrect);
-  console.log("selectedAnswer", selectedAnswer);
+ 
    
   return (
     <div
