@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Question } from "../_lib/types";
 import { AudioPlayer } from "./audio-player";
 import { CheckCircle, XCircle } from "lucide-react";
- 
+
 interface QuestionCardProps {
   question: Question;
   questionNumber: number;
@@ -19,9 +19,11 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   totalQuestions, // Total number of questions
   onAnswer, // Function to handle answer selection
   onNext, // Function to handle next question
+ 
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
+  
 
   const handleAnswerSelect = (answer: string) => {
     if (selectedAnswer) return;
@@ -37,10 +39,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     }, 2000);
   };
 
+ 
   const isCorrect = selectedAnswer === question.correctAnswer;
-
+ 
   return (
-    <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div
+      className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+      dir="rtl"
+    >
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
         <div className="flex justify-between items-center mb-4">
@@ -71,37 +77,18 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </h2>
 
         {/* Audio Player for audio questions */}
-        {question.type === "audio-to-text" && (
+        {question.type === "audio-ur" && (
           <div
             className="mb-8 flex items-center justify-center gap-4 p-2"
             dir="auto"
           >
-            <p className="text-gray-600 mb-2 text-xl">
-              {question.word.sols[0].text}
-            </p>
+            <p className="text-gray-600 mb-2 text-xl">{question.text}</p>
 
             <AudioPlayer
-              audioUrl={question.audioUrl}
+              audioUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/audios/${question.audioFile}`}
               text={""}
               autoPlay={true}
             />
-          </div>
-        )}
-
-        {/* Display source text for text-to-text questions */}
-        {question.type !== "audio-to-text" && (
-          <div className="mb-8 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl text-center">
-            <p className="text-2xl font-bold text-gray-800">
-              {question.type === "arabic-to-urdu"
-                ? question.word.sols[0].text
-                : question.word.sols[1].text}
-            </p>
-            {question.type === "urdu-to-arabic" &&
-              question.word.sols[1].phonetic && (
-                <p className="text-sm text-gray-600 mt-2">
-                  ({question.word.sols[1].phonetic})
-                </p>
-              )}
           </div>
         )}
 
@@ -149,7 +136,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             );
           })}
         </div>
-
+         
         {/* Feedback */}
         {showFeedback && (
           <div
@@ -175,11 +162,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                   : `Incorrect. The correct answer is: ${question.correctAnswer}`}
               </p>
             </div>
-            {question.word.sols[1].phonetic && (
-              <p className="text-sm text-gray-600 mt-2">
-                Pronunciation: {question.word.sols[1].phonetic}
-              </p>
-            )}
           </div>
         )}
       </div>

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Trophy, RotateCcw, Star, Clock, Target } from 'lucide-react';
-import {Card,CardContent,CardTitle} from "@/components/ui/card";
 
 interface QuizResultsProps {
   score: number;

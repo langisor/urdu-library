@@ -1,25 +1,29 @@
-//  Global helpers
-// const courseImageBasePath =  `${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/images/` //localhost:3000
-// const courseAudioBasePath = `${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/audios/` //localhost:3000
+import { VocabularyItem, WordItem } from "./types";
+ 
+export function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
-// production
-const courseImageBasePath =  `${process.env.NEXT_PUBLIC_URL}/media/mondly/images/` //https://urdu-library.netlify.app/
-const courseAudioBasePath = `${process.env.NEXT_PUBLIC_URL}/media/mondly/audios/` //https://urdu-library.netlify.app/
-
-
-export const getCourseImage = (id: string | number) => {
-  return courseImageBasePath + id;
+export const getWords = (vocs: VocabularyItem[]) => {
+  const words: WordItem[] = [];
+  for (const voc of vocs) {
+    words.push({
+      wordID: voc.wordID,
+      arabic: voc.sols[0].text,
+      urdu: voc.sols[1].text,
+      audioFile: voc.key,
+    });
+  }
+  return words;
 };
 
-export const getCourseAudio = (
-  id: string | number,
-   
-) => {
-  return `${courseAudioBasePath}${id}`;
+
+export const getAudioUrl = ( src:string): string => {
+  return `media/mondly/audios/${src}`;
 };
-export const getAudioUrl = (
-  id: string | number,
-  audio_updated_at: string | number
-) => {
-  return `https://d13tz37rv54ob.cloudfront.net/ur/${id}?t=${audio_updated_at}`;
-};
+  
