@@ -1,6 +1,7 @@
 import { queryClient } from "@/lib/postgres-client";
 import { Quizzer } from "./_components/quizzer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { BackToUnit } from "./_components/back-to-unit";
 
 async function getVocabularyItems(vid: number) {
   const vItems = await queryClient`
@@ -51,7 +52,9 @@ export default async function VocabularyPage({
         countWords={vocs.countWords || 0}
         countPhrases={vocs.countPhrases || 0}
         total={vocs.total || 0}
-      />
+      >
+        <BackToUnit />
+      </InfoCard>
       <Quizzer vocs={vocs.vocs} />
     </div>
   );
@@ -63,19 +66,22 @@ function InfoCard({
   countWords,
   countPhrases,
   total,
+  children,
 }: {
   categoryName: string;
   countItem: number;
   countWords: number;
   countPhrases: number;
   total: number;
+  children?: React.ReactNode;
 }) {
   return (
     <Card className="text-right" dir="rtl">
-      <CardHeader>
+      <CardHeader className="flex justify-start items-center">
         <h1 className="text-xl sm:text-2xl font-extrabold mb-4 mt-4 text-gray-900">
           مفردات الوحدة - {categoryName}
         </h1>
+        {children}
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-2 text-center underline">
