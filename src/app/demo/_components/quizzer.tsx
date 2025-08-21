@@ -7,7 +7,13 @@ import { QuestionCard } from "./question-card";
 import { QuizResults } from "./question-results";
 import { QuizStart } from "./question-start";
 import { CustomAlert } from "./custom-alert";
-
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetDescription,
+  SheetTitle,
+} from "@/components/ui/sheet";
 export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
   const {
     quizState,
@@ -35,9 +41,9 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
     }
 
     const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
-
+   
     return (
-      <div className="container">
+              <div className="container">
         <QuestionCard
           question={currentQuestion}
           questionNumber={quizState.currentQuestionIndex + 1}

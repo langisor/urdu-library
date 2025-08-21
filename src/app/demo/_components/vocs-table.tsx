@@ -1,38 +1,52 @@
-"use client";
-
-import * as React from "react";
-
-import { QuizWord } from "../_lib/types";
-import { useState, useEffect } from "react";
-import { AudioPlayer } from "./audio-player";
+"use client"
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
+ Table,
+ TableBody,
+ TableCell,
+ TableHead,
+ TableHeader,
+ TableRow,
 } from "@/components/ui/table";
-import { getCourseAudio } from "../_lib/helpers";
-import { Music, Play, Volume2 } from "lucide-react";
+import { VocabularyItem } from "../_lib/types";
+import { AudioPlayer } from "./audio-player";
+import { Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UrduIcon } from "@/assets/custom-icons/urdu-icon";
-import "./styles.css";
+import * as React from "react";
+import { getAudioUrl } from "../_lib/helpers";
 
-
-interface VocabulariesHomePageProps {
-  vocs: QuizWord[]
+interface VocsTableProps {
+ vocs:  VocabularyItem[];
 }
-export function VocabulariesHomePage({ vocs }: VocabulariesHomePageProps) {
-  // font for urdu script naskh | nastaleeq
- 
 
-
-  // read localstore
+export function VocsTable({ vocs }: VocsTableProps) {
+  const [targetFont, setTargetFont] = React.useState<string | null>(null)
+  
+  React.useEffect(() => {
+      // Set the target font based on the user's preference
+      const userFont = localStorage.getItem("urduFont");
+      if (userFont === 'nastaleeq') {
+        setTargetFont(userFont);
+      }
+      else {
+        localStorage.removeItem("urduFont");
+        setTargetFont(null);
+      }
+    }, [targetFont]);
   
 
-  return (
-
+   const toggleTargetFont = () => {
+     if (!targetFont) {
+       localStorage.setItem("urduFont", 'nastaleeq');
+       setTargetFont('nastaleeq');
+     }
+     else {
+       localStorage.removeItem("urduFont")
+       setTargetFont(null)
+     }
+   }
+ 
+ return (
    <Table className="w-full border text-md sm:text-lg">
       <TableHeader className="bg-green-100 rounded-xl">
         <TableRow className="">
@@ -54,7 +68,7 @@ export function VocabulariesHomePage({ vocs }: VocabulariesHomePageProps) {
             <TableCell className="text-center" >{voc.sols[0].text}</TableCell>
             <TableCell className="text-center">
               <AudioPlayer
-                audioUrl={getCourseAudio(voc.key)}
+                audioUrl={getAudioUrl(voc.key)}
                 text=""
               />
             </TableCell>
@@ -66,9 +80,5 @@ export function VocabulariesHomePage({ vocs }: VocabulariesHomePageProps) {
         ))}
       </TableBody>
     </Table>
-
-  )
-
-
+ )
 }
- 

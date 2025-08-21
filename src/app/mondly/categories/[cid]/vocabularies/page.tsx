@@ -57,7 +57,7 @@ export default async function VocabularyPage({
   );
 
   return (
-    <Suspense fallback={<div>Loading ....</div>}>
+ 
       <div className="flex flex-col gap-2 bg-gradient-to-bl from-slate-300 to-slate-100 p-2 rounded-xl">
         <div className="flex flex-col gap-4 naskh-text">
           <div className="flex justify-between px-2" dir="rtl">
@@ -89,7 +89,7 @@ export default async function VocabularyPage({
           <VocabulariesHomePage vocs={vocs} />
         </div>
       </div>
-    </Suspense>
+ 
   );
 }
 
