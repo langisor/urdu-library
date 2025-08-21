@@ -35,9 +35,17 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   // };
 
   useEffect(() => {
+    // check if iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    audioRef.current = new Audio(audioUrl);
+    if (isIOS) {
+      autoPlay = false;
+      audioRef.current.setAttribute("muted", "true");
+      audioRef.current.setAttribute("playsInline", "true");
+    }
     if (autoPlay && !hasPlayed) {
       // setTimeout(simulateAudio, 500);
-      audioRef.current = new Audio(audioUrl);
+
       audioRef.current.play();
       setIsPlaying(true);
       audioRef.current.onended = () => {
@@ -51,6 +59,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     if (!isPlaying) {
       // simulateAudio();
       audioRef.current = new Audio(audioUrl);
+
       audioRef.current.play();
       setIsPlaying(true);
       audioRef.current.onended = () => {
@@ -93,12 +102,16 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           )}
         </Button>
 
-        {  hasPlayed ? (
+        {hasPlayed ? (
           <p className="text-sm text-gray-600 text-center border flex gap-2">
             <span className="text-md">{text}</span>
-            {autoPlay ? <></> : <span>
-              <BookCheck className="w-8 h-8" />
-            </span>}
+            {autoPlay ? (
+              <></>
+            ) : (
+              <span>
+                <BookCheck className="w-8 h-8" />
+              </span>
+            )}
           </p>
         ) : (
           <p className="text-xs text-gray-500">
