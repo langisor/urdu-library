@@ -74,7 +74,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
       <div className="flex  items-center justify-center space-y-4 p-1 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
         <Button
           onClick={handlePlay}
-          disabled={isPlaying}
+           
           className={`
           flex items-center justify-center w-16 h-16 rounded-full transition-all duration-300 transform hover:scale-105
           ${
@@ -113,9 +113,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             )}
           </p>
         ) : (
-          <p className="text-xs text-gray-500">
-            {isPlaying ? "Playing audio..." : "Click to play pronunciation"}
-          </p>
+          <></>
         )}
       </div>
     );
@@ -124,7 +122,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   return (
     <Button
       onClick={handlePlay}
-      disabled={isPlaying}
+       
       className={`
           flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-105
           ${

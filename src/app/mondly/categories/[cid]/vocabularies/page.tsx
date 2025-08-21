@@ -66,25 +66,7 @@ export default async function VocabularyPage({
             </h1>
             <TestYourSelfButton vocs={vocs} />
           </div>
-          <Card
-            dir="rtl"
-            className="bg-gradient-to-br from-blue-300 to-blue-100"
-          >
-            <CardContent>
-              <div className="grid grid-cols-2 gap-2 text-center">
-                <span className="font-semibold"> الكلمات : </span>
-                <span className="font-semibold">
-                  {vocabularyRow.countWords}
-                </span>
-                <span className="font-semibold"> العبارات : </span>
-                <span className="font-semibold">
-                  {vocabularyRow.countPhrases}
-                </span>
-                <span className="font-semibold"> الإجمالي : </span>
-                <span className="font-semibold">{vocs.length}</span>
-              </div>
-            </CardContent>
-          </Card>
+     
 
           <VocabulariesHomePage vocs={vocs} />
         </div>
@@ -93,23 +75,4 @@ export default async function VocabularyPage({
   );
 }
 
-interface TestYourSelfButtonProps {
-  vocs: QuizWord[];
-}
-function TestYourSelfButton({ vocs }: TestYourSelfButtonProps) {
-  return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button className="bg-blue-500 text-white hover:cursor-pointer">
-          حفظ الكلمات - اختبر نفسك
-        </Button>
-      </SheetTrigger>
-
-      <SheetContent side="bottom" className="w-full h-full overflow-y-scroll">
-        <SheetTitle className="sr-only"></SheetTitle>
-        <SheetDescription className="sr-only"></SheetDescription>
-        <VocabulariesQuizzer vocs={vocs} />
-      </SheetContent>
-    </Sheet>
-  );
-}
+ 

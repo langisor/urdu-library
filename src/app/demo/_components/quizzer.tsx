@@ -1,12 +1,14 @@
 "use client";
- 
+
 import { VocabularyItem } from "../_lib/types";
 import { useQuiz } from "../_hooks/useQuiz";
 import { useState } from "react";
 import { QuestionCard } from "./question-card";
 import { QuizResults } from "./question-results";
 import { QuizStart } from "./question-start";
+import { Button } from "@/components/ui/button";
 import { CustomAlert } from "./custom-alert";
+import { VocsTable } from "./vocs-table";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +16,7 @@ import {
   SheetDescription,
   SheetTitle,
 } from "@/components/ui/sheet";
+
 export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
   const {
     quizState,
@@ -23,6 +26,7 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
     resetQuiz,
     handleExitQuiz,
   } = useQuiz(vocs);
+
   const [showAlert, setShowAlert] = useState(true);
   const renderCurrentView = () => {
     if (quizState.completed) {
@@ -41,9 +45,9 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
     }
 
     const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
-   
+
     return (
-              <div className="container">
+      <div className="container">
         <QuestionCard
           question={currentQuestion}
           questionNumber={quizState.currentQuestionIndex + 1}
@@ -59,9 +63,25 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
       </div>
     );
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <div className="container mx-auto px-4 py-8">{renderCurrentView()}</div>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button className="bg-blue-500 text-white hover:cursor-pointer">
+            حفظ الكلمات - اختبر نفسك
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent side="bottom" className="w-full h-full overflow-y-scroll">
+          <SheetTitle className="sr-only"></SheetTitle>
+          <SheetDescription className="sr-only"></SheetDescription>
+          {renderCurrentView()}
+        </SheetContent>
+      </Sheet>
+      <div className="container mx-auto px-4 py-8">
+        <VocsTable vocs={vocs} />
+      </div>
     </div>
   );
 }
