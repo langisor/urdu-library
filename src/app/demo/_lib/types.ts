@@ -18,6 +18,11 @@ export interface Question {
   correctAnswer: string;
   audioFile?:string;
 }
+
+ export interface Quiz{
+    id:number | string;
+    question:Question;
+ }
 export interface VocabularyItem {
   id: number;
   vocabulary: number;

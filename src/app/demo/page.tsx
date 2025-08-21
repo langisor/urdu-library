@@ -1,6 +1,9 @@
  
 import { queryClient } from "@/lib/postgres-client"; 
 import {Quizzer} from "./_components/quizzer";
+
+
+
 async function getVocabularyItems(vid:number){
  const vItems=await queryClient`
  SELECT * from "Item" where "vocabulary"=${vid}
@@ -21,7 +24,7 @@ export default async function Demo() {
     return (
         <div>
             <h1>demo</h1>
-            <Quizzer vocs={vocs} /> 
+            <Quizzer  vocs={vocs} /> 
         </div>
     )
 }

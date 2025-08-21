@@ -1,113 +1,84 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Question, WordItem, VocabularyItem } from "../_lib/types";
-import { shuffleArray } from "../_lib/helpers";
+import { Question, WordItem, VocabularyItem, Quiz } from "../_lib/types";
+import { shuffleArray, getWords } from "../_lib/helpers";
 
-const getWords = (vocs: VocabularyItem[]) => {
-  const words: WordItem[] = [];
-  for (const voc of vocs) {
-    words.push({
-      wordID: voc.wordID,
-      arabic: voc.sols[0].text,
-      urdu: voc.sols[1].text,
-      audioFile: voc.key,
-    });
-  }
-  return words;
-};
+export function useQuiz(vocs: VocabularyItem[], count = 10) {
+  const words: WordItem[] = getWords(vocs);
 
-export function useQuiz({
-  vocs,
-  length = 10,
-}: {
-  vocs: VocabularyItem[];
-  length?: number;
-}) {
-  const [words, setWords] = useState<WordItem[]>([]);
-
-  useEffect(() => {
-    const words = getWords(vocs);
-    setWords(words);
-  }, [vocs]);
-
-  // create a list of urdu optins except the correct answer
   const getUrduOptions = (w: WordItem) => {
     // create a list of all urdu values except the correct answer
-    const words = getWords(vocs);
+
     const urduOptions: string[] = [];
     for (const word of words) {
       if (word.wordID !== w.wordID) {
         urduOptions.push(word.urdu);
       }
     }
-    return urduOptions;
+    const shuffled = shuffleArray(urduOptions);
+    return [...shuffled.slice(0, 3), w.urdu];
   };
 
   // create a list of arabic options except the correct answer
   const getArabicOptions = (w: WordItem) => {
-    // create a list of all arabic values except the correct answer
-    const words = getWords(vocs);
     const arabicOptions: string[] = [];
     for (const word of words) {
       if (word.wordID !== w.wordID) {
         arabicOptions.push(word.arabic);
       }
     }
-    // return 3 random options
-    return shuffleArray(arabicOptions).slice(0, 3);
+    const shuffled = shuffleArray(arabicOptions);
+    return [...shuffled.slice(0, 3), w.arabic];
   };
 
   // create  audio-ur questions
-  const getAudioUrQuestions = () => {
+  const generateAudioUrQuestions = () => {
     const questions: Question[] = [];
     for (let i = 0; i < words.length; i++) {
       const word = words[i];
-      // get arabic options and shuffle them
-      const arabicOptions = getArabicOptions(word);
-      // add correct answer to options
-      arabicOptions.push(word.arabic);
-      // shuffle options
-      const shuffledOptions = shuffleArray(arabicOptions);
-      questions.push({
-        id: i + 1,
+      const options = getArabicOptions(word);
+      const correctAnswer = word.arabic;
+      const question: Question = {
+        id: word.wordID,
         type: "audio-ur",
         queston: "اختر الترجمة الصحيحة: ",
         text: word.urdu,
-        options: shuffledOptions,
-        correctAnswer: word.arabic,
+        options: shuffleArray(options),
+        correctAnswer: correctAnswer,
         audioFile: word.audioFile,
-      });
+      };
+      questions.push(question);
     }
-    // return half of length questions
-    return questions.slice(0, Math.floor(length / 2));
+    return questions;
   };
 
-  // create  ar-ur questions
-  const getArUrQuestions = () => {
+  const generateArUrQuestions = () => {
     const questions: Question[] = [];
     for (let i = 0; i < words.length; i++) {
       const word = words[i];
-      // get urdu options and shuffle them
-      const urduOptions = getUrduOptions(word);
-      // add correct answer to options
-      urduOptions.push(word.urdu);
-      // shuffle options
-      const shuffledOptions = shuffleArray(urduOptions);
-      questions.push({
-        id: i + 1,
+      const options = getUrduOptions(word);
+      const correctAnswer = word.urdu;
+      const question: Question = {
+        id: word.wordID,
         type: "ar-ur",
-        queston: "اختر الكلمة الصحيحة: ",
+        queston: "اختر الكلمة المرادفة: ",
         text: word.arabic,
-        options: shuffledOptions,
-        correctAnswer: word.urdu,
-      });
+        options: shuffleArray(options),
+        correctAnswer: correctAnswer,
+        audioFile: word.audioFile,
+      };
+      questions.push(question);
     }
-    // return half of length questions
-    return questions.slice(0, Math.floor(length / 2));
+    return questions;
   };
-
-  const questions = [...getAudioUrQuestions(), ...getArUrQuestions()];
-  return {
-    questions,
-  };
+  // return quizzes;
+  const questions = [...generateAudioUrQuestions(), ...generateArUrQuestions()];
+  const shuffledQuestions = shuffleArray(questions);
+  const quizzes = shuffledQuestions.map((question, index) => {
+    return {
+      id: `${question.type}-${index}`,
+      question: question,
+    };
+  });
+  return quizzes;
 }
