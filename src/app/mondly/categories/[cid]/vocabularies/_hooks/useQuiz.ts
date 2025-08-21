@@ -12,6 +12,7 @@ interface QuizState {
 }
 export function useQuiz(vocs: VocabularyItem[], count = 10) {
   const words: WordItem[] = getWords(vocs);
+
   const [quizState, setQuizState] = useState<QuizState>({
     questions: [],
     currentQuestionIndex: 0,
@@ -20,7 +21,6 @@ export function useQuiz(vocs: VocabularyItem[], count = 10) {
     completed: false,
     startTime: null,
   });
-
 
   const handleExitQuiz = () => {
     setQuizState({
@@ -126,6 +126,8 @@ export function useQuiz(vocs: VocabularyItem[], count = 10) {
   const answerQuestion = (answer: string) => {
     const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
     const isCorrect = answer === currentQuestion.correctAnswer;
+     
+
     setQuizState((prev) => ({
       ...prev,
       answers: {

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Question } from "../_lib/types";
 import { AudioPlayer } from "./audio-player";
 import { CheckCircle, XCircle } from "lucide-react";
-
+import { useTune } from "../_hooks/use-tune";
 interface QuestionCardProps {
   question: Question;
   questionNumber: number;
@@ -19,17 +19,22 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   totalQuestions, // Total number of questions
   onAnswer, // Function to handle answer selection
   onNext, // Function to handle next question
- 
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
-  
+  const { playCorrectTune, playIncorrectTune } = useTune();
 
   const handleAnswerSelect = (answer: string) => {
     if (selectedAnswer) return;
 
     setSelectedAnswer(answer);
     setShowFeedback(true);
+    if (answer === question.correctAnswer) {
+    setTimeout(()=>  playCorrectTune(),100);
+    }
+    if (answer !== question.correctAnswer) {
+    setTimeout(()=>  playIncorrectTune(),100);
+    }
     onAnswer(answer);
 
     setTimeout(() => {
@@ -39,9 +44,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     }, 2000);
   };
 
- 
   const isCorrect = selectedAnswer === question.correctAnswer;
- 
+
   return (
     <div
       className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
@@ -85,7 +89,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             <p className="text-gray-600 mb-2 text-xl">{question.text}</p>
 
             <AudioPlayer
-              audioUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/media/mondly/audios/${question.audioFile}`}
+              audioUrl={`/media/mondly/audios/${question.audioFile}`}
               text={""}
               autoPlay={true}
             />
@@ -136,7 +140,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             );
           })}
         </div>
-         
+
         {/* Feedback */}
         {showFeedback && (
           <div
