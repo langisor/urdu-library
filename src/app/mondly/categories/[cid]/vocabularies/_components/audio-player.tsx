@@ -20,21 +20,23 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [isIOS, setIsIOS] = useState<boolean>(() => {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent);
+  });
  
 
-  const checkIfIOS = () => {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent);
-  };
+ 
 
   useEffect(() => {
      
     audioRef.current = new Audio(audioUrl);
-    if (checkIfIOS()) {
+    if (isIOS) {
       audioRef.current.setAttribute("autoplay", "false")
       audioRef.current.setAttribute("muted", "true");
       audioRef.current.setAttribute("playsInline", "true");
+      return;
     }
-    if (!hasPlayed) {
+    if (!hasPlayed && autoPlay) {
       // setTimeout(simulateAudio, 500);
 
       audioRef.current.play();
@@ -44,7 +46,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         setHasPlayed(true);
       };
     }
-  }, [ ]);
+  }, []);
 
   const handlePlay = () => {
     if (!isPlaying) {

@@ -29,14 +29,12 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
 
   const [showAlert, setShowAlert] = useState(true);
   const [open, setOpen] = useState(false);
-  const [terminateQuiz, setTerminateQuiz] = useState(false);
 
   const handleTerminateQuiz = () => {
     setOpen(false);
     handleExitQuiz();
-    setTerminateQuiz(true);
   };
- 
+
   const renderCurrentView = () => {
     if (quizState.completed) {
       return (
@@ -90,11 +88,10 @@ export function Quizzer({ vocs }: { vocs: VocabularyItem[] }) {
           {renderCurrentView()}
         </SheetContent>
       </Sheet>
-      {terminateQuiz && (
-        <div className="container mx-auto px-4 py-8">
-          <VocsTable vocs={vocs} />
-        </div>
-      )}
+
+      <div className="container mx-auto px-4 py-8">
+        <VocsTable vocs={vocs} />
+      </div>
     </div>
   );
 }

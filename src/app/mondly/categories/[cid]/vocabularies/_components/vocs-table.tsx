@@ -70,6 +70,7 @@ export function VocsTable({ vocs }: VocsTableProps) {
               <AudioPlayer
                 audioUrl={getAudioUrl(voc.key)}
                 text=""
+                autoPlay={false}
               />
             </TableCell>
             <TableCell className="text-center text-green-800">
