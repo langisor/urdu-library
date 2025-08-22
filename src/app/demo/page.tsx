@@ -1,4 +1,6 @@
-"use client";
+ import { queryClient } from "@/lib/postgres-client";
+
+ 
 
 import { Button } from "@/components/ui/button";
 
