@@ -1,5 +1,5 @@
 import { QuizDItem, Question } from "./types"
-import { getAudioUrl, getImageUrl, shuffleArray } from "./utils";
+import { getAudioUrl, getImageUrl, shuffleArray } from "../helpers";
 export function convertToQuestions(quizItem: QuizDItem): Question[] {
   const questions = quizItem.alts.map((alt, index) => ({
     id: alt.audio_updated_at,

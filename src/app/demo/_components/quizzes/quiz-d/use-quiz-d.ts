@@ -1,7 +1,7 @@
 "use client"
-import {QuizDItem,QuizDState} from "../_components/quizzes/quiz-d/types"
+import { QuizDItem, QuizDState } from "./types"
 import * as React from "react"
-import { convertToQuestions } from "../helpers";
+import { convertToQuestions } from "./utils";
 export function useQuizD(quizItem: QuizDItem) {
     const [quizState, setState] = React.useState<QuizDState>({
         currentQuestionIndex: 0,
@@ -9,37 +9,30 @@ export function useQuizD(quizItem: QuizDItem) {
         questions: [],
         isComplete: false,
     })
-   
-
     React.useEffect(() => {
         setState({
             ...quizState,
             questions: convertToQuestions(quizItem),
         })
     }, [quizItem])
-
-
     const startQuiz = () => {
         setState({
             ...quizState,
             isComplete: false,
         })
     }
-
     const nextQuestion = () => {
         setState({
             ...quizState,
             currentQuestionIndex: quizState.currentQuestionIndex + 1,
         })
     }
-
     const answerQuestion = (answer: string) => {
         setState({
             ...quizState,
             score: quizState.score + (answer === quizState.questions[quizState.currentQuestionIndex].correctAnswer ? 1 : 0),
         })
     }
-
     const resetQuiz = () => {
         setState({
             ...quizState,
@@ -49,7 +42,7 @@ export function useQuizD(quizItem: QuizDItem) {
         })
     }
     return {
-       quizState,
+        quizState,
         startQuiz,
         nextQuestion,
         answerQuestion,
