@@ -54,5 +54,6 @@ export function useQuizD(quizItem: QuizDItem) {
         nextQuestion,
         answerQuestion,
         resetQuiz,
+    
     }
 }
