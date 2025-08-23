@@ -24,8 +24,6 @@ interface QuizzerProps {
 }
 
 export function Quizzer({ quizzes }: QuizzerProps) {
-
-  
   const {
     currentQuizIndex,
     handleNextQuiz,
@@ -40,7 +38,7 @@ export function Quizzer({ quizzes }: QuizzerProps) {
       case "F":
         return <Quizzes.QuizF key={currentQuizIndex} quizItem={currentQuiz} />;
       case "T1":
-        return <Quizzes.QuizT1 key={currentQuizIndex} quizItem={currentQuiz} />;
+        return <Quizzes.QuizT1 key={currentQuizIndex} quizItem={currentQuiz} handleNextQuiz={handleNextQuiz} />;
       default:
         return (
           <Card className="border border-red-500">

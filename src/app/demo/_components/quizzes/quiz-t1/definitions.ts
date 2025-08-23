@@ -1,4 +1,4 @@
-import { shuffleArray } from "../helpers";
+import { shuffleArray ,getAudioUrl} from "../helpers";
 
 export type QuizT1Item = {
   id: number;
@@ -152,7 +152,7 @@ export type Question = {
 export function convertToQuestion(quizItem: QuizT1Item): Question {
   return {
     id: quizItem.id,
-    audioFile: quizItem.sols[0].key,
+    audioFile: getAudioUrl(quizItem.sols[0].key),
     text: quizItem.sols[0].text,
     phonetic: quizItem.sols[0].phonetic!,
     correctAnswer: quizItem.sols[1].text,

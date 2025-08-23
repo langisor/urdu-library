@@ -22,9 +22,21 @@ async function getLessonQuizzes(lid: number) {
   }
   return parsedQuizzes;
 }
+async function getQuiz(qType: string) {
+  const _quizzes = await queryClient`
+  SELECT  "quizData"  FROM "Quiz" where "type"=${qType} LIMIT 6
+  `
+  const parsedQuizzes = [];
+  for (let quiz of _quizzes) {
+    parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));
+  }
+  return parsedQuizzes;
+}
  
 export default async function Demo() {
-  const quizTypes = await getLessonQuizzes(101);
+  // const quizTypes = await getLessonQuizzes(101);
+  const quizTypes = await getQuiz("T1");
+ 
   return (
     <div>
       <h1 className="text-2xl font-bold">demo</h1>
