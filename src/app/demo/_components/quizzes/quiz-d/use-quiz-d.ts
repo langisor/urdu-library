@@ -1,7 +1,8 @@
 "use client"
-import { QuizDItem, QuizDState } from "./types"
+import { QuizDItem  } from "./definitions"
 import * as React from "react"
-import { convertToQuestions } from "./utils";
+import { convertToQuestions } from "./definitions";
+import { QuizDState } from "./definitions";
 export function useQuizD(quizItem: QuizDItem) {
     const [quizState, setState] = React.useState<QuizDState>({
         currentQuestionIndex: 0,
