@@ -59,7 +59,7 @@ export function convertToQuestions(quizItem: QuizDItem): Question[] {
 const getOptions = (quizItem: QuizDItem) => {
   return quizItem.alts.map((alt,index) => ({
     text: quizItem.sols[index].text,
-    image: getImageUrl(alt.key),
+    image: getImageUrl(alt.image),
     phonetic: alt.phonetic,
   }));
 }

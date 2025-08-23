@@ -2,8 +2,8 @@ export function getAudioUrl(key: string): string {
  return `/media/mondly/audios/${key}`;
 }
 
-export function getImageUrl(key: string): string {
- return `/media/mondly/images/${key}`;
+export function getImageUrl(image: string): string {
+ return `/media/mondly/images/${image}`;
 }
 
 export function shuffleArray<T>(array: T[]): T[] {
