@@ -31,7 +31,13 @@ export function useQuizD(quizItem: QuizDItem) {
     const answerQuestion = (answer: string) => {
         setState({
             ...quizState,
+            questions: quizState.questions.map((q, index) =>
+                index === quizState.currentQuestionIndex
+                    ? { ...q, isAnswered: true }
+                    : q
+            ),
             score: quizState.score + (answer === quizState.questions[quizState.currentQuestionIndex].correctAnswer ? 1 : 0),
+            isComplete: quizState.currentQuestionIndex + 1 >= quizState.questions.length,
         })
     }
     const resetQuiz = () => {

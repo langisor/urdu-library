@@ -21,14 +21,20 @@ export type QuizDItem = {
   alternates: Array<number>
 }
 
+export interface Option {
+  text: string;
+  image: string;
+  phonetic: string;
+}
+
+
 export interface Question {
   id: number; // audio_updated_at
   audioFile: string;
   text: string;
-  image: string;
-  phonetic: string;
   correctAnswer: string;
-  options: Array<string>; // sols
+  isAnswered: boolean;
+  options: Array<Option>; // sols
 }
 export type QuizDState = {
   currentQuestionIndex: number
@@ -38,15 +44,22 @@ export type QuizDState = {
 }
 import { getAudioUrl, getImageUrl, shuffleArray } from "../helpers";
 export function convertToQuestions(quizItem: QuizDItem): Question[] {
-  const questions = quizItem.alts!.map((alt, index) => ({
+  const questions = quizItem.alts.map((alt, index) => ({
     id: alt.audio_updated_at,
     audioFile: getAudioUrl(alt.key),
     text: alt.text,
-    image: getImageUrl(alt.image),
-    phonetic: alt.phonetic,
     correctAnswer: quizItem.sols[index].text,
-    options: shuffleArray(quizItem.sols.map((sol) => sol.text)),
+    isAnswered: false,
+    options: shuffleArray(getOptions(quizItem)),
   }));
 
-  return questions;
+  return shuffleArray(questions);
+}
+
+const getOptions = (quizItem: QuizDItem) => {
+  return quizItem.alts.map((alt,index) => ({
+    text: quizItem.sols[index].text,
+    image: getImageUrl(alt.key),
+    phonetic: alt.phonetic,
+  }));
 }
