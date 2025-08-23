@@ -1,7 +1,7 @@
 // import { QuizC1b } from "./quiz-c1b/quiz-c1b";
 // import { QuizC2b } from "./quiz-c2b/quiz-c2b";
 import { QuizD } from "./quiz-d/quiz-d";
-// import { QuizF } from "./quiz-f/quiz-f";
+import { QuizF } from "./quiz-f/quiz-f";
 // import { QuizL1 } from "./quiz-l1/quiz-l1";
 // import { QuizP } from "./quiz-p/quiz-p";
 // import { QuizQ } from "./quiz-q/quiz-q";
@@ -14,11 +14,11 @@ import { QuizD } from "./quiz-d/quiz-d";
 // import { QuizW1b } from "./quiz-w1b/quiz-w1b";
 // import { QuizResult } from "../quiz-result";
 
-export {
+export  {
  // QuizC1b,
  // QuizC2b,
  QuizD,
- // QuizF,
+ QuizF,
  // QuizL1,
  // QuizP,
  // QuizQ,
@@ -30,4 +30,4 @@ export {
  // QuizT2b,
  // QuizW1b,
  // QuizResult,
-};
+}  
