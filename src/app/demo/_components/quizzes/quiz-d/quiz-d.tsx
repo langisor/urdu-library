@@ -7,13 +7,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useTune } from "../use-tune";
 import { AudioPlayer } from "../../audio-player";
-import { useQuizzesStore } from "../../use-quizzes-store";
+
 interface QuizDProps {
   quizItem: QuizDItem;
 }
 
 export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
-  const { globalScore, setGlobalScore } = useQuizzesStore();
   const { quizState, answerQuestion, nextQuestion, resetQuiz } =
     useQuizD(quizItem);
   const { questions, currentQuestionIndex, isComplete, score } = quizState;
@@ -190,7 +189,6 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
   const currentQuestion = questions[currentQuestionIndex];
 
   if (isComplete || !currentQuestion) {
-    setGlobalScore(globalScore.get() + score);
     return;
   }
 

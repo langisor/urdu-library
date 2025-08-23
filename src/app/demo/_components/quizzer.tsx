@@ -15,17 +15,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useQuizzer } from "./use-quizzer";
-import { useQuizzesStore } from "./use-quizzes-store";
+
+
 
 interface QuizzerProps {
   quizzes: Array<QuizItem>;
 }
 
 export function Quizzer({ quizzes }: QuizzerProps) {
-  const { globalScore } = useQuizzesStore();
+
+  
   const {
     currentQuizIndex,
-    setCurrentQuizIndex,
     handleNextQuiz,
     handlePreviousQuiz,
   } = useQuizzer({ quizzes });
@@ -54,14 +55,14 @@ export function Quizzer({ quizzes }: QuizzerProps) {
         <Button variant="outline">start quizzes</Button>
       </SheetTrigger>
       <div className="flex items-center justify-center">
-        النقاط: {globalScore.value}
+        النقاط: 0
       </div>
       <SheetContent
         side="bottom"
         className="w-full h-screen flex flex-col p-4 overflow-y-auto"
       >
         <SheetHeader>
-          <SheetTitle>النقاط المكتسبة: {globalScore.value}</SheetTitle>
+          <SheetTitle>النقاط المكتسبة: 0</SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <div className="flex flex-col gap-4">
@@ -69,7 +70,7 @@ export function Quizzer({ quizzes }: QuizzerProps) {
             <Badge>
               Quiz {currentQuizIndex + 1} of {quizzes.length}
             </Badge>
-            <Badge>Score: {globalScore.value}</Badge>
+             
           </div>
           <div className="flex justify-between">
             <Button

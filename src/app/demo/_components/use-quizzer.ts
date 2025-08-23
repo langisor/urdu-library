@@ -1,6 +1,7 @@
 "use client"
 import * as React from "react";
-import { useQuizzesStore } from "./use-quizzes-store";
+
+
 import { QuizItem } from "./quizzes/types";
 
 interface QuizzerState {
