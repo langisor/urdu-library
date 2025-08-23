@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { AudioPlayer } from "../../audio-player";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import {useTune} from "../use-tune";
 
 interface QuizT1Props {
   quizItem: QuizT1Item;
@@ -17,6 +18,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
   const [availableWords, setAvailableWords] = React.useState<string[]>([]);
   const [isCorrect, setIsCorrect] = React.useState<boolean | null>(null);
   const audioRef = React.useRef<HTMLAudioElement>(null);
+  const {playCorrectTune, playIncorrectTune} = useTune();
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
     setQuestion(q);
@@ -53,8 +55,10 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
 
     if (cleanUserPhrase === cleanCorrectAnswer) {
       setIsCorrect(true);
+      playCorrectTune();
     } else {
       setIsCorrect(false);
+      playIncorrectTune();
       setTimeout(() => {
         resetQuiz();
       }, 2000);
@@ -109,7 +113,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
           />
         </div>
         {/* Selected words box */}
-        <Card className="flex items-center justify-center min-h-[64px] w-full border-2 border-dashed border-gray-600 rounded-xl p-4 mb-6 bg-gray-900 transition-all duration-300">
+        <Card className="flex items-center justify-center min-h-[64px] w-full border-2 border-dashed border-gray-600 rounded-xl p-4 mb-6  transition-all duration-300">
           <button onClick={() => resetQuiz()}>مسح الكلمات</button>
           <CardContent>
             {selectedWords.length > 0 ? (
