@@ -3,7 +3,7 @@ import * as Quizzes from "./quizzes";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { QuizItem } from "./quizzes/types";
 import * as React from "react";
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Sheet,
   SheetContent,
@@ -11,93 +11,83 @@ import {
   SheetTitle,
   SheetDescription,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useQuizzer } from "./use-quizzer";
+import { useQuizzesStore } from "./use-quizzes-store";
 
 interface QuizzerProps {
-  quizzes: Array<QuizItem>
+  quizzes: Array<QuizItem>;
 }
 
 export function Quizzer({ quizzes }: QuizzerProps) {
-  const [currentQuizIndex, setCurrentQuizIndex] = React.useState(0);
-  const [open, setOpen] = React.useState(false);
-  const handleNextQuiz = () => {
-    setCurrentQuizIndex((prevIndex) => (prevIndex + 1) % quizzes.length);
-  }
-  const handleCloseSheet = () => {
-    setCurrentQuizIndex(0);
-    setOpen(false);
-  }
-  const handlePrevQuiz = () => {
-    setCurrentQuizIndex((prevIndex) => (prevIndex - 1 + quizzes.length) % quizzes.length);
-  }
+  const { globalScore } = useQuizzesStore();
+  const {
+    currentQuizIndex,
+    setCurrentQuizIndex,
+    handleNextQuiz,
+    handlePreviousQuiz,
+  } = useQuizzer({ quizzes });
+  const [quizOpen, setQuizOpen] = React.useState(false);
   const currentQuiz = quizzes[currentQuizIndex];
-  const renderQuiz = (quizItem: QuizItem, index: number) => {
-    switch (quizItem.type) {
+  const renderQuiz = () => {
+    switch (currentQuiz.type) {
       case "D":
-        return <Quizzes.QuizD key={index} quizItem={quizItem}  />;
+        return <Quizzes.QuizD key={currentQuizIndex} quizItem={currentQuiz} />;
       case "F":
-        return <Quizzes.QuizF key={index} quizItem={quizItem} />;
+        return <Quizzes.QuizF key={currentQuizIndex} quizItem={currentQuiz} />;
       default:
         return (
-          <Card key={index} className="border border-red-500">
+          <Card className="border border-red-500">
             <CardContent>
-              <p>Unsupported quiz type: {quizItem.type}</p>
-              <JsonViewerComponent data={quizItem} />
+              <p>Unsupported quiz type: {currentQuiz.type}</p>
+              <JsonViewerComponent data={currentQuiz} />
             </CardContent>
           </Card>
         );
     }
-  }
+  };
   return (
-    <div className="flex flex-col gap-4">
-      <Button onClick={() => setOpen(true)}>Open Quizzer</Button>
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent side="bottom" className="w-full h-screen overflow-y-scroll">
-          <SheetHeader>
-            <SheetTitle>Quizzer</SheetTitle>
-            <SheetDescription>
-              Navigate through different quizzes using the buttons below.
-
-            </SheetDescription>
-            <div className="flex justify-between items-center mb-2">
-              <Badge className="bg-blue-600 text-white">Quiz Type: {quizzes[currentQuizIndex].type}</Badge>
-              <Button size="sm" onClick={handleCloseSheet}>Close</Button>
-            </div>
-          </SheetHeader>
-          {currentQuiz ? (
-            <div>
-              {renderQuiz(currentQuiz, currentQuizIndex)}
-              <QuizNavigation
-                currentIndex={currentQuizIndex}
-                total={quizzes.length}
-                onPrev={handlePrevQuiz}
-                onNext={handleNextQuiz}
-              />
-            </div>
-          ) : (
-            <p>No quizzes available.</p>
-          )}
-        </SheetContent>
-      </Sheet>
-    </div>
-  )
-}
-
-
-function QuizNavigation({ currentIndex, total, onPrev, onNext }: { currentIndex: number; total: number; onPrev: () => void; onNext: () => void }) {
-  return (
-    <div className="flex justify-between mt-4">
-      <Button onClick={onPrev} disabled={currentIndex === 0}>
-        Previous
-      </Button>
-      <span>
-        Question {currentIndex + 1} of {total}
-      </span>
-      <Button onClick={onNext} disabled={currentIndex === total - 1}>
-        Next
-      </Button>
-    </div>
-  )
+    <Sheet open={quizOpen} onOpenChange={setQuizOpen}>
+      <SheetTrigger asChild className="flex items-center justify-center">
+        <Button variant="outline">start quizzes</Button>
+      </SheetTrigger>
+      <div className="flex items-center justify-center">
+        النقاط: {globalScore.value}
+      </div>
+      <SheetContent
+        side="bottom"
+        className="w-full h-screen flex flex-col p-4 overflow-y-auto"
+      >
+        <SheetHeader>
+          <SheetTitle>النقاط المكتسبة: {globalScore.value}</SheetTitle>
+          <SheetDescription></SheetDescription>
+        </SheetHeader>
+        <div className="flex flex-col gap-4">
+          <div>
+            <Badge>
+              Quiz {currentQuizIndex + 1} of {quizzes.length}
+            </Badge>
+            <Badge>Score: {globalScore.value}</Badge>
+          </div>
+          <div className="flex justify-between">
+            <Button
+              onClick={handlePreviousQuiz}
+              disabled={currentQuizIndex === 0}
+            >
+              Previous
+            </Button>
+            <Button
+              onClick={handleNextQuiz}
+              disabled={currentQuizIndex === quizzes.length - 1}
+            >
+              Next
+            </Button>
+          </div>
+          <div>{renderQuiz()}</div>
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
 }

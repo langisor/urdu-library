@@ -1,30 +1,30 @@
 "use client"
 import * as React from "react";
-import { useHookstate } from "@hookstate/core";
+import { useQuizzesStore } from "./use-quizzes-store";
 import { QuizItem } from "./quizzes/types";
 
 interface QuizzerState {
-    currentQuizIndex: number;
+ 
     quizzes: Array<QuizItem>;
-    open: boolean;
-    score: number;
+ 
 }
+ 
+export function useQuizzer({quizzes}: QuizzerState) {
+ 
+    const [currentQuizIndex, setCurrentQuizIndex] = React.useState(0)
+ 
 
-export function useQuizzer() {
-    const quizzerState = useHookstate({
-        currentQuizIndex: 0,
-        quizzes: [],
-        open: false,
-        score: 0,
-    })
+    const handleNextQuiz = () => {
+        setCurrentQuizIndex(currentQuizIndex + 1)
+    }
+    const handlePreviousQuiz = () => {
+        setCurrentQuizIndex(currentQuizIndex - 1)
+    }
     return {
-        currentQuizIndex: quizzerState.currentQuizIndex.get(),
-        quizzes: quizzerState.quizzes.get(),
-        open: quizzerState.open.get(),
-        score: quizzerState.score.get(),
-        setCurrentQuizIndex: quizzerState.currentQuizIndex.set,
-        setOpen: quizzerState.open.set,
-        setScore: quizzerState.score.set,
+        currentQuizIndex,
+        setCurrentQuizIndex,
+        handleNextQuiz,
+        handlePreviousQuiz,
     }
 }
     
