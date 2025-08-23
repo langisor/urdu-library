@@ -1,7 +1,7 @@
 "use client";
 import * as Quizzes from "./quizzes";
 import { JsonViewerComponent } from "@/components/json-viewer";
-import { QuizItem } from "./quizzes/types";
+ 
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -15,11 +15,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useQuizzer } from "./use-quizzer";
+ 
 
 
 
 interface QuizzerProps {
-  quizzes: Array<QuizItem>;
+  quizzes:  any[]
 }
 
 export function Quizzer({ quizzes }: QuizzerProps) {
@@ -38,6 +39,8 @@ export function Quizzer({ quizzes }: QuizzerProps) {
         return <Quizzes.QuizD key={currentQuizIndex} quizItem={currentQuiz} />;
       case "F":
         return <Quizzes.QuizF key={currentQuizIndex} quizItem={currentQuiz} />;
+      case "T1":
+        return <Quizzes.QuizT1 key={currentQuizIndex} quizItem={currentQuiz} />;
       default:
         return (
           <Card className="border border-red-500">
