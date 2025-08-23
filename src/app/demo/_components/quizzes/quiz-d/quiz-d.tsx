@@ -13,9 +13,11 @@ interface QuizDProps {
 }
 
 export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
-  const { quizState, answerQuestion, nextQuestion, resetQuiz, } = useQuizD(quizItem);
+  const { quizState, answerQuestion, nextQuestion, resetQuiz } =
+    useQuizD(quizItem);
   const { questions, currentQuestionIndex, isComplete, score } = quizState;
   const { playCorrectTune, playIncorrectTune } = useTune();
+
   console.log("currentQuestion:", questions[currentQuestionIndex]);
 
   const [feedback, setFeedback] = React.useState<{
@@ -25,14 +27,16 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
 
   const handleAnswer = (answer: string) => {
     const currentQuestion = questions[currentQuestionIndex];
- 
+
     const isCorrect = answer === currentQuestion.correctAnswer;
+
     const feedbackText = isCorrect
       ? "Correct! ✅"
       : `Incorrect. The correct answer is: ${currentQuestion.correctAnswer} ❌`;
 
     if (isCorrect) {
       playCorrectTune();
+      quizState.score++;
     } else {
       playIncorrectTune();
     }
@@ -41,7 +45,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
 
     setTimeout(() => {
       answerQuestion(answer);
-      if(isComplete){
+      if (isComplete) {
         return;
       }
       nextQuestion();
@@ -185,17 +189,17 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
   };
   const currentQuestion = questions[currentQuestionIndex];
 
-  if (isComplete) {
-    return ;
+  if (isComplete || !currentQuestion) {
+    return;
   }
 
-  if (!currentQuestion) {
-    return (
-      <div className="flex items-center justify-center min-h-screen p-4">
-        Loading quiz...
-      </div>
-    );
-  }
+  //   if (!currentQuestion) {
+  //     return (
+  //       <div className="flex items-center justify-center min-h-screen p-4">
+  //         Loading quiz...
+  //       </div>
+  //     );
+  //   }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">

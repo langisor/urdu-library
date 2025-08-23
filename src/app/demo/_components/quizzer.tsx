@@ -36,7 +36,7 @@ export function Quizzer({ quizzes }: QuizzerProps) {
   const renderQuiz = (quizItem: QuizItem, index: number) => {
     switch (quizItem.type) {
       case "D":
-        return <Quizzes.QuizD key={index} quizItem={quizItem} />;
+        return <Quizzes.QuizD key={index} quizItem={quizItem}  />;
       case "F":
         return <Quizzes.QuizF key={index} quizItem={quizItem} />;
       default:

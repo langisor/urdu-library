@@ -37,7 +37,7 @@ export function useQuizD(quizItem: QuizDItem) {
                     : q
             ),
             score: quizState.score + (answer === quizState.questions[quizState.currentQuestionIndex].correctAnswer ? 1 : 0),
-            isComplete: quizState.currentQuestionIndex + 1 >= quizState.questions.length,
+            isComplete: quizState.currentQuestionIndex + 1 >=4,
         })
     }
     const resetQuiz = () => {
