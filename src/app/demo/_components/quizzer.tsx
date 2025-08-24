@@ -35,12 +35,12 @@ export function Quizzer({ quizzes }: QuizzerProps) {
     switch (currentQuiz.type) {
       case "D":
         return <Quizzes.QuizD key={currentQuizIndex} quizItem={currentQuiz} />;
-      case "F":
-        return <Quizzes.QuizF key={currentQuizIndex} quizItem={currentQuiz} />;
       case "T1":
         return <Quizzes.QuizT1 key={currentQuizIndex} quizItem={currentQuiz} handleNextQuiz={handleNextQuiz} />;
       case "T2":
         return <Quizzes.QuizT2 key={currentQuizIndex} quizItem={currentQuiz} handleNextQuiz={handleNextQuiz} />;
+      case "Qb":
+        return <Quizzes.QuizQb key={currentQuizIndex} quizItem={currentQuiz} handleNextQuiz={handleNextQuiz} />;
       default:
         return (
           <Card className="border border-red-500">

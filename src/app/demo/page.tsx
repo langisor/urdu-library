@@ -26,7 +26,6 @@ async function getQuiz(qType: string) {
   const _quizzes = await queryClient`
   SELECT  "quizData"  FROM "Quiz" where "type"=${qType} LIMIT 5
   `;
-  console.log(_quizzes);
   const parsedQuizzes = [];
   for (const quiz of _quizzes) {
     parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));

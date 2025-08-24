@@ -1,3 +1,4 @@
+import { getAudioUrl, getImageUrl, shuffleArray } from "../helpers";
 
 export type QuizDItem = {
   id: number
@@ -42,7 +43,6 @@ export type QuizDState = {
   score: number
   isComplete: boolean
 }
-import { getAudioUrl, getImageUrl, shuffleArray } from "../helpers";
 export function convertToQuestions(quizItem: QuizDItem): Question[] {
   const questions = quizItem.alts.map((alt, index) => ({
     id: alt.audio_updated_at,
