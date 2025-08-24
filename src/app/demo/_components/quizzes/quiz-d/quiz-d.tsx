@@ -18,6 +18,11 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
   const { questions, currentQuestionIndex, isComplete, score } = quizState;
   const { playCorrectTune, playIncorrectTune } = useTune();
 
+  const isOS2 = window.navigator.userAgent.includes("OS 2");
+  const isSafari = window.navigator.userAgent.includes("Safari");
+  const isIPad = window.navigator.userAgent.includes("iPad");
+  const isIPhone = window.navigator.userAgent.includes("iPhone");
+  console.log(window.navigator.userAgent);
 
   const [feedback, setFeedback] = React.useState<{
     isCorrect: boolean;
@@ -119,10 +124,16 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <CardContent className="flex flex-col items-center p-4">
             <div className="relative w-24 h-24 mb-2">
               {/* audio */}
-              <AudioPlayer
+              {/* <AudioPlayer
                 audioUrl={currentQuestion.audioFile}
                 text={""}
                 autoPlay={true}
+              /> */}
+              <audio
+                src={currentQuestion.audioFile}
+                muted
+                autoPlay
+                playsInline
               />
             </div>
             <span className="text-sm font-medium">{currentQuestion.text}</span>
@@ -222,6 +233,10 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           </div>
         )}
       </div>
+      <h3 className="text-2xl font-semibold mb-4 text-center">
+        {window.navigator.userAgent}
+      </h3>
     </div>
   );
 };
+// ensure the user interacts with the page before attempting to play media

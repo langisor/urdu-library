@@ -35,7 +35,7 @@ async function getQuiz(qType: string) {
 
 export default async function Demo() {
   // const quizTypes = await getLessonQuizzes(101);
-  const quizTypes = await getQuiz("Qb");
+  const quizTypes = await getQuiz("D");
 
   return (
     <div>
