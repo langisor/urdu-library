@@ -28,7 +28,7 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
     return () => {
       resetQuiz();
     };
-  }, []);
+  },[ quizItem]);
 
   const handleWordClick = (word: string) => {
     setSelectedWords([...selectedWords, word]);
