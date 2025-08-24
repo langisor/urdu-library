@@ -24,7 +24,7 @@ async function getLessonQuizzes(lid: number) {
 }
 async function getQuiz(qType: string) {
   const _quizzes = await queryClient`
-  SELECT  "quizData"  FROM "Quiz" where "type"=${qType} LIMIT 6
+  SELECT  "quizData"  FROM "Quiz" where "type"=${qType} LIMIT 5
   `;
   console.log(_quizzes);
   const parsedQuizzes = [];
@@ -36,7 +36,7 @@ async function getQuiz(qType: string) {
 
 export default async function Demo() {
   // const quizTypes = await getLessonQuizzes(101);
-  const quizTypes = await getQuiz("T2");
+  const quizTypes = await getQuiz("Qb");
 
   return (
     <div>
