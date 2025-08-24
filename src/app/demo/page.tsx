@@ -17,7 +17,7 @@ async function getLessonQuizzes(lid: number) {
   SELECT  "quizData"  FROM "Quiz" where "lessonID"=${lid}
   `;
   const parsedQuizzes = [];
-  for (let quiz of _quizzes) {
+  for (const quiz of _quizzes) {
     parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));
   }
   return parsedQuizzes;
