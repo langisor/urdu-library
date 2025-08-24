@@ -1,6 +1,6 @@
 import { queryClient } from "@/lib/postgres-client";
 import { JsonViewerComponent } from "@/components/json-viewer";
-import { Quizzer } from "./_components/quizzer"
+import { Quizzer } from "./_components/quizzer";
 // async function getDistinctQuizTypes() {
 //   const _quizzes = await queryClient`
 //   SELECT  "quizData"  FROM "Quiz" where "type"='D' LIMIT 2
@@ -15,7 +15,7 @@ import { Quizzer } from "./_components/quizzer"
 async function getLessonQuizzes(lid: number) {
   const _quizzes = await queryClient`
   SELECT  "quizData"  FROM "Quiz" where "lessonID"=${lid}
-  `
+  `;
   const parsedQuizzes = [];
   for (let quiz of _quizzes) {
     parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));
@@ -25,18 +25,19 @@ async function getLessonQuizzes(lid: number) {
 async function getQuiz(qType: string) {
   const _quizzes = await queryClient`
   SELECT  "quizData"  FROM "Quiz" where "type"=${qType} LIMIT 6
-  `
+  `;
+  console.log(_quizzes);
   const parsedQuizzes = [];
-  for (let quiz of _quizzes) {
+  for (const quiz of _quizzes) {
     parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));
   }
   return parsedQuizzes;
 }
- 
+
 export default async function Demo() {
   // const quizTypes = await getLessonQuizzes(101);
   const quizTypes = await getQuiz("T2");
- 
+
   return (
     <div>
       <h1 className="text-2xl font-bold">demo</h1>
