@@ -12,7 +12,6 @@ interface QuizT2Props {
 }
 
 export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
-  const [question, setQuestion] = React.useState<Question | null>(null);
   const [selectedWords, setSelectedWords] = React.useState<string[]>([]);
   const [availableWords, setAvailableWords] = React.useState<string[]>([]);
 
@@ -24,27 +23,27 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   // effect to load the question
   React.useEffect(() => {
     console.log("Effect...");
-    const q = convertToQuestion(quizItem);
-    setQuestion(q);
-    setAvailableWords(q.options);
+    setSelectedWords([]);
+    setAvailableWords(question.options);
 
     return () => {
       resetQuiz();
     };
   }, [quizItem]);
+  const question = convertToQuestion(quizItem);
 
   const handleWordClick = (word: string) => {
-    setSelectedWords((prev) => [...prev, word]);
-    setAvailableWords((prev) => prev.filter((w) => w !== word));
+    setSelectedWords([...selectedWords, word]);
+    setAvailableWords(availableWords.filter((w) => w !== word));
     console.log("selectedWords", selectedWords.length);
     console.log("availableWords", availableWords.length);
     console.log("question.options.length", question?.options.length);
 
-   console.log("isFinished", isFinished);
+    console.log("isFinished", isFinished);
     if (selectedWords.length === question?.options.length) {
       console.log("isFinished", isFinished);
       setIsFinished(true);
-    } 
+    }
   };
 
   const handleRemoveWord = (word: string) => {
@@ -53,6 +52,7 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   };
 
   const checkAnswer = () => {
+    if (!isFinished) return;
     const userPhrase = selectedWords.join(" ");
     const cleanUserPhrase = userPhrase.replace(/\./g, "").trim();
     const cleanCorrectAnswer = question?.correctAnswer
@@ -83,10 +83,18 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
     setAvailableWords(question?.options || []);
     setIsCorrect(null);
   };
+
   const resultMessage =
     isCorrect === true ? "Correct!" : "Incorrect. Try again!";
   const resultColor = isCorrect === true ? "text-green-500" : "text-red-500";
-
+  console.log("outside: selectedWords", selectedWords.length);
+  console.log("outside: availableWords", availableWords.length);
+  if (
+    availableWords.length === 0 &&
+    selectedWords.length === question?.options.length
+  ) {
+    setIsFinished(true);
+  }
   if (!question) {
     return <div>Loading...</div>;
   }
