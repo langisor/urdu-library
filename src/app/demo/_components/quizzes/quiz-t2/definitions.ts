@@ -122,13 +122,15 @@ export interface Question {
   correctAnswer: string; // sols[0].text -> urdu
 }
 
-export function convertToQuestion(quizItem:  QuizT2Item): Question {
+export function convertToQuestion(quizItem: QuizT2Item): Question {
   return {
     audioUrl: getAudioUrl(quizItem.sols[0].key),
     phonetic: quizItem.sols[0].phonetic!,
     text: quizItem.sols[1].text,
     phraseType: quizItem.sols[0].phraseType,
-    options: shuffleArray(quizItem.sols[0].dictionary!.map((sol) => sol.raw) || []),
-    correctAnswer: quizItem.sols[0].text,
+    options: shuffleArray(
+      quizItem.sols[0].text_tokens!.map((token) => token.raw.text)
+    ),
+    correctAnswer: quizItem.sols[0].dictionary!.map((sol) => sol.raw).join(" "),
   };
 }

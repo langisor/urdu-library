@@ -34,8 +34,6 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
     setSelectedWords([...selectedWords, word]);
 
     setAvailableWords(availableWords.filter((w) => w !== word));
-
-    checkAnswer();
   };
 
   const handleRemoveWord = (word: string) => {
@@ -44,28 +42,24 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   };
 
   const checkAnswer = () => {
-    if (selectedWords.length < options!.length) {
-      console.log("not enough words selected");
-      return;
+    console.log("checkAnswer....");
+    const userPhrase = selectedWords.join(" ");
+    // Remove periods such as (۔"۔") and spaces for a clean comparison.
+    const cleanUserPhrase = userPhrase.replace(/\./g, "").trim();
+    const cleanCorrectAnswer = question?.correctAnswer
+      .replace(/\./g, "")
+      .trim();
+    console.log("cleanUserPhrase", cleanUserPhrase);
+    console.log("cleanCorrectAnswer", cleanCorrectAnswer);
+    if (cleanUserPhrase === cleanCorrectAnswer) {
+      setIsCorrect(true);
+      playCorrectTune();
     } else {
-      console.log("checkAnswer....");
-      const userPhrase = selectedWords.join(" ");
-      const cleanUserPhrase = userPhrase.replace(/\./g, "").trim();
-      const cleanCorrectAnswer = question?.correctAnswer
-        .replace(/\./g, "")
-        .trim();
-      console.log("cleanUserPhrase", cleanUserPhrase);
-      console.log("cleanCorrectAnswer", cleanCorrectAnswer);
-      if (cleanUserPhrase === cleanCorrectAnswer) {
-        setIsCorrect(true);
-        playCorrectTune();
-      } else {
-        setIsCorrect(false);
-        playIncorrectTune();
-        setTimeout(() => {
-          resetQuiz();
-        }, 2000);
-      }
+      setIsCorrect(false);
+      playIncorrectTune();
+      setTimeout(() => {
+        resetQuiz();
+      }, 2000);
     }
   };
   const playAudio = () => {
@@ -81,12 +75,9 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
     setIsCorrect(null);
   };
 
-  const resultMessage =
-    isCorrect === true ? "Correct!" : "Incorrect. Try again!";
   const resultColor = isCorrect === true ? "text-green-500" : "text-red-500";
   console.log("outside: selectedWords", selectedWords.length);
   console.log("outside: availableWords", availableWords.length);
-  //  if selectedWords length is equal to options length then check answer
 
   if (!question) {
     return <div>Loading...</div>;
@@ -164,6 +155,14 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
           >
             التالي
           </button>
+          {selectedWords.length === question?.options.length && (
+            <button
+              onClick={checkAnswer}
+              className="px-8 py-3 rounded-full text-white font-bold transition-all duration-300 bg-blue-500 hover:bg-blue-600 shadow-lg"
+            >
+              تحقق
+            </button>
+          )}
         </CardFooter>
         <div className="mt-8" dir="ltr">
           <h2 className="text-xl font-bold mb-4">Raw Quiz Data</h2>
