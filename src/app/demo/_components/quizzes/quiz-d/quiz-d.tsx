@@ -18,7 +18,6 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
   const { questions, currentQuestionIndex, isComplete, score } = quizState;
   const { playCorrectTune, playIncorrectTune } = useTune();
 
-  console.log("currentQuestion:", questions[currentQuestionIndex]);
 
   const [feedback, setFeedback] = React.useState<{
     isCorrect: boolean;

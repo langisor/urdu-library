@@ -1,52 +1,52 @@
-"use client"
-import { QuizFItem  } from "./definitions"
-import * as React from "react"
-import { convertToQuestions } from "./definitions";
-import { QuizDState } from "./definitions";
-export function useQuizD(quizItem: QuizFItem) {
-    const [quizState, setState] = React.useState<QuizDState>({
-        currentQuestionIndex: 0,
-        score: 0,
-        questions: [],
-        isComplete: false,
-    })
-    React.useEffect(() => {
-        setState({
-            ...quizState,
-            questions: convertToQuestions(quizItem),
-        })
-    }, [quizItem])
-    const startQuiz = () => {
-        setState({
-            ...quizState,
-            isComplete: false,
-        })
-    }
-    const nextQuestion = () => {
-        setState({
-            ...quizState,
-            currentQuestionIndex: quizState.currentQuestionIndex + 1,
-        })
-    }
-    const answerQuestion = (answer: string) => {
-        setState({
-            ...quizState,
-            score: quizState.score + (answer === quizState.questions[quizState.currentQuestionIndex].correctAnswer ? 1 : 0),
-        })
-    }
-    const resetQuiz = () => {
-        setState({
-            ...quizState,
-            currentQuestionIndex: 0,
-            score: 0,
-            isComplete: false,
-        })
-    }
-    return {
-        quizState,
-        startQuiz,
-        nextQuestion,
-        answerQuestion,
-        resetQuiz,
-    }
-}
+// "use client"
+// import { QuizFItem  } from "./definitions"
+// import * as React from "react"
+// import { convertToQuestions } from "./definitions";
+// import { QuizDState } from "./definitions";
+// export function useQuizD(quizItem: QuizFItem) {
+//     const [quizState, setState] = React.useState<QuizDState>({
+//         currentQuestionIndex: 0,
+//         score: 0,
+//         questions: [],
+//         isComplete: false,
+//     })
+//     React.useEffect(() => {
+//         setState({
+//             ...quizState,
+//             questions: convertToQuestions(quizItem),
+//         })
+//     }, [quizItem])
+//     const startQuiz = () => {
+//         setState({
+//             ...quizState,
+//             isComplete: false,
+//         })
+//     }
+//     const nextQuestion = () => {
+//         setState({
+//             ...quizState,
+//             currentQuestionIndex: quizState.currentQuestionIndex + 1,
+//         })
+//     }
+//     const answerQuestion = (answer: string) => {
+//         setState({
+//             ...quizState,
+//             score: quizState.score + (answer === quizState.questions[quizState.currentQuestionIndex].correctAnswer ? 1 : 0),
+//         })
+//     }
+//     const resetQuiz = () => {
+//         setState({
+//             ...quizState,
+//             currentQuestionIndex: 0,
+//             score: 0,
+//             isComplete: false,
+//         })
+//     }
+//     return {
+//         quizState,
+//         startQuiz,
+//         nextQuestion,
+//         answerQuestion,
+//         resetQuiz,
+//     }
+// }

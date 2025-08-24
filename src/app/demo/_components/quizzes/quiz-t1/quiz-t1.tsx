@@ -30,7 +30,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
     return () => {
       resetQuiz();
     };
-  }, [quizItem]);
+  }, []);
   // Handle word selection and arrangement.
   const handleWordClick = (word: string) => {
     // If the user has already answered, do nothing.
