@@ -19,6 +19,8 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
   const [isCorrect, setIsCorrect] = React.useState<boolean | null>(null);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const {playCorrectTune, playIncorrectTune} = useTune();
+
+  // effect to load the question
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
     setQuestion(q);

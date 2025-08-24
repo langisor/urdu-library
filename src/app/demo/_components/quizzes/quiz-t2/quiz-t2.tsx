@@ -12,38 +12,30 @@ interface QuizT2Props {
 }
 
 export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
+  const [question, setQuestion] = React.useState<Question | null>(null);
   const [selectedWords, setSelectedWords] = React.useState<string[]>([]);
   const [availableWords, setAvailableWords] = React.useState<string[]>([]);
-
   const [isCorrect, setIsCorrect] = React.useState<boolean | null>(null);
-  const [isFinished, setIsFinished] = React.useState<boolean>(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { playCorrectTune, playIncorrectTune } = useTune();
-
+  const options = question?.options;
   // effect to load the question
   React.useEffect(() => {
-    console.log("Effect...");
-    setSelectedWords([]);
-    setAvailableWords(question.options);
+    const q = convertToQuestion(quizItem);
+    setQuestion(q);
 
+    setAvailableWords(q.options);
     return () => {
       resetQuiz();
     };
-  }, [quizItem]);
-  const question = convertToQuestion(quizItem);
+  }, []);
 
   const handleWordClick = (word: string) => {
     setSelectedWords([...selectedWords, word]);
-    setAvailableWords(availableWords.filter((w) => w !== word));
-    console.log("selectedWords", selectedWords.length);
-    console.log("availableWords", availableWords.length);
-    console.log("question.options.length", question?.options.length);
 
-    console.log("isFinished", isFinished);
-    if (selectedWords.length === question?.options.length) {
-      console.log("isFinished", isFinished);
-      setIsFinished(true);
-    }
+    setAvailableWords(availableWords.filter((w) => w !== word));
+
+    checkAnswer();
   };
 
   const handleRemoveWord = (word: string) => {
@@ -52,23 +44,28 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   };
 
   const checkAnswer = () => {
-    if (!isFinished) return;
-    const userPhrase = selectedWords.join(" ");
-    const cleanUserPhrase = userPhrase.replace(/\./g, "").trim();
-    const cleanCorrectAnswer = question?.correctAnswer
-      .replace(/\./g, "")
-      .trim();
-    console.log("cleanUserPhrase", cleanUserPhrase);
-    console.log("cleanCorrectAnswer", cleanCorrectAnswer);
-    if (cleanUserPhrase === cleanCorrectAnswer) {
-      setIsCorrect(true);
-      playCorrectTune();
+    if (selectedWords.length < options!.length) {
+      console.log("not enough words selected");
+      return;
     } else {
-      setIsCorrect(false);
-      playIncorrectTune();
-      setTimeout(() => {
-        resetQuiz();
-      }, 2000);
+      console.log("checkAnswer....");
+      const userPhrase = selectedWords.join(" ");
+      const cleanUserPhrase = userPhrase.replace(/\./g, "").trim();
+      const cleanCorrectAnswer = question?.correctAnswer
+        .replace(/\./g, "")
+        .trim();
+      console.log("cleanUserPhrase", cleanUserPhrase);
+      console.log("cleanCorrectAnswer", cleanCorrectAnswer);
+      if (cleanUserPhrase === cleanCorrectAnswer) {
+        setIsCorrect(true);
+        playCorrectTune();
+      } else {
+        setIsCorrect(false);
+        playIncorrectTune();
+        setTimeout(() => {
+          resetQuiz();
+        }, 2000);
+      }
     }
   };
   const playAudio = () => {
@@ -89,12 +86,8 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   const resultColor = isCorrect === true ? "text-green-500" : "text-red-500";
   console.log("outside: selectedWords", selectedWords.length);
   console.log("outside: availableWords", availableWords.length);
-  if (
-    availableWords.length === 0 &&
-    selectedWords.length === question?.options.length
-  ) {
-    setIsFinished(true);
-  }
+  //  if selectedWords length is equal to options length then check answer
+
   if (!question) {
     return <div>Loading...</div>;
   }

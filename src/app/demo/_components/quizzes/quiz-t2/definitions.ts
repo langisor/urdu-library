@@ -112,6 +112,7 @@ export type QuizT2Item = {
   modifiers: number;
   alternates: Array<any>;
 };
+export type RequiredQuizT2Item = Required<QuizT2Item>;
 export interface Question {
   audioUrl: string;
   phonetic: string;
@@ -121,13 +122,13 @@ export interface Question {
   correctAnswer: string; // sols[0].text -> urdu
 }
 
-export function convertToQuestion(quizItem: QuizT2Item): Question {
+export function convertToQuestion(quizItem:  QuizT2Item): Question {
   return {
     audioUrl: getAudioUrl(quizItem.sols[0].key),
     phonetic: quizItem.sols[0].phonetic!,
     text: quizItem.sols[1].text,
     phraseType: quizItem.sols[0].phraseType,
-    options: shuffleArray(quizItem.sols[0].dictionary?.map((sol) => sol.raw) || []),
+    options: shuffleArray(quizItem.sols[0].dictionary!.map((sol) => sol.raw) || []),
     correctAnswer: quizItem.sols[0].text,
   };
 }

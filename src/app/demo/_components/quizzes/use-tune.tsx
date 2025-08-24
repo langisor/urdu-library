@@ -1,6 +1,7 @@
 "use client";
 import * as Tone from "tone";
 import { useState, useRef, useEffect } from "react";
+
 export const useTune = () => {
   // useRef to store Tone.js players without causing re-renders
   const correctPlayer = useRef<Tone.Player>(null);
@@ -26,12 +27,18 @@ export const useTune = () => {
   }, []);
 
   const playCorrectTune = () => {
-    // Add a small time offset to prevent the 'start time' error
-    correctPlayer.current?.start(Tone.now() + 0.1);
+    // Stop the player first to reset its state
+    if (correctPlayer.current) {
+      correctPlayer.current.stop();
+      correctPlayer.current.start(Tone.now());
+    }
   };
   const playIncorrectTune = () => {
-    // Add a small time offset to prevent the 'start time' error
-    incorrectPlayer.current?.start(Tone.now() + 0.1);
+    // Stop the player first to reset its state
+    if (incorrectPlayer.current) {
+      incorrectPlayer.current.stop();
+      incorrectPlayer.current.start(Tone.now());
+    }
   };
 
   return {
