@@ -48,7 +48,7 @@ export default async function CategoryPage({
   }>;
 }) {
   const _cid = Number((await params).cid);
-
+ console.log("DATABASE_URL", process.env.DATABASE_URL);
   // await the data fetching function
   const { lessonsData, vocabularyData } = await getCategoryLessons(_cid);
   return (
