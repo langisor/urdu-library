@@ -46,7 +46,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         setHasPlayed(true);
       };
     }
-  }, []);
+  }, [ audioUrl]);
 
   const handlePlay = () => {
     if (!isPlaying) {

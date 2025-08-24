@@ -22,12 +22,10 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   // effect to load the question
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
-    setQuestion(q);
+    setQuestion(q=>q);
 
-    setAvailableWords(q.options);
-    return () => {
-      resetQuiz();
-    };
+    setAvailableWords(options=>q.options);
+    
   },[ quizItem]);
 
   const handleWordClick = (word: string) => {

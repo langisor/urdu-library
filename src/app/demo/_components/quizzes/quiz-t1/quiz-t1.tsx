@@ -23,9 +23,9 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
   // effect to load the question
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
-    setQuestion(q);
+    setQuestion(q=>q);
 
-    setAvailableWords(q.options);
+    setAvailableWords(options=>q.options);
 
     return () => {
       resetQuiz();

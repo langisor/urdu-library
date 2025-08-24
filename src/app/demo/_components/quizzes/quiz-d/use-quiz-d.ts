@@ -11,10 +11,10 @@ export function useQuizD(quizItem: QuizDItem) {
         isComplete: false,
     })
     React.useEffect(() => {
-        setState({
-            ...quizState,
+        setState(q => ({
+            ...q,
             questions: convertToQuestions(quizItem),
-        })
+        }))
     }, [quizItem])
     const startQuiz = () => {
         setState({
