@@ -5,7 +5,7 @@ import { BackToUnit } from "./_components/back-to-unit";
 
 async function getVocabularyItems(vid: number) {
   const vItems = await queryClient`
- SELECT * from "Item" where "vocabulary"=${vid}
+ SELECT * from "VItems" where "vocabulary"=${vid}
  `;
 
   const vocs: any[] = [];
