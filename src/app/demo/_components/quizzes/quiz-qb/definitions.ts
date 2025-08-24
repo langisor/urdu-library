@@ -75,5 +75,5 @@ export function convertToQuestions(quizItem: QuizQBItem): Question[] {
     correctAnswer: quizItem.sols[index].text,
     options: shuffleArray(quizItem.sols.map((sol) => sol.text)),
   }));
-  return questions;
+  return shuffleArray(questions);
 }

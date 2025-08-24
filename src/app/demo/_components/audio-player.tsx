@@ -64,7 +64,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   //  Desktop
   if (!isMobile)
     return (
-      <div className="flex  items-center justify-center space-y-4 p-1 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+      <div className="flex  items-center justify-center   bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
         <Button
           onClick={handlePlay}
            

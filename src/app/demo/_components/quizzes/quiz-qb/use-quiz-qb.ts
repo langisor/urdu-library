@@ -2,32 +2,30 @@
 import * as React from "react";
 import { QuizQBItem, QuizQBState } from "./definitions";
 import { convertToQuestions } from "./definitions";
+import { useTune } from "../use-tune";
 export function useQuizQB(quizItem: QuizQBItem) {
   const [quizState, setQuizState] = React.useState<QuizQBState>({
-    questions: [],
+    questions: convertToQuestions(quizItem),
     currentQuestionIndex: 0,
     isComplete: false,
     feedback: null,
   });
-  React.useEffect(() => {
-    setQuizState((q) => ({
-      ...q,
-      questions: convertToQuestions(quizItem),
-    }));
-  }, [quizItem]);
-  const startQuiz = () => {
-    setQuizState({
-      ...quizState,
-      isComplete: false,
-    });
-  };
+  const { playCorrectTune, playIncorrectTune } = useTune();
+
   const nextQuestion = () => {
+    if (quizState.currentQuestionIndex === quizState.questions.length - 1) {
+      setQuizState({
+        ...quizState,
+        isComplete: true,
+      });
+      return;
+    }
     setQuizState({
       ...quizState,
       currentQuestionIndex: quizState.currentQuestionIndex + 1,
     });
   };
-  const checkSelection = (answer: string) => {
+  const checkAnswer = (answer: string) => {
     const isCorrect =
       answer ===
       quizState.questions[quizState.currentQuestionIndex].correctAnswer;
@@ -60,9 +58,8 @@ export function useQuizQB(quizItem: QuizQBItem) {
   };
   return {
     quizState,
-    startQuiz,
     nextQuestion,
-    checkSelection,
+    checkAnswer,
     resetQuiz,
   };
 }

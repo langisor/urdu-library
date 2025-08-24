@@ -74,7 +74,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
         .play()
         .catch((error) => console.error("Audio playback failed:", error));
     }
-  };
+  }; 
   const resetQuiz = () => {
     setSelectedWords([]);
     setAvailableWords(question?.options || []);
