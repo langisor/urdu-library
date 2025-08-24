@@ -4,14 +4,28 @@ import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { usePlayer } from "../_components/use-player";
-
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
 const audioUrl1 = "/media/mondly/audios/_5j_NWTG4kjCB1YiyYHDH08u1-P1M9Ck";
 const audioUrl2 = "/media/mondly/audios/_9YmF7BylhHp2wIS6CYgZlL2tXVINGAF";
-
+const longAudioUrl = "/media/long-5-mins-audio.mp3";
 export default function Test() {
-  const { play, stop, isPlaying } = usePlayer({ audioUrl: audioUrl1, autoPlay: false });
+  // const {
+  //   player: player2,
+  //   togglePlayback: togglePlayback2,
+  //   isPlaying: isPlaying2,
+  // } = usePlayer({ audioUrl: audioUrl2 });
+  // const {
+  //   player: player3,
+  //   togglePlayback: togglePlayback3,
+  //   isPlaying: isPlaying3,
+  // } = usePlayer({ audioUrl: longAudioUrl });
 
- 
   return (
     <div>
       <h1 className="text-2xl font-bold">Test</h1>
@@ -20,31 +34,42 @@ export default function Test() {
           <CardTitle>Video Player</CardTitle>
         </CardHeader>
         <CardContent className="flex gap-4">
-          <Button onClick={() => play()} className="w-1/3">Play</Button>
-          <Button onClick={() => stop()} className="w-1/3">Stop</Button>
-          <p className={isPlaying ? "text-green-500" : "text-red-500"}>
-            {isPlaying ? "Playing" : "Not Playing"}
-          </p>
+          <Sheet>
+            <SheetTrigger>Open</SheetTrigger>
+            <SheetContent>
+              <SheetTitle>Sheet Title</SheetTitle>
+              <SheetDescription>Sheet Description</SheetDescription>
+              <PlayerButton url={audioUrl1} />
+            </SheetContent>
+          </Sheet>
         </CardContent>
       </Card>
     </div>
   );
 }
 
-function VideoPlayer({ url }: { url: string }) {
+function PlayerButton({ url }: { url: string }) {
+  const { player, togglePlayback, isPlaying } = usePlayer({
+    audioUrl: url,
+    autoPlay: false,
+  });
+
+  React.useEffect(() => {
+    if (player && player.loaded) {
+      player.start();
+    }
+  }, [player]);
   return (
-    <figure id="videoContainer">
-      <video id="video" controls preload="metadata" poster="img/poster.jpg">
-        <source src={url} type="video/mp4" />
-        <source src={url} type="video/webm" />
-        <source src={url} type="video/ogg" />
-        {/* Offer download */}
-        <a href="video/tears-of-steel-battle-clip-medium.mp4">Download MP4</a>
-      </video>
-      <figcaption>
-        © Blender Foundation |
-        <a href="http://mango.blender.org">mango.blender.org</a>
-      </figcaption>
-    </figure>
+    <>
+      <Button
+        onClick={togglePlayback}
+        disabled={isPlaying}
+        className={
+          isPlaying ? "text-white bg-red-800" : "text-white bg-green-800"
+        }
+      >
+        Play/Pause
+      </Button>
+    </>
   );
 }

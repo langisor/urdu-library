@@ -183,8 +183,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       tone:
-        specifier: ^15.1.22
-        version: 15.1.22
+        specifier: ^15.2.11
+        version: 15.2.11
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.1.7(@types/react@19.1.11))(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -6020,8 +6020,8 @@ packages:
   tomlify-j0.4@3.0.0:
     resolution: {integrity: sha512-2Ulkc8T7mXJ2l0W476YC/A209PR38Nw8PuaCNtk9uI3t1zzFdGQeWYGQvmj2PZkVvRC/Yoi4xQKMRnWc/N29tQ==}
 
-  tone@15.1.22:
-    resolution: {integrity: sha512-TCScAGD4sLsama5DjvTUXlLDXSqPealhL64nsdV1hhr6frPWve0DeSo63AKnSJwgfg55fhvxj0iPPRwPN5o0ag==}
+  tone@15.2.11:
+    resolution: {integrity: sha512-gXA8AsCXnjaXvturgp7gOnMiWLA2JAcAsOD0i+OK1bdsPO5YbPu4grwy0XTJe66blxicqgYInN0TDP3oqXDSCQ==}
 
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
@@ -13051,7 +13051,7 @@ snapshots:
 
   tomlify-j0.4@3.0.0: {}
 
-  tone@15.1.22:
+  tone@15.2.11:
     dependencies:
       standardized-audio-context: 25.3.77
       tslib: 2.8.1

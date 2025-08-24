@@ -10,39 +10,73 @@ interface UsePlayerProps {
 }
 
 export const usePlayer = ({ audioUrl, autoPlay = false }: UsePlayerProps) => {
-  const player = useRef<Tone.Player>(null);
+  const [player, setPlayer] = useState<Tone.Player | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  // State to track if the user has interacted with the page
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
-    player.current = new Tone.Player({
+    const newPlayer = new Tone.Player({
       url: audioUrl,
-      autostart: autoPlay,
+      autostart: false, // We'll handle the start manually
       loop: false,
     }).toDestination();
-    // clean up
+    // Set the player instance in state.
+    setPlayer(newPlayer);
+    // This cleanup function runs when the component unmounts.
     return () => {
-      player.current?.stop();
-      setIsPlaying(false);
-      player.current?.dispose();
+      // Dispose of the player to free up resources.
+      newPlayer.dispose();
     };
-  }, [audioUrl, autoPlay]);
-
-  const play = () => {
-    if (player.current) {
-      player.current.start(Tone.now());
+  }, []);
+  // UseEffect to handle autoplay after user interaction.
+  // This runs whenever `hasInteracted` or `player` changes.
+  useEffect(() => {
+    // Check if the user has interacted and the player is ready.
+    if (hasInteracted && player && player.loaded) {
+      // Start the audio playback.
+      player.start();
+      // Update the playing state.
       setIsPlaying(true);
     }
-  };
-  const stop = () => {
-    if (player.current) {
-      player.current.stop();
+  }, [hasInteracted, player]);
+
+  // Function to handle the play/pause logic
+  const togglePlayback = async () => {
+    // If the audio context is not yet running, start it.
+    // This is the key step to handle the browser's autoplay policy.
+    if (Tone.getTransport().state !== "started") {
+      await Tone.start();
+      console.log("Audio context started");
+    }
+
+    // Set `hasInteracted` to true on the first user click.
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      return; // The useEffect will handle starting the playback.
+    }
+
+    // If the player is not ready, return.
+    if (!player) {
+      console.log("Player not yet initialized.");
+      return;
+    }
+
+    // Check if the player is currently playing
+    if (isPlaying) {
+      // Stop the player
+      player.stop();
       setIsPlaying(false);
+    } else {
+      // Start the player
+      player.start();
+      setIsPlaying(true);
     }
   };
 
   return {
-    play,
-    stop,
+    player,
+    togglePlayback,
     isPlaying,
   };
 };
