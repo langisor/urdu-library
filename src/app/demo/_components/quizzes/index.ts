@@ -8,8 +8,8 @@ import { QuizF } from "./quiz-f/quiz-f";
 // import { QuizQb } from "./quiz-qb/quiz-qb";
 // import { QuizR } from "./quiz-r/quiz-r";
 import { QuizT1 } from "./quiz-t1/quiz-t1";
+import { QuizT2 } from "./quiz-t2/quiz-t2";
 // import { QuizT1B } from "./quiz-t1b/quiz-t1b";
-// import { QuizT2 } from "./quiz-t2/quiz-t2";
 // import { QuizT2b } from "./quiz-t2b/quiz-t2b";
 // import { QuizW1b } from "./quiz-w1b/quiz-w1b";
 // import { QuizResult } from "../quiz-result";
@@ -25,8 +25,8 @@ export {
   // QuizQb,
   // QuizR,
   QuizT1,
+  QuizT2,
   // QuizT1B,
-  // QuizT2,
   // QuizT2b,
   // QuizW1b,
   // QuizResult,
