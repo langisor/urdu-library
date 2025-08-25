@@ -17,7 +17,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
     useQuizD(quizItem);
   const { questions, currentQuestionIndex, isComplete, score } = quizState;
   const { playCorrectTune, playIncorrectTune } = useTune();
-
+  
   const isOS2 = window.navigator.userAgent.includes("OS 2");
   const isSafari = window.navigator.userAgent.includes("Safari");
   const isIPad = window.navigator.userAgent.includes("iPad");
