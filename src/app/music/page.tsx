@@ -1,93 +1,71 @@
 "use client";
-
-import { useState } from "react";
+import { useState } from 'react';
+import "./style.css";
+import {
+  Card,
+  CardContent
+} from "@/components/ui/card";
+import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@radix-ui/react-checkbox";
-import { Label } from "@/components/ui/label";
-import AddTask from "./_components/add-task";
-interface Task {
-  id: number;
-  text: string;
-  done: boolean;
-}
 
-interface TaskListProps {
-  tasks: Task[];
-  onChangeTask: (task: Task) => void;
-  onDeleteTask: (id: number) => void;
-}
 
-export default function TaskList({
-  tasks,
-  onChangeTask,
-  onDeleteTask,
-}: TaskListProps) {
+export default function App() {
+  const [isFancy, setIsFancy] = useState(false);
   return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task.id}>
-          <Task task={task} onChange={onChangeTask} onDelete={onDeleteTask} />
-        </li>
-      ))}
-    </ul>
-  );
-}
+    <Card className='p-2'>
+      {isFancy ? (
+        <div className='flex gap-3'>
+          <Counter name={'fancy-counter-a'} isFancy={true} />
+          <Counter name={'fancy-counter-b'} isFancy={true} />
+        </div>
 
-interface TaskProps {
-  task: Task;
-  onChange: (task: Task) => void;
-  onDelete: (id: number) => void;
-}
-function Task({ task, onChange, onDelete }: TaskProps) {
-  const [isEditing, setIsEditing] = useState(false);
-
-  const handleCheckedChange = (checked: boolean) => {
-    onChange({
-      ...task,
-      done: checked,
-    });
-  };
-
-  const handleDeleteClick = () => {
-    onDelete(task.id);
-  };
-  let taskContent;
-
-  if (isEditing) {
-    taskContent = (
-      <>
-        <Input
-          value={task.text}
-          onChange={(e) => {
-            onChange({
-              ...task,
-              text: e.target.value,
-            });
+      ) : (
+        <Card>
+          <div className='flex gap-3'>
+            <Counter name={'counter-a'} isFancy={false} />
+            <Counter name={'counter-b'} isFancy={false} />
+          </div>
+        </Card>
+      )}
+      <label>
+        <input
+          type="checkbox"
+          checked={isFancy}
+          onChange={e => {
+            setIsFancy(e.target.checked)
           }}
         />
-        <Button onClick={() => setIsEditing(false)}>Save</Button>
-      </>
-    );
-  } else {
-    taskContent = (
-      <>
-        {task.text}
-        <Button onClick={() => setIsEditing(true)}>Edit</Button>
-      </>
-    );
+        Use fancy styling
+      </label>
+    </Card>
+  );
+
+}
+function Counter({ isFancy, name }: { isFancy: boolean, name: string }) {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
   }
+  if (isFancy) {
+    className += ' fancy';
+  }
+
   return (
-    <>
-      <Label htmlFor="task-checkbox">{taskContent}</Label>
-      <Checkbox
-        checked={task.done}
-        id="task-checkbox"
-        onCheckedChange={handleCheckedChange}
-      />
-      <Button onClick={handleDeleteClick}>Delete</Button>
-    </>
+    <Card className='flex gap-4'>
+      <div
+        className={className}
+        onPointerEnter={() => setHover(true)}
+        onPointerLeave={() => setHover(false)}
+      >
+        <span className='mx-3'>{score}</span>
+        <Button className='my-4' onClick={() => setScore(score + 1)}>
+          Add one
+        </Button>
+      </div>
+    </Card>
   );
 }
-
