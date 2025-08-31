@@ -1,9 +1,10 @@
 .hover {
   /* background-color: burlywood;
   border: 1px dashed black; */
+  border: initial;
 }
 .fancy {
-  padding:1rem;
+  padding: 1rem;
   border: 2px solid blue;
   border-radius: 17px;
   background-color: burlywood;
