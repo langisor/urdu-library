@@ -1,71 +1,60 @@
 "use client";
-import { useState } from 'react';
-import "./style.css";
-import {
-  Card,
-  CardContent
-} from "@/components/ui/card";
-import { Label } from '@/components/ui/label';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Button } from "@/components/ui/button";
+
+import AddTask from "./_components/add-task";
+import TaskList from "./_components/task-list";
+import * as React from "react";
 
 
-export default function App() {
-  const [isFancy, setIsFancy] = useState(false);
-  return (
-    <Card className='p-2'>
-      {isFancy ? (
-        <div className='flex gap-3'>
-          <Counter name={'fancy-counter-a'} isFancy={true} />
-          <Counter name={'fancy-counter-b'} isFancy={true} />
-        </div>
+export default function Page() {
+  const [tasks, setTasks] = React.useState(initialTasks);
 
-      ) : (
-        <Card>
-          <div className='flex gap-3'>
-            <Counter name={'counter-a'} isFancy={false} />
-            <Counter name={'counter-b'} isFancy={false} />
-          </div>
-        </Card>
-      )}
-      <label>
-        <input
-          type="checkbox"
-          checked={isFancy}
-          onChange={e => {
-            setIsFancy(e.target.checked)
-          }}
-        />
-        Use fancy styling
-      </label>
-    </Card>
-  );
-
-}
-function Counter({ isFancy, name }: { isFancy: boolean, name: string }) {
-  const [score, setScore] = useState(0);
-  const [hover, setHover] = useState(false);
-
-  let className = 'counter';
-  if (hover) {
-    className += ' hover';
+  function handleAddTask(text: string) {
+    setTasks([
+      ...tasks,
+      {
+        id: nextId++,
+        text: text,
+        done: false,
+      },
+    ]);
   }
-  if (isFancy) {
-    className += ' fancy';
+
+  function handleChangeTask(task: {
+    id: number;
+    text: string;
+    done: boolean;
+  }) {
+    setTasks(
+      tasks.map((t) => {
+        if (t.id === task.id) {
+          return task;
+        } else {
+          return t;
+        }
+      })
+    );
+  }
+
+  function handleDeleteTask(taskId: number) {
+    setTasks(tasks.filter((t) => t.id !== taskId));
   }
 
   return (
-    <Card className='flex gap-4'>
-      <div
-        className={className}
-        onPointerEnter={() => setHover(true)}
-        onPointerLeave={() => setHover(false)}
-      >
-        <span className='mx-3'>{score}</span>
-        <Button className='my-4' onClick={() => setScore(score + 1)}>
-          Add one
-        </Button>
-      </div>
-    </Card>
+    <>
+      <h1>Prague itinerary</h1>
+      <AddTask onAddTask={handleAddTask} />
+      <TaskList
+        tasks={tasks}
+        onChangeTask={handleChangeTask}
+        onDeleteTask={handleDeleteTask}
+      />
+    </>
   );
 }
+
+let nextId = 3;
+const initialTasks = [
+  { id: 0, text: 'Visit Kafka Museum', done: true },
+  { id: 1, text: 'Watch a puppet show', done: false },
+  { id: 2, text: 'Lennon Wall pic', done: false },
+];
