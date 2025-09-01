@@ -25,8 +25,7 @@ interface QuizzerProps {
 
 export function Quizzer({ quizzes }: QuizzerProps) {
   const {
-    updateScore,
-    currentScore,
+ 
     currentQuizIndex,
     handleNextQuiz,
     handlePreviousQuiz,
@@ -67,7 +66,7 @@ export function Quizzer({ quizzes }: QuizzerProps) {
         className="w-full h-screen flex flex-col p-4 overflow-y-auto"
       >
         <SheetHeader>
-          <SheetTitle>النقاط المكتسبة: {currentScore}</SheetTitle>
+          <SheetTitle>النقاط المكتسبة: {0}</SheetTitle>
           <SheetDescription>تمرين {currentQuizIndex + 1} من {quizzes.length}</SheetDescription>
         </SheetHeader>
         <div className="flex flex-col gap-4">

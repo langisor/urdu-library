@@ -18,7 +18,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
   // correct/incorrect feedback sounds
   const { playCorrectTune, playIncorrectTune } = useTune();
   // facilities
-  const { questions, currentQuestionIndex, isComplete, score } = quizState;
+  const { questions, currentQuestionIndex, isComplete } = quizState;
 
 
 
@@ -192,13 +192,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
     return;
   }
 
-  //   if (!currentQuestion) {
-  //     return (
-  //       <div className="flex items-center justify-center min-h-screen p-4">
-  //         Loading quiz...
-  //       </div>
-  //     );
-  //   }
+ 
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
@@ -207,7 +201,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <span className="text-gray-500">
             Question {currentQuestionIndex + 1} of {questions.length}
           </span>
-          <span className="text-gray-500">Score: {score}</span>
+          <span className="text-gray-500">Score: {0}</span>
         </div>
         <h3 className="text-2xl font-semibold mb-4 text-center"></h3>
         {renderCards()}

@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { AudioPlayer } from "../../audio-player";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import {useTune} from "../use-tune";
+import { useTune } from "../use-tune";
 
 interface QuizT1Props {
   quizItem: QuizT1Item;
@@ -18,14 +18,14 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
   const [availableWords, setAvailableWords] = React.useState<string[]>([]);
   const [isCorrect, setIsCorrect] = React.useState<boolean | null>(null);
   const audioRef = React.useRef<HTMLAudioElement>(null);
-  const {playCorrectTune, playIncorrectTune} = useTune();
+  const { playCorrectTune, playIncorrectTune } = useTune();
 
   // effect to load the question
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
-    setQuestion(q=>q);
+    setQuestion((q) => q);
 
-    setAvailableWords(options=>q.options);
+    setAvailableWords((options) => q.options);
 
     return () => {
       resetQuiz();
@@ -74,7 +74,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
         .play()
         .catch((error) => console.error("Audio playback failed:", error));
     }
-  }; 
+  };
   const resetQuiz = () => {
     setSelectedWords([]);
     setAvailableWords(question?.options || []);
@@ -187,6 +187,10 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
         )}
       </CardFooter>
       <div className="mt-8" dir="ltr">
+        <h2 className="text-xl font-bold mb-4">
+          audio played using normal playAudio function and HTML button element
+          with onClick function{" "}
+        </h2>
         <h2 className="text-xl font-bold mb-4">Raw Quiz Data</h2>
         <JsonViewerComponent data={question} />
       </div>

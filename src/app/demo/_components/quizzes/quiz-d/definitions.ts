@@ -40,7 +40,6 @@ export interface Question {
 export type QuizDState = {
   currentQuestionIndex: number
   questions: Array<Question>
-  score: number
   isComplete: boolean
 }
 export function convertToQuestions(quizItem: QuizDItem): Question[] {

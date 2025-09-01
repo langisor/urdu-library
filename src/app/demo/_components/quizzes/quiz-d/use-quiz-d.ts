@@ -6,7 +6,7 @@ import { QuizDState } from "./definitions";
 export function useQuizD(quizItem: QuizDItem) {
     const [quizState, setState] = React.useState<QuizDState>({
         currentQuestionIndex: 0,
-        score: 0,
+      
         questions: [],
         isComplete: false,
     })
@@ -36,7 +36,7 @@ export function useQuizD(quizItem: QuizDItem) {
                     ? { ...q, isAnswered: true }
                     : q
             ),
-            score: quizState.score + (answer === quizState.questions[quizState.currentQuestionIndex].correctAnswer ? 1 : 0),
+           
             isComplete: quizState.currentQuestionIndex + 1 >=4,
         })
     }
@@ -44,7 +44,7 @@ export function useQuizD(quizItem: QuizDItem) {
         setState({
             ...quizState,
             currentQuestionIndex: 0,
-            score: 0,
+            
             isComplete: false,
         })
     }

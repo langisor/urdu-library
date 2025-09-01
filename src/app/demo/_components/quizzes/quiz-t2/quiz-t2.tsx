@@ -19,14 +19,15 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { playCorrectTune, playIncorrectTune } = useTune();
   const options = question?.options;
+
   // effect to load the question
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
-    setQuestion(q=>q);
+    setQuestion(q => q);
 
-    setAvailableWords(options=>q.options);
-    
-  },[ quizItem]);
+    setAvailableWords(options => q.options);
+
+  }, [quizItem]);
 
   const handleWordClick = (word: string) => {
     setSelectedWords([...selectedWords, word]);
@@ -145,11 +146,10 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
           <button
             disabled={isCorrect === false || isCorrect === null}
             onClick={handleNextQuiz}
-            className={`px-8 py-3 rounded-full text-white font-bold transition-all duration-300 ${
-              isCorrect === false || isCorrect === null
+            className={`px-8 py-3 rounded-full text-white font-bold transition-all duration-300 ${isCorrect === false || isCorrect === null
                 ? "bg-gray-600 cursor-not-allowed"
                 : "bg-green-500 hover:bg-green-600 shadow-lg"
-            }`}
+              }`}
           >
             التالي
           </button>
@@ -163,6 +163,7 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
           )}
         </CardFooter>
         <div className="mt-8" dir="ltr">
+          <h2 className="text-xl font-bold mb-4">audio played using normal playAudio function and HTML button element with onClick function + an hidden HTML audio element with 'autoPlay playsInline' attributes for auto play functionality</h2>
           <h2 className="text-xl font-bold mb-4">Raw Quiz Data</h2>
           <JsonViewerComponent data={question} />
         </div>
