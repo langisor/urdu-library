@@ -2,18 +2,19 @@
 import * as React from "react";
 
 
-import { QuizItem } from "./quizzes/types";
+
 
 interface QuizzerState {
- 
-    quizzes: Array<QuizItem>;
- 
+
+    quizzes: Array<any>;
+    score: number;
+
 }
- 
-export function useQuizzer({quizzes}: QuizzerState) {
- 
+
+export function useQuizzer({ quizzes, score=0 }: QuizzerState) {
+
     const [currentQuizIndex, setCurrentQuizIndex] = React.useState(0)
- 
+
 
     const handleNextQuiz = () => {
         setCurrentQuizIndex(currentQuizIndex + 1)
@@ -28,4 +29,3 @@ export function useQuizzer({quizzes}: QuizzerState) {
         handlePreviousQuiz,
     }
 }
-    
