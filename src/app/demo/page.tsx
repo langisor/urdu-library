@@ -39,7 +39,7 @@ export default async function Demo() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">demo</h1>
+      <h1 className="text-2xl font-bold bg-amber-950 text-white p-1 rounded-2xl px-5">Quizzes - Type D samples</h1>
       <Quizzer quizzes={quizTypes} />
       <div className="mt-8">
         <h2 className="text-xl font-bold mb-4">Raw Quiz Data</h2>

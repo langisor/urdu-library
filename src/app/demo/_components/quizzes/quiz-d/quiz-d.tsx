@@ -2,7 +2,6 @@
 import * as React from "react";
 import { useQuizD } from "./use-quiz-d";
 import { QuizDItem } from "./definitions";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useTune } from "../use-tune";
@@ -15,14 +14,14 @@ interface QuizDProps {
 export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
   const { quizState, answerQuestion, nextQuestion, resetQuiz } =
     useQuizD(quizItem);
-  const { questions, currentQuestionIndex, isComplete, score } = quizState;
+
+  // correct/incorrect feedback sounds
   const { playCorrectTune, playIncorrectTune } = useTune();
-  
-  const isOS2 = window.navigator.userAgent.includes("OS 2");
-  const isSafari = window.navigator.userAgent.includes("Safari");
-  const isIPad = window.navigator.userAgent.includes("iPad");
-  const isIPhone = window.navigator.userAgent.includes("iPhone");
-  console.log(window.navigator.userAgent);
+  // facilities
+  const { questions, currentQuestionIndex, isComplete, score } = quizState;
+
+
+
 
   const [feedback, setFeedback] = React.useState<{
     isCorrect: boolean;
@@ -67,13 +66,12 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={0}
             onClick={() => handleAnswer(options[0].text)}
-            className={`cursor-pointer transition-colors duration-200 ${
-              feedback
-                ? options[0].text === currentQuestion.correctAnswer
-                  ? "border-green-500"
-                  : "border-red-500"
-                : ""
-            }`}
+            className={`cursor-pointer transition-colors duration-200 ${feedback
+              ? options[0].text === currentQuestion.correctAnswer
+                ? "border-green-500"
+                : "border-red-500"
+              : ""
+              }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -93,13 +91,12 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={1}
             onClick={() => handleAnswer(options[1].text)}
-            className={`cursor-pointer transition-colors duration-200 ${
-              feedback
-                ? options[1].text === currentQuestion.correctAnswer
-                  ? "border-green-500"
-                  : "border-red-500"
-                : ""
-            }`}
+            className={`cursor-pointer transition-colors duration-200 ${feedback
+              ? options[1].text === currentQuestion.correctAnswer
+                ? "border-green-500"
+                : "border-red-500"
+              : ""
+              }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -123,20 +120,15 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
         >
           <CardContent className="flex flex-col items-center p-4">
             <div className="relative w-24 h-24 mb-2">
-              {/* audio */}
-              {/* <AudioPlayer
+
+              <AudioPlayer
                 audioUrl={currentQuestion.audioFile}
                 text={""}
                 autoPlay={true}
-              /> */}
-              <audio
-                src={currentQuestion.audioFile}
-                muted
-                autoPlay
-                playsInline
               />
+
             </div>
-            <span className="text-sm font-medium">{currentQuestion.text}</span>
+            <span className="text-2xl font-medium">{currentQuestion.text}</span>
           </CardContent>
         </Card>
         {/* option 3 */}
@@ -144,13 +136,12 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={2}
             onClick={() => handleAnswer(options[2].text)}
-            className={`cursor-pointer transition-colors duration-200 ${
-              feedback
-                ? options[2].text === currentQuestion.correctAnswer
-                  ? "border-green-500"
-                  : "border-red-500"
-                : ""
-            }`}
+            className={`cursor-pointer transition-colors duration-200 ${feedback
+              ? options[2].text === currentQuestion.correctAnswer
+                ? "border-green-500"
+                : "border-red-500"
+              : ""
+              }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -170,13 +161,12 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={3}
             onClick={() => handleAnswer(options[3].text)}
-            className={`cursor-pointer transition-colors duration-200 ${
-              feedback
-                ? options[3].text === currentQuestion.correctAnswer
-                  ? "border-green-500"
-                  : "border-red-500"
-                : ""
-            }`}
+            className={`cursor-pointer transition-colors duration-200 ${feedback
+              ? options[3].text === currentQuestion.correctAnswer
+                ? "border-green-500"
+                : "border-red-500"
+              : ""
+              }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -223,19 +213,16 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
         {renderCards()}
         {feedback && (
           <div
-            className={`p-3 rounded-lg text-center font-bold mb-4 ${
-              feedback.isCorrect
-                ? "bg-green-200 text-green-800"
-                : "bg-red-200 text-red-800"
-            }`}
+            className={`p-3 rounded-lg text-center font-bold mb-4 ${feedback.isCorrect
+              ? "bg-green-200 text-green-800"
+              : "bg-red-200 text-red-800"
+              }`}
           >
             {feedback.text}
           </div>
         )}
       </div>
-      <h3 className="text-2xl font-semibold mb-4 text-center">
-        {window.navigator.userAgent}
-      </h3>
+
     </div>
   );
 };

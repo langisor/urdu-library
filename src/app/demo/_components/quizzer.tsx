@@ -1,7 +1,7 @@
 "use client";
 import * as Quizzes from "./quizzes";
 import { JsonViewerComponent } from "@/components/json-viewer";
- 
+
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -14,17 +14,19 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useQuizzer } from "./use-quizzer";
- 
+import { useQuizzer } from "../_hooks/use-quizzer";
+
 
 
 
 interface QuizzerProps {
-  quizzes:  any[]
+  quizzes: any[]
 }
 
 export function Quizzer({ quizzes }: QuizzerProps) {
   const {
+    updateScore,
+    currentScore,
     currentQuizIndex,
     handleNextQuiz,
     handlePreviousQuiz,
@@ -65,15 +67,15 @@ export function Quizzer({ quizzes }: QuizzerProps) {
         className="w-full h-screen flex flex-col p-4 overflow-y-auto"
       >
         <SheetHeader>
-          <SheetTitle>النقاط المكتسبة: 0</SheetTitle>
-          <SheetDescription></SheetDescription>
+          <SheetTitle>النقاط المكتسبة: {currentScore}</SheetTitle>
+          <SheetDescription>تمرين {currentQuizIndex + 1} من {quizzes.length}</SheetDescription>
         </SheetHeader>
         <div className="flex flex-col gap-4">
           <div>
             <Badge>
               Quiz {currentQuizIndex + 1} of {quizzes.length}
             </Badge>
-             
+
           </div>
           <div className="flex justify-between">
             <Button

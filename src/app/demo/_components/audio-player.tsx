@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { useIsMobile } from "./use-mobile";
+import { useIsMobile } from "../_hooks/use-mobile";
 import { Play, BookCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 interface AudioPlayerProps {
