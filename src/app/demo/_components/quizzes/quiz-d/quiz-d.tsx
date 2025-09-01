@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useTune } from "../use-tune";
 import { AudioPlayer } from "../../audio-player";
- 
+ import { useUser } from "@/app/demo/_hooks/use-user";
 interface QuizDProps {
   quizItem: QuizDItem;
 }
@@ -19,7 +19,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
     text: string;
   } | null>(null);
 
- 
+  const { user, isLoggedIn, setUser, clearUser, updateScore } = useUser();
   // correct/incorrect feedback sounds
   const { playCorrectTune, playIncorrectTune } = useTune();
   // facilities
@@ -36,6 +36,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
     if (isCorrect) {
       
       playCorrectTune();
+      updateScore(1);
     } else {
       playIncorrectTune();
     }

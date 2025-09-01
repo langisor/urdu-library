@@ -14,7 +14,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useQuizzer } from "../_hooks/use-quizzer";
-import { useUser } from "@/hooks/use-user";
+import { useUser } from "@/app/demo/_hooks/use-user";
+import { getUser } from "@/server/actions/getUser";
 
 interface QuizzerProps {
   quizzes: any[];
@@ -25,12 +26,18 @@ export function Quizzer({ quizzes }: QuizzerProps) {
     quizzes,
   });
 
-  const { user, isLoggedIn, setUser, clearUser, updateScore } = useUser()
+  const { user, isLoggedIn, setUser, clearUser, updateScore } = useUser();
 
+  React.useEffect(() => {
+   const getData=async()=>{
+      const user=await getUser();
+      setUser(user);
+   }
+   getData();
+  }, []);
   const [quizOpen, setQuizOpen] = React.useState(false);
   const currentQuiz = quizzes[currentQuizIndex];
 
- 
   console.log("userData: ", user);
 
   const renderQuiz = () => {
@@ -86,7 +93,7 @@ export function Quizzer({ quizzes }: QuizzerProps) {
       >
         <SheetHeader>
           <SheetTitle>
-            النقاط المكتسبة: {user?.score || "Loading..."} 
+            النقاط المكتسبة: {user?.score || "Loading..."}
           </SheetTitle>
           <SheetDescription>
             تمرين {currentQuizIndex + 1} من {quizzes.length}
