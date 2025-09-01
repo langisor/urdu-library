@@ -2,8 +2,6 @@
 import * as React from "react";
 
 
-
-
 interface QuizzerState {
 
     quizzes: Array<any>;
@@ -11,6 +9,11 @@ interface QuizzerState {
 
 }
 
+/**
+ * hook to manage showed quizzes
+ * @param quizzes: Array<any> of quizzes (D,T1,T2,...) 
+ * @returns 
+ */
 export function useQuizzer({ quizzes }: QuizzerState) {
 
     const [currentQuizIndex, setCurrentQuizIndex] = React.useState(0)
@@ -22,7 +25,6 @@ export function useQuizzer({ quizzes }: QuizzerState) {
     const handlePreviousQuiz = () => {
         setCurrentQuizIndex(currentQuizIndex - 1)
     }
-
 
     return {
 

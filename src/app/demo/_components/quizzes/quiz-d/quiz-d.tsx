@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useTune } from "../use-tune";
 import { AudioPlayer } from "../../audio-player";
-
+ 
 interface QuizDProps {
   quizItem: QuizDItem;
 }
@@ -14,23 +14,19 @@ interface QuizDProps {
 export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
   const { quizState, answerQuestion, nextQuestion, resetQuiz } =
     useQuizD(quizItem);
+  const [feedback, setFeedback] = React.useState<{
+    isCorrect: boolean;
+    text: string;
+  } | null>(null);
 
+ 
   // correct/incorrect feedback sounds
   const { playCorrectTune, playIncorrectTune } = useTune();
   // facilities
   const { questions, currentQuestionIndex, isComplete } = quizState;
 
 
-
-
-  const [feedback, setFeedback] = React.useState<{
-    isCorrect: boolean;
-    text: string;
-  } | null>(null);
-
   const handleAnswer = (answer: string) => {
-    const currentQuestion = questions[currentQuestionIndex];
-
     const isCorrect = answer === currentQuestion.correctAnswer;
 
     const feedbackText = isCorrect
@@ -38,6 +34,7 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
       : `Incorrect. The correct answer is: ${currentQuestion.correctAnswer} ❌`;
 
     if (isCorrect) {
+      
       playCorrectTune();
     } else {
       playIncorrectTune();
@@ -120,13 +117,11 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
         >
           <CardContent className="flex flex-col items-center p-4">
             <div className="relative w-24 h-24 mb-2">
-
               <AudioPlayer
                 audioUrl={currentQuestion.audioFile}
                 text={""}
                 autoPlay={true}
               />
-
             </div>
             <span className="text-2xl font-medium">{currentQuestion.text}</span>
           </CardContent>
@@ -192,8 +187,6 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
     return;
   }
 
- 
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="w-full max-w-2xl">
@@ -216,7 +209,6 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           </div>
         )}
       </div>
-
     </div>
   );
 };
