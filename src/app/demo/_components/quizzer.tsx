@@ -14,33 +14,47 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useQuizzer } from "../_hooks/use-quizzer";
-import { useUser } from "@/app/demo/_hooks/use-user";
-import { getUser } from "@/server/actions/getUser";
-
+import { useUserStore } from "../_store/user-store";
+import { ResultScreen } from "./result-screen";
 interface QuizzerProps {
   quizzes: any[];
 }
 
 export function Quizzer({ quizzes }: QuizzerProps) {
-  const { currentQuizIndex, handleNextQuiz, handlePreviousQuiz } = useQuizzer({
+  const {
+    currentQuizIndex,
+    setCurrentQuizIndex,
+    handleNextQuiz,
+    handlePreviousQuiz,
+    isQuizComplete,
+  } = useQuizzer({
     quizzes,
   });
 
-  const { user, isLoggedIn, setUser, clearUser, updateScore } = useUser();
+  const { getUserScore, resetScore } = useUserStore();
 
-  React.useEffect(() => {
-   const getData=async()=>{
-      const user=await getUser();
-      setUser(user);
-   }
-   getData();
-  }, []);
   const [quizOpen, setQuizOpen] = React.useState(false);
   const currentQuiz = quizzes[currentQuizIndex];
 
-  console.log("userData: ", user);
-
+  /**
+   * 
+   *  @description `onOpenChange` callback is triggered whenever the Sheet's open state changes, including when users click the close icon, press Escape, or click outside the sheet.
+   */
+  const handleOpenChange = (open: boolean) => {
+    
+    setQuizOpen(open);
+    // reset score and current quiz index when sheet is closed
+    if (!open) {
+      resetScore();
+       setCurrentQuizIndex(0);
+    }
+   
+      
+  };
   const renderQuiz = () => {
+    if (isQuizComplete) {
+      return <ResultScreen score={getUserScore()} />;
+    }
     switch (currentQuiz.type) {
       case "D":
         return <Quizzes.QuizD key={currentQuizIndex} quizItem={currentQuiz} />;
@@ -80,12 +94,12 @@ export function Quizzer({ quizzes }: QuizzerProps) {
     }
   };
   return (
-    <Sheet open={quizOpen} onOpenChange={setQuizOpen}>
+    <Sheet open={quizOpen} onOpenChange={handleOpenChange}>
       <SheetTrigger asChild className="flex items-center justify-center">
         <Button variant="outline">start quizzes</Button>
       </SheetTrigger>
       <div className="flex items-center justify-center">
-        النقاط الحالية: {user?.score}
+        النقاط الحالية: {getUserScore() || "Loading..."}
       </div>
       <SheetContent
         side="bottom"
@@ -93,7 +107,7 @@ export function Quizzer({ quizzes }: QuizzerProps) {
       >
         <SheetHeader>
           <SheetTitle>
-            النقاط المكتسبة: {user?.score || "Loading..."}
+            النقاط المكتسبة: {getUserScore() || "Loading..."}
           </SheetTitle>
           <SheetDescription>
             تمرين {currentQuizIndex + 1} من {quizzes.length}
@@ -107,13 +121,13 @@ export function Quizzer({ quizzes }: QuizzerProps) {
           </div>
           <div className="flex justify-between">
             <Button
-              onClick={handlePreviousQuiz}
+              onClick={() => handlePreviousQuiz()}
               disabled={currentQuizIndex === 0}
             >
               Previous
             </Button>
             <Button
-              onClick={handleNextQuiz}
+              onClick={() => handleNextQuiz()}
               disabled={currentQuizIndex === quizzes.length - 1}
             >
               Next
@@ -122,6 +136,7 @@ export function Quizzer({ quizzes }: QuizzerProps) {
           <div>{renderQuiz()}</div>
         </div>
       </SheetContent>
+     
     </Sheet>
   );
 }

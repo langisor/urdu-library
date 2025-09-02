@@ -7,6 +7,7 @@ import { AudioPlayer } from "../../audio-player";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { useTune } from "../use-tune";
+import { useUserStore } from "../../../_store/user-store";
 
 interface QuizT1Props {
   quizItem: QuizT1Item;
@@ -19,7 +20,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
   const [isCorrect, setIsCorrect] = React.useState<boolean | null>(null);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { playCorrectTune, playIncorrectTune } = useTune();
-
+  const { incrementScore } = useUserStore();
   // effect to load the question
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
@@ -58,6 +59,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
     if (cleanUserPhrase === cleanCorrectAnswer) {
       setIsCorrect(true);
       playCorrectTune();
+      incrementScore(1);
     } else {
       setIsCorrect(false);
       playIncorrectTune();

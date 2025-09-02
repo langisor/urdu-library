@@ -1,5 +1,5 @@
 "use server";
-
+import { queryClient } from "@/lib/postgres-client";
 // interface for user data object
 export interface UserData {
   id: number;
@@ -13,17 +13,10 @@ export interface UserData {
   score: number;
 }
 // fake user data
-export async function getUser(): Promise<UserData> {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  return {
-    name: "Langisor",
-    username: "admin",
-    email: "langisor-app@proton.me",
-    role: "root",
-    status: "active",
-    createdAt: "2025-08-13T23:26:35.000Z",
-    updatedAt: "2025-08-13T23:26:35.000Z",
-    id: 1,
-    score: 10
-  };
+export async function getUser() {
+  const userData = await queryClient`
+  SELECT * FROM "User"  WHERE id = 1;
+`;
+
+  return userData[0] as UserData;
 }

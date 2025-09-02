@@ -3,7 +3,11 @@ import * as React from "react";
 import { QuizQbItem, QuizQbState } from "./definitions";
 import { convertToQuestions } from "./definitions";
 import { useTune } from "../use-tune";
-export function useQuizQb(quizItem: QuizQbItem) {
+import { useUserStore } from "../../../_store/user-store";
+interface UseQuizQbProps {
+  quizItem: QuizQbItem;
+}
+export function useQuizQb({ quizItem }: UseQuizQbProps) {
   const [quizState, setQuizState] = React.useState<QuizQbState>({
     questions: convertToQuestions(quizItem),
     currentQuestionIndex: 0,
@@ -11,7 +15,7 @@ export function useQuizQb(quizItem: QuizQbItem) {
     feedback: null,
   });
   const { playCorrectTune, playIncorrectTune } = useTune();
-
+  const { incrementScore } = useUserStore();
   const nextQuestion = () => {
     if (quizState.currentQuestionIndex === quizState.questions.length - 1) {
       setQuizState({
@@ -29,6 +33,12 @@ export function useQuizQb(quizItem: QuizQbItem) {
     const isCorrect =
       answer ===
       quizState.questions[quizState.currentQuestionIndex].correctAnswer;
+    if (isCorrect) {
+      playCorrectTune();
+      incrementScore(1);
+    } else {
+      playIncorrectTune();
+    }
     setQuizState({
       ...quizState,
       feedback: {
@@ -58,6 +68,7 @@ export function useQuizQb(quizItem: QuizQbItem) {
   };
   return {
     quizState,
+     
     nextQuestion,
     checkAnswer,
     resetQuiz,

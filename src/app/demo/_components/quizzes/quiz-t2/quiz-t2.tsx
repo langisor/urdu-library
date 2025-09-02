@@ -4,7 +4,7 @@ import { QuizT2Item, Question, convertToQuestion } from "./definitions";
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { Play } from "lucide-react";
 import { useTune } from "../use-tune";
-
+import { useUserStore } from "../../../_store/user-store";
 import * as React from "react";
 interface QuizT2Props {
   quizItem: QuizT2Item;
@@ -19,7 +19,7 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { playCorrectTune, playIncorrectTune } = useTune();
   const options = question?.options;
-
+  const { incrementScore } = useUserStore();
   // effect to load the question
   React.useEffect(() => {
     const q = convertToQuestion(quizItem);
@@ -53,6 +53,7 @@ export function QuizT2({ quizItem, handleNextQuiz }: QuizT2Props) {
     if (cleanUserPhrase === cleanCorrectAnswer) {
       setIsCorrect(true);
       playCorrectTune();
+      incrementScore(1);
     } else {
       setIsCorrect(false);
       playIncorrectTune();

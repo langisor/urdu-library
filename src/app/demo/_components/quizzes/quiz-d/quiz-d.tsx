@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useTune } from "../use-tune";
 import { AudioPlayer } from "../../audio-player";
- import { useUser } from "@/app/demo/_hooks/use-user";
+import { useUserStore } from "../../../_store/user-store";
 interface QuizDProps {
   quizItem: QuizDItem;
 }
@@ -19,12 +19,11 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
     text: string;
   } | null>(null);
 
-  const { user, isLoggedIn, setUser, clearUser, updateScore } = useUser();
+  const { incrementScore } = useUserStore();
   // correct/incorrect feedback sounds
   const { playCorrectTune, playIncorrectTune } = useTune();
   // facilities
   const { questions, currentQuestionIndex, isComplete } = quizState;
-
 
   const handleAnswer = (answer: string) => {
     const isCorrect = answer === currentQuestion.correctAnswer;
@@ -34,9 +33,8 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
       : `Incorrect. The correct answer is: ${currentQuestion.correctAnswer} ❌`;
 
     if (isCorrect) {
-      
       playCorrectTune();
-      updateScore(1);
+      incrementScore(1);
     } else {
       playIncorrectTune();
     }
@@ -64,12 +62,13 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={0}
             onClick={() => handleAnswer(options[0].text)}
-            className={`cursor-pointer transition-colors duration-200 ${feedback
-              ? options[0].text === currentQuestion.correctAnswer
-                ? "border-green-500"
-                : "border-red-500"
-              : ""
-              }`}
+            className={`cursor-pointer transition-colors duration-200 ${
+              feedback
+                ? options[0].text === currentQuestion.correctAnswer
+                  ? "border-green-500"
+                  : "border-red-500"
+                : ""
+            }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -89,12 +88,13 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={1}
             onClick={() => handleAnswer(options[1].text)}
-            className={`cursor-pointer transition-colors duration-200 ${feedback
-              ? options[1].text === currentQuestion.correctAnswer
-                ? "border-green-500"
-                : "border-red-500"
-              : ""
-              }`}
+            className={`cursor-pointer transition-colors duration-200 ${
+              feedback
+                ? options[1].text === currentQuestion.correctAnswer
+                  ? "border-green-500"
+                  : "border-red-500"
+                : ""
+            }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -132,12 +132,13 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={2}
             onClick={() => handleAnswer(options[2].text)}
-            className={`cursor-pointer transition-colors duration-200 ${feedback
-              ? options[2].text === currentQuestion.correctAnswer
-                ? "border-green-500"
-                : "border-red-500"
-              : ""
-              }`}
+            className={`cursor-pointer transition-colors duration-200 ${
+              feedback
+                ? options[2].text === currentQuestion.correctAnswer
+                  ? "border-green-500"
+                  : "border-red-500"
+                : ""
+            }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -157,12 +158,13 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
           <Card
             key={3}
             onClick={() => handleAnswer(options[3].text)}
-            className={`cursor-pointer transition-colors duration-200 ${feedback
-              ? options[3].text === currentQuestion.correctAnswer
-                ? "border-green-500"
-                : "border-red-500"
-              : ""
-              }`}
+            className={`cursor-pointer transition-colors duration-200 ${
+              feedback
+                ? options[3].text === currentQuestion.correctAnswer
+                  ? "border-green-500"
+                  : "border-red-500"
+                : ""
+            }`}
           >
             <CardContent className="flex flex-col items-center p-4">
               <div className="relative w-24 h-24 mb-2">
@@ -201,10 +203,11 @@ export const QuizD: React.FC<QuizDProps> = ({ quizItem }: QuizDProps) => {
         {renderCards()}
         {feedback && (
           <div
-            className={`p-3 rounded-lg text-center font-bold mb-4 ${feedback.isCorrect
-              ? "bg-green-200 text-green-800"
-              : "bg-red-200 text-red-800"
-              }`}
+            className={`p-3 rounded-lg text-center font-bold mb-4 ${
+              feedback.isCorrect
+                ? "bg-green-200 text-green-800"
+                : "bg-red-200 text-red-800"
+            }`}
           >
             {feedback.text}
           </div>
