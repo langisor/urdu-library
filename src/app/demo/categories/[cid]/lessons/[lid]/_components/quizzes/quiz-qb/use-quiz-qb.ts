@@ -1,0 +1,76 @@
+"use client";
+import * as React from "react";
+import { QuizQbItem, QuizQbState } from "./definitions";
+import { convertToQuestions } from "./definitions";
+import { useTune } from "../use-tune";
+import { useUserStore } from "../../../_store/user-store";
+interface UseQuizQbProps {
+  quizItem: QuizQbItem;
+}
+export function useQuizQb({ quizItem }: UseQuizQbProps) {
+  const [quizState, setQuizState] = React.useState<QuizQbState>({
+    questions: convertToQuestions(quizItem),
+    currentQuestionIndex: 0,
+    isComplete: false,
+    feedback: null,
+  });
+  const { playCorrectTune, playIncorrectTune } = useTune();
+  const { incrementScore } = useUserStore();
+  const nextQuestion = () => {
+    if (quizState.currentQuestionIndex === quizState.questions.length - 1) {
+      setQuizState({
+        ...quizState,
+        isComplete: true,
+      });
+      return;
+    }
+    setQuizState({
+      ...quizState,
+      currentQuestionIndex: quizState.currentQuestionIndex + 1,
+    });
+  };
+  const checkAnswer = (answer: string) => {
+    const isCorrect =
+      answer ===
+      quizState.questions[quizState.currentQuestionIndex].correctAnswer;
+    if (isCorrect) {
+      playCorrectTune();
+      incrementScore(1);
+    } else {
+      playIncorrectTune();
+    }
+    setQuizState({
+      ...quizState,
+      feedback: {
+        isCorrect,
+        text: isCorrect
+          ? "Correct! ✅"
+          : `Incorrect. The correct answer is: ${
+              quizState.questions[quizState.currentQuestionIndex].correctAnswer
+            } ❌`,
+      },
+    });
+    setTimeout(() => {
+      nextQuestion();
+      setQuizState({
+        ...quizState,
+        feedback: null,
+      });
+    }, 1500);
+  };
+  const resetQuiz = () => {
+    setQuizState({
+      ...quizState,
+      currentQuestionIndex: 0,
+      isComplete: false,
+      feedback: null,
+    });
+  };
+  return {
+    quizState,
+     
+    nextQuestion,
+    checkAnswer,
+    resetQuiz,
+  };
+}

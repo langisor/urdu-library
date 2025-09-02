@@ -1,0 +1,75 @@
+[
+ {
+  "id": 640364,
+  "audioFile": "XbAKbmVrKFljPJNsNz8p5mxXp6fSCkgV",
+  "text": "یہ میرا باپ ہے۔",
+  "phonetic": "Yeh maira baap hai.",
+  "correctAnswer": "هذا أبي.",
+  "isAnswered": false,
+  "options": [
+   "صديقي.",
+   "أبي.",
+   "هذا"
+  ]
+ },
+ {
+  "id": 654918,
+  "audioFile": "nwF4aDH7vsaXyNrc3dabhX5_gbouTxO5",
+  "text": "وہ ایک ڈاکٹر ہے۔",
+  "phonetic": "Wo aik daktar hai.",
+  "correctAnswer": "هي طبيبة.",
+  "isAnswered": false,
+  "options": [
+   "هنا.",
+   "هي",
+   "طبيبة.",
+   "أنتم"
+  ]
+ },
+ {
+  "id": 640367,
+  "audioFile": "5HMuoTqOKhP3R5QGHUi-7FymFZENB_t3",
+  "text": "یہ میری بہن ہے۔",
+  "phonetic": "Yeh mairi behan hai.",
+  "correctAnswer": "هذه أختي.",
+  "isAnswered": false,
+  "options": [
+   "هذه",
+   "زوجتي.",
+   "أختي."
+  ]
+ },
+ {
+  "id": 610200,
+  "audioFile": "xjFVrFKwWxpVo4E5rKOpipIbESSLd7-3",
+  "text": "ہم ایک جوڑی ہیں۔",
+  "phonetic": "Hum aik jorhi hain.",
+  "correctAnswer": "نحن زوجان.",
+  "isAnswered": false,
+  "options": [
+   "زوجان.",
+   "نحن",
+   "الكعكة؟",
+   "كيف",
+   "كانت"
+  ]
+ },
+ {
+  "id": 655299,
+  "audioFile": "eZX4kiIStLK53czow8iPtQPZMPzK_uQ6",
+  "text": "کیا فیس ہے؟",
+  "phonetic": "Kya fees hai?",
+  "correctAnswer": "ما هي الرسوم؟",
+  "isAnswered": false,
+  "options": [
+   "يوجد",
+   "أين",
+   "ما",
+   "صراف",
+   "الرسوم؟",
+   "ماكينة",
+   "آلي؟",
+   "هي"
+  ]
+ }
+]
