@@ -33,7 +33,6 @@ async function getLessonQuizzes(lid: number) {
 //   // return only 5 quizzes after shuffling
 //   return parsedQuizzes.sort(() => Math.random() - 0.5).slice(0, 5);
 // }
-
 interface LessonQuizzesProps {
   params: Promise<{ cid: string; lid: string }>;
 }
