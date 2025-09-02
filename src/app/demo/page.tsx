@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+"use client";
 
 export default function MondlyPage() {
-  redirect("/demo/categories");
+  return <div>demo</div>;
 }
