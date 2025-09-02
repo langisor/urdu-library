@@ -60,7 +60,7 @@ export default function MainHeader() {
   const handleClosingSheet = () => {
     setOpen(false);
   };
- 
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
@@ -218,6 +218,9 @@ function QuickBookCourseLink() {
         width={50}
         height={40}
         className="object-contain rounded-2xl  h-10  w-10   cursor-pointer"
+        style={{
+          height: "auto",
+        }}
       />
     </Link>
   );
