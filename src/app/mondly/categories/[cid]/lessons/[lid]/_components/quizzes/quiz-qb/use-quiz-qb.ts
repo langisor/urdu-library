@@ -3,7 +3,6 @@ import * as React from "react";
 import { QuizQbItem, QuizQbState } from "./definitions";
 import { convertToQuestions } from "./definitions";
 import { useTune } from "../use-tune";
-import { useUserStore } from "../../../_store/user-store";
 interface UseQuizQbProps {
   quizItem: QuizQbItem;
 }
@@ -15,7 +14,7 @@ export function useQuizQb({ quizItem }: UseQuizQbProps) {
     feedback: null,
   });
   const { playCorrectTune, playIncorrectTune } = useTune();
-  const { incrementScore } = useUserStore();
+ 
   const nextQuestion = () => {
     if (quizState.currentQuestionIndex === quizState.questions.length - 1) {
       setQuizState({
@@ -35,7 +34,6 @@ export function useQuizQb({ quizItem }: UseQuizQbProps) {
       quizState.questions[quizState.currentQuestionIndex].correctAnswer;
     if (isCorrect) {
       playCorrectTune();
-      incrementScore(1);
     } else {
       playIncorrectTune();
     }

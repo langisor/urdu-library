@@ -1,35 +1,24 @@
 "use client";
 import * as React from "react";
+import { useQuiz } from "../_hooks/use-quiz";
 
-interface QuizzerState {
-  quizzes: Array<any>;
-}
-
-/**
- * hook to manage showed quizzes
- * @param quizzes: Array<any> of quizzes (D,T1,T2,...)
- * @returns
- */
-export function useQuizzer({ quizzes }: QuizzerState) {
+export function useQuizzer({ quizzesIDs }: { quizzesIDs: number[] }) {
   const [currentQuizIndex, setCurrentQuizIndex] = React.useState(0);
-  const [isQuizComplete, setIsQuizComplete] = React.useState(false);
+  const { quiz, isLoading, error } = useQuiz({
+    qid: quizzesIDs[currentQuizIndex],
+  });
   const handleNextQuiz = () => {
-    if (currentQuizIndex === quizzes.length - 1) {
-      setIsQuizComplete(true);
-      return;
-    }
-    setCurrentQuizIndex((prev) => prev + 1);
+    setCurrentQuizIndex(currentQuizIndex + 1);
   };
   const handlePreviousQuiz = () => {
-    if (currentQuizIndex === 0) return;
-    setCurrentQuizIndex((prev) => prev - 1);
+    setCurrentQuizIndex(currentQuizIndex - 1);
   };
-
   return {
-    currentQuizIndex,
-    setCurrentQuizIndex,
+    quiz,
+    isLoading,
+    error,
     handleNextQuiz,
     handlePreviousQuiz,
-    isQuizComplete,
+    currentQuizIndex,
   };
 }

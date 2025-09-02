@@ -1,53 +1,54 @@
-import { queryClient } from "@/lib/postgres-client";
-import { JsonViewerComponent } from "@/components/json-viewer";
+"use client";
+import { useLesson } from "./_hooks/use-lesson";
+import * as React from "react";
 import { Quizzer } from "./_components/quizzer";
-// async function getDistinctQuizTypes() {
-//   const _quizzes = await queryClient`
-//   SELECT  "quizData"  FROM "Quiz" where "type"='D' LIMIT 2
-//   `
-//   const parsedQuizzes = [];
-//   for (let quiz of _quizzes) {
-//     parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));
-//   }
-//   return parsedQuizzes;
-
-// }
-async function getLessonQuizzes(lid: number) {
-  const _quizzes = await queryClient`
-  SELECT  "quizData"  FROM "Quiz" where "lessonID"=${lid}
-  `;
-  const parsedQuizzes = [];
-  for (const quiz of _quizzes) {
-    parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));
+import { useParams } from "next/navigation";
+export default function LessonQuizzes() {
+  const params = useParams();
+  const { lesson, isLoading, error } = useLesson(Number(params.lid));
+  if (isLoading) {
+    return <p>Loading...</p>;
   }
-  return parsedQuizzes;
-}
-// async function getQuiz(qType: string) {
-//   const _quizzes = await queryClient`
-//   SELECT  "quizData"  FROM "Quiz" where "type"=${qType} LIMIT 10
-//   `;
-//   const parsedQuizzes = [];
-//   for (const quiz of _quizzes) {
-//     parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData)));
-//   }
-//   // return only 5 quizzes after shuffling
-//   return parsedQuizzes.sort(() => Math.random() - 0.5).slice(0, 5);
-// }
-interface LessonQuizzesProps {
-  params: Promise<{ cid: string; lid: string }>;
-}
-export default async function LessonQuizzes({ params }: LessonQuizzesProps) {
-  const  lid = (await params).lid;
-  console.log("lid: ", lid);
-  const quizzes = await getLessonQuizzes(Number(lid));
-  
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
   return (
     <div>
-     
-      <Quizzer quizzes={quizzes} />
-      <div className="mt-8">
-        <h2 className="text-xl font-bold mb-4">Raw Quiz Data</h2>
-        <JsonViewerComponent data={quizzes} />
+      <CountDown />
+      
+      <Quizzer quizzesIDs={lesson.quizzesIDs as number[]} />
+    </div>
+  );
+}
+
+function CountDown() {
+  const [count, setCount] = React.useState(3);
+  const [isVisible, setIsVisible] = React.useState(true);
+
+  React.useEffect(() => {
+    if (count > 0) {
+      const timer = setTimeout(() => {
+        setCount(count - 1);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    } else {
+      // Hide the component when countdown reaches 0
+      setIsVisible(false);
+    }
+  }, [count]);
+
+  if (!isVisible) {
+    return null;
+  }
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+      <div className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-2xl">
+        <div className="text-6xl font-bold text-center text-primary animate-pulse">
+          {count}
+        </div>
       </div>
     </div>
   );

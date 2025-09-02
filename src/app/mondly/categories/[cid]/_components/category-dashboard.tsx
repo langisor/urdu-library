@@ -42,7 +42,7 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
                   (vocabularyData.countDone / vocabularyData.countItem) * 100
                 )
           }
-          link={`/mondly/categories/${vocabularyData.id}/vocabularies?vid=${vocabularyData.id}`}
+          link={`/demo/categories/${vocabularyData.id}/vocabularies?vid=${vocabularyData.id}`}
           isVocabularyCard={true}
         />
 
@@ -67,7 +67,7 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
               description={description}
               status={status}
               progress={progress}
-              link={`/mondly/categories/${lesson.categoryID}/lessons/${lesson.id}`}
+              link={`/demo/categories/${lesson.categoryID}/lessons/${lesson.id}`}
             />
           );
         })}
@@ -79,7 +79,7 @@ export default function CategoryDashboard(data: CategoryDashboardProps) {
           description={"TODO: add dialogues"}
           status={vocabularyData.done ? "مكتمل" : "قيد التقدم"}
           progress={0}
-          link={`/mondly/categories/${vocabularyData.id}/vocabularies?did=${vocabularyData.id}`}
+          link={`/demo/categories/${vocabularyData.id}/lessons/${vocabularyData.id}`}
           isVocabularyCard={true}
         />
       </div>

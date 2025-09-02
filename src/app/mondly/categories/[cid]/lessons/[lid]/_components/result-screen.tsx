@@ -12,14 +12,14 @@ export function ResultScreen({ score }: ResultScreenProps) {
   const [exit, setExit] = React.useState(false);
   // if exit is true, return to demo page
   if (exit) {
-    router.push("/demo");
+    router.back();
   }
   return (
     <Card className="flex flex-col gap-4 text-right" dir="rtl">
       <CardContent>
         <h2 className="text-xl font-bold mb-4">Result</h2>
         <p className="text-2xl font-bold">Your score is {score}</p>
-        <Button onClick={() => setExit(true)}>Play Again</Button>
+        <Button onClick={() => setExit(true)}> عودة الى الدرس</Button>
       </CardContent>
     </Card>
   );

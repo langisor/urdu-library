@@ -1,7 +1,7 @@
  
 import { CategoriesCards } from "./_components/categories-cards";
  
-import { CategoryItem } from "../_types/data-services";
+import { CategoryItem } from "@/app/mondly/_types/data-services";
 import { queryClient } from "@/lib/postgres-client";
  
 async function getCategories() {

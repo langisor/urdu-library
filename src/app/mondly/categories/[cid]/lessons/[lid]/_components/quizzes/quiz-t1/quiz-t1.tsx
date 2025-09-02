@@ -3,25 +3,25 @@ import { JsonViewerComponent } from "@/components/json-viewer";
 import { QuizT1Item, Question, convertToQuestion } from "./definitions";
 import * as React from "react";
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
-import { AudioPlayer } from "../../audio-player";
-import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { useTune } from "../use-tune";
-import { useUserStore } from "../../../_store/user-store";
 
 interface QuizT1Props {
   quizItem: QuizT1Item;
   handleNextQuiz: () => void;
 }
 export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
-  const [question, setQuestion] = React.useState<Question>(convertToQuestion(quizItem));
-  const [selectedWords, setSelectedWords] = React.useState<string[]>( []);
-  const [availableWords, setAvailableWords] = React.useState<string[]>(question.options);
+  const [question, setQuestion] = React.useState<Question>(
+    convertToQuestion(quizItem)
+  );
+  const [selectedWords, setSelectedWords] = React.useState<string[]>([]);
+  const [availableWords, setAvailableWords] = React.useState<string[]>(
+    question.options
+  );
   const [isCorrect, setIsCorrect] = React.useState<boolean | null>(null);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { playCorrectTune, playIncorrectTune } = useTune();
-  const { incrementScore } = useUserStore();
- 
+
   // Handle word selection and arrangement.
   const handleWordClick = (word: string) => {
     // If the user has already answered, do nothing.
@@ -49,7 +49,6 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
     if (cleanUserPhrase === cleanCorrectAnswer) {
       setIsCorrect(true);
       playCorrectTune();
-      incrementScore(1);
       handleNextQuiz();
     } else {
       setIsCorrect(false);
@@ -70,7 +69,7 @@ export const QuizT1: React.FC<QuizT1Props> = ({ quizItem, handleNextQuiz }) => {
   };
   const resetQuiz = () => {
     setSelectedWords([]);
-    setAvailableWords(question?.options  || []);
+    setAvailableWords(question?.options || []);
     setIsCorrect(null);
   };
   const resultMessage =
