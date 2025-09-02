@@ -7,6 +7,7 @@ import { useQuizzer } from "../_hooks/use-quizzer";
 import { ResultScreen } from "./result-screen";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+
 export function Quizzer({ quizzesIDs }: { quizzesIDs: number[] }) {
   const {
     quiz,
@@ -26,7 +27,8 @@ export function Quizzer({ quizzesIDs }: { quizzesIDs: number[] }) {
   if (currentQuizIndex === quizzesIDs.length - 1) {
     return <ResultScreen score={quiz.score} />;
   }
-  const renderProgress = () => {
+
+  const renderNavigationBar = () => {
     return (
       <div className="flex justify-around my-4  mx-4">
         <Button onClick={handlePreviousQuiz} disabled={currentQuizIndex === 0}>
@@ -67,6 +69,10 @@ export function Quizzer({ quizzesIDs }: { quizzesIDs: number[] }) {
         return (
           <Quizzes.QuizQb quizItem={quiz} handleNextQuiz={handleNextQuiz} />
         );
+      case "F":
+        return (
+          <Quizzes.QuizF quizItem={quiz} handleNextQuiz={handleNextQuiz} />
+        );
 
       default:
         return (
@@ -81,7 +87,8 @@ export function Quizzer({ quizzesIDs }: { quizzesIDs: number[] }) {
   return (
     <div>
       <JsonViewerComponent data={quiz} />
-      {renderProgress()}
+      {renderNavigationBar()}
+      {renderQuiz()}
     </div>
   );
 }
