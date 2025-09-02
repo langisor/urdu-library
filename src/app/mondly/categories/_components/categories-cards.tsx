@@ -16,7 +16,7 @@ export function CategoriesCards({
       <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {categories.map((category: CategoryItem) => (
           <Link
-            href={`/demo/categories/${category.id}`}
+            href={`/mondly/categories/${category.id}`}
             className="hover:cursor-pointer transition-all hover:scale-105"
             dir="rtl"
             key={category.id}
