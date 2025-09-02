@@ -1,10 +1,10 @@
 "use client";
 import * as React from "react";
-import { QuizQBItem, QuizQBState } from "./definitions";
+import { QuizQbItem, QuizQbState } from "./definitions";
 import { convertToQuestions } from "./definitions";
 import { useTune } from "../use-tune";
-export function useQuizQB(quizItem: QuizQBItem) {
-  const [quizState, setQuizState] = React.useState<QuizQBState>({
+export function useQuizQb(quizItem: QuizQbItem) {
+  const [quizState, setQuizState] = React.useState<QuizQbState>({
     questions: convertToQuestions(quizItem),
     currentQuestionIndex: 0,
     isComplete: false,

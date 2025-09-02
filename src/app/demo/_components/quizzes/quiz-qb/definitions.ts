@@ -1,5 +1,5 @@
 import { getAudioUrl, shuffleArray } from "../helpers";
-export type QuizQBItem = {
+export type QuizQbItem = {
   id: number;
   alts: Array<{
     key: string;
@@ -59,14 +59,14 @@ export interface Question {
   options: string[];
 }
 
-export type QuizQBState = {
+export type QuizQbState = {
   questions: Question[];
   currentQuestionIndex: number;
   isComplete: boolean;
   feedback: { isCorrect: boolean; text: string } | null;
 };
 
-export function convertToQuestions(quizItem: QuizQBItem): Question[] {
+export function convertToQuestions(quizItem: QuizQbItem): Question[] {
   const questions = quizItem.alts.map((alt, index) => ({
     id: alt.audio_updated_at,
     audioFile: getAudioUrl(alt.key),

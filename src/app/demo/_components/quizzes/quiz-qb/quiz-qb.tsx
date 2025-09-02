@@ -1,6 +1,6 @@
 "use client";
-import { useQuizQB } from "./use-quiz-qb";
-import { QuizQBItem } from "./definitions";
+import { useQuizQb } from "./use-quiz-qb";
+import { QuizQbItem } from "./definitions";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,15 +16,15 @@ import { AudioPlayer } from "../../audio-player";
 import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
 import {Label} from "@/components/ui/label";
 import { JsonViewerComponent } from "@/components/json-viewer";
-interface QuizQBProps {
-  quizItem: QuizQBItem;
+interface QuizQbProps {
+  quizItem: QuizQbItem;
   handleNextQuiz: () => void;
 }
 
-export const QuizQb: React.FC<QuizQBProps> = ({ quizItem, handleNextQuiz }) => {
+export const QuizQb: React.FC<QuizQbProps> = ({ quizItem, handleNextQuiz }) => {
   // states
   const { quizState, nextQuestion, checkAnswer, resetQuiz } =
-    useQuizQB(quizItem);
+    useQuizQb(quizItem);
 
   const { playCorrectTune, playIncorrectTune } = useTune();
   const handleNextQuestion = () => {
