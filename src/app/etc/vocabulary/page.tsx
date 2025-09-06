@@ -54,7 +54,7 @@ export default function VocabularyPage() {
   ));
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-4">
       <Tabs
         value={tab}
         onValueChange={setTab}

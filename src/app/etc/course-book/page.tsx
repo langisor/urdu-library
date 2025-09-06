@@ -1,3 +1,4 @@
+"use client";
 import book from "./_components/toc.json";
 import BookBrowser from "./_components/book-browser";
 import { Unit } from "./_components/difinitions";

@@ -102,7 +102,7 @@ export default function VocabularyUnit2Explore() {
         </TabsList>
 
         <TabsContent value="explore">
-          <p className="text-muted-foreground mb-6">
+          <p className="  mb-6">
             Use the search to filter Arabic-derived Urdu words by Urdu script,
             meaning, or root.
           </p>

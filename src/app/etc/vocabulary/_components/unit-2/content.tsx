@@ -6,9 +6,9 @@ import { Separator } from "@/components/ui/separator";
 export default function VocabularyUnit2Content() {
   return (
     <div className="unit-2-content p-6 space-y-10 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold">
-        Unit 2: The <span className="lang-arabic text-primary">Arabic</span>{" "}
-        Element in <span className="lang-english text-secondary">Urdu</span>{" "}
+      <h2 className="text-3xl font-bold text-white">
+        Unit 2: The <span className="lang-arabic  ">Arabic</span>{" "}
+        Element in <span className="lang-english ">Urdu</span>{" "}
         Vocabulary
       </h2>
 

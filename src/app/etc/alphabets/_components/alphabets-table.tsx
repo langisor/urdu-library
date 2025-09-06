@@ -32,7 +32,7 @@ export function AlphabetsTable() {
     setIsPlaying(true);
   };
   return (
-    <div className="">
+    <div>
       <Table className="w-full">
         <TableHeader>
           <TableRow className="bg-zinc-700 text-xl font-bold ">
