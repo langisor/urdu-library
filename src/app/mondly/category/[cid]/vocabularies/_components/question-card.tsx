@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { Question } from "../_lib/types";
-import { AudioPlayer } from "./audio-player";
+// import { AudioPlayer } from "./audio-player";
 import { CheckCircle, XCircle } from "lucide-react";
 import { useTune } from "../_hooks/use-tune";
+import { TonePlayerButton } from "@/components/general/tone-button-player";
 interface QuestionCardProps {
   question: Question;
   questionNumber: number;
@@ -27,12 +28,12 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
   const handleAnswerSelect = (answer: string) => {
     if (selectedAnswer) return;
-    
+
     setSelectedAnswer(answer);
     const isCorrect = answer === question.correctAnswer;
-    if(isCorrect){
+    if (isCorrect) {
       playCorrectTune();
-    }else{
+    } else {
       playIncorrectTune();
     }
     setTuneHasPlayed(true);
@@ -48,8 +49,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   };
 
   const isCorrect = selectedAnswer === question.correctAnswer;
- 
-   
+
   return (
     <div
       className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
@@ -91,10 +91,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             dir="auto"
           >
             <p className="text-gray-600 mb-2 text-xl">{question.text}</p>
-
+            {/* 
             <AudioPlayer
               audioUrl={`/media/mondly/audios/${question.audioFile}`}
               text={""}
+              autoPlay={true}
+            /> */}
+            <TonePlayerButton
+              url={`/media/mondly/audios/${question.audioFile}`}
               autoPlay={true}
             />
           </div>
