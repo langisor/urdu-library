@@ -1,5 +1,6 @@
-"use client";
+import { queryClient } from "@/lib/postgres-client";
 import { Header } from "@/components/general/header/header";
+import { Suspense } from "react";
 import { BackToUnit } from "../../vocabularies/_components/back-to-unit";
 import { Progress } from "@/components/ui/progress";
 import { Pen, SquaresIntersect, Star, TextCursor } from "lucide-react";
@@ -17,14 +18,26 @@ type Lesson = {
   quizzes: number[];
 };
 
+async function getLessonQuizzes(lessonID: number) {
+  const quizzes = await queryClient`
+   select * from "Quiz" where "lessonID"=${lessonID}
+  `;
+  const quizzesData: any[] = [];
+  for (const quiz of quizzes) {
+    quizzesData.push(JSON.parse(JSON.stringify(quiz.quizData)));
+  }
+  return quizzesData;
+}
+
 interface LessonDashboardProps {
   categoryName: string;
   lessons: Lesson[];
 }
-export function LessonDashboard({
+export async function LessonDashboard({
   categoryName,
   lessons,
 }: LessonDashboardProps) {
+  const quizzesData = await getLessonQuizzes(lessons[0].id);
   // get random stars between 1 and 5
   const randomStars = Math.floor(Math.random() * 5) + 1;
   const stars = Array.from({ length: 5 }, (_, i) => (
@@ -44,7 +57,6 @@ export function LessonDashboard({
             <BackToUnit />
           </CardContent>
         </Card>
- 
       </div>
       <div className="flex flex-wrap justify-center gap-2">
         {lessons.map((lesson) => (
@@ -81,11 +93,13 @@ export function LessonDashboard({
                 <div className="flex gap-3 justify-center z-10 mb-5">
                   {stars}
                 </div>
-                <Quizzer
-                  quizzes={lesson.quizzes}
-                  lessonID={lesson.id}
-                  name={lesson.name}
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Quizzer
+                    quizzes={quizzesData} // actual quizzes
+                    lessonID={lesson.id}
+                    name={lesson.name}
+                  />
+                </Suspense>
               </CardContent>
             </Card>
           </div>
