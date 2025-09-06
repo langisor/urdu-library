@@ -2,9 +2,7 @@
 import VocabularyUnit2Content from "./_components/unit-2/content";
 import VocabularyUnit2Explore from "./_components/unit-2/explore";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+ 
 import * as React from "react";
 
 function OtherPage() {
