@@ -39,7 +39,7 @@ export const usePlayer = ({ audioUrl, autoPlay = false }: UsePlayerProps) => {
       // Update the playing state.
       setIsPlaying(true);
     }
-  }, [hasInteracted, player]);
+  },[]);
 
   // Function to handle the play/pause logic
   const togglePlayback = async () => {

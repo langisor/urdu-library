@@ -4,7 +4,7 @@ import { BookOpen, MessageCircle, BookText, RotateCcw } from "lucide-react";
 
 import Image from "next/image";
 function getCategoryImagePath(id: number) {
-  let localUrl = `/media/mondly/categories-images/${id}.jpeg`;
+  const localUrl = `/media/mondly/categories-images/${id}.jpeg`;
   return localUrl;
 }
 type Category = {

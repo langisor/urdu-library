@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/general/card";
 import { LessonDashboard } from "./[lid]/_components/lesson-dashboard";
 import { queryClient } from "@/lib/postgres-client";
 
-import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 
 type Category = {
   id: number;
@@ -46,7 +45,7 @@ async function getCategory(cid: number) {
   const lessons = await queryClient`
    select * from "Lesson" where "categoryID"=${cid}
   `;
-  for (let l of lessons) {
+  for (const l of lessons) {
     lessonsData.push({
       id: l.id,
       index: l.index,

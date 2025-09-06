@@ -1,4 +1,3 @@
-import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { CategoryDashboard } from "./_components/category-dashboard";
 import { queryClient } from "@/lib/postgres-client";
 type Category = {
@@ -17,7 +16,7 @@ async function getCategories() {
     select * from "Category" order by id asc;
   `;
   const categories: Category[] = [];
-  for (let c of categoriesData) {
+  for (const c of categoriesData) {
     categories.push({
       id: c.id,
       name: c.name,

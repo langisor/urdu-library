@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
       const parsedQuiz = JSON.parse(JSON.stringify(data[0].quizData as any));
     } else {
       const parsedQuizzes: any[] = [];
-      for (let quiz of data) {
+      for (const quiz of data) {
         parsedQuizzes.push(JSON.parse(JSON.stringify(quiz.quizData as any)));
       }
       return NextResponse.json(parsedQuizzes);
