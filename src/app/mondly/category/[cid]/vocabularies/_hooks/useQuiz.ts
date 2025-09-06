@@ -131,6 +131,13 @@ export function useQuiz(vocs: VocabularyItem[], count = 10) {
     }));
   };
   const nextQuestion = () => {
+    if (quizState.currentQuestionIndex === quizState.questions.length - 1) {
+      setQuizState((prev) => ({
+        ...prev,
+        completed: true,
+      }));
+      return;
+    }
     setQuizState((prev) => ({
       ...prev,
       currentQuestionIndex: prev.currentQuestionIndex + 1,

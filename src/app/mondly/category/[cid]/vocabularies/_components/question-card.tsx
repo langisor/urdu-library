@@ -1,11 +1,11 @@
 "use client";
-
+import * as Tone from "tone";
 import React, { useState } from "react";
 import { Question } from "../_lib/types";
 // import { AudioPlayer } from "./audio-player";
 import { CheckCircle, XCircle } from "lucide-react";
 import { useTune } from "../_hooks/use-tune";
-import { TonePlayerButton } from "@/components/general/tone-button-player";
+import { Button } from "@/components/ui/button";
 interface QuestionCardProps {
   question: Question;
   questionNumber: number;
@@ -25,7 +25,17 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const [showFeedback, setShowFeedback] = useState(false);
   const { playCorrectTune, playIncorrectTune } = useTune();
   const [tuneHasPlayed, setTuneHasPlayed] = useState(false);
+  
+  const [player,setPlayer] = useState<Tone.Player | null>(null);
 
+  React.useEffect(() => {
+      const player = new Tone.Player({
+        url: `/media/mondly/audios/${question.audioFile}`,
+        autostart: true,
+        loop: false,
+      }).toDestination();
+      setPlayer(player);
+  }, [question.audioFile]);
   const handleAnswerSelect = (answer: string) => {
     if (selectedAnswer) return;
 
@@ -47,7 +57,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       setShowFeedback(false);
     }, 2000);
   };
-
+  const handlePlayAudio = () => {
+    Tone.start().then(() => {
+      if (!player) return;
+      if (player) {
+        player.start();
+      }
+    });
+  };
   const isCorrect = selectedAnswer === question.correctAnswer;
 
   return (
@@ -85,18 +102,19 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </h2>
 
         {/* Audio Player for audio questions */}
-        {question.type === "audio-ur" && (
+       
           <div
             className="mb-8 flex items-center justify-center gap-4 p-2"
             dir="auto"
           >
             <p className="text-gray-600 mb-2 text-xl">{question.text}</p>
           
-            <audio src={`/media/mondly/audios/${question.audioFile}`} autoPlay muted playsInline controls />
-
+            {/* <audio src={`/media/mondly/audios/${question.audioFile}`} playsInline   controls /> */}
+            
+            <Button onClick={handlePlayAudio}>Play</Button>
             
           </div>
-        )}
+   
 
         {/* Answer Options */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

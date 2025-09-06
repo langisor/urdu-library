@@ -36,7 +36,7 @@ export const QuizResults: React.FC<QuizResultsProps> = ({
         {/* Header */}
         <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-white text-center">
           <Trophy className="w-16 h-16 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-2">Quiz Complete!</h2>
+          <h2 className="text-3xl font-bold mb-2">انتهى الاختبار</h2>
           <p className="text-lg opacity-90">{performance.message}</p>
         </div>
 
@@ -47,7 +47,7 @@ export const QuizResults: React.FC<QuizResultsProps> = ({
               <span className="text-4xl font-bold">{percentage}%</span>
             </div>
             <p className="text-2xl font-semibold text-gray-800">
-              {score} out of {totalQuestions} correct
+              {score} من {totalQuestions} صحيحة
             </p>
           </div>
 
@@ -55,19 +55,19 @@ export const QuizResults: React.FC<QuizResultsProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl text-center">
               <Target className="w-8 h-8 mx-auto mb-2 text-blue-600" />
-              <p className="text-sm text-blue-600 font-medium">Accuracy</p>
+              <p className="text-sm text-blue-600 font-medium">الدقة</p>
               <p className="text-2xl font-bold text-blue-800">{percentage}%</p>
             </div>
 
             <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl text-center">
               <Star className="w-8 h-8 mx-auto mb-2 text-green-600" />
-              <p className="text-sm text-green-600 font-medium">Correct</p>
+              <p className="text-sm text-green-600 font-medium">صحيحة</p>
               <p className="text-2xl font-bold text-green-800">{score}</p>
             </div>
 
             <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-xl text-center">
               <Clock className="w-8 h-8 mx-auto mb-2 text-orange-600" />
-              <p className="text-sm text-orange-600 font-medium">Time</p>
+              <p className="text-sm text-orange-600 font-medium">الوقت</p>
               <p className="text-2xl font-bold text-orange-800">{timeTaken}m</p>
             </div>
           </div>
@@ -77,10 +77,10 @@ export const QuizResults: React.FC<QuizResultsProps> = ({
             <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-yellow-50 to-orange-50 px-6 py-3 rounded-full border-2 border-yellow-200">
               <span className="text-2xl">{performance.icon}</span>
               <span className="font-semibold text-gray-800">
-                {percentage >= 90 ? 'Expert Level' : 
-                 percentage >= 80 ? 'Advanced' : 
-                 percentage >= 70 ? 'Intermediate' : 
-                 percentage >= 60 ? 'Beginner+' : 'Beginner'}
+                {percentage >= 90 ? 'ممتاز' : 
+                 percentage >= 80 ? 'جيد جدا' : 
+                 percentage >= 70 ? 'متوسط' : 
+                 percentage >= 60 ? 'مبتدئ+' : 'مبتدئ'}
               </span>
             </div>
           </div>
@@ -92,8 +92,9 @@ export const QuizResults: React.FC<QuizResultsProps> = ({
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             >
               <RotateCcw className="w-5 h-5" />
-              <span>Try Another Quiz</span>
+              <span>إعادة المحاولة</span>
             </button>
+              
           </div>
         </div>
       </div>
@@ -102,13 +103,13 @@ export const QuizResults: React.FC<QuizResultsProps> = ({
       <div className="mt-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-200">
         <h3 className="font-semibold text-indigo-800 mb-3 flex items-center">
           <Star className="w-5 h-5 mr-2" />
-          Study Tips
+          نصائح للدراسة
         </h3>
-        <ul className="text-sm text-indigo-700 space-y-2">
-          <li>• Practice regularly with short sessions for better retention</li>
-          <li>• Focus on pronunciation using the phonetic guides</li>
-          <li>• Review incorrect answers to strengthen weak areas</li>
-          <li>• Try to use new vocabulary in conversation practice</li>
+        <ul className="text-sm text-indigo-700 space-y-2" dir="rtl">
+          <li>• تمارين بانتظام مع جلسات قصيرة لتحسين الذاكرة</li>
+          <li>• التركيز على التمثيل الصوتي باستخدام الموجات الصوتية</li>
+          <li>• مراجعة الإجابات الخاطئة لتعزيز المناطق الضعيفة</li>
+          <li>• استخدام الكلمات الجديدة في التمرينات</li>
         </ul>
       </div>
     </div>
