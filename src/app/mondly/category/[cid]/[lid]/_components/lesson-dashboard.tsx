@@ -18,15 +18,23 @@ type Lesson = {
   quizzes: number[];
 };
 
-async function getLessonQuizzes(lessonID: number) {
-  const quizzes = await queryClient`
-   select * from "Quiz" where "lessonID"=${lessonID}
+type LessonWithQuizzes = {
+  [lessonId: number]: any[];
+};
+
+async function getLessonQuizzes(lessonsIds: number[]) {
+  const lessonQuizzes: LessonWithQuizzes = {};
+  for (const lessonId of lessonsIds) {
+    const quizzes = await queryClient`
+   select * from "Quiz" where "lessonID"=${lessonId}
   `;
-  const quizzesData: any[] = [];
-  for (const quiz of quizzes) {
-    quizzesData.push(JSON.parse(JSON.stringify(quiz.quizData)));
+    const quizzesData: any[] = [];
+    for (const quiz of quizzes) {
+      quizzesData.push(JSON.parse(JSON.stringify(quiz.quizData)));
+    }
+    lessonQuizzes[lessonId] = quizzesData;
   }
-  return quizzesData;
+  return lessonQuizzes;
 }
 
 interface LessonDashboardProps {
@@ -37,7 +45,9 @@ export async function LessonDashboard({
   categoryName,
   lessons,
 }: LessonDashboardProps) {
-  const quizzesData = await getLessonQuizzes(lessons[0].id);
+  const quizzesData = await getLessonQuizzes(
+    lessons.map((lesson) => lesson.id)
+  );
   // get random stars between 1 and 5
   const randomStars = Math.floor(Math.random() * 5) + 1;
   const stars = Array.from({ length: 5 }, (_, i) => (
@@ -95,8 +105,8 @@ export async function LessonDashboard({
                 </div>
                 <Suspense fallback={<div>Loading...</div>}>
                   <Quizzer
-                    quizzes={quizzesData} // actual quizzes
-                    lessonID={lesson.id}
+                    quizzes={quizzesData[lesson.id]} // actual quizzes
+                    lessonId={lesson.id}
                     name={lesson.name}
                   />
                 </Suspense>
