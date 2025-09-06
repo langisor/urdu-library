@@ -91,16 +91,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             dir="auto"
           >
             <p className="text-gray-600 mb-2 text-xl">{question.text}</p>
-            {/* 
-            <AudioPlayer
-              audioUrl={`/media/mondly/audios/${question.audioFile}`}
-              text={""}
-              autoPlay={true}
-            /> */}
-            <TonePlayerButton
-              url={`/media/mondly/audios/${question.audioFile}`}
-              autoPlay={true}
-            />
+          
+            <audio src={`/media/mondly/audios/${question.audioFile}`} autoPlay muted playsInline controls />
+
+            
           </div>
         )}
 

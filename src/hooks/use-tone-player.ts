@@ -21,7 +21,7 @@ export const useTonePlayer = (url: string) => {
         playerRef.current.dispose();
       }
     };
-  }, [url]);
+  }, []);
 
   const start = async () => {
     if (playerRef.current && isReady) {
