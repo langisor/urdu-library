@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/card";
 import * as React from "react";
 
-
 export default function QuizT1({ quiz }: { quiz: QuizT1Item }) {
   const state = useHookstate({
     question: convertT1(quiz),
@@ -28,12 +27,9 @@ export default function QuizT1({ quiz }: { quiz: QuizT1Item }) {
     null
   );
 
- 
   // actions
   const actions = {
     checkAnswer: () => {
-      //  compare with correctAnswer
-
       // join and remove dots
       const selectedTokensText = selectedTokens.get().join(" ").trim();
 

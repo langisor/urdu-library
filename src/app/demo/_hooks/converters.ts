@@ -10,24 +10,34 @@ function convertD(quizItem: QuizTypes.QuizDItem) {
 }
 
 // Quiz F: return 2 questions
-function convertF(quizItem: QuizTypes.QuizFItem): Question[] {
-  const getOptions = (quizItem: QuizTypes.QuizFItem) => {
-    return quizItem.alts.map((alt, index) => ({
-      text: quizItem.sols[index].text,
-      image: getImageUrl(alt.image),
-      phonetic: alt.phonetic,
-    }));
-  };
-  const questions = quizItem.alts.map((alt, index) => ({
-    id: quizItem.id,
-    audioFile: getAudioUrl(alt.key),
-    text: alt.text,
-    correctAnswer: quizItem.sols[index].text,
-    isAnswered: false,
-    options: shuffleArray(getOptions(quizItem)),
-  }));
+export interface QuestionF {
+  id: number;
+  audioFile: string;
+  text: string; //question
+  correctAnswer: string; //sols
+  isAnswered: boolean;
+  options: {
+    text: string;
+    image: string;
+  }[];
+}
 
-  return questions;
+function convertF(quizItem: QuizTypes.QuizFItem) {
+  return quizItem.sols.map((sol, index) => {
+    return {
+      id: sol.key,
+      audioFile: getAudioUrl(sol.key),
+      text: sol.text,
+      correctAnswer: quizItem.alts[index].text,
+      isAnswered: false,
+      options: quizItem.alts.map((alt) => {
+        return {
+          text: alt.text,
+          image: getImageUrl(alt.image),
+        };
+      }),
+    };
+  });
 }
 
 function convertT1(quizItem: QuizTypes.QuizT1Item) {
