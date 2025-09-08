@@ -135,6 +135,9 @@
     color: var(--primary);
     font-style: italic;
   }
+  button {
+    @apply hover:opacity-80 transition-all duration-200 hover:scale-105 hover:cursor-pointer;
+  }
 }
 .intro-text {
   font-family: var(--font-inter), sans-serif;

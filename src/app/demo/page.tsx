@@ -1,5 +1,8 @@
 import { queryClient } from "@/lib/postgres-client"
 import { JsonViewerComponent } from "@/components/json-viewer";
+import MainScreen from "./_components/screens/main-screen";
+
+
 async function getQuizzes(lid: string) {
  const quizzesData = await queryClient`
   select * from "Quiz" where "lessonID"=${lid}
@@ -18,6 +21,7 @@ export default async function DemoPage() {
   <div className="flex flex-col">
    <h1 className="text-2xl">Demo page</h1>
    <JsonViewerComponent data={quizzes} />
+   <MainScreen quizzes={quizzes} />
   </div>
 
  )
