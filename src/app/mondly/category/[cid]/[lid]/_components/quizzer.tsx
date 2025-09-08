@@ -24,12 +24,13 @@ export   function Quizzer({ quizzes,lessonId,name }: QuizzerProps) {
  const [open, setOpen] = React.useState(false);
 
  return (
+ 
   <Sheet>
    <SheetTrigger asChild className="w-full cursor-pointer ">
-    <Button onClick={() => setOpen(true)} className="mt-5 text-xl">إبدأ</Button>
+    <Button onClick={() => setOpen(true)} className="mt-5 text-xl">native json</Button>
    </SheetTrigger>
 
-   <SheetContent side="bottom" dir="rtl" className=" h-screen overflow-hidden">
+   <SheetContent side="bottom" dir="rtl" className=" h-screen overflow-y-scroll">
    <SheetDescription className="mt-10">اختبارات {lessonId} - {name}</SheetDescription>
     <SheetHeader>
      <SheetTitle>اختبارات {lessonId} - {name}</SheetTitle>
@@ -37,5 +38,7 @@ export   function Quizzer({ quizzes,lessonId,name }: QuizzerProps) {
     <JsonViewerComponent data={quizzes} />
    </SheetContent>
   </Sheet>
+ 
  );
 }
+ 
