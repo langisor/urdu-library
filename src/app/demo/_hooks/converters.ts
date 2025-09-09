@@ -23,21 +23,24 @@ export interface QuestionF {
 }
 
 function convertF(quizItem: QuizTypes.QuizFItem) {
-  return quizItem.sols.map((sol, index) => {
+  const options = quizItem.alts.map((alt, index) => {
     return {
-      id: sol.key,
-      audioFile: getAudioUrl(sol.key),
-      text: sol.text,
-      correctAnswer: quizItem.alts[index].text,
-      isAnswered: false,
-      options: quizItem.alts.map((alt) => {
-        return {
-          text: alt.text,
-          image: getImageUrl(alt.image),
-        };
-      }),
+      id: alt.key,
+      text: quizItem.sols[index].text,
+      image: getImageUrl(alt.image),
     };
   });
+  const questions = quizItem.alts.map((alt, index) => {
+    return {
+      id: alt.key,
+      audioFile: getAudioUrl(alt.key),
+      text: alt.text,
+      correctAnswer: quizItem.sols[index].text,
+      isAnswered: false,
+      options: shuffleArray(options),
+    };
+  });
+  return questions;
 }
 
 function convertT1(quizItem: QuizTypes.QuizT1Item) {
@@ -72,6 +75,21 @@ function convertT1b(quizItem: QuizTypes.QuizT1bItem) {
 function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
   const question = {
     id: quizItem.id,
+    audioFile: getAudioUrl(quizItem.sols[0].key),
+    text: quizItem.sols[0].text,
+    correctWordsOrder: quizItem.ord.map((ord) => {
+      const token = quizItem.tokens.find((t) => t.key === ord);
+      return {
+        id: token!.key,
+        text: token!.raw.text,
+        isHidden: token!.key === quizItem.completeToken,
+      };
+    }),
+
+    tokens: quizItem.tokens.map((token) => {
+      return token.raw.text;
+    }),
+    isAnswered: false,
   };
   return question;
 }
@@ -85,12 +103,14 @@ function convertQ(quizItem: QuizTypes.QuizQItem) {
       text: sol.text,
       correctAnswerId: quizItem.alts[index].key,
       isAnswered: false,
-      options: shuffleArray(quizItem.alts.map((alt) => {
-        return {
-          id: alt.key,
-          text: alt.text,
-        }
-      })),
+      options: shuffleArray(
+        quizItem.alts.map((alt) => {
+          return {
+            id: alt.key,
+            text: alt.text,
+          };
+        })
+      ),
     };
   });
   return shuffleArray(questions);

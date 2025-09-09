@@ -15,6 +15,9 @@ import {
 } from "@/components/ui/sheet";
 import * as React from "react";
 import ResultScreen from "./result-screen";
+import { mainScreenStore } from "./store";
+import { useHookstate } from "@hookstate/core";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface MainScreenProps {
   quizzes: any[];
@@ -23,7 +26,7 @@ interface MainScreenProps {
 export default function MainScreen({ quizzes }: MainScreenProps) {
   const { state, actions } = useMainScreen(quizzes.length);
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
-
+  const mainScreenState = useHookstate(mainScreenStore);
   const currentQuiz = quizzes[state.currentQuizIndex.get()];
 
   const renderNavigationBar = () => {
@@ -32,6 +35,11 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
         <Button onClick={actions.nextQuiz}>Next</Button>
         <Button onClick={actions.reset}>Reset</Button>
         <Button onClick={actions.prevQuiz}>Previous</Button>
+        <Card>
+          <CardContent>
+            <p>Score: {mainScreenState.score.get()}</p>
+          </CardContent>
+        </Card>
       </div>
     );
   };

@@ -2,10 +2,12 @@
 import { QuizFItem } from "../../_hooks/definitions";
 import { convertF, QuestionF } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
+import { shuffleArray } from "@/lib/helpers";
 import { mainScreenStore } from "../screens/store";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
+import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import {
   Card,
@@ -35,7 +37,6 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
     null
   );
 
-  const currentQuestion = state.questions[state.currentQuestionIndex.get()];
 
   //   actions
   const actions = {
@@ -81,6 +82,8 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
       mainScreenState.currentQuizIndex.set((p) => p + 1);
     }, 2000);
   }
+  const currentQuestion = state.questions[state.currentQuestionIndex.get()];
+
   const renderFeedBack = () => {
     if (!feedBack.get()) return null;
     return (
@@ -152,14 +155,17 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
       </div>
     );
   };
+  //  shuffle options
 
   console.log("currentQuestion: ", currentQuestion);
   return (
-    <>
+    <div className="flex flex-col gap-2">
       <Card className="flex flex-col justify-between gap-2 px-3">
         {renderQuestion()}
       </Card>
       {renderFeedBack()}
-    </>
+
+      <JsonViewerComponent data={state.get()} />
+    </div>
   );
 }

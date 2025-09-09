@@ -1,10 +1,11 @@
 "use client";
 import { QuizQItem } from "../../_hooks/definitions";
+import { getAudioUrl } from "@/lib/helpers";
 
 import { convertQ } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
 import { mainScreenStore } from "../screens/store";
-import { useRef } from "react";
+
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
 import { Label } from "@/components/ui/label";
@@ -42,26 +43,10 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
 
   // actions
   const actions = {
-    nextQuestion: () => {
-      // wait 2 seconds
-      setTimeout(() => {
-        //  if last question
-        if (state.currentQuestionIndex.get() === state.questions.length - 1) {
-          mainScreenState.currentQuizIndex.set((p) => p + 1);
-        } else {
-          state.currentQuestionIndex.set(state.currentQuestionIndex.get() + 1);
-          selectectOption.set(null);
-          currentQuestion.isAnswered.set(false);
-          feedBack.set(null);
-        }
-      }, 2000);
-    },
-    selectOption: (optionId: string) => {
-      console.log(optionId);
-      selectectOption.set(optionId);
+    checkAnswer: () => {
       currentQuestion.isAnswered.set(true);
       // check if option is correct
-      if (optionId === currentQuestion.correctAnswerId.get()) {
+      if (selectectOption.get() === currentQuestion.correctAnswerId.get()) {
         playCorrectTune();
         // add score
         mainScreenState.score.set((p) => p + 1);
@@ -78,6 +63,24 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
         });
         actions.nextQuestion();
       }
+    },
+    nextQuestion: () => {
+      selectectOption.set(null);
+      // wait 2 seconds
+      setTimeout(() => {
+        //  if last question
+        state.currentQuestionIndex.set(state.currentQuestionIndex.get() + 1);
+        currentQuestion.isAnswered.set(false);
+        feedBack.set(null);
+      }, 2000);
+    },
+    selectOption: (optionId: string) => {
+      actions.playAudio(getAudioUrl(optionId));
+      selectectOption.set(optionId);
+    },
+    playAudio: (url: string) => {
+      const audio = new Audio(url);
+      audio.play();
     },
   };
 
@@ -114,21 +117,34 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
               </Card>
             ))}
           </RadioGroup>
+          {feedBack && (
+            <Card>
+              <CardContent>
+                <p
+                  className={
+                    feedBack.get()?.isCorrect
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }
+                >
+                  {feedBack.get()?.text}
+                </p>
+              </CardContent>
+            </Card>
+          )}
         </CardContent>
       </Card>
-      {feedBack && (
-        <Card>
-          <CardContent>
-            <p
-              className={
-                feedBack.get()?.isCorrect ? "text-green-500" : "text-red-500"
-              }
-            >
-              {feedBack.get()?.text}
-            </p>
-          </CardContent>
-        </Card>
-      )}
+      <Card>
+        <CardContent>
+          <Button
+            disabled={selectectOption.get() === null}
+            onClick={actions.checkAnswer}
+            className="w-full"
+          >
+            تأكد
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 }
