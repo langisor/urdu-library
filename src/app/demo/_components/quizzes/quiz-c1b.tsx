@@ -34,8 +34,8 @@ export default function QuizC1b({ quiz }: { quiz: QuizC1bItem }) {
     state.question.correctWordsOrder.map((word, index) => {
       words.push(word.isHidden.get() ? "____" : word.text.get());
     });
-    selectedTokens.set(words);
-  }, [quiz]);
+    selectedTokens.set(shuffleArray(words));
+  }, [quiz, selectedTokens]);
 
   const actions = {
     selectToken: (token: string) => {

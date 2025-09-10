@@ -1,21 +1,21 @@
 import { mainScreenStore } from "./store";
-import {useHookstate} from "@hookstate/core";
+import { useHookstate } from "@hookstate/core";
 import * as React from "react";
- 
+
 export function useMainScreen(totalQuizzes?: number) {
   const mainScreenState = useHookstate(mainScreenStore);
   React.useEffect(() => {
     if (totalQuizzes) {
       mainScreenState.totalQuizzes.set(totalQuizzes);
     }
-  }, [totalQuizzes]);
+  }, [mainScreenState.totalQuizzes]);
 
   // actions
   const actions = {
     nextQuiz: () => {
       if (
         mainScreenState.currentQuizIndex.get() <
-        mainScreenState.totalQuizzes.get()-1
+        mainScreenState.totalQuizzes.get() - 1
       ) {
         mainScreenState.currentQuizIndex.set((p) => p + 1);
       } else {
