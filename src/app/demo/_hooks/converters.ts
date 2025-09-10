@@ -3,10 +3,24 @@ import { Question } from "./types";
 import * as QuizTypes from "./definitions";
 
 function convertD(quizItem: QuizTypes.QuizDItem) {
-  const question = {
-    id: quizItem.id,
-  };
-  return question;
+  const options = quizItem.alts.map((alt, index) => {
+    return {
+      id: alt.key,
+      text: quizItem.sols[index].text,
+      image: getImageUrl(alt.image),
+    };
+  });
+  const questions = quizItem.alts.map((alt, index) => {
+    return {
+      id: alt.key,
+      audioFile: getAudioUrl(alt.key),
+      text: alt.text,
+      correctAnswer: quizItem.sols[index].text,
+      isAnswered: false,
+      options: shuffleArray(options),
+    };
+  });
+  return shuffleArray(questions);
 }
 
 // Quiz F: return 2 questions

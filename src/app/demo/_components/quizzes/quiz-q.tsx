@@ -109,6 +109,7 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
             {currentQuestion.options.map((option) => (
               <Card
                 className={`flex flex-row px-2  gap-3 hover:bg-gray-100 cursor-pointer transition-all hover:scale-105 text-xl  `}
+                key={option.id.get()}
               >
                 <RadioGroupItem value={option.id.get()} id={option.id.get()} />
                 <Label htmlFor={option.id.get()} className="w-full ">

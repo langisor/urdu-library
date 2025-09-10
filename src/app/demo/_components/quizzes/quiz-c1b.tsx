@@ -141,14 +141,19 @@ export default function QuizC1b({ quiz }: { quiz: QuizC1bItem }) {
   };
   //   actions
   return (
-    <Card className="flex flex-col gap-6 text-right" dir="rtl">
-      <CardHeader>{renders.renderHeader()}</CardHeader>
-      <CardContent>{renders.renderQuestion()}</CardContent>
-      <CardContent>{renders.renderTokens()}</CardContent>
-      <CardFooter className="flex justify-center">
-        <Button disabled={!state.question.isAnswered.get()} onClick={actions.checkAnswer} className="w-2/3">تأكد</Button>
-        
-      </CardFooter>
+    <Card className="flex flex-col gap-6 arabic-text">
+      <div>{renders.renderHeader()}</div>
+      <div>{renders.renderQuestion()}</div>
+      <div>{renders.renderTokens()}</div>
+      <div className="flex justify-center">
+        <Button
+          disabled={!state.question.isAnswered.get()}
+          onClick={actions.checkAnswer}
+          className="w-2/3"
+        >
+          تأكد
+        </Button>
+      </div>
     </Card>
   );
 }

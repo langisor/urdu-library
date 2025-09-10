@@ -32,9 +32,9 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
   const renderNavigationBar = () => {
     return (
       <div className="flex justify-around mx-2 my-4">
-        <Button onClick={actions.nextQuiz}>Next</Button>
-        <Button onClick={actions.reset}>Reset</Button>
         <Button onClick={actions.prevQuiz}>Previous</Button>
+        <Button onClick={actions.reset}>Reset</Button>
+        <Button onClick={actions.nextQuiz}>Next</Button>
         <Card>
           <CardContent>
             <p>Score: {mainScreenState.score.get()}</p>
@@ -55,29 +55,29 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
     switch (currentQuiz.type) {
       case "T1":
         return (
-          <div className="grid grid-cols-2">
+          <div className="flex flex-col">
             <Quizzes.QuizT1 quiz={currentQuiz} />
-            <div className="relative h-[400px] w-[500px] mx-auto">
+            {/* <div className="relative h-[400px] w-[500px] mx-auto">
               <Image src="/screenshots/T1.png" alt="T1" fill />
-            </div>
+            </div> */}
           </div>
         );
       case "T1b":
         return (
-          <div className="grid grid-cols-2">
+          <div className="flex flex-row gap-2">
             <Quizzes.QuizT1b quiz={currentQuiz} />
-            <div className="relative h-[400px] w-[500px] mx-auto">
+            {/* <div className="relative h-[400px] w-[500px] mx-auto">
               <Image src="/screenshots/T1b.png" alt="T1b" fill />
-            </div>
+            </div> */}
           </div>
         );
       case "D":
         return (
-          <div className="grid grid-cols-2">
+          <div className="flex flex-col">
             <Quizzes.QuizD quiz={currentQuiz} />
-            <div className="relative h-[400px] w-[500px] mx-auto">
+            {/* <div className="relative h-[400px] w-[500px] mx-auto">
               <Image src="/screenshots/D.png" alt="D" fill />
-            </div>
+            </div> */}
           </div>
         );
       case "R":
@@ -91,34 +91,38 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
         );
       case "C1b":
         return (
-          <div className="grid grid-cols-2">
+          <div className="flex flex-col gap-2">
             <Quizzes.QuizC1b quiz={currentQuiz} />
-            <div className="relative h-[400px] w-[500px] mx-auto">
-              <Image src="/screenshots/C1b.png" alt="C1b" fill />
-            </div>
+            {/* <div className="relative h-[400px] w-[500px] mx-auto">
+  <Image src="/screenshots/C1b.png" alt="C1b" fill />  
+            </div> */}
           </div>
         );
       case "F":
         return (
-          <div className="grid grid-cols-2">
+          <div className="flex flex-col">
             <Quizzes.QuizF quiz={currentQuiz} />
-            <div className="relative h-[400px] w-[500px] mx-auto">
+            {/* <div className="relative h-[400px] w-[500px] mx-auto">
               <Image src="/screenshots/F.png" alt="F" fill />
-            </div>
+            </div> */}
           </div>
         );
       case "Q":
         return (
-          <div className="grid grid-cols-2">
-            <Quizzes.QuizQ quiz={currentQuiz} />
+          <div className="grid grid-cols-2 gap-2">
+            {/* <Quizzes.QuizQ quiz={currentQuiz} /> */}
+            <div className="flex flex-col gap-3">
+              <h2 className="text-2xl text-center">To do: fix Quiz Q</h2>
+              <JsonViewerComponent data={currentQuiz} />
+            </div>
             <div className="relative h-[400px] w-[500px] mx-auto">
-              <Image src="/screenshots/Q.png" alt="Q" fill />
+              <Image  fill src="/screenshots/Q.png" alt="Q" />
             </div>
           </div>
         );
       case "Qb":
         return (
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-2">
             <Quizzes.QuizQb quiz={currentQuiz} />
             <div className="relative h-[400px] w-[500px] mx-auto">
               <Image src="/screenshots/Qb.png" alt="Qb" fill />
@@ -132,9 +136,10 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
   };
   return (
     <>
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen} >
         <SheetTrigger>Start Quiz</SheetTrigger>
-        <SheetContent side="bottom" className="h-screen overflow-y-scroll">
+        <SheetContent side="bottom" className="h-screen overflow-y-scroll px-10">
+          
           <SheetDescription className="sr-only">Quiz</SheetDescription>
           {!quizCompleted ? (
             <div className="flex flex-col">
@@ -162,7 +167,9 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
               <Button onClick={actions.reset}>Reset</Button>
             </div>
           )}
+  
         </SheetContent>
+ 
       </Sheet>
     </>
   );

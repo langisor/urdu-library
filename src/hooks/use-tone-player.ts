@@ -1,8 +1,8 @@
 "use client";
 
 // useTonePlayer.ts
-import { useEffect, useRef, useState } from 'react';
-import * as Tone from 'tone';
+import { useEffect, useRef, useState } from "react";
+import * as Tone from "tone";
 
 export const useTonePlayer = (url: string) => {
   const playerRef = useRef<Tone.Player | null>(null);
@@ -13,7 +13,7 @@ export const useTonePlayer = (url: string) => {
     playerRef.current = new Tone.Player({
       url: url,
       onload: () => setIsReady(true),
-      onstop: () => setIsPlaying(false)
+      onstop: () => setIsPlaying(false),
     }).toDestination();
 
     return () => {
@@ -21,11 +21,11 @@ export const useTonePlayer = (url: string) => {
         playerRef.current.dispose();
       }
     };
-  }, []);
+  }, [url]);
 
   const start = async () => {
     if (playerRef.current && isReady) {
-      if (Tone.Transport.state !== 'started') {
+      if (Tone.Transport.state !== "started") {
         await Tone.start();
       }
       playerRef.current.start();
@@ -41,4 +41,3 @@ export const useTonePlayer = (url: string) => {
 
   return { start, stop, isPlaying, isReady };
 };
-

@@ -37,10 +37,9 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
     null
   );
 
-
   //   actions
   const actions = {
-    selectOption: (option: string) => {
+    checkAnswer: (option: string) => {
       //  check if option is correct
       if (option === currentQuestion.correctAnswer.get()) {
         playCorrectTune();
@@ -84,88 +83,118 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
   }
   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
 
-  const renderFeedBack = () => {
-    if (!feedBack.get()) return null;
+  const renders = {
+    renderFeedBack: () => {
+      if (!feedBack.get()) return null;
+      return (
+        <Card>
+          <CardContent>
+            <p
+              className={
+                feedBack.get()?.isCorrect ? "text-green-500" : "text-red-500"
+              }
+            >
+              {feedBack.get()?.text}
+            </p>
+          </CardContent>
+        </Card>
+      );
+    },
+    renderCards: () => {
+      return (
+        <div className="flex flex-col gap-2   p-2  ">
+          {/* top option */}
+          <div className="w-full">
+            <OptionCard
+              option={currentQuestion.options[0].get()}
+              onCheckAnswer={actions.checkAnswer}
+              textTop={true}
+            />
+          </div>
+
+          {/* question */}
+          <div className="w-full">
+            <Card className="flex flex-col gap-2 text-right">
+              <CardContent className="flex flex-row gap-2 items-center justify-center">
+                <p className="arabic-text"> {currentQuestion.text.get()}</p>
+                <TonePlayerButton url={currentQuestion.audioFile.get()} />
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* bottom option */}
+          <div className="w-full">
+            <OptionCard
+              option={currentQuestion.options[1].get()}
+              onCheckAnswer={actions.checkAnswer}
+              textTop={false}
+            />
+          </div>
+        </div>
+      );
+    },
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div>{renders.renderCards()}</div>
+      <div>{renders.renderFeedBack()}</div>
+      {/* <JsonViewerComponent data={state.get()} /> */}
+    </div>
+  );
+}
+
+interface OptionCardProps {
+  textTop: boolean;
+  option: {
+    id: string;
+    text: string;
+    image: string;
+  };
+  onCheckAnswer: (answer: string) => void;
+}
+
+function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
+  if (textTop) {
     return (
-      <Card>
-        <CardContent>
-          <p
-            className={
-              feedBack.get()?.isCorrect ? "text-green-500" : "text-red-500"
-            }
-          >
-            {feedBack.get()?.text}
-          </p>
+      <Card
+        role="button"
+        onClick={() => onCheckAnswer(option.text)}
+        className="cursor-pointer hover:scale-105 hover:shadow-2xl arabic-text h-full"
+      >
+        <CardHeader className="flex justify-center items-center">
+          <CardTitle>{option.text}</CardTitle>
+        </CardHeader>
+        <CardContent className="flex justify-center items-center">
+          <Image
+            src={option.image}
+            alt={option.text}
+            className=""
+            width={300}
+            height={300}
+          />
         </CardContent>
       </Card>
     );
-  };
-  const renderQuestion = () => {
-    return (
-      <div className="flex flex-col gap-2  p-2 arabic-text">
-        <h3 className="text-center text-xl underline italic">
-          اختر الصورة الصحيحة
-        </h3>
-        <Card className="  flex items-center justify-center p-2">
-          <h1 className="text-center text-xl mb-2 p-2">
-            {currentQuestion.options[0].text.get()}
-          </h1>
-          <div className="hover:bg-gray-100 cursor-pointer transition-all hover:scale-105">
-            <div className="relative h-[250px] w-[250px]">
-              <Image
-                fill
-                onClick={() =>
-                  actions.selectOption(currentQuestion.options[0].text.get())
-                }
-                src={currentQuestion.options[0].image.get()}
-                alt={currentQuestion.options[0].text.get()}
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </Card>
-
-        <Card className="flex items-center justify-center  gap-2   max-h-[50px] my-3">
-          <div className="flex items-center gap-2">
-            <h1 className="text-center text-xl mb-2">
-              {currentQuestion.text.get()}
-            </h1>
-            <TonePlayerButton url={currentQuestion.audioFile.get()} />
-          </div>
-        </Card>
-
-        <Card className=" flex items-center justify-center p-2">
-          <div className="flex justify-center hover:bg-gray-100 cursor-pointer transition-all hover:scale-105">
-            <div className="relative h-[250px] w-[250px] p-2">
-              <Image
-                onClick={() =>
-                  actions.selectOption(currentQuestion.options[1].text.get())
-                }
-                fill
-                src={currentQuestion.options[1].image.get()}
-                alt={currentQuestion.options[1].text.get()}
-                className="object-contain"
-              />
-            </div>
-          </div>
-          <h1 className="text-center text-xl mt-2">
-            {currentQuestion.options[1].text.get()}
-          </h1>
-        </Card>
-      </div>
-    );
-  };
-  //  shuffle options
-
-  console.log("currentQuestion: ", currentQuestion);
+  }
   return (
-    <div className="flex flex-col gap-2">
-      <Card className="flex flex-col justify-between gap-2 px-3">
-        {renderQuestion()}
-      </Card>
-      {renderFeedBack()}
-
-      <JsonViewerComponent data={state.get()} />
-    </div>
+    <Card
+      role="button"
+      onClick={() => onCheckAnswer(option.text)}
+      className="cursor-pointer hover:scale-105 hover:shadow-2xl arabic-text"
+    >
+      <CardContent className="flex justify-center items-center">
+        <Image
+          src={option.image}
+          alt={option.text}
+          className=""
+          width={300}
+          height={300}
+        />
+      </CardContent>
+      <CardFooter className="flex justify-center items-center">
+        <CardTitle>{option.text}</CardTitle>
+      </CardFooter>
+    </Card>
   );
 }
