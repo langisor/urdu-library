@@ -28,15 +28,15 @@ export default function QuizC1b({ quiz }: { quiz: QuizC1bItem }) {
     null
   );
   const mainScreenState = useHookstate(mainScreenStore);
-  const selectedTokens = useHookstate<string[] | null>(null);
+  
   React.useEffect(() => {
     const words: string[] = [];
     state.question.correctWordsOrder.map((word, index) => {
       words.push(word.isHidden.get() ? "____" : word.text.get());
     });
     selectedTokens.set(shuffleArray(words));
-  }, [quiz, selectedTokens]);
-
+  }, [quiz]);
+ const selectedTokens = useHookstate<string[] | null>(null);
   const actions = {
     selectToken: (token: string) => {
       // remove from tokens
