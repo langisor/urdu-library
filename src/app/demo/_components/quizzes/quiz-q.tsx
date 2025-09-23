@@ -1,7 +1,6 @@
 "use client";
 import { QuizQItem } from "../../_hooks/definitions";
 import { getAudioUrl } from "@/lib/helpers";
-import { Skeleton } from "@/components/ui/skeleton";
 import { convertQ } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
 // import { mainScreenStore } from "../screens/store";
@@ -32,7 +31,7 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
     questions: convertQ(quiz),
     currentQuestionIndex: 0,
     isLastQuestion: false,
-    isPlaying: false,
+ 
   });
   const { playCorrectTune, playIncorrectTune } = useTune();
   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
@@ -100,9 +99,7 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
     );
   };
   console.log("sample: ", state.questions.get());
-  if (state.isPlaying.get()) {
-    return <SkeletonQuizQ />;
-  }
+  
   // next quiz if last question
   if (state.isLastQuestion.get()) {
     // wait 2 seconds
@@ -189,24 +186,4 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
   );
 }
 
-function SkeletonQuizQ() {
-  return (
-    <div className="flex flex-col  text-right" dir="rtl">
-      <Card className="h-full">
-        <CardHeader className="flex flex-row text-right gap-6">
-          <CardTitle>
-            <Skeleton className="h-10 w-1/2" />
-          </CardTitle>
-          <CardDescription>
-            <Skeleton className="h-10 w-1/2" />
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Skeleton className="h-10 w-full" />
-          <Skeleton className="h-10 w-full" />
-          <Skeleton className="h-10 w-full" />
-        </CardContent>
-      </Card>
-    </div>
-  );
-}
+ 

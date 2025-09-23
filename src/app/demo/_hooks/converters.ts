@@ -130,10 +130,24 @@ function convertQ(quizItem: QuizTypes.QuizQItem) {
   return shuffleArray(questions);
 }
 function convertQb(quizItem: QuizTypes.QuizQbItem) {
-  const question = {
-    id: quizItem.id,
-  };
-  return question;
+  const questions = quizItem.sols.map((sol, index) => {
+    return {
+      id: sol.key,
+      audioFile: getAudioUrl(sol.key),
+      text: sol.text,
+      correctAnswerId: quizItem.alts[index].key,
+      isAnswered: false,
+      options: shuffleArray(
+        quizItem.alts.map((alt) => {
+          return {
+            id: alt.key,
+            text: alt.text,
+          };
+        })
+      ),
+    };
+  });
+  return shuffleArray(questions);
 }
 function convertR(quizItem: QuizTypes.QuizRItem) {
   const question = {
