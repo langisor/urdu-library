@@ -5,11 +5,11 @@ import {useHookstate} from "@hookstate/core";
 import {JsonViewerComponent} from "@/components/json-viewer";
 
 export default function QuizR({quiz}: {quiz: QuizRItem}) {
-    const state = useHookstate(convertR(quiz));
+ 
     return (
         <div>
             <h1>Quiz R</h1>
-            <JsonViewerComponent data={state.get()} />
+            <JsonViewerComponent data={quiz} />
         </div>
     );
 }
