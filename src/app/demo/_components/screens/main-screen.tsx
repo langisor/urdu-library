@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { useMainScreen } from "./use-main-screen";
 import * as Quizzes from "../quizzes";
+import { convertQ } from "@/app/demo/_hooks/converters";
 import Image from "next/image";
 import {
   Sheet,
@@ -17,7 +18,12 @@ import * as React from "react";
 import ResultScreen from "./result-screen";
 import { mainScreenStore } from "./store";
 import { useHookstate } from "@hookstate/core";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 
 interface MainScreenProps {
   quizzes: any[];
@@ -115,9 +121,17 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
               <h2 className="text-2xl text-center">To do: fix Quiz Q</h2>
               <JsonViewerComponent data={currentQuiz} />
             </div>
-            <div className="relative h-[400px] w-[500px] mx-auto">
-              <Image  fill src="/screenshots/Q.png" alt="Q" />
-            </div>
+
+            <Card>
+              <CardHeader>
+                <div className="relative h-[400px] w-[500px] mx-auto">
+                  <Image fill src="/screenshots/Q.png" alt="Q" />
+                </div>
+              </CardHeader>
+              <CardFooter>
+                <JsonViewerComponent data={convertQ(currentQuiz)} />
+              </CardFooter>
+            </Card>
           </div>
         );
       case "Qb":
@@ -136,10 +150,12 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
   };
   return (
     <>
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen} >
+      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetTrigger>Start Quiz</SheetTrigger>
-        <SheetContent side="bottom" className="h-screen overflow-y-scroll px-10">
-          
+        <SheetContent
+          side="bottom"
+          className="h-screen overflow-y-scroll px-10"
+        >
           <SheetDescription className="sr-only">Quiz</SheetDescription>
           {!quizCompleted ? (
             <div className="flex flex-col">
@@ -167,9 +183,7 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
               <Button onClick={actions.reset}>Reset</Button>
             </div>
           )}
-  
         </SheetContent>
- 
       </Sheet>
     </>
   );
