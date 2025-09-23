@@ -6,11 +6,13 @@ import { Play } from "lucide-react";
 interface TonePlayerButtonProps {
   url: string;
   autoPlay?: boolean;
+ 
 }
 // TonePlayerButton.tsx
 export const TonePlayerButton: React.FC<TonePlayerButtonProps> = ({
   url,
   autoPlay = false,
+ 
 }) => {
   const { start, stop, isPlaying, isReady } = useTonePlayer(url);
 
@@ -22,9 +24,12 @@ export const TonePlayerButton: React.FC<TonePlayerButtonProps> = ({
 
   const handleClick = () => {
     if (isPlaying) {
+ 
       stop();
     } else {
+     
       start();
+ 
     }
   };
 

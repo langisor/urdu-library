@@ -116,22 +116,8 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
       case "Q":
         return (
           <div className="grid grid-cols-2 gap-2">
-            {/* <Quizzes.QuizQ quiz={currentQuiz} /> */}
-            <div className="flex flex-col gap-3">
-              <h2 className="text-2xl text-center">To do: fix Quiz Q</h2>
-              <JsonViewerComponent data={currentQuiz} />
-            </div>
-
-            <Card>
-              <CardHeader>
-                <div className="relative h-[400px] w-[500px] mx-auto">
-                  <Image fill src="/screenshots/Q.png" alt="Q" />
-                </div>
-              </CardHeader>
-              <CardFooter>
-                <JsonViewerComponent data={convertQ(currentQuiz)} />
-              </CardFooter>
-            </Card>
+            <Quizzes.QuizQ quiz={currentQuiz} />
+           
           </div>
         );
       case "Qb":
