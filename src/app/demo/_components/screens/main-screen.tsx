@@ -154,16 +154,16 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
                   </span>
                 </SheetTitle>
               </SheetHeader>
-              {renderNavigationBar()}
+              {renderNavigationBar() }
               <div className="flex flex-col h-screen overflow-y-scroll">
-                <div> {renderCurrentQuiz()}</div>
+                <div> {quizCompleted ? null : renderCurrentQuiz()}</div>
               </div>
             </div>
           ) : (
             <div className="flex flex-col h-screen overflow-y-scroll">
               <SheetTitle className="sr-only">Result</SheetTitle>
               <SheetDescription className="sr-only">Result</SheetDescription>
-              <ResultScreen />
+              {quizCompleted ? <ResultScreen /> : null}
               <Button onClick={actions.reset}>Reset</Button>
             </div>
           )}
