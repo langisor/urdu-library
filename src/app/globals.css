@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-nastaliq: var(--font-nastaliq-urdu);
-  --font-naskh: var(--font-naskh-arabic);
   --font-inter: var(--font-inter);
+  --font-naskh: var(--font-naskh);
+  --font-nastaliq: var(--font-nastaliq);
   --breakpoint-xxs: 320px;
   --breakpoint-xs: 400px;
   --breakpoint-sm: 600px;
@@ -142,20 +142,17 @@
   }
   
 }
-.intro-text {
-  font-family: var(--font-inter), sans-serif;
-  direction: rtl;
-  text-align: left;
-}
+ 
 .nastaleeq-text,
 .urdu-text {
-  font-family: var(--font-nastaliq), sans-serif;
-  direction: rtl;
-
+   @apply font-nastaliq;
+  padding:  1.5rem 1rem ;
+   direction: rtl;
+   
   text-align: right;
 }
 .nastaliq-bold {
-  font-family: var(--font-nastaliq), sans-serif;
+  @apply font-nastaliq;
   direction: rtl;
 
   font-weight: bold;
@@ -163,7 +160,7 @@
 }
 .arabic-text,
 .naskh-text {
-  font-family: var(--font-naskh), sans-serif;
+   @apply font-naskh;
   direction: rtl;
 
   text-align: right;

@@ -112,7 +112,7 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
           <Card className="flex justify-start gap-3 flex-wrap ">
             <CardContent>
               {state.question.tokens.get().map((token) => (
-                <Button key={token} onClick={() => actions.selectToken(token)}>
+                <Button key={token} onClick={() => actions.selectToken(token)} className="urdu-text text-lg">
                   {token}
                 </Button>
               ))}
@@ -121,8 +121,8 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
           {/* actions buttons */}
           <Card className="flex justify-end gap-3">
             <CardContent>
-              <Button onClick={actions.checkAnswer}>تأكد</Button>
-              <Button onClick={actions.reset}>مسح</Button>
+              <Button onClick={actions.checkAnswer} disabled={selectedTokens.get().length === 0}>تأكد</Button>
+              <Button onClick={actions.reset} disabled={selectedTokens.get().length === 0}>مسح</Button>
             </CardContent>
           </Card>
           {feedBack && (
