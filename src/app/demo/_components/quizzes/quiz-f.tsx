@@ -103,6 +103,12 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
     renderCards: () => {
       return (
         <div className="flex flex-col gap-2   p-2  ">
+          {/* Header */}
+          <Card>
+            <CardContent>
+              <p className="arabic-text text-center"> اختر الصورة الصحيحة</p>
+            </CardContent>
+          </Card>
           {/* top option */}
           <div className="w-full">
             <OptionCard

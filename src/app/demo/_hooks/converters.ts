@@ -65,8 +65,8 @@ function convertT1(quizItem: QuizTypes.QuizT1Item) {
     id: quizItem.id,
     audioFile: getAudioUrl(quizItem.sols[0].key),
     text: quizItem.sols[0].text,
-    // remove dots from correct answer
-    correctAnswer: quizItem.sols[1].text.replace(/\./g, ""),
+    // remove dots and ? mark from correct answer
+    correctAnswer: quizItem.sols[1].text.replace(/\./g, "").replace(/\؟/g, ""),
 
     tokens: shuffleArray(tokens),
   };
@@ -164,7 +164,6 @@ function convertR(quizItem: QuizTypes.QuizRItem) {
       id: token.key,
       text: token.text,
     };
-
   });
   const question = {
     id: quizItem.id,

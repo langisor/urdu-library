@@ -74,8 +74,9 @@ export default function QuizT1({ quiz }: { quiz: QuizT1Item }) {
       {/* Header */}
       <Card className="h-full">
         <CardHeader className="flex flex-row text-right gap-6">
-          <CardTitle>
+          <CardTitle className="flex flex-row gap-2">
             <p>{state.question.text.get()}</p>
+          
           </CardTitle>
 
           <CardDescription>

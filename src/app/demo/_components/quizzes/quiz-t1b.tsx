@@ -86,7 +86,7 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
       <Card className="h-full">
         <CardHeader className="flex flex-row text-right gap-6">
           <CardTitle>
-            <p>{state.question.text.get()}</p>
+            <p className="naskh-text">{state.question.text.get()}</p>
           </CardTitle>
 
           <CardDescription>
@@ -101,7 +101,7 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
           <Card className="h-[100px]">
             <CardContent className="flex justify-start gap-3 flex-wrap ">
               {selectedTokens.get().map((token) => (
-                <Button key={token} onClick={() => actions.selectToken(token)}>
+                <Button className="urdu-text" key={token} onClick={() => actions.selectToken(token)}>
                   {token}
                 </Button>
               ))}

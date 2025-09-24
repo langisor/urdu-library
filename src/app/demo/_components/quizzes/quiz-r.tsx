@@ -68,39 +68,35 @@ export default function QuizR({ quiz }: { quiz: QuizRItem }) {
 
   const initialTokens = useHookstate<SimpleToken[]>([]);
 
- 
-
   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
     null
   );
   const { state: mainScreenState, actions: mainScreenActions } =
     useMainScreen();
 
-   
   const actions = {
     selectToken: (token: SimpleToken) => {
-      //    add token to selectedTokens and remove it from initialTokens
+      //   remove from question.tokens
       selectedTokens.set((p) => [...p, token]);
-      initialTokens.set((p) => p.filter((t) => t.id !== token.id));
     },
     checkAnswer: () => {
-      const selectedTokensIds = selectedTokens.get().map((t) => t.id);
-      //   compare selectedTokensIds with state.question.correctOrder
-      let isCorrect: boolean = false;
-      for (let i = 0; i < selectedTokensIds.length; i++) {
-        // check if one or more of selectedTokensIds are not in state.question.correctOrder
-        if (
-          !state.question.correctOrder.some(
-            (token) => token.id.get() === selectedTokensIds[i]
-          )
-        ) {
-          isCorrect = false;
-          break;
-        }
+      // get selectedTokens text and remove extra spaces and dots
+      const selectedTokensText = selectedTokens
+        .get()
+        .map((t) => t.text)
+        .join(" ")
+        .replace(/\./g, "");
+      console.log("selectedTokensText", selectedTokensText);
+      // get correctOrder text
+      const correctOrderText = state.question.correctOrder
+        .get()
+        .map((t) => t.text)
+        .join(" ")
+        .replace(/\./g, "");
 
-        isCorrect = true;
-      }
-      if (isCorrect) {
+      console.log("correctOrderText", correctOrderText);
+      // compare selectedTokensText with correctOrderText
+      if (selectedTokensText === correctOrderText) {
         feedBack.set({ isCorrect: true, text: "أحسنت" });
         playCorrectTune();
         // go to next quiz after 3 seconds
@@ -127,9 +123,12 @@ export default function QuizR({ quiz }: { quiz: QuizRItem }) {
     },
   };
   const renderInitialTokens = () => {
-    const tokens =  state.question.tokens.get();
-
-    return tokens.map((token) => (
+    const tokens = state.question.tokens.get();
+    // remove selected tokens from tokens
+    const filteredTokens = tokens.filter(
+      (token) => !selectedTokens.get().some((t) => t.id === token.id)
+    );
+    return filteredTokens.map((token) => (
       <Button key={token.id} onClick={() => actions.selectToken(token)}>
         {token.text}
       </Button>
