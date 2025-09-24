@@ -26,17 +26,20 @@ interface MainScreenProps {
 export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
   const { state, actions } = useMainScreen()
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
-  const currentQuiz = quizzes[state.currentQuizIndex.get()];
-
+ const [isQuizzesMounted, setIsQuizzesMounted] = React.useState(false);
   React.useEffect(() => {
     // check if mounted
     if (quizzes.length > 0) {
       actions.setTotalQuizzes(quizzes.length);
+      setIsQuizzesMounted(true);
     }
-  }, []);
- console.log("currentQuiz: ",currentQuiz)
+  }, [quizzes]);
+  const currentQuiz = isQuizzesMounted ? quizzes[state.currentQuizIndex.get()] : null;
+
+//  console.log("currentQuiz: ",currentQuiz)
   const renderNavigationBar = () => {
-    return (
+     if (!currentQuiz) return null;
+     return (
       <div className="flex justify-around mx-2 my-4">
         <Button onClick={() => actions.prevQuiz()}>Previous Button</Button>
         <Button onClick={() => actions.reset()}>Reset</Button>
@@ -45,18 +48,16 @@ export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
       </div>
     );
   };
+ 
 
-  // when sheet closed, reset
-  // if (!isSheetOpen) {
-  //   actions.reset();
-  // }
   // if all quizzes are completed
-  // const quizCompleted = state.isComplete.get();
-  // if (quizCompleted ) {
-  //   actions.reset();
-  //   // setIsSheetOpen(false);
-  // }
+  if (state.isComplete.get()) {
+    setIsSheetOpen(false);
+    actions.reset();
+  }
+
   const renderCurrentQuiz = () => {
+    if (!currentQuiz) return null;
     switch (currentQuiz.type) {
       case "T1":
         return (

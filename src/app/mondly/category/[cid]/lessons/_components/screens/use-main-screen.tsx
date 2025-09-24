@@ -35,7 +35,7 @@ export function useMainScreen() {
       mainScreenState.score.set((p) => 0);
     },
     setTotalQuizzes: (totalQuizzes: number) => {
-      mainScreenState.totalQuizzes.set(totalQuizzes);
+      mainScreenState.totalQuizzes.set((p) => totalQuizzes);
     },
   };
 
