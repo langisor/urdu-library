@@ -88,11 +88,8 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
         );
       case "R":
         return (
-          <div className="grid grid-cols-2 gap-2">
+          <div className="flex flex-col gap-2">
             <Quizzes.QuizR quiz={currentQuiz} />
-            <div className="relative h-[400px] w-[500px] mx-auto">
-              <Image src="/screenshots/R.png" alt="R" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-            </div>
           </div>
         );
       case "C1b":
@@ -117,14 +114,12 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
         return (
           <div className="flex flex-col gap-2">
             <Quizzes.QuizQ quiz={currentQuiz} />
-           
           </div>
         );
       case "Qb":
         return (
           <div className="flex flex-col gap-2">
             <Quizzes.QuizQb quiz={currentQuiz} />
-         
           </div>
         );
 
@@ -154,7 +149,7 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
                   </span>
                 </SheetTitle>
               </SheetHeader>
-              {renderNavigationBar() }
+              {renderNavigationBar()}
               <div className="flex flex-col h-screen overflow-y-scroll">
                 <div> {quizCompleted ? null : renderCurrentQuiz()}</div>
               </div>

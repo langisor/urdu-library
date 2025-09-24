@@ -13,32 +13,33 @@ import {
 } from "@/components/ui/card";
 import { useHookstate } from "@hookstate/core";
 import { JsonViewerComponent } from "@/components/json-viewer";
-import { mainScreenStore } from "../screens/store";
+import { useMainScreen } from "../screens/use-main-screen";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
+
+
 export default function QuizD({ quiz }: { quiz: QuizDItem }) {
   const state = useHookstate({
-    question: convertD(quiz),
+    questions: convertD(quiz),
     currentQuestionIndex: 0,
-    isFinished: false,
+ 
   });
-  const mainScreenState = useHookstate(mainScreenStore);
+  const mainScreenState = useMainScreen();
   const feedBack = useHookstate({
     isCorrect: false,
     text: "",
   });
   const { playCorrectTune, playIncorrectTune } = useTune();
-
+  const currentQuestion = state.questions[state.currentQuestionIndex.get()];
   //  actions
   const actions = {
     checkAnswer: (answer: string) => {
-      const currentQuestion = state.question[state.currentQuestionIndex.get()];
       currentQuestion.isAnswered.set(true);
       if (answer === currentQuestion.correctAnswer.get()) {
         playCorrectTune();
         feedBack.set({ isCorrect: true, text: "أحسنت" });
         // add score
-        mainScreenState.score.set((p) => p + 1);
+        mainScreenState.state.score.set((p) => p + 1);
       } else {
         playIncorrectTune();
         feedBack.set({
@@ -47,15 +48,16 @@ export default function QuizD({ quiz }: { quiz: QuizDItem }) {
         });
       }
       // go to next question if not finished after 3 seconds
-      if (state.currentQuestionIndex.get() < state.question.length - 1) {
+      if (state.currentQuestionIndex.get() < state.questions.length - 1) {
         setTimeout(() => {
           state.currentQuestionIndex.set(state.currentQuestionIndex.get() + 1);
         }, 1000);
       } else {
-        state.isFinished.set(true);
+         mainScreenState.actions.nextQuiz();
       }
     },
   };
+ 
 
   //  renders
   const renderCards = () => {
@@ -98,13 +100,10 @@ export default function QuizD({ quiz }: { quiz: QuizDItem }) {
     );
   };
 
-  const currentQuestion = state.question[state.currentQuestionIndex.get()];
 
-  if (state.isFinished.get()) {
+  if (state.currentQuestionIndex.get() === state.questions.length - 1) {
     setTimeout(() => {
-      mainScreenState.currentQuizIndex.set(
-        mainScreenState.currentQuizIndex.get() + 1
-      );
+      mainScreenState.actions.nextQuiz();
     }, 1000);
   }
   return <div>{renderCards()}</div>;

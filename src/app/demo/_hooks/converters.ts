@@ -150,8 +150,29 @@ function convertQb(quizItem: QuizTypes.QuizQbItem) {
   return shuffleArray(questions);
 }
 function convertR(quizItem: QuizTypes.QuizRItem) {
+  //  correct order from ord and sols
+  const correctOrder = quizItem.ord.map((ord) => {
+    const token = quizItem.tokens.filter((t) => t.key === ord);
+    return {
+      id: token[0].key,
+      text: token[0].raw.text,
+    };
+  });
+  // tokens from tokens
+  const tokens = quizItem.tokens.map((token) => {
+    return {
+      id: token.key,
+      text: token.text,
+    };
+
+  });
   const question = {
     id: quizItem.id,
+    audioFile: getAudioUrl(quizItem.sols[0].key),
+    text: quizItem.sols[0].text,
+    correctOrder: correctOrder,
+    tokens: tokens,
+    isAnswered: false,
   };
   return question;
 }

@@ -16,7 +16,7 @@ async function getQuizzes(lid: string) {
   return paresedData;
 }
 export default async function DemoPage() {
-  const quizzes = await getQuizzes("103");
+  const quizzes = await getQuizzes("102");
   console.log("quizzes: ", quizzes);
   return (
     <div className="flex flex-col">

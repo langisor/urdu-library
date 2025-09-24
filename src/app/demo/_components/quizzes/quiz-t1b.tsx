@@ -3,7 +3,7 @@ import { QuizT1bItem } from "../../_hooks/definitions";
 import { convertT1b } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
 
-import { mainScreenStore } from "../screens/store";
+import { useMainScreen } from "../screens/use-main-screen";
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
@@ -27,14 +27,18 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
     null
   );
-
+  const { state: mainScreenState, actions: mainScreenActions } =
+    useMainScreen();
   // actions
   const actions = {
     checkAnswer: () => {
       // clean up selected tokens
       const selectedTokensText = selectedTokens.get().join(" ").trim();
       // clean up correct answer
-      const correctAnswer = state.question.correctAnswer.get().trim().replace(/\۔/g, "");
+      const correctAnswer = state.question.correctAnswer
+        .get()
+        .trim()
+        .replace(/\۔/g, "");
       console.log(selectedTokensText);
       console.log(correctAnswer);
       //  compare with correctAnswer
@@ -44,7 +48,7 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
         playCorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenState.currentQuizIndex.set((p) => p + 1);
+          mainScreenActions.nextQuiz();
         }, 3000);
         mainScreenState.score.set((p) => p + 1);
       } else {
@@ -55,13 +59,19 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
         playIncorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenState.currentQuizIndex.set((p) => p + 1);
+          mainScreenActions.nextQuiz();
         }, 3000);
       }
     },
     selectToken: (token: string) => {
+      // if token is already selected, remove it from question.tokens and add it to selectedTokens
+      if (selectedTokens.get().includes(token)) {
+        selectedTokens.set((p) => p.filter((t) => t !== token));
+        state.question.tokens.set((p) => [...p, token]);
+        return;
+      }
+      // if token is not selected, add it to selectedTokens and remove it from question.tokens
       selectedTokens.set((p) => [...p, token]);
-      // remove token from tokens array
       state.question.tokens.set((p) => p.filter((t) => t !== token));
     },
     reset: () => {
@@ -70,7 +80,6 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
     },
   };
   console.log(state.get());
-  const mainScreenState = useHookstate(mainScreenStore);
   return (
     <div className="flex flex-col  text-right" dir="rtl">
       {/* Header */}

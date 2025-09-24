@@ -2,7 +2,7 @@
 import { QuizC1bItem } from "../../_hooks/definitions";
 import { convertC1b } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
-import { mainScreenStore } from "../screens/store";
+import { useMainScreen } from "../screens/use-main-screen";
 import { useTune } from "@/hooks/use-tone";
 import { Button } from "@/components/ui/button";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
@@ -22,12 +22,13 @@ import * as React from "react";
 export default function QuizC1b({ quiz }: { quiz: QuizC1bItem }) {
   const state = useHookstate({
     question: convertC1b(quiz),
+    currentQuestionIndex: 0,
   });
   const { playCorrectTune, playIncorrectTune } = useTune();
   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
     null
   );
-  const mainScreenState = useHookstate(mainScreenStore);
+  const mainScreenState = useMainScreen();
   
   React.useEffect(() => {
     const words: string[] = [];
@@ -76,9 +77,9 @@ export default function QuizC1b({ quiz }: { quiz: QuizC1bItem }) {
         playCorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenState.currentQuizIndex.set((p) => p + 1);
+          mainScreenState.actions.nextQuiz();
         }, 3000);
-        mainScreenState.score.set((p) => p + 1);
+        mainScreenState.state.score.set((p) => p + 1);
       } else {
         feedBack.set({
           isCorrect: false,
@@ -87,7 +88,7 @@ export default function QuizC1b({ quiz }: { quiz: QuizC1bItem }) {
         playIncorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenState.currentQuizIndex.set((p) => p + 1);
+          mainScreenState.actions.nextQuiz();
         }, 3000);
       }
     },

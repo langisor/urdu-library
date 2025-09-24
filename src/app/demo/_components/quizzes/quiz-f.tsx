@@ -3,7 +3,7 @@ import { QuizFItem } from "../../_hooks/definitions";
 import { convertF, QuestionF } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
 import { shuffleArray } from "@/lib/helpers";
-import { mainScreenStore } from "../screens/store";
+import { useMainScreen } from "../screens/use-main-screen";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
@@ -26,7 +26,7 @@ interface QuizState {
 }
 
 export default function QuizF({ quiz }: { quiz: QuizFItem }) {
-  const mainScreenState = useHookstate(mainScreenStore);
+  const mainScreenState = useMainScreen();
   const state = useHookstate({
     questions: convertF(quiz),
     currentQuestionIndex: 0,
@@ -45,7 +45,7 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
         playCorrectTune();
         feedBack.set({ isCorrect: true, text: "أحسنت" });
         // add score
-        mainScreenState.score.set((p) => p + 1);
+        mainScreenState.state.score.set((p) => p + 1);
       } else {
         playIncorrectTune();
         feedBack.set({
@@ -78,7 +78,7 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
 
   if (state.isFinished.get()) {
     setTimeout(() => {
-      mainScreenState.currentQuizIndex.set((p) => p + 1);
+      mainScreenState.actions.nextQuiz();
     }, 2000);
   }
   const currentQuestion = state.questions[state.currentQuestionIndex.get()];

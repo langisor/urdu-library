@@ -17,6 +17,7 @@ import {
   CardTitle,
   CardDescription,
   CardFooter,
+  CardAction,
 } from "@/components/ui/card";
 import * as React from "react";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
@@ -133,14 +134,14 @@ export default function QuizQb({ quiz }: { quiz: QuizQbItem }) {
           >
             {currentQuestion.options.map((option) => (
               <Card
-                className={`flex flex-row px-0  gap-3 hover:bg-gray-100 cursor-pointer transition-all hover:scale-105 text-xl  `}
+                className={`flex flex-row  flex-nowrap px-0  gap-3 hover:bg-gray-100 cursor-pointer transition-all hover:scale-101 text-xl  `}
                 key={option.id.get()}
               >
-                <Button
-                  variant="ghost"
+                <CardAction
                   className="w-full h-full"
-                  onClick={() => actions.selectOption(option.id.get())}
+                   onClick={() => actions.selectOption(option.id.get())}
                 >
+                  <div className="flex flex-row gap-3">
                   <RadioGroupItem
                     value={option.id.get()}
                     id={option.id.get()}
@@ -148,7 +149,8 @@ export default function QuizQb({ quiz }: { quiz: QuizQbItem }) {
                   <Label htmlFor={option.id.get()} className="w-full h-full ">
                     {option.text.get()}
                   </Label>
-                </Button>
+                  </div>
+                </CardAction>
               </Card>
             ))}
           </RadioGroup>
