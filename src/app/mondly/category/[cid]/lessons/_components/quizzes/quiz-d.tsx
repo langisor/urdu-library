@@ -2,18 +2,15 @@
 import { QuizDItem } from "../../_hooks/definitions";
 import { convertD } from "../../_hooks/converters";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardFooter,
 } from "@/components/ui/card";
 import { useHookstate } from "@hookstate/core";
-import { JsonViewerComponent } from "@/components/json-viewer";
-import { useMainScreen } from "../screens/use-main-screen";
+import { useGlobalState } from "../../_components/screens/_stores/global-state";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 
@@ -24,7 +21,7 @@ export default function QuizD({ quiz }: { quiz: QuizDItem }) {
     currentQuestionIndex: 0,
  
   });
-  const mainScreenState = useMainScreen();
+  const mainScreenState = useGlobalState();
   const feedBack = useHookstate({
     isCorrect: false,
     text: "",
@@ -39,7 +36,7 @@ export default function QuizD({ quiz }: { quiz: QuizDItem }) {
         playCorrectTune();
         feedBack.set({ isCorrect: true, text: "أحسنت" });
         // add score
-        mainScreenState.state.score.set((p) => p + 1);
+        mainScreenState.setScore(mainScreenState.getScore() + 1);
       } else {
         playIncorrectTune();
         feedBack.set({
@@ -53,7 +50,7 @@ export default function QuizD({ quiz }: { quiz: QuizDItem }) {
           state.currentQuestionIndex.set(state.currentQuestionIndex.get() + 1);
         }, 1000);
       } else {
-         mainScreenState.actions.nextQuiz();
+         mainScreenState.nextQuiz();
       }
     },
   };
@@ -103,7 +100,7 @@ export default function QuizD({ quiz }: { quiz: QuizDItem }) {
 
   if (state.currentQuestionIndex.get() === state.questions.length - 1) {
     setTimeout(() => {
-      mainScreenState.actions.nextQuiz();
+      mainScreenState.nextQuiz();
     }, 1000);
   }
   return <div>{renderCards()}</div>;

@@ -1,10 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { JsonViewerComponent } from "@/components/json-viewer";
-import { useMainScreen } from "./use-main-screen";
+
 import * as Quizzes from "../quizzes";
-import { convertQ } from "../../_hooks/converters";
 import Image from "next/image";
 import {
   Sheet,
@@ -15,8 +13,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import * as React from "react";
+import { useGlobalState } from "./_stores/global-state";
 import ResultScreen from "./result-screen";
- 
 
 interface MainScreenProps {
   lesson: any;
@@ -24,36 +22,37 @@ interface MainScreenProps {
 }
 
 export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
-  const { state, actions } = useMainScreen()
+  const state = useGlobalState();
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
- const [isQuizzesMounted, setIsQuizzesMounted] = React.useState(false);
+  const [isQuizzesMounted, setIsQuizzesMounted] = React.useState(false);
   React.useEffect(() => {
     // check if mounted
     if (quizzes.length > 0) {
-      actions.setTotalQuizzes(quizzes.length);
+      state.setTotalQuizzes(quizzes.length);
       setIsQuizzesMounted(true);
     }
   }, [quizzes]);
-  const currentQuiz = isQuizzesMounted ? quizzes[state.currentQuizIndex.get()] : null;
+  const currentQuiz = isQuizzesMounted
+    ? quizzes[state.getCurrentQuizIndex()]
+    : null;
 
-//  console.log("currentQuiz: ",currentQuiz)
+  //  console.log("currentQuiz: ",currentQuiz)
   const renderNavigationBar = () => {
-     if (!currentQuiz) return null;
-     return (
+    if (!currentQuiz) return null;
+    return (
       <div className="flex justify-around mx-2 my-4">
-        <Button onClick={() => actions.prevQuiz()}>Previous Button</Button>
-        <Button onClick={() => actions.reset()}>Reset</Button>
+        <Button onClick={() => state.prevQuiz()}>Previous Button</Button>
+        <Button onClick={() => state.reset()}>Reset</Button>
 
-        <Button onClick={() => actions.nextQuiz()}>Next</Button>
+        <Button onClick={() => state.nextQuiz()}>Next</Button>
       </div>
     );
   };
- 
 
   // if all quizzes are completed
-  if (state.isComplete.get()) {
+  if (state.getIsComplete()) {
     setIsSheetOpen(false);
-    actions.reset();
+    state.reset();
   }
 
   const renderCurrentQuiz = () => {
@@ -128,47 +127,38 @@ export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
     }
   };
   return (
-   
-      <Sheet
-        open={isSheetOpen}
-        onOpenChange={setIsSheetOpen}
-      >
-        <SheetTrigger className="w-full" asChild>
-          <Button>بدء التدريب</Button>
-        </SheetTrigger>
-        <SheetContent
-          side="bottom"
-          className="h-screen overflow-y-scroll px-10"
-        >
-          <SheetDescription className="sr-only">Quiz</SheetDescription>
-          {!state.isComplete.get() ? (
-            <div className="flex flex-col">
-              <SheetHeader>
-                <SheetTitle className="flex justify-around mx-10">
-                  <span>
-                    {/* QuizID: {currentQuiz.id || ""} - Quiz Type: {currentQuiz.type || ""} */}
-                  </span>
-                  <span className="text-lg">
-                    {state.currentQuizIndex.get() + 1} of{" "}
-                    {state.totalQuizzes.get()}
-                  </span>
-                </SheetTitle>
-              </SheetHeader>
-              {renderNavigationBar()}
-              <div className="flex flex-col h-screen overflow-y-scroll">
-                <div> {state.isComplete.get() ? null : renderCurrentQuiz()}</div>
-              </div>
-            </div>
-          ) : (
+    <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+      <SheetTrigger className="w-full" asChild>
+        <Button>بدء التدريب</Button>
+      </SheetTrigger>
+      <SheetContent side="bottom" className="h-screen overflow-y-scroll px-10">
+        <SheetDescription className="sr-only">Quiz</SheetDescription>
+        {!state.getIsComplete() ? (
+          <div className="flex flex-col">
+            <SheetHeader>
+              <SheetTitle className="flex justify-around mx-10">
+                <span>
+                  {/* QuizID: {currentQuiz.id || ""} - Quiz Type: {currentQuiz.type || ""} */}
+                </span>
+                <span className="text-lg">
+                  {state.getCurrentQuizIndex() + 1} of {state.getTotalQuizzes()}
+                </span>
+              </SheetTitle>
+            </SheetHeader>
+            {renderNavigationBar()}
             <div className="flex flex-col h-screen overflow-y-scroll">
-              <SheetTitle className="sr-only">Result</SheetTitle>
-              <SheetDescription className="sr-only">Result</SheetDescription>
-              {state.isComplete.get() ? <ResultScreen /> : null}
-              <Button onClick={actions.reset}>Reset</Button>
+              <div> {state.getIsComplete() ? null : renderCurrentQuiz()}</div>
             </div>
-          )}
-        </SheetContent>
-      </Sheet>
- 
+          </div>
+        ) : (
+          <div className="flex flex-col h-screen overflow-y-scroll">
+            <SheetTitle className="sr-only">Result</SheetTitle>
+            <SheetDescription className="sr-only">Result</SheetDescription>
+            {state.getIsComplete() ? <ResultScreen /> : null}
+            <Button onClick={state.reset}>Reset</Button>
+          </div>
+        )}
+      </SheetContent>
+    </Sheet>
   );
 }

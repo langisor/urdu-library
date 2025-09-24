@@ -1,8 +1,8 @@
 "use client";
 import { QuizRItem } from "../../_hooks/definitions";
-// import { convertR } from "../../_hooks/converters";
+import { convertR } from "../../_hooks/converters";
 import { useHookstate, State } from "@hookstate/core";
-import { useMainScreen } from "../screens/use-main-screen";
+import { useGlobalState } from "../../_components/screens/_stores/global-state";
 import { useTune } from "@/hooks/use-tone";
 import { Button } from "@/components/ui/button";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
@@ -33,31 +33,6 @@ interface SimpleQuizData {
   isAnswered: boolean;
 }
 
-function convertR(quizItem: QuizRItem) {
-  const tokens = quizItem.tokens.map((token, index) => {
-    return {
-      id: "token" + token.key + index,
-      text: token.text,
-    };
-  });
-  const correctOrder = quizItem.ord.map((ord, index) => {
-    const token = quizItem.tokens.filter((t) => t.key === ord);
-    return {
-      id: "order" + token[0].key + index,
-      text: token[0].raw.text,
-    };
-  });
-  const question = {
-    id: quizItem.id,
-    audioFile: getAudioUrl(quizItem.sols[0].key),
-    text: quizItem.sols[0].text,
-    correctAnswer: quizItem.sols[1].text,
-    correctOrder: correctOrder,
-    tokens: shuffleArray(tokens),
-    isAnswered: false,
-  };
-  return question;
-}
 
 export default function QuizR({ quiz }: { quiz: QuizRItem }) {
   const state = useHookstate({
@@ -71,8 +46,7 @@ export default function QuizR({ quiz }: { quiz: QuizRItem }) {
   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
     null
   );
-  const { state: mainScreenState, actions: mainScreenActions } =
-    useMainScreen();
+   const mainScreenState = useGlobalState();
 
   const actions = {
     selectToken: (token: SimpleToken) => {
@@ -101,9 +75,9 @@ export default function QuizR({ quiz }: { quiz: QuizRItem }) {
         playCorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenActions.nextQuiz();
+          mainScreenState.nextQuiz();
         }, 3000);
-        mainScreenState.score.set((p) => p + 1);
+        mainScreenState.setScore(mainScreenState.getScore() + 1);
       } else {
         feedBack.set({
           isCorrect: false,
@@ -112,7 +86,7 @@ export default function QuizR({ quiz }: { quiz: QuizRItem }) {
         playIncorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenActions.nextQuiz();
+          mainScreenState.nextQuiz();
         }, 3000);
       }
     },

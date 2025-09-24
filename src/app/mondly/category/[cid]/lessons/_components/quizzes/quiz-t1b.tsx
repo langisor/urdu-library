@@ -3,7 +3,7 @@ import { QuizT1bItem } from "../../_hooks/definitions";
 import { convertT1b } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
 
-import { useMainScreen } from "../screens/use-main-screen";
+import { useGlobalState } from "../../_components/screens/_stores/global-state";
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
@@ -27,8 +27,7 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
     null
   );
-  const { state: mainScreenState, actions: mainScreenActions } =
-    useMainScreen();
+  const mainScreenStore = useGlobalState();
   // actions
   const actions = {
     checkAnswer: () => {
@@ -48,9 +47,9 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
         playCorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenActions.nextQuiz();
+          mainScreenStore.nextQuiz();
         }, 3000);
-        mainScreenState.score.set((p) => p + 1);
+        mainScreenStore.setScore(mainScreenStore.getScore() + 1);
       } else {
         feedBack.set({
           isCorrect: false,
@@ -59,7 +58,7 @@ export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
         playIncorrectTune();
         // go to next quiz after 3 seconds
         setTimeout(() => {
-          mainScreenActions.nextQuiz();
+          mainScreenStore.nextQuiz();
         }, 3000);
       }
     },

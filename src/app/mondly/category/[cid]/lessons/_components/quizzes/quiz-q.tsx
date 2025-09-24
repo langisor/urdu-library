@@ -3,8 +3,7 @@ import { QuizQItem } from "../../_hooks/definitions";
 import { getAudioUrl } from "@/lib/helpers";
 import { convertQ } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
-// import { mainScreenStore } from "../screens/store";
-import { useMainScreen } from "../screens/use-main-screen";
+import { useGlobalState } from "../../_components/screens/_stores/global-state";
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
 import { Label } from "@/components/ui/label";
@@ -37,7 +36,7 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
     null
   );
-  const mainScreenState = useMainScreen();
+  const mainScreenState = useGlobalState();
   const selectectOption = useHookstate<string | null>(null);
   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
 
@@ -49,7 +48,7 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
       if (selectectOption.get() === currentQuestion.correctAnswerId.get()) {
         playCorrectTune();
         // add score
-        mainScreenState.state.score.set((p) => p + 1);
+        mainScreenState.setScore(mainScreenState.getScore() + 1);
         feedBack.set({ isCorrect: true, text: "أحسنت" });
         actions.nextQuestion();
       } else {
@@ -104,7 +103,7 @@ export default function QuizQ({ quiz }: { quiz: QuizQItem }) {
   if (state.isLastQuestion.get()) {
     // wait 2 seconds
     setTimeout(() => {
-      mainScreenState.actions.nextQuiz();
+      mainScreenState.nextQuiz();
     }, 1000);
     return;
   }

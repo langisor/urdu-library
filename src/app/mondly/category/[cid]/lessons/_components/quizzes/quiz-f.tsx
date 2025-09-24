@@ -3,11 +3,9 @@ import { QuizFItem } from "../../_hooks/definitions";
 import { convertF, QuestionF } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
 import { shuffleArray } from "@/lib/helpers";
-import { useMainScreen } from "../screens/use-main-screen";
+import { useGlobalState } from "../../_components/screens/_stores/global-state";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
-import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import {
   Card,
@@ -26,7 +24,7 @@ interface QuizState {
 }
 
 export default function QuizF({ quiz }: { quiz: QuizFItem }) {
-  const mainScreenState = useMainScreen();
+  const mainScreenState = useGlobalState();
   const state = useHookstate({
     questions: convertF(quiz),
     currentQuestionIndex: 0,
@@ -45,7 +43,7 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
         playCorrectTune();
         feedBack.set({ isCorrect: true, text: "أحسنت" });
         // add score
-        mainScreenState.state.score.set((p) => p + 1);
+        mainScreenState.setScore(mainScreenState.getScore() + 1);
       } else {
         playIncorrectTune();
         feedBack.set({
@@ -78,7 +76,7 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
 
   if (state.isFinished.get()) {
     setTimeout(() => {
-      mainScreenState.actions.nextQuiz();
+      mainScreenState.nextQuiz();
     }, 1000);
   }
   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
