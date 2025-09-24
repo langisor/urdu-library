@@ -22,7 +22,7 @@ export default async function DemoPage() {
     <div className="flex flex-col">
       <h1 className="text-2xl">Demo page</h1>
       <JsonViewerComponent data={quizzes} />
-      <MainScreen quizzes={quizzes} />
+       
     </div>
   );
 }

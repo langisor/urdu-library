@@ -26,39 +26,38 @@ import {
 
 interface MainScreenProps {
   quizzes: any[];
-  lesson: any;
 }
 
-export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
+export default function MainScreen({ quizzes }: MainScreenProps) {
   const { state, actions } = useMainScreen();
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const currentQuiz = quizzes[state.currentQuizIndex.get()];
 
-    
-   state.totalQuizzes.set( (p) => quizzes.length);
+  React.useEffect(() => {
+    actions.setTotalQuizzes(quizzes.length);
+  }, [quizzes]);
+
   const renderNavigationBar = () => {
     return (
       <div className="flex justify-around mx-2 my-4">
-        <Button onClick={actions.prevQuiz}>Previous</Button>
-        <Button onClick={actions.reset}>Reset</Button>
-        <Button onClick={actions.nextQuiz}>Next</Button>
-        <Card>
-          <CardContent>
-            <p>Score: {state.score.get()}</p>
-            <p>Total Quizzes: {state.totalQuizzes.get()} </p>
-          </CardContent>
-        </Card>
+        <Button onClick={() => actions.prevQuiz()}>Previous Button</Button>
+        <Button onClick={() => actions.reset()}>Reset</Button>
+
+        <Button onClick={() => actions.nextQuiz()}>Next</Button>
       </div>
     );
   };
 
   // when sheet closed, reset
-  if (!isSheetOpen) {
-    actions.reset();
-  }
+  // if (!isSheetOpen) {
+  //   actions.reset();
+  // }
   // if all quizzes are completed
   const quizCompleted = state.isComplete.get();
-
+  if (quizCompleted ) {
+    actions.reset();
+    setIsSheetOpen(false);
+  }
   const renderCurrentQuiz = () => {
     switch (currentQuiz.type) {
       case "T1":
@@ -130,12 +129,13 @@ export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
     }
   };
   return (
-    <>
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+   
+      <Sheet
+        open={isSheetOpen}
+        onOpenChange={setIsSheetOpen}
+      >
         <SheetTrigger className="w-full" asChild>
-          <Button onClick={() => setIsSheetOpen(!isSheetOpen)}>
-            إبداء التدريب
-          </Button>
+          <Button>بدء التدريب</Button>
         </SheetTrigger>
         <SheetContent
           side="bottom"
@@ -149,7 +149,7 @@ export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
                   <span>
                     QuizID: {currentQuiz.id} - Quiz Type: {currentQuiz.type}
                   </span>
-                  <span className="text-xs">
+                  <span className="text-lg">
                     {state.currentQuizIndex.get() + 1} of{" "}
                     {state.totalQuizzes.get()}
                   </span>
@@ -170,6 +170,6 @@ export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
           )}
         </SheetContent>
       </Sheet>
-    </>
+ 
   );
 }

@@ -1,8 +1,14 @@
-import { Card, CardContent } from "@/components/general/card";
-import { LessonDashboard } from "./[lid]/_components/lesson-dashboard";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { queryClient } from "@/lib/postgres-client";
-
-
+import Link from "next/link";
+import MainScreen from "./lessons/_components/screens/main-screen";
+import { Button } from "@/components/ui/button";
 type Category = {
   id: number;
   name: string;
@@ -68,14 +74,52 @@ export default async function Category({
   const { cid } = await params;
   const { categoryData, lessonsData } = await getCategory(Number(cid));
 
+  const renderLessonCards = () => {
+    return (
+      <div
+        className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3"
+        dir="rtl"
+      >
+        {lessonsData.map((lesson) => (
+          // <Link href={`/mondly/category/${cid}/${lesson.id}`} key={lesson.id} className="hover:opacity-80 transition">
+          <Card
+            className="w-full hover:opacity-80 transition cursor-pointer skew-1"
+            key={lesson.id}
+          >
+            <CardHeader>
+              <CardTitle>{lesson.name}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Quizzes: {lesson.countQuiz}</p>
+              <p>Phrases: {lesson.countPhrases}</p>
+              <p>Words: {lesson.countWords}</p>
+            </CardContent>
+            <CardFooter>
+              <Quizzer lid={lesson.id} />
+            </CardFooter>
+          </Card>
+          // </Link>
+        ))}
+      </div>
+    );
+  };
   return (
-    <Card>
-      <CardContent className="">
-        <LessonDashboard
-          categoryName={categoryData.name}
-          lessons={lessonsData}
-        />
-      </CardContent>
-    </Card>
+    <div>
+      <h1>{categoryData.name}</h1>
+      <div>{renderLessonCards()}</div>
+    </div>
   );
+}
+
+async function Quizzer({ lid }: { lid: number }) {
+  const quizzes = await queryClient`
+   select * from "Quiz" where "lessonID"=${lid}
+  `;
+  const paresedData: any[] = [];
+  for (const q of quizzes) {
+    const data = JSON.parse(JSON.stringify(q.quizData));
+    paresedData.push(data);
+  }
+ 
+  return <MainScreen quizzes={paresedData} />;
 }

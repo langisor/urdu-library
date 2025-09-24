@@ -4,7 +4,6 @@ export interface Question {
   text: string; //question
   correctAnswer: string; //sols
   phonetic?: string;
-
   isAnswered: boolean;
   options: Option[] | string[];
 }
