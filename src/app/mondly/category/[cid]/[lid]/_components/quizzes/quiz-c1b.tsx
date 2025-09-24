@@ -2,7 +2,7 @@
 import { QuizC1bItem } from "../../_hooks/definitions";
 import { convertC1b } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
-import { useGlobalState } from "../../_components/screens/_stores/global-state";
+import { useGlobalState } from "../screens/_stores/global-state";
 import { useTune } from "@/hooks/use-tone";
 import { Button } from "@/components/ui/button";
 import { TonePlayerButton } from "@/components/general/tone-button-player";

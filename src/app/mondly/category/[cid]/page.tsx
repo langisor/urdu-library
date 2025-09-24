@@ -7,9 +7,10 @@ import {
 } from "@/components/ui/card";
 import { queryClient } from "@/lib/postgres-client";
 import Link from "next/link";
-import MainScreen from "./lessons/_components/screens/main-screen";
+import MainScreen from "./[lid]/_components/screens/main-screen";
 import { Button } from "@/components/ui/button";
 import { Suspense } from "react";
+import { Badge } from "lucide-react";
 type Category = {
   id: number;
   name: string;
@@ -77,55 +78,66 @@ export default async function Category({
 
   const renderLessonCards = () => {
     return (
-      <div
-        className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3"
-        dir="rtl"
-      >
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
         {lessonsData.map((lesson) => (
-          // <Link href={`/mondly/category/${cid}/${lesson.id}`} key={lesson.id} className="hover:opacity-80 transition">
-          <Card
-            className="w-full hover:opacity-80 transition cursor-pointer skew-1"
+          <Link
+            href={`/mondly/category/${cid}/${lesson.id}`}
             key={lesson.id}
+            className="hover:opacity-80 transition"
           >
-            <CardHeader>
-              <CardTitle>{lesson.name}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Quizzes: {lesson.countQuiz}</p>
-              <p>Phrases: {lesson.countPhrases}</p>
-              <p>Words: {lesson.countWords}</p>
-            </CardContent>
-            <CardFooter>
-              <Suspense fallback={<div>Loading...</div>}>
-                <Quizzer lid={lesson.id} />
-              </Suspense>
-            </CardFooter>
-          </Card>
-          // </Link>
+            <Card
+              className="w-full hover:opacity-80 transition cursor-pointer skew-1"
+              key={lesson.id}
+            >
+              <CardHeader>
+                <CardTitle>{lesson.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Card>
+                  <CardContent>
+                    <div className="grid grid-cols-2 gap-4">
+                      <CardTitle>الاختبارات</CardTitle>
+                      <Button
+                        variant="outline"
+                        className="text-lg font-bold rounded-2xl"
+                      >
+                        {lesson.countQuiz}
+                      </Button>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <CardTitle>الجمل</CardTitle>
+                      <Button
+                        variant="outline"
+                        className="text-lg font-bold rounded-2xl"
+                      >
+                        {lesson.countPhrases}
+                      </Button>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <CardTitle>الكلمات</CardTitle>
+                      <Button
+                        variant="outline"
+                        className="text-lg font-bold rounded-2xl"
+                      >
+                        {lesson.countWords}
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CardContent>
+              <CardFooter></CardFooter>
+            </Card>
+          </Link>
         ))}
       </div>
     );
   };
   return (
-    <div>
-      <h1>{categoryData.name}</h1>
-      <div>{renderLessonCards()}</div>
-    </div>
+    <Card dir="rtl">
+      <CardHeader>
+        <CardTitle className="text-2xl">{categoryData.name}</CardTitle>
+      </CardHeader>
+      <CardContent>{renderLessonCards()}</CardContent>
+    </Card>
   );
-}
-
-async function Quizzer({ lid }: { lid: number }) {
-  const quizzes = await queryClient`
-   select * from "Quiz" where "lessonID"=${lid}
-  `;
-  const paresedData: any[] = [];
-  for (const q of quizzes) {
-    const data = JSON.parse(JSON.stringify(q.quizData));
-    paresedData.push(data);
-  }
-  const lesson = await queryClient`
-   select * from "Lesson" where id=${lid}
-  `;
- 
-  return <MainScreen lesson={lesson[0]} quizzes={paresedData} />;
 }

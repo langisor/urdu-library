@@ -3,7 +3,7 @@ import { QuizFItem } from "../../_hooks/definitions";
 import { convertF, QuestionF } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
 import { shuffleArray } from "@/lib/helpers";
-import { useGlobalState } from "../../_components/screens/_stores/global-state";
+import { useGlobalState } from "../screens/_stores/global-state";
 import Image from "next/image";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";

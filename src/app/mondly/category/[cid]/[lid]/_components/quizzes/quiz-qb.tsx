@@ -3,7 +3,7 @@ import { QuizQbItem } from "../../_hooks/definitions";
 import { getAudioUrl } from "@/lib/helpers";
 import { convertQb } from "../../_hooks/converters";
 import { useHookstate } from "@hookstate/core";
-import { useGlobalState } from "../../_components/screens/_stores/global-state";
+import { useGlobalState } from "../screens/_stores/global-state";
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
 import { Label } from "@/components/ui/label";

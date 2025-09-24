@@ -10,7 +10,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { useHookstate } from "@hookstate/core";
-import { useGlobalState } from "../../_components/screens/_stores/global-state";
+import { useGlobalState } from "../screens/_stores/global-state";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 
