@@ -60,7 +60,7 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
       if (state.currentQuestionIndex.get() < state.questions.length - 1) {
         setTimeout(() => {
           state.currentQuestionIndex.set(state.currentQuestionIndex.get() + 1);
-        }, 3000);
+        }, 1000);
       } else {
         state.isFinished.set(true);
       }
@@ -79,7 +79,7 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
   if (state.isFinished.get()) {
     setTimeout(() => {
       mainScreenState.actions.nextQuiz();
-    }, 2000);
+    }, 1000);
   }
   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
 
@@ -101,12 +101,20 @@ export default function QuizF({ quiz }: { quiz: QuizFItem }) {
       );
     },
     renderCards: () => {
+      // shuffle options
+      currentQuestion.options.set((p) => shuffleArray(p));
       return (
         <div className="flex flex-col gap-2   p-2  ">
           {/* Header */}
           <Card>
-            <CardContent>
+            <CardContent
+              className="flex  justify-between flex-row items-center gap-2"
+              dir="rtl"
+            >
               <p className="arabic-text text-center"> اختر الصورة الصحيحة</p>
+              <p className="inter-text text-red-500 border-2 border-red-500 p-2">
+                TODO: fix shuffling images
+              </p>
             </CardContent>
           </Card>
           {/* top option */}
