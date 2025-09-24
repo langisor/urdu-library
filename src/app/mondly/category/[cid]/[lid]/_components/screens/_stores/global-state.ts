@@ -35,5 +35,5 @@ const wrapState = (s: State<GlobalState>) => ({
 
 // exposed functions external to the state
 // The following 2 functions can be exported now:
-export const accessGlobalState = () => wrapState(globalState); // Ex. access outside of the component
-export const useGlobalState = () => wrapState(useHookstate(globalState)); // Ex. access inside of the component
+export const accessGlobalState = () => wrapState(globalState); // access outside of the component. Ex. access from server
+export const useGlobalState = () => wrapState(useHookstate(globalState)); // access inside of the component. Ex. access from client

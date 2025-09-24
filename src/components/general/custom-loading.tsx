@@ -21,44 +21,48 @@ export function CustomLoading({
 
   if (variant === "spinner") {
     return (
-      <div className={cn("relative", sizeClasses[size], className)}>
-        <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-blue-500 border-r-purple-500 border-b-pink-500 border-l-orange-500 animate-spin" />
-        <div className="absolute inset-1 rounded-full border-2 border-transparent border-t-cyan-400 border-r-violet-400 border-b-rose-400 border-l-amber-400 animate-spin animate-reverse animate-duration-700" />
+      <div className="w-screen h-screen flex items-center justify-center">
+        <div className={cn("relative", sizeClasses[size], className)}>
+          <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-blue-500 border-r-purple-500 border-b-pink-500 border-l-orange-500 animate-spin" />
+          <div className="absolute inset-1 rounded-full border-2 border-transparent border-t-cyan-400 border-r-violet-400 border-b-rose-400 border-l-amber-400 animate-spin animate-reverse animate-duration-700" />
+        </div>
       </div>
     );
   }
 
   if (variant === "dots") {
     return (
-      <div className={cn("flex space-x-1", className)}>
-        <div
-          className={cn(
-            "rounded-full bg-blue-500 animate-bounce",
-            size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
-          )}
-          style={{ animationDelay: "0ms" }}
-        />
-        <div
-          className={cn(
-            "rounded-full bg-purple-500 animate-bounce",
-            size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
-          )}
-          style={{ animationDelay: "150ms" }}
-        />
-        <div
-          className={cn(
-            "rounded-full bg-pink-500 animate-bounce",
-            size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
-          )}
-          style={{ animationDelay: "300ms" }}
-        />
-        <div
-          className={cn(
-            "rounded-full bg-orange-500 animate-bounce",
-            size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
-          )}
-          style={{ animationDelay: "450ms" }}
-        />
+      <div className="w-screen h-screen flex items-center justify-center">
+        <div className={cn("flex space-x-1", className)}>
+          <div
+            className={cn(
+              "rounded-full bg-blue-500 animate-bounce",
+              size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
+            )}
+            style={{ animationDelay: "0ms" }}
+          />
+          <div
+            className={cn(
+              "rounded-full bg-purple-500 animate-bounce",
+              size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
+            )}
+            style={{ animationDelay: "150ms" }}
+          />
+          <div
+            className={cn(
+              "rounded-full bg-pink-500 animate-bounce",
+              size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
+            )}
+            style={{ animationDelay: "300ms" }}
+          />
+          <div
+            className={cn(
+              "rounded-full bg-orange-500 animate-bounce",
+              size === "sm" ? "w-2 h-2" : size === "md" ? "w-3 h-3" : "w-4 h-4"
+            )}
+            style={{ animationDelay: "450ms" }}
+          />
+        </div>
       </div>
     );
   }
