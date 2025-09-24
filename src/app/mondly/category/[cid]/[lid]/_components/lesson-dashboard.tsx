@@ -5,6 +5,7 @@ import { BackToUnit } from "../../vocabularies/_components/back-to-unit";
 import { Progress } from "@/components/ui/progress";
 import { Pen, SquaresIntersect, Star, TextCursor } from "lucide-react";
 import { Quizzer } from "./quizzer";
+import MainScreen from "@/app/demo/_components/screens/main-screen";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/general/button";
 type Lesson = {
@@ -104,10 +105,10 @@ export async function LessonDashboard({
                   {stars}
                 </div>
                 <Suspense fallback={<div>Loading...</div>}>
-                  <Quizzer
+                  <MainScreen
                     quizzes={quizzesData[lesson.id]} // actual quizzes
                     lessonId={lesson.id}
-                    name={lesson.name}
+                     lessonName={lesson.name}
                   />
                 </Suspense>
               </CardContent>

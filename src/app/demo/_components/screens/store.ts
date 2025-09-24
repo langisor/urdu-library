@@ -5,7 +5,7 @@ import * as React from "react";
 
  export const mainScreenStore = hookstate({
     currentQuizIndex: 0,
-    totalQuizzes: 0,
+     
     isComplete: false,
     score: 0,
 

@@ -27,14 +27,16 @@ import {
 
 interface MainScreenProps {
   quizzes: any[];
+  lessonId: number;
+  lessonName: string;
 }
 
-export default function MainScreen({ quizzes }: MainScreenProps) {
+export default function MainScreen({ quizzes,lessonId,lessonName }: MainScreenProps) {
   const { state, actions } = useMainScreen(quizzes.length);
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const mainScreenState = useHookstate(mainScreenStore);
   const currentQuiz = quizzes[state.currentQuizIndex.get()];
-
+  const totalQuizzes = quizzes.length;
   const renderNavigationBar = () => {
     return (
       <div className="flex justify-around mx-2 my-4">
@@ -44,6 +46,7 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
         <Card>
           <CardContent>
             <p>Score: {mainScreenState.score.get()}</p>
+            <p>Total Quizzes: {totalQuizzes}  </p>
           </CardContent>
         </Card>
       </div>
@@ -145,7 +148,7 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
                   </span>
                   <span className="text-xs">
                     {state.currentQuizIndex.get() + 1} of{" "}
-                    {state.totalQuizzes.get()}
+                    {totalQuizzes}
                   </span>
                 </SheetTitle>
               </SheetHeader>
