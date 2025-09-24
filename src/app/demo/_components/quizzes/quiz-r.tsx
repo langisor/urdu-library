@@ -186,8 +186,8 @@ export default function QuizR({ quiz }: { quiz: QuizRItem }) {
             {/* actions buttons */}
             <Card className="flex justify-end gap-3">
               <CardContent>
-                <Button onClick={actions.checkAnswer}>تأكد</Button>
-                <Button onClick={actions.reset}>مسح</Button>
+                <Button onClick={actions.checkAnswer} disabled={selectedTokens.get().length === 0}>تأكد</Button>
+                <Button onClick={actions.reset} disabled={selectedTokens.get().length === 0}>مسح</Button>
               </CardContent>
             </Card>
             {feedBack && (
