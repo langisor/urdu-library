@@ -9,6 +9,7 @@ import { queryClient } from "@/lib/postgres-client";
 import Link from "next/link";
 import MainScreen from "./lessons/_components/screens/main-screen";
 import { Button } from "@/components/ui/button";
+import { Suspense } from "react";
 type Category = {
   id: number;
   name: string;
@@ -95,7 +96,9 @@ export default async function Category({
               <p>Words: {lesson.countWords}</p>
             </CardContent>
             <CardFooter>
-              <Quizzer lid={lesson.id} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <Quizzer lid={lesson.id} />
+              </Suspense>
             </CardFooter>
           </Card>
           // </Link>
@@ -120,6 +123,9 @@ async function Quizzer({ lid }: { lid: number }) {
     const data = JSON.parse(JSON.stringify(q.quizData));
     paresedData.push(data);
   }
+  const lesson = await queryClient`
+   select * from "Lesson" where id=${lid}
+  `;
  
-  return <MainScreen quizzes={paresedData} />;
+  return <MainScreen lesson={lesson[0]} quizzes={paresedData} />;
 }

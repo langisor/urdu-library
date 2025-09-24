@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { JsonViewerComponent } from "@/components/json-viewer";
 import { useMainScreen } from "./use-main-screen";
 import * as Quizzes from "../quizzes";
-import { convertQ } from "@/app/demo/_hooks/converters";
+import { convertQ } from "../../_hooks/converters";
 import Image from "next/image";
 import {
   Sheet,
@@ -16,27 +16,25 @@ import {
 } from "@/components/ui/sheet";
 import * as React from "react";
 import ResultScreen from "./result-screen";
-import { useHookstate } from "@hookstate/core";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+ 
 
 interface MainScreenProps {
+  lesson: any;
   quizzes: any[];
 }
 
-export default function MainScreen({ quizzes }: MainScreenProps) {
-  const { state, actions } = useMainScreen();
+export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
+  const { state, actions } = useMainScreen()
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const currentQuiz = quizzes[state.currentQuizIndex.get()];
 
   React.useEffect(() => {
-    actions.setTotalQuizzes(quizzes.length);
-  }, [quizzes]);
-
+    // check if mounted
+    if (quizzes.length > 0) {
+      actions.setTotalQuizzes(quizzes.length);
+    }
+  }, []);
+ console.log("currentQuiz: ",currentQuiz)
   const renderNavigationBar = () => {
     return (
       <div className="flex justify-around mx-2 my-4">
@@ -53,11 +51,11 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
   //   actions.reset();
   // }
   // if all quizzes are completed
-  const quizCompleted = state.isComplete.get();
-  if (quizCompleted ) {
-    actions.reset();
-    setIsSheetOpen(false);
-  }
+  // const quizCompleted = state.isComplete.get();
+  // if (quizCompleted ) {
+  //   actions.reset();
+  //   // setIsSheetOpen(false);
+  // }
   const renderCurrentQuiz = () => {
     switch (currentQuiz.type) {
       case "T1":
@@ -142,12 +140,12 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
           className="h-screen overflow-y-scroll px-10"
         >
           <SheetDescription className="sr-only">Quiz</SheetDescription>
-          {!quizCompleted ? (
+          {!state.isComplete.get() ? (
             <div className="flex flex-col">
               <SheetHeader>
                 <SheetTitle className="flex justify-around mx-10">
                   <span>
-                    QuizID: {currentQuiz.id} - Quiz Type: {currentQuiz.type}
+                    {/* QuizID: {currentQuiz.id || ""} - Quiz Type: {currentQuiz.type || ""} */}
                   </span>
                   <span className="text-lg">
                     {state.currentQuizIndex.get() + 1} of{" "}
@@ -157,14 +155,14 @@ export default function MainScreen({ quizzes }: MainScreenProps) {
               </SheetHeader>
               {renderNavigationBar()}
               <div className="flex flex-col h-screen overflow-y-scroll">
-                <div> {quizCompleted ? null : renderCurrentQuiz()}</div>
+                <div> {state.isComplete.get() ? null : renderCurrentQuiz()}</div>
               </div>
             </div>
           ) : (
             <div className="flex flex-col h-screen overflow-y-scroll">
               <SheetTitle className="sr-only">Result</SheetTitle>
               <SheetDescription className="sr-only">Result</SheetDescription>
-              {quizCompleted ? <ResultScreen /> : null}
+              {state.isComplete.get() ? <ResultScreen /> : null}
               <Button onClick={actions.reset}>Reset</Button>
             </div>
           )}
