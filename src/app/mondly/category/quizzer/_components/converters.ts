@@ -85,26 +85,53 @@ function convertT1b(quizItem: QuizTypes.QuizT1bItem) {
   };
   return question;
 }
+
+type WordToken = {
+  key: string;
+  text: string;
+};
+type CorrectWordsOrder = {
+  word: WordToken;
+  isHidden: boolean;
+};
 function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
-  const _tokens = quizItem.tokens.map((t) => {
-    return t.raw.text;
+  // create sentence template from tokens using ord and completeToken
+  const sentence = quizItem.ord.map((ord) => {
+    const token = quizItem.tokens.find((t) => t.key === ord)!;
+    return {
+      key: token.key,
+      text: token.raw.text,
+      isHidden: false,
+    };
   });
-  const question = {
+  // change to isHidden = true for completeToken
+  const completeToken = sentence.find((t) => t.key === quizItem.completeToken)!;
+  completeToken.isHidden = true;
+  // replace repeated tokens with unique tokens
+  const uniqueSentence = sentence.map((t) => {
+    return {
+      key: t.key,
+      text: t.text,
+      isHidden: t.isHidden,
+    };
+  });
+
+  // tokens for options and skip sentence tokens
+  const tokens = quizItem.tokens.map((t) => {
+    return {
+      key: t.key,
+      text: t.raw.text,
+    };
+  });
+  return {
     id: quizItem.id,
     audioFile: getAudioUrl(quizItem.sols[0].key),
     text: quizItem.sols[0].text,
-    correctWordsOrder: quizItem.ord.map((ord, index) => {
-      const token = quizItem.tokens.find((t) => t.key === ord);
-      return {
-        id: token!.key,
-        text: token!.raw.text,
-        isHidden: token!.key === quizItem.completeToken && index === quizItem.ord.length - 1,
-      };
-    }),
-
-    tokens: shuffleArray(_tokens),
+    correctAnswer: quizItem.sols[1].text,
+    // clean sentence (key, text)
+    sentence: uniqueSentence,
+    tokens: shuffleArray(tokens),
   };
-  return question;
 }
 
 function convertQ(quizItem: QuizTypes.QuizQItem) {
@@ -148,7 +175,7 @@ function convertQb(quizItem: QuizTypes.QuizQbItem) {
   });
   return shuffleArray(questions);
 }
- 
+
 function convertR(quizItem: QuizTypes.QuizRItem) {
   const tokens = quizItem.tokens.map((token, index) => {
     return {
