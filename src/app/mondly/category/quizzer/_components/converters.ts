@@ -86,23 +86,23 @@ function convertT1b(quizItem: QuizTypes.QuizT1bItem) {
   return question;
 }
 function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
+  const _tokens = quizItem.tokens.map((t) => {
+    return t.raw.text;
+  });
   const question = {
     id: quizItem.id,
     audioFile: getAudioUrl(quizItem.sols[0].key),
     text: quizItem.sols[0].text,
-    correctWordsOrder: quizItem.ord.map((ord) => {
+    correctWordsOrder: quizItem.ord.map((ord, index) => {
       const token = quizItem.tokens.find((t) => t.key === ord);
       return {
         id: token!.key,
         text: token!.raw.text,
-        isHidden: token!.key === quizItem.completeToken,
+        isHidden: token!.key === quizItem.completeToken && index === quizItem.ord.length - 1,
       };
     }),
 
-    tokens: quizItem.tokens.map((token) => {
-      return token.raw.text;
-    }),
-     
+    tokens: shuffleArray(_tokens),
   };
   return question;
 }

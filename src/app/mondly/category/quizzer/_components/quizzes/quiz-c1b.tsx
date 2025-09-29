@@ -39,22 +39,28 @@ export default function QuizC1b({
   });
   const { playCorrectTune, playIncorrectTune } = useTune();
 
-  React.useEffect(() => {
-    const words: string[] = [];
-    state.question.correctWordsOrder.map((word, index) => {
-      words[index] = word.isHidden.get() ? "____" : word.text.get();
-    });
-    selectedTokens.set(shuffleArray(words));
-  }, [quiz]);
+  // React.useEffect(() => {
+  //   const words: string[] = [];
+  //   state.question.correctWordsOrder.map((word, index) => {
+  //     words[index] = word.isHidden.get() ? "_____" : word.text.get();
+  //   });
+  //   selectedTokens.set(words);
+  // }, [quiz]);
+  const words: string[] = [];
+  state.question.correctWordsOrder.map((word, index) => {
+    words[index] = word.isHidden.value ? "_____" : word.text.value;
+  });
   const selectedTokens = useHookstate<string[] | null>(null);
+  selectedTokens.set(words);
+
   const actions = {
     selectToken: (token: string) => {
       // remove from tokens
       state.question.tokens.set((p) => p.filter((t) => t !== token));
-      //  replace '___' with token
+      //  replace '_____' with token
       const words = selectedTokens.get()!;
       const newWords = words.map((word) => {
-        if (word === "____") {
+        if (word === "_____") {
           return token;
         }
         return word;
@@ -63,11 +69,11 @@ export default function QuizC1b({
       //is Selected
     },
     removeToken: (token: string) => {
-      // replace with '____' in selectedTokens
+      // replace with '_____' in selectedTokens
       const words = selectedTokens.get()!;
       const newWords = words.map((word) => {
         if (word === token) {
-          return "____";
+          return "_____";
         }
         return word;
       });
@@ -78,7 +84,7 @@ export default function QuizC1b({
     checkAnswer: () => {
       const words = selectedTokens.get()!;
       const correctWords = state.question.correctWordsOrder.map((word) => {
-        return word.text.get();
+        return word.text.value;
       });
       if (words.join(" ") === correctWords.join(" ")) {
         quizzerFeedback.set({
@@ -108,9 +114,9 @@ export default function QuizC1b({
     renderHeader: () => {
       return (
         <CardHeader>
-          <CardTitle>{state.question.text.get()}</CardTitle>
+          <CardTitle>{state.question.text.value}</CardTitle>
           <CardDescription>
-            <TonePlayerButton url={state.question.audioFile.get()} />
+            <TonePlayerButton url={state.question.audioFile.value} />
           </CardDescription>
         </CardHeader>
       );
@@ -137,17 +143,18 @@ export default function QuizC1b({
           {state.question.tokens.map((token, index) => (
             <Button
               key={index}
-              onClick={() => actions.selectToken(token.get())}
+              onClick={() => actions.selectToken(token.value)}
               className="mr-2 mb-2"
             >
-              {token.get()}
+              {token.value !== "_____" ? token.value : "_____"}
             </Button>
           ))}
         </CardContent>
       );
     },
   };
-  //   actions
+
+  console.log("quiz-c1b", state.question.get());
   return (
     <Card className="flex flex-col gap-6 arabic-text">
       <div>{renders.renderHeader()}</div>
