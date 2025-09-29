@@ -21,6 +21,7 @@ import QuizzerProgress from "./quizzer-progress";
 import { globalScoreState } from "../global-score-state";
 import * as Quizzes from "./quizzes";
 import { useHookstate, State, hookstate } from "@hookstate/core";
+import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 
 interface Props {
   quizzes: any[];
@@ -89,7 +90,6 @@ export default function Quizzer({ quizzes }: Props) {
   const renderQuestion = () => {
     console.log("renderQuestion");
     switch (currentQuiz.type) {
- 
       case "C1b":
         return (
           <Quizzes.QuizC1b
@@ -97,6 +97,9 @@ export default function Quizzer({ quizzes }: Props) {
             quizzerFeedback={feedbackState}
             onNextQuiz={nextQuiz}
           />
+          // <Card>
+          //   <JsonViewerComponent data={currentQuiz} />
+          // </Card>
         );
       default:
         return <div>{`Todo: ${currentQuiz.type}`}</div>;

@@ -86,27 +86,7 @@ function convertT1b(quizItem: QuizTypes.QuizT1bItem) {
   };
   return question;
 }
-function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
-  const question = {
-    id: quizItem.id,
-    audioFile: getAudioUrl(quizItem.sols[0].key),
-    text: quizItem.sols[0].text,
-    correctWordsOrder: quizItem.ord.map((ord) => {
-      const token = quizItem.tokens.find((t) => t.key === ord);
-      return {
-        id: token!.key,
-        text: token!.raw.text,
-        isHidden: token!.key === quizItem.completeToken,
-      };
-    }),
 
-    tokens: quizItem.tokens.map((token) => {
-      return token.raw.text;
-    }),
-
-  };
-  return question;
-}
 
 function convertQ(quizItem: QuizTypes.QuizQItem) {
   //  question from sols
@@ -149,7 +129,7 @@ function convertQb(quizItem: QuizTypes.QuizQbItem) {
   });
   return shuffleArray(questions);
 }
- 
+
 function convertR(quizItem: QuizTypes.QuizRItem) {
   const tokens = quizItem.tokens.map((token, index) => {
     return {
@@ -183,6 +163,6 @@ export {
   convertQ,
   convertQb,
   convertR,
-  convertC1b,
+
   convertD,
 };

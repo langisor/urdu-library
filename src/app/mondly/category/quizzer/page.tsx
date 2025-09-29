@@ -13,7 +13,7 @@ export default async function LessonPage({
     const lesson = await queryClient`
     SELECT * FROM "Lesson" WHERE "id"=${Number(lid)}
   `;
-  console.log("lesson: ", lesson[0]);
+ 
   // fetch quizzes using quizz id from lesson.quizzes
   const quizzes = [];
   for (let q of lesson[0].quizzes) {
@@ -22,8 +22,8 @@ export default async function LessonPage({
   `;
     quizzes.push(JSON.parse(JSON.stringify(quiz[0].quizData)));
   }
-  console.log("quizzes: ", quizzes);
-  console.log("lid: ", lid);
+ 
+ 
   return (
     <Card>
       <Suspense fallback={<div>Loading...</div>}>
