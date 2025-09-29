@@ -101,6 +101,13 @@ export default function Quizzer({ quizzes }: Props) {
           //   <JsonViewerComponent data={currentQuiz} />
           // </Card>
         );
+      case "D":
+        // return <Quizzes.QuizD
+        //   quiz={currentQuiz}
+        //   quizzerFeedback={feedbackState}
+        //   onNextQuiz={nextQuiz}
+        // />;
+        <>QuizD</>;
       default:
         return <div>{`Todo: ${currentQuiz.type}`}</div>;
     }
