@@ -81,7 +81,7 @@ export default async function Category({
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
         {lessonsData.map((lesson) => (
           <Link
-            href={`/mondly/category/${cid}/${lesson.id}`}
+            href={`/mondly/category/quizzer?lid=${lesson.id}`}
             key={lesson.id}
             className="hover:opacity-80 transition"
           >
