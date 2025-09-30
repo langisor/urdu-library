@@ -15,116 +15,33 @@ type Token = {
   text: string;
   isCorrect: boolean;
 };
-type Word = Record<string, Token>;
-type Sentence = Word[];
-type Options = Word[];
-
-const convertC1b = (quiz: QuizC1bItem) => {
-  const sentence: Sentence = [];
-  const options: Options = [];
-  // from ord array build sentence and options
-  quiz.ord.forEach((key, index) => {
-    const token = quiz.tokens.find((token) => token.key === key);
-    if (token) {
-      sentence.push({
-        [token.key]: {
-          index,
-          text: token.text,
-          isCorrect: quiz.completeToken === token.key,
-        },
-      });
-    }
-  });
-  // build options/words_list from tokens
-  quiz.tokens.forEach((token, index) => {
-    options.push({
-      [token.key]: {
-        index,
-
-        text: token.text,
-        isCorrect: quiz.completeToken === token.key,
-      },
-    });
-  });
-
-  const sourceText = quiz.sols[0].text;
-  const targetText = quiz.sols[1].text;
-
-  return { sentence, options, sourceText, targetText };
+type Word = {
+  word_key: string;
+  token: Token;
 };
 
+
+
+const convertC1b = (quiz: QuizC1bItem) => {
+  const sentence:Word[]=[]
+  const options:Word[]=[]
+  const sourceText=quiz.sols[0].text;
+  const targetText=quiz.sols[1].text;
+
+
+
+  
+ 
 export default function FillInQuiz() {
   const fillInQuizState = useHookstate(convertC1b(quiz));
 
   const selectedOption = useHookstate<string | null>(null);
   const correctOption = useHookstate<string | null>(null);
 
-  const sentence_words = [...fillInQuizState.sentence];
-  console.log("reslut: ", sentence_words);
-
-  const renderSentence = () => {
-    return (
-      <Card>
-        <CardContent>
-          {fillInQuizState.sentence.map((word) => {
-            if (!Object.values(word)[0].isCorrect.get()) {
-              return (
-                <Button
-                  key={Object.values(word)[0].index.get()}
-                  variant="outline"
-                  className="mr-2 border border-gray-300 p-2 rounded-md"
-                  disabled={true}
-                >
-                  {Object.values(word)[0].text.get()}
-                </Button>
-              );
-            }
-            return (
-              <Button
-                key={Object.values(word)[0].index.get()}
-                variant="outline"
-                className="mr-2 border border-gray-300 p-2 rounded-md"
-              >
-                {Object.values(word)[0].text.get()}{" "}
-              </Button>
-            );
-          })}
-        </CardContent>
-      </Card>
-    );
-  };
-
-  // states
-
-  // renders
-  const renderOptions = () => {
-    return (
-      <Card>
-        <CardContent>
-          {fillInQuizState.options.map((word) => {
-            return (
-              <Button
-                key={Object.values(word)[0].index.get()}
-                variant="outline"
-                className="mr-2 border border-gray-300 p-2 rounded-md"
-                onClick={() => {
-                  replaceWord(Object.values(word)[0].text.get());
-                }}
-              >
-                {Object.values(word)[0].text.get()}
-              </Button>
-            );
-          })}
-        </CardContent>
-      </Card>
-    );
-  };
-
   return (
-    <div className="flex flex-col gap-2 text-right naskh-arabic" dir="rtl">
-      <div> {renderSentence()}</div>
-      <div> {renderOptions()}</div>
-      <JsonViewerComponent data={fillInQuizState.get()} />
+    <div className="flex flex-col gap-2 text-right  " >
+      <div> demo</div>
+     <JsonViewerComponent data={quiz} />
     </div>
   );
 }
