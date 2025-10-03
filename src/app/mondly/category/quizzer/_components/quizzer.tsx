@@ -131,7 +131,7 @@ export default function Quizzer({ quizzes }: Props) {
     }
   };
   // variables
-  const currentQuiz = quizzes[currentStep];
+  const currentQuiz = quizzes[currentStep-1];
   // console.log("rendering quizzer ....", currentQuiz);
 
   // returns
