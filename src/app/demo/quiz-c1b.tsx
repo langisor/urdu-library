@@ -65,6 +65,9 @@ const convertC1b = (quizData: QuizC1bItem) => {
     audioUrl,
     sourceText: quizData.sols[0].text,
     targetText: quizData.sols[1].text,
+    placeHolderIndex: ord.findIndex(
+      (tokenKey) => tokenKey === quizData.completeToken
+    ),
   };
 };
 
@@ -75,37 +78,11 @@ const useQuizC1b = (quizData: QuizC1bItem) => {
   const wordsBankState = state.wordsBank;
   const actions = {
     checkAnswer: (answer: string) => {},
-    setOption: (optionKey: string) => {
-      // find option in wordsBankState
-      const wordBankOption = wordsBankState.find(
-        (token) => token.key.get() === optionKey
-      );
-      if (wordBankOption) {
-        // find blank in sentenceMaskState
-        const blank = sentenceMaskState.find(
-          (token) => token.role.get() === "blank"
-        );
-        const option = sentenceMaskState.find(
-          (token) => token.key.get() === optionKey
-        );
-        if (blank) {
-          // remove option from wordsBankState
-          wordsBankState.set((oldArray) =>
-            oldArray.filter((item) => item.key !== optionKey)
-          );
-          blank.role.set("option");
-          blank.key.set(optionKey);
-          blank.rawText.set(wordBankOption!.rawText.get());
-        }
-        if (option) {
-          // add option to wordsBankState
-          state.wordsBank.set((p) => [
-            ...p,
-            { key: optionKey, rawText: option!.rawText.get(), role: "option" },
-          ]);
-        }
+     exchangeWord: (optionKey: string) => {
+     console.log("optionKey", optionKey);
+      
       }
-    },
+     
   };
 
   return { state, actions };
@@ -131,7 +108,7 @@ export default function QuizC1b({ quizData }: { quizData: QuizC1bItem }) {
     return wordsBank.map((word) => {
       return (
         <Button
-          onClick={() => actions.setOption(word.key.get())}
+          onClick={() => actions.exchangeWord(word.key.get())}
           key={word.key.get()}
         >
           {word.rawText.get()}
