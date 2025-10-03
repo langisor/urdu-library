@@ -1,0 +1,774 @@
+{
+ "id": 640941,
+ "ord": [
+  "tnDyrcAJDE4",
+  "tiCS6BlM2sr",
+  "t0Q8W431H9i",
+  "todZqM9BKHm",
+  "tI-0qxsnTMO"
+ ],
+ "sols": [
+  {
+   "key": "TrjMwTg0-pavoG_Hmop6mnRPNpaPINF7",
+   "text": "أنا لدي كلب.",
+   "dictionary": [
+    {
+     "raw": "أنا",
+     "translations": [
+      {
+       "text": "میرے",
+       "type": "dictionary",
+       "phonetic": "Mairay"
+      }
+     ]
+    },
+    {
+     "raw": "لدي",
+     "translations": [
+      {
+       "text": "میرے پاس",
+       "type": "dictionary",
+       "phonetic": "myr pas"
+      },
+      {
+       "id": 41,
+       "conj": {
+        "fu": [
+         {
+          "m": {
+           "text": "أنا سأملك"
+          },
+          "t": {
+           "key": "co_aeSCSwrI_jwqhD_-jg3EppD_8dgUl",
+           "text": "میں رکھوں گا",
+           "phonetic": "Mein rakhoon ga",
+           "audio_updated_at": 1580694655
+          }
+         },
+         {
+          "m": {
+           "text": "أنت ستملك"
+          },
+          "t": {
+           "key": "BpX1gL7fKJwgrWGPN_smrUzb5c91_FGM",
+           "text": "تم رکھو گے",
+           "phonetic": "Tum rakho gay",
+           "audio_updated_at": 1580694657
+          }
+         },
+         {
+          "m": {
+           "text": "هو سيملك"
+          },
+          "t": {
+           "key": "QTLT5izy_w1xhDC-zDoq12QJz9sQnG0U",
+           "text": "وہ رکھے گا",
+           "phonetic": "Wo rakhay ga",
+           "audio_updated_at": 1580694659
+          }
+         },
+         {
+          "m": {
+           "text": "هي ستملك"
+          },
+          "t": {
+           "key": "7c6-bpavwMZAhJILXdKZWWODVdMpBWfj",
+           "text": "وہ رکھے گی",
+           "phonetic": "Wo rakhay gi",
+           "audio_updated_at": 1580694661
+          }
+         },
+         {
+          "m": {
+           "text": "نحن سنملك"
+          },
+          "t": {
+           "key": "RXq9uz4XIusg4fJLP0ooree3BTBBw5K_",
+           "text": "ہم رکھیں گے",
+           "phonetic": "Hum rakhain gay",
+           "audio_updated_at": 1580694664
+          }
+         },
+         {
+          "m": {
+           "text": "أنتم ستملكون"
+          },
+          "t": {
+           "key": "DXSilQ-249YkFdu4-RJ63qH03F_2o7fY",
+           "text": "آپ رکھیں گے",
+           "phonetic": "Aap rakhain gay",
+           "audio_updated_at": 1580694666
+          }
+         },
+         {
+          "m": {
+           "text": "هم سيملكون"
+          },
+          "t": {
+           "key": "dQ6M9PksusH-_DYC0BgOh4KNryGa-Hzg",
+           "text": "وہ رکھیں گے",
+           "phonetic": "Wo rakhain gay",
+           "audio_updated_at": 1580694668
+          }
+         }
+        ],
+        "pa": [
+         {
+          "m": {
+           "text": "أنا ملكت"
+          },
+          "t": {
+           "key": "qTmxzWEIwd59k7Hy9u11DAvbtc-6SBNz",
+           "text": "میں نے رکھا",
+           "phonetic": "Mein ne rakha",
+           "audio_updated_at": 1580694641
+          }
+         },
+         {
+          "m": {
+           "text": "أنت ملكت"
+          },
+          "t": {
+           "key": "vbpe7-IdzTI-p1qBec3VqEutokMVGvP7",
+           "text": "تم نے رکھا",
+           "phonetic": "Tum ne rakha",
+           "audio_updated_at": 1580694643
+          }
+         },
+         {
+          "m": {
+           "text": "هو ملك"
+          },
+          "t": {
+           "key": "qB5vXGmgrQLFha-X8CSHez3MrerH2R8o",
+           "text": "اس نے رکھا",
+           "phonetic": "Us ne rakha",
+           "audio_updated_at": 1580694645
+          }
+         },
+         {
+          "m": {
+           "text": "هي ملكت"
+          },
+          "t": {
+           "key": "8D2Z6SClSzmn4URdhWrYod_S9DAL_Gr1",
+           "text": "اس نے رکھا",
+           "phonetic": "Us ne rakha",
+           "audio_updated_at": 1580694647
+          }
+         },
+         {
+          "m": {
+           "text": "نحن ملكنا"
+          },
+          "t": {
+           "key": "G2p86sYT46CR1Bv79hE6I5QmxEpWL6Yu",
+           "text": "ہم نے رکھا",
+           "phonetic": "Hum ne rakha",
+           "audio_updated_at": 1580694650
+          }
+         },
+         {
+          "m": {
+           "text": "أنتم ملكتم"
+          },
+          "t": {
+           "key": "TRyMTLisqSdJwMNPEEc7kc2STDUWwHKV",
+           "text": "آپ نے رکھا",
+           "phonetic": "Aap ne rakha",
+           "audio_updated_at": 1580694652
+          }
+         },
+         {
+          "m": {
+           "text": "هم ملكوا"
+          },
+          "t": {
+           "key": "NPWRlk7w-Sd0MnT6Y2yS6Mxo41OAbqC0",
+           "text": "انہوں نے رکھا",
+           "phonetic": "Unhon ne rakha",
+           "audio_updated_at": 1580694653
+          }
+         }
+        ],
+        "pr": [
+         {
+          "m": {
+           "text": "أنا أملك"
+          },
+          "t": {
+           "key": "H9VlP_-V91l8vo2qMU8BzX5DoN8FzaZU",
+           "text": "میرے پاس",
+           "phonetic": "Mairay paas",
+           "audio_updated_at": 1688820309
+          }
+         },
+         {
+          "m": {
+           "text": "أنت تملك"
+          },
+          "t": {
+           "key": "D9spzdrIyHuEfLTnPLFI96xpmd9tYx4L",
+           "text": "تم رکھتی ہو",
+           "phonetic": "Tum rakhti ho",
+           "audio_updated_at": 1580694629
+          }
+         },
+         {
+          "m": {
+           "text": "هو يملك"
+          },
+          "t": {
+           "key": "HZ-cHU7Nsd7m39Fhgsi7q9Xe07Q7um-k",
+           "text": "وہ رکھتا ہے",
+           "phonetic": "Wo rakhta hai",
+           "audio_updated_at": 1580694631
+          }
+         },
+         {
+          "m": {
+           "text": "هي تملك"
+          },
+          "t": {
+           "key": "lXrkRoGSjePEU5RwFXn14Jh2MIf7K7Fn",
+           "text": "وہ رکھتی ہے",
+           "phonetic": "Wo rakhti hai",
+           "audio_updated_at": 1580694633
+          }
+         },
+         {
+          "m": {
+           "text": "نحن نملك"
+          },
+          "t": {
+           "key": "X8K5acp1hsRKH__R2gNudouzFwBRyqgQ",
+           "text": "ہم رکھتے ہیں",
+           "phonetic": "Hum rakhtay hain",
+           "audio_updated_at": 1580694636
+          }
+         },
+         {
+          "m": {
+           "text": "أنتم تملكون"
+          },
+          "t": {
+           "key": "qPaj1-mBQ_MVMx2J9_yVN_lHCWPnLSkY",
+           "text": "آپ رکھتے ہیں",
+           "phonetic": "Aap rakhtay hain",
+           "audio_updated_at": 1580694638
+          }
+         },
+         {
+          "m": {
+           "text": "هم يملكون"
+          },
+          "t": {
+           "key": "2_5XmWNFoLIs8ipu5JfmuRbw_wA65Ix6",
+           "text": "وہ رکھتے ہیں",
+           "phonetic": "Wo rakhtay hain",
+           "audio_updated_at": 1580694639
+          }
+         }
+        ]
+       },
+       "name": {
+        "m": "يملك",
+        "t": "رکھنا",
+        "phonetic": "rakhna"
+       },
+       "type": "verb",
+       "tenseNames": {
+        "fu": "مستقبل",
+        "pa": "ماضي",
+        "pr": "الحاضر"
+       }
+      }
+     ]
+    },
+    {
+     "raw": "كلب",
+     "translations": [
+      {
+       "text": "کتا",
+       "type": "dictionary",
+       "phonetic": "kutta"
+      }
+     ]
+    }
+   ],
+   "phraseType": 1,
+   "text_tokens": [
+    {
+     "raw": {
+      "text": "أنا",
+      "length": 3,
+      "location": 0
+     },
+     "linker": {
+      "text": "",
+      "length": 0,
+      "location": 0
+     },
+     "prefix": {
+      "text": "",
+      "length": 0,
+      "location": 0
+     },
+     "suffix": {
+      "text": "",
+      "length": 0,
+      "location": 3
+     }
+    },
+    {
+     "raw": {
+      "text": "لدي",
+      "length": 3,
+      "location": 4
+     },
+     "linker": {
+      "text": " ",
+      "length": 1,
+      "location": 3
+     },
+     "prefix": {
+      "text": "",
+      "length": 0,
+      "location": 4
+     },
+     "suffix": {
+      "text": "",
+      "length": 0,
+      "location": 7
+     }
+    },
+    {
+     "raw": {
+      "text": "كلب",
+      "length": 3,
+      "location": 8
+     },
+     "linker": {
+      "text": " ",
+      "length": 1,
+      "location": 7
+     },
+     "prefix": {
+      "text": "",
+      "length": 0,
+      "location": 8
+     },
+     "suffix": {
+      "text": ".",
+      "length": 1,
+      "location": 11
+     }
+    }
+   ],
+   "audio_updated_at": 1593589622
+  },
+  {
+   "key": "TrjMwTg0-pavoG_Hmop6mnRPNpaPINF7",
+   "text": "میرے پاس ایک کتا ہے۔",
+   "phonetic": "Mairay paas aik kutta hai.",
+   "audio_updated_at": 1593589622
+  }
+ ],
+ "type": "C1b",
+ "lesson": 104,
+ "tokens": [
+  {
+   "key": "t0Q8W431H9i",
+   "raw": {
+    "text": "ایک",
+    "length": 3,
+    "location": 9
+   },
+   "text": "ایک",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 8
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 9
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 12
+   }
+  },
+  {
+   "key": "tiCS6BlM2sr",
+   "raw": {
+    "text": "پاس",
+    "length": 3,
+    "location": 5
+   },
+   "text": "پاس",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 4
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 5
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 8
+   }
+  },
+  {
+   "key": "tDybBfDeXu2",
+   "raw": {
+    "text": "وہ",
+    "length": 2,
+    "location": 0
+   },
+   "text": "وہ",
+   "linker": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 2
+   }
+  },
+  {
+   "key": "tnDyrcAJDE4",
+   "raw": {
+    "text": "میرے",
+    "length": 4,
+    "location": 0
+   },
+   "text": "میرے",
+   "linker": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 4
+   }
+  },
+  {
+   "key": "todZqM9BKHm",
+   "raw": {
+    "text": "کتا",
+    "length": 3,
+    "location": 13
+   },
+   "text": "کتا",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 12
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 13
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 16
+   }
+  },
+  {
+   "key": "tI-0qxsnTMO",
+   "raw": {
+    "text": "ہے",
+    "length": 2,
+    "location": 17
+   },
+   "text": "ہے۔",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 16
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 17
+   },
+   "suffix": {
+    "text": "۔",
+    "length": 1,
+    "location": 19
+   }
+  },
+  {
+   "key": "tNf0xXlutwl",
+   "raw": {
+    "text": "وہ",
+    "length": 2,
+    "location": 3
+   },
+   "text": "وہ",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 2
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 3
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 5
+   }
+  },
+  {
+   "key": "tHqzE-p5Ktr",
+   "raw": {
+    "text": "لال",
+    "length": 3,
+    "location": 6
+   },
+   "text": "لال",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 5
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 6
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 9
+   }
+  }
+ ],
+ "wordID": 18104,
+ "modifiers": 72,
+ "alternates": [
+  17973
+ ],
+ "completeToken": "todZqM9BKHm",
+ "tokensPhonetic": [
+  {
+   "key": "t0Q8W431H9i",
+   "raw": {
+    "text": "aik",
+    "length": 3,
+    "location": 12
+   },
+   "text": "aik",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 11
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 12
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 15
+   }
+  },
+  {
+   "key": "tiCS6BlM2sr",
+   "raw": {
+    "text": "paas",
+    "length": 4,
+    "location": 7
+   },
+   "text": "paas",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 6
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 7
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 11
+   }
+  },
+  {
+   "key": "tDybBfDeXu2",
+   "raw": {
+    "text": "Woh",
+    "length": 3,
+    "location": 0
+   },
+   "text": "Woh",
+   "linker": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 3
+   }
+  },
+  {
+   "key": "tnDyrcAJDE4",
+   "raw": {
+    "text": "Mairay",
+    "length": 6,
+    "location": 0
+   },
+   "text": "Mairay",
+   "linker": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 0
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 6
+   }
+  },
+  {
+   "key": "todZqM9BKHm",
+   "raw": {
+    "text": "kutta",
+    "length": 5,
+    "location": 16
+   },
+   "text": "kutta",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 15
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 16
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 21
+   }
+  },
+  {
+   "key": "tI-0qxsnTMO",
+   "raw": {
+    "text": "hai",
+    "length": 3,
+    "location": 22
+   },
+   "text": "hai.",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 21
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 22
+   },
+   "suffix": {
+    "text": ".",
+    "length": 1,
+    "location": 25
+   }
+  },
+  {
+   "key": "tNf0xXlutwl",
+   "raw": {
+    "text": "woh",
+    "length": 3,
+    "location": 4
+   },
+   "text": "woh",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 3
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 4
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 7
+   }
+  },
+  {
+   "key": "tHqzE-p5Ktr",
+   "raw": {
+    "text": "lal",
+    "length": 3,
+    "location": 8
+   },
+   "text": "lal",
+   "linker": {
+    "text": " ",
+    "length": 1,
+    "location": 7
+   },
+   "prefix": {
+    "text": "",
+    "length": 0,
+    "location": 8
+   },
+   "suffix": {
+    "text": "",
+    "length": 0,
+    "location": 11
+   }
+  }
+ ],
+ "tokensEqualSize": true
+}

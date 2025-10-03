@@ -96,26 +96,18 @@ type CorrectWordsOrder = {
 };
 function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
   // create sentence template from tokens using ord and completeToken
-  const sentence = quizItem.ord.map((ord) => {
-    const token = quizItem.tokens.find((t) => t.key === ord)!;
-    return {
-      key: token.key,
-      text: token.raw.text,
-      isHidden: false,
-    };
-  });
-  // change to isHidden = true for completeToken
-  const completeToken = sentence.find((t) => t.key === quizItem.completeToken)!;
-  completeToken.isHidden = true;
-  // replace repeated tokens with unique tokens
-  const uniqueSentence = sentence.map((t) => {
-    return {
-      key: t.key,
-      text: t.text,
-      isHidden: t.isHidden,
-    };
-  });
-
+   const sentence: CorrectWordsOrder[] = [];
+   for(let o of quizItem.ord){
+      const token = quizItem.tokens.find((t) => t.key === o)!;
+      sentence.push({
+        word: {
+          key: token.key,
+          text: token.raw.text,
+        },
+        isHidden:  o === quizItem.completeToken,
+      });
+   }
+ 
   // tokens for options and skip sentence tokens
   const tokens = quizItem.tokens.map((t) => {
     return {
@@ -123,13 +115,15 @@ function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
       text: t.raw.text,
     };
   });
+ 
   return {
     id: quizItem.id,
     audioFile: getAudioUrl(quizItem.sols[0].key),
     text: quizItem.sols[0].text,
     correctAnswer: quizItem.sols[1].text,
     // clean sentence (key, text)
-    sentence: uniqueSentence,
+ 
+    sentence: sentence,
     tokens: shuffleArray(tokens),
   };
 }
