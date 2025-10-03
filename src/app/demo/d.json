@@ -1,0 +1,68 @@
+{
+ "id": 608905,
+ "lesson": 205,
+ "type": "D",
+ "modifiers": 327,
+ "wordID": 18221,
+ "alternates": [
+  18188,
+  18237,
+  18223
+ ],
+ "sols": [
+  {
+   "key": "DPkAO64vrrgADqbCRI_uGuIwgEDUC44W",
+   "audio_updated_at": 1688821942,
+   "text": "عمة"
+  },
+  {
+   "key": "Vgi5oeaMwkoJyeikKd4Hgs5QEag8tM6f",
+   "audio_updated_at": 1580691752,
+   "text": "عم"
+  },
+  {
+   "key": "p7nBU02xSEkJZD8IkkH2lzYOwWhj2BGh",
+   "audio_updated_at": 1688821948,
+   "text": "ابن أخ"
+  },
+  {
+   "key": "pF8r7wuDtPPTPEZPrvCTwETWqQUgpO-e",
+   "audio_updated_at": 1580691739,
+   "text": "ابنة أخ"
+  }
+ ],
+ "alts": [
+  {
+   "key": "DPkAO64vrrgADqbCRI_uGuIwgEDUC44W",
+   "audio_updated_at": 1688821942,
+   "image": "h1ROtARoDS0Yhl4H24J6pSXaK99DPMbO",
+   "image_updated_at": 1689159120,
+   "text": "چاچی",
+   "phonetic": "chachi"
+  },
+  {
+   "key": "Vgi5oeaMwkoJyeikKd4Hgs5QEag8tM6f",
+   "audio_updated_at": 1580691752,
+   "image": "Adc6c0kTGGNCaYeSl-Kzm3M9BtUMY-vE",
+   "image_updated_at": 1689159132,
+   "text": "چچا",
+   "phonetic": "chacha"
+  },
+  {
+   "key": "p7nBU02xSEkJZD8IkkH2lzYOwWhj2BGh",
+   "audio_updated_at": 1688821948,
+   "text": "بھتیجا",
+   "phonetic": "bhateeja",
+   "image": "cR9v2rW22J-WmZOSeMgyJg02Tetl9yMJ",
+   "image_updated_at": 1689159128
+  },
+  {
+   "key": "pF8r7wuDtPPTPEZPrvCTwETWqQUgpO-e",
+   "audio_updated_at": 1580691739,
+   "image": "Hu5cNyQfkAGboT01QoLLAvxsU5-Le9h8",
+   "image_updated_at": 1689159129,
+   "text": "بھانجی",
+   "phonetic": "bhanji"
+  }
+ ]
+}

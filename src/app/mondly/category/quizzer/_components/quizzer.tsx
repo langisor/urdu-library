@@ -90,26 +90,25 @@ export default function Quizzer({ quizzes }: Props) {
   const renderQuestion = () => {
     console.log("renderQuestion");
     switch (currentQuiz.type) {
-      case "C1b":
-        return (
-          <Quizzes.QuizC1b
-            quiz={currentQuiz}
-            quizzerFeedback={feedbackState}
-            onNextQuiz={nextQuiz}
-          />
+      // case "C1b":
+        // return (
+          // <Quizzes.QuizC1b
+          //   quiz={currentQuiz}
+          //   quizzerFeedback={feedbackState}
+          //   onNextQuiz={nextQuiz}
+          // />
           // <Card>
-          //   <JsonViewerComponent data={currentQuiz} />
-          // </Card>
-        );
+       
+        // );
       case "D":
-        // return <Quizzes.QuizD
-        //   quiz={currentQuiz}
-        //   quizzerFeedback={feedbackState}
-        //   onNextQuiz={nextQuiz}
-        // />;
-        <>QuizD</>;
+        return <Quizzes.QuizD
+          question={currentQuiz}
+          feedback={feedbackState}
+          onNext={nextQuiz}
+        />;
+ 
       default:
-        return <div>{`Todo: ${currentQuiz.type}`}</div>;
+        return <Card><JsonViewerComponent data={currentQuiz} /></Card>;
     }
   };
   const renderFeedback = () => {
