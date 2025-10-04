@@ -7,7 +7,7 @@ import * as React from "react";
 import { Button } from "@/components/ui/button";
 
 export default function QuizC1b({ quizData }: { quizData: QuizC1bItem }) {
-  const { sentence, options, completeToken } = useC1b(quizData);
+  const { targetTokens, wordsTokens, completeIndex } = useC1b(quizData);
 
   return (
     <Card className="flex flex-col gap-4 text-right" dir="rtl">
@@ -16,9 +16,10 @@ export default function QuizC1b({ quizData }: { quizData: QuizC1bItem }) {
 
       <CardContent>
         {<JsonViewerComponent data={{
-          sentence,
-          options,
-          completeToken,
+          targetTokens,
+          wordsTokens,
+          completeIndex,
+         
         }} />}
       </CardContent>
     </Card>

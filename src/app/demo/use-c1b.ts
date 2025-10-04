@@ -1,82 +1,83 @@
 "use client";
 import * as React from "react";
 import { QuizC1bItem } from "../mondly/category/quizzer/_components/definitions";
-
+import { shuffleArray } from "../mondly/category/quizzer/_components/helpers-types";
 type Word = {
   text: string;
   isCompleteToken: boolean;
 };
 
 function convertC1b(quizData: QuizC1bItem) {
-  const sentence = new Map<string, Word>();
-  const options = new Map<string, Word>();
+  const targetList = new Map<string, Word>();
+  const wordsList = new Map<string, Word>();
   const completeToken = quizData.completeToken;
-  // options
+  const placeHolderToken = "_____";
+  const completeIndex = quizData.ord.findIndex(
+    (ordKey) => ordKey === completeToken
+  );
+  // move blank token to the end of wordsList
+
+  // targetList
+  quizData.ord.forEach((ordKey) => {
+    const token = quizData.tokens.find((token) => token.key === ordKey);
+    if (token) {
+      targetList.set(ordKey, {
+        text: token.key === completeToken ? placeHolderToken : token.raw.text,
+        isCompleteToken: token.key === completeToken,
+      });
+    }
+  });
+  // wordsList
   quizData.tokens.forEach((token) => {
-    options.set(token.key, {
-      text: token.raw.text,
-      isCompleteToken: token.key === completeToken,
+    const isTargetToken = targetList.has(token.key);
+    if (!isTargetToken) {
+      wordsList.set(token.key, {
+        text: token.raw.text,
+        isCompleteToken: token.key === completeToken,
+      });
+    }
+  });
+  // add complete token to the end of wordsList
+  const completeWord = quizData.tokens.find(
+    (token) => token.key === completeToken
+  );
+  if (completeWord) {
+    wordsList.set(completeToken, {
+      text: completeWord.raw.text,
+      isCompleteToken: true,
     });
-  });
-  // remove blank word from options
-  // get blank key
-  const blankKey = options.entries().find((entry) => entry[1].text === "_____");
-
-  // remove from options
-  if (blankKey) {
-    options.delete(blankKey[0]);
+    //
   }
-  // sentences
-  const sentenceTokens = quizData.ord.map((tokenKey) => {
-    const result = options.get(tokenKey);
+  // remove '_____' from wordsList
 
-    if (result) {
-      // replace isCompleteToken=true with blankWord
-
-      if (result.isCompleteToken) {
-        const newResult = {
-          key: tokenKey,
-
-          text: result.text,
-          isCompleteToken: false,
-        };
-        sentence.set(tokenKey, newResult);
-        options.delete(tokenKey);
-      } else {
-        sentence.set(tokenKey, result);
-      }
+  wordsList.forEach((word, key) => {
+    if (word.text === placeHolderToken) {
+      wordsList.delete(key);
     }
   });
-  // filter opttions by removing sentence tokens
-  options.forEach((value, key) => {
-    if (sentence.has(key)) {
-      options.delete(key);
-    }
-  });
-  // add isCompleteToken=true to options
-  options.set(completeToken, {
-    text: quizData.tokens.find((token) => token.key === completeToken)!.raw.text,
-    isCompleteToken: true,
-  });
-  //remove blank word from sentence 
-  sentence.forEach((value, key) => {
-    if(key===completeToken){
-       
-    }
-  });
-  return { sentence, options, completeToken };
+
+  return {
+    targetList,
+    wordsList,
+    completeIndex,
+    placeHolderToken,
+  };
 }
 
 export function useC1b(quizData: QuizC1bItem) {
-  const [sentence, setSentence] = React.useState<Map<string, Word>>(new Map());
-  const [options, setOptions] = React.useState<Map<string, Word>>(new Map());
-  const [completeToken, setCompleteToken] = React.useState<string>("");
-  React.useEffect(() => {
-    const { sentence, options, completeToken } = convertC1b(quizData);
-    setSentence(sentence);
-    setOptions(options);
-    setCompleteToken(completeToken);
-  }, [quizData]);
+  const { targetList, wordsList, completeIndex } = convertC1b(quizData);
 
-  return { sentence, options, completeToken };
+  const targetTokens = React.useMemo(() => {
+    return Array.from(targetList.values());
+  }, [targetList]);
+
+  const wordsTokens = React.useMemo(() => {
+    return shuffleArray(Array.from(wordsList.values()));
+  }, [wordsList]);
+
+  return {
+    targetTokens,
+    wordsTokens,
+    completeIndex,
+  };
 }

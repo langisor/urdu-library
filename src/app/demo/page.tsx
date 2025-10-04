@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useHookstate } from "@hookstate/core";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import InventoryManager from "./inventory-manager";
-import data from "./c1b1.json";
+import data from "./c1b2.json";
 import QuizC1b from "./quiz-c1b";
  
 
