@@ -1,0 +1,3501 @@
+[
+ {
+  "id": 626961,
+  "ord": [
+   "tjja8tFludE",
+   "t8i71j73h8o",
+   "tX4zXFlJJh5"
+  ],
+  "sols": [
+   {
+    "key": "0wZRF17w6KxeTqX4TKqs04aK0sMghXSC",
+    "text": "الشمس صفراء.",
+    "dictionary": [
+     {
+      "raw": "الشمس",
+      "translations": [
+       {
+        "text": "سورج",
+        "type": "dictionary",
+        "phonetic": "sooraj"
+       }
+      ]
+     },
+     {
+      "raw": "صفراء",
+      "translations": [
+       {
+        "text": "پیلا",
+        "type": "dictionary",
+        "phonetic": "peela"
+       }
+      ]
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "الشمس",
+       "length": 5,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 5
+      }
+     },
+     {
+      "raw": {
+       "text": "صفراء",
+       "length": 5,
+       "location": 6
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 5
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 6
+      },
+      "suffix": {
+       "text": ".",
+       "length": 1,
+       "location": 11
+      }
+     }
+    ],
+    "audio_updated_at": 1580705388
+   },
+   {
+    "key": "0wZRF17w6KxeTqX4TKqs04aK0sMghXSC",
+    "text": "سورج پیلا ہے۔",
+    "phonetic": "Sooraj peela hai.",
+    "audio_updated_at": 1580705388
+   }
+  ],
+  "type": "C1b",
+  "lesson": 601,
+  "tokens": [
+   {
+    "key": "tTECk45dqC4",
+    "raw": {
+     "text": "شیر",
+     "length": 3,
+     "location": 4
+    },
+    "text": "شیر",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 3
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 7
+    }
+   },
+   {
+    "key": "tjja8tFludE",
+    "raw": {
+     "text": "سورج",
+     "length": 4,
+     "location": 0
+    },
+    "text": "سورج",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    }
+   },
+   {
+    "key": "toSaYqrQynk",
+    "raw": {
+     "text": "کہاں",
+     "length": 4,
+     "location": 8
+    },
+    "text": "کہاں",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 7
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 8
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    }
+   },
+   {
+    "key": "t8i71j73h8o",
+    "raw": {
+     "text": "پیلا",
+     "length": 4,
+     "location": 5
+    },
+    "text": "پیلا",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 4
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 5
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 9
+    }
+   },
+   {
+    "key": "tDqKmZZOBP_",
+    "raw": {
+     "text": "ہیں",
+     "length": 3,
+     "location": 13
+    },
+    "text": "ہیں؟",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 12
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 13
+    },
+    "suffix": {
+     "text": "؟",
+     "length": 1,
+     "location": 16
+    }
+   },
+   {
+    "key": "tH9ZYEqsmlq",
+    "raw": {
+     "text": "ببر",
+     "length": 3,
+     "location": 0
+    },
+    "text": "ببر",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 3
+    }
+   },
+   {
+    "key": "tX4zXFlJJh5",
+    "raw": {
+     "text": "ہے",
+     "length": 2,
+     "location": 10
+    },
+    "text": "ہے۔",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 9
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 10
+    },
+    "suffix": {
+     "text": "۔",
+     "length": 1,
+     "location": 12
+    }
+   }
+  ],
+  "wordID": 18172,
+  "modifiers": 72,
+  "alternates": [
+   18057
+  ],
+  "completeToken": "tjja8tFludE",
+  "tokensPhonetic": [
+   {
+    "key": "tTECk45dqC4",
+    "raw": {
+     "text": "shair",
+     "length": 5,
+     "location": 7
+    },
+    "text": "shair",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 6
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 7
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    }
+   },
+   {
+    "key": "tjja8tFludE",
+    "raw": {
+     "text": "Sooraj",
+     "length": 6,
+     "location": 0
+    },
+    "text": "Sooraj",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 6
+    }
+   },
+   {
+    "key": "toSaYqrQynk",
+    "raw": {
+     "text": "kahan",
+     "length": 5,
+     "location": 13
+    },
+    "text": "kahan",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 12
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 13
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 18
+    }
+   },
+   {
+    "key": "t8i71j73h8o",
+    "raw": {
+     "text": "peela",
+     "length": 5,
+     "location": 7
+    },
+    "text": "peela",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 6
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 7
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    }
+   },
+   {
+    "key": "tDqKmZZOBP_",
+    "raw": {
+     "text": "hain",
+     "length": 4,
+     "location": 19
+    },
+    "text": "hain?",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 18
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 19
+    },
+    "suffix": {
+     "text": "?",
+     "length": 1,
+     "location": 23
+    }
+   },
+   {
+    "key": "tH9ZYEqsmlq",
+    "raw": {
+     "text": "Babber",
+     "length": 6,
+     "location": 0
+    },
+    "text": "Babber",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 6
+    }
+   },
+   {
+    "key": "tX4zXFlJJh5",
+    "raw": {
+     "text": "hai",
+     "length": 3,
+     "location": 13
+    },
+    "text": "hai.",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 12
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 13
+    },
+    "suffix": {
+     "text": ".",
+     "length": 1,
+     "location": 16
+    }
+   }
+  ],
+  "tokensEqualSize": true
+ },
+ {
+  "id": 637016,
+  "ord": [
+   "taJRmkzrDf-",
+   "tp1PQFL3T4z",
+   "tMkGtHB_Et0",
+   "t7J9edP42ZJ",
+   "t3PaOqRUKJ9",
+   "tYXVQCNjKur",
+   "tezhK7jsF3L"
+  ],
+  "sols": [
+   {
+    "key": "JAePQTfxTZlQfVrmK5S41K4ksOWi8-BB",
+    "text": "الحجز غدًا في الساعة السابعة.",
+    "dictionary": [
+     {
+      "raw": "الحجز",
+      "translations": []
+     },
+     {
+      "raw": "غدًا",
+      "translations": [
+       {
+        "text": "کل",
+        "type": "dictionary",
+        "phonetic": "kal"
+       }
+      ]
+     },
+     {
+      "raw": "في",
+      "translations": []
+     },
+     {
+      "raw": "الساعة",
+      "translations": []
+     },
+     {
+      "raw": "السابعة",
+      "translations": [
+       {
+        "text": "سات",
+        "type": "dictionary",
+        "phonetic": "saat"
+       }
+      ]
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "الحجز",
+       "length": 5,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 5
+      }
+     },
+     {
+      "raw": {
+       "text": "غدًا",
+       "length": 4,
+       "location": 6
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 5
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 6
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 10
+      }
+     },
+     {
+      "raw": {
+       "text": "في",
+       "length": 2,
+       "location": 11
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 10
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 11
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 13
+      }
+     },
+     {
+      "raw": {
+       "text": "الساعة",
+       "length": 6,
+       "location": 14
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 13
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 14
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 20
+      }
+     },
+     {
+      "raw": {
+       "text": "السابعة",
+       "length": 7,
+       "location": 21
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 20
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 21
+      },
+      "suffix": {
+       "text": ".",
+       "length": 1,
+       "location": 28
+      }
+     }
+    ],
+    "audio_updated_at": 1688822736
+   },
+   {
+    "key": "JAePQTfxTZlQfVrmK5S41K4ksOWi8-BB",
+    "text": "ریزرویشن کل سات بجے کے لیے ہے۔",
+    "phonetic": "Rezervashion kal sath bajay kay liyay hai.",
+    "audio_updated_at": 1688822736
+   }
+  ],
+  "type": "C1b",
+  "lesson": 3001,
+  "tokens": [
+   {
+    "key": "t7J9edP42ZJ",
+    "raw": {
+     "text": "بجے",
+     "length": 3,
+     "location": 16
+    },
+    "text": "بجے",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 15
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 16
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 19
+    }
+   },
+   {
+    "key": "tp1PQFL3T4z",
+    "raw": {
+     "text": "کل",
+     "length": 2,
+     "location": 9
+    },
+    "text": "کل",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 8
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 9
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 11
+    }
+   },
+   {
+    "key": "tYXVQCNjKur",
+    "raw": {
+     "text": "لیے",
+     "length": 3,
+     "location": 23
+    },
+    "text": "لیے",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 22
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 23
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 26
+    }
+   },
+   {
+    "key": "tezhK7jsF3L",
+    "raw": {
+     "text": "ہے",
+     "length": 2,
+     "location": 27
+    },
+    "text": "ہے۔",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 26
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 27
+    },
+    "suffix": {
+     "text": "۔",
+     "length": 1,
+     "location": 29
+    }
+   },
+   {
+    "key": "taJRmkzrDf-",
+    "raw": {
+     "text": "ریزرویشن",
+     "length": 8,
+     "location": 0
+    },
+    "text": "ریزرویشن",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 8
+    }
+   },
+   {
+    "key": "tPLlTkwpqdM",
+    "raw": {
+     "text": "لانا",
+     "length": 4,
+     "location": 0
+    },
+    "text": "لانا",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    }
+   },
+   {
+    "key": "tMkGtHB_Et0",
+    "raw": {
+     "text": "سات",
+     "length": 3,
+     "location": 12
+    },
+    "text": "سات",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 11
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 15
+    }
+   },
+   {
+    "key": "t3PaOqRUKJ9",
+    "raw": {
+     "text": "کے",
+     "length": 2,
+     "location": 20
+    },
+    "text": "کے",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 19
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 20
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 22
+    }
+   }
+  ],
+  "wordID": 24063,
+  "modifiers": 72,
+  "alternates": [
+   18819
+  ],
+  "completeToken": "tp1PQFL3T4z",
+  "tokensPhonetic": [
+   {
+    "key": "t7J9edP42ZJ",
+    "raw": {
+     "text": "bajay",
+     "length": 5,
+     "location": 22
+    },
+    "text": "bajay",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 21
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 22
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 27
+    }
+   },
+   {
+    "key": "tp1PQFL3T4z",
+    "raw": {
+     "text": "kal",
+     "length": 3,
+     "location": 13
+    },
+    "text": "kal",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 12
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 13
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 16
+    }
+   },
+   {
+    "key": "tYXVQCNjKur",
+    "raw": {
+     "text": "liyay",
+     "length": 5,
+     "location": 32
+    },
+    "text": "liyay",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 31
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 32
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 37
+    }
+   },
+   {
+    "key": "tezhK7jsF3L",
+    "raw": {
+     "text": "hai",
+     "length": 3,
+     "location": 38
+    },
+    "text": "hai.",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 37
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 38
+    },
+    "suffix": {
+     "text": ".",
+     "length": 1,
+     "location": 41
+    }
+   },
+   {
+    "key": "taJRmkzrDf-",
+    "raw": {
+     "text": "Rezervashion",
+     "length": 12,
+     "location": 0
+    },
+    "text": "Rezervashion",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    }
+   },
+   {
+    "key": "tPLlTkwpqdM",
+    "raw": {
+     "text": "laana",
+     "length": 5,
+     "location": 0
+    },
+    "text": "laana",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 5
+    }
+   },
+   {
+    "key": "tMkGtHB_Et0",
+    "raw": {
+     "text": "sath",
+     "length": 4,
+     "location": 17
+    },
+    "text": "sath",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 16
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 17
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 21
+    }
+   },
+   {
+    "key": "t3PaOqRUKJ9",
+    "raw": {
+     "text": "kay",
+     "length": 3,
+     "location": 28
+    },
+    "text": "kay",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 27
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 28
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 31
+    }
+   }
+  ],
+  "tokensEqualSize": true
+ },
+ {
+  "id": 625546,
+  "ord": [
+   "tfWCeA4SnI4",
+   "t7-OVTbhmCA",
+   "t08DH2eRR41",
+   "t00xFdlrFS5",
+   "t4AmpUsMXg7",
+   "tcQiYxWButZ",
+   "tpky0NLWsg1",
+   "tpp7d0aspCl"
+  ],
+  "sols": [
+   {
+    "key": "lxtu4jLJ33mAheJCK4YYTdQAX_V91G9B",
+    "text": "أنا أعمل في ريو دي جانيرو.",
+    "dictionary": [
+     {
+      "raw": "أنا",
+      "translations": [
+       {
+        "text": "میں",
+        "type": "dictionary",
+        "phonetic": "mein"
+       }
+      ]
+     },
+     {
+      "raw": "أعمل",
+      "translations": [
+       {
+        "id": 99,
+        "conj": {
+         "fu": [
+          {
+           "m": {
+            "text": "أنا سأعمل"
+           },
+           "t": {
+            "key": "81RYMRQKSouX9CLkhy4MSmWJ5nSGH6ty",
+            "text": "میں کام کروں گا",
+            "phonetic": "Mein kaam karoon ga",
+            "audio_updated_at": 1580697226
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ستعمل"
+           },
+           "t": {
+            "key": "6k0D1HX90SOt169OCakKAIZthr-wcJr9",
+            "text": "تم کام کرو گے",
+            "phonetic": "Tum kaam karo gay",
+            "audio_updated_at": 1580697228
+           }
+          },
+          {
+           "m": {
+            "text": "هو سيعمل"
+           },
+           "t": {
+            "key": "fB0h79d4EepzKrR6BehZP6o19koMaF_n",
+            "text": "وہ کام کرے گا",
+            "phonetic": "Wo kaam karay ga",
+            "audio_updated_at": 1580697230
+           }
+          },
+          {
+           "m": {
+            "text": "هي ستعمل"
+           },
+           "t": {
+            "key": "fC_S43X7c0mHR8DwYVPESIM5jzsEdY5N",
+            "text": "وہ کام کرے گی",
+            "phonetic": "Wo kaam karay gi",
+            "audio_updated_at": 1580697232
+           }
+          },
+          {
+           "m": {
+            "text": "نحن سنعمل"
+           },
+           "t": {
+            "key": "2JmuKeVj8aVYyGUPqOow74-HbQ760D1s",
+            "text": "ہم کام کریں گے",
+            "phonetic": "Hum kaam karain gay",
+            "audio_updated_at": 1580697235
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ستعملون"
+           },
+           "t": {
+            "key": "-o560lsRZL8Tm-FDxc2bvmb4qUvm93rR",
+            "text": "آپ کام کریں گے",
+            "phonetic": "Aap kaam karain gay",
+            "audio_updated_at": 1580697237
+           }
+          },
+          {
+           "m": {
+            "text": "هم سيعملون"
+           },
+           "t": {
+            "key": "x1j0JAvfuR_stB52ao7ATW_1JiBYZSKz",
+            "text": "وہ کام کریں گے",
+            "phonetic": "Wo kaam karain gay",
+            "audio_updated_at": 1580697239
+           }
+          }
+         ],
+         "pa": [
+          {
+           "m": {
+            "text": "أنا عملت"
+           },
+           "t": {
+            "key": "Hs2kgzsyvUxaCRhSJuEmUQqsXJsrdq11",
+            "text": "میں نے کام کیا",
+            "phonetic": "Mein ne kaam kiya",
+            "audio_updated_at": 1580697211
+           }
+          },
+          {
+           "m": {
+            "text": "أنت عملت"
+           },
+           "t": {
+            "key": "XURJ7Wj0tEtFFRAKpKrFxX_Jw2jYUpX7",
+            "text": "تم نے کام کیا",
+            "phonetic": "Tum ne kaam kiya",
+            "audio_updated_at": 1580697213
+           }
+          },
+          {
+           "m": {
+            "text": "هو عمل"
+           },
+           "t": {
+            "key": "hm1HRqsvPNYVWUyfa17xI_V1DqzhnjAN",
+            "text": "اس نے کام کیا",
+            "phonetic": "Us ne kaam kiya",
+            "audio_updated_at": 1580697215
+           }
+          },
+          {
+           "m": {
+            "text": "هي عملت"
+           },
+           "t": {
+            "key": "CfyWAZDOTQ7qsb5ftO70Ts7WtADnGbcH",
+            "text": "اس نے کام کیا",
+            "phonetic": "Us ne kaam kiya",
+            "audio_updated_at": 1580697217
+           }
+          },
+          {
+           "m": {
+            "text": "نحن عملنا"
+           },
+           "t": {
+            "key": "twdGPnr9YzLMJFp5uSdILSElERbl_CF0",
+            "text": "ہم نے کام کیا",
+            "phonetic": "Hum ne kaam kiya",
+            "audio_updated_at": 1580697221
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم عملتم"
+           },
+           "t": {
+            "key": "rzO5nYM6g2am8JFnjYzXe81CUH14mfvc",
+            "text": "آپ نے کام کیا",
+            "phonetic": "Aap ne kaam kiya",
+            "audio_updated_at": 1580697223
+           }
+          },
+          {
+           "m": {
+            "text": "هم عملوا"
+           },
+           "t": {
+            "key": "GU58mj3oivroeSA-2OntLZQV33_HN6nt",
+            "text": "انہوں نے کام کیا",
+            "phonetic": "Unhon ne kaam kiya",
+            "audio_updated_at": 1580697224
+           }
+          }
+         ],
+         "pr": [
+          {
+           "m": {
+            "text": "أنا أعمل"
+           },
+           "t": {
+            "key": "qNvsrBhYBbvhk3cYBd6HWf54ok9uEHbF",
+            "text": "میں کام کرتا ہوں",
+            "phonetic": "Mein kaam karta hoon",
+            "audio_updated_at": 1580697196
+           }
+          },
+          {
+           "m": {
+            "text": "أنت تعمل"
+           },
+           "t": {
+            "key": "ooJrdfi7YiOhsOTf92CvnuMUePoJD3Cy",
+            "text": "تم کام کرتے ہو",
+            "phonetic": "Tum kaam kartay ho",
+            "audio_updated_at": 1580697198
+           }
+          },
+          {
+           "m": {
+            "text": "هو يعمل"
+           },
+           "t": {
+            "key": "bPg025XmnjTvAT3oMdLB3Hp8m2l24Ybi",
+            "text": "وہ کام کرتا ہے",
+            "phonetic": "Wo kaam karta hai",
+            "audio_updated_at": 1580697200
+           }
+          },
+          {
+           "m": {
+            "text": "هي تعمل"
+           },
+           "t": {
+            "key": "sx_rNgZ2ty4S6lscBHRomggYlf7xCQfW",
+            "text": "وہ کام کرتی ہے",
+            "phonetic": "Wo kaam karti hai",
+            "audio_updated_at": 1580697202
+           }
+          },
+          {
+           "m": {
+            "text": "نحن نعمل"
+           },
+           "t": {
+            "key": "3mPCLE2fWFHaGz4NDAq5W91EqH-r8tTS",
+            "text": "ہم کام کرتےہیں",
+            "phonetic": "Hum kaam kartay hain",
+            "audio_updated_at": 1580697205
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم تعملون"
+           },
+           "t": {
+            "key": "ON77SSXiPASTQJECqFLcmZSmKfSjpdHA",
+            "text": "آپ کام کرتے ہیں",
+            "phonetic": "Aap kaam kartay hain",
+            "audio_updated_at": 1580697207
+           }
+          },
+          {
+           "m": {
+            "text": "هم يعملون"
+           },
+           "t": {
+            "key": "2VQfJ_RiFDomVc-regczDRzD0hHMYyvX",
+            "text": "وہ کام کرتے ہیں",
+            "phonetic": "Wo kaam kartay hain",
+            "audio_updated_at": 1580697209
+           }
+          }
+         ]
+        },
+        "name": {
+         "m": "يعمل",
+         "t": "کام کرنا",
+         "phonetic": "kaam karna"
+        },
+        "type": "verb",
+        "tenseNames": {
+         "fu": "مستقبل",
+         "pa": "ماضي",
+         "pr": "الحاضر"
+        }
+       }
+      ]
+     },
+     {
+      "raw": "في",
+      "translations": []
+     },
+     {
+      "raw": "ريو",
+      "translations": [
+       {
+        "text": "ریو",
+        "type": "dictionary",
+        "phonetic": "Rio"
+       }
+      ]
+     },
+     {
+      "raw": "دي",
+      "translations": [
+       {
+        "text": "ڈی",
+        "type": "dictionary",
+        "phonetic": "y"
+       }
+      ]
+     },
+     {
+      "raw": "جانيرو",
+      "translations": []
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "أنا",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "أعمل",
+       "length": 4,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 8
+      }
+     },
+     {
+      "raw": {
+       "text": "في",
+       "length": 2,
+       "location": 9
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 8
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 9
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 11
+      }
+     },
+     {
+      "raw": {
+       "text": "ريو",
+       "length": 3,
+       "location": 12
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 11
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 12
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 15
+      }
+     },
+     {
+      "raw": {
+       "text": "دي",
+       "length": 2,
+       "location": 16
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 15
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 16
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 18
+      }
+     },
+     {
+      "raw": {
+       "text": "جانيرو",
+       "length": 6,
+       "location": 19
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 18
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 19
+      },
+      "suffix": {
+       "text": ".",
+       "length": 1,
+       "location": 25
+      }
+     }
+    ],
+    "audio_updated_at": 1688822650
+   },
+   {
+    "key": "lxtu4jLJ33mAheJCK4YYTdQAX_V91G9B",
+    "text": "میں ریو ڈی جنیرو میں کام کرتا ہوں۔",
+    "phonetic": "Mein Rio De Janero mein kaam karta hoon.",
+    "audio_updated_at": 1688822650
+   }
+  ],
+  "type": "C1b",
+  "lesson": 2503,
+  "tokens": [
+   {
+    "key": "tcQiYxWButZ",
+    "raw": {
+     "text": "کام",
+     "length": 3,
+     "location": 21
+    },
+    "text": "کام",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 20
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 21
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 24
+    }
+   },
+   {
+    "key": "t7-OVTbhmCA",
+    "raw": {
+     "text": "ریو",
+     "length": 3,
+     "location": 4
+    },
+    "text": "ریو",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 3
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 7
+    }
+   },
+   {
+    "key": "t00xFdlrFS5",
+    "raw": {
+     "text": "جنیرو",
+     "length": 5,
+     "location": 11
+    },
+    "text": "جنیرو",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 10
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 11
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 16
+    }
+   },
+   {
+    "key": "tpp7d0aspCl",
+    "raw": {
+     "text": "ہوں",
+     "length": 3,
+     "location": 30
+    },
+    "text": "ہوں۔",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 29
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 30
+    },
+    "suffix": {
+     "text": "۔",
+     "length": 1,
+     "location": 33
+    }
+   },
+   {
+    "key": "tfWCeA4SnI4",
+    "raw": {
+     "text": "میں",
+     "length": 3,
+     "location": 0
+    },
+    "text": "میں",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 3
+    }
+   },
+   {
+    "key": "t4AmpUsMXg7",
+    "raw": {
+     "text": "میں",
+     "length": 3,
+     "location": 17
+    },
+    "text": "میں",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 16
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 17
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 20
+    }
+   },
+   {
+    "key": "t08DH2eRR41",
+    "raw": {
+     "text": "ڈی",
+     "length": 2,
+     "location": 8
+    },
+    "text": "ڈی",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 7
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 8
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 10
+    }
+   },
+   {
+    "key": "tpky0NLWsg1",
+    "raw": {
+     "text": "کرتا",
+     "length": 4,
+     "location": 25
+    },
+    "text": "کرتا",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 24
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 25
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 29
+    }
+   }
+  ],
+  "wordID": 23996,
+  "modifiers": 72,
+  "alternates": [
+   16687
+  ],
+  "completeToken": "t00xFdlrFS5",
+  "tokensPhonetic": [
+   {
+    "key": "tcQiYxWButZ",
+    "raw": {
+     "text": "kaam",
+     "length": 4,
+     "location": 24
+    },
+    "text": "kaam",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 23
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 24
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 28
+    }
+   },
+   {
+    "key": "t7-OVTbhmCA",
+    "raw": {
+     "text": "Rio",
+     "length": 3,
+     "location": 5
+    },
+    "text": "Rio",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 4
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 5
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 8
+    }
+   },
+   {
+    "key": "t00xFdlrFS5",
+    "raw": {
+     "text": "Janero",
+     "length": 6,
+     "location": 12
+    },
+    "text": "Janero",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 11
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 18
+    }
+   },
+   {
+    "key": "tpp7d0aspCl",
+    "raw": {
+     "text": "hoon",
+     "length": 4,
+     "location": 35
+    },
+    "text": "hoon.",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 34
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 35
+    },
+    "suffix": {
+     "text": ".",
+     "length": 1,
+     "location": 39
+    }
+   },
+   {
+    "key": "tfWCeA4SnI4",
+    "raw": {
+     "text": "Mein",
+     "length": 4,
+     "location": 0
+    },
+    "text": "Mein",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    }
+   },
+   {
+    "key": "t4AmpUsMXg7",
+    "raw": {
+     "text": "mein",
+     "length": 4,
+     "location": 19
+    },
+    "text": "mein",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 18
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 19
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 23
+    }
+   },
+   {
+    "key": "t08DH2eRR41",
+    "raw": {
+     "text": "De",
+     "length": 2,
+     "location": 9
+    },
+    "text": "De",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 8
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 9
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 11
+    }
+   },
+   {
+    "key": "tpky0NLWsg1",
+    "raw": {
+     "text": "karta",
+     "length": 5,
+     "location": 29
+    },
+    "text": "karta",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 28
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 29
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 34
+    }
+   }
+  ],
+  "tokensEqualSize": true
+ },
+ {
+  "id": 621940,
+  "ord": [
+   "t9A8DplciP9",
+   "tzF-Rjy9_tf",
+   "tfQG4Ln5wE5",
+   "tVK4qQdG0HF",
+   "t7tpQHhvXq8",
+   "tGFbFSj65UW",
+   "t0ZuLT_nArX"
+  ],
+  "sols": [
+   {
+    "key": "55m8I-grkNhKjzCuFMtCTlE6X7VWWYyl",
+    "text": "أنا أركض في المتنزه كل صباح.",
+    "dictionary": [
+     {
+      "raw": "أنا",
+      "translations": [
+       {
+        "text": "میں",
+        "type": "dictionary",
+        "phonetic": "mein"
+       }
+      ]
+     },
+     {
+      "raw": "أركض",
+      "translations": [
+       {
+        "text": "میں دوڑتا ہوں",
+        "type": "dictionary",
+        "phonetic": "my dwta w"
+       },
+       {
+        "id": 69,
+        "conj": {
+         "fu": [
+          {
+           "m": {
+            "text": "أنا سأركض"
+           },
+           "t": {
+            "key": "_3t3o2qimfoIWCxxJhh4Du0OYct6WezO",
+            "text": "میں بھاگوں گا",
+            "phonetic": "Mein bhagoon ga",
+            "audio_updated_at": 1580695873
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ستركض"
+           },
+           "t": {
+            "key": "oLjJXArRnvUj5WvTIZxQr1H8I4_aEjR7",
+            "text": "تم بھاگو گے",
+            "phonetic": "Tum bhago gay",
+            "audio_updated_at": 1580695875
+           }
+          },
+          {
+           "m": {
+            "text": "هو سيركض"
+           },
+           "t": {
+            "key": "8v3nbGNRD6o92nJ4fgkPtQXgxahDNKbF",
+            "text": "وہ بھاگے گا",
+            "phonetic": "Wo bhagay ga",
+            "audio_updated_at": 1580695877
+           }
+          },
+          {
+           "m": {
+            "text": "هي ستركض"
+           },
+           "t": {
+            "key": "xiPrD7MkPga3EfCdakRGYZ5HlGl2ey7q",
+            "text": "وہ بھاگے گی",
+            "phonetic": "Wo bhagay gi",
+            "audio_updated_at": 1580695879
+           }
+          },
+          {
+           "m": {
+            "text": "نحن سنركض"
+           },
+           "t": {
+            "key": "h9EwDkF-soAlqP6-VNwChtCywB_0wSOS",
+            "text": "ہم بھاگیں گے",
+            "phonetic": "Hum bhagain gay",
+            "audio_updated_at": 1580695882
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ستركضون"
+           },
+           "t": {
+            "key": "k0Sl1nk5F27JVdMAq_yOPGyMtAf3PNgu",
+            "text": "آپ بھاگیں گے",
+            "phonetic": "Aap bhagain gay",
+            "audio_updated_at": 1580695884
+           }
+          },
+          {
+           "m": {
+            "text": "هم سيركضون"
+           },
+           "t": {
+            "key": "8AzfuF1fPesG11VgVSYkZ0uPym2WmUCO",
+            "text": "وہ بھاگیں گے",
+            "phonetic": "Wo bhagain gay",
+            "audio_updated_at": 1580695886
+           }
+          }
+         ],
+         "pa": [
+          {
+           "m": {
+            "text": "أنا ركضت"
+           },
+           "t": {
+            "key": "0bCoi_3cyaUBb2px4pk-nwhrGoIFZdSt",
+            "text": "میں بھاگا",
+            "phonetic": "Mein bhaga",
+            "audio_updated_at": 1580695858
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ركضت"
+           },
+           "t": {
+            "key": "CW-QCJFY5hVADEM6TImL9eyrP3X3AQpE",
+            "text": "تم بھاگے",
+            "phonetic": "Tum bhagay",
+            "audio_updated_at": 1580695860
+           }
+          },
+          {
+           "m": {
+            "text": "هو ركض"
+           },
+           "t": {
+            "key": "GkyhIvW3De3JJsWjjtHb1zDb2f7e9DiQ",
+            "text": "وہ بھاگا",
+            "phonetic": "Wo bhaga",
+            "audio_updated_at": 1580695862
+           }
+          },
+          {
+           "m": {
+            "text": "هي ركضت"
+           },
+           "t": {
+            "key": "rm2xSaGHk58ts2IMKlff9F9-R8bk_Rum",
+            "text": "وہ بھاگی",
+            "phonetic": "Wo bhagi",
+            "audio_updated_at": 1580695864
+           }
+          },
+          {
+           "m": {
+            "text": "نحن ركضنا"
+           },
+           "t": {
+            "key": "bEMHgqN6gepA1g_zQHSI8uqUEd0EJmup",
+            "text": "ہم بھاگے",
+            "phonetic": "Hum bhagay",
+            "audio_updated_at": 1580695867
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ركضتم"
+           },
+           "t": {
+            "key": "D5tYJXBajTPsuiyMQ4-Yhmk8kc30UTA-",
+            "text": "آپ بھاگے",
+            "phonetic": "Aap bhagay",
+            "audio_updated_at": 1580695869
+           }
+          },
+          {
+           "m": {
+            "text": "هم ركضوا"
+           },
+           "t": {
+            "key": "TyUJhL9FIYP3xiVj3WiKOS-IX58OVEIa",
+            "text": "وہ بھاگے",
+            "phonetic": "Wo bhagay",
+            "audio_updated_at": 1580695871
+           }
+          }
+         ],
+         "pr": [
+          {
+           "m": {
+            "text": "أنا أركض"
+           },
+           "t": {
+            "key": "KLLa4omFZGaNFbGKMwPkV-1v9RvMSBZA",
+            "text": "میں بھاگتا ہوں",
+            "phonetic": "Mein bhagta hoon",
+            "audio_updated_at": 1580695843
+           }
+          },
+          {
+           "m": {
+            "text": "أنت تركض"
+           },
+           "t": {
+            "key": "_HEeXsYfAoiKsstT4VmRzo2aFq_rKLi9",
+            "text": "تم بھاگتے ہو",
+            "phonetic": "Tum bhagtay ho",
+            "audio_updated_at": 1580695845
+           }
+          },
+          {
+           "m": {
+            "text": "هو يركض"
+           },
+           "t": {
+            "key": "y-MN99VESYHLdutUv6YMG8DO5yOn76ub",
+            "text": "وہ بھاگتا ہے",
+            "phonetic": "Wo bhagta hai",
+            "audio_updated_at": 1580695847
+           }
+          },
+          {
+           "m": {
+            "text": "هي تركض"
+           },
+           "t": {
+            "key": "yScHBR_fUTfiZ_TkmXlDitjCXyEHhydr",
+            "text": "وہ بھاگتی ہے",
+            "phonetic": "Wo bhagti hai",
+            "audio_updated_at": 1580695849
+           }
+          },
+          {
+           "m": {
+            "text": "نحن نركض"
+           },
+           "t": {
+            "key": "LQFnUBo6DhPM6SIeNeGqGoimDsPEJk4d",
+            "text": "ہم بھاگتے ہیں",
+            "phonetic": "Hum bhagtay hain",
+            "audio_updated_at": 1580695852
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم تركضون"
+           },
+           "t": {
+            "key": "2MPWLVW-Xe-zZDmnTsMGLgmf2Wlf97I0",
+            "text": "آپ بھاگتے ہیں",
+            "phonetic": "Aap bhagtay hain",
+            "audio_updated_at": 1580695854
+           }
+          },
+          {
+           "m": {
+            "text": "هم يركضون"
+           },
+           "t": {
+            "key": "ZhdmghJY7imiUx4Lb7ZaMnpTPRwPWeya",
+            "text": "وہ بھاگتے ہیں",
+            "phonetic": "Wo bhagtay hain",
+            "audio_updated_at": 1580695856
+           }
+          }
+         ]
+        },
+        "name": {
+         "m": "يركض",
+         "t": "بھاگنا",
+         "phonetic": "bhagna"
+        },
+        "type": "verb",
+        "tenseNames": {
+         "fu": "مستقبل",
+         "pa": "ماضي",
+         "pr": "الحاضر"
+        }
+       }
+      ]
+     },
+     {
+      "raw": "في",
+      "translations": []
+     },
+     {
+      "raw": "المتنزه",
+      "translations": [
+       {
+        "text": "پارک",
+        "type": "dictionary",
+        "phonetic": "park"
+       }
+      ]
+     },
+     {
+      "raw": "كل",
+      "translations": []
+     },
+     {
+      "raw": "صباح",
+      "translations": [
+       {
+        "text": "صبح",
+        "type": "dictionary",
+        "phonetic": "subh"
+       }
+      ]
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "أنا",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "أركض",
+       "length": 4,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 8
+      }
+     },
+     {
+      "raw": {
+       "text": "في",
+       "length": 2,
+       "location": 9
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 8
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 9
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 11
+      }
+     },
+     {
+      "raw": {
+       "text": "المتنزه",
+       "length": 7,
+       "location": 12
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 11
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 12
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 19
+      }
+     },
+     {
+      "raw": {
+       "text": "كل",
+       "length": 2,
+       "location": 20
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 19
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 20
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 22
+      }
+     },
+     {
+      "raw": {
+       "text": "صباح",
+       "length": 4,
+       "location": 23
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 22
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 23
+      },
+      "suffix": {
+       "text": ".",
+       "length": 1,
+       "location": 27
+      }
+     }
+    ],
+    "audio_updated_at": 1688822619
+   },
+   {
+    "key": "55m8I-grkNhKjzCuFMtCTlE6X7VWWYyl",
+    "text": "میں ہر صبح پارک میں دوڑتا ہوں۔",
+    "phonetic": "Mein har subah park mein dorhtha hoon.",
+    "audio_updated_at": 1688822619
+   }
+  ],
+  "type": "C1b",
+  "lesson": 2404,
+  "tokens": [
+   {
+    "key": "t9A8DplciP9",
+    "raw": {
+     "text": "میں",
+     "length": 3,
+     "location": 0
+    },
+    "text": "میں",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 3
+    }
+   },
+   {
+    "key": "tB0GOqYb9VS",
+    "raw": {
+     "text": "فاتح",
+     "length": 4,
+     "location": 0
+    },
+    "text": "فاتح",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    }
+   },
+   {
+    "key": "tVK4qQdG0HF",
+    "raw": {
+     "text": "پارک",
+     "length": 4,
+     "location": 11
+    },
+    "text": "پارک",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 10
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 11
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 15
+    }
+   },
+   {
+    "key": "t7tpQHhvXq8",
+    "raw": {
+     "text": "میں",
+     "length": 3,
+     "location": 16
+    },
+    "text": "میں",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 15
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 16
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 19
+    }
+   },
+   {
+    "key": "tGFbFSj65UW",
+    "raw": {
+     "text": "دوڑتا",
+     "length": 5,
+     "location": 20
+    },
+    "text": "دوڑتا",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 19
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 20
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 25
+    }
+   },
+   {
+    "key": "tfQG4Ln5wE5",
+    "raw": {
+     "text": "صبح",
+     "length": 3,
+     "location": 7
+    },
+    "text": "صبح",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 6
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 7
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 10
+    }
+   },
+   {
+    "key": "tzF-Rjy9_tf",
+    "raw": {
+     "text": "ہر",
+     "length": 2,
+     "location": 4
+    },
+    "text": "ہر",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 3
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 6
+    }
+   },
+   {
+    "key": "t0ZuLT_nArX",
+    "raw": {
+     "text": "ہوں",
+     "length": 3,
+     "location": 26
+    },
+    "text": "ہوں۔",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 25
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 26
+    },
+    "suffix": {
+     "text": "۔",
+     "length": 1,
+     "location": 29
+    }
+   }
+  ],
+  "wordID": 23972,
+  "modifiers": 72,
+  "alternates": [
+   16410,
+   14017
+  ],
+  "completeToken": "tVK4qQdG0HF",
+  "tokensPhonetic": [
+   {
+    "key": "t9A8DplciP9",
+    "raw": {
+     "text": "Mein",
+     "length": 4,
+     "location": 0
+    },
+    "text": "Mein",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    }
+   },
+   {
+    "key": "tB0GOqYb9VS",
+    "raw": {
+     "text": "faateh",
+     "length": 6,
+     "location": 0
+    },
+    "text": "faateh",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 6
+    }
+   },
+   {
+    "key": "tVK4qQdG0HF",
+    "raw": {
+     "text": "park",
+     "length": 4,
+     "location": 15
+    },
+    "text": "park",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 14
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 15
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 19
+    }
+   },
+   {
+    "key": "t7tpQHhvXq8",
+    "raw": {
+     "text": "mein",
+     "length": 4,
+     "location": 20
+    },
+    "text": "mein",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 19
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 20
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 24
+    }
+   },
+   {
+    "key": "tGFbFSj65UW",
+    "raw": {
+     "text": "dorhtha",
+     "length": 7,
+     "location": 25
+    },
+    "text": "dorhtha",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 24
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 25
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 32
+    }
+   },
+   {
+    "key": "tfQG4Ln5wE5",
+    "raw": {
+     "text": "subah",
+     "length": 5,
+     "location": 9
+    },
+    "text": "subah",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 8
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 9
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 14
+    }
+   },
+   {
+    "key": "tzF-Rjy9_tf",
+    "raw": {
+     "text": "har",
+     "length": 3,
+     "location": 5
+    },
+    "text": "har",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 4
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 5
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 8
+    }
+   },
+   {
+    "key": "t0ZuLT_nArX",
+    "raw": {
+     "text": "hoon",
+     "length": 4,
+     "location": 33
+    },
+    "text": "hoon.",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 32
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 33
+    },
+    "suffix": {
+     "text": ".",
+     "length": 1,
+     "location": 37
+    }
+   }
+  ],
+  "tokensEqualSize": true
+ },
+ {
+  "id": 640941,
+  "ord": [
+   "tnDyrcAJDE4",
+   "tiCS6BlM2sr",
+   "t0Q8W431H9i",
+   "todZqM9BKHm",
+   "tI-0qxsnTMO"
+  ],
+  "sols": [
+   {
+    "key": "TrjMwTg0-pavoG_Hmop6mnRPNpaPINF7",
+    "text": "أنا لدي كلب.",
+    "dictionary": [
+     {
+      "raw": "أنا",
+      "translations": [
+       {
+        "text": "میرے",
+        "type": "dictionary",
+        "phonetic": "Mairay"
+       }
+      ]
+     },
+     {
+      "raw": "لدي",
+      "translations": [
+       {
+        "text": "میرے پاس",
+        "type": "dictionary",
+        "phonetic": "myr pas"
+       },
+       {
+        "id": 41,
+        "conj": {
+         "fu": [
+          {
+           "m": {
+            "text": "أنا سأملك"
+           },
+           "t": {
+            "key": "co_aeSCSwrI_jwqhD_-jg3EppD_8dgUl",
+            "text": "میں رکھوں گا",
+            "phonetic": "Mein rakhoon ga",
+            "audio_updated_at": 1580694655
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ستملك"
+           },
+           "t": {
+            "key": "BpX1gL7fKJwgrWGPN_smrUzb5c91_FGM",
+            "text": "تم رکھو گے",
+            "phonetic": "Tum rakho gay",
+            "audio_updated_at": 1580694657
+           }
+          },
+          {
+           "m": {
+            "text": "هو سيملك"
+           },
+           "t": {
+            "key": "QTLT5izy_w1xhDC-zDoq12QJz9sQnG0U",
+            "text": "وہ رکھے گا",
+            "phonetic": "Wo rakhay ga",
+            "audio_updated_at": 1580694659
+           }
+          },
+          {
+           "m": {
+            "text": "هي ستملك"
+           },
+           "t": {
+            "key": "7c6-bpavwMZAhJILXdKZWWODVdMpBWfj",
+            "text": "وہ رکھے گی",
+            "phonetic": "Wo rakhay gi",
+            "audio_updated_at": 1580694661
+           }
+          },
+          {
+           "m": {
+            "text": "نحن سنملك"
+           },
+           "t": {
+            "key": "RXq9uz4XIusg4fJLP0ooree3BTBBw5K_",
+            "text": "ہم رکھیں گے",
+            "phonetic": "Hum rakhain gay",
+            "audio_updated_at": 1580694664
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ستملكون"
+           },
+           "t": {
+            "key": "DXSilQ-249YkFdu4-RJ63qH03F_2o7fY",
+            "text": "آپ رکھیں گے",
+            "phonetic": "Aap rakhain gay",
+            "audio_updated_at": 1580694666
+           }
+          },
+          {
+           "m": {
+            "text": "هم سيملكون"
+           },
+           "t": {
+            "key": "dQ6M9PksusH-_DYC0BgOh4KNryGa-Hzg",
+            "text": "وہ رکھیں گے",
+            "phonetic": "Wo rakhain gay",
+            "audio_updated_at": 1580694668
+           }
+          }
+         ],
+         "pa": [
+          {
+           "m": {
+            "text": "أنا ملكت"
+           },
+           "t": {
+            "key": "qTmxzWEIwd59k7Hy9u11DAvbtc-6SBNz",
+            "text": "میں نے رکھا",
+            "phonetic": "Mein ne rakha",
+            "audio_updated_at": 1580694641
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ملكت"
+           },
+           "t": {
+            "key": "vbpe7-IdzTI-p1qBec3VqEutokMVGvP7",
+            "text": "تم نے رکھا",
+            "phonetic": "Tum ne rakha",
+            "audio_updated_at": 1580694643
+           }
+          },
+          {
+           "m": {
+            "text": "هو ملك"
+           },
+           "t": {
+            "key": "qB5vXGmgrQLFha-X8CSHez3MrerH2R8o",
+            "text": "اس نے رکھا",
+            "phonetic": "Us ne rakha",
+            "audio_updated_at": 1580694645
+           }
+          },
+          {
+           "m": {
+            "text": "هي ملكت"
+           },
+           "t": {
+            "key": "8D2Z6SClSzmn4URdhWrYod_S9DAL_Gr1",
+            "text": "اس نے رکھا",
+            "phonetic": "Us ne rakha",
+            "audio_updated_at": 1580694647
+           }
+          },
+          {
+           "m": {
+            "text": "نحن ملكنا"
+           },
+           "t": {
+            "key": "G2p86sYT46CR1Bv79hE6I5QmxEpWL6Yu",
+            "text": "ہم نے رکھا",
+            "phonetic": "Hum ne rakha",
+            "audio_updated_at": 1580694650
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ملكتم"
+           },
+           "t": {
+            "key": "TRyMTLisqSdJwMNPEEc7kc2STDUWwHKV",
+            "text": "آپ نے رکھا",
+            "phonetic": "Aap ne rakha",
+            "audio_updated_at": 1580694652
+           }
+          },
+          {
+           "m": {
+            "text": "هم ملكوا"
+           },
+           "t": {
+            "key": "NPWRlk7w-Sd0MnT6Y2yS6Mxo41OAbqC0",
+            "text": "انہوں نے رکھا",
+            "phonetic": "Unhon ne rakha",
+            "audio_updated_at": 1580694653
+           }
+          }
+         ],
+         "pr": [
+          {
+           "m": {
+            "text": "أنا أملك"
+           },
+           "t": {
+            "key": "H9VlP_-V91l8vo2qMU8BzX5DoN8FzaZU",
+            "text": "میرے پاس",
+            "phonetic": "Mairay paas",
+            "audio_updated_at": 1688820309
+           }
+          },
+          {
+           "m": {
+            "text": "أنت تملك"
+           },
+           "t": {
+            "key": "D9spzdrIyHuEfLTnPLFI96xpmd9tYx4L",
+            "text": "تم رکھتی ہو",
+            "phonetic": "Tum rakhti ho",
+            "audio_updated_at": 1580694629
+           }
+          },
+          {
+           "m": {
+            "text": "هو يملك"
+           },
+           "t": {
+            "key": "HZ-cHU7Nsd7m39Fhgsi7q9Xe07Q7um-k",
+            "text": "وہ رکھتا ہے",
+            "phonetic": "Wo rakhta hai",
+            "audio_updated_at": 1580694631
+           }
+          },
+          {
+           "m": {
+            "text": "هي تملك"
+           },
+           "t": {
+            "key": "lXrkRoGSjePEU5RwFXn14Jh2MIf7K7Fn",
+            "text": "وہ رکھتی ہے",
+            "phonetic": "Wo rakhti hai",
+            "audio_updated_at": 1580694633
+           }
+          },
+          {
+           "m": {
+            "text": "نحن نملك"
+           },
+           "t": {
+            "key": "X8K5acp1hsRKH__R2gNudouzFwBRyqgQ",
+            "text": "ہم رکھتے ہیں",
+            "phonetic": "Hum rakhtay hain",
+            "audio_updated_at": 1580694636
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم تملكون"
+           },
+           "t": {
+            "key": "qPaj1-mBQ_MVMx2J9_yVN_lHCWPnLSkY",
+            "text": "آپ رکھتے ہیں",
+            "phonetic": "Aap rakhtay hain",
+            "audio_updated_at": 1580694638
+           }
+          },
+          {
+           "m": {
+            "text": "هم يملكون"
+           },
+           "t": {
+            "key": "2_5XmWNFoLIs8ipu5JfmuRbw_wA65Ix6",
+            "text": "وہ رکھتے ہیں",
+            "phonetic": "Wo rakhtay hain",
+            "audio_updated_at": 1580694639
+           }
+          }
+         ]
+        },
+        "name": {
+         "m": "يملك",
+         "t": "رکھنا",
+         "phonetic": "rakhna"
+        },
+        "type": "verb",
+        "tenseNames": {
+         "fu": "مستقبل",
+         "pa": "ماضي",
+         "pr": "الحاضر"
+        }
+       }
+      ]
+     },
+     {
+      "raw": "كلب",
+      "translations": [
+       {
+        "text": "کتا",
+        "type": "dictionary",
+        "phonetic": "kutta"
+       }
+      ]
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "أنا",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "لدي",
+       "length": 3,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 7
+      }
+     },
+     {
+      "raw": {
+       "text": "كلب",
+       "length": 3,
+       "location": 8
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 7
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 8
+      },
+      "suffix": {
+       "text": ".",
+       "length": 1,
+       "location": 11
+      }
+     }
+    ],
+    "audio_updated_at": 1593589622
+   },
+   {
+    "key": "TrjMwTg0-pavoG_Hmop6mnRPNpaPINF7",
+    "text": "میرے پاس ایک کتا ہے۔",
+    "phonetic": "Mairay paas aik kutta hai.",
+    "audio_updated_at": 1593589622
+   }
+  ],
+  "type": "C1b",
+  "lesson": 104,
+  "tokens": [
+   {
+    "key": "t0Q8W431H9i",
+    "raw": {
+     "text": "ایک",
+     "length": 3,
+     "location": 9
+    },
+    "text": "ایک",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 8
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 9
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    }
+   },
+   {
+    "key": "tiCS6BlM2sr",
+    "raw": {
+     "text": "پاس",
+     "length": 3,
+     "location": 5
+    },
+    "text": "پاس",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 4
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 5
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 8
+    }
+   },
+   {
+    "key": "tDybBfDeXu2",
+    "raw": {
+     "text": "وہ",
+     "length": 2,
+     "location": 0
+    },
+    "text": "وہ",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 2
+    }
+   },
+   {
+    "key": "tnDyrcAJDE4",
+    "raw": {
+     "text": "میرے",
+     "length": 4,
+     "location": 0
+    },
+    "text": "میرے",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    }
+   },
+   {
+    "key": "todZqM9BKHm",
+    "raw": {
+     "text": "کتا",
+     "length": 3,
+     "location": 13
+    },
+    "text": "کتا",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 12
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 13
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 16
+    }
+   },
+   {
+    "key": "tI-0qxsnTMO",
+    "raw": {
+     "text": "ہے",
+     "length": 2,
+     "location": 17
+    },
+    "text": "ہے۔",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 16
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 17
+    },
+    "suffix": {
+     "text": "۔",
+     "length": 1,
+     "location": 19
+    }
+   },
+   {
+    "key": "tNf0xXlutwl",
+    "raw": {
+     "text": "وہ",
+     "length": 2,
+     "location": 3
+    },
+    "text": "وہ",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 2
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 3
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 5
+    }
+   },
+   {
+    "key": "tHqzE-p5Ktr",
+    "raw": {
+     "text": "لال",
+     "length": 3,
+     "location": 6
+    },
+    "text": "لال",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 5
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 6
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 9
+    }
+   }
+  ],
+  "wordID": 18104,
+  "modifiers": 72,
+  "alternates": [
+   17973
+  ],
+  "completeToken": "todZqM9BKHm",
+  "tokensPhonetic": [
+   {
+    "key": "t0Q8W431H9i",
+    "raw": {
+     "text": "aik",
+     "length": 3,
+     "location": 12
+    },
+    "text": "aik",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 11
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 12
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 15
+    }
+   },
+   {
+    "key": "tiCS6BlM2sr",
+    "raw": {
+     "text": "paas",
+     "length": 4,
+     "location": 7
+    },
+    "text": "paas",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 6
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 7
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 11
+    }
+   },
+   {
+    "key": "tDybBfDeXu2",
+    "raw": {
+     "text": "Woh",
+     "length": 3,
+     "location": 0
+    },
+    "text": "Woh",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 3
+    }
+   },
+   {
+    "key": "tnDyrcAJDE4",
+    "raw": {
+     "text": "Mairay",
+     "length": 6,
+     "location": 0
+    },
+    "text": "Mairay",
+    "linker": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 0
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 6
+    }
+   },
+   {
+    "key": "todZqM9BKHm",
+    "raw": {
+     "text": "kutta",
+     "length": 5,
+     "location": 16
+    },
+    "text": "kutta",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 15
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 16
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 21
+    }
+   },
+   {
+    "key": "tI-0qxsnTMO",
+    "raw": {
+     "text": "hai",
+     "length": 3,
+     "location": 22
+    },
+    "text": "hai.",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 21
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 22
+    },
+    "suffix": {
+     "text": ".",
+     "length": 1,
+     "location": 25
+    }
+   },
+   {
+    "key": "tNf0xXlutwl",
+    "raw": {
+     "text": "woh",
+     "length": 3,
+     "location": 4
+    },
+    "text": "woh",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 3
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 4
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 7
+    }
+   },
+   {
+    "key": "tHqzE-p5Ktr",
+    "raw": {
+     "text": "lal",
+     "length": 3,
+     "location": 8
+    },
+    "text": "lal",
+    "linker": {
+     "text": " ",
+     "length": 1,
+     "location": 7
+    },
+    "prefix": {
+     "text": "",
+     "length": 0,
+     "location": 8
+    },
+    "suffix": {
+     "text": "",
+     "length": 0,
+     "location": 11
+    }
+   }
+  ],
+  "tokensEqualSize": true
+ }
+]
