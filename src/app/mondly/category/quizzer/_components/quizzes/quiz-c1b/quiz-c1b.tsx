@@ -14,12 +14,8 @@ interface QuizC1bState {
   quizzerFeedback: State<Feedback>;
   onNextQuiz: () => void;
 }
-type Word = {
-  text: string;
-  isCompleteToken: boolean;
-};
 
-const PLACEHOLDER = "______";
+const PLACEHOLDER = "_____";
 
 export default function QuizC1b({
   quizData,
@@ -28,7 +24,6 @@ export default function QuizC1b({
 }: QuizC1bState) {
   const { interactiveData, staticData, actions } = useC1b(quizData);
 
-
   const handleWordClick = (word: string) => {
     console.log("handleWordClick()...", word);
     quizzerFeedback.isAnswered.set(true);
@@ -36,6 +31,15 @@ export default function QuizC1b({
   };
   const checkAnswer = () => {
     console.log("checkAnswer()...");
+    const isCorrect = actions.checkAnswer();
+    if (isCorrect) {
+      quizzerFeedback.isCorrect.set(true);
+      quizzerFeedback.message.set("الإجابة صحيحة");
+    } else {
+      quizzerFeedback.isCorrect.set(false);
+      quizzerFeedback.message.set("الإجابة الخاطئة");
+    }
+    onNextQuiz();
   };
 
   const renderTargetWordList = () => {
@@ -58,10 +62,7 @@ export default function QuizC1b({
     return (
       <Card className="flex flex-wrap flex-row gap-3 items-center justify-center">
         {interactiveData.wordsList.map((word, index) => (
-          <Button
-            key={`word-${index}`}
-            onClick={() => handleWordClick(word)}
-          >
+          <Button key={`word-${index}`} onClick={() => handleWordClick(word)}>
             {word}
           </Button>
         ))}

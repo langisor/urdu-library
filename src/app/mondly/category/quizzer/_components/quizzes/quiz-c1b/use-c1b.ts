@@ -1,21 +1,18 @@
 "use client";
 import * as React from "react";
 import { QuizC1bItem } from "../../definitions";
-import {
-  shuffleArray,
-  getAudioUrl,
-} from "../../helpers-types";
+import { shuffleArray, getAudioUrl } from "../../helpers-types";
 import { useHookstate, State } from "@hookstate/core";
 import { convertC1b } from "./convertC1b";
 import { useTune } from "@/hooks/use-tone";
 
-const PLACEHOLDER = "______";
+const PLACEHOLDER = "_____";
 
 export function useC1b(quizData: QuizC1bItem) {
   //  states
   const selectedWord = useHookstate<string>(PLACEHOLDER);
   const { playCorrectTune, playIncorrectTune } = useTune();
- 
+
   const {
     wordsList,
     targetWordList,
@@ -26,7 +23,6 @@ export function useC1b(quizData: QuizC1bItem) {
     correctText,
   } = React.useMemo(() => convertC1b(quizData), [quizData]);
 
-  // functions
   // replace correctText in targetWordList
   const targetWordListWithSelectedWord = targetWordList.map((word, index) => {
     if (index === completeIndex) {
@@ -35,11 +31,31 @@ export function useC1b(quizData: QuizC1bItem) {
     return word;
   });
 
-  // functin to reset convertC1b quiz
+  // remove placeholder from wordsList
+  const wordsListWithoutPlaceholder = wordsList.filter(
+    (word) => word !== PLACEHOLDER
+  );
+  console.log("useC1b quizData invoked ...");
+  console.log("targetWordListWithSelectedWord", wordsListWithoutPlaceholder);
 
+
+  // functions
+
+  const checkAnswer = () => {
+    console.log("checkAnswer()...");
+    if (selectedWord.value === correctWord) {
+      playCorrectTune();
+      return true;
+    } else {
+      playIncorrectTune();
+      return false;
+    }
+  };
   const handleSelectWord = (word: string) => {
     console.log("handleWordClick", word);
-    if (selectedWord.value !== PLACEHOLDER) {
+    if (selectedWord.value === PLACEHOLDER) {
+      selectedWord.set(word);
+    } else {
       //  save a copy
       const prevSelectedWord = selectedWord.value;
       selectedWord.set(word);
@@ -49,19 +65,9 @@ export function useC1b(quizData: QuizC1bItem) {
       selectedWord.set(wordsListCopy[completeIndex]);
     }
   };
-
-  const checkAnswer = () => {
-    console.log("checkAnswer()...");
-    if (selectedWord.value === correctWord) {
-      playCorrectTune();
-    } else {
-      playIncorrectTune();
-    }
-  };
-  console.log("useC1b quizData invoked ...");
   return {
     interactiveData: {
-      wordsList,
+      wordsList: wordsListWithoutPlaceholder,
       targetWordList: targetWordListWithSelectedWord,
     },
     staticData: {
@@ -73,6 +79,7 @@ export function useC1b(quizData: QuizC1bItem) {
     },
     actions: {
       handleSelectWord,
+      checkAnswer,
     },
   };
 }

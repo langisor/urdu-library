@@ -7,6 +7,7 @@ import {
 type Word = {
   text: string;
 };
+const PLACEHOLDER = "_____";
 
 export function convertC1b(quizData: QuizC1bItem) {
   const _wordsList = quizData.tokens.map((token) => token.raw.text);
@@ -16,12 +17,10 @@ export function convertC1b(quizData: QuizC1bItem) {
   const _completeIndex = quizData.ord.findIndex(
     (ordKey) => ordKey === quizData.completeToken
   );
-
-  // shuffle wordsList
-  const shuffledWordsList = shuffleArray(_wordsList);
+ 
   // remove duplicate words
-  const wordsList = shuffledWordsList.filter(
-    (word, index) => shuffledWordsList.indexOf(word) === index
+  const wordsList = _wordsList.filter(
+    (word, index) => _wordsList.indexOf(word) === index
   );
 
   // build targetWordList from ord and tokens
@@ -29,6 +28,7 @@ export function convertC1b(quizData: QuizC1bItem) {
     const token = quizData.tokens.find((token) => token.key === ordKey);
     return token?.raw.text;
   });
+
 
   const _correctText = quizData.sols[1].text;
   const _audioFile = getAudioUrl(quizData.sols[0].key);
