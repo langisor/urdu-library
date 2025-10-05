@@ -6,19 +6,14 @@
  */
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+ 
 } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 import * as React from "react";
 import { Feedback } from "./helpers-types";
 import { useStep } from "@/hooks/use-step";
 import QuizzerProgress from "./quizzer-progress";
-import { globalScoreState } from "../global-score-state";
+import { useGlobalScoreState } from "../global-score-state";
 import * as Quizzes from "./quizzes";
 import { useHookstate, State, hookstate } from "@hookstate/core";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
@@ -35,7 +30,7 @@ const initialFeedback = {
 export default function Quizzer({ quizzes }: Props) {
   // states
   const [currentStep, actions] = useStep(quizzes.length);
-  const scoreState = globalScoreState();
+  const scoreState = useGlobalScoreState();
   const quizState = useHookstate(false); // true when the user has completed the last question
 
   // Use a local state variable to watch for changes (optional, but needed if you render the state)
@@ -95,23 +90,14 @@ export default function Quizzer({ quizzes }: Props) {
   const renderQuestion = () => {
     console.log("renderQuestion");
     switch (currentQuiz.type) {
-      // case "C1b":
-        // return (
-          // <Quizzes.QuizC1b
-          //   quiz={currentQuiz}
-          //   quizzerFeedback={feedbackState}
-          //   onNextQuiz={nextQuiz}
-          // />
-          // <Card>
-       
-        // );
-      case "D":
-        return <Quizzes.QuizD
-          question={currentQuiz}
-          feedback={feedbackState}
-          onNext={nextQuiz}
-        />;
- 
+      case "C1b":
+        return (
+          <Quizzes.QuizC1b
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
+            onNextQuiz={nextQuiz}
+          />
+        );
       default:
         return <Card><JsonViewerComponent data={currentQuiz} /></Card>;
     }

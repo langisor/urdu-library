@@ -8,7 +8,7 @@ import { Spinner } from "@/components/ui/shadcn-io/spinner";
 // takes no arguments and returns nothing (void).
 interface SpinnerProps {
   onNext: () => void;
-  time?: number;
+  time: number;
 }
 
 // 2. Apply the interface to the component function using React.FC (Function Component).
@@ -36,7 +36,7 @@ export const LoadingSpinner: React.FC<SpinnerProps> = ({
       clearTimeout(timerId);
       console.log("Spinner unmounted or effect cleanup.");
     };
-  }, [onNext]); // Dependency array includes the function
+  }, [onNext,time]); // Dependency array includes the function
 
   return <Spinner className="text-blue-400" />;
 };
