@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { QuizC1bItem } from "../mondly/category/quizzer/_components/definitions";
+import { QuizC1bItem } from "../../mondly/category/quizzer/_components/definitions";
 import {
   shuffleArray,
   getAudioUrl,

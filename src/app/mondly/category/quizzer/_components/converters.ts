@@ -97,7 +97,7 @@ type CorrectWordsOrder = {
 function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
   // create sentence template from tokens using ord and completeToken
    const sentence: CorrectWordsOrder[] = [];
-   for(let o of quizItem.ord){
+   for(const o of quizItem.ord){
       const token = quizItem.tokens.find((t) => t.key === o)!;
       sentence.push({
         word: {

@@ -1,9 +1,9 @@
 // "use client";
-// import { QuizQItem } from "../definitions";
+// import { QuizQItem } from "../../_hooks/definitions";
 // import { getAudioUrl } from "@/lib/helpers";
-// import { convertQ } from "../converters";
+// import { convertQ } from "../../_hooks/converters";
 // import { useHookstate } from "@hookstate/core";
-
+// import { useGlobalState } from "../screens/_stores/global-state";
 // import { Button } from "@/components/ui/button";
 // import { useTune } from "@/hooks/use-tone";
 // import { Label } from "@/components/ui/label";
@@ -36,7 +36,7 @@
 //   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
 //     null
 //   );
-
+//   const mainScreenState = useGlobalState();
 //   const selectectOption = useHookstate<string | null>(null);
 //   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
 

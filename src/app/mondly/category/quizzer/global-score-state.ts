@@ -25,5 +25,6 @@ const wrapper = (s: State<ScoreStateProp>) => ({
 export const globalScoreState = () => wrapper(useHookstate(scoreState));
 
 export const initalGlobalScoreState = (s: ScoreStateProp) => {
-  (scoreState.score.set(s.score), scoreState.userName.set(s.userName));
+  scoreState.set(s);
+  return globalScoreState();
 };

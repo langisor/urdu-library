@@ -16,7 +16,7 @@ export default async function LessonPage({
 
   // fetch quizzes using quizz id from lesson.quizzes
   const quizzes = [];
-  for (let q of lesson[0].quizzes) {
+  for (const q of lesson[0].quizzes) {
     const quiz = await queryClient`
     SELECT * FROM "Quiz" WHERE "id"=${q}
   `;

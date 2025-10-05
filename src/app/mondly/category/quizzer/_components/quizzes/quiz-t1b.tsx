@@ -1,9 +1,9 @@
 // "use client";
-// import { QuizT1bItem } from "../definitions";
-// import { convertT1b } from "../converters";
+// import { QuizT1bItem } from "../../_hooks/definitions";
+// import { convertT1b } from "../../_hooks/converters";
 // import { useHookstate } from "@hookstate/core";
 
-
+// import { useGlobalState } from "../screens/_stores/global-state";
 // import { Button } from "@/components/ui/button";
 // import { useTune } from "@/hooks/use-tone";
 // import { TonePlayerButton } from "@/components/general/tone-button-player";

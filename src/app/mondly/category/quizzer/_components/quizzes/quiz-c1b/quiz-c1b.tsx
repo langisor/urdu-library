@@ -1,5 +1,5 @@
 "use client";
-import { QuizC1bItem } from "../mondly/category/quizzer/_components/definitions";
+import { QuizC1bItem } from "@/app/mondly/category/quizzer/_components/definitions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { useC1b } from "./use-c1b";

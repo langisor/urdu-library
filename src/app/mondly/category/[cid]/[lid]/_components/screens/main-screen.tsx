@@ -31,7 +31,7 @@ export default function MainScreen({ lesson, quizzes }: MainScreenProps) {
       state.setTotalQuizzes(quizzes.length);
       setIsQuizzesMounted(true);
     }
-  }, [quizzes]);
+  }, [quizzes.length]);
   const currentQuiz = isQuizzesMounted
     ? quizzes[state.getCurrentQuizIndex()]
     : null;

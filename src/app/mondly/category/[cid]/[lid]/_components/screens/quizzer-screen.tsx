@@ -13,7 +13,7 @@ export default function QuizzerScreen({ quizzes }: { quizzes: any[] }) {
 
   React.useEffect(() => {
     setQuizzesLength(quizzes.length);
-  }, [state]);
+  }, [quizzes.length]);
   return (
     <div>
       <h1>Quizzer Screen</h1>
