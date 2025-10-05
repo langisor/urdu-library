@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { useC1b } from "./use-c1b";
 import { State, useHookstate } from "@hookstate/core";
-import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
@@ -29,7 +28,6 @@ export default function QuizC1b({
 }: QuizC1bState) {
   const { interactiveData, staticData, actions } = useC1b(quizData);
 
-  const { playCorrectTune, playIncorrectTune } = useTune();
 
   const handleWordClick = (word: string) => {
     console.log("handleWordClick()...", word);

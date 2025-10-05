@@ -7,13 +7,15 @@ import {
 } from "../mondly/category/quizzer/_components/helpers-types";
 import { useHookstate, State } from "@hookstate/core";
 import { convertC1b } from "./convertC1b";
+import { useTune } from "@/hooks/use-tone";
 
 const PLACEHOLDER = "______";
 
 export function useC1b(quizData: QuizC1bItem) {
   //  states
   const selectedWord = useHookstate<string>(PLACEHOLDER);
-
+  const { playCorrectTune, playIncorrectTune } = useTune();
+ 
   const {
     wordsList,
     targetWordList,
@@ -48,6 +50,14 @@ export function useC1b(quizData: QuizC1bItem) {
     }
   };
 
+  const checkAnswer = () => {
+    console.log("checkAnswer()...");
+    if (selectedWord.value === correctWord) {
+      playCorrectTune();
+    } else {
+      playIncorrectTune();
+    }
+  };
   console.log("useC1b quizData invoked ...");
   return {
     interactiveData: {
