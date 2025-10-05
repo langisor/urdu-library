@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/card";
 import { queryClient } from "@/lib/postgres-client";
 import Link from "next/link";
-import MainScreen from "./[lid]/_components/screens/main-screen";
 import { Button } from "@/components/ui/button";
 import { Suspense } from "react";
 import { Badge } from "lucide-react";
