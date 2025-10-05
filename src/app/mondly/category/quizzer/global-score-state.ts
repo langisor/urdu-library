@@ -24,7 +24,7 @@ const wrapper = (s: State<ScoreStateProp>) => ({
 // inside component
 export const useGlobalScoreState = () => wrapper(useHookstate(scoreState));
 
-export const initaluseGlobalScoreState = (s: ScoreStateProp) => {
-  scoreState.set(s);
-  return useGlobalScoreState();
-};
+// export const useGlobalScoreState = (s: ScoreStateProp) => {
+//   scoreState.set(s);
+//   return useGlobalScoreState();
+// };
