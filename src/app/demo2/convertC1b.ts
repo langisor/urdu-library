@@ -1,0 +1,47 @@
+"use client";
+import { QuizC1bItem } from "../mondly/category/quizzer/_components/definitions";
+import {
+  shuffleArray,
+  getAudioUrl,
+} from "../mondly/category/quizzer/_components/helpers-types";
+type Word = {
+  text: string;
+};
+
+export function convertC1b(quizData: QuizC1bItem) {
+  const _wordsList = quizData.tokens.map((token) => token.raw.text);
+  const _correctWord = quizData.tokens.find(
+    (token) => token.key === quizData.completeToken
+  )?.raw.text;
+  const _completeIndex = quizData.ord.findIndex(
+    (ordKey) => ordKey === quizData.completeToken
+  );
+
+  // shuffle wordsList
+  const shuffledWordsList = shuffleArray(_wordsList);
+  // remove duplicate words
+  const wordsList = shuffledWordsList.filter(
+    (word, index) => shuffledWordsList.indexOf(word) === index
+  );
+
+  // build targetWordList from ord and tokens
+  const targetWordList = quizData.ord.map((ordKey) => {
+    const token = quizData.tokens.find((token) => token.key === ordKey);
+    return token?.raw.text;
+  });
+
+  const _correctText = quizData.sols[1].text;
+  const _audioFile = getAudioUrl(quizData.sols[0].key);
+  const _questionText = quizData.sols[0].text;
+
+  console.log("convertC1b quizData invoked ...");
+  return {
+    wordsList: wordsList,
+    targetWordList: targetWordList,
+    correctWord: _correctWord,
+    completeIndex: _completeIndex,
+    audioFile: _audioFile,
+    questionText: _questionText,
+    correctText: _correctText,
+  };
+}
