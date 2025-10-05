@@ -1,10 +1,5 @@
 "use client";
-import {CustomLoading} from "@/components/general/custom-loading";
+import { Spinner } from "@/components/ui/shadcn-io/spinner";
 export default function Loading() {
-	return (
-		<div className="flex justify-center items-center h-screen">
-			<span className="sr-only">Loading...</span>
-			<CustomLoading variant="dots" size="lg" />
-		</div>
-	);
+  return <Spinner className="text-blue-500" size="lg" />;
 }
