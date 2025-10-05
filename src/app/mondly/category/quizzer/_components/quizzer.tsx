@@ -52,6 +52,11 @@ export default function Quizzer({ quizzes }: Props) {
       message: "Answer your question",
     });
   };
+
+  /**
+   * This function will give child component a signal to move to the next question
+   * it will also increment the score if current answer is correct
+   */
   const nextQuiz = () => {
     // increment the score if current answer is correct
     scoreState.addToScore(1);

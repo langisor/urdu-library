@@ -30,7 +30,7 @@ export default async function LessonPage({
       <Suspense fallback={<div>Loading...</div>}>
         <Quizzer quizzes={quizzes} />
       </Suspense>
-      <JsonViewerComponent data={quizzes} />
+      {/* <JsonViewerComponent data={quizzes} /> */}
     </Card>
   );
 }
