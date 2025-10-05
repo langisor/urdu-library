@@ -86,47 +86,47 @@ function convertT1b(quizItem: QuizTypes.QuizT1bItem) {
   return question;
 }
 
-type WordToken = {
-  key: string;
-  text: string;
-};
-type CorrectWordsOrder = {
-  word: WordToken;
-  isHidden: boolean;
-};
-function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
-  // create sentence template from tokens using ord and completeToken
-   const sentence: CorrectWordsOrder[] = [];
-   for(const o of quizItem.ord){
-      const token = quizItem.tokens.find((t) => t.key === o)!;
-      sentence.push({
-        word: {
-          key: token.key,
-          text: token.raw.text,
-        },
-        isHidden:  o === quizItem.completeToken,
-      });
-   }
+// type WordToken = {
+//   key: string;
+//   text: string;
+// };
+// type CorrectWordsOrder = {
+//   word: WordToken;
+//   isHidden: boolean;
+// };
+// function convertC1b(quizItem: QuizTypes.QuizC1bItem) {
+//   // create sentence template from tokens using ord and completeToken
+//    const sentence: CorrectWordsOrder[] = [];
+//    for(const o of quizItem.ord){
+//       const token = quizItem.tokens.find((t) => t.key === o)!;
+//       sentence.push({
+//         word: {
+//           key: token.key,
+//           text: token.raw.text,
+//         },
+//         isHidden:  o === quizItem.completeToken,
+//       });
+//    }
  
-  // tokens for options and skip sentence tokens
-  const tokens = quizItem.tokens.map((t) => {
-    return {
-      key: t.key,
-      text: t.raw.text,
-    };
-  });
+//   // tokens for options and skip sentence tokens
+//   const tokens = quizItem.tokens.map((t) => {
+//     return {
+//       key: t.key,
+//       text: t.raw.text,
+//     };
+//   });
  
-  return {
-    id: quizItem.id,
-    audioFile: getAudioUrl(quizItem.sols[0].key),
-    text: quizItem.sols[0].text,
-    correctAnswer: quizItem.sols[1].text,
-    // clean sentence (key, text)
+//   return {
+//     id: quizItem.id,
+//     audioFile: getAudioUrl(quizItem.sols[0].key),
+//     text: quizItem.sols[0].text,
+//     correctAnswer: quizItem.sols[1].text,
+//     // clean sentence (key, text)
  
-    sentence: sentence,
-    tokens: shuffleArray(tokens),
-  };
-}
+//     sentence: sentence,
+//     tokens: shuffleArray(tokens),
+//   };
+// }
 
 function convertQ(quizItem: QuizTypes.QuizQItem) {
   //  question from sols
@@ -203,6 +203,6 @@ export {
   convertQ,
   convertQb,
   convertR,
-  convertC1b,
+  // convertC1b,
   convertD,
 };

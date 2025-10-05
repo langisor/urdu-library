@@ -1,9 +1,9 @@
 "use client";
-import { QuizC1bItem } from "../mondly/category/quizzer/_components/definitions";
+import { QuizC1bItem } from "../../definitions";
 import {
   shuffleArray,
   getAudioUrl,
-} from "../mondly/category/quizzer/_components/helpers-types";
+} from "../../helpers-types";
 type Word = {
   text: string;
 };
