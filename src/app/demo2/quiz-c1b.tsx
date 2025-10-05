@@ -3,7 +3,7 @@ import { QuizC1bItem } from "../mondly/category/quizzer/_components/definitions"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { useC1b } from "./use-c1b";
-import { State } from "@hookstate/core";
+import { State, useHookstate } from "@hookstate/core";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import * as React from "react";
@@ -19,6 +19,9 @@ type Word = {
   text: string;
   isCompleteToken: boolean;
 };
+
+const PLACEHOLDER = "______";
+
 export default function QuizC1b({
   quizData,
   quizzerFeedback,
@@ -28,15 +31,13 @@ export default function QuizC1b({
 
   const { playCorrectTune, playIncorrectTune } = useTune();
 
+  const handleWordClick = (word: string) => {
+    console.log("handleWordClick()...", word);
+    quizzerFeedback.isAnswered.set(true);
+    actions.handleSelectWord(word);
+  };
   const checkAnswer = () => {
     console.log("checkAnswer()...");
-    if (actions.isAnswered) {
-      if (actions.isCorrect) {
-        playCorrectTune();
-      } else {
-        playIncorrectTune();
-      }
-    }
   };
 
   const renderTargetWordList = () => {
@@ -61,7 +62,7 @@ export default function QuizC1b({
         {interactiveData.wordsList.map((word, index) => (
           <Button
             key={`word-${index}`}
-            onClick={() => actions.handleWordClick(word)}
+            onClick={() => handleWordClick(word)}
           >
             {word}
           </Button>
@@ -72,10 +73,13 @@ export default function QuizC1b({
   const renderActionButtons = () => {
     return (
       <Card className="flex flex-wrap flex-row gap-3 items-center justify-center">
-        <Button onClick={checkAnswer} disabled={!actions.isAnswered}>
-         تأكد
+        <Button
+          onClick={checkAnswer}
+          disabled={!quizzerFeedback.isAnswered.value}
+        >
+          تأكد
         </Button>
-        <Button onClick={actions.reset}>Reset</Button>
+        <Button onClick={() => console.log("reset")}>Reset</Button>
       </Card>
     );
   };

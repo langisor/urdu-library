@@ -8,21 +8,11 @@ import {
 import { useHookstate, State } from "@hookstate/core";
 import { convertC1b } from "./convertC1b";
 
-type ConvertC1bReturn = {
-  wordsList: string[];
-  targetWordList: (string | undefined)[];
-  correctWord: string | undefined;
-  completeIndex: number;
-  audioFile: string;
-  questionText: string;
-  correctText: string;
-};
+const PLACEHOLDER = "______";
+
 export function useC1b(quizData: QuizC1bItem) {
-
-
-  const selectedWord = useHookstate<string>("______");
-  const isAnswered = useHookstate<boolean>(false);
-  const isCorrect = useHookstate<boolean | null>(null);
+  //  states
+  const selectedWord = useHookstate<string>(PLACEHOLDER);
 
   const {
     wordsList,
@@ -33,6 +23,8 @@ export function useC1b(quizData: QuizC1bItem) {
     questionText,
     correctText,
   } = React.useMemo(() => convertC1b(quizData), [quizData]);
+
+  // functions
   // replace correctText in targetWordList
   const targetWordListWithSelectedWord = targetWordList.map((word, index) => {
     if (index === completeIndex) {
@@ -42,24 +34,17 @@ export function useC1b(quizData: QuizC1bItem) {
   });
 
   // functin to reset convertC1b quiz
-  const reset = () => {
-    selectedWord.set("______");
-    isAnswered.set(false);
-    isCorrect.set(null);
-  };
 
-  const handleWordClick = (word: string) => {
+  const handleSelectWord = (word: string) => {
     console.log("handleWordClick", word);
-
-    if (!isAnswered.value) {
+    if (selectedWord.value !== PLACEHOLDER) {
+      //  save a copy
+      const prevSelectedWord = selectedWord.value;
       selectedWord.set(word);
-      isAnswered.set(true);
-    } else {
-      isAnswered.set(true);
-      const oldWord = selectedWord.value;
-      selectedWord.set(word);
-      // remove from wordsList
-      wordsList.splice(wordsList.indexOf(oldWord), 1);
+      // restore prevSelectedWord into wordsList
+      const wordsListCopy = [...wordsList];
+      wordsListCopy[completeIndex] = prevSelectedWord;
+      selectedWord.set(wordsListCopy[completeIndex]);
     }
   };
 
@@ -77,10 +62,7 @@ export function useC1b(quizData: QuizC1bItem) {
       completeIndex,
     },
     actions: {
-      handleWordClick,
-      reset,
-      isAnswered: isAnswered.get(),
-      isCorrect: isCorrect.get(),
+      handleSelectWord,
     },
   };
 }

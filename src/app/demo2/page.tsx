@@ -24,12 +24,12 @@ export default function DemoPage() {
           console.log("nextQuiz");
         }}
       />
-      <Card>
+      {/* <Card>
         <h1 className="text-2xl font-bold">All C1b samples</h1>
         <CardContent>
           <JsonViewerComponent data={data} />
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   );
 }
