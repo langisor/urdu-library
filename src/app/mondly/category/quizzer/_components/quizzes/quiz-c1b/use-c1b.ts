@@ -5,14 +5,13 @@ import { shuffleArray, getAudioUrl } from "../../helpers-types";
 import { useHookstate, State } from "@hookstate/core";
 import { convertC1b } from "./convertC1b";
 import { useTune } from "@/hooks/use-tone";
-
+import { Feedback } from "@/app/mondly/category/quizzer/_components/helpers-types";
 const PLACEHOLDER = "_____";
 
 export function useC1b(quizData: QuizC1bItem) {
   //  states
   const selectedWord = useHookstate<string>(PLACEHOLDER);
   const { playCorrectTune, playIncorrectTune } = useTune();
-
   const {
     wordsList,
     targetWordList,
@@ -36,23 +35,35 @@ export function useC1b(quizData: QuizC1bItem) {
     (word) => word !== PLACEHOLDER
   );
   console.log("useC1b quizData invoked ...");
-  console.log("targetWordListWithSelectedWord", wordsListWithoutPlaceholder);
+ 
 
 
   // functions
 
-  const checkAnswer = () => {
+  const checkAnswer = (feedback: State<Feedback>) => {
     console.log("checkAnswer()...");
     if (selectedWord.value === correctWord) {
+      console.log("correct answer", selectedWord.value, correctWord)
+      console.log("selectedWord.value", selectedWord.value)
+      console.log("correctWord", correctWord)
       playCorrectTune();
-      return true;
+      feedback.set({
+        isAnswered: true,
+        isCorrect: true,
+        message: "الإجابة صحيحة",
+      });
     } else {
       playIncorrectTune();
-      return false;
+      feedback.set({
+        isAnswered: true,
+        isCorrect: false,
+        message: "الإجابة الخاطئة",
+      });
     }
   };
   const handleSelectWord = (word: string) => {
     console.log("handleWordClick", word);
+    selectedWord.set(word);
     if (selectedWord.value === PLACEHOLDER) {
       selectedWord.set(word);
     } else {
@@ -73,13 +84,14 @@ export function useC1b(quizData: QuizC1bItem) {
     staticData: {
       audioFile,
       questionText,
-      correctText,
+      // correctText,
       correctWord,
-      completeIndex,
+      // completeIndex,
     },
     actions: {
       handleSelectWord,
       checkAnswer,
+      selectedWord,
     },
   };
 }

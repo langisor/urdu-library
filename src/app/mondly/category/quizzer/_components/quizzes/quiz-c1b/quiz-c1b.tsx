@@ -29,18 +29,11 @@ export default function QuizC1b({
     quizzerFeedback.isAnswered.set(true);
     actions.handleSelectWord(word);
   };
-  const checkAnswer = () => {
+  const checkAnswer = React.useCallback(() => {
     console.log("checkAnswer()...");
-    const isCorrect = actions.checkAnswer();
-    if (isCorrect) {
-      quizzerFeedback.isCorrect.set(true);
-      quizzerFeedback.message.set("الإجابة صحيحة");
-    } else {
-      quizzerFeedback.isCorrect.set(false);
-      quizzerFeedback.message.set("الإجابة الخاطئة");
-    }
+    actions.checkAnswer(quizzerFeedback);
     onNextQuiz();
-  };
+  }, [quizzerFeedback, actions, onNextQuiz]);
 
   const renderTargetWordList = () => {
     return (
@@ -48,7 +41,7 @@ export default function QuizC1b({
         {interactiveData.targetWordList.map((word, index) => (
           <Button
             disabled={true}
-            variant={staticData.completeIndex === index ? "default" : "outline"}
+            variant={staticData.correctWord === word ? "default" : "outline"}
             key={`target-${index}`}
           >
             {word}

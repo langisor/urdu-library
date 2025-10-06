@@ -1,27 +1,23 @@
 "use client";
-/**
- * receives a questions array
- * interactively show a progress and and check answers
- * auto move to the next question after show a feedback messa ge to the user
- */
-import {
-  Card,
- 
-} from "@/components/ui/card";
 
+import { Card } from "@/components/ui/card";
 import * as React from "react";
 import { Feedback } from "./helpers-types";
 import { useStep } from "@/hooks/use-step";
 import QuizzerProgress from "./quizzer-progress";
-import { useGlobalScoreState } from "../global-score-state";
+// import { useGlobalScoreState } from "../global-score-state";
 import * as Quizzes from "./quizzes";
-import { useHookstate, State, hookstate } from "@hookstate/core";
+import { useHookstate, State } from "@hookstate/core";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
+import { LoadingSpinner } from "./loading-spinner";
 
 interface Props {
   quizzes: any[];
 }
-
+const initialScoreState = {
+  userName: "",
+  score: 0,
+};
 const initialFeedback = {
   isAnswered: false,
   isCorrect: null,
@@ -30,13 +26,14 @@ const initialFeedback = {
 export default function Quizzer({ quizzes }: Props) {
   // states
   const [currentStep, actions] = useStep(quizzes.length);
-  const scoreState = useGlobalScoreState();
+  const scoreState = useHookstate(initialScoreState);
   const quizState = useHookstate(false); // true when the user has completed the last question
 
   // Use a local state variable to watch for changes (optional, but needed if you render the state)
   const feedbackState: State<Feedback> = useHookstate(
     initialFeedback as Feedback
   );
+  const loadingState = useHookstate(false);
 
   // functions and renders
 
@@ -54,11 +51,15 @@ export default function Quizzer({ quizzes }: Props) {
    */
   const nextQuiz = () => {
     // increment the score if current answer is correct
-    scoreState.addToScore(1);
-    resetUI();
+    if (feedbackState.isCorrect.get() === true) {
+      scoreState.set((p) => ({ ...p, score: p.score + 1 }));
+    }
+
     // check if this  Not the last question in Quiz
     console.log("nextQuestion....");
+    resetUI();
     const canGoToNext = actions.canGoToNextStep;
+
     if (canGoToNext) {
       actions.goToNextStep();
     } else {
@@ -71,7 +72,9 @@ export default function Quizzer({ quizzes }: Props) {
     return (
       <Card className="w-full bg-gradient-to-b from-secondary to-primary/40 text-xl flex flex-row gap-2 items-center p-2">
         <span>Your score: </span>
-        <span className="font-bold text-blue-600">{scoreState.getScore()}</span>
+        <span className="font-bold text-blue-600">
+          {scoreState.score.get()}
+        </span>
       </Card>
     );
   };
@@ -99,30 +102,38 @@ export default function Quizzer({ quizzes }: Props) {
           />
         );
       default:
-        return <Card><JsonViewerComponent data={currentQuiz} /></Card>;
+        return (
+          <Card>
+            <JsonViewerComponent data={currentQuiz} />
+          </Card>
+        );
     }
   };
   const renderFeedback = () => {
-    if (feedbackState.isAnswered.get() === true) {
-      if (!feedbackState.isCorrect.get()) {
-        return (
-          <Card className="bg-red-600 text-white text-xl px-2 py-2">
-            {feedbackState.message.get()}
-          </Card>
-        );
-      } else {
-        return (
-          <Card className="bg-green-600 text-white text-xl px-2 py-2">
-            {feedbackState.message.get()}
-          </Card>
-        );
-      }
+    const initialStyle = "text-white bg-gray-500";
+    const isCorrectStyle = "text-white bg-green-500";
+    const isIncorrectStyle = "text-white bg-red-500";
+
+    if (feedbackState.isAnswered.get()) {
+      return (
+        <Card
+          className={
+            feedbackState.isCorrect.get() === true
+              ? isCorrectStyle
+              : isIncorrectStyle
+          }
+        >
+          {feedbackState.message.get()}
+        </Card>
+      );
     } else {
-      return <Card className="text-xl px-2 py-2">Answer Your question</Card>;
+      return (
+        <Card className={initialStyle}>{feedbackState.message.get()}</Card>
+      );
     }
   };
   // variables
-  const currentQuiz = quizzes[currentStep-1];
+  const currentQuiz = quizzes[currentStep - 1];
   // console.log("rendering quizzer ....", currentQuiz);
 
   // returns
