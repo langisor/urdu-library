@@ -2,7 +2,7 @@
 import { QuizT1Item } from "../definitions";
 import { convertT1 } from "../converters";
 import { useHookstate, State } from "@hookstate/core";
-
+import { LoadingSpinner } from "../loading-spinner";
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
@@ -46,20 +46,18 @@ export default function QuizT1({
       //   state.question.correctAnswer.get().length
       // );
       if (state.question.correctAnswer.get() === selectedTokensText) {
-        state.isFinished.set(true);
+        playCorrectTune();
         quizzerFeedback.isCorrect.set(true);
         quizzerFeedback.message.set("أحسنت");
-        playCorrectTune();
-        // go to next quiz after 3 seconds
-        onNextQuiz();
       } else {
+        playIncorrectTune();
+
         quizzerFeedback.isCorrect.set(false);
         quizzerFeedback.message.set(
           `الترتيب الصحيح هو: ${state.question.correctAnswer.get()}`
         );
-        playIncorrectTune();
-        // go to next quiz after 3 seconds
-        onNextQuiz();
+
+        quizzerFeedback.isAnswered.set(true);
       }
     },
     selectToken: (token: string) => {
@@ -92,10 +90,31 @@ export default function QuizT1({
     },
     renderSelectedTokensArea: () => {
       return (
-        <Card className="h-[100px]">
+        <Card className="h-[100px] my-2">
           <CardContent className="flex justify-start gap-3 flex-wrap ">
             {selectedTokens.get().map((token) => (
-              <Button key={token} onClick={() => actions.selectToken(token)}>
+              <Button
+                disabled={true}
+                key={token}
+                onClick={() => actions.selectToken(token)}
+              >
+                {token}
+              </Button>
+            ))}
+          </CardContent>
+        </Card>
+      );
+    },
+    renderAvailableTokensArea: () => {
+      return (
+        <Card className="h-[100px] my-2">
+          <CardContent className="flex justify-start gap-3 flex-wrap ">
+            {state.question.tokens.get().map((token) => (
+              <Button
+                disabled={selectedTokens.get().includes(token)}
+                key={token}
+                onClick={() => actions.selectToken(token)}
+              >
                 {token}
               </Button>
             ))}
@@ -132,9 +151,10 @@ export default function QuizT1({
       {renders.renderHeader()}
 
       {/* selected tokens area */}
+      {renders.renderSelectedTokensArea()}
 
       {/* available tokens area */}
-      {renders.renderSelectedTokensArea()}
+      {renders.renderAvailableTokensArea()}
 
       {/* actions buttons */}
       {renders.renderActionsButtons()}
