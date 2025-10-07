@@ -140,15 +140,15 @@
   button {
     @apply hover:opacity-80 transition-all duration-200 hover:scale-105 hover:cursor-pointer;
   }
-  
+
 }
- 
+
 .nastaleeq-text,
 .urdu-text {
    @apply font-nastaliq;
   padding:  1.5rem 1rem ;
    direction: rtl;
-   
+
   text-align: right;
 }
 .nastaliq-bold {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import * as React from "react";
 import { Feedback } from "./helpers-types";
 import { useStep } from "@/hooks/use-step";
@@ -10,6 +10,13 @@ import * as Quizzes from "./quizzes";
 import { useHookstate, State } from "@hookstate/core";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { LoadingSpinner } from "./loading-spinner";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemTitle,
+} from "@/components/ui/item";
 
 interface Props {
   quizzes: any[];
@@ -68,12 +75,14 @@ export default function Quizzer({ quizzes }: Props) {
     console.log("render Scorebar....");
 
     return (
-      <Card className="w-full bg-gradient-to-b from-secondary to-primary/40 text-xl flex flex-row gap-2 items-center p-2">
-        <span>Your score: </span>
-        <span className="font-bold text-blue-600">
-          {scoreState.score.get()}
-        </span>
-      </Card>
+      <Item className="w-full bg-gradient-to-b from-secondary to-primary/40 text-xl flex flex-row gap-2 items-center p-2">
+        <ItemContent>
+          <ItemTitle>Score</ItemTitle>
+          <ItemDescription>
+            Your score: {scoreState.score.get()}
+          </ItemDescription>
+        </ItemContent>
+      </Item>
     );
   };
   const renderProgress = () => {
@@ -109,9 +118,9 @@ export default function Quizzer({ quizzes }: Props) {
         );
       default:
         return (
-          <Card>
+          <Item>
             <JsonViewerComponent data={currentQuiz} />
-          </Card>
+          </Item>
         );
     }
   };
@@ -122,7 +131,7 @@ export default function Quizzer({ quizzes }: Props) {
 
     if (feedbackState.isAnswered.get()) {
       return (
-        <Card
+        <Item
           className={
             feedbackState.isCorrect.get() === true
               ? isCorrectStyle
@@ -130,11 +139,11 @@ export default function Quizzer({ quizzes }: Props) {
           }
         >
           {feedbackState.message.get()}
-        </Card>
+        </Item>
       );
     } else {
       return (
-        <Card className={initialStyle}>{feedbackState.message.get()}</Card>
+        <Item className={initialStyle}>{feedbackState.message.get()}</Item>
       );
     }
   };
@@ -157,10 +166,13 @@ export default function Quizzer({ quizzes }: Props) {
 
       <div> {renderQuestion()}</div>
 
-      {/* Loading Spinner */}
-      {loading.get() && renderLoadingSpinner()}
-      {/* feedback */}
-      {renderFeedback()}
+      <div className="flex flex-row gap-2">
+        {/* feedback */}
+        <div>{renderFeedback()}</div>
+
+        {/* Loading Spinner */}
+       {loading.get() &&  <div>{ renderLoadingSpinner()}</div>}
+      </div>
     </div>
   );
 }
