@@ -45,7 +45,9 @@ export default function Quizzer({ quizzes }: Props) {
   // functions and renders
   const resetUI = () => {
     console.log("resetUI....");
-    feedbackState.set(initialFeedback);
+    feedbackState.isAnswered.set(false);
+    feedbackState.isCorrect.set(null);
+    feedbackState.message.set("اجب على السؤال ثم اضغط على  تأكد");
   };
 
   /**
@@ -133,16 +135,19 @@ export default function Quizzer({ quizzes }: Props) {
         feedbackState.isCorrect.get() === true
           ? isCorrectStyle
           : isIncorrectStyle;
+      return <Item className={style}>{feedbackState.message.get()}</Item>;
     } else {
       style = initialStyle;
+      return <Item className={style}>{feedbackState.message.get()}</Item>;
     }
-    return <Item className={style}>{feedbackState.message.get()}</Item>;
   };
-
- 
+  const renderLoadingSpinner = () => {
+    return <LoadingSpinner time={2000} onNext={nextQuiz} />;
+  };
   // variables
   const currentQuiz = quizzes[currentStep - 1];
   // console.log("rendering quizzer ....", currentQuiz);
+  console.log("feedbackState", feedbackState.get());
 
   // returns
 
@@ -156,13 +161,11 @@ export default function Quizzer({ quizzes }: Props) {
       <div className="flex flex-col gap-2 text-right" dir="rtl">
         <div> {renderQuestion()}</div>
 
+        {/* feedback */}
         <div className="flex flex-row gap-2">
-          {/* feedback */}
           <div>{renderFeedback()}</div>
-
-          {/* Loading Spinner */}
           {feedbackState.isAnswered.get() && (
-            <LoadingSpinner time={2000} onNext={nextQuiz} />
+            <div>{renderLoadingSpinner()}</div>
           )}
         </div>
       </div>

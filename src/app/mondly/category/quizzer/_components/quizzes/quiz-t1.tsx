@@ -57,8 +57,9 @@ export default function QuizT1({
           `الترتيب الصحيح هو: ${state.question.correctAnswer.get()}`
         );
 
-        quizzerFeedback.isAnswered.set(true);
+         
       }
+      quizzerFeedback.isAnswered.set(true);
     },
     selectToken: (token: string) => {
       selectedTokens.set((p) => [...p, token]);
