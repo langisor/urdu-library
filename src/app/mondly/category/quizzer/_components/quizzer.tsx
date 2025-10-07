@@ -23,6 +23,7 @@ const initialFeedback = {
   isCorrect: null,
   message: "",
 };
+
 export default function Quizzer({ quizzes }: Props) {
   // states
   const [currentStep, actions] = useStep(quizzes.length);
@@ -33,23 +34,20 @@ export default function Quizzer({ quizzes }: Props) {
   const feedbackState: State<Feedback> = useHookstate(
     initialFeedback as Feedback
   );
-  const loadingState = useHookstate(false);
+  const loading = useHookstate(false);
 
   // functions and renders
-
   const resetUI = () => {
-    feedbackState.set({
-      isAnswered: false,
-      isCorrect: null,
-      message: "Answer your question",
-    });
+    feedbackState.set(initialFeedback);
   };
 
   /**
    * This function will give child component a signal to move to the next question
    * it will also increment the score if current answer is correct
    */
+
   const nextQuiz = () => {
+    loading.set(true);
     // increment the score if current answer is correct
     if (feedbackState.isCorrect.get() === true) {
       scoreState.set((p) => ({ ...p, score: p.score + 1 }));
@@ -57,7 +55,6 @@ export default function Quizzer({ quizzes }: Props) {
 
     // check if this  Not the last question in Quiz
     console.log("nextQuestion....");
-    resetUI();
     const canGoToNext = actions.canGoToNextStep;
 
     if (canGoToNext) {
@@ -65,6 +62,7 @@ export default function Quizzer({ quizzes }: Props) {
     } else {
       quizState.set(true);
     }
+    resetUI();
   };
   const renderScorebar = () => {
     console.log("render Scorebar....");
@@ -101,6 +99,14 @@ export default function Quizzer({ quizzes }: Props) {
             onNextQuiz={nextQuiz}
           />
         );
+      case "T1":
+        return (
+          <Quizzes.QuizT1
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
+            onNextQuiz={nextQuiz}
+          />
+        );
       default:
         return (
           <Card>
@@ -132,6 +138,9 @@ export default function Quizzer({ quizzes }: Props) {
       );
     }
   };
+  const renderLoadingSpinner = () => {
+    return <LoadingSpinner time={2000} onNext={() => loading.set(false)} />;
+  };
   // variables
   const currentQuiz = quizzes[currentStep - 1];
   // console.log("rendering quizzer ....", currentQuiz);
@@ -148,6 +157,8 @@ export default function Quizzer({ quizzes }: Props) {
 
       <div> {renderQuestion()}</div>
 
+      {/* Loading Spinner */}
+      {loading.get() && renderLoadingSpinner()}
       {/* feedback */}
       {renderFeedback()}
     </div>
