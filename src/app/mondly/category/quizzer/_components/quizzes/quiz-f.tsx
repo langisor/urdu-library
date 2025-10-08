@@ -1,6 +1,6 @@
 "use client";
 import { QuizFItem } from "../definitions";
-import { convertF, QuestionF } from "../converters";
+import { convertF } from "../converters";
 import { useHookstate, State } from "@hookstate/core";
 import { shuffleArray } from "@/lib/helpers";
 
@@ -10,19 +10,9 @@ import { TonePlayerButton } from "@/components/general/tone-button-player";
 import {
   Card,
   CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
+
   CardFooter,
 } from "@/components/ui/card";
-import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemGroup,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item";
 import * as React from "react";
 import { Feedback } from "../definitions";
 
@@ -96,7 +86,7 @@ export default function QuizF({ quizData, quizzerFeedback }: QuizProps) {
           <div className="flex  flex-col gap-2">
             <Card className="flex flex-col gap-2 text-right">
               <CardContent className="flex flex-row gap-2 items-center justify-center">
-                <p className="arabic-text"> {currentQuestion.text.get()}</p>
+                <p className="urdu-text"> {currentQuestion.text.get()}</p>
                 <TonePlayerButton url={currentQuestion.audioFile.get()} />
               </CardContent>
             </Card>
@@ -139,7 +129,7 @@ function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
     return (
      <Card className="flex flex-col gap-2 items-center justify-center cursor-pointer" role="button" onClick={() => onCheckAnswer( option.text )}>
        <CardFooter>
-        <p className="urdu-text text-xl">{option.text}</p>
+        <h2 className="naskh-text text-xl">{option.text}</h2>
       </CardFooter>
       <CardContent className="  flex flex-col gap-2 items-center justify-center h-[200px] ">
  
@@ -169,7 +159,7 @@ function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
       
       </CardContent>
       <CardFooter>
-        <p className="urdu-text text-xl">{option.text}</p>
+        <h2 className="naskh-text text-xl">{option.text}</h2>
       </CardFooter>
     </Card>
   );

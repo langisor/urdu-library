@@ -2,10 +2,10 @@
 import * as React from "react";
 import { QuizC1bItem } from "../../definitions";
 import { shuffleArray, getAudioUrl } from "../../helpers-types";
-import { useHookstate, State } from "@hookstate/core";
+import { useHookstate, type State } from "@hookstate/core";
 import { convertC1b } from "./convertC1b";
 import { useTune } from "@/hooks/use-tone";
-import { Feedback } from "@/app/mondly/category/quizzer/_components/helpers-types";
+import type { Feedback } from "../../definitions";
 const PLACEHOLDER = "_____";
 
 export function useC1b(quizData: QuizC1bItem) {

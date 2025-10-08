@@ -21,7 +21,8 @@ import {
 interface Props {
   quizzes: any[];
 }
-const initialScoreState = {
+type ScoreState = { userName: string; score: number };
+const initialScoreState: ScoreState = {
   userName: "",
   score: 0,
 };
@@ -110,7 +111,6 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizC1b
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-            
           />
         );
       case "T1":
@@ -118,7 +118,6 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizT1
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-           
           />
         );
       case "T1b":
@@ -126,7 +125,6 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizT1b
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-           
           />
         );
       case "F":
@@ -134,7 +132,6 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizF
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-           
           />
         );
       case "Q":
@@ -142,7 +139,7 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizQ
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-           
+            scoreState={scoreState}
           />
         );
       case "QB":
@@ -150,7 +147,14 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizQb
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-           
+          />
+        );
+      case "D":
+        return (
+          <Quizzes.QuizD
+            quizData={currentQuiz}
+            quizzerFeedBack={feedbackState}
+            scoreState={scoreState}
           />
         );
       default:
