@@ -72,6 +72,10 @@ export default function Quizzer({ quizzes }: Props) {
     }
     resetUI();
   };
+  const resetScore = () => {
+    scoreState.score.set(0);
+    actions.reset();
+  };
   const renderScorebar = () => {
     console.log("render Scorebar....");
 
@@ -94,19 +98,19 @@ export default function Quizzer({ quizzes }: Props) {
         totalSteps={quizzes.length}
         nextStep={nextQuiz}
         prevStep={actions.goToPrevStep}
-        restart={actions.reset}
+        restart={resetScore}
       />
     );
   };
   const renderQuestion = () => {
-    console.log("renderQuestion");
+    console.log("renderQuestion Type: ", currentQuiz.type);
     switch (currentQuiz.type) {
       case "C1b":
         return (
           <Quizzes.QuizC1b
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-            onNextQuiz={nextQuiz}
+            
           />
         );
       case "T1":
@@ -114,7 +118,31 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizT1
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
-            onNextQuiz={nextQuiz}
+           
+          />
+        );
+      case "T1b":
+        return (
+          <Quizzes.QuizT1b
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
+           
+          />
+        );
+      case "F":
+        return (
+          <Quizzes.QuizF
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
+           
+          />
+        );
+      case "Q":
+        return (
+          <Quizzes.QuizQ
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
+           
           />
         );
       default:

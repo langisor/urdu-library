@@ -863,7 +863,11 @@ type QuizRItem = {
   };
   tokensEqualSize: boolean;
 };
-
+interface Feedback {
+  isAnswered: boolean;
+  isCorrect: boolean | null;
+  message: string;
+}
 export type {
   QuizC1bItem,
   SimplifiedC1bItem,
@@ -875,4 +879,5 @@ export type {
   QuizT1Item,
   QuizT1bItem,
   QuizT2Item,
+  Feedback,
 };

@@ -19,13 +19,12 @@ import { Feedback } from "@/app/mondly/category/quizzer/_components/helpers-type
 interface QuizT1Props {
   quizData: QuizT1Item;
   quizzerFeedback: State<Feedback>;
-  onNextQuiz: () => void;
 }
 
 export default function QuizT1({
   quizData,
   quizzerFeedback,
-  onNextQuiz,
+ 
 }: QuizT1Props) {
   const state = useHookstate({
     question: convertT1(quizData),
@@ -77,9 +76,9 @@ export default function QuizT1({
     renderHeader: () => {
       return (
         <Card className="h-full">
-          <CardHeader className="flex flex-row text-right gap-6">
-            <CardTitle className="flex flex-row gap-2">
-              <p>{state.question.text.get()}</p>
+          <CardHeader className="flex flex-row text-right gap-6 items-center ">
+            <CardTitle className="flex flex-row gap-2 ">
+              <p className="urdu-text">{state.question.text.get()}</p>
             </CardTitle>
 
             <CardDescription>
@@ -115,6 +114,7 @@ export default function QuizT1({
                 disabled={selectedTokens.get().includes(token)}
                 key={token}
                 onClick={() => actions.selectToken(token)}
+                className="naskh-text"
               >
                 {token}
               </Button>

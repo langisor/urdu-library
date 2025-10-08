@@ -1,146 +1,129 @@
-// "use client";
-// import { QuizT1bItem } from "../../_hooks/definitions";
-// import { convertT1b } from "../../_hooks/converters";
-// import { useHookstate } from "@hookstate/core";
+"use client";
+import { QuizT1bItem } from "../definitions";
+import { convertT1b } from "../converters";
+import { useHookstate,State } from "@hookstate/core";
+import type { Feedback } from "../definitions";
+ 
+import { Button } from "@/components/ui/button";
+import { useTune } from "@/hooks/use-tone";
+import { TonePlayerButton } from "@/components/general/tone-button-player";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import * as React from "react";
 
-// import { useGlobalState } from "../screens/_stores/global-state";
-// import { Button } from "@/components/ui/button";
-// import { useTune } from "@/hooks/use-tone";
-// import { TonePlayerButton } from "@/components/general/tone-button-player";
-// import {
-//   Card,
-//   CardContent,
-//   CardHeader,
-//   CardTitle,
-//   CardDescription,
-// } from "@/components/ui/card";
-// import * as React from "react";
+interface QuizT1bProps {
+  quizData: QuizT1bItem;
+  quizzerFeedback: State<Feedback>;
+}
+export default function QuizT1b({ quizData, quizzerFeedback }: QuizT1bProps) {
+  const state = useHookstate({
+    question: convertT1b(quizData),
+    isFinished: false,
+  });
 
-// export default function QuizT1b({ quiz }: { quiz: QuizT1bItem }) {
-//   const state = useHookstate({
-//     question: convertT1b(quiz),
-//     isFinished: false,
-//   });
+  const selectedTokens = useHookstate<string[]>([]);
+  const { playCorrectTune, playIncorrectTune } = useTune();
+ 
+ 
+  // actions
+  const actions = {
+    checkAnswer: () => {
+      // clean up selected tokens
+      const selectedTokensText = selectedTokens.get().join(" ").trim();
+      // clean up correct answer
+      const correctAnswer = state.question.correctAnswer
+        .get()
+        .trim()
+        .replace(/\۔/g, "");
+      console.log(selectedTokensText);
+      console.log(correctAnswer);
+      //  compare with correctAnswer
+      if (correctAnswer === selectedTokensText) {
+        state.isFinished.set(true);
+        quizzerFeedback.isCorrect.set(true);
+        quizzerFeedback.message.set("أحسنت");
+        playCorrectTune();
+         
+       
+         
+      } else {
+        quizzerFeedback.isCorrect.set(false);
+        quizzerFeedback.message.set(`الترتيب الصحيح هو: ${state.question.correctAnswer.get()}`);
+        playIncorrectTune();
+         
+      }
+      quizzerFeedback.isAnswered.set(true);
+    },
+    selectToken: (token: string) => {
+      // if token is already selected, remove it from question.tokens and add it to selectedTokens
+      if (selectedTokens.get().includes(token)) {
+        selectedTokens.set((p) => p.filter((t) => t !== token));
+        state.question.tokens.set((p) => [...p, token]);
+        return;
+      }
+      // if token is not selected, add it to selectedTokens and remove it from question.tokens
+      selectedTokens.set((p) => [...p, token]);
+      state.question.tokens.set((p) => p.filter((t) => t !== token));
+    },
+    reset: () => {
+      selectedTokens.set([]);
+      state.question.set(convertT1b(quizData));
+    },
+  };
+  console.log(state.get());
+  return (
+    <div className="flex flex-col  text-right" dir="rtl">
+      {/* Header */}
+      <Card className="h-full">
+        <CardHeader className="flex flex-row text-right gap-6">
+          <CardTitle>
+            <p className="naskh-text">{state.question.text.get()}</p>
+          </CardTitle>
 
-//   const selectedTokens = useHookstate<string[]>([]);
-//   const { playCorrectTune, playIncorrectTune } = useTune();
-//   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
-//     null
-//   );
-//   const mainScreenStore = useGlobalState();
-//   // actions
-//   const actions = {
-//     checkAnswer: () => {
-//       // clean up selected tokens
-//       const selectedTokensText = selectedTokens.get().join(" ").trim();
-//       // clean up correct answer
-//       const correctAnswer = state.question.correctAnswer
-//         .get()
-//         .trim()
-//         .replace(/\۔/g, "");
-//       console.log(selectedTokensText);
-//       console.log(correctAnswer);
-//       //  compare with correctAnswer
-//       if (correctAnswer === selectedTokensText) {
-//         state.isFinished.set(true);
-//         feedBack.set({ isCorrect: true, text: "أحسنت" });
-//         playCorrectTune();
-//         // go to next quiz after 3 seconds
-//         setTimeout(() => {
-//           mainScreenStore.nextQuiz();
-//         }, 3000);
-//         mainScreenStore.setScore(mainScreenStore.getScore() + 1);
-//       } else {
-//         feedBack.set({
-//           isCorrect: false,
-//           text: `الترتيب الصحيح هو: ${state.question.correctAnswer.get()}`,
-//         });
-//         playIncorrectTune();
-//         // go to next quiz after 3 seconds
-//         setTimeout(() => {
-//           mainScreenStore.nextQuiz();
-//         }, 3000);
-//       }
-//     },
-//     selectToken: (token: string) => {
-//       // if token is already selected, remove it from question.tokens and add it to selectedTokens
-//       if (selectedTokens.get().includes(token)) {
-//         selectedTokens.set((p) => p.filter((t) => t !== token));
-//         state.question.tokens.set((p) => [...p, token]);
-//         return;
-//       }
-//       // if token is not selected, add it to selectedTokens and remove it from question.tokens
-//       selectedTokens.set((p) => [...p, token]);
-//       state.question.tokens.set((p) => p.filter((t) => t !== token));
-//     },
-//     reset: () => {
-//       selectedTokens.set([]);
-//       state.question.set(convertT1b(quiz));
-//     },
-//   };
-//   console.log(state.get());
-//   return (
-//     <div className="flex flex-col  text-right" dir="rtl">
-//       {/* Header */}
-//       <Card className="h-full">
-//         <CardHeader className="flex flex-row text-right gap-6">
-//           <CardTitle>
-//             <p className="naskh-text">{state.question.text.get()}</p>
-//           </CardTitle>
+          <CardDescription>
+            <TonePlayerButton url={state.question.audioFile.get()} />
+          </CardDescription>
+        </CardHeader>
+      </Card>
 
-//           <CardDescription>
-//             <TonePlayerButton url={state.question.audioFile.get()} />
-//           </CardDescription>
-//         </CardHeader>
-//       </Card>
+      {/* selected tokens area */}
+      <Card>
+        <CardContent className="flex flex-col gap-6">
+          <Card className="h-[100px]">
+            <CardContent className="flex justify-start gap-3 flex-wrap ">
+              {selectedTokens.get().map((token) => (
+                <Button className="urdu-text" key={token} onClick={() => actions.selectToken(token)}>
+                  {token}
+                </Button>
+              ))}
+            </CardContent>
+          </Card>
 
-//       {/* selected tokens area */}
-//       <Card>
-//         <CardContent className="flex flex-col gap-6">
-//           <Card className="h-[100px]">
-//             <CardContent className="flex justify-start gap-3 flex-wrap ">
-//               {selectedTokens.get().map((token) => (
-//                 <Button className="urdu-text" key={token} onClick={() => actions.selectToken(token)}>
-//                   {token}
-//                 </Button>
-//               ))}
-//             </CardContent>
-//           </Card>
-
-//           {/* available tokens area */}
-//           <Card className="flex justify-start gap-3 flex-wrap ">
-//             <CardContent>
-//               {state.question.tokens.get().map((token) => (
-//                 <Button key={token} onClick={() => actions.selectToken(token)} className="urdu-text text-lg">
-//                   {token}
-//                 </Button>
-//               ))}
-//             </CardContent>
-//           </Card>
-//           {/* actions buttons */}
-//           <Card className="flex justify-end gap-3">
-//             <CardContent>
-//               <Button onClick={actions.checkAnswer} disabled={selectedTokens.get().length === 0}>تأكد</Button>
-//               <Button onClick={actions.reset} disabled={selectedTokens.get().length === 0}>مسح</Button>
-//             </CardContent>
-//           </Card>
-//           {feedBack && (
-//             <Card>
-//               <CardContent>
-//                 <p
-//                   className={
-//                     feedBack.get()?.isCorrect
-//                       ? "text-green-500"
-//                       : "text-red-500"
-//                   }
-//                 >
-//                   {feedBack.get()?.text}
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           )}
-//         </CardContent>
-//       </Card>
-//     </div>
-//   );
-// }
+          {/* available tokens area */}
+          <Card className="flex justify-start gap-3 flex-wrap ">
+            <CardContent>
+              {state.question.tokens.get().map((token) => (
+                <Button key={token} onClick={() => actions.selectToken(token)} className="urdu-text text-lg">
+                  {token}
+                </Button>
+              ))}
+            </CardContent>
+          </Card>
+          {/* actions buttons */}
+          <Card className="flex justify-end gap-3">
+            <CardContent>
+              <Button onClick={actions.checkAnswer} disabled={selectedTokens.get().length === 0}>تأكد</Button>
+              <Button onClick={actions.reset} disabled={selectedTokens.get().length === 0}>مسح</Button>
+            </CardContent>
+          </Card>
+ 
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

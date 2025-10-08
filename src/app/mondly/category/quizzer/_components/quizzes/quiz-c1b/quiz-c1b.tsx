@@ -12,16 +12,11 @@ import { Feedback } from "@/app/mondly/category/quizzer/_components/helpers-type
 interface QuizC1bState {
   quizData: QuizC1bItem;
   quizzerFeedback: State<Feedback>;
-  onNextQuiz: () => void;
 }
 
 const PLACEHOLDER = "_____";
 
-export default function QuizC1b({
-  quizData,
-  quizzerFeedback,
-  onNextQuiz,
-}: QuizC1bState) {
+export default function QuizC1b({ quizData, quizzerFeedback }: QuizC1bState) {
   const { interactiveData, staticData, actions } = useC1b(quizData);
 
   const handleWordClick = (word: string) => {
@@ -29,12 +24,10 @@ export default function QuizC1b({
     quizzerFeedback.isAnswered.set(true);
     actions.handleSelectWord(word);
   };
-  const checkAnswer = React.useCallback(() => {
+  const checkAnswer = () => {
     console.log("checkAnswer()...");
     actions.checkAnswer(quizzerFeedback);
-    onNextQuiz();
-  }, [quizzerFeedback, actions, onNextQuiz]);
-
+  };
   const renderTargetWordList = () => {
     return (
       <Card className="flex flex-wrap flex-row gap-3 items-center justify-center bg-gradient-to-b from-secondary to-primary/40">

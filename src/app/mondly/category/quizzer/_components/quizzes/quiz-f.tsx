@@ -1,212 +1,176 @@
-// "use client";
-// import { QuizFItem } from "../../_hooks/definitions";
-// import { convertF, QuestionF } from "../../_hooks/converters";
-// import { useHookstate } from "@hookstate/core";
-// import { shuffleArray } from "@/lib/helpers";
-// import { useGlobalState } from "../screens/_stores/global-state";
-// import Image from "next/image";
-// import { useTune } from "@/hooks/use-tone";
-// import { TonePlayerButton } from "@/components/general/tone-button-player";
-// import {
-//   Card,
-//   CardContent,
-//   CardHeader,
-//   CardTitle,
-//   CardDescription,
-//   CardFooter,
-// } from "@/components/ui/card";
-// import * as React from "react";
+"use client";
+import { QuizFItem } from "../definitions";
+import { convertF, QuestionF } from "../converters";
+import { useHookstate, State } from "@hookstate/core";
+import { shuffleArray } from "@/lib/helpers";
 
-// interface QuizState {
-//   questions: QuestionF[];
-//   currentQuestionIndex: number;
-//   isFinished: boolean;
-// }
+import Image from "next/image";
+import { useTune } from "@/hooks/use-tone";
+import { TonePlayerButton } from "@/components/general/tone-button-player";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/card";
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item";
+import * as React from "react";
+import { Feedback } from "../definitions";
 
-// export default function QuizF({ quiz }: { quiz: QuizFItem }) {
-//   const mainScreenState = useGlobalState();
-//   const state = useHookstate({
-//     questions: convertF(quiz),
-//     currentQuestionIndex: 0,
-//     isFinished: false,
-//   });
-//   const { playCorrectTune, playIncorrectTune } = useTune();
-//   const feedBack = useHookstate<{ isCorrect: boolean; text: string } | null>(
-//     null
-//   );
+interface QuizProps {
+  quizData: QuizFItem;
+  quizzerFeedback: State<Feedback>;
+}
+export default function QuizF({ quizData, quizzerFeedback }: QuizProps) {
+  const state = useHookstate({
+    questions: convertF(quizData),
+    currentQuestionIndex: 0,
+    isFinished: false,
+  });
 
-//   //   actions
-//   const actions = {
-//     checkAnswer: (option: string) => {
-//       //  check if option is correct
-//       if (option === currentQuestion.correctAnswer.get()) {
-//         playCorrectTune();
-//         feedBack.set({ isCorrect: true, text: "أحسنت" });
-//         // add score
-//         mainScreenState.setScore(mainScreenState.getScore() + 1);
-//       } else {
-//         playIncorrectTune();
-//         feedBack.set({
-//           isCorrect: false,
-//           text: "الإجابة الصحيحة هي: " + currentQuestion.correctAnswer.get(),
-//         });
-//       }
-//       // set isAnswered to true
-//       currentQuestion.isAnswered.set(true);
+  const { playCorrectTune, playIncorrectTune } = useTune();
 
-//       // go to next question if not finished after 3 seconds
-//       if (state.currentQuestionIndex.get() < state.questions.length - 1) {
-//         setTimeout(() => {
-//           state.currentQuestionIndex.set(state.currentQuestionIndex.get() + 1);
-//         }, 1000);
-//       } else {
-//         state.isFinished.set(true);
-//       }
-//     },
+  //   actions
+  const actions = {
+    checkAnswer: (option: string) => {
+      //  check if option is correct
+      if (option === currentQuestion.correctAnswer.get()) {
+        playCorrectTune();
+        quizzerFeedback.isCorrect.set(true);
+        quizzerFeedback.message.set("أحسنت");
+      } else {
+        playIncorrectTune();
+        quizzerFeedback.isCorrect.set(false);
+        quizzerFeedback.message.set(
+          "الإجابة الصحيحة هي: " + currentQuestion.correctAnswer.get()
+        );
+      }
+      // set isAnswered to true
+      currentQuestion.isAnswered.set(true);
 
-//     reset: () => {
-//       state.set({
-//         questions: convertF(quiz),
-//         currentQuestionIndex: 0,
-//         isFinished: false,
-//       });
-//       feedBack.set(null);
-//     },
-//   };
+      // go to next question if not finished after 3 seconds
+      if (state.currentQuestionIndex.get() < state.questions.length - 1) {
+        setTimeout(() => {
+          state.currentQuestionIndex.set(state.currentQuestionIndex.get() + 1);
+        }, 1000);
+      } else {
+        state.isFinished.set(true);
+        quizzerFeedback.isAnswered.set(true);
+      }
+    },
+  };
 
-//   if (state.isFinished.get()) {
-//     setTimeout(() => {
-//       mainScreenState.nextQuiz();
-//     }, 1000);
-//   }
-//   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
+  const currentQuestion = state.questions[state.currentQuestionIndex.get()];
 
-//   const renders = {
-//     renderFeedBack: () => {
-//       if (!feedBack.get()) return null;
-//       return (
-//         <Card>
-//           <CardContent>
-//             <p
-//               className={
-//                 feedBack.get()?.isCorrect ? "text-green-500" : "text-red-500"
-//               }
-//             >
-//               {feedBack.get()?.text}
-//             </p>
-//           </CardContent>
-//         </Card>
-//       );
-//     },
-//     renderCards: () => {
-//       // shuffle options
-//       currentQuestion.options.set((p) => shuffleArray(p));
-//       return (
-//         <div className="flex flex-col gap-2   p-2  ">
-//           {/* Header */}
-//           <Card>
-//             <CardContent
-//               className="flex  justify-between flex-row items-center gap-2"
-//               dir="rtl"
-//             >
-//               <p className="arabic-text text-center"> اختر الصورة الصحيحة</p>
-//               <p className="inter-text text-red-500 border-2 border-red-500 p-2">
-//                 TODO: fix shuffling images
-//               </p>
-//             </CardContent>
-//           </Card>
-//           {/* top option */}
-//           <div className="w-full">
-//             <OptionCard
-//               option={currentQuestion.options[0].get()}
-//               onCheckAnswer={actions.checkAnswer}
-//               textTop={true}
-//             />
-//           </div>
+  const renders = {
+    renderCards: () => {
+      // shuffle options
+      currentQuestion.options.set((p) => [...shuffleArray(p)]);
+      return (
+        <div
+          className="w-full  justify-center  flex flex-col gap-2   p-2 text-right "
+          dir="rtl"
+        >
+          <h2 className="arabic-text"> اختر الصورة الصحيحة</h2>
+          {/* Header */}
 
-//           {/* question */}
-//           <div className="w-full">
-//             <Card className="flex flex-col gap-2 text-right">
-//               <CardContent className="flex flex-row gap-2 items-center justify-center">
-//                 <p className="arabic-text"> {currentQuestion.text.get()}</p>
-//                 <TonePlayerButton url={currentQuestion.audioFile.get()} />
-//               </CardContent>
-//             </Card>
-//           </div>
+          {/* top option */}
+          <div className="flex  flex-col gap-6">
+            <OptionCard
+              option={currentQuestion.options[0].get()}
+              onCheckAnswer={actions.checkAnswer}
+              textTop={true}
+            />
+          </div>
 
-//           {/* bottom option */}
-//           <div className="w-full">
-//             <OptionCard
-//               option={currentQuestion.options[1].get()}
-//               onCheckAnswer={actions.checkAnswer}
-//               textTop={false}
-//             />
-//           </div>
-//         </div>
-//       );
-//     },
-//   };
+          {/* question */}
+          <div className="flex  flex-col gap-2">
+            <Card className="flex flex-col gap-2 text-right">
+              <CardContent className="flex flex-row gap-2 items-center justify-center">
+                <p className="arabic-text"> {currentQuestion.text.get()}</p>
+                <TonePlayerButton url={currentQuestion.audioFile.get()} />
+              </CardContent>
+            </Card>
+          </div>
 
-//   return (
-//     <div className="flex flex-col gap-2">
-//       <div>{renders.renderCards()}</div>
-//       <div>{renders.renderFeedBack()}</div>
-//       {/* <JsonViewerComponent data={state.get()} /> */}
-//     </div>
-//   );
-// }
+          {/* bottom option */}
+          <div className="flex  flex-col gap-2">
+            <OptionCard
+              option={currentQuestion.options[1].get()}
+              onCheckAnswer={actions.checkAnswer}
+              textTop={false}
+            />
+          </div>
+        </div>
+      );
+    },
+  };
 
-// interface OptionCardProps {
-//   textTop: boolean;
-//   option: {
-//     id: string;
-//     text: string;
-//     image: string;
-//   };
-//   onCheckAnswer: (answer: string) => void;
-// }
+  return (
+    <div className="flex flex-col gap-2">
+      <div>{renders.renderCards()}</div>
 
-// function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
-//   if (textTop) {
-//     return (
-//       <Card
-//         role="button"
-//         onClick={() => onCheckAnswer(option.text)}
-//         className="cursor-pointer hover:scale-105 hover:shadow-2xl arabic-text h-full"
-//       >
-//         <CardHeader className="flex justify-center items-center">
-//           <CardTitle>{option.text}</CardTitle>
-//         </CardHeader>
-//         <CardContent className="flex justify-center items-center">
-//           <Image
-//             src={option.image}
-//             alt={option.text}
-//             className=""
-//             width={300}
-//             height={300}
-//           />
-//         </CardContent>
-//       </Card>
-//     );
-//   }
-//   return (
-//     <Card
-//       role="button"
-//       onClick={() => onCheckAnswer(option.text)}
-//       className="cursor-pointer hover:scale-105 hover:shadow-2xl arabic-text"
-//     >
-//       <CardContent className="flex justify-center items-center">
-//         <Image
-//           src={option.image}
-//           alt={option.text}
-//           className=""
-//           width={300}
-//           height={300}
-//         />
-//       </CardContent>
-//       <CardFooter className="flex justify-center items-center">
-//         <CardTitle>{option.text}</CardTitle>
-//       </CardFooter>
-//     </Card>
-//   );
-// }
+      {/* <JsonViewerComponent data={state.get()} /> */}
+    </div>
+  );
+}
+
+interface OptionCardProps {
+  textTop: boolean;
+  option: {
+    id: string;
+    text: string;
+    image: string;
+  };
+  onCheckAnswer: (answer: string) => void;
+}
+
+function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
+  if (textTop) {
+    return (
+     <Card className="flex flex-col gap-2 items-center justify-center cursor-pointer" role="button" onClick={() => onCheckAnswer( option.text )}>
+       <CardFooter>
+        <p className="urdu-text text-xl">{option.text}</p>
+      </CardFooter>
+      <CardContent className="  flex flex-col gap-2 items-center justify-center h-[200px] ">
+ 
+        <Image
+          src={option.image}
+          alt={option.text}
+          className="object-contain"
+          width={200}
+          height={200}
+        />
+      </CardContent>
+     
+     </Card>
+    );
+  }
+  return (
+    <Card className="flex flex-col gap-2 items-center justify-center cursor-pointer" role="button" onClick={() => onCheckAnswer(option.text)}>
+      <CardContent className="   flex flex-col gap-2 items-center justify-center h-[200px]">
+        <Image
+          src={option.image}
+          alt={option.text}
+          className="object-contain "
+          width={200}
+          height={200}
+
+        />
+      
+      </CardContent>
+      <CardFooter>
+        <p className="urdu-text text-xl">{option.text}</p>
+      </CardFooter>
+    </Card>
+  );
+}
