@@ -5,7 +5,7 @@ import QuizC1b from "./quiz-c1b/quiz-c1b";
 // import QuizD from "./quiz-d";
 import QuizF from "./quiz-f";
 import QuizQ from "./quiz-q";
-// import QuizQb from "./quiz-qb";
+import QuizQb from "./quiz-qb";
 
 export {
   QuizT1,
@@ -15,5 +15,5 @@ export {
   // QuizD,
   QuizF,
   QuizQ,
-  // QuizQb
+  QuizQb
 };

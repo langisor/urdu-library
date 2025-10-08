@@ -27,12 +27,12 @@ type Option = {
   text: string;
 };
 interface QuizQbProps {
-  quiz: QuizQbItem;
+  quizData: QuizQbItem;
   quizzerFeedback: State<Feedback>;
 }
-export default function QuizQb({ quiz, quizzerFeedback }: QuizQbProps) {
+export default function QuizQb({ quizData, quizzerFeedback }: QuizQbProps) {
   const state = useHookstate({
-    questions: convertQb(quiz),
+    questions: convertQb(quizData),
     currentQuestionIndex: 0,
     isAnswered: false,
   });

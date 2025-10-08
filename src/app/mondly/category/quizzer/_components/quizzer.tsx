@@ -145,6 +145,14 @@ export default function Quizzer({ quizzes }: Props) {
            
           />
         );
+      case "QB":
+        return (
+          <Quizzes.QuizQb
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
+           
+          />
+        );
       default:
         return (
           <Item>
