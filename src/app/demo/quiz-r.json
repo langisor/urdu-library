@@ -1,0 +1,510 @@
+{
+  "id": 640587,
+  "ord": [
+    "twG1Sp4ZGOR",
+    "tS5pk-anUJE"
+  ],
+  "sols": [
+    {
+      "key": "NdYB_q20t6uy29ZoFEdLP7VT5QmBr7qV",
+      "text": "بہت اچھا",
+      "phonetic": "Bohat achha.",
+      "dictionary": [
+        {
+          "raw": "بہت",
+          "translations": []
+        },
+        {
+          "raw": "اچھا",
+          "translations": [
+            {
+              "text": "جيد",
+              "type": "dictionary",
+              "phonetic": null
+            }
+          ]
+        }
+      ],
+      "phraseType": 1,
+      "text_tokens": [
+        {
+          "raw": {
+            "text": "بہت",
+            "length": 3,
+            "location": 0
+          },
+          "linker": {
+            "text": "",
+            "length": 0,
+            "location": 0
+          },
+          "prefix": {
+            "text": "",
+            "length": 0,
+            "location": 0
+          },
+          "suffix": {
+            "text": "",
+            "length": 0,
+            "location": 3
+          }
+        },
+        {
+          "raw": {
+            "text": "اچھا",
+            "length": 4,
+            "location": 4
+          },
+          "linker": {
+            "text": " ",
+            "length": 1,
+            "location": 3
+          },
+          "prefix": {
+            "text": "",
+            "length": 0,
+            "location": 4
+          },
+          "suffix": {
+            "text": "",
+            "length": 0,
+            "location": 8
+          }
+        }
+      ],
+      "phonetic_tokens": [
+        {
+          "raw": {
+            "text": "Bohat",
+            "length": 5,
+            "location": 0
+          },
+          "linker": {
+            "text": "",
+            "length": 0,
+            "location": 0
+          },
+          "prefix": {
+            "text": "",
+            "length": 0,
+            "location": 0
+          },
+          "suffix": {
+            "text": "",
+            "length": 0,
+            "location": 5
+          }
+        },
+        {
+          "raw": {
+            "text": "achha",
+            "length": 5,
+            "location": 6
+          },
+          "linker": {
+            "text": " ",
+            "length": 1,
+            "location": 5
+          },
+          "prefix": {
+            "text": "",
+            "length": 0,
+            "location": 6
+          },
+          "suffix": {
+            "text": ".",
+            "length": 1,
+            "location": 11
+          }
+        }
+      ],
+      "audio_updated_at": 1688820328
+    },
+    {
+      "key": "NdYB_q20t6uy29ZoFEdLP7VT5QmBr7qV",
+      "text": "جيد جدًا.",
+      "audio_updated_at": 1688820328
+    }
+  ],
+  "type": "R",
+  "lesson": 102,
+  "tokens": [
+    {
+      "key": "tGV-WJP5Wc0",
+      "raw": {
+        "text": "سنراك",
+        "length": 5,
+        "location": 4
+      },
+      "text": "سنراك",
+      "linker": {
+        "text": " ",
+        "length": 1,
+        "location": 3
+      },
+      "prefix": {
+        "text": "",
+        "length": 0,
+        "location": 4
+      },
+      "suffix": {
+        "text": "",
+        "length": 0,
+        "location": 9
+      }
+    },
+    {
+      "key": "tm1I53Xlwmq",
+      "raw": {
+        "text": "هذا",
+        "length": 3,
+        "location": 10
+      },
+      "text": "هذا",
+      "linker": {
+        "text": " ",
+        "length": 1,
+        "location": 9
+      },
+      "prefix": {
+        "text": "",
+        "length": 0,
+        "location": 10
+      },
+      "suffix": {
+        "text": "",
+        "length": 0,
+        "location": 13
+      }
+    },
+    {
+      "key": "twG1Sp4ZGOR",
+      "raw": {
+        "text": "جيد",
+        "length": 3,
+        "location": 0
+      },
+      "text": "جيد",
+      "linker": {
+        "text": "",
+        "length": 0,
+        "location": 0
+      },
+      "prefix": {
+        "text": "",
+        "length": 0,
+        "location": 0
+      },
+      "suffix": {
+        "text": "",
+        "length": 0,
+        "location": 3
+      }
+    },
+    {
+      "key": "tII4EjXR1vl",
+      "raw": {
+        "text": "المساء",
+        "length": 6,
+        "location": 14
+      },
+      "text": "المساء.",
+      "linker": {
+        "text": " ",
+        "length": 1,
+        "location": 13
+      },
+      "prefix": {
+        "text": "",
+        "length": 0,
+        "location": 14
+      },
+      "suffix": {
+        "text": ".",
+        "length": 1,
+        "location": 20
+      }
+    },
+    {
+      "key": "tS5pk-anUJE",
+      "raw": {
+        "text": "جدًا",
+        "length": 4,
+        "location": 4
+      },
+      "text": "جدًا.",
+      "linker": {
+        "text": " ",
+        "length": 1,
+        "location": 3
+      },
+      "prefix": {
+        "text": "",
+        "length": 0,
+        "location": 4
+      },
+      "suffix": {
+        "text": ".",
+        "length": 1,
+        "location": 8
+      }
+    },
+    {
+      "key": "t0Mkx_OHfb_",
+      "raw": {
+        "text": "نحن",
+        "length": 3,
+        "location": 0
+      },
+      "text": "نحن",
+      "linker": {
+        "text": "",
+        "length": 0,
+        "location": 0
+      },
+      "prefix": {
+        "text": "",
+        "length": 0,
+        "location": 0
+      },
+      "suffix": {
+        "text": "",
+        "length": 0,
+        "location": 3
+      }
+    }
+  ],
+  "wordID": 16093,
+  "modifiers": 636,
+  "alternates": [],
+  "quizSkipData": {
+    "ord": [
+      "tDO9Z2RGqHc",
+      "tMX0QuAr_dc"
+    ],
+    "sols": [
+      {
+        "key": "NdYB_q20t6uy29ZoFEdLP7VT5QmBr7qV",
+        "text": "بہت اچھا",
+        "phonetic": "Bohat achha.",
+        "dictionary": [
+          {
+            "raw": "بہت",
+            "translations": []
+          },
+          {
+            "raw": "اچھا",
+            "translations": [
+              {
+                "text": "جيد",
+                "type": "dictionary",
+                "phonetic": null
+              }
+            ]
+          }
+        ],
+        "phraseType": 1,
+        "text_tokens": [
+          {
+            "raw": {
+              "text": "بہت",
+              "length": 3,
+              "location": 0
+            },
+            "linker": {
+              "text": "",
+              "length": 0,
+              "location": 0
+            },
+            "prefix": {
+              "text": "",
+              "length": 0,
+              "location": 0
+            },
+            "suffix": {
+              "text": "",
+              "length": 0,
+              "location": 3
+            }
+          },
+          {
+            "raw": {
+              "text": "اچھا",
+              "length": 4,
+              "location": 4
+            },
+            "linker": {
+              "text": " ",
+              "length": 1,
+              "location": 3
+            },
+            "prefix": {
+              "text": "",
+              "length": 0,
+              "location": 4
+            },
+            "suffix": {
+              "text": "",
+              "length": 0,
+              "location": 8
+            }
+          }
+        ],
+        "phonetic_tokens": [
+          {
+            "raw": {
+              "text": "Bohat",
+              "length": 5,
+              "location": 0
+            },
+            "linker": {
+              "text": "",
+              "length": 0,
+              "location": 0
+            },
+            "prefix": {
+              "text": "",
+              "length": 0,
+              "location": 0
+            },
+            "suffix": {
+              "text": "",
+              "length": 0,
+              "location": 5
+            }
+          },
+          {
+            "raw": {
+              "text": "achha",
+              "length": 5,
+              "location": 6
+            },
+            "linker": {
+              "text": " ",
+              "length": 1,
+              "location": 5
+            },
+            "prefix": {
+              "text": "",
+              "length": 0,
+              "location": 6
+            },
+            "suffix": {
+              "text": ".",
+              "length": 1,
+              "location": 11
+            }
+          }
+        ],
+        "audio_updated_at": 1688820328
+      },
+      {
+        "key": "NdYB_q20t6uy29ZoFEdLP7VT5QmBr7qV",
+        "text": "جيد جدًا.",
+        "audio_updated_at": 1688820328
+      }
+    ],
+    "type": "T1",
+    "tokens": [
+      {
+        "key": "tJa-_Emtobm",
+        "raw": {
+          "text": "ما",
+          "length": 2,
+          "location": 0
+        },
+        "text": "ما",
+        "linker": {
+          "text": "",
+          "length": 0,
+          "location": 0
+        },
+        "prefix": {
+          "text": "",
+          "length": 0,
+          "location": 0
+        },
+        "suffix": {
+          "text": "",
+          "length": 0,
+          "location": 2
+        }
+      },
+      {
+        "key": "tDO9Z2RGqHc",
+        "raw": {
+          "text": "جيد",
+          "length": 3,
+          "location": 0
+        },
+        "text": "جيد",
+        "linker": {
+          "text": "",
+          "length": 0,
+          "location": 0
+        },
+        "prefix": {
+          "text": "",
+          "length": 0,
+          "location": 0
+        },
+        "suffix": {
+          "text": "",
+          "length": 0,
+          "location": 3
+        }
+      },
+      {
+        "key": "tMX0QuAr_dc",
+        "raw": {
+          "text": "جدًا",
+          "length": 4,
+          "location": 4
+        },
+        "text": "جدًا.",
+        "linker": {
+          "text": " ",
+          "length": 1,
+          "location": 3
+        },
+        "prefix": {
+          "text": "",
+          "length": 0,
+          "location": 4
+        },
+        "suffix": {
+          "text": ".",
+          "length": 1,
+          "location": 8
+        }
+      },
+      {
+        "key": "tuHk2pB7zEh",
+        "raw": {
+          "text": "اسمك",
+          "length": 4,
+          "location": 3
+        },
+        "text": "اسمك؟",
+        "linker": {
+          "text": " ",
+          "length": 1,
+          "location": 2
+        },
+        "prefix": {
+          "text": "",
+          "length": 0,
+          "location": 3
+        },
+        "suffix": {
+          "text": "؟",
+          "length": 1,
+          "location": 7
+        }
+      }
+    ],
+    "modifiers": 40,
+    "tokensEqualSize": true
+  },
+  "tokensEqualSize": true
+}
