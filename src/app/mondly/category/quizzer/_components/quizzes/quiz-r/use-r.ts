@@ -12,23 +12,28 @@ export function useQuizR({ quizData }: UseQuizRProps) {
   const isCorrect = useHookstate(false);
 
   const handleTokenClick = (tokenKey: string) => {
-     
+     selectedTokens.set((p) => [...p, tokenKey]);
   };
 
   const handleRemoveToken = (index: number) => {
-    
+    selectedTokens.set((p) => p.filter((_, i) => i !== index));
   };
 
   const handleConfirm = () => {
+    const correct =
+      selectedTokens.get().length === quizData.ord.length &&
+      selectedTokens.every((key, index) => key.get() === quizData.ord[index]);
+    isCorrect.set(correct);
  
   };
 
   const handleReset = () => {
- 
+    selectedTokens.set([]);
+    isCorrect.set(false);
   };
 
   const getTokenText = (key: string) => {
- 
+    return quizData.tokens.find((t) => t.key === key)?.text || "";
   };
 
   const availableTokens = quizData.tokens.filter(

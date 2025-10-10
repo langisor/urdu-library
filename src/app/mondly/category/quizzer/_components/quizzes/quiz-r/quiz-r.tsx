@@ -32,10 +32,10 @@ export default function QuizR({
   const renderHeader = () => {
     console.log("renderHeader ....")
     return (
-      <Card className="flex  flex-row gap-3 text-right urdu-text" dir="rtl">
+      <div className="flex  flex-row gap-3 text-right urdu-text" dir="rtl">
         <CardTitle>{staticData.text}</CardTitle>
         <TonePlayerButton url={staticData.audioFile} />
-      </Card>
+      </div>
     );
   };
 
