@@ -130,6 +130,14 @@ export default function Quizzer({ quizzes }: Props) {
             quizzerFeedback={feedbackState}
           />
         );
+      case "P":
+        console.log("rendering QuizP....");
+        return (
+          <Quizzes.QuizP
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
+          />
+        );
       case "F":
         console.log("rendering QuizF....");
         return (

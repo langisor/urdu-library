@@ -6,6 +6,7 @@ import QuizD from "./quiz-d";
 import QuizF from "./quiz-f";
 import QuizQ from "./quiz-q/quiz-q";
 import QuizQb from "./quiz-qb";
+import QuizP from "./quiz-p/quiz-p";
 
 export {
   QuizT1,
@@ -15,5 +16,6 @@ export {
   QuizD,
   QuizF,
   QuizQ,
-  QuizQb
+  QuizQb,
+  QuizP
 };
