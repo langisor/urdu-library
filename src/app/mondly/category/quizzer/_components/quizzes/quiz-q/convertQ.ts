@@ -1,8 +1,14 @@
 "use client";
-import { QuizQItem } from "../../definitions";
-import { shuffleArray, getAudioUrl } from "../../helpers-types";
 
-export function convertQ(quizData: QuizQItem) {
+import { QuizQItem } from "../../definitions";
+import {
+  shuffleArray,
+  getAudioUrl,
+  getImageUrl,
+  Feedback,
+} from "../../helpers-types";
+ 
+ export function convertQ(quizData: QuizQItem) {
   const _questions = [];
   for (let i = 0; i < quizData.sols.length; i++) {
     _questions.push({
