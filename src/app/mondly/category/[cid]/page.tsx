@@ -77,7 +77,7 @@ export default async function Category({
 
   const renderLessonCards = () => {
     return (
-      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3 naskh-text">
         {lessonsData.map((lesson) => (
           <Link
             href={`/mondly/category/quizzer?lid=${lesson.id}`}
@@ -85,7 +85,7 @@ export default async function Category({
             className="hover:opacity-80 transition"
           >
             <Card
-              className="w-full hover:opacity-80 transition cursor-pointer skew-1"
+              className="w-full hover:opacity-80 transition cursor-pointer skew-1 bg-gradient-to-b from-blue-500 to-blue-600"
               key={lesson.id}
             >
               <CardHeader>

@@ -28,7 +28,7 @@ export function CategoryCard({ category }: { category: Category }) {
   return (
     <div className="transition-transform duration-300 hover:scale-101 border border-gray-400 rounded-xl px-2 py-2">
       
-      <Card className="">
+      <Card className="text-right naskh-text">
         <CardContent className="">
           <h3 className="text-xl font-bold text-center mb-2">
             {category.name}
