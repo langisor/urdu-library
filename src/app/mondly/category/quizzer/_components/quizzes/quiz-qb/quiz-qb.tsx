@@ -1,6 +1,7 @@
 "use client";
 
 import { QuizQbItem, type Feedback } from "../../definitions";
+import { shuffleArray } from "../../helpers-types";
 import { useHookstate, type State } from "@hookstate/core";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import {
@@ -100,6 +101,7 @@ export default function QuizQb({
   };
 
   const renderOptions = () => {
+     
     return (
       <div className="urdu-text">
         <RadioGroup
