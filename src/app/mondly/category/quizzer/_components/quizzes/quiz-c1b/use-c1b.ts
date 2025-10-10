@@ -20,8 +20,9 @@ export function useC1b(quizData: QuizC1bItem) {
     audioFile,
     questionText,
     correctText,
-  } = React.useMemo(() => convertC1b(quizData), [quizData]);
+  } = convertC1b(quizData);
 
+  
   // replace correctText in targetWordList
   const targetWordListWithSelectedWord = targetWordList.map((word, index) => {
     if (index === completeIndex) {
@@ -36,7 +37,7 @@ export function useC1b(quizData: QuizC1bItem) {
   );
   console.log("useC1b quizData invoked ...");
  
-
+  
 
   // functions
 
@@ -46,20 +47,15 @@ export function useC1b(quizData: QuizC1bItem) {
       console.log("correct answer", selectedWord.value, correctWord)
       console.log("selectedWord.value", selectedWord.value)
       console.log("correctWord", correctWord)
-      playCorrectTune();
-      feedback.set({
-        isAnswered: true,
-        isCorrect: true,
-        message: "الإجابة صحيحة",
-      });
+      playCorrectTune();     
+      feedback.isCorrect.set(true);
+      feedback.message.set("الإجابة صحيحة");
     } else {
       playIncorrectTune();
-      feedback.set({
-        isAnswered: true,
-        isCorrect: false,
-        message: "الإجابة الخاطئة",
-      });
+      feedback.isCorrect.set(false);
+      feedback.message.set("الإجابة الصحيحة هي " + correctWord);
     }
+    feedback.isAnswered.set(true);
   };
   const handleSelectWord = (word: string) => {
     console.log("handleWordClick", word);

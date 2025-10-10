@@ -39,3 +39,20 @@ export function getImageUrl(image: string): string {
  return `/media/mondly/images/${image}`;
 }
 
+/**
+ * Removes all occurrences of values found in the 'valuesToRemove' array
+ * from the 'sourceArray'.
+ *
+ * @template T The type of the elements in the arrays.
+ * @param {T[]} sourceArray The array from which elements will be removed.
+ * @param {T[]} valuesToRemove The array containing the values to remove from the source array.
+ * @returns {T[]} A new array containing elements from the sourceArray that are not present in valuesToRemove.
+ */
+export function removeValues<T>(sourceArray: T[], valuesToRemove: T[]): T[] {
+  // 1. Create a Set of the values to remove for efficient O(1) lookup.
+  const valuesToRemoveSet = new Set(valuesToRemove);
+
+  // 2. Use the filter method to create a new array.
+  // The filter keeps an element if it is NOT present in the valuesToRemoveSet.
+  return sourceArray.filter(item => !valuesToRemoveSet.has(item));
+}

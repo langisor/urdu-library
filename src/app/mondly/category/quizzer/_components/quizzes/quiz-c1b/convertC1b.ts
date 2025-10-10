@@ -1,9 +1,6 @@
 "use client";
 import { QuizC1bItem } from "../../definitions";
-import {
-  shuffleArray,
-  getAudioUrl,
-} from "../../helpers-types";
+import { shuffleArray, getAudioUrl, removeValues } from "../../helpers-types";
 type Word = {
   text: string;
 };
@@ -17,11 +14,8 @@ export function convertC1b(quizData: QuizC1bItem) {
   const _completeIndex = quizData.ord.findIndex(
     (ordKey) => ordKey === quizData.completeToken
   );
- 
-  // remove duplicate words
-  const wordsList = _wordsList.filter(
-    (word, index) => _wordsList.indexOf(word) === index
-  );
+
+
 
   // build targetWordList from ord and tokens
   const targetWordList = quizData.ord.map((ordKey) => {
@@ -29,14 +23,24 @@ export function convertC1b(quizData: QuizC1bItem) {
     return token?.raw.text;
   });
 
-
   const _correctText = quizData.sols[1].text;
   const _audioFile = getAudioUrl(quizData.sols[0].key);
   const _questionText = quizData.sols[0].text;
 
-  console.log("convertC1b quizData invoked ...");
+  // remove duplicate words from wordsList except correct word
+  const wordsListWithoutDuplicate = removeValues(_wordsList, targetWordList);
+  //  remove placeholder
+  const wordsListWithoutPlaceholder = removeValues(_wordsList, [
+    PLACEHOLDER,
+  ]);
+  // add correct word to wordsList
+  const wordsListWithCorrectWord = [
+    ...wordsListWithoutPlaceholder,
+    _correctWord,
+  ];
+  console.log("wordsListWithCorrectWord", wordsListWithCorrectWord);
   return {
-    wordsList: wordsList,
+    wordsList: shuffleArray(wordsListWithCorrectWord),
     targetWordList: targetWordList,
     correctWord: _correctWord,
     completeIndex: _completeIndex,

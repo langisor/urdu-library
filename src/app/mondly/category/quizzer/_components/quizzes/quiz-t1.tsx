@@ -28,8 +28,6 @@ export default function QuizT1({
 }: QuizT1Props) {
   const state = useHookstate({
     question: convertT1(quizData),
-
-    isFinished: false,
   });
   const selectedTokens = useHookstate<string[]>([]);
   const { playCorrectTune, playIncorrectTune } = useTune();

@@ -1,9 +1,9 @@
 "use client";
 import { QuizT1bItem } from "../definitions";
 import { convertT1b } from "../converters";
-import { useHookstate,State } from "@hookstate/core";
+import { useHookstate, State } from "@hookstate/core";
 import type { Feedback } from "../definitions";
- 
+
 import { Button } from "@/components/ui/button";
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
@@ -23,12 +23,10 @@ interface QuizT1bProps {
 export default function QuizT1b({ quizData, quizzerFeedback }: QuizT1bProps) {
   const state = useHookstate({
     question: convertT1b(quizData),
-    isFinished: false,
   });
 
   const selectedTokens = useHookstate<string[]>([]);
   const { playCorrectTune, playIncorrectTune } = useTune();
- 
  
   // actions
   const actions = {
@@ -44,18 +42,15 @@ export default function QuizT1b({ quizData, quizzerFeedback }: QuizT1bProps) {
       console.log(correctAnswer);
       //  compare with correctAnswer
       if (correctAnswer === selectedTokensText) {
-        state.isFinished.set(true);
+        playCorrectTune();
         quizzerFeedback.isCorrect.set(true);
         quizzerFeedback.message.set("أحسنت");
-        playCorrectTune();
-         
-       
-         
       } else {
-        quizzerFeedback.isCorrect.set(false);
-        quizzerFeedback.message.set(`الترتيب الصحيح هو: ${state.question.correctAnswer.get()}`);
         playIncorrectTune();
-         
+        quizzerFeedback.isCorrect.set(false);
+        quizzerFeedback.message.set(
+          `الترتيب الصحيح هو: ${state.question.correctAnswer.get()}`
+        );
       }
       quizzerFeedback.isAnswered.set(true);
     },
@@ -97,7 +92,11 @@ export default function QuizT1b({ quizData, quizzerFeedback }: QuizT1bProps) {
           <Card className="h-[100px]">
             <CardContent className="flex justify-start gap-3 flex-wrap ">
               {selectedTokens.get().map((token) => (
-                <Button className="urdu-text" key={token} onClick={() => actions.selectToken(token)}>
+                <Button
+                  className="urdu-text"
+                  key={token}
+                  onClick={() => actions.selectToken(token)}
+                >
                   {token}
                 </Button>
               ))}
@@ -108,7 +107,11 @@ export default function QuizT1b({ quizData, quizzerFeedback }: QuizT1bProps) {
           <Card className="flex justify-start gap-3 flex-wrap ">
             <CardContent>
               {state.question.tokens.get().map((token) => (
-                <Button key={token} onClick={() => actions.selectToken(token)} className="urdu-text text-lg">
+                <Button
+                  key={token}
+                  onClick={() => actions.selectToken(token)}
+                  className="urdu-text text-lg"
+                >
                   {token}
                 </Button>
               ))}
@@ -117,11 +120,20 @@ export default function QuizT1b({ quizData, quizzerFeedback }: QuizT1bProps) {
           {/* actions buttons */}
           <Card className="flex justify-end gap-3">
             <CardContent>
-              <Button onClick={actions.checkAnswer} disabled={selectedTokens.get().length === 0}>تأكد</Button>
-              <Button onClick={actions.reset} disabled={selectedTokens.get().length === 0}>مسح</Button>
+              <Button
+                onClick={actions.checkAnswer}
+                disabled={selectedTokens.get().length === 0}
+              >
+                تأكد
+              </Button>
+              <Button
+                onClick={actions.reset}
+                disabled={selectedTokens.get().length === 0}
+              >
+                مسح
+              </Button>
             </CardContent>
           </Card>
- 
         </CardContent>
       </Card>
     </div>

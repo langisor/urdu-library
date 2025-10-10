@@ -18,33 +18,23 @@ import { TonePlayerButton } from "@/components/general/tone-button-player";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Item } from "@/components/ui/item";
+ 
+
+
+type ScoreState = { userName: string; score: number };
 interface QuizQProps {
   quizData: QuizQItem;
   quizzerFeedback: State<Feedback>;
+  scoreState: State<ScoreState>;
 }
 
-export default function QuizQ({ quizData, quizzerFeedback }: QuizQProps) {
+export default function QuizQ({ quizData, quizzerFeedback, scoreState }: QuizQProps) {
   const { actions, interactiveState } = useQ(quizData);
 
   const renderPlayerButton = (url: string) => {
     return <TonePlayerButton url={url} />;
   };
-  const renderFeedback = () => {
-    if (interactiveState.feedback.isCorrect.get()) {
-      return (
-        <p className="text-green-500">
-          {interactiveState.feedback.message.get()}
-        </p>
-      );
-    } else {
-      return (
-        <p className="text-red-500">
-          {interactiveState.feedback.message.get()}
-        </p>
-      );
-    }
-  };
+ 
   return (
     <Card className="flex flex-col gap-2 text-right" dir="rtl">
       <CardHeader className="flex flex-row gap-2 items-center">
@@ -77,10 +67,10 @@ export default function QuizQ({ quizData, quizzerFeedback }: QuizQProps) {
         </RadioGroup>
       </CardContent>
       <CardFooter className="flex flex-row gap-2">
-        <Button onClick={actions.handleNext} disabled={!actions.isSelected}>
+        <Button onClick={() => actions.handleNext(quizzerFeedback)} disabled={!actions.isSelected}>
           تأكد
         </Button>
-        {renderFeedback()}
+  
       </CardFooter>
     </Card>
   );

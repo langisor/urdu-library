@@ -8,57 +8,48 @@ export function useQ(quizData: QuizQItem) {
   const questions = useHookstate(convertQ(quizData));
   const [step, actions] = useStep(questions.length);
   const currentQuestion = questions[step];
-  const selectedOption = useHookstate("");
-  const feedback = useHookstate({
-    isCorrect: false,
-    score: 0,
-    message: "",
-  });
   const { playCorrectTune, playIncorrectTune } = useTune();
+
+  const selectedOption = useHookstate("");
+
   const selectOption = (optionId: string) => {
     selectedOption.set(optionId);
   };
   const isCorrect = () => {
+    console.log(selectedOption.value, currentQuestion.id.get());
     return selectedOption.value === currentQuestion.id.get();
   };
-  const isSelected = selectedOption.value !== "";
-  const handleNext = () => {
+  const isSelected =()=> selectedOption.value !== "";
+  const handleNext = (feedback: State<Feedback>) => {
+    if(!isSelected()) return;
     if (isCorrect()) {
-      setTimeout(() => {
-        feedback.set({
-          isCorrect: true,
-          score: feedback.score.get() + 1,
-          message: "Correct",
-        });
-      }, 1000);
       playCorrectTune();
-    } else {
       setTimeout(() => {
-        feedback.set({
-          isCorrect: false,
-          score: feedback.score.get(),
-          message: "Incorrect",
-        });
-        playIncorrectTune();
+        feedback.isCorrect.set(true);
+        feedback.message.set("أحسنت");
+      }, 1000);
+    } else {
+      playIncorrectTune();
+      setTimeout(() => {
+        feedback.isCorrect.set(false);
+        feedback.message.set(
+          "خطاء، الإجابة الصحيحة هي " + currentQuestion.text.get()
+        );
       }, 1000);
     }
-
     if (actions.canGoToNextStep) {
+      selectedOption.set("");
+      feedback.isCorrect.set(null);
+      feedback.message.set("اختر الإجابة الصحيحة ثم اضغط على تأكد");
       actions.goToNextStep();
-      reset();
     } else {
-      return null;
+      feedback.isCorrect.set(null);
+      feedback.message.set("اختر الإجابة الصحيحة ثم اضغط على تأكد");
+      feedback.isAnswered.set(true);
+
     }
   };
-  const reset = () => {
-    selectedOption.set("");
-    feedback.set({
-      isCorrect: false,
-      score: 0,
-      message: "",
-    });
-    actions.reset();
-  };
+
   return {
     actions: {
       selectOption,
@@ -68,9 +59,7 @@ export function useQ(quizData: QuizQItem) {
     },
     interactiveState: {
       currentQuestion,
-      feedback,
       selectedOption,
-      score: feedback.score.get(),
     },
   };
 }

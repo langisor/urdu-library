@@ -107,6 +107,7 @@ export default function Quizzer({ quizzes }: Props) {
     console.log("renderQuestion Type: ", currentQuiz.type);
     switch (currentQuiz.type) {
       case "C1b":
+        console.log("rendering QuizC1b....");
         return (
           <Quizzes.QuizC1b
             quizData={currentQuiz}
@@ -114,6 +115,7 @@ export default function Quizzer({ quizzes }: Props) {
           />
         );
       case "T1":
+        console.log("rendering QuizT1....");
         return (
           <Quizzes.QuizT1
             quizData={currentQuiz}
@@ -121,6 +123,7 @@ export default function Quizzer({ quizzes }: Props) {
           />
         );
       case "T1b":
+        console.log("rendering QuizT1b....");
         return (
           <Quizzes.QuizT1b
             quizData={currentQuiz}
@@ -128,6 +131,7 @@ export default function Quizzer({ quizzes }: Props) {
           />
         );
       case "F":
+        console.log("rendering QuizF....");
         return (
           <Quizzes.QuizF
             quizData={currentQuiz}
@@ -135,6 +139,7 @@ export default function Quizzer({ quizzes }: Props) {
           />
         );
       case "Q":
+        console.log("rendering QuizQ....");
         return (
           <Quizzes.QuizQ
             quizData={currentQuiz}
@@ -143,6 +148,7 @@ export default function Quizzer({ quizzes }: Props) {
           />
         );
       case "QB":
+        console.log("rendering QuizQB....");
         return (
           <Quizzes.QuizQb
             quizData={currentQuiz}
@@ -150,6 +156,7 @@ export default function Quizzer({ quizzes }: Props) {
           />
         );
       case "D":
+        console.log("rendering QuizD....");
         return (
           <Quizzes.QuizD
             quizData={currentQuiz}

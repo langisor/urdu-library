@@ -205,6 +205,27 @@ type QuizQbItem = {
   modifiers: number;
   alternates: Array<number>;
 };
+type QuizPItem = {
+  id: number;
+  alts: Array<{
+    key: string;
+    text: string;
+    image: string;
+    phonetic: string
+    audio_updated_at: number
+    image_updated_at: number
+  }>
+  sols: Array<{
+    key: string
+    text: string
+    audio_updated_at?: number
+  }>
+  type: string
+  lesson: number
+  wordID: number
+  modifiers: number
+  alternates: Array<number>
+}
 
 type QuizT1Item = {
   id: number;
@@ -876,6 +897,7 @@ export type {
   QuizQItem,
   QuizQbItem,
   QuizRItem,
+  QuizPItem,
   QuizT1Item,
   QuizT1bItem,
   QuizT2Item,
