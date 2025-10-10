@@ -30,8 +30,9 @@ export default function QuizR({
   const { handlers, interactive, staticData } = useQuizR({ quizData });
 
   const renderHeader = () => {
+    console.log("renderHeader ....")
     return (
-      <Card className="flex  flex-row gap-3 text-right" dir="rtl">
+      <Card className="flex  flex-row gap-3 text-right urdu-text" dir="rtl">
         <CardTitle>{staticData.text}</CardTitle>
         <TonePlayerButton url={staticData.audioFile} />
       </Card>
@@ -41,8 +42,8 @@ export default function QuizR({
   const renderTokensArea = () => {
     return (
       <div className="px-4 py-6">
-        <div
-          className="min-h-[120px] bg-white/10 backdrop-blur-sm rounded-lg border-2 border-white/30 p-4 flex flex-wrap gap-2 items-start justify-end"
+        <CardContent
+          className="min-h-[120px]  flex flex-wrap gap-2 items-start justify-end"
           dir="rtl"
         >
           {interactive.selectedTokens.length === 0 ? (
@@ -54,28 +55,28 @@ export default function QuizR({
               <button
                 key={`${key}-${index}`}
                 onClick={() => handlers.handleRemoveToken(index)}
-                disabled={interactive.showResult.get()}
-                className="bg-white text-[#4A7BA7] px-4 py-2 rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                
+                className="  px-4 py-2 rounded-lg font-semibold text-lg"
               >
                 {handlers.getTokenText(key.get())}
               </button>
             ))
           )}
-        </div>
+        </CardContent>
       </div>
     );
   };
 
   const renderAvailableTokens = () => {
     return (
-      <div className="px-4 py-4">
+      <div className="px-4 py-4 text-right naskh-text" dir="rtl" >
         <div className="flex flex-wrap gap-3 justify-center" dir="rtl">
           {interactive.availableTokens.map((token) => (
             <Button
               key={token.key}
               onClick={() => handlers.handleTokenClick(token.key)}
-              disabled={interactive.showResult.get()}
-              className="bg-white/20 backdrop-blur-sm text-white px-5 py-3 rounded-lg font-semibold text-lg border border-white/30 hover:bg-white/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              
+              className="  px-5 py-3 rounded-lg font-semibold text-lg border border-white/30  "
             >
               {token.text}
             </Button>
@@ -87,9 +88,9 @@ export default function QuizR({
 
   return (
     <div className="flex flex-col gap-2">
-      <div>{renderHeader()}</div>
-      <div>{renderTokensArea()}</div>
-      <div>{renderAvailableTokens()}</div>
+      <Card>{renderHeader()}</Card>
+      <Card>{renderTokensArea()}</Card>
+      <Card>{renderAvailableTokens()}</Card>
     </div>
   );
 }

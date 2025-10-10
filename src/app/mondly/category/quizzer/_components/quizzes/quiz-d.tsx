@@ -135,15 +135,14 @@ function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
           <CardTitle>{option.text}</CardTitle>
         </CardHeader>
         <CardContent className="w-full">
-          <div className="">
+  
             <Image
-              className="object-contain"
+              className="object-cover w-[200] h-[300] "
               src={option.image}
               alt={option.text}
               width={300}
               height={300}
-            />
-          </div>
+          />
         </CardContent>
       </Card>
     );

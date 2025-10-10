@@ -37,7 +37,7 @@ export default function Quizzer({ quizzes }: Props) {
   const [currentStep, actions] = useStep(quizzes.length);
   const scoreState = useHookstate(initialScoreState);
   const quizState = useHookstate(false); // true when the user has completed the last question
-
+  
   // Use a local state variable to watch for changes (optional, but needed if you render the state)
   const feedbackState: State<Feedback> = useHookstate(
     initialFeedback as Feedback

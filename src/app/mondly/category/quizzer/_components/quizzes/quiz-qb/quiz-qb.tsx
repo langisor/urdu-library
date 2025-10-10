@@ -22,6 +22,11 @@ import { convertQb } from "./converter";
 import { useStep } from "@/hooks/use-step";
 import { useTune } from "@/hooks/use-tone";
 
+const initialFeedback:Feedback={
+  isCorrect:null,
+  isAnswered:false,
+  message:"اختر الإجابة الصحيحة"
+}
 type ScoreState = { userName: string; score: number };
 interface QuizQbProps {
   quizData: QuizQbItem;
@@ -41,20 +46,22 @@ export default function QuizQb({
   const currentQuestion = questions[currentStep - 1];
   const { playCorrectTune, playIncorrectTune } = useTune();
   const selectedOption = useHookstate<string>("");
+  const localFeedback=useHookstate(initialFeedback)
 
   const handleNext = () => {
     if (actions.canGoToNextStep) {
       console.log("canGoToNextStep", actions.canGoToNextStep)
       actions.goToNextStep();
       selectedOption.set("");
-      quizzerFeedback.isCorrect.set(null);
-      quizzerFeedback.message.set("اختر الإجابة الصحيحة ثم اضغط على تأكد");
+      localFeedback.isCorrect.set(null);
+      localFeedback.isAnswered.set(false);
+      localFeedback.message.set(initialFeedback.message);
 
     } else {
       console.log("canGoToNextStep", actions.canGoToNextStep)
       selectedOption.set("");
-      quizzerFeedback.isCorrect.set(null);
-      quizzerFeedback.message.set("");
+      quizzerFeedback.isCorrect.set(true);
+      quizzerFeedback.message.set("أحسنت");
       quizzerFeedback.isAnswered.set(true);
       
     }
@@ -64,9 +71,9 @@ export default function QuizQb({
   };
   const handleConfirmAnswer = () => {
     if (selectedOption.get() === currentQuestion.id.get()) {
-    
+      playCorrectTune();
       setTimeout(() => {
-        playCorrectTune();
+      
         quizzerFeedback.isCorrect.set(true);
         quizzerFeedback.message.set("أحسنت");
         scoreState.score.set(scoreState.score.get() + 1);
@@ -74,9 +81,9 @@ export default function QuizQb({
       }, 1000);
       handleNext();
     } else {
-    
+     playIncorrectTune();
       setTimeout(() => {
-        playIncorrectTune();
+       
         quizzerFeedback.isCorrect.set(false);
         quizzerFeedback.message.set(
           "خطاء، الإجابة الصحيحة هي " + currentQuestion.id.get()
