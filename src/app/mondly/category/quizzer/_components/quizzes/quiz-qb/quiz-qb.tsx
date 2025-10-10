@@ -26,14 +26,14 @@ interface QuizQbProps {
   quizData: QuizQbItem;
   quizzerFeedback: State<Feedback>;
   scoreState: State<ScoreState>;
-  nextQuiz: () => void;
+ 
 }
 
 export default function QuizQb({
   quizData,
   quizzerFeedback,
   scoreState,
-  nextQuiz,
+ 
 }: QuizQbProps) {
   const questions = useHookstate(convertQb(quizData));
   const [currentStep, actions] = useStep(questions.length);

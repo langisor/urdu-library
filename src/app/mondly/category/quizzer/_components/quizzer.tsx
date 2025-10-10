@@ -157,7 +157,7 @@ export default function Quizzer({ quizzes }: Props) {
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
             scoreState={scoreState}
-            nextQuiz={nextQuiz}
+ 
           />
         );
       case "D":
