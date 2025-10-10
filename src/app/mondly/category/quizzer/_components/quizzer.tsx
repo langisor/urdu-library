@@ -133,6 +133,15 @@ export default function Quizzer({ quizzes }: Props) {
             quizzerFeedback={feedbackState}
           />
         );
+      case "R":
+        console.log("rendering QuizR....");
+        return (
+          <Quizzes.QuizR
+            quizData={currentQuiz}
+            quizzerFeedbackState={feedbackState}
+            scoreState={scoreState}
+          />
+        );
       case "F":
         console.log("rendering QuizF....");
         return (
@@ -157,7 +166,6 @@ export default function Quizzer({ quizzes }: Props) {
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
             scoreState={scoreState}
- 
           />
         );
       case "D":
@@ -202,7 +210,6 @@ export default function Quizzer({ quizzes }: Props) {
   // console.log("rendering quizzer ....", currentQuiz);
   console.log("feedbackState", feedbackState.get());
 
-  
   // returns
 
   return (
