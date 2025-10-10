@@ -57,11 +57,6 @@ export default function Quizzer({ quizzes }: Props) {
    */
 
   const nextQuiz = () => {
-    // increment the score if current answer is correct
-    if (feedbackState.isCorrect.get() === true) {
-      scoreState.set((p) => ({ ...p, score: p.score + 1 }));
-    }
-
     // check if this  Not the last question in Quiz
     console.log("nextQuestion....");
     const canGoToNext = actions.canGoToNextStep;
@@ -155,12 +150,14 @@ export default function Quizzer({ quizzes }: Props) {
             scoreState={scoreState}
           />
         );
-      case "QB":
-        console.log("rendering QuizQB....");
+      case "Qb":
+        console.log("rendering QuizQb....");
         return (
           <Quizzes.QuizQb
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
+            scoreState={scoreState}
+            nextQuiz={nextQuiz}
           />
         );
       case "D":
@@ -180,6 +177,7 @@ export default function Quizzer({ quizzes }: Props) {
         );
     }
   };
+
   const renderFeedback = () => {
     const initialStyle = "text-white bg-gray-500";
     const isCorrectStyle = "text-white bg-green-500";
@@ -204,6 +202,7 @@ export default function Quizzer({ quizzes }: Props) {
   // console.log("rendering quizzer ....", currentQuiz);
   console.log("feedbackState", feedbackState.get());
 
+  
   // returns
 
   return (

@@ -7,7 +7,7 @@ import { useTune } from "@/hooks/use-tone";
 export function useQ(quizData: QuizQItem) {
   const questions = useHookstate(convertQ(quizData));
   const [step, actions] = useStep(questions.length);
-  const currentQuestion = questions[step];
+  const currentQuestion = questions[step-1];
   const { playCorrectTune, playIncorrectTune } = useTune();
 
   const selectedOption = useHookstate("");

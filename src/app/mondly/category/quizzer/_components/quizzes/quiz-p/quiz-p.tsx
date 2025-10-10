@@ -28,40 +28,45 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
   const questions = useHookstate(convertP(quizData));
   const [currentStep, actions] = useStep(questions.length);
   const { playCorrectTune, playIncorrectTune } = useTune();
-
+  const feedbackState = useHookstate(quizzerFeedback);
   const handleAnswer = (id: string) => {
     console.log("Card clicked", id);
-    if (id === questions[currentStep].id.get()) {
+    if (id === questions[currentStep - 1].id.get()) {
+      playCorrectTune();
+      feedbackState.isCorrect.set(true);
+      feedbackState.message.set("أحسنت");
       setTimeout(() => {
-        playCorrectTune();
-        quizzerFeedback.isCorrect.set(true);
-        quizzerFeedback.message.set("أحسنت");
+      
       }, 1000);
     } else {
+      playIncorrectTune();
+      feedbackState.isCorrect.set(false);
+      feedbackState.message.set(
+        "خطاء، الإجابة الصحيحة " + questions[currentStep - 1].id.get()
+      );
       setTimeout(() => {
-        playIncorrectTune();
-        quizzerFeedback.isCorrect.set(false);
-        quizzerFeedback.message.set(
-          "خطاء، الإجابة الصحيحة " + questions[currentStep].id.get()
-        );
+       
       }, 1000);
     }
     if (actions.canGoToNextStep) {
       actions.goToNextStep();
     } else {
-      quizzerFeedback.isAnswered.set(true);
+      feedbackState.isAnswered.set(true);
     }
   };
-  console.log("Current question", questions[currentStep]);
+  console.log("Current question", questions[currentStep - 1]);
 
   React.useEffect(() => {
-    console.log("Current question", questions[currentStep]);
-    const audio = new Audio(questions[currentStep].audio.get());
+    console.log("Current question", questions[currentStep - 1]);
+    const audio = new Audio(questions[currentStep - 1].audio.get());
     audio.play();
+    return () => {
+      audio.pause();
+    };
   }, [currentStep]);
   return (
     <div className="grid grid-cols-2 gap-4">
-      {questions[currentStep].answers.map((answer) => (
+      {questions[currentStep - 1].answers.map((answer) => (
         <div key={answer.id.get()}>
           <Card
             onClick={() => handleAnswer(answer.id.get())}
@@ -80,15 +85,7 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
               </CardFooter>
             </CardContent>
           </Card>
-          <Card>
-            <CardContent
-              className={
-                quizzerFeedback.isCorrect.get() ? "bg-green-100" : "bg-red-100"
-              }
-            >
-              <p>{quizzerFeedback.message.get()}</p>
-            </CardContent>
-          </Card>
+ 
         </div>
       ))}
     </div>
