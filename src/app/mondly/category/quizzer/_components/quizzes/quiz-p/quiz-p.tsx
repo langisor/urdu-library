@@ -29,6 +29,17 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
   const [currentStep, actions] = useStep(questions.length);
   const { playCorrectTune, playIncorrectTune } = useTune();
   const feedbackState = useHookstate(quizzerFeedback);
+
+  React.useEffect(() => {
+    console.log("Current question", questions[currentStep - 1]);
+    const audio = new Audio(questions[currentStep - 1].audio.get());
+    audio.play();
+    return () => {
+      audio.pause();
+    };
+  }, [currentStep]);
+
+
   const handleAnswer = (id: string) => {
     console.log("Card clicked", id);
     if (id === questions[currentStep - 1].id.get()) {
@@ -56,14 +67,7 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
   };
   console.log("Current question", questions[currentStep - 1]);
 
-  React.useEffect(() => {
-    console.log("Current question", questions[currentStep - 1]);
-    const audio = new Audio(questions[currentStep - 1].audio.get());
-    audio.play();
-    return () => {
-      audio.pause();
-    };
-  }, [currentStep]);
+
   return (
     <div className="grid grid-cols-2 gap-4">
       {questions[currentStep - 1].answers.map((answer) => (
