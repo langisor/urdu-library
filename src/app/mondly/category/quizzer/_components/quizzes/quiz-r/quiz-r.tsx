@@ -30,7 +30,7 @@ export default function QuizR({
   const { handlers, interactive, staticData } = useQuizR({ quizData });
 
   const renderHeader = () => {
-    console.log("renderHeader ....")
+    console.log("renderHeader ....");
     return (
       <div className="flex  flex-row gap-3 text-right urdu-text" dir="rtl">
         <CardTitle>{staticData.text}</CardTitle>
@@ -55,7 +55,6 @@ export default function QuizR({
               <button
                 key={`${key}-${index}`}
                 onClick={() => handlers.handleRemoveToken(index)}
-                
                 className="  px-4 py-2 rounded-lg font-semibold text-lg"
               >
                 {handlers.getTokenText(key.get())}
@@ -69,13 +68,12 @@ export default function QuizR({
 
   const renderAvailableTokens = () => {
     return (
-      <div className="px-4 py-4 text-right naskh-text" dir="rtl" >
+      <div className="px-4 py-4 text-right naskh-text" dir="rtl">
         <div className="flex flex-wrap gap-3 justify-center" dir="rtl">
           {interactive.availableTokens.map((token) => (
             <Button
               key={token.key}
               onClick={() => handlers.handleTokenClick(token.key)}
-              
               className="  px-5 py-3 rounded-lg font-semibold text-lg border border-white/30  "
             >
               {token.text}
@@ -91,6 +89,14 @@ export default function QuizR({
       <Card>{renderHeader()}</Card>
       <Card>{renderTokensArea()}</Card>
       <Card>{renderAvailableTokens()}</Card>
+      <Card>
+        <Button onClick={() => handlers.handleConfirm(quizzerFeedbackState)}>
+          تأكد
+        </Button>
+        <Button onClick={() => handlers.handleReset(quizzerFeedbackState)}>
+          إعادة
+        </Button>
+      </Card>
     </div>
   );
 }
