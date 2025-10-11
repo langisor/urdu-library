@@ -21,7 +21,7 @@ import { Label } from "@/components/ui/label";
 import { convertQb } from "./converter";
 import { useStep } from "@/hooks/use-step";
 import { useTune } from "@/hooks/use-tone";
-
+import * as React from "react";
 const initialFeedback:Feedback={
   isCorrect:null,
   isAnswered:false,
@@ -48,6 +48,13 @@ export default function QuizQb({
   const selectedOption = useHookstate<string>("");
   const localFeedback=useHookstate(initialFeedback)
 
+  React.useEffect(() => {
+    const audio = new Audio(currentQuestion.audioFile.get());
+    audio.play();
+    return () => {
+      audio.pause();
+    };
+  }, [currentQuestion.audioFile.get()]);
   const handleNext = () => {
     if (actions.canGoToNextStep) {
       console.log("canGoToNextStep", actions.canGoToNextStep)

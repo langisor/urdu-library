@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 import { useStep } from "@/hooks/use-step";
 import { useTune } from "@/hooks/use-tone";
 import { convertQ } from "./convertQ";
-
+import * as React from "react";
 const initialFeedback: Feedback = {
   isCorrect: null,
   isAnswered: false,
@@ -40,6 +40,13 @@ export default function QuizQ({
   const selectedOption = useHookstate<string>("");
   const localFeedback = useHookstate(initialFeedback);
 
+  React.useEffect(() => {
+    const audio = new Audio(questions.questions[questions.get().currentStep - 1].audioFile.get());
+    audio.play();
+    return () => {
+      audio.pause();
+    };
+  }, [questions.get().currentStep]);
   const currentQuestion = questions.questions[questions.get().currentStep - 1];
 
   const handleNext = () => {
@@ -79,14 +86,14 @@ export default function QuizQ({
     }
   };
   const renderQuizHeader = () => {
-    return <CardTitle>اختر الإجابة الصحيحة ثم اضغط على تأكد</CardTitle>;
+    return <CardTitle className="naskh-text">اختر الإجابة الصحيحة ثم اضغط على تأكد</CardTitle>;
   };
 
   const renderQuestion = () => {
      
  
     return (
-      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center ">
+      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center urdu-text ">
         <CardTitle className="flex flex-wrap flex-row gap-3">
           {currentQuestion.text.get()}
           <TonePlayerButton url={currentQuestion.audioFile.get()} />
@@ -97,7 +104,7 @@ export default function QuizQ({
 
   const renderOptions = () => {
     return (
-      <div className="urdu-text">
+      <div className="naskh-text">
         <RadioGroup
           className="flex flex-col gap-2"
           onValueChange={(value) => handleSelect(value)}
@@ -107,14 +114,14 @@ export default function QuizQ({
             {currentQuestion.options.map((option) => (
               <CardAction
                 key={option.id.get()}
-                className="flex flex-row gap-3 w-full items-center hover:bg-gray-100 cursor-pointer transition-all hover:scale-101 text-xl h-16 p-5"
+                className="flex flex-row gap-3 w-full items-center hover:bg-gray-100 cursor-pointer transition-all hover:scale-101   h-16 p-5"
                 onClick={() => handleSelect(option.id.get())}
               >
                 <RadioGroupItem
                   checked={option.id.get() === selectedOption.get()}
                   value={option.id.get()}
                 />
-                <Label htmlFor={option.id.get()}>{option.text.get()}</Label>
+                <Label className="text-lg" htmlFor={option.id.get()}>{option.text.get()}</Label>
               </CardAction>
             ))}
           </Card>

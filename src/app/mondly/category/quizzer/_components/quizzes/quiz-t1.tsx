@@ -32,6 +32,14 @@ export default function QuizT1({
   const selectedTokens = useHookstate<string[]>([]);
   const { playCorrectTune, playIncorrectTune } = useTune();
 
+  React.useEffect(() => {
+    const audio = new Audio(state.question.audioFile.get());
+    audio.play();
+    return () => {
+      audio.pause();
+      
+    };
+  }, [state.question.audioFile.get()]);
   // actions
   const actions = {
     checkAnswer: () => {

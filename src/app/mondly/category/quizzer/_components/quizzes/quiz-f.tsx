@@ -29,6 +29,13 @@ export default function QuizF({ quizData, quizzerFeedback }: QuizProps) {
 
   const { playCorrectTune, playIncorrectTune } = useTune();
 
+  React.useEffect(() => {
+    const audio = new Audio(state.questions[state.currentQuestionIndex.get()].audioFile.get());
+    audio.play();
+    return () => {
+      audio.pause();
+    };
+  }, [state.currentQuestionIndex.get()]);
   //   actions
   const actions = {
     checkAnswer: (option: string) => {

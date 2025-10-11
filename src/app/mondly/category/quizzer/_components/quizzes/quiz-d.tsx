@@ -14,7 +14,7 @@ import { useHookstate,State } from "@hookstate/core";
 
 import { useTune } from "@/hooks/use-tone";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
-
+import * as React from "react";
 type ScoreState = { userName: string; score: number };
 interface QuizDProps {
   quizData: QuizDItem;
@@ -38,7 +38,18 @@ export default function QuizD({
     text: "",
   });
   const { playCorrectTune, playIncorrectTune } = useTune();
+
+
+  React.useEffect(() => {
+    const audio = new Audio(currentQuestion.audioFile.get());
+    audio.play();
+    return () => {
+      audio.pause();
+    };
+  }, [state.currentQuestionIndex.get()]);
+
   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
+
   //  actions
   const actions = {
     checkAnswer: (answer: string) => {

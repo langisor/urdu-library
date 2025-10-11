@@ -19,6 +19,13 @@ const PLACEHOLDER = "_____";
 export default function QuizC1b({ quizData, quizzerFeedback }: QuizC1bState) {
   const { interactiveData, staticData, actions } = useC1b(quizData);
   
+  React.useEffect(() => {
+    const audio = new Audio(staticData.audioFile);
+    audio.play();
+    return () => {
+      audio.pause();
+    };
+  }, [staticData.audioFile]);
   const handleWordClick = (word: string) => {
     console.log("handleWordClick()...", word);
     quizzerFeedback.isAnswered.set(true);
@@ -30,7 +37,7 @@ export default function QuizC1b({ quizData, quizzerFeedback }: QuizC1bState) {
   };
   const renderTargetWordList = () => {
     return (
-      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center bg-gradient-to-b from-secondary to-primary/40">
+      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center bg-gradient-to-b from-secondary to-primary/40  urdu-text text-lg font-bold">
         {interactiveData.targetWordList.map((word, index) => (
           <Button
             disabled={true}
@@ -46,7 +53,7 @@ export default function QuizC1b({ quizData, quizzerFeedback }: QuizC1bState) {
 
   const renderWordList = () => {
     return (
-      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center">
+      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center urdu-text text-lg font-bold">
         {interactiveData.wordsList.map((word, index) => (
           <Button key={`word-${index}`} onClick={() => handleWordClick(word!)}>
             {word}
