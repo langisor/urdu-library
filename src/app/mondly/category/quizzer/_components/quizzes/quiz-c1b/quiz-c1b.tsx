@@ -77,11 +77,11 @@ export default function QuizC1b({ quizData, quizzerFeedback }: QuizC1bState) {
     );
   };
   const renderQuizHeader = () => {
-    return <CardTitle> أكمل الفراغ باختيار الكلمة الصحيحة</CardTitle>;
+    return <CardTitle className="naskh-text text-lg font-bold"> أكمل الفراغ باختيار الكلمة الصحيحة</CardTitle>;
   };
   const renderQuestion = () => {
     return (
-      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center">
+      <Card className="flex flex-wrap flex-row gap-3 items-center justify-center naskh-text text-lg font-bold">
         <CardTitle className="flex flex-wrap flex-row gap-3">
           <div>{staticData.questionText}</div>
           <TonePlayerButton url={staticData.audioFile} />
