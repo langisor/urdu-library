@@ -37,7 +37,7 @@ export default function QuizT1({
     audio.play();
     return () => {
       audio.pause();
-      
+      audio.currentTime = 0;
     };
   }, [state.question.audioFile.get()]);
   // actions

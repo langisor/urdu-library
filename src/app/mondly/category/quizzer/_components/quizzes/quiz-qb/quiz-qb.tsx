@@ -53,6 +53,7 @@ export default function QuizQb({
     audio.play();
     return () => {
       audio.pause();
+      audio.currentTime = 0;
     };
   }, [currentQuestion.audioFile.get()]);
   const handleNext = () => {
