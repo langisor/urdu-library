@@ -1,20 +1,13 @@
-import { queryClient } from "@/lib/postgres-client"
+"use client";
+import quizzesData from "./quiz-w1b/quiz-w1b.json";
+import { QuizW1bItem } from "../mondly/category/quizzer/_components/definitions";
+import QuizW1b from "./quiz-w1b/quiz-w1b";
 
-import { JsonViewerComponent } from "@/components/general/json-viewer-component"
-import { QuizW1bItem } from "../mondly/category/quizzer/_components/definitions"
+const data=quizzesData as QuizW1bItem[];
+ 
 
-async function getQuizW1b(){
-    const quizzes:QuizW1bItem[]=[];
-    const data=await queryClient`
-        select "quizData" from "Quiz" where "type"="W1b" limit 3;
-    `;
-    return data;
-}
+export default   function QuizW1bPage() {
 
-export default  async function QuizW1b() {
-    const quizzes=await getQuizW1b();
 
-    return (
-        <JsonViewerComponent data={quizzes} />
-    )
+  return  <QuizW1b quizData={data[1]} />
 }

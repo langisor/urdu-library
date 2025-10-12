@@ -1,0 +1,898 @@
+[
+ {
+  "id": 626962,
+  "ord": [
+   "tdl1GY7U5Ky",
+   "txVC5em94vB",
+   "thinOhIDOJt",
+   "tCK7toxTWB1"
+  ],
+  "sols": [
+   {
+    "key": "zYChAELXiijd-hYOhzkaOYcjpHMexbA4",
+    "text": "عشب",
+    "dictionary": [
+     {
+      "raw": "عشب",
+      "translations": [
+       {
+        "text": "گھاس",
+        "type": "dictionary",
+        "phonetic": "ghaas"
+       }
+      ]
+     }
+    ],
+    "phraseType": 0,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "عشب",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     }
+    ],
+    "audio_updated_at": 1580689632
+   },
+   {
+    "key": "zYChAELXiijd-hYOhzkaOYcjpHMexbA4",
+    "text": "گھاس",
+    "image": "qhLUGifIjfPw9z6zRV-dYAFWpL4kPAOD",
+    "phonetic": "ghaas",
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "گھاس",
+       "length": 4,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      }
+     }
+    ],
+    "phonetic_tokens": [
+     {
+      "raw": {
+       "text": "ghaas",
+       "length": 5,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 5
+      }
+     }
+    ],
+    "audio_updated_at": 1580689632,
+    "image_updated_at": 1689159103
+   }
+  ],
+  "type": "W1b",
+  "lesson": 601,
+  "tokens": [
+   {
+    "key": "txVC5em94vB",
+    "text": "ھ",
+    "group": 0
+   },
+   {
+    "key": "tdl1GY7U5Ky",
+    "text": "گ",
+    "group": 0
+   },
+   {
+    "key": "tCK7toxTWB1",
+    "text": "س",
+    "group": 0
+   },
+   {
+    "key": "thinOhIDOJt",
+    "text": "ا",
+    "group": 0
+   }
+  ],
+  "wordID": 17991,
+  "modifiers": 68,
+  "alternates": [],
+  "ordPhonetic": [
+   "tlcFy5BQ_8X",
+   "t4cd1EN-2wT",
+   "tDY0nAH4VdQ",
+   "tD_5PR5DCxN",
+   "tvnnff5vy5y"
+  ],
+  "tokensPhonetic": [
+   {
+    "key": "tDY0nAH4VdQ",
+    "text": "a",
+    "group": 0
+   },
+   {
+    "key": "tlcFy5BQ_8X",
+    "text": "g",
+    "group": 0
+   },
+   {
+    "key": "t4cd1EN-2wT",
+    "text": "h",
+    "group": 0
+   },
+   {
+    "key": "tvnnff5vy5y",
+    "text": "s",
+    "group": 0
+   },
+   {
+    "key": "tD_5PR5DCxN",
+    "text": "a",
+    "group": 0
+   }
+  ],
+  "tokensEqualSize": false
+ },
+ {
+  "id": 625548,
+  "ord": [
+   "t5UuqzqOQPW",
+   "tZPLiddSSeS",
+   "tFEKC4gI7fa",
+   "tiwGTByTHrf"
+  ],
+  "sols": [
+   {
+    "key": "k7FcgpMaDzF_k2Oy4fOf310Y4axwBxuf",
+    "text": "يعيش",
+    "dictionary": [
+     {
+      "raw": "يعيش",
+      "translations": [
+       {
+        "text": "رہنا",
+        "type": "dictionary",
+        "phonetic": "rehna"
+       },
+       {
+        "id": 56,
+        "conj": {
+         "fu": [
+          {
+           "m": {
+            "text": "أنا سأعيش"
+           },
+           "t": {
+            "key": "j8nsi4dlkEKoAPB66KoPBZ4LW6pk5h6U",
+            "text": "میں رہوں گا",
+            "phonetic": "Mein rahoon ga",
+            "audio_updated_at": 1580695304
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ستعيش"
+           },
+           "t": {
+            "key": "bicAtWVYJnXYB3tBYMJr7QVtwL_4sUfY",
+            "text": "تم رہو گے",
+            "phonetic": "Tum raho gay",
+            "audio_updated_at": 1580695305
+           }
+          },
+          {
+           "m": {
+            "text": "هو سيعيش"
+           },
+           "t": {
+            "key": "I_AOQL-GnxDArWGao73H43W4qDGBiKNZ",
+            "text": "وہ رہے گا",
+            "phonetic": "Wo rahay ga",
+            "audio_updated_at": 1580695307
+           }
+          },
+          {
+           "m": {
+            "text": "هي ستعيش"
+           },
+           "t": {
+            "key": "NuStWRF06MPDp9uNDgIwliN5GThmBhoc",
+            "text": "وہ رہے گی",
+            "phonetic": "Wo rahay gi",
+            "audio_updated_at": 1580695309
+           }
+          },
+          {
+           "m": {
+            "text": "نحن سنعيش"
+           },
+           "t": {
+            "key": "xzpylVDskzOZBjofFtFFs_Vkt6fbgSr5",
+            "text": "ہم رہیں گے",
+            "phonetic": "Hum rahain gay",
+            "audio_updated_at": 1580695312
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ستعيشون"
+           },
+           "t": {
+            "key": "B32aXW8h0Do07JMykRRBTiPEqoeDjU6f",
+            "text": "آپ رہیں گے",
+            "phonetic": "Aap rahain gay",
+            "audio_updated_at": 1580695314
+           }
+          },
+          {
+           "m": {
+            "text": "هم سيعيشون"
+           },
+           "t": {
+            "key": "e1Qki3ix_jJRujEhccDtnF7v6m6JslUv",
+            "text": "وہ رہیں گے",
+            "phonetic": "Wo rahain gay",
+            "audio_updated_at": 1580695315
+           }
+          }
+         ],
+         "pa": [
+          {
+           "m": {
+            "text": "أنا عشت"
+           },
+           "t": {
+            "key": "EEU4D8Lyws-R__xZclvkHcHqP1pRTEXW",
+            "text": "میں نے رہا",
+            "phonetic": "Mein ne raha",
+            "audio_updated_at": 1580695289
+           }
+          },
+          {
+           "m": {
+            "text": "أنت عشت"
+           },
+           "t": {
+            "key": "oQk40qZHJiUD0sNTvIxCiEy0r55cqVZo",
+            "text": "تم نے رہا",
+            "phonetic": "Tum ne raha",
+            "audio_updated_at": 1580695291
+           }
+          },
+          {
+           "m": {
+            "text": "هو عاش"
+           },
+           "t": {
+            "key": "3nCr_QXQWboIXhbQcahuP6b3AGrQQTOC",
+            "text": "اس نے رہا",
+            "phonetic": "Us ne raha",
+            "audio_updated_at": 1580695293
+           }
+          },
+          {
+           "m": {
+            "text": "هي عاشت"
+           },
+           "t": {
+            "key": "kbcO-OdYm5UtKptVnFF1CJ6BEns5LSl1",
+            "text": "اس نے رہا",
+            "phonetic": "Us ne raha",
+            "audio_updated_at": 1580695295
+           }
+          },
+          {
+           "m": {
+            "text": "نحن عشنا"
+           },
+           "t": {
+            "key": "L7mENT8CrorctzgsfrDWpyX1UK0w7Ais",
+            "text": "ہم نے رہا",
+            "phonetic": "Hum ne raha",
+            "audio_updated_at": 1580695298
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم عشتم"
+           },
+           "t": {
+            "key": "Q3XeaAVcNXAWQYO4XXKBQZVw8eJyCZ-4",
+            "text": "آپ نے رہا",
+            "phonetic": "Aap ne raha",
+            "audio_updated_at": 1580695300
+           }
+          },
+          {
+           "m": {
+            "text": "هم عاشوا"
+           },
+           "t": {
+            "key": "LbCLBSHjeB98l_OZjwuAaTy15tyaLU8Y",
+            "text": "انہوں نے رہا",
+            "phonetic": "Unhon ne raha",
+            "audio_updated_at": 1580695302
+           }
+          }
+         ],
+         "pr": [
+          {
+           "m": {
+            "text": "أنا أعيش"
+           },
+           "t": {
+            "key": "jgqZ_ir-rrYoD1cfcvYeAQ-8ZQpznXbw",
+            "text": "میں رہتا ہوں",
+            "phonetic": "Mein rehta hoon",
+            "audio_updated_at": 1580695274
+           }
+          },
+          {
+           "m": {
+            "text": "أنت تعيش"
+           },
+           "t": {
+            "key": "zdybL6lozYlvhfU5YpaDU16KvlZqXaTB",
+            "text": "تم رہتے ہو",
+            "phonetic": "Tum rehtay ho",
+            "audio_updated_at": 1580695276
+           }
+          },
+          {
+           "m": {
+            "text": "هو يعيش"
+           },
+           "t": {
+            "key": "anSPTsh0-xMZIIjIyx-eLL4hObXSJbsQ",
+            "text": "وہ رہتا ہے",
+            "phonetic": "Wo rehta hai",
+            "audio_updated_at": 1580695277
+           }
+          },
+          {
+           "m": {
+            "text": "هي تعيش"
+           },
+           "t": {
+            "key": "Tk3p7YxWSDqUECwMXmbQ6RsMrWiZdcrB",
+            "text": "وہ رہتی ہے",
+            "phonetic": "Wo rehti hai",
+            "audio_updated_at": 1580695279
+           }
+          },
+          {
+           "m": {
+            "text": "نحن نعيش"
+           },
+           "t": {
+            "key": "V7GX592LapPmH0VQM3IPjJA339TunypA",
+            "text": "ہم رہتے ہیں",
+            "phonetic": "Hum rehtay hain",
+            "audio_updated_at": 1580695283
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم تعيشون"
+           },
+           "t": {
+            "key": "F5wPA0MPxliNWjW8wcD0A7sMAJCfGvF9",
+            "text": "آپ رہتے ہیں",
+            "phonetic": "Aap rehtay hain",
+            "audio_updated_at": 1580695284
+           }
+          },
+          {
+           "m": {
+            "text": "هم يعيشون"
+           },
+           "t": {
+            "key": "s6PZgqoPEb04ZbAzQ-C6symdMu6NsQwO",
+            "text": "وہ رہتے ہیں",
+            "phonetic": "Wo rehtay hain",
+            "audio_updated_at": 1580695286
+           }
+          }
+         ]
+        },
+        "name": {
+         "m": "يعيش",
+         "t": "رہنا",
+         "phonetic": "rehna"
+        },
+        "type": "verb",
+        "tenseNames": {
+         "fu": "مستقبل",
+         "pa": "ماضي",
+         "pr": "الحاضر"
+        }
+       }
+      ]
+     }
+    ],
+    "phraseType": 0,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "يعيش",
+       "length": 4,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      }
+     }
+    ],
+    "audio_updated_at": 1580707127
+   },
+   {
+    "key": "k7FcgpMaDzF_k2Oy4fOf310Y4axwBxuf",
+    "text": "رہنا",
+    "image": "z4bFAv92-Ee3TUsRCrNgpAezwlhrHdiR",
+    "phonetic": "rehna",
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "رہنا",
+       "length": 4,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      }
+     }
+    ],
+    "phonetic_tokens": [
+     {
+      "raw": {
+       "text": "rehna",
+       "length": 5,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 5
+      }
+     }
+    ],
+    "audio_updated_at": 1580707127,
+    "image_updated_at": 1689159053
+   }
+  ],
+  "type": "W1b",
+  "lesson": 2503,
+  "tokens": [
+   {
+    "key": "tiwGTByTHrf",
+    "text": "ا",
+    "group": 0
+   },
+   {
+    "key": "tZPLiddSSeS",
+    "text": "ہ",
+    "group": 0
+   },
+   {
+    "key": "t5UuqzqOQPW",
+    "text": "ر",
+    "group": 0
+   },
+   {
+    "key": "tFEKC4gI7fa",
+    "text": "ن",
+    "group": 0
+   }
+  ],
+  "wordID": 17210,
+  "modifiers": 68,
+  "alternates": [],
+  "ordPhonetic": [
+   "tIxhoe-j5hS",
+   "tlmpm3KMsC6",
+   "tVE3ZfyYlA1",
+   "tN9do_HiBAI",
+   "tzKtB016q5g"
+  ],
+  "tokensPhonetic": [
+   {
+    "key": "tIxhoe-j5hS",
+    "text": "r",
+    "group": 0
+   },
+   {
+    "key": "tlmpm3KMsC6",
+    "text": "e",
+    "group": 0
+   },
+   {
+    "key": "tzKtB016q5g",
+    "text": "a",
+    "group": 0
+   },
+   {
+    "key": "tVE3ZfyYlA1",
+    "text": "h",
+    "group": 0
+   },
+   {
+    "key": "tN9do_HiBAI",
+    "text": "n",
+    "group": 0
+   }
+  ],
+  "tokensEqualSize": false
+ },
+ {
+  "id": 654717,
+  "ord": [
+   "tGtyuW80v_u",
+   "tjA37o9O2ZA",
+   "tFa5VPRknbW",
+   "tRxQs5tRNyW",
+   "t6t02LA7Inc",
+   "tRUATe688Nm",
+   "tRRSfRlDBbb",
+   "tNh2C6yuy5A",
+   "tYmdzOJva5F"
+  ],
+  "sols": [
+   {
+    "key": "xFIYH7gsGHINxkjdPOuVHw2tskNyvMkS",
+    "text": "طبيب أسنان",
+    "dictionary": [
+     {
+      "raw": "طبيب",
+      "translations": []
+     },
+     {
+      "raw": "أسنان",
+      "translations": []
+     }
+    ],
+    "phraseType": 0,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "طبيب",
+       "length": 4,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      }
+     },
+     {
+      "raw": {
+       "text": "أسنان",
+       "length": 5,
+       "location": 5
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 4
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 5
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 10
+      }
+     }
+    ],
+    "audio_updated_at": 1580692897
+   },
+   {
+    "key": "xFIYH7gsGHINxkjdPOuVHw2tskNyvMkS",
+    "text": "دندان ساز",
+    "image": "h4p0B3jC8vFBRBFXkTvQDlLxfyV7f8VK",
+    "phonetic": "dandan saaz",
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "دندان",
+       "length": 5,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 5
+      }
+     },
+     {
+      "raw": {
+       "text": "ساز",
+       "length": 3,
+       "location": 6
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 5
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 6
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 9
+      }
+     }
+    ],
+    "phonetic_tokens": [
+     {
+      "raw": {
+       "text": "dandan",
+       "length": 6,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 6
+      }
+     },
+     {
+      "raw": {
+       "text": "saaz",
+       "length": 4,
+       "location": 7
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 6
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 7
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 11
+      }
+     }
+    ],
+    "audio_updated_at": 1580692897,
+    "image_updated_at": 1689159176
+   }
+  ],
+  "type": "W1b",
+  "lesson": 4002,
+  "tokens": [
+   {
+    "key": "t6t02LA7Inc",
+    "text": "ن",
+    "group": 0
+   },
+   {
+    "key": "tNh2C6yuy5A",
+    "text": "ا",
+    "group": 1
+   },
+   {
+    "key": "tjA37o9O2ZA",
+    "text": "ن",
+    "group": 0
+   },
+   {
+    "key": "tRRSfRlDBbb",
+    "text": "س",
+    "group": 1
+   },
+   {
+    "key": "tGtyuW80v_u",
+    "text": "د",
+    "group": 0
+   },
+   {
+    "key": "tFa5VPRknbW",
+    "text": "د",
+    "group": 0
+   },
+   {
+    "key": "tRxQs5tRNyW",
+    "text": "ا",
+    "group": 0
+   },
+   {
+    "key": "tYmdzOJva5F",
+    "text": "ز",
+    "group": 1
+   },
+   {
+    "key": "tRUATe688Nm",
+    "text": " ",
+    "specialChar": true
+   }
+  ],
+  "wordID": 19108,
+  "modifiers": 68,
+  "alternates": [],
+  "ordPhonetic": [
+   "tNm4kB7hQNL",
+   "t20C_9q9v4P",
+   "tyjhVJli8rv",
+   "t9oo5owCGvb",
+   "tWAu5AGfZCV",
+   "t86y-qveWGa",
+   "tE3KrJZXXDr",
+   "t6hxb6YFTwz",
+   "tp1UTlOxatK",
+   "tAihxhZZfz5",
+   "tPY3Et1z0WG"
+  ],
+  "tokensPhonetic": [
+   {
+    "key": "t9oo5owCGvb",
+    "text": "d",
+    "group": 0
+   },
+   {
+    "key": "tPY3Et1z0WG",
+    "text": "z",
+    "group": 1
+   },
+   {
+    "key": "t20C_9q9v4P",
+    "text": "a",
+    "group": 0
+   },
+   {
+    "key": "tAihxhZZfz5",
+    "text": "a",
+    "group": 1
+   },
+   {
+    "key": "t6hxb6YFTwz",
+    "text": "s",
+    "group": 1
+   },
+   {
+    "key": "tNm4kB7hQNL",
+    "text": "d",
+    "group": 0
+   },
+   {
+    "key": "tp1UTlOxatK",
+    "text": "a",
+    "group": 1
+   },
+   {
+    "key": "t86y-qveWGa",
+    "text": "n",
+    "group": 0
+   },
+   {
+    "key": "tE3KrJZXXDr",
+    "text": " ",
+    "specialChar": true
+   },
+   {
+    "key": "tyjhVJli8rv",
+    "text": "n",
+    "group": 0
+   },
+   {
+    "key": "tWAu5AGfZCV",
+    "text": "a",
+    "group": 0
+   }
+  ],
+  "tokensEqualSize": false
+ }
+]
