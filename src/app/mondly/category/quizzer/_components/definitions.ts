@@ -211,21 +211,21 @@ type QuizPItem = {
     key: string;
     text: string;
     image: string;
-    phonetic: string
-    audio_updated_at: number
-    image_updated_at: number
-  }>
+    phonetic: string;
+    audio_updated_at: number;
+    image_updated_at: number;
+  }>;
   sols: Array<{
-    key: string
-    text: string
-    audio_updated_at?: number
-  }>
-  type: string
-  lesson: number
-  wordID: number
-  modifiers: number
-  alternates: Array<number>
-}
+    key: string;
+    text: string;
+    audio_updated_at?: number;
+  }>;
+  type: string;
+  lesson: number;
+  wordID: number;
+  modifiers: number;
+  alternates: Array<number>;
+};
 
 type QuizT1Item = {
   id: number;
@@ -884,6 +884,135 @@ type QuizRItem = {
   };
   tokensEqualSize: boolean;
 };
+type QuizW1bItem = {
+  id: number;
+  ord: Array<string>;
+  sols: Array<{
+    key: string;
+    text: string;
+    dictionary?: Array<{
+      raw: string;
+      translations: Array<{
+        text?: string;
+        type: string;
+        phonetic?: string;
+        id?: number;
+        conj?: {
+          fu: Array<{
+            m: {
+              text: string;
+            };
+            t: {
+              key: string;
+              text: string;
+              phonetic: string;
+              audio_updated_at: number;
+            };
+          }>;
+          pa: Array<{
+            m: {
+              text: string;
+            };
+            t: {
+              key: string;
+              text: string;
+              phonetic: string;
+              audio_updated_at: number;
+            };
+          }>;
+          pr: Array<{
+            m: {
+              text: string;
+            };
+            t: {
+              key: string;
+              text: string;
+              phonetic: string;
+              audio_updated_at: number;
+            };
+          }>;
+        };
+        name?: {
+          m: string;
+          t: string;
+          phonetic: string;
+        };
+        tenseNames?: {
+          fu: string;
+          pa: string;
+          pr: string;
+        };
+      }>;
+    }>;
+    phraseType?: number;
+    text_tokens: Array<{
+      raw: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      linker: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      prefix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      suffix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+    }>;
+    audio_updated_at: number;
+    image?: string;
+    phonetic?: string;
+    phonetic_tokens?: Array<{
+      raw: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      linker: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      prefix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      suffix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+    }>;
+    image_updated_at?: number;
+  }>;
+  type: string;
+  lesson: number;
+  tokens: Array<{
+    key: string;
+    text: string;
+    group: number;
+  }>;
+  wordID: number;
+  modifiers: number;
+  alternates: Array<any>;
+  ordPhonetic: Array<string>;
+  tokensPhonetic: Array<{
+    key: string;
+    text: string;
+    group: number;
+  }>;
+  tokensEqualSize: boolean;
+};
+
 interface Feedback {
   isAnswered: boolean;
   isCorrect: boolean | null;
@@ -901,5 +1030,6 @@ export type {
   QuizT1Item,
   QuizT1bItem,
   QuizT2Item,
+  QuizW1bItem,
   Feedback,
 };
