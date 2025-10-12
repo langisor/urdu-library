@@ -95,7 +95,8 @@ export default function QuizW1b({ quizData }: QuizW1bProps) {
 
     return tokensButtons;
   };
-
+  
+  
   return (
     <Tabs defaultValue="converted" className="w-full  rounded-lg">
       <TabsList className="grid w-full grid-cols-3">

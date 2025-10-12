@@ -79,6 +79,11 @@ export function useQuizW1b(quizItem: QuizW1bItem) {
     availableTokens.set(Array.from(newAvailableTokens));
   };
 
+  const handleConfirmAnswer=()=>{
+    // TODO: add quizzerFeedbackState
+    const isEqual=false;
+    
+  }
   return {
     quizActions: {
       handleAvailableTokensClick,
