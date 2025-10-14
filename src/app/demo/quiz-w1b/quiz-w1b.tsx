@@ -6,13 +6,7 @@ import {
 } from "../../mondly/category/quizzer/_components/definitions";
 import * as React from "react";
 import Image from "next/image";
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-  TabsContents,
-} from "@/components/ui/shadcn-io/tabs";
+
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuizW1b } from "./use-w1b";
@@ -52,8 +46,9 @@ export default function QuizW1b({ quizData }: QuizW1bProps) {
   };
 
   const renderSelectedTokens = () => {
-    const { selectedTokens } = interactiveData;
-    if (interactiveData.selectedTokens.length > 0) {
+    const selectedTokens = Array.from(interactiveData.selectedTokens);
+    console.log("selectedTokens", selectedTokens);
+    if (selectedTokens.length > 0) {
       return (
         <CardContent className="flex flex-row gap-0 text-lg text-blue-600">
           {selectedTokens.map((item, index) => {
@@ -95,48 +90,19 @@ export default function QuizW1b({ quizData }: QuizW1bProps) {
 
     return tokensButtons;
   };
-  
-  
+
   return (
-    <Tabs defaultValue="converted" className="w-full  rounded-lg">
-      <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger value="original">Original</TabsTrigger>
-        <TabsTrigger value="converted">Converted</TabsTrigger>
-        <TabsTrigger value="ui">UI</TabsTrigger>
-      </TabsList>
-
-      <TabsContents className="mx-1 mb-1 -mt-2 rounded-sm h-full ">
-        <TabsContent value="original" className="space-y-6 p-6">
-          <p className="text-sm">Original Json</p>
-
-          <div className="space-y-3">
-            <JsonViewerComponent data={quizData} />
-          </div>
-        </TabsContent>
-        <TabsContent value="converted" className="space-y-6 p-6">
-          <p className="text-sm ">Converted Json</p>
-          <div className="space-y-3">
-            <JsonViewerComponent
-              data={{
-                staticData,
-                interactiveData,
-              }}
-            />
-          </div>
-        </TabsContent>
-        <TabsContent value="ui" className="space-y-6 p-6">
-          <Card
-            className="grid grid-cols-2 gap-2 text-right naskh-text px-5"
-            dir="rtl"
-          >
-            <div className="">{renderHeader()}</div>
-            <div className="flex flex-col gap-2 items-center">
-              <div>{renderSelectedTokens()}</div>
-              <div>{...renderAvailableTokens()}</div>
-            </div>
-          </Card>
-        </TabsContent>
-      </TabsContents>
-    </Tabs>
+    <div className="space-y-6 p-6">
+      <Card
+        className="grid grid-cols-2 gap-2 text-right naskh-text px-5"
+        dir="rtl"
+      >
+        <div className="">{renderHeader()}</div>
+        <div className="flex flex-col gap-2 items-center">
+          <div>{renderSelectedTokens()}</div>
+          <div>{renderAvailableTokens()}</div>
+        </div>
+      </Card>
+    </div>
   );
 }
