@@ -1,0 +1,601 @@
+[
+   {
+            "id": 607557,
+            "lesson": 201,
+            "type": "W1b",
+            "modifiers": 68,
+            "wordID": 18205,
+            "alternates": [],
+            "tokens": [{
+                    "key": "tjYL9qkTDht",
+                    "text": "پ",
+                    "group": 0
+                },
+                {
+                    "key": "tjG9ENns3PO",
+                    "text": "ب",
+                    "group": 0
+                },
+                {
+                    "key": "tgNYMLKCDR0",
+                    "text": "ا",
+                    "group": 0
+                }
+            ],
+            "tokensEqualSize": false,
+            "ord": [
+                "tjG9ENns3PO",
+                "tgNYMLKCDR0",
+                "tjYL9qkTDht"
+            ],
+            "tokensPhonetic": [{
+                    "key": "t7m4dpbK3YN",
+                    "text": "b",
+                    "group": 0
+                },
+                {
+                    "key": "tW7v6RyDSOc",
+                    "text": "p",
+                    "group": 0
+                },
+                {
+                    "key": "tBvTyCH63qx",
+                    "text": "a",
+                    "group": 0
+                },
+                {
+                    "key": "tRLKPmCU3Tb",
+                    "text": "a",
+                    "group": 0
+                }
+            ],
+            "ordPhonetic": [
+                "t7m4dpbK3YN",
+                "tRLKPmCU3Tb",
+                "tBvTyCH63qx",
+                "tW7v6RyDSOc"
+            ],
+            "sols": [
+                {
+                    "key": "ECesPxudUVyz1ZGU32dd7_FM9tLkUfZl",
+                    "audio_updated_at": 1580691727,
+                    "text": "أب",
+                    "dictionary": [{
+                        "raw": "أب",
+                        "translations": [{
+                            "type": "dictionary",
+                            "text": "باپ",
+                            "phonetic": "baap"
+                        }]
+                    }],
+                    "phraseType": 0,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "أب",
+                            "location": 0,
+                            "length": 2
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 2,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }]
+                },
+                {
+                    "key": "ECesPxudUVyz1ZGU32dd7_FM9tLkUfZl",
+                    "audio_updated_at": 1580691727,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "باپ",
+                            "location": 0,
+                            "length": 3
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 3,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "phonetic_tokens": [{
+                        "raw": {
+                            "text": "baap",
+                            "location": 0,
+                            "length": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 4,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "text": "باپ",
+                    "phonetic": "baap",
+                    "image": "qw5T9p-5MQ2FeRgMVwcIKhTj9sIzVNZJ",
+                    "image_updated_at": 1689159125
+                }
+            ]
+        },
+         {
+            "id": 607741,
+            "lesson": 202,
+            "type": "W1b",
+            "modifiers": 68,
+            "wordID": 18193,
+            "alternates": [],
+            "tokens": [{
+                    "key": "tkrMmkdBphG",
+                    "text": "ئ",
+                    "group": 0
+                },
+                {
+                    "key": "ti2UF-vOoZO",
+                    "text": "ب",
+                    "group": 0
+                },
+                {
+                    "key": "tygMfujRmQq",
+                    "text": "ھ",
+                    "group": 0
+                },
+                {
+                    "key": "tC2YB_I_Bz9",
+                    "text": "ا",
+                    "group": 0
+                },
+                {
+                    "key": "t9mELl1SCQl",
+                    "text": "ی",
+                    "group": 0
+                }
+            ],
+            "tokensEqualSize": false,
+            "ord": [
+                "ti2UF-vOoZO",
+                "tygMfujRmQq",
+                "tC2YB_I_Bz9",
+                "tkrMmkdBphG",
+                "t9mELl1SCQl"
+            ],
+            "tokensPhonetic": [{
+                    "key": "tfx-BRFSyFd",
+                    "text": "h",
+                    "group": 0
+                },
+                {
+                    "key": "t3GBGCgKuWB",
+                    "text": "b",
+                    "group": 0
+                },
+                {
+                    "key": "tKXbPb86KR7",
+                    "text": "i",
+                    "group": 0
+                },
+                {
+                    "key": "tF1H1styWiW",
+                    "text": "a",
+                    "group": 0
+                }
+            ],
+            "ordPhonetic": [
+                "t3GBGCgKuWB",
+                "tfx-BRFSyFd",
+                "tF1H1styWiW",
+                "tKXbPb86KR7"
+            ],
+            "sols": [{
+                    "key": "5yJIklmE-tT6L44G-d2no9epgjQXY1kV",
+                    "audio_updated_at": 1580691716,
+                    "text": "أخ",
+                    "dictionary": [{
+                        "raw": "أخ",
+                        "translations": [{
+                            "type": "dictionary",
+                            "text": "بھائی",
+                            "phonetic": "bhai"
+                        }]
+                    }],
+                    "phraseType": 0,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "أخ",
+                            "location": 0,
+                            "length": 2
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 2,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }]
+                },
+                {
+                    "key": "5yJIklmE-tT6L44G-d2no9epgjQXY1kV",
+                    "audio_updated_at": 1580691716,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "بھائی",
+                            "location": 0,
+                            "length": 5
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 5,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "phonetic_tokens": [{
+                        "raw": {
+                            "text": "bhai",
+                            "location": 0,
+                            "length": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 4,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "text": "بھائی",
+                    "phonetic": "bhai",
+                    "image": "vl6fESikntX8AhrQYU0sjpNS-e8bN2vm",
+                    "image_updated_at": 1689159122
+                }
+            ]
+        },
+          {
+            "id": 608100,
+            "lesson": 203,
+            "type": "W1b",
+            "modifiers": 68,
+            "wordID": 18210,
+            "alternates": [],
+            "tokens": [{
+                    "key": "t7RsVXz9G-l",
+                    "text": "د",
+                    "group": 0
+                },
+                {
+                    "key": "tjZGaM5OX0l",
+                    "text": "د",
+                    "group": 0
+                },
+                {
+                    "key": "t_tLKen5qhW",
+                    "text": "ا",
+                    "group": 0
+                },
+                {
+                    "key": "tGu-luOHz0h",
+                    "text": "ا",
+                    "group": 0
+                }
+            ],
+            "tokensEqualSize": true,
+            "ord": [
+                "tjZGaM5OX0l",
+                "tGu-luOHz0h",
+                "t7RsVXz9G-l",
+                "t_tLKen5qhW"
+            ],
+            "tokensPhonetic": [{
+                    "key": "t7RsVXz9G-l",
+                    "text": "d",
+                    "group": 0
+                },
+                {
+                    "key": "tjZGaM5OX0l",
+                    "text": "d",
+                    "group": 0
+                },
+                {
+                    "key": "t_tLKen5qhW",
+                    "text": "a",
+                    "group": 0
+                },
+                {
+                    "key": "tGu-luOHz0h",
+                    "text": "a",
+                    "group": 0
+                }
+            ],
+            "sols": [{
+                    "key": "q0q_OVh0zIxKal_zwqsU6XTbtY4SeXlt",
+                    "audio_updated_at": 1580691729,
+                    "text": "جد",
+                    "dictionary": [{
+                        "raw": "جد",
+                        "translations": [{
+                            "type": "dictionary",
+                            "text": "دادا",
+                            "phonetic": "dada"
+                        }]
+                    }],
+                    "phraseType": 0,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "جد",
+                            "location": 0,
+                            "length": 2
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 2,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }]
+                },
+                {
+                    "key": "q0q_OVh0zIxKal_zwqsU6XTbtY4SeXlt",
+                    "audio_updated_at": 1580691729,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "دادا",
+                            "location": 0,
+                            "length": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 4,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "phonetic_tokens": [{
+                        "raw": {
+                            "text": "dada",
+                            "location": 0,
+                            "length": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 4,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "text": "دادا",
+                    "phonetic": "dada",
+                    "image": "8RXHPvmYCgrUEtbw51qJCxP1nNmiKjUh",
+                    "image_updated_at": 1689159126
+                }
+            ]
+        },
+         {
+            "id": 608292,
+            "lesson": 204,
+            "type": "W1b",
+            "modifiers": 68,
+            "wordID": 18206,
+            "alternates": [],
+            "tokens": [{
+                    "key": "toeAx31tSbL",
+                    "text": "و",
+                    "group": 0
+                },
+                {
+                    "key": "t0NxbGxvh8u",
+                    "text": "س",
+                    "group": 0
+                },
+                {
+                    "key": "tSMaJxw--Zc",
+                    "text": "ت",
+                    "group": 0
+                },
+                {
+                    "key": "trAh44esEWV",
+                    "text": "د",
+                    "group": 0
+                }
+            ],
+            "tokensEqualSize": true,
+            "ord": [
+                "trAh44esEWV",
+                "toeAx31tSbL",
+                "t0NxbGxvh8u",
+                "tSMaJxw--Zc"
+            ],
+            "tokensPhonetic": [
+                {
+                    "key": "toeAx31tSbL",
+                    "text": "o",
+                    "group": 0
+                },
+                {
+                    "key": "t0NxbGxvh8u",
+                    "text": "s",
+                    "group": 0
+                },
+                {
+                    "key": "tSMaJxw--Zc",
+                    "text": "t",
+                    "group": 0
+                },
+                {
+                    "key": "trAh44esEWV",
+                    "text": "d",
+                    "group": 0
+                }
+            ],
+            "sols": [{
+                    "key": "sXvRN8-uEcLXUzQ1IrDy8yj_728J6pcy",
+                    "audio_updated_at": 1580691788,
+                    "text": "صديق",
+                    "dictionary": [{
+                        "raw": "صديق",
+                        "translations": [{
+                            "type": "dictionary",
+                            "text": "دوست",
+                            "phonetic": "dost"
+                        }]
+                    }],
+                    "phraseType": 0,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "صديق",
+                            "location": 0,
+                            "length": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 4,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }]
+                },
+                {
+                    "key": "sXvRN8-uEcLXUzQ1IrDy8yj_728J6pcy",
+                    "audio_updated_at": 1580691788,
+                    "text_tokens": [{
+                        "raw": {
+                            "text": "دوست",
+                            "location": 0,
+                            "length": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 4,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "phonetic_tokens": [{
+                        "raw": {
+                            "text": "dost",
+                            "location": 0,
+                            "length": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "location": 4,
+                            "length": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "location": 0,
+                            "length": 0
+                        }
+                    }],
+                    "text": "دوست",
+                    "phonetic": "dost",
+                    "image": "tAPsVIIg04DMFyuWpH7e7MwirvwQHBln",
+                    "image_updated_at": 1689159125
+                }
+            ]
+        }
+
+]
