@@ -11,12 +11,19 @@ import Image from "next/image";
 import { useQuizW1b } from "./use-quiz-w1b";
 import { Badge, Keyboard, Mouse, PlayCircle } from "lucide-react";
 import React from "react";
+ import { TonePlayerButton } from "@/components/general/tone-button-player";
+ import { useTune } from "@/hooks/use-tone";
+ 
+
+
+
 const quiz = quizData[1] as QuizW1bItem;
 
 export default function DemoPage() {
   const { actions, quizInfo } = useQuizW1b(quiz);
   const [mode, setMode] = React.useState<"input" | "selection">("input");
   const [inputText, setInputText] = React.useState("");
+  const {playCorrectTune, playIncorrectTune} = useTune();
   // renders
 
   const renderPromptCard = () => {
@@ -40,7 +47,16 @@ export default function DemoPage() {
       </Card>
     );
   };
+
   const renderInputMode = () => {
+    const checkAnswer = () => {
+      const isCorrect = actions.checkAnswer(inputText);
+      if (isCorrect) {
+        playCorrectTune();
+      } else {
+        playIncorrectTune();
+      }
+    };
     return (
       <Card className="flex flex-row px-4 gap-2">
         <Label htmlFor="inputText">اكتب النص المقابل: 👈</Label>
@@ -49,8 +65,8 @@ export default function DemoPage() {
           className="w-[250px] focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500"
           onChange={(e) => setInputText(e.target.value)}
         />
-        <Button disabled={inputText === ""}>تحقق</Button>
-        <Button disabled={inputText === ""}>مسح</Button>
+        <Button disabled={inputText === ""} onClick={checkAnswer}>تحقق</Button>
+        <Button disabled={inputText === ""} onClick={() => setInputText("")}>مسح</Button>
       </Card>
     );
   };
@@ -58,6 +74,14 @@ export default function DemoPage() {
     const handleTokenClick = (token: string) => {
       setInputText((prev) => prev + token);
       console.log(inputText);
+    };
+    const checkAnswer = () => {
+      const isCorrect = actions.checkAnswer(inputText);
+      if (isCorrect) {
+        playCorrectTune();
+      } else {
+        playIncorrectTune();
+      }
     };
     return (
       <Card className="flex flex-col gap-2">
@@ -84,7 +108,7 @@ export default function DemoPage() {
         <div className="flex flex-row gap-2 justify-center items-center">
           <Button
             disabled={inputText === ""}
-            onClick={() => actions.checkAnswer(inputText)}
+            onClick={() => checkAnswer()}
           >
             تحقق
           </Button>
@@ -99,7 +123,7 @@ export default function DemoPage() {
     <div className="flex flex-col gap-2 my-5 text-right   mx-2" dir="rtl">
       {renderPromptCard()}
       <Button
-        className="w-16 h-12"
+        className="w-16 h-12 text-white bg-blue-500 "
         onClick={() => setMode(mode === "input" ? "selection" : "input")}
       >
         {mode === "input" ? (
