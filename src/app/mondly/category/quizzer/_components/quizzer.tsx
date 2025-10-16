@@ -77,9 +77,16 @@ export default function Quizzer({ quizzes }: Props) {
   const renderScorebar = () => {
     console.log("render Scorebar....");
 
-
-    if(quizzesEnded.get()){
-      return <PageRecirector path="/mondly/category/result" showSpinner={false} message="" children={<ResultScreen score={scoreState.score.get()}/>}/>
+    if (quizzesEnded.get()) {
+      return (
+        <PageRecirector
+          path="/mondly/category/result"
+          showSpinner={false}
+          message=""
+        >
+          <ResultScreen score={scoreState.score.get()} />
+        </PageRecirector>
+      );
     }
 
     return (
