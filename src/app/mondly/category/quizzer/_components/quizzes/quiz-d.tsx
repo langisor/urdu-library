@@ -43,10 +43,8 @@ export default function QuizD({
   React.useEffect(() => {
     const audio = new Audio(currentQuestion.audioFile.get());
     audio.play();
-    return () => {
-      audio.pause();
-    };
-  }, [state.currentQuestionIndex.get()]);
+    
+  }, []);
 
   const currentQuestion = state.questions[state.currentQuestionIndex.get()];
 
@@ -132,7 +130,7 @@ interface OptionCardProps {
   onCheckAnswer: (answer: string) => void;
 }
 
-function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
+const  OptionCard=React.memo(({ option, onCheckAnswer, textTop }: OptionCardProps) => {
   console.log("option", option.image);
 
   if (textTop) {
@@ -180,4 +178,4 @@ function OptionCard({ option, onCheckAnswer, textTop }: OptionCardProps) {
       </CardFooter>
     </Card>
   );
-}
+})

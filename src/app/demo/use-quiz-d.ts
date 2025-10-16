@@ -9,15 +9,11 @@ import {
 import { useHookstate } from "@hookstate/core";
 
 type ConvertDReturn = {
- 
+  //  return 4 questions objects
 };
 
 const convertD = (quiz: QuizDItem): ConvertDReturn => {
-   return {
-    
-   }
+  return {};
 };
 
-export function useQuizD(quizData: QuizDItem) {
-  
-}
+export function useQuizD(quizData: QuizDItem) {}
