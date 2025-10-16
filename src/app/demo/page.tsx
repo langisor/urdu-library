@@ -17,7 +17,7 @@ import React from "react";
 
 
 
-const quiz = quizData[1] as QuizW1bItem;
+const quiz = quizData[3] as QuizW1bItem;
 
 export default function DemoPage() {
   const { actions, quizInfo } = useQuizW1b(quiz);
