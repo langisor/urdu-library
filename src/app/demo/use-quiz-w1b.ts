@@ -17,9 +17,10 @@ type ConvertW1bReturn = {
   prompt: {
     audioFile: string;
     text: string;
+    image: string;
   };
   correctAnswer: {
-    image: string;
+   
     text: string;
   };
 };
@@ -35,9 +36,10 @@ const convertW1b = (quiz: QuizW1bItem): ConvertW1bReturn => {
   const prompt: ConvertW1bReturn["prompt"] = {
     audioFile: getAudioUrl(quiz.sols[0].key),
     text: quiz.sols[0].text,
-  };
-  const correctAnswer: ConvertW1bReturn["correctAnswer"] = {
     image: getImageUrl(quiz.sols[1].image!),
+      };
+  const correctAnswer: ConvertW1bReturn["correctAnswer"] = {
+     
     text: quiz.sols[1].text,
   };
   return {
@@ -50,15 +52,30 @@ const convertW1b = (quiz: QuizW1bItem): ConvertW1bReturn => {
 
 export function useQuizW1b(quizData: QuizW1bItem) {
   const quizState = useHookstate(convertW1b(quizData));
-  const [readyToConfirm, setReadyToConfirm] = React.useState(false);
 
-  const checkAnswer = () => {};
+  const getTokenId = (text: string) => {
+    const token = quizState.tokens.get().find((t) => t.text === text);
+    return token?.id;
+  };
+  const checkAnswer = (inputText: string) => {
+      const correctOrd = quizState.correctOrd.get();
+       const inputOrd = inputText.split("").map((t) => getTokenId(t));
+       const isCorrect = correctOrd.every((c, i) => c === inputOrd[i]);
+       return isCorrect;
+  };
  
-  const resetQuiz = () => {};
+  const resetQuiz = () => {
+    quizState.set(convertW1b(quizData));
+   
+    };
   return {
     actions: {
       getPrompt: quizState.prompt.get(),
+      getTokens: quizState.tokens.get(),
+      checkAnswer,
+      resetQuiz,
     },
-    quizInfo:quizState.get()
+    quizInfo:quizState.get(),
+
   };
 }
