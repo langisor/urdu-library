@@ -17,6 +17,8 @@ import {
   ItemDescription,
   ItemTitle,
 } from "@/components/ui/item";
+import PageRecirector from "./page-redirector";
+import { ResultScreen } from "./result-screen";
 
 interface Props {
   quizzes: any[];
@@ -36,8 +38,8 @@ export default function Quizzer({ quizzes }: Props) {
   // states
   const [currentStep, actions] = useStep(quizzes.length);
   const scoreState = useHookstate(initialScoreState);
-  const quizState = useHookstate(false); // true when the user has completed the last question
-  
+  const quizzesEnded = useHookstate(false); // true when the user has completed the last question
+
   // Use a local state variable to watch for changes (optional, but needed if you render the state)
   const feedbackState: State<Feedback> = useHookstate(
     initialFeedback as Feedback
@@ -64,7 +66,7 @@ export default function Quizzer({ quizzes }: Props) {
     if (canGoToNext) {
       actions.goToNextStep();
     } else {
-      quizState.set(true);
+      quizzesEnded.set(true);
     }
     resetUI();
   };
@@ -75,15 +77,27 @@ export default function Quizzer({ quizzes }: Props) {
   const renderScorebar = () => {
     console.log("render Scorebar....");
 
+
+    if(quizzesEnded.get()){
+      return <PageRecirector path="/mondly/category/result" showSpinner={false} message="" children={<ResultScreen score={scoreState.score.get()}/>}/>
+    }
+
     return (
-      <Item className="w-full bg-gradient-to-b from-secondary to-primary/40 text-xl flex flex-row gap-2 items-center p-2">
-        <ItemContent>
-          <ItemTitle>Score</ItemTitle>
-          <ItemDescription>
-            Your score: {scoreState.score.get()}
-          </ItemDescription>
-        </ItemContent>
-      </Item>
+      <div className="flex flex-col  text-lg font-bold">
+        <Item className="w-full bg-gradient-to-b from-secondary to-primary/40 text-xl flex flex-row gap-2 items-center p-2">
+          <ItemContent>
+            <ItemTitle>Score</ItemTitle>
+            <ItemDescription>
+              Your score: {scoreState.score.get()}
+            </ItemDescription>
+          </ItemContent>
+          <ItemContent>
+            <ItemTitle>
+              id: {currentQuiz.id} type: {currentQuiz.type}
+            </ItemTitle>
+          </ItemContent>
+        </Item>
+      </div>
     );
   };
   const renderProgress = () => {
@@ -166,6 +180,14 @@ export default function Quizzer({ quizzes }: Props) {
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
             scoreState={scoreState}
+          />
+        );
+      case "W1b":
+        console.log("rendering QuizW1b....");
+        return (
+          <Quizzes.QuizW1b
+            quizData={currentQuiz}
+            quizzerFeedback={feedbackState}
           />
         );
       case "D":

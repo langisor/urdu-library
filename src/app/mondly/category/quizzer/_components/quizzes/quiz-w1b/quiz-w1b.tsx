@@ -3,41 +3,38 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import quizData from "./w1b-samples.json";
-import { QuizW1bItem } from "./definitions";
+import { QuizW1bItem } from "../../definitions";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useQuizW1b } from "./use-quiz-w1b";
-import { Badge, Keyboard, Mouse, PlayCircle } from "lucide-react";
+import { Keyboard, Mouse, PlayCircle } from "lucide-react";
+import { State } from "@hookstate/core";
 import React from "react";
- import { TonePlayerButton } from "@/components/general/tone-button-player";
- import { useTune } from "@/hooks/use-tone";
- 
+import { TonePlayerButton } from "@/components/general/tone-button-player";
+import { useTune } from "@/hooks/use-tone";
+import { Feedback } from "../../helpers-types";
 
-const quiz = quizData[3] as QuizW1bItem;
+interface QuizW1bState {
+  quizData: QuizW1bItem;
+  quizzerFeedback: State<Feedback>;
+}
 
-export default function DemoPage() {
-  const { actions, quizInfo } = useQuizW1b(quiz);
+export default function QuizW1b({ quizData, quizzerFeedback }: QuizW1bState) {
+  const { actions, quizInfo } = useQuizW1b(quizData);
   const [mode, setMode] = React.useState<"input" | "selection">("input");
   const [inputText, setInputText] = React.useState("");
-  const {playCorrectTune, playIncorrectTune} = useTune();
+  const { playCorrectTune, playIncorrectTune } = useTune();
+
   // renders
 
   const renderPromptCard = () => {
-    const playAudio = (url: string) => {
-      const audio = new Audio(url);
-      audio.play();
-    };
-
     const { text, audioFile, image } = actions.getPrompt;
     return (
       <Card className="flex flex-col gap-2 px-2">
         <Card className="flex flex-row justify-center items-center gap-3 ">
           <h2 className="text-lg naskh-text">{text}</h2>
-          <Button onClick={() => playAudio(audioFile)}>
-            <PlayCircle className="w-4 h-4" />
-          </Button>
+          <TonePlayerButton url={audioFile} />
         </Card>
         <Card className="flex flex-col gap-2 justify-center items-center">
           <Image src={image} alt={text} width={250} height={300} />
@@ -50,8 +47,12 @@ export default function DemoPage() {
     const checkAnswer = () => {
       const isCorrect = actions.checkAnswer(inputText);
       if (isCorrect) {
+        quizzerFeedback.isCorrect.set(true);
+        quizzerFeedback.message.set("الإجابة صحيحة");
         playCorrectTune();
       } else {
+        quizzerFeedback.isCorrect.set(false);
+        quizzerFeedback.message.set("الإجابة الخاطئة");
         playIncorrectTune();
       }
     };
@@ -63,8 +64,12 @@ export default function DemoPage() {
           className="w-[250px] focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500"
           onChange={(e) => setInputText(e.target.value)}
         />
-        <Button disabled={inputText === ""} onClick={checkAnswer}>تحقق</Button>
-        <Button disabled={inputText === ""} onClick={() => setInputText("")}>مسح</Button>
+        <Button disabled={inputText === ""} onClick={checkAnswer}>
+          تحقق
+        </Button>
+        <Button disabled={inputText === ""} onClick={() => setInputText("")}>
+          مسح
+        </Button>
       </Card>
     );
   };
@@ -76,8 +81,14 @@ export default function DemoPage() {
     const checkAnswer = () => {
       const isCorrect = actions.checkAnswer(inputText);
       if (isCorrect) {
+        quizzerFeedback.isCorrect.set(true);
+        quizzerFeedback.message.set("الإجابة صحيحة");
         playCorrectTune();
       } else {
+        quizzerFeedback.isCorrect.set(false);
+        quizzerFeedback.message.set(
+          `الإجابة الخاطئة، الجواب الصحيح: ${actions.getCorrectAnswer()}`
+        );
         playIncorrectTune();
       }
     };
@@ -104,10 +115,7 @@ export default function DemoPage() {
           </Label>
         </div>
         <div className="flex flex-row gap-2 justify-center items-center">
-          <Button
-            disabled={inputText === ""}
-            onClick={() => checkAnswer()}
-          >
+          <Button disabled={inputText === ""} onClick={() => checkAnswer()}>
             تحقق
           </Button>
           <Button disabled={inputText === ""} onClick={() => setInputText("")}>
@@ -131,14 +139,6 @@ export default function DemoPage() {
         )}
       </Button>
       {mode === "input" ? renderInputMode() : renderSelectionMode()}
-      <Card className="flex flex-col gap-2">
-        <h2>quizInfo</h2>
-        <JsonViewerComponent data={quizInfo} />
-      </Card>
-      <Card>
-        <h2>quiz</h2>
-        <JsonViewerComponent data={quiz} />
-      </Card>
     </div>
   );
 }

@@ -5,14 +5,16 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 interface PageRecirectorProps {
-  path: string;
-  showSpinner: boolean;
-  message: string;
+  path?: string;
+  showSpinner?: boolean;
+  message?: string;
+  children?: React.ReactNode;
 }
 export default function PageRecirector({
   path = "/",
   showSpinner = false,
   message = "",
+  children,
 }: PageRecirectorProps) {
   const router = useRouter();
 
@@ -28,6 +30,7 @@ export default function PageRecirector({
     <div className="h-screen flex flex-col items-center justify-center">
       {showSpinner && <Spinner className="text-blue-600" size={64} />}
       <h3 className="text-shadow-accent">{message ? message : ""}</h3>
+      {children ? <>{children}</> : <></>}
     </div>
   );
 }

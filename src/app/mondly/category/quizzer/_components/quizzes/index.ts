@@ -7,5 +7,6 @@ import QuizF from "./quiz-f";
 import QuizQ from "./quiz-q/quiz-q";
 import QuizQb from "./quiz-qb/quiz-qb";
 import QuizP from "./quiz-p/quiz-p";
+import QuizW1b from "./quiz-w1b/quiz-w1b";
 
-export { QuizT1, QuizT1b, QuizR, QuizC1b, QuizD, QuizF, QuizQ, QuizQb, QuizP };
+export { QuizT1, QuizT1b, QuizR, QuizC1b, QuizD, QuizF, QuizQ, QuizQb, QuizP, QuizW1b };
