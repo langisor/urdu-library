@@ -21,7 +21,8 @@ export default function DemoPage() {
   
   return(
     <div>
-      <h1>Quiz D</h1>
+      <h1 className="text-2xl">Quiz D</h1>
+      <JsonViewerComponent data={quiz} />
     </div>
   )
 }
