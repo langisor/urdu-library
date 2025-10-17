@@ -5,14 +5,12 @@ import * as React from "react";
 import { Feedback } from "./helpers-types";
 import { useStep } from "@/hooks/use-step";
 import QuizzerProgress from "./quizzer-progress";
-// import { useGlobalScoreState } from "../global-score-state";
 import * as Quizzes from "./quizzes";
 import { useHookstate, State } from "@hookstate/core";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { LoadingSpinner } from "./loading-spinner";
 import {
   Item,
-  ItemActions,
   ItemContent,
   ItemDescription,
   ItemTitle,
@@ -202,7 +200,7 @@ export default function Quizzer({ quizzes }: Props) {
         return (
           <Quizzes.QuizD
             quizData={currentQuiz}
-            quizzerFeedBack={feedbackState}
+            quizzerFeedback={feedbackState}
             scoreState={scoreState}
           />
         );
