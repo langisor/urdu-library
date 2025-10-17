@@ -11,67 +11,37 @@ import { useQuizD } from "./use-quiz-d";
 import React from "react";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import { useTune } from "@/hooks/use-tone";
+import { ConvertDQuestion } from "./use-quiz-d";
 
 const quiz = quizData[0] as QuizDItem;
 
 export default function DemoPage() {
-  const { actions, questions } = useQuizD(quiz);
+  const { actions } = useQuizD(quiz);
 
-  const currentQuestionIndex  =  useHookstate(() => actions.getCurrentQuestionIndex);
-
-  const currentQuestion = questions[currentQuestionIndex.get()];
+  const currentQuestion = actions.getCurrentQuestion;
   const handleOptionClick = (optionId: string) => {
-    const isCorrect = actions.checkAnswer(optionId);
-    if (isCorrect) {
+    if (optionId === currentQuestion.prompt.correctOptionId.get()) {
       console.log("Correct");
     } else {
       console.log("Incorrect");
     }
-    currentQuestionIndex.get() < questions.length - 1
-      ? currentQuestionIndex.set(currentQuestionIndex.get() + 1)
-      : null;
+    // TODO: update feedback if last quiz
+    actions.goToNextQuestion();
   };
   const renderPrompt = () => {
-    return (
-      <div className="flex flex-col items-center justify-center">
-        <Card className="flex flex-row gap-2 items-center justify-center bg-blue-500 text-white w-[400px]">
-          <h2 className="text-xl font-bold text-white">
-            {currentQuestion.prompt.text}
-          </h2>
-          <TonePlayerButton url={currentQuestion.prompt.audioFile} />
-        </Card>
-      </div>
-    );
+    return <PromptCard prompt={currentQuestion.prompt.get()} />;
   };
 
   const renderTopCards = () => {
     return (
       <Card className="grid grid-cols-2 gap-2 p-2">
-        <Card className="flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
-          <h2 className="text-xl font-bold">
-            {currentQuestion.options[0].text}
-          </h2>
-          <Image
-            src={currentQuestion.options[0].image}
-            alt={currentQuestion.options[0].text}
-            width={300}
-            height={300}
-            className="w-[200px] h-[200px]"
+        {currentQuestion.options.slice(0, 2).map((option) => (
+          <OptionCard
+            key={option.id.get()}
+            option={option.get()}
+            onClick={() => handleOptionClick(option.id.get())}
           />
-        </Card>
-
-        <Card className="flex flex-col gap-2 items-center justify-center cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
-          <h2 className="text-xl font-bold">
-            {currentQuestion.options[1].text}
-          </h2>
-          <Image
-            src={currentQuestion.options[1].image}
-            alt={currentQuestion.options[1].text}
-            width={300}
-            height={300}
-            className="w-[200px] h-[200px]"
-          />
-        </Card>
+        ))}
       </Card>
     );
   };
@@ -79,31 +49,13 @@ export default function DemoPage() {
   const renderBottomCards = () => {
     return (
       <Card className="grid grid-cols-2 gap-2 p-2">
-        <Card className="flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
-          <Image
-            src={currentQuestion.options[2].image}
-            alt={currentQuestion.options[2].text}
-            width={300}
-            height={300}
-            className="w-[200px] h-[200px]"
+        {currentQuestion.options.slice(2, 4).map((option) => (
+          <OptionCard
+            key={option.id.get()}
+            option={option.get()}
+            onClick={() => handleOptionClick(option.id.get())}
           />
-          <h2 className="text-xl font-bold">
-            {currentQuestion.options[2].text}
-          </h2>
-        </Card>
-
-        <Card className="flex flex-col gap-2 items-center justify-center cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
-          <Image
-            src={currentQuestion.options[3].image}
-            alt={currentQuestion.options[3].text}
-            width={300}
-            height={300}
-            className="w-[200px] h-[200px]"
-          />
-          <h2 className="text-xl font-bold">
-            {currentQuestion.options[3].text}
-          </h2>
-        </Card>
+        ))}
       </Card>
     );
   };
@@ -111,11 +63,45 @@ export default function DemoPage() {
   return (
     <div className="flex flex-col gap-2 text-right" dir="rtl">
       <h1 className="text-2xl">Quiz D</h1>
-      <Button onClick={() => actions.nextQuestion()}>Next Question</Button>
+     
       {renderTopCards()}
       {renderPrompt()}
       {renderBottomCards()}
       <JsonViewerComponent data={currentQuestion} />
     </div>
+  );
+}
+
+function PromptCard({ prompt }: { prompt: ConvertDQuestion["prompt"] }) {
+  return (
+    <div className="flex flex-col items-center justify-center gap-2">
+      <Card className="flex flex-row items-center justify-center gap-2 w-[400px] bg-blue-500 p-2 text-white">
+        <h2 className="text-xl font-bold">{prompt.text}</h2>
+        <TonePlayerButton url={prompt.audioFile} />
+      </Card>
+    </div>
+  );
+}
+
+interface OptionCardProps {
+  option: ConvertDQuestion["options"][number];
+  onClick: (optionId: string) => void;
+}
+
+function OptionCard({ option, onClick }: OptionCardProps) {
+  return (
+    <Card
+      className="flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg"
+      onClick={() => onClick(option.id)}
+    >
+      <Image
+        src={option.image}
+        alt={option.text}
+        width={300}
+        height={300}
+        className="w-[200px] h-[200px]"
+      />
+      <h2 className="text-xl font-bold">{option.text}</h2>
+    </Card>
   );
 }

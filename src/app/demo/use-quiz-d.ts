@@ -9,7 +9,7 @@ import {
 } from "./helpers-types";
 import { useHookstate } from "@hookstate/core";
 
-type ConvertDQuestion = {
+export type ConvertDQuestion = {
   prompt: {
     text: string;
     audioFile: string;
@@ -41,6 +41,10 @@ const convertD = (quiz: QuizDItem): ConvertDQuestion[] => {
     });
   }
   const questions = shuffleArray(_questions);
+  // shuffle options
+  questions.forEach((question) => {
+    question.options = shuffleArray(question.options);
+  });
   return questions;
 };
 
@@ -50,21 +54,14 @@ export function useQuizD(quizData: QuizDItem) {
   const currentQuestionIndex = useHookstate(0);
 
   const currentQuestion = questions[currentQuestionIndex.get()];
-  const nextQuestion = () => {
-    currentQuestionIndex.set(currentQuestionIndex.get() + 1);
-  };
-  const checkAnswer = (selectedOptionId: string) => {
-    const isCorrect =
-      selectedOptionId === currentQuestion.prompt.correctOptionId.get();
-    return isCorrect;
-  };
 
   return {
     actions: {
-      checkAnswer: checkAnswer,
-      nextQuestion: nextQuestion,
       getCurrentQuestionIndex: currentQuestionIndex.get(),
+      getCurrentQuestion: currentQuestion,
+      goToNextQuestion: () => {
+        currentQuestionIndex.set(currentQuestionIndex.get() + 1);
+      },
     },
-    questions: questions.get(),
   };
 }
