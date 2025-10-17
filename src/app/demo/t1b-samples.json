@@ -1,274 +1,1845 @@
 [
     {
-        "id": 629442,
-        "alts": [
-            {
-                "key": "OGl97c8DxPvH4uZ7LcjAL9H8ANdPM2HO",
-                "text": "موسم گرما",
-                "image": "04BaxOJOXaKO8Q9ZAcTS3dYktLJfCSWg",
-                "phonetic": "mosam-e-garma",
-                "audio_updated_at": 1688821904,
-                "image_updated_at": 1689159093
-            },
-            {
-                "key": "o5oj3uA0iDtETfM8n4tMCoFRwfIBQFMz",
-                "text": "موسم سرما",
-                "image": "N185TOWmPXOKaQ9BxRmnLibwuyorC9C3",
-                "phonetic": "mosam-e-sarma",
-                "audio_updated_at": 1688821905,
-                "image_updated_at": 1689159095
-            },
-            {
-                "key": "DHgQmLi8vuNNvXozfUySDp_VZ72-ORu-",
-                "text": "بہار",
-                "image": "bsklACsF2z4B2l-dk7HZsbSqyO24UsXR",
-                "phonetic": "bahar",
-                "audio_updated_at": 1580692759,
-                "image_updated_at": 1689159093
-            },
-            {
-                "key": "coZO1ENOb0y0EQccWY9zR632J3uzQ7gQ",
-                "text": "خزاں",
-                "image": "4u21SrHtZhVfxSjzEEU77qfEgRr3WjpX",
-                "phonetic": "khizan",
-                "audio_updated_at": 1580692738,
-                "image_updated_at": 1689159093
-            }
+        "id": 658660,
+        "ord": [
+            "t8JW4lWSy8Q",
+            "tyQN6vz_JBO"
         ],
         "sols": [
             {
-                "key": "OGl97c8DxPvH4uZ7LcjAL9H8ANdPM2HO",
-                "text": "صيف",
-                "audio_updated_at": 1688821904
+                "key": "X5UtgNTENFiqfELw6xZItXK07YTv1PuM",
+                "text": "محطة قطار",
+                "dictionary": [
+                    {
+                        "raw": "محطة",
+                        "translations": [
+                            {
+                                "text": "اسٹیشن",
+                                "type": "dictionary",
+                                "phonetic": "stashion"
+                            }
+                        ]
+                    },
+                    {
+                        "raw": "قطار",
+                        "translations": []
+                    }
+                ],
+                "phraseType": 0,
+                "text_tokens": [
+                    {
+                        "raw": {
+                            "text": "محطة",
+                            "length": 4,
+                            "location": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 4
+                        }
+                    },
+                    {
+                        "raw": {
+                            "text": "قطار",
+                            "length": 4,
+                            "location": 5
+                        },
+                        "linker": {
+                            "text": " ",
+                            "length": 1,
+                            "location": 4
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 5
+                        },
+                        "suffix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 9
+                        }
+                    }
+                ],
+                "audio_updated_at": 1580690696
             },
             {
-                "key": "o5oj3uA0iDtETfM8n4tMCoFRwfIBQFMz",
-                "text": "شتاء",
-                "audio_updated_at": 1688821905
-            },
-            {
-                "key": "DHgQmLi8vuNNvXozfUySDp_VZ72-ORu-",
-                "text": "ربيع",
-                "audio_updated_at": 1580692759
-            },
-            {
-                "key": "coZO1ENOb0y0EQccWY9zR632J3uzQ7gQ",
-                "text": "خريف",
-                "audio_updated_at": 1580692738
+                "key": "X5UtgNTENFiqfELw6xZItXK07YTv1PuM",
+                "text": "ریلوے اسٹیشن",
+                "phonetic": "railway stashan",
+                "audio_updated_at": 1580690696
             }
         ],
-        "type": "D",
-        "lesson": 604,
-        "wordID": 17942,
-        "modifiers": 327,
-        "alternates": [
-            17940,
-            17941,
-            17943
-        ]
+        "type": "T1b",
+        "lesson": 1003,
+        "tokens": [
+            {
+                "key": "tCuUHoTcRMG",
+                "raw": {
+                    "text": "پن",
+                    "length": 2,
+                    "location": 0
+                },
+                "text": "پن",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 2
+                }
+            },
+            {
+                "key": "t3Y0TpQNIWE",
+                "raw": {
+                    "text": "چکی",
+                    "length": 3,
+                    "location": 3
+                },
+                "text": "چکی",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 2
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 6
+                }
+            },
+            {
+                "key": "tyQN6vz_JBO",
+                "raw": {
+                    "text": "اسٹیشن",
+                    "length": 6,
+                    "location": 6
+                },
+                "text": "اسٹیشن",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 5
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 6
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 12
+                }
+            },
+            {
+                "key": "t8JW4lWSy8Q",
+                "raw": {
+                    "text": "ریلوے",
+                    "length": 5,
+                    "location": 0
+                },
+                "text": "ریلوے",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 5
+                }
+            }
+        ],
+        "wordID": 16434,
+        "modifiers": 72,
+        "alternates": [],
+        "tokensPhonetic": [
+            {
+                "key": "tCuUHoTcRMG",
+                "raw": {
+                    "text": "pan",
+                    "length": 3,
+                    "location": 0
+                },
+                "text": "pan",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                }
+            },
+            {
+                "key": "t3Y0TpQNIWE",
+                "raw": {
+                    "text": "chaki",
+                    "length": 5,
+                    "location": 4
+                },
+                "text": "chaki",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 3
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 4
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 9
+                }
+            },
+            {
+                "key": "tyQN6vz_JBO",
+                "raw": {
+                    "text": "stashan",
+                    "length": 7,
+                    "location": 8
+                },
+                "text": "stashan",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 7
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 8
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 15
+                }
+            },
+            {
+                "key": "t8JW4lWSy8Q",
+                "raw": {
+                    "text": "railway",
+                    "length": 7,
+                    "location": 0
+                },
+                "text": "railway",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 7
+                }
+            }
+        ],
+        "tokensEqualSize": true
     },
     {
-        "id": 631143,
-        "alts": [
-            {
-                "key": "9UXS7-w3nCJIMenQVgfmAV4s2MpxmN7X",
-                "text": "انگلستان",
-                "image": "icD2HIeR6pZZYYFK-oU4L3tdmPf602uB",
-                "phonetic": "Inglistaan",
-                "audio_updated_at": 1688822122,
-                "image_updated_at": 1689159204
-            },
-            {
-                "key": "QOdlJIWKvPsgpf5Z5PXQPxWQjyZYTnde",
-                "text": "جاپان",
-                "image": "R8eFPgssVncidMi9TBLAydZD1D2YbR77",
-                "phonetic": "Japan",
-                "audio_updated_at": 1688822125,
-                "image_updated_at": 1689159204
-            },
-            {
-                "key": "elZgLqXUIlGkCz2VrmJTRUbXrglHgw5y",
-                "text": "اٹلی",
-                "image": "utrqtUrGtAXri9sOpv1atfmDzh01d9uQ",
-                "phonetic": "Italy",
-                "audio_updated_at": 1688822121,
-                "image_updated_at": 1689159204
-            },
-            {
-                "key": "AIQ-hWrHMGMk2R16QZzDmvJq5lfmbgWG",
-                "text": "کینیڈا",
-                "image": "vYcl6Qhx4S34aYPQUJ3v6RE-gWi56Df1",
-                "phonetic": "Canada",
-                "audio_updated_at": 1688822124,
-                "image_updated_at": 1689159204
-            }
+        "id": 625545,
+        "ord": [
+            "tskX9QmsrXy",
+            "tqjXr8tQxUF",
+            "tQziOJDQSgx",
+            "tEVsypaV6Nh",
+            "tcOf9ZEI0cY"
         ],
         "sols": [
             {
-                "key": "9UXS7-w3nCJIMenQVgfmAV4s2MpxmN7X",
-                "text": "إنجلترا",
-                "audio_updated_at": 1688822122
+                "key": "hm7cwuZB0JwZUJtyUA9-y0bUJIieUKlp",
+                "text": "أين تعمل؟",
+                "dictionary": [
+                    {
+                        "raw": "أين",
+                        "translations": [
+                            {
+                                "text": "کہاں",
+                                "type": "dictionary",
+                                "phonetic": "kahan"
+                            }
+                        ]
+                    },
+                    {
+                        "raw": "تعمل",
+                        "translations": [
+                            {
+                                "id": 99,
+                                "conj": {
+                                    "fu": [
+                                        {
+                                            "m": {
+                                                "text": "أنا سأعمل"
+                                            },
+                                            "t": {
+                                                "key": "81RYMRQKSouX9CLkhy4MSmWJ5nSGH6ty",
+                                                "text": "میں کام کروں گا",
+                                                "phonetic": "Mein kaam karoon ga",
+                                                "audio_updated_at": 1580697226
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "أنت ستعمل"
+                                            },
+                                            "t": {
+                                                "key": "6k0D1HX90SOt169OCakKAIZthr-wcJr9",
+                                                "text": "تم کام کرو گے",
+                                                "phonetic": "Tum kaam karo gay",
+                                                "audio_updated_at": 1580697228
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هو سيعمل"
+                                            },
+                                            "t": {
+                                                "key": "fB0h79d4EepzKrR6BehZP6o19koMaF_n",
+                                                "text": "وہ کام کرے گا",
+                                                "phonetic": "Wo kaam karay ga",
+                                                "audio_updated_at": 1580697230
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هي ستعمل"
+                                            },
+                                            "t": {
+                                                "key": "fC_S43X7c0mHR8DwYVPESIM5jzsEdY5N",
+                                                "text": "وہ کام کرے گی",
+                                                "phonetic": "Wo kaam karay gi",
+                                                "audio_updated_at": 1580697232
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "نحن سنعمل"
+                                            },
+                                            "t": {
+                                                "key": "2JmuKeVj8aVYyGUPqOow74-HbQ760D1s",
+                                                "text": "ہم کام کریں گے",
+                                                "phonetic": "Hum kaam karain gay",
+                                                "audio_updated_at": 1580697235
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "أنتم ستعملون"
+                                            },
+                                            "t": {
+                                                "key": "-o560lsRZL8Tm-FDxc2bvmb4qUvm93rR",
+                                                "text": "آپ کام کریں گے",
+                                                "phonetic": "Aap kaam karain gay",
+                                                "audio_updated_at": 1580697237
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هم سيعملون"
+                                            },
+                                            "t": {
+                                                "key": "x1j0JAvfuR_stB52ao7ATW_1JiBYZSKz",
+                                                "text": "وہ کام کریں گے",
+                                                "phonetic": "Wo kaam karain gay",
+                                                "audio_updated_at": 1580697239
+                                            }
+                                        }
+                                    ],
+                                    "pa": [
+                                        {
+                                            "m": {
+                                                "text": "أنا عملت"
+                                            },
+                                            "t": {
+                                                "key": "Hs2kgzsyvUxaCRhSJuEmUQqsXJsrdq11",
+                                                "text": "میں نے کام کیا",
+                                                "phonetic": "Mein ne kaam kiya",
+                                                "audio_updated_at": 1580697211
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "أنت عملت"
+                                            },
+                                            "t": {
+                                                "key": "XURJ7Wj0tEtFFRAKpKrFxX_Jw2jYUpX7",
+                                                "text": "تم نے کام کیا",
+                                                "phonetic": "Tum ne kaam kiya",
+                                                "audio_updated_at": 1580697213
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هو عمل"
+                                            },
+                                            "t": {
+                                                "key": "hm1HRqsvPNYVWUyfa17xI_V1DqzhnjAN",
+                                                "text": "اس نے کام کیا",
+                                                "phonetic": "Us ne kaam kiya",
+                                                "audio_updated_at": 1580697215
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هي عملت"
+                                            },
+                                            "t": {
+                                                "key": "CfyWAZDOTQ7qsb5ftO70Ts7WtADnGbcH",
+                                                "text": "اس نے کام کیا",
+                                                "phonetic": "Us ne kaam kiya",
+                                                "audio_updated_at": 1580697217
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "نحن عملنا"
+                                            },
+                                            "t": {
+                                                "key": "twdGPnr9YzLMJFp5uSdILSElERbl_CF0",
+                                                "text": "ہم نے کام کیا",
+                                                "phonetic": "Hum ne kaam kiya",
+                                                "audio_updated_at": 1580697221
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "أنتم عملتم"
+                                            },
+                                            "t": {
+                                                "key": "rzO5nYM6g2am8JFnjYzXe81CUH14mfvc",
+                                                "text": "آپ نے کام کیا",
+                                                "phonetic": "Aap ne kaam kiya",
+                                                "audio_updated_at": 1580697223
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هم عملوا"
+                                            },
+                                            "t": {
+                                                "key": "GU58mj3oivroeSA-2OntLZQV33_HN6nt",
+                                                "text": "انہوں نے کام کیا",
+                                                "phonetic": "Unhon ne kaam kiya",
+                                                "audio_updated_at": 1580697224
+                                            }
+                                        }
+                                    ],
+                                    "pr": [
+                                        {
+                                            "m": {
+                                                "text": "أنا أعمل"
+                                            },
+                                            "t": {
+                                                "key": "qNvsrBhYBbvhk3cYBd6HWf54ok9uEHbF",
+                                                "text": "میں کام کرتا ہوں",
+                                                "phonetic": "Mein kaam karta hoon",
+                                                "audio_updated_at": 1580697196
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "أنت تعمل"
+                                            },
+                                            "t": {
+                                                "key": "ooJrdfi7YiOhsOTf92CvnuMUePoJD3Cy",
+                                                "text": "تم کام کرتے ہو",
+                                                "phonetic": "Tum kaam kartay ho",
+                                                "audio_updated_at": 1580697198
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هو يعمل"
+                                            },
+                                            "t": {
+                                                "key": "bPg025XmnjTvAT3oMdLB3Hp8m2l24Ybi",
+                                                "text": "وہ کام کرتا ہے",
+                                                "phonetic": "Wo kaam karta hai",
+                                                "audio_updated_at": 1580697200
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هي تعمل"
+                                            },
+                                            "t": {
+                                                "key": "sx_rNgZ2ty4S6lscBHRomggYlf7xCQfW",
+                                                "text": "وہ کام کرتی ہے",
+                                                "phonetic": "Wo kaam karti hai",
+                                                "audio_updated_at": 1580697202
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "نحن نعمل"
+                                            },
+                                            "t": {
+                                                "key": "3mPCLE2fWFHaGz4NDAq5W91EqH-r8tTS",
+                                                "text": "ہم کام کرتےہیں",
+                                                "phonetic": "Hum kaam kartay hain",
+                                                "audio_updated_at": 1580697205
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "أنتم تعملون"
+                                            },
+                                            "t": {
+                                                "key": "ON77SSXiPASTQJECqFLcmZSmKfSjpdHA",
+                                                "text": "آپ کام کرتے ہیں",
+                                                "phonetic": "Aap kaam kartay hain",
+                                                "audio_updated_at": 1580697207
+                                            }
+                                        },
+                                        {
+                                            "m": {
+                                                "text": "هم يعملون"
+                                            },
+                                            "t": {
+                                                "key": "2VQfJ_RiFDomVc-regczDRzD0hHMYyvX",
+                                                "text": "وہ کام کرتے ہیں",
+                                                "phonetic": "Wo kaam kartay hain",
+                                                "audio_updated_at": 1580697209
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": {
+                                    "m": "يعمل",
+                                    "t": "کام کرنا",
+                                    "phonetic": "kaam karna"
+                                },
+                                "type": "verb",
+                                "tenseNames": {
+                                    "fu": "مستقبل",
+                                    "pa": "ماضي",
+                                    "pr": "الحاضر"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "phraseType": 1,
+                "text_tokens": [
+                    {
+                        "raw": {
+                            "text": "أين",
+                            "length": 3,
+                            "location": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 3
+                        }
+                    },
+                    {
+                        "raw": {
+                            "text": "تعمل",
+                            "length": 4,
+                            "location": 4
+                        },
+                        "linker": {
+                            "text": " ",
+                            "length": 1,
+                            "location": 3
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 4
+                        },
+                        "suffix": {
+                            "text": "؟",
+                            "length": 1,
+                            "location": 8
+                        }
+                    }
+                ],
+                "audio_updated_at": 1580701437
             },
             {
-                "key": "QOdlJIWKvPsgpf5Z5PXQPxWQjyZYTnde",
-                "text": "اليابان",
-                "audio_updated_at": 1688822125
-            },
-            {
-                "key": "elZgLqXUIlGkCz2VrmJTRUbXrglHgw5y",
-                "text": "إيطاليا",
-                "audio_updated_at": 1688822121
-            },
-            {
-                "key": "AIQ-hWrHMGMk2R16QZzDmvJq5lfmbgWG",
-                "text": "كندا",
-                "audio_updated_at": 1688822124
+                "key": "hm7cwuZB0JwZUJtyUA9-y0bUJIieUKlp",
+                "text": "تم کہاں کام کرتے ہو؟",
+                "phonetic": "Tum kahan kaam kartay ho?",
+                "audio_updated_at": 1580701437
             }
         ],
-        "type": "D",
-        "lesson": 305,
-        "wordID": 23582,
-        "modifiers": 327,
-        "alternates": [
-            23585,
-            23584,
-            23583
-        ]
+        "type": "T1b",
+        "lesson": 2503,
+        "tokens": [
+            {
+                "key": "tVQtgYO5sfj",
+                "raw": {
+                    "text": "کرتا",
+                    "length": 4,
+                    "location": 12
+                },
+                "text": "کرتا",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 11
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 12
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 16
+                }
+            },
+            {
+                "key": "tDf9UPMt8x5",
+                "raw": {
+                    "text": "نہیں",
+                    "length": 4,
+                    "location": 7
+                },
+                "text": "نہیں",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 6
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 7
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 11
+                }
+            },
+            {
+                "key": "tEVsypaV6Nh",
+                "raw": {
+                    "text": "کرتے",
+                    "length": 4,
+                    "location": 12
+                },
+                "text": "کرتے",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 11
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 12
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 16
+                }
+            },
+            {
+                "key": "tqjXr8tQxUF",
+                "raw": {
+                    "text": "کہاں",
+                    "length": 4,
+                    "location": 3
+                },
+                "text": "کہاں",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 2
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 7
+                }
+            },
+            {
+                "key": "tskX9QmsrXy",
+                "raw": {
+                    "text": "تم",
+                    "length": 2,
+                    "location": 0
+                },
+                "text": "تم",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 2
+                }
+            },
+            {
+                "key": "tcOf9ZEI0cY",
+                "raw": {
+                    "text": "ہو",
+                    "length": 2,
+                    "location": 17
+                },
+                "text": "ہو؟",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 16
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 17
+                },
+                "suffix": {
+                    "text": "؟",
+                    "length": 1,
+                    "location": 19
+                }
+            },
+            {
+                "key": "th4QXKzBvtT",
+                "raw": {
+                    "text": "وہ",
+                    "length": 2,
+                    "location": 0
+                },
+                "text": "وہ",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 2
+                }
+            },
+            {
+                "key": "tQziOJDQSgx",
+                "raw": {
+                    "text": "کام",
+                    "length": 3,
+                    "location": 8
+                },
+                "text": "کام",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 7
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 8
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 11
+                }
+            }
+        ],
+        "wordID": 14361,
+        "modifiers": 72,
+        "alternates": [],
+        "tokensPhonetic": [
+            {
+                "key": "tVQtgYO5sfj",
+                "raw": {
+                    "text": "karta",
+                    "length": 5,
+                    "location": 12
+                },
+                "text": "karta",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 11
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 12
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 17
+                }
+            },
+            {
+                "key": "tDf9UPMt8x5",
+                "raw": {
+                    "text": "nae",
+                    "length": 3,
+                    "location": 8
+                },
+                "text": "nae",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 7
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 8
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 11
+                }
+            },
+            {
+                "key": "tEVsypaV6Nh",
+                "raw": {
+                    "text": "kartay",
+                    "length": 6,
+                    "location": 15
+                },
+                "text": "kartay",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 14
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 15
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 21
+                }
+            },
+            {
+                "key": "tqjXr8tQxUF",
+                "raw": {
+                    "text": "kahan",
+                    "length": 5,
+                    "location": 4
+                },
+                "text": "kahan",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 3
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 4
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 9
+                }
+            },
+            {
+                "key": "tskX9QmsrXy",
+                "raw": {
+                    "text": "Tum",
+                    "length": 3,
+                    "location": 0
+                },
+                "text": "Tum",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                }
+            },
+            {
+                "key": "tcOf9ZEI0cY",
+                "raw": {
+                    "text": "ho",
+                    "length": 2,
+                    "location": 22
+                },
+                "text": "ho?",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 21
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 22
+                },
+                "suffix": {
+                    "text": "?",
+                    "length": 1,
+                    "location": 24
+                }
+            },
+            {
+                "key": "th4QXKzBvtT",
+                "raw": {
+                    "text": "Wo",
+                    "length": 2,
+                    "location": 0
+                },
+                "text": "Wo",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 2
+                }
+            },
+            {
+                "key": "tQziOJDQSgx",
+                "raw": {
+                    "text": "kaam",
+                    "length": 4,
+                    "location": 10
+                },
+                "text": "kaam",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 9
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 10
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 14
+                }
+            }
+        ],
+        "tokensEqualSize": true
     },
     {
-        "id": 640438,
-        "alts": [
-            {
-                "key": "9RRrZUTozw2yl1NeNsAfVGv1EjAgYTLz",
-                "text": "پین کیک",
-                "image": "KlfTWNZzex9Dfsi5tlIflKt3PeDZuZfs",
-                "phonetic": "pancake",
-                "audio_updated_at": 1688822766,
-                "image_updated_at": 1689159236
-            },
-            {
-                "key": "KJcAk-r4jzzKhkMqj4k8oQs_qyVYNZqN",
-                "text": "آئس کریم",
-                "image": "Vfz_jgJrEDtiB_L0CZ5ZLvADMO_FMAyr",
-                "phonetic": "ice cream",
-                "audio_updated_at": 1688822764,
-                "image_updated_at": 1689159236
-            },
-            {
-                "key": "OpzwD_wuMOq5rEU6WLctvuFNT-yfqqws",
-                "text": "پائی",
-                "image": "-TmerrREbHbNYi48milSje8S7Yej0TyO",
-                "phonetic": "pie",
-                "audio_updated_at": 1580690403,
-                "image_updated_at": 1689159046
-            },
-            {
-                "key": "UQHrY5QljdI44_hFk1M-t92Wcx0nD3EV",
-                "text": "پھلوں کا سلاد",
-                "image": "p3I3o5loo7thXqCa8S4H6ZmRV61-BlFZ",
-                "phonetic": "phalon ka salad",
-                "audio_updated_at": 1688822765,
-                "image_updated_at": 1689159236
-            }
+        "id": 640368,
+        "ord": [
+            "tf6C-pmtUZX",
+            "t-GdQTa6sD-",
+            "taqa4ZOQ_0Q",
+            "tDJG7JIB-mG"
         ],
         "sols": [
             {
-                "key": "9RRrZUTozw2yl1NeNsAfVGv1EjAgYTLz",
-                "text": "بانكيك",
-                "audio_updated_at": 1688822766
+                "key": "8cxxZ8_5G6x2V5Eclfx9wuffVh-gtMvW",
+                "text": "هذا أخي.",
+                "dictionary": [
+                    {
+                        "raw": "هذا",
+                        "translations": [
+                            {
+                                "text": "یہ",
+                                "type": "dictionary",
+                                "phonetic": "yeh"
+                            }
+                        ]
+                    },
+                    {
+                        "raw": "أخي",
+                        "translations": [
+                            {
+                                "text": "بھائی",
+                                "type": "dictionary",
+                                "phonetic": "bhai"
+                            }
+                        ]
+                    }
+                ],
+                "phraseType": 1,
+                "text_tokens": [
+                    {
+                        "raw": {
+                            "text": "هذا",
+                            "length": 3,
+                            "location": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 3
+                        }
+                    },
+                    {
+                        "raw": {
+                            "text": "أخي",
+                            "length": 3,
+                            "location": 4
+                        },
+                        "linker": {
+                            "text": " ",
+                            "length": 1,
+                            "location": 3
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 4
+                        },
+                        "suffix": {
+                            "text": ".",
+                            "length": 1,
+                            "location": 7
+                        }
+                    }
+                ],
+                "audio_updated_at": 1580702542
             },
             {
-                "key": "KJcAk-r4jzzKhkMqj4k8oQs_qyVYNZqN",
-                "text": "آيس كريم",
-                "audio_updated_at": 1688822764
-            },
-            {
-                "key": "OpzwD_wuMOq5rEU6WLctvuFNT-yfqqws",
-                "text": "فطيرة",
-                "audio_updated_at": 1580690403
-            },
-            {
-                "key": "UQHrY5QljdI44_hFk1M-t92Wcx0nD3EV",
-                "text": "سلطة فاكهة",
-                "audio_updated_at": 1688822765
+                "key": "8cxxZ8_5G6x2V5Eclfx9wuffVh-gtMvW",
+                "text": "یہ میرا بھائی ہے۔",
+                "phonetic": "Yeh maira bhai hai.",
+                "audio_updated_at": 1580702542
             }
         ],
-        "type": "D",
-        "lesson": 3102,
-        "wordID": 16843,
-        "modifiers": 327,
-        "alternates": [
-            24085,
-            24087,
-            24086
-        ]
+        "type": "T1b",
+        "lesson": 101,
+        "tokens": [
+            {
+                "key": "taqa4ZOQ_0Q",
+                "raw": {
+                    "text": "بھائی",
+                    "length": 5,
+                    "location": 8
+                },
+                "text": "بھائی",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 7
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 8
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 13
+                }
+            },
+            {
+                "key": "t-GdQTa6sD-",
+                "raw": {
+                    "text": "میرا",
+                    "length": 4,
+                    "location": 3
+                },
+                "text": "میرا",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 2
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 7
+                }
+            },
+            {
+                "key": "tf6C-pmtUZX",
+                "raw": {
+                    "text": "یہ",
+                    "length": 2,
+                    "location": 0
+                },
+                "text": "یہ",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 2
+                }
+            },
+            {
+                "key": "tHouieglvYI",
+                "raw": {
+                    "text": "بیٹی",
+                    "length": 4,
+                    "location": 8
+                },
+                "text": "بیٹی",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 7
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 8
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 12
+                }
+            },
+            {
+                "key": "tDJG7JIB-mG",
+                "raw": {
+                    "text": "ہے",
+                    "length": 2,
+                    "location": 14
+                },
+                "text": "ہے۔",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 13
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 14
+                },
+                "suffix": {
+                    "text": "۔",
+                    "length": 1,
+                    "location": 16
+                }
+            },
+            {
+                "key": "tQn-DdLrN7D",
+                "raw": {
+                    "text": "میری",
+                    "length": 4,
+                    "location": 3
+                },
+                "text": "میری",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 2
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 7
+                }
+            }
+        ],
+        "wordID": 18315,
+        "modifiers": 72,
+        "alternates": [],
+        "tokensPhonetic": [
+            {
+                "key": "taqa4ZOQ_0Q",
+                "raw": {
+                    "text": "bhai",
+                    "length": 4,
+                    "location": 10
+                },
+                "text": "bhai",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 9
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 10
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 14
+                }
+            },
+            {
+                "key": "t-GdQTa6sD-",
+                "raw": {
+                    "text": "maira",
+                    "length": 5,
+                    "location": 4
+                },
+                "text": "maira",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 3
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 4
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 9
+                }
+            },
+            {
+                "key": "tf6C-pmtUZX",
+                "raw": {
+                    "text": "Yeh",
+                    "length": 3,
+                    "location": 0
+                },
+                "text": "Yeh",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                }
+            },
+            {
+                "key": "tHouieglvYI",
+                "raw": {
+                    "text": "baiti",
+                    "length": 5,
+                    "location": 10
+                },
+                "text": "baiti",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 9
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 10
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 15
+                }
+            },
+            {
+                "key": "tDJG7JIB-mG",
+                "raw": {
+                    "text": "hai",
+                    "length": 3,
+                    "location": 15
+                },
+                "text": "hai.",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 14
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 15
+                },
+                "suffix": {
+                    "text": ".",
+                    "length": 1,
+                    "location": 18
+                }
+            },
+            {
+                "key": "tQn-DdLrN7D",
+                "raw": {
+                    "text": "mairi",
+                    "length": 5,
+                    "location": 4
+                },
+                "text": "mairi",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 3
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 4
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 9
+                }
+            }
+        ],
+        "tokensEqualSize": true
     },
     {
-        "id": 629835,
-        "alts": [
-            {
-                "key": "7HHdDkqbstv0ImwT0S8mNW9V5veJhAIZ",
-                "text": "پھول",
-                "image": "OTpItaOXryKiJHw2ijmiPdB0V0LLwQ2d",
-                "phonetic": "phool",
-                "audio_updated_at": 1580689631,
-                "image_updated_at": 1689159101
-            },
-            {
-                "key": "nBhEkv9vy2f--OWDe2XTBWLPQ8pKpnW3",
-                "text": "پتہ",
-                "image": "0cLy3Wdg8nUGEDkLzidLeIvh77u0E9_l",
-                "phonetic": "patta",
-                "audio_updated_at": 1580689636,
-                "image_updated_at": 1689159105
-            },
-            {
-                "key": "82u9o0hURACwIfnzzAL0C2l5C_z3g1ry",
-                "text": "ساحل",
-                "image": "8Ccy7caEzyf5LSlu_PzFm4s6sf0f22OR",
-                "phonetic": "sahil",
-                "audio_updated_at": 1580690721,
-                "image_updated_at": 1689159067
-            },
-            {
-                "key": "xT00R6_VH2ObAxnu5focKy38zYgeOGJd",
-                "text": "پہاڑ",
-                "image": "NjMXS18gnyVPar5UYNi7SYHmqOTuX_qF",
-                "phonetic": "paharh",
-                "audio_updated_at": 1580690655,
-                "image_updated_at": 1689159107
-            }
+        "id": 640581,
+        "ord": [
+            "tMBiG_Zv3DP",
+            "tsoBVjt-Co8"
         ],
         "sols": [
             {
-                "key": "7HHdDkqbstv0ImwT0S8mNW9V5veJhAIZ",
-                "text": "زهرة",
-                "audio_updated_at": 1580689631
+                "key": "NdYB_q20t6uy29ZoFEdLP7VT5QmBr7qV",
+                "text": "جيد جدًا.",
+                "dictionary": [
+                    {
+                        "raw": "جيد",
+                        "translations": [
+                            {
+                                "text": "اچھا",
+                                "type": "dictionary",
+                                "phonetic": "acha"
+                            }
+                        ]
+                    },
+                    {
+                        "raw": "جدًا",
+                        "translations": [
+                            {
+                                "text": "بہت",
+                                "type": "dictionary",
+                                "phonetic": "bohat"
+                            }
+                        ]
+                    }
+                ],
+                "phraseType": 1,
+                "text_tokens": [
+                    {
+                        "raw": {
+                            "text": "جيد",
+                            "length": 3,
+                            "location": 0
+                        },
+                        "linker": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 0
+                        },
+                        "suffix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 3
+                        }
+                    },
+                    {
+                        "raw": {
+                            "text": "جدًا",
+                            "length": 4,
+                            "location": 4
+                        },
+                        "linker": {
+                            "text": " ",
+                            "length": 1,
+                            "location": 3
+                        },
+                        "prefix": {
+                            "text": "",
+                            "length": 0,
+                            "location": 4
+                        },
+                        "suffix": {
+                            "text": ".",
+                            "length": 1,
+                            "location": 8
+                        }
+                    }
+                ],
+                "audio_updated_at": 1688820328
             },
             {
-                "key": "nBhEkv9vy2f--OWDe2XTBWLPQ8pKpnW3",
-                "text": "ورقة شجر",
-                "audio_updated_at": 1580689636
-            },
-            {
-                "key": "82u9o0hURACwIfnzzAL0C2l5C_z3g1ry",
-                "text": "شاطئ",
-                "audio_updated_at": 1580690721
-            },
-            {
-                "key": "xT00R6_VH2ObAxnu5focKy38zYgeOGJd",
-                "text": "جبل",
-                "audio_updated_at": 1580690655
+                "key": "NdYB_q20t6uy29ZoFEdLP7VT5QmBr7qV",
+                "text": "بہت اچھا",
+                "phonetic": "Bohat achha.",
+                "audio_updated_at": 1688820328
             }
         ],
-        "type": "D",
-        "lesson": 605,
-        "wordID": 17623,
-        "modifiers": 327,
-        "alternates": [
-            18012,
-            18003,
-            17983
-        ]
+        "type": "T1b",
+        "lesson": 102,
+        "tokens": [
+            {
+                "key": "tjArSYrPn2p",
+                "raw": {
+                    "text": "وقت",
+                    "length": 3,
+                    "location": 10
+                },
+                "text": "وقت",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 9
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 10
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 13
+                }
+            },
+            {
+                "key": "twAPB5t-F_B",
+                "raw": {
+                    "text": "سا",
+                    "length": 2,
+                    "location": 7
+                },
+                "text": "سا",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 6
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 7
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 9
+                }
+            },
+            {
+                "key": "t146xv_hErQ",
+                "raw": {
+                    "text": "یہ",
+                    "length": 2,
+                    "location": 0
+                },
+                "text": "یہ",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 2
+                }
+            },
+            {
+                "key": "tCeOcZQDhnZ",
+                "raw": {
+                    "text": "ہے",
+                    "length": 2,
+                    "location": 14
+                },
+                "text": "ہے؟",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 13
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 14
+                },
+                "suffix": {
+                    "text": "؟",
+                    "length": 1,
+                    "location": 16
+                }
+            },
+            {
+                "key": "tMBiG_Zv3DP",
+                "raw": {
+                    "text": "بہت",
+                    "length": 3,
+                    "location": 0
+                },
+                "text": "بہت",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                }
+            },
+            {
+                "key": "tgrE6BW-Uiy",
+                "raw": {
+                    "text": "کون",
+                    "length": 3,
+                    "location": 3
+                },
+                "text": "کون",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 2
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 6
+                }
+            },
+            {
+                "key": "tsoBVjt-Co8",
+                "raw": {
+                    "text": "اچھا",
+                    "length": 4,
+                    "location": 4
+                },
+                "text": "اچھا",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 3
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 4
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 8
+                }
+            }
+        ],
+        "wordID": 16093,
+        "modifiers": 72,
+        "alternates": [],
+        "tokensPhonetic": [
+            {
+                "key": "tjArSYrPn2p",
+                "raw": {
+                    "text": "waqt",
+                    "length": 4,
+                    "location": 11
+                },
+                "text": "waqt",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 10
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 11
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 15
+                }
+            },
+            {
+                "key": "twAPB5t-F_B",
+                "raw": {
+                    "text": "sa",
+                    "length": 2,
+                    "location": 8
+                },
+                "text": "sa",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 7
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 8
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 10
+                }
+            },
+            {
+                "key": "t146xv_hErQ",
+                "raw": {
+                    "text": "Yeh",
+                    "length": 3,
+                    "location": 0
+                },
+                "text": "Yeh",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 3
+                }
+            },
+            {
+                "key": "tCeOcZQDhnZ",
+                "raw": {
+                    "text": "hai",
+                    "length": 3,
+                    "location": 16
+                },
+                "text": "hai?",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 15
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 16
+                },
+                "suffix": {
+                    "text": "?",
+                    "length": 1,
+                    "location": 19
+                }
+            },
+            {
+                "key": "tMBiG_Zv3DP",
+                "raw": {
+                    "text": "Bohat",
+                    "length": 5,
+                    "location": 0
+                },
+                "text": "Bohat",
+                "linker": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 0
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 5
+                }
+            },
+            {
+                "key": "tgrE6BW-Uiy",
+                "raw": {
+                    "text": "kon",
+                    "length": 3,
+                    "location": 4
+                },
+                "text": "kon",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 3
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 4
+                },
+                "suffix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 7
+                }
+            },
+            {
+                "key": "tsoBVjt-Co8",
+                "raw": {
+                    "text": "achha",
+                    "length": 5,
+                    "location": 6
+                },
+                "text": "achha.",
+                "linker": {
+                    "text": " ",
+                    "length": 1,
+                    "location": 5
+                },
+                "prefix": {
+                    "text": "",
+                    "length": 0,
+                    "location": 6
+                },
+                "suffix": {
+                    "text": ".",
+                    "length": 1,
+                    "location": 11
+                }
+            }
+        ],
+        "tokensEqualSize": true
     }
 ]
