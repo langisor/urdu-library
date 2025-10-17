@@ -31,10 +31,13 @@ export default function DemoPage() {
       </div>
     );
   };
+
   const renderTopCards = () => {
     return (
       <Card className="grid grid-cols-2 gap-2 p-2">
-        <Card className="flex flex-col items-center justify-center gap-2">
+        <Card 
+
+        className="flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
           <h2 className="text-xl font-bold">
             {currentQuestion.options[0].text}
           </h2>
@@ -47,7 +50,7 @@ export default function DemoPage() {
           />
         </Card>
 
-        <Card className="flex flex-col gap-2 items-center justify-center">
+        <Card className="flex flex-col gap-2 items-center justify-center cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
           <h2 className="text-xl font-bold">
             {currentQuestion.options[1].text}
           </h2>
@@ -62,10 +65,11 @@ export default function DemoPage() {
       </Card>
     );
   };
+
   const renderBottomCards = () => {
     return (
       <Card className="grid grid-cols-2 gap-2 p-2">
-        <Card className="flex flex-col items-center justify-center gap-2">
+        <Card className="flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
           <Image
             src={currentQuestion.options[2].image}
             alt={currentQuestion.options[2].text}
@@ -78,7 +82,7 @@ export default function DemoPage() {
           </h2>
         </Card>
 
-        <Card className="flex flex-col gap-2 items-center justify-center">
+        <Card className="flex flex-col gap-2 items-center justify-center cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
           <Image
             src={currentQuestion.options[3].image}
             alt={currentQuestion.options[3].text}
@@ -93,6 +97,8 @@ export default function DemoPage() {
       </Card>
     );
   };
+
+
   return (
     <div className="flex flex-col gap-2 text-right" dir="rtl">
       <h1 className="text-2xl">Quiz D</h1>

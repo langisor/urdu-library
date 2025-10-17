@@ -50,6 +50,7 @@ export function useQuizD(quizData: QuizDItem) {
   const currentQuestionIndex = useHookstate(0);
 
   const currentQuestion = questions[currentQuestionIndex.get()];
+  
   const checkAnswer = (selectedOptionId: string) => {
     const isCorrect =
       selectedOptionId === currentQuestion.prompt.correctOptionId.get();
