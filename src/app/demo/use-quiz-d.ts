@@ -5,6 +5,7 @@ import {
   getRandomUrduAlphabets,
   getAudioUrl,
   getImageUrl,
+  shuffleArray,
 } from "./helpers-types";
 import { useHookstate } from "@hookstate/core";
 
@@ -22,14 +23,13 @@ type ConvertDQuestion = {
 };
 
 const convertD = (quiz: QuizDItem): ConvertDQuestion[] => {
-  const questions: ConvertDQuestion[] = [];
-  let alt_index=0;
-  Array.from({ length: 4 }, () => {
-    questions.push({
+  const _questions: ConvertDQuestion[] = [];
+  for (let i = 0; i < quiz.alts.length; i++) {
+    _questions.push({
       prompt: {
-        text: quiz.alts[alt_index].text,
-        audioFile: getAudioUrl(quiz.sols[0].key),
-        correctOptionId: quiz.sols[0].key,
+        text: quiz.alts[i].text,
+        audioFile: getAudioUrl(quiz.sols[i].key),
+        correctOptionId: quiz.sols[i].key,
       },
       options: quiz.sols.map((sol, index) => {
         return {
@@ -39,8 +39,8 @@ const convertD = (quiz: QuizDItem): ConvertDQuestion[] => {
         };
       }),
     });
-    alt_index++;
-  });
+  }
+  const questions = shuffleArray(_questions);
   return questions;
 };
 
@@ -50,7 +50,9 @@ export function useQuizD(quizData: QuizDItem) {
   const currentQuestionIndex = useHookstate(0);
 
   const currentQuestion = questions[currentQuestionIndex.get()];
-  
+  const nextQuestion = () => {
+    currentQuestionIndex.set(currentQuestionIndex.get() + 1);
+  };
   const checkAnswer = (selectedOptionId: string) => {
     const isCorrect =
       selectedOptionId === currentQuestion.prompt.correctOptionId.get();
@@ -60,7 +62,9 @@ export function useQuizD(quizData: QuizDItem) {
   return {
     actions: {
       checkAnswer: checkAnswer,
+      nextQuestion: nextQuestion,
+      getCurrentQuestionIndex: currentQuestionIndex.get(),
     },
-    currentQuestion: currentQuestion.get({ noproxy: true }),
+    questions: questions.get(),
   };
 }

@@ -2,14 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import quizData from "./d-samples.json";
+import { useHookstate } from "@hookstate/core";
 import { QuizDItem } from "./definitions";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
-import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useQuizD } from "./use-quiz-d";
-import { Badge, Keyboard, Mouse, PlayCircle } from "lucide-react";
 import React from "react";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import { useTune } from "@/hooks/use-tone";
@@ -17,8 +15,22 @@ import { useTune } from "@/hooks/use-tone";
 const quiz = quizData[0] as QuizDItem;
 
 export default function DemoPage() {
-  const { actions, currentQuestion } = useQuizD(quiz);
+  const { actions, questions } = useQuizD(quiz);
 
+  const currentQuestionIndex  =  useHookstate(() => actions.getCurrentQuestionIndex);
+
+  const currentQuestion = questions[currentQuestionIndex.get()];
+  const handleOptionClick = (optionId: string) => {
+    const isCorrect = actions.checkAnswer(optionId);
+    if (isCorrect) {
+      console.log("Correct");
+    } else {
+      console.log("Incorrect");
+    }
+    currentQuestionIndex.get() < questions.length - 1
+      ? currentQuestionIndex.set(currentQuestionIndex.get() + 1)
+      : null;
+  };
   const renderPrompt = () => {
     return (
       <div className="flex flex-col items-center justify-center">
@@ -35,9 +47,7 @@ export default function DemoPage() {
   const renderTopCards = () => {
     return (
       <Card className="grid grid-cols-2 gap-2 p-2">
-        <Card 
-
-        className="flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
+        <Card className="flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg">
           <h2 className="text-xl font-bold">
             {currentQuestion.options[0].text}
           </h2>
@@ -98,10 +108,10 @@ export default function DemoPage() {
     );
   };
 
-
   return (
     <div className="flex flex-col gap-2 text-right" dir="rtl">
       <h1 className="text-2xl">Quiz D</h1>
+      <Button onClick={() => actions.nextQuestion()}>Next Question</Button>
       {renderTopCards()}
       {renderPrompt()}
       {renderBottomCards()}
