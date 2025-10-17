@@ -19,12 +19,13 @@ import { Feedback } from "@/app/mondly/category/quizzer/_components/helpers-type
 interface QuizT1Props {
   quizData: QuizT1Item;
   quizzerFeedback: State<Feedback>;
+  scoreState: State<{userName: string; score: number}>;
 }
 
 export default function QuizT1({
   quizData,
   quizzerFeedback,
- 
+  scoreState,
 }: QuizT1Props) {
   const state = useHookstate({
     question: convertT1(quizData),
@@ -44,6 +45,7 @@ export default function QuizT1({
 
       if (state.question.correctAnswer.get() === selectedTokensText) {
         playCorrectTune();
+        scoreState.score.set((p) => p + 1);
         quizzerFeedback.isCorrect.set(true);
         quizzerFeedback.message.set("أحسنت");
       } else {

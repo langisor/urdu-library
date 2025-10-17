@@ -78,7 +78,7 @@ export default function Quizzer({ quizzes }: Props) {
     if (quizzesEnded.get()) {
       return (
         <PageRecirector
-          path="/mondly/category/result"
+          path="/mondly/category/"
           showSpinner={false}
           message=""
         >
@@ -134,6 +134,7 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizT1
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
+            scoreState={scoreState}
           />
         );
       case "T1b":

@@ -7,7 +7,7 @@ import { useHookstate } from "@hookstate/core";
 import { QuizT1bItem } from "./definitions";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 
-// const quiz = quizData[0] as QuizT1bItem;
+const quiz = quizData[0] as QuizT1bItem;
 
 export default function DemoPage() {
  return (
