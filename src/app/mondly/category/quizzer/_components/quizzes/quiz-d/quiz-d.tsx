@@ -36,9 +36,16 @@ export default function QuizD({
     // delay 2 seconds
     const timer = setTimeout(() => {
       console.log("2 seconds passed");
+
     }, 2000);
     return () => clearTimeout(timer);
   }, [questionFeedback.isAnswered]);
+
+  React.useEffect(() => {
+    const audio = new Audio(currentQuestion.prompt.audioFile.get());
+    audio.play();
+  }, [currentQuestion.prompt.audioFile.get()]);
+
   const handleOptionClick = (optionId: string) => {
     questionFeedback.isAnswered.set(true);
     if (optionId === currentQuestion.prompt.correctOptionId.get()) {

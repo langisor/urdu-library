@@ -35,10 +35,6 @@ export default function QuizT1({
   React.useEffect(() => {
     const audio = new Audio(state.question.audioFile.get());
     audio.play();
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
   }, [state.question.audioFile.get()]);
   // actions
   const actions = {
@@ -46,10 +42,6 @@ export default function QuizT1({
       // join and remove dots
       const selectedTokensText = selectedTokens.get().join(" ").trim();
 
-      // console.log(
-      //   selectedTokensText.length,
-      //   state.question.correctAnswer.get().length
-      // );
       if (state.question.correctAnswer.get() === selectedTokensText) {
         playCorrectTune();
         quizzerFeedback.isCorrect.set(true);

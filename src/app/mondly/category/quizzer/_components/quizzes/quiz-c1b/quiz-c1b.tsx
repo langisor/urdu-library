@@ -22,9 +22,6 @@ export default function QuizC1b({ quizData, quizzerFeedback }: QuizC1bState) {
   React.useEffect(() => {
     const audio = new Audio(staticData.audioFile);
     audio.play();
-    return () => {
-      audio.pause();
-    };
   }, [staticData.audioFile]);
   const handleWordClick = (word: string) => {
     console.log("handleWordClick()...", word);

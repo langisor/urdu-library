@@ -51,10 +51,7 @@ export default function QuizQb({
   React.useEffect(() => {
     const audio = new Audio(currentQuestion.audioFile.get());
     audio.play();
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
+ 
   }, [currentQuestion.audioFile.get()]);
   const handleNext = () => {
     if (actions.canGoToNextStep) {

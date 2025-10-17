@@ -167,6 +167,7 @@ export default function Quizzer({ quizzes }: Props) {
           <Quizzes.QuizF
             quizData={currentQuiz}
             quizzerFeedback={feedbackState}
+            scoreState={scoreState}
           />
         );
       case "Q":

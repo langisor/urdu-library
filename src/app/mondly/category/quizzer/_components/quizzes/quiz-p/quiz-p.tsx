@@ -34,9 +34,7 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
     console.log("Current question", questions[currentStep - 1]);
     const audio = new Audio(questions[currentStep - 1].audio.get());
     audio.play();
-    return () => {
-      audio.pause();
-    };
+   
   }, [currentStep]);
 
 

@@ -10,17 +10,17 @@ import { TonePlayerButton } from "@/components/general/tone-button-player";
 import {
   Card,
   CardContent,
-
   CardFooter,
 } from "@/components/ui/card";
 import * as React from "react";
-import { Feedback } from "../definitions";
+import { type Feedback } from "../definitions";
 
 interface QuizProps {
   quizData: QuizFItem;
   quizzerFeedback: State<Feedback>;
+  scoreState: State<{ userName: string; score: number }>;
 }
-export default function QuizF({ quizData, quizzerFeedback }: QuizProps) {
+export default function QuizF({ quizData, quizzerFeedback, scoreState }: QuizProps) {
   const state = useHookstate({
     questions: convertF(quizData),
     currentQuestionIndex: 0,
@@ -32,9 +32,7 @@ export default function QuizF({ quizData, quizzerFeedback }: QuizProps) {
   React.useEffect(() => {
     const audio = new Audio(state.questions[state.currentQuestionIndex.get()].audioFile.get());
     audio.play();
-    return () => {
-      audio.pause();
-    };
+     
   }, [state.currentQuestionIndex.get()]);
   //   actions
   const actions = {

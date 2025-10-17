@@ -43,9 +43,7 @@ export default function QuizQ({
   React.useEffect(() => {
     const audio = new Audio(questions.questions[questions.get().currentStep - 1].audioFile.get());
     audio.play();
-    return () => {
-      audio.pause();
-    };
+ 
   }, [questions.get().currentStep]);
   const currentQuestion = questions.questions[questions.get().currentStep - 1];
 

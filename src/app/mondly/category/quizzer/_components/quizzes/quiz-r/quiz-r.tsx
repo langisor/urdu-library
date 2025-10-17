@@ -1,20 +1,15 @@
 "use client";
 import { QuizRItem, type Feedback } from "../../definitions";
-import { convertR } from "../../converters";
-import { useHookstate, State } from "@hookstate/core";
+import {  State } from "@hookstate/core";
 import { useTune } from "@/hooks/use-tone";
 import { Button } from "@/components/ui/button";
 import { TonePlayerButton } from "@/components/general/tone-button-player";
 import {
   Card,
   CardContent,
-  CardHeader,
   CardTitle,
-  CardDescription,
-  CardFooter,
 } from "@/components/ui/card";
-import { JsonViewerComponent } from "@/components/json-viewer";
-import { getAudioUrl, shuffleArray } from "../../helpers-types";
+ 
 import { useQuizR } from "./use-r";
 interface QuizRProps {
   quizData: QuizRItem;
@@ -28,7 +23,7 @@ export default function QuizR({
   scoreState,
 }: QuizRProps) {
   const { handlers, interactive, staticData } = useQuizR({ quizData });
-
+ 
   const renderHeader = () => {
     console.log("renderHeader ....");
     return (
