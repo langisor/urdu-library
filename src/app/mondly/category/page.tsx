@@ -36,3 +36,4 @@ export default async function CategoryPage() {
   const categories = await getCategories();
   return <CategoryDashboard categories={categories} />;
 }
+ 
