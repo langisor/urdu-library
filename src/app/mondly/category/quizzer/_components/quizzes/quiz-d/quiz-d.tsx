@@ -32,34 +32,29 @@ export default function QuizD({
   const questionFeedback = useHookstate(initialFeedback);
   const currentQuestion = actions.getCurrentQuestion;
 
+  React.useEffect(() => {
+    // delay 2 seconds
+    const timer = setTimeout(() => {
+      questionFeedback.isAnswered.set(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [questionFeedback.isAnswered]);
   const handleOptionClick = (optionId: string) => {
+    
     if (optionId === currentQuestion.prompt.correctOptionId.get()) {
       playCorrectTune();
-      setTimeout(() => {
-        questionFeedback.set({
-          isCorrect: true,
-          isAnswered: true,
-          message: "أحسنت",
-        });
-      }, 1000);
+      questionFeedback.isCorrect.set(true);
+      scoreState.score.set(scoreState.score.get() + 1);
+      
     } else {
       playIncorrectTune();
-      setTimeout(() => {
-        questionFeedback.set({
-          isCorrect: false,
-          isAnswered: true,
-          message: ` خطاء ـ الإجابة الصحيحة هي ${currentQuestion.options.find((option) => option.id.get() === currentQuestion.prompt.correctOptionId.get())?.text.get()}`,
-        });
-      }, 1000);
+      questionFeedback.isCorrect.set(false);
+      questionFeedback.message.set(` خطاء ـ الإجابة الصحيحة هي ${currentQuestion.options.find((option) => option.id.get() === currentQuestion.prompt.correctOptionId.get())?.text.get()}`);
     }
     // TODO: update feedback if last question
-    if (actions.getCurrentQuestionIndex === 3) {
-      quizzerFeedback.set({
-        isCorrect: true,
-        isAnswered: true,
-        message: "أحسنت",
-      });
-
+    if (actions.getCurrentQuestionIndex === actions.getQuestionsCount() - 1) {
+     quizzerFeedback.isAnswered.set(true);
+    } else {
       actions.goToNextQuestion();
     }
   };
