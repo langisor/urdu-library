@@ -1,0 +1,622 @@
+[
+  {
+    "unit": 1,
+    "chapter": 1,
+    "type": "Exercise",
+    "number": 1,
+    "id": "Pien7788_U01Ch01Ex01.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 1,
+    "type": "Exercise",
+    "number": 2,
+    "id": "Pien7788_U01Ch01Ex02.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 1,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U01Ch01Ex07.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 1,
+    "type": "Exercise",
+    "number": 8,
+    "id": "Pien7788_U01Ch01Ex08.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 4,
+    "type": "Exercise",
+    "number": 4,
+    "id": "Pien7788_U01Ch04Ex04.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 5,
+    "type": "Exercise",
+    "number": 4,
+    "id": "Pien7788_U01Ch05Ex04.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 6,
+    "type": "Exercise",
+    "number": 2,
+    "id": "Pien7788_U01Ch06Ex02.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 6,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U01Ch06Ex03.mp3"
+  },
+  {
+    "unit": 1,
+    "chapter": 6,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U01Ch06Ex06.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 7,
+    "type": "Exercise",
+    "number": 0,
+    "id": "Pien7788_U02Ch07Ex0x011.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 7,
+    "type": "Exercise",
+    "number": 0,
+    "id": "Pien7788_U02Ch07Ex0x013.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 7,
+    "type": "Exercise",
+    "number": 0,
+    "id": "Pien7788_U02Ch07Ex0x017.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 7,
+    "type": "Exercise",
+    "number": 0,
+    "id": "Pien7788_U02Ch07Ex0x018.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 7,
+    "type": "Exercise",
+    "number": 0,
+    "id": "Pien7788_U02Ch07Ex0x03.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 7,
+    "type": "Exercise",
+    "number": 0,
+    "id": "Pien7788_U02Ch07Ex0x05.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 8,
+    "type": "Exercise",
+    "number": 4,
+    "id": "Pien7788_U02Ch08Ex04.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 8,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U02Ch08Ex07.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 9,
+    "type": "Exercise",
+    "number": 1,
+    "id": "Pien7788_U02Ch09Ex01.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 9,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U02Ch09Ex07.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 10,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U02Ch10Ex03.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 11,
+    "type": "Exercise",
+    "number": 1,
+    "id": "Pien7788_U02Ch11Ex01.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 11,
+    "type": "Exercise",
+    "number": 5,
+    "id": "Pien7788_U02Ch11Ex05.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 12,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U02Ch12Ex03.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 12,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 1,
+    "id": "Pien7788_U02Ch12Ex04_01.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 12,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 2,
+    "id": "Pien7788_U02Ch12Ex04_02.mp3"
+  },
+  {
+    "unit": 2,
+    "chapter": 12,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U02Ch12Ex07.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 13,
+    "type": "Exercise",
+    "number": 2,
+    "id": "Pien7788_U03Ch13Ex02.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 13,
+    "type": "Exercise",
+    "number": 8,
+    "subNumber": 1,
+    "id": "Pien7788_U03Ch13Ex08_01.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 13,
+    "type": "Exercise",
+    "number": 8,
+    "subNumber": 2,
+    "id": "Pien7788_U03Ch13Ex08_02.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 14,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U03Ch14Ex07.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 15,
+    "type": "Exercise",
+    "number": 3,
+    "subNumber": 1,
+    "id": "Pien7788_U03Ch15Ex03_01.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 15,
+    "type": "Exercise",
+    "number": 3,
+    "subNumber": 2,
+    "id": "Pien7788_U03Ch15Ex03_02.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 16,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U03Ch16Ex06.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 17,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U03Ch17Ex03.mp3"
+  },
+  {
+    "unit": 3,
+    "chapter": 17,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U03Ch17Ex06.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 18,
+    "type": "Exercise",
+    "number": 14,
+    "subNumber": 1,
+    "id": "Pien7788_U04Ch18Ex014_01.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 18,
+    "type": "Exercise",
+    "number": 14,
+    "subNumber": 2,
+    "id": "Pien7788_U04Ch18Ex014_02.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 18,
+    "type": "Exercise",
+    "number": 4,
+    "id": "Pien7788_U04Ch18Ex04.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 18,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U04Ch18Ex06.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 18,
+    "type": "Exercise",
+    "number": 9,
+    "subNumber": 1,
+    "id": "Pien7788_U04Ch18Ex09_01.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 18,
+    "type": "Exercise",
+    "number": 9,
+    "subNumber": 2,
+    "id": "Pien7788_U04Ch18Ex09_02.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 19,
+    "type": "Exercise",
+    "number": 10,
+    "id": "Pien7788_U04Ch19Ex010.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 19,
+    "type": "Exercise",
+    "number": 5,
+    "id": "Pien7788_U04Ch19Ex05.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 20,
+    "type": "Exercise",
+    "number": 4,
+    "id": "Pien7788_U04Ch20Ex04.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 21,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U04Ch21Ex03.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 21,
+    "type": "Exercise",
+    "number": 5,
+    "id": "Pien7788_U04Ch21Ex05.mp3"
+  },
+  {
+    "unit": 4,
+    "chapter": 21,
+    "type": "Exercise",
+    "number": 9,
+    "id": "Pien7788_U04Ch21Ex09.mp3"
+  },
+  {
+    "unit": 5,
+    "chapter": 22,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U05Ch22Ex06.mp3"
+  },
+  {
+    "unit": 5,
+    "chapter": 23,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 1,
+    "id": "Pien7788_U05Ch23Ex04_01.mp3"
+  },
+  {
+    "unit": 5,
+    "chapter": 23,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 2,
+    "id": "Pien7788_U05Ch23Ex04_02.mp3"
+  },
+  {
+    "unit": 5,
+    "chapter": 24,
+    "type": "Exercise",
+    "number": 2,
+    "id": "Pien7788_U05Ch24Ex02.mp3"
+  },
+  {
+    "unit": 5,
+    "chapter": 24,
+    "type": "Exercise",
+    "number": 4,
+    "id": "Pien7788_U05Ch24Ex04.mp3"
+  },
+  {
+    "unit": 5,
+    "chapter": 26,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U05Ch26Ex03.mp3"
+  },
+  {
+    "unit": 5,
+    "chapter": 26,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U05Ch26Ex06.mp3"
+  },
+  {
+    "unit": 6,
+    "chapter": 28,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U06Ch28Ex03.mp3"
+  },
+  {
+    "unit": 6,
+    "chapter": 29,
+    "type": "Exercise",
+    "number": 5,
+    "id": "Pien7788_U06Ch29Ex05.mp3"
+  },
+  {
+    "unit": 6,
+    "chapter": 30,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U06Ch30Ex03.mp3"
+  },
+  {
+    "unit": 6,
+    "chapter": 30,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U06Ch30Ex06.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 31,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 1,
+    "id": "Pien7788_U07Ch31Ex04_01.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 31,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 2,
+    "id": "Pien7788_U07Ch31Ex04_02.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 31,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U07Ch31Ex06.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 32,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U07Ch32Ex07.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 33,
+    "type": "Exercise",
+    "number": 5,
+    "subNumber": 1,
+    "id": "Pien7788_U07Ch33Ex05_01.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 33,
+    "type": "Exercise",
+    "number": 5,
+    "subNumber": 2,
+    "id": "Pien7788_U07Ch33Ex05_02.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 33,
+    "type": "Exercise",
+    "number": 6,
+    "id": "Pien7788_U07Ch33Ex06.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 34,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U07Ch34Ex03.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 35,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U07Ch35Ex03.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 36,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U07Ch36Ex03.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 36,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 1,
+    "id": "Pien7788_U07Ch36Ex04_01.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 36,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 2,
+    "id": "Pien7788_U07Ch36Ex04_02.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 36,
+    "type": "Exercise",
+    "number": 7,
+    "subNumber": 1,
+    "id": "Pien7788_U07Ch36Ex07_01.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 36,
+    "type": "Exercise",
+    "number": 7,
+    "subNumber": 2,
+    "id": "Pien7788_U07Ch36Ex07_02.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 36,
+    "type": "Exercise",
+    "number": 10,
+    "subNumber": 1,
+    "id": "Pien7788_U07Ch36Ex10_01.mp3"
+  },
+  {
+    "unit": 7,
+    "chapter": 36,
+    "type": "Exercise",
+    "number": 10,
+    "subNumber": 2,
+    "id": "Pien7788_U07Ch36Ex10_02.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 37,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U08Ch37Ex03.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 37,
+    "type": "Exercise",
+    "number": 5,
+    "id": "Pien7788_U08Ch37Ex05.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 37,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U08Ch37Ex07.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 38,
+    "type": "Exercise",
+    "number": 7,
+    "id": "Pien7788_U08Ch38Ex07.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 39,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U08Ch39Ex03.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 39,
+    "type": "Exercise",
+    "number": 5,
+    "id": "Pien7788_U08Ch39Ex05.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 40,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 1,
+    "id": "Pien7788_U08Ch40Ex04_01.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 40,
+    "type": "Exercise",
+    "number": 4,
+    "subNumber": 2,
+    "id": "Pien7788_U08Ch40Ex04_02.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 41,
+    "type": "Exercise",
+    "number": 3,
+    "id": "Pien7788_U08Ch41Ex03.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 41,
+    "type": "Exercise",
+    "number": 8,
+    "subNumber": 1,
+    "id": "Pien7788_U08Ch41Ex08_01.mp3"
+  },
+  {
+    "unit": 8,
+    "chapter": 41,
+    "type": "Exercise",
+    "number": 8,
+    "id": "Pien7788_U08Ch41Ex08_Questions.mp3"
+  }
+]
