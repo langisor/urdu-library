@@ -33,9 +33,12 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
   // renders
   const renderVoc = (id: string, _voc: AudioFile, hasAudio: boolean) => {
     const data_table = getVocabularyTableData(id);
-    console.log("renderVoc: ", data_table);
+    // console.log("renderVoc: ", data_table);
     return (
-      <Card key={id} className="flex flex-col border border-gray-800 w-[30%]">
+      <Card
+        key={id}
+        className="px-2 border border-gray-800  grid grid-cols-1"
+      >
         <FullscreenPlayer item={_voc} disabled={!hasAudio} />
         {data_table && <SmartVocabularyTable data={data_table} />}
       </Card>
@@ -63,7 +66,7 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
       {expanded && hasAudio && (
         <div className="p-4 bg-gray-50 rounded-b-lg ">
           {chapter.vocs.length > 0 && (
-            <div className="mb-4 flex flex-wrap gap-4 ">
+            <div className="mb-4  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
               {chapter.vocs.map((voc) => renderVoc(voc.id, voc, hasAudio))}
             </div>
           )}
