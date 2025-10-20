@@ -105,7 +105,9 @@ const QuizRow: React.FC<QuizRowProps> = ({ item, quizField }) => {
       {/* Prompt Cell (Always visible) */}
       <TableCell className="md:table-cell p-3 border-none md:border-b">
         <div className="flex flex-col">
-          <span className="text-xs font-medium text-gray-500 md:hidden">
+          <span
+            className={`text-xs font-medium text-gray-500 md:hidden ${quizField === "english" ? "naskh-text" : "urdu-text"}`}
+          >
             Prompt ({quizField === "english" ? "Urdu" : "English"}):
           </span>
           <span className="text-xl font-bold md:text-lg">
@@ -188,8 +190,8 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
       <TableCell className="hidden sm:table-cell whitespace-normal">
         {item.transliteration}
       </TableCell>
-      <TableCell className="text-xl">{item.urdu}</TableCell>
-      <TableCell className="text-lg hidden sm:table-cell">
+      <TableCell className="text-xl urdu-text">{item.urdu}</TableCell>
+      <TableCell className="text-lg hidden sm:table-cell naskh-text">
         {item.arabic}
       </TableCell>
     </TableRow>
@@ -249,7 +251,7 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
       </div>
 
       {/* Data Table Container - Adds horizontal scroll on small screens */}
-      <div className="overflow-x-auto rounded-lg border">
+      <div className="overflow-x-auto rounded-lg border ">
         <Table className="min-w-full overflow-x-scroll">
           <TableHeader>
             {mode === MODES.REVIEW ? (
