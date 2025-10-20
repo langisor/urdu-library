@@ -1,13 +1,22 @@
 "use client";
 import { ChevronDown } from "lucide-react";
-import { AudioFile, Chapter } from "./difinitions";
+import { Card } from "@/components/ui/card";
+import { AudioFile, Chapter, getVocabularyTableData } from "./difinitions";
 import { Button } from "@/components/ui/button";
 import { FullscreenPlayer } from "./fullscrren-player";
+import {
+  SmartVocabularyTable,
+  type VocabItem,
+} from "./smart-voc-table/smart-voc-table";
 import * as React from "react";
 // Props for Chapter component
+
+interface SmartVocProps extends VocabItem {
+  image: string;
+}
+
 interface ChapterProps {
   chapter: Chapter;
-   
   expanded: boolean;
   onToggle: () => void;
 }
@@ -15,14 +24,23 @@ interface ChapterProps {
 // Component for a single expandable chapter
 export const ExpandableChapter: React.FC<ChapterProps> = ({
   chapter,
-  
+
   expanded,
   onToggle,
 }) => {
- 
-
   const hasAudio = chapter.vocs.length > 0 || chapter.exers.length > 0;
 
+  // renders
+  const renderVoc = (id: string, _voc: AudioFile, hasAudio: boolean) => {
+    const data_table = getVocabularyTableData(id);
+    console.log("renderVoc: ", data_table);
+    return (
+      <Card key={id} className="flex flex-col border border-gray-800 w-[30%]">
+        <FullscreenPlayer item={_voc} disabled={!hasAudio} />
+        {data_table && <SmartVocabularyTable data={data_table} />}
+      </Card>
+    );
+  };
   return (
     <div className="my-2 border-b border-gray-200">
       <Button
@@ -46,13 +64,7 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
         <div className="p-4 bg-gray-50 rounded-b-lg ">
           {chapter.vocs.length > 0 && (
             <div className="mb-4 flex flex-wrap gap-4 ">
-              {chapter.vocs.map((voc) => (
-                <FullscreenPlayer
-                  key={voc.id}
-                  item={voc}
-                  disabled={!hasAudio}
-                />
-              ))}
+              {chapter.vocs.map((voc) => renderVoc(voc.id, voc, hasAudio))}
             </div>
           )}
           {chapter.exers.length > 0 && (
