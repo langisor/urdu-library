@@ -182,8 +182,10 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
 
   const getReviewRow = (item: VocabItem) => (
     <TableRow key={item.id}>
-      <TableCell className="font-medium w-auto">{item.english}</TableCell>
-      <TableCell className="hidden sm:table-cell">
+      <TableCell className="font-medium w-auto whitespace-normal">
+        {item.english}
+      </TableCell>
+      <TableCell className="hidden sm:table-cell whitespace-normal">
         {item.transliteration}
       </TableCell>
       <TableCell className="text-xl">{item.urdu}</TableCell>
@@ -264,11 +266,11 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
             ) : (
               // Quiz mode header is simplified for mobile
               <TableRow className="hidden md:table-row">
-                <TableHead className="w-[20%] font-bold text-lg">
+                <TableHead className=" font-bold text-md  ">
                   {quizField === "english" ? "Urdu Prompt" : "English Prompt"}
                 </TableHead>
                 <TableHead
-                  className="w-[50%] text-center font-bold text-lg"
+                  className="text-center font-bold text-lg"
                   colSpan={2}
                 >
                   Your Answer
