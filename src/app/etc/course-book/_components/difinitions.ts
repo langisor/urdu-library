@@ -1,4 +1,6 @@
 // Define the TypeScript interfaces for our data structures
+import vocsData from "./_data/vocs-data.json";
+import exersData from "./_data/exers-data.json";
 export interface AudioFile {
   unit: number;
   chapter: number;
@@ -30,4 +32,8 @@ export const getAudioUrl = (item: AudioFile): string => {
   const chapter_number = chapter;
   return `/media/audio-all/Unit${unit_number}/Chapter${chapter_number}/${id}`;
 };
- 
+
+export const getVocabularyTableData = (id: string) => {
+  const result = vocsData.find((v) => v.id)?.table;
+  return result;
+};

@@ -1,443 +1,1887 @@
 [
-  {
-    "unit": 1,
-    "chapter": 1,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U01Ch01V01.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 1,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U01Ch01V02.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 1,
-    "type": "Vocabulary",
-    "number": 3,
-    "id": "Pien7788_U01Ch01V03.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 1,
-    "type": "Vocabulary",
-    "number": 4,
-    "id": "Pien7788_U01Ch01V04.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 1,
-    "type": "Vocabulary",
-    "number": 5,
-    "id": "Pien7788_U01Ch01V05.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 1,
-    "type": "Vocabulary",
-    "number": 6,
-    "id": "Pien7788_U01Ch01V06.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 2,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U01Ch02V01.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 3,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U01Ch03V01.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 4,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U01Ch04V01.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 4,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U01Ch04V02.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 5,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U01Ch05V01.mp3"
-  },
-  {
-    "unit": 1,
-    "chapter": 5,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U01Ch05V02.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 7,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U02Ch07V01.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 7,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U02Ch07V02.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 7,
-    "type": "Vocabulary",
-    "number": 3,
-    "id": "Pien7788_U02Ch07V03.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 7,
-    "type": "Vocabulary",
-    "number": 4,
-    "id": "Pien7788_U02Ch07V04.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 8,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U02Ch08V01.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 9,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U02Ch09V01.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 9,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U02Ch09V02.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 9,
-    "type": "Vocabulary",
-    "number": 3,
-    "id": "Pien7788_U02Ch09V03.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 10,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U02Ch10V01.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 10,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U02Ch10V02.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 11,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U02Ch11V01.mp3"
-  },
-  {
-    "unit": 2,
-    "chapter": 12,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U02Ch12V01.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 13,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U03Ch13V01.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 13,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U03Ch13V02.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 13,
-    "type": "Vocabulary",
-    "number": 3,
-    "id": "Pien7788_U03Ch13V03.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 13,
-    "type": "Vocabulary",
-    "number": 4,
-    "id": "Pien7788_U03Ch13V04.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 14,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U03Ch14V01.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 14,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U03Ch14V02.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 15,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U03Ch15V01.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 15,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U03Ch15V02.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 16,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U03Ch16V01.mp3"
-  },
-  {
-    "unit": 3,
-    "chapter": 16,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U03Ch16V02.mp3"
-  },
-  {
-    "unit": 4,
-    "chapter": 18,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U04Ch18V01.mp3"
-  },
-  {
-    "unit": 4,
-    "chapter": 18,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U04Ch18V02.mp3"
-  },
-  {
-    "unit": 4,
-    "chapter": 19,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U04Ch19V01.mp3"
-  },
-  {
-    "unit": 4,
-    "chapter": 19,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U04Ch19V02.mp3"
-  },
-  {
-    "unit": 4,
-    "chapter": 20,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U04Ch20V01.mp3"
-  },
-  {
-    "unit": 4,
-    "chapter": 21,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U04Ch21V01.mp3"
-  },
-  {
-    "unit": 5,
-    "chapter": 22,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U05Ch22V01.mp3"
-  },
-  {
-    "unit": 5,
-    "chapter": 22,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U05Ch22V02.mp3"
-  },
-  {
-    "unit": 5,
-    "chapter": 23,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U05Ch23V01.mp3"
-  },
-  {
-    "unit": 5,
-    "chapter": 24,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U05Ch24V01.mp3"
-  },
-  {
-    "unit": 6,
-    "chapter": 27,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U06Ch27V01.mp3"
-  },
-  {
-    "unit": 6,
-    "chapter": 28,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U06Ch28V01.mp3"
-  },
-  {
-    "unit": 6,
-    "chapter": 29,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U06Ch29V01.mp3"
-  },
-  {
-    "unit": 7,
-    "chapter": 31,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U07Ch31V01.mp3"
-  },
-  {
-    "unit": 7,
-    "chapter": 32,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U07Ch32V01.mp3"
-  },
-  {
-    "unit": 7,
-    "chapter": 33,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U07Ch33V01.mp3"
-  },
-  {
-    "unit": 7,
-    "chapter": 34,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U07Ch34V01.mp3"
-  },
-  {
-    "unit": 7,
-    "chapter": 35,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U07Ch35V01.mp3"
-  },
-  {
-    "unit": 7,
-    "chapter": 35,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U07Ch35V02.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 37,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U08Ch37V01.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 37,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U08Ch37V02.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 38,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U08Ch38V01.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 39,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U08Ch39V01.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 40,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U08Ch40V01.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 40,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U08Ch40V02.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 41,
-    "type": "Vocabulary",
-    "number": 1,
-    "id": "Pien7788_U08Ch41V01.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 41,
-    "type": "Vocabulary",
-    "number": 2,
-    "id": "Pien7788_U08Ch41V02.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 41,
-    "type": "Vocabulary",
-    "number": 3,
-    "id": "Pien7788_U08Ch41V03.mp3"
-  },
-  {
-    "unit": 8,
-    "chapter": 41,
-    "type": "Vocabulary",
-    "number": 4,
-    "id": "Pien7788_U08Ch41V04.mp3"
+ {
+  "unit": 1,
+  "chapter": 1,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U01Ch01V01.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration",
+    "Urdu": "Urdu",
+    "Arabic": "Arabic",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "school",
+     "Transliteration": "iskūl (m.)",
+     "Urdu": "اسکول",
+     "Arabic": "مدرسة",
+     "Image": ""
+    },
+    {
+     "English": "pencil",
+     "Transliteration": "painis̄il/pensil (f.)",
+     "Urdu": "پینسل",
+     "Arabic": "قلم رصاص",
+     "Image": ""
+    },
+    {
+     "English": "picture",
+     "Transliteration": "tasvīr (f.)",
+     "Urdu": "تصویر",
+     "Arabic": "صورة",
+     "Image": ""
+    },
+    {
+     "English": "thing",
+     "Transliteration": "cīz (f.)",
+     "Urdu": "چیز",
+     "Arabic": "شيء",
+     "Image": ""
+    },
+    {
+     "English": "ceiling, roof",
+     "Transliteration": "chat (f.)",
+     "Urdu": "چھت",
+     "Arabic": "سقف",
+     "Image": ""
+    },
+    {
+     "English": "door",
+     "Transliteration": "darvāza (m.)",
+     "Urdu": "دروازه",
+     "Arabic": "باب",
+     "Image": ""
+    },
+    {
+     "English": "wall",
+     "Transliteration": "dīvār (f.)",
+     "Urdu": "دیوار",
+     "Arabic": "جدار",
+     "Image": ""
+    },
+    {
+     "English": "floor",
+     "Transliteration": "farś (m.)",
+     "Urdu": "فرش",
+     "Arabic": "أرضية",
+     "Image": ""
+    },
+    {
+     "English": "pen",
+     "Transliteration": "qalam (m.)",
+     "Urdu": "قلم",
+     "Arabic": "قلم",
+     "Image": ""
+    },
+    {
+     "English": "notepad, blank book for writing",
+     "Transliteration": "kāpī (f.)",
+     "Urdu": "کاپی",
+     "Arabic": "دفتر",
+     "Image": ""
+    },
+    {
+     "English": "paper",
+     "Transliteration": "kāghaz (m.)",
+     "Urdu": "کاغذ",
+     "Arabic": "ورقة",
+     "Image": ""
+    },
+    {
+     "English": "book",
+     "Transliteration": "kitāb (f.)",
+     "Urdu": "کتاب",
+     "Arabic": "كتاب",
+     "Image": ""
+    },
+    {
+     "English": "chair",
+     "Transliteration": "kursī (f.)",
+     "Urdu": "کرسی",
+     "Arabic": "كرسي",
+     "Image": ""
+    },
+    {
+     "English": "class",
+     "Transliteration": "klās (f.)",
+     "Urdu": "کلاس",
+     "Arabic": "صف/فصل",
+     "Image": ""
+    },
+    {
+     "English": "room (in a building)",
+     "Transliteration": "kamrā, kamra (m.)",
+     "Urdu": "کمرہ",
+     "Arabic": "غرفة",
+     "Image": ""
+    },
+    {
+     "English": "trash can",
+     "Transliteration": "kūre-dān (m.)",
+     "Urdu": "کوڑے دان",
+     "Arabic": "سلة مهملات",
+     "Image": ""
+    },
+    {
+     "English": "window",
+     "Transliteration": "khirkī (f.)",
+     "Urdu": "کھڑکی",
+     "Arabic": "نافذة",
+     "Image": ""
+    },
+    {
+     "English": "clock, watch",
+     "Transliteration": "ghaṛī (f.)",
+     "Urdu": "گھڑی",
+     "Arabic": "ساعة",
+     "Image": ""
+    },
+    {
+     "English": "dictionary",
+     "Transliteration": "lughat (f.)",
+     "Urdu": "لغت",
+     "Arabic": "قاموس",
+     "Image": ""
+    },
+    {
+     "English": "table, desk",
+     "Transliteration": "mez (f.)",
+     "Urdu": "میز",
+     "Arabic": "طاولة/مكتب",
+     "Image": ""
+    },
+    {
+     "English": "map",
+     "Transliteration": "naqśa (m.)",
+     "Urdu": "نقشه",
+     "Arabic": "خريطة",
+     "Image": ""
+    }
+   ]
   }
+ },
+ {
+  "unit": 1,
+  "chapter": 1,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U01Ch01V02.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "what",
+     "Transliteration": "kyā",
+     "Urdu": "کیا",
+     "Arabic": "ماذا / ما",
+     "Image": ""
+    },
+    {
+     "English": "who",
+     "Transliteration": "kaun",
+     "Urdu": "کون",
+     "Arabic": "من",
+     "Image": ""
+    },
+    {
+     "English": "where",
+     "Transliteration": "kahā̃",
+     "Urdu": "کہاں",
+     "Arabic": "أين",
+     "Image": ""
+    },
+    {
+     "English": "there, over there",
+     "Transliteration": "vahā̃",
+     "Urdu": "وہاں",
+     "Arabic": "هناك",
+     "Image": ""
+    },
+    {
+     "English": "here, over here",
+     "Transliteration": "yahā̃",
+     "Urdu": "یہاں",
+     "Arabic": "هنا",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 1,
+  "type": "Vocabulary",
+  "number": 3,
+  "id": "Pien7788_U01Ch01V03.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "yes",
+     "Transliteration": "jī",
+     "Urdu": "جی",
+     "Arabic": "نعم (formal/polite)",
+     "Image": ""
+    },
+    {
+     "English": "yes",
+     "Transliteration": "jī hā̃",
+     "Urdu": "جی ہاں",
+     "Arabic": "نعم (polite/strong affirmation)",
+     "Image": ""
+    },
+    {
+     "English": "no; not",
+     "Transliteration": "nahī̃",
+     "Urdu": "نہیں",
+     "Arabic": "لا",
+     "Image": ""
+    },
+    {
+     "English": "yes",
+     "Transliteration": "hā̃",
+     "Urdu": "ہاں",
+     "Arabic": "نعم (informal)",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 1,
+  "type": "Vocabulary",
+  "number": 4,
+  "id": "Pien7788_U01Ch01V04.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "a term of respect appended to male names",
+     "Transliteration": "sāhab",
+     "Urdu": "صاحب",
+     "Arabic": "سيد / أستاذ",
+     "Image": ""
+    },
+    {
+     "English": "the equivalent term for use with female names",
+     "Transliteration": "sāhiba",
+     "Urdu": "صاحبه",
+     "Arabic": "سيدة / أستاذة",
+     "Image": ""
+    },
+    {
+     "English": "How are you? \"What is (your) condition?\"",
+     "Transliteration": "kyā hāl hai?",
+     "Urdu": "کیا حال ہے؟",
+     "Arabic": "كيف حالك؟",
+     "Image": ""
+    },
+    {
+     "English": "Everything is well.",
+     "Transliteration": "sab xairiyat hai.",
+     "Urdu": "سب خیریت ہے-",
+     "Arabic": "كل شيء بخير.",
+     "Image": ""
+    },
+    {
+     "English": "I am well.",
+     "Transliteration": "mai xairiyat se hū̃-.",
+     "Urdu": "میں خیریت سے ہوں۔",
+     "Arabic": "أنا بخير.",
+     "Image": ""
+    },
+    {
+     "English": "How are you?",
+     "Transliteration": "āp kaise / kaisī hai?",
+     "Urdu": "آپ کیسے / کیسی ہے؟",
+     "Arabic": "كيف حالك؟ (للمذكر / للمؤنث)",
+     "Image": ""
+    },
+    {
+     "English": "Thanks to God (I'm well).",
+     "Transliteration": "xudā kā śukr hai.",
+     "Urdu": "خدا کا شکر ہے۔",
+     "Arabic": "الحمد لله.",
+     "Image": ""
+    },
+    {
+     "English": "I'm well. \"It is your blessing (that keeps me well)\"",
+     "Transliteration": "āp kī duā hai.",
+     "Urdu": "آپ کی دعا ہے۔",
+     "Arabic": "بخير. (ببركة دعواتك)",
+     "Image": ""
+    },
+    {
+     "English": "You are...",
+     "Transliteration": "āp ...hai.",
+     "Urdu": "آپ ۔۔۔ ہیں۔",
+     "Arabic": "أنت تكون...",
+     "Image": ""
+    },
+    {
+     "English": "I am...",
+     "Transliteration": "mai ...hū̃-.",
+     "Urdu": "میں ۔۔۔ ہوں۔",
+     "Arabic": "أنا أكون...",
+     "Image": ""
+    },
+    {
+     "English": "Where are you from?",
+     "Transliteration": "āp kahā̃ se hai?",
+     "Urdu": "آپ کہاں سے ہیں؟",
+     "Arabic": "من أين أنت؟",
+     "Image": ""
+    },
+    {
+     "English": "I'm from...",
+     "Transliteration": "mai ...se hū̃-.",
+     "Urdu": "میں ۔۔۔ سے ہوں۔",
+     "Arabic": "أنا من...",
+     "Image": ""
+    },
+    {
+     "English": "Please give me permission (to leave) (used to wrap up a conversation before leaving)",
+     "Transliteration": "ijāzat dījiye.",
+     "Urdu": "إجازت دیجیے۔",
+     "Arabic": "من فضلك اسمح لي بالمغادرة.",
+     "Image": ""
+    },
+    {
+     "English": "Goodbye. (Allah is the protector)",
+     "Transliteration": "allāh hāfiz.",
+     "Urdu": "الله حافظ-",
+     "Arabic": "إلى اللقاء. (الله الحافظ)",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 1,
+  "type": "Vocabulary",
+  "number": 5,
+  "id": "Pien7788_U01Ch01V05.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "I'm fine.",
+     "Transliteration": "mai ṭhīk hū̃-.",
+     "Urdu": "میں ٹھیک ہوں۔",
+     "Arabic": "أنا بخير.",
+     "Image": ""
+    },
+    {
+     "English": "fine, OK",
+     "Transliteration": "ṭhīk",
+     "Urdu": "ٹھیک",
+     "Arabic": "جيد / حسناً",
+     "Image": ""
+    },
+    {
+     "English": "absolutely fine, very well",
+     "Transliteration": "bilkul ṭhīk",
+     "Urdu": "بالکل ٹھیک",
+     "Arabic": "بخير تماماً",
+     "Image": ""
+    },
+    {
+     "English": "alright, so-so",
+     "Transliteration": "ṭhīk ṭhāk",
+     "Urdu": "ٹھیک ٹھاک",
+     "Arabic": "لا بأس / ماشي الحال",
+     "Image": ""
+    },
+    {
+     "English": "How are you?",
+     "Transliteration": "tum kaise / kaisī ho?",
+     "Urdu": "تم کیسے / کیسی ہو؟",
+     "Arabic": "كيف حالك؟ (للمذكر/للمؤنث - informal)",
+     "Image": ""
+    },
+    {
+     "English": "You are...",
+     "Transliteration": "tum...ho.",
+     "Urdu": "تم ۔۔۔ ہو۔",
+     "Arabic": "أنت تكون... (informal)",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 1,
+  "type": "Vocabulary",
+  "number": 6,
+  "id": "Pien7788_U01Ch01V06.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "What do you call X in Urdu? (Use when you want the Urdu for an English word.)",
+     "Transliteration": "X ko urdū mẽ kyā kahte hai?",
+     "Urdu": "۔۔۔ کو اردو میں کیا کہتے ہیں؟",
+     "Arabic": "ماذا تسمي X باللغة الأردية؟",
+     "Image": ""
+    },
+    {
+     "English": "What does X mean? (Use when you want the English for an Urdu word.)",
+     "Transliteration": "X kā matlab kyā hai?",
+     "Urdu": "۔۔۔ کا مطلب کیا ہے؟",
+     "Arabic": "ماذا تعني X؟",
+     "Image": ""
+    },
+    {
+     "English": "Very good.",
+     "Transliteration": "bahut acchā.",
+     "Urdu": "بہت اچھا-",
+     "Arabic": "جيد جداً.",
+     "Image": ""
+    },
+    {
+     "English": "Bravo! Good job!",
+     "Transliteration": "śābāś.",
+     "Urdu": "شاباش-",
+     "Arabic": "أحسنت! / برافو!",
+     "Image": ""
+    },
+    {
+     "English": "Okay. It's okay.",
+     "Transliteration": "ṭhīk hai.",
+     "Urdu": "ٹھیک ہے-",
+     "Arabic": "حسناً. / إنه بخير.",
+     "Image": ""
+    },
+    {
+     "English": "Thank you.",
+     "Transliteration": "śukriya.",
+     "Urdu": "شکریہ-",
+     "Arabic": "شكراً لك.",
+     "Image": ""
+    },
+    {
+     "English": "Are there any questions?",
+     "Transliteration": "koī savāl hai?",
+     "Urdu": "کوئی سوال ہے؟",
+     "Arabic": "هل هناك أي أسئلة؟",
+     "Image": ""
+    },
+    {
+     "English": "I have a question.",
+     "Transliteration": "merā ek savāl hai.",
+     "Urdu": "میرا ایک سوال ہے۔",
+     "Arabic": "لدي سؤال.",
+     "Image": ""
+    },
+    {
+     "English": "Listen! Give me your attention!",
+     "Transliteration": "sunīye!",
+     "Urdu": "سنیے۔",
+     "Arabic": "استمع! / أنصت!",
+     "Image": ""
+    },
+    {
+     "English": "Read!",
+     "Transliteration": "paṛhiye!",
+     "Urdu": "پڑھیے۔",
+     "Arabic": "اقرأ!",
+     "Image": ""
+    },
+    {
+     "English": "Write!",
+     "Transliteration": "likhiye!",
+     "Urdu": "لکھیے۔",
+     "Arabic": "اكتب!",
+     "Image": ""
+    },
+    {
+     "English": "Speak!",
+     "Transliteration": "boliye!",
+     "Urdu": "بولیے۔",
+     "Arabic": "تكلم!",
+     "Image": ""
+    },
+    {
+     "English": "Please repeat (\"say it again\")!",
+     "Transliteration": "phir se boliye!",
+     "Urdu": "پھر سے بولیے۔",
+     "Arabic": "أعد/كرر من فضلك!",
+     "Image": ""
+    },
+    {
+     "English": "Speak up! (zor se, loudly, forcefully)",
+     "Transliteration": "zor se boliye!",
+     "Urdu": "زور سے بولیے۔",
+     "Arabic": "تكلم بصوت عالٍ!",
+     "Image": ""
+    },
+    {
+     "English": "Open!",
+     "Transliteration": "kholiye!",
+     "Urdu": "کھولیے۔",
+     "Arabic": "افتح!",
+     "Image": ""
+    },
+    {
+     "English": "Close!",
+     "Transliteration": "band kījiye!",
+     "Urdu": "بند کیجیے۔",
+     "Arabic": "أغلق!",
+     "Image": ""
+    },
+    {
+     "English": "Hold on a minute!",
+     "Transliteration": "ek minaṭ rukiye!",
+     "Urdu": "ایک منٹ رکھیے۔",
+     "Arabic": "انتظر دقيقة!",
+     "Image": ""
+    },
+    {
+     "English": "I don't know.",
+     "Transliteration": "mujhe mālūm nahī̃.",
+     "Urdu": "مجھے معلوم نہیں۔",
+     "Arabic": "لا أعرف.",
+     "Image": ""
+    },
+    {
+     "English": "I don't remember.",
+     "Transliteration": "mujhe yād nahī̃.",
+     "Urdu": "مجھے یاد نہیں۔",
+     "Arabic": "لا أتذكر.",
+     "Image": ""
+    },
+    {
+     "English": "I don't understand (I didn't understand [what was said]).",
+     "Transliteration": "mai nahī̃ samjhā (m.) / samjhī (f.)",
+     "Urdu": "میں نہیں سمجھا۔ / سمجھی-",
+     "Arabic": "لم أفهم.",
+     "Image": ""
+    },
+    {
+     "English": "English",
+     "Transliteration": "angrezī (f.)",
+     "Urdu": "انگریزی",
+     "Arabic": "الإنجليزية",
+     "Image": ""
+    },
+    {
+     "English": "utterance, a thing that is or has been spoken; a significant thing",
+     "Transliteration": "bāt (f.)",
+     "Urdu": "بات",
+     "Arabic": "قول / كلام / أمر",
+     "Image": ""
+    },
+    {
+     "English": "sentence",
+     "Transliteration": "jumla (m.)",
+     "Urdu": "جملہ",
+     "Arabic": "جملة",
+     "Image": ""
+    },
+    {
+     "English": "question",
+     "Transliteration": "savāl (m.)",
+     "Urdu": "سوال",
+     "Arabic": "سؤال",
+     "Image": ""
+    },
+    {
+     "English": "answer",
+     "Transliteration": "javāb (m.)",
+     "Urdu": "جواب",
+     "Arabic": "جواب",
+     "Image": ""
+    },
+    {
+     "English": "correct, true",
+     "Transliteration": "sahī",
+     "Urdu": "صحیح",
+     "Arabic": "صحيح / حقيقي",
+     "Image": ""
+    },
+    {
+     "English": "wrong, false",
+     "Transliteration": "ghalat",
+     "Urdu": "غلط",
+     "Arabic": "خاطئ / خطأ",
+     "Image": ""
+    },
+    {
+     "English": "word",
+     "Transliteration": "lafz (m.)",
+     "Urdu": "لفظ",
+     "Arabic": "كلمة",
+     "Image": ""
+    },
+    {
+     "English": "example",
+     "Transliteration": "misāl (f.)",
+     "Urdu": "مثال",
+     "Arabic": "مثال",
+     "Image": ""
+    },
+    {
+     "English": "meaning",
+     "Transliteration": "matlab (m.)",
+     "Urdu": "مطلب",
+     "Arabic": "معنى",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 2,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U01Ch02V01.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "man",
+     "Transliteration": "ādmī (m.)",
+     "Urdu": "آدمی",
+     "Arabic": "رجل",
+     "Image": ""
+    },
+    {
+     "English": "woman",
+     "Transliteration": "aurat (f.)",
+     "Urdu": "عورت",
+     "Arabic": "امرأة",
+     "Image": ""
+    },
+    {
+     "English": "child (male)",
+     "Transliteration": "bacca (m.)",
+     "Urdu": "بچہ",
+     "Arabic": "طفل (مذكر)",
+     "Image": ""
+    },
+    {
+     "English": "child (female)",
+     "Transliteration": "baccī (f.)",
+     "Urdu": "بچی",
+     "Arabic": "طفلة (مؤنث)",
+     "Image": ""
+    },
+    {
+     "English": "boy",
+     "Transliteration": "laṛkā (m.)",
+     "Urdu": "لڑکا",
+     "Arabic": "ولد",
+     "Image": ""
+    },
+    {
+     "English": "girl",
+     "Transliteration": "laṛkī (f.)",
+     "Urdu": "لڑکی",
+     "Arabic": "بنت",
+     "Image": ""
+    },
+    {
+     "English": "teacher",
+     "Transliteration": "ustād",
+     "Urdu": "استاد",
+     "Arabic": "معلم / أستاذ",
+     "Image": ""
+    },
+    {
+     "English": "student",
+     "Transliteration": "iṣṭūdaṇṭ (m./f.)",
+     "Urdu": "اسٹوڈنٹ",
+     "Arabic": "طالب / طالبة",
+     "Image": ""
+    },
+    {
+     "English": "teacher",
+     "Transliteration": "ṭīcar (m./f.)",
+     "Urdu": "ٹیچر",
+     "Arabic": "معلم / معلمة",
+     "Image": ""
+    },
+    {
+     "English": "student",
+     "Transliteration": "ṭālib-ilm / ṭālib-e-ilm",
+     "Urdu": "طالب علم / طالبہ",
+     "Arabic": "طالب علم",
+     "Image": ""
+    },
+    {
+     "English": "Afghan(i)",
+     "Transliteration": "afghānī",
+     "Urdu": "افغانی",
+     "Arabic": "أفغاني",
+     "Image": ""
+    },
+    {
+     "English": "American",
+     "Transliteration": "amrīkī",
+     "Urdu": "امریکہ",
+     "Arabic": "أمريكي",
+     "Image": ""
+    },
+    {
+     "English": "Iranian",
+     "Transliteration": "īrānī",
+     "Urdu": "ایرانی",
+     "Arabic": "إيراني",
+     "Image": ""
+    },
+    {
+     "English": "Pakistani",
+     "Transliteration": "pākistānī",
+     "Urdu": "پاکستانی",
+     "Arabic": "باكستاني",
+     "Image": ""
+    },
+    {
+     "English": "Chinese",
+     "Transliteration": "cīnī",
+     "Urdu": "چینی",
+     "Arabic": "صيني",
+     "Image": ""
+    },
+    {
+     "English": "Indian",
+     "Transliteration": "hindūstānī",
+     "Urdu": "ہندوستانی",
+     "Arabic": "هندي",
+     "Image": ""
+    },
+    {
+     "English": "unhappy, melancholy",
+     "Transliteration": "udās",
+     "Urdu": "اداس",
+     "Arabic": "حزين / كئيب",
+     "Image": ""
+    },
+    {
+     "English": "fine, OK",
+     "Transliteration": "ṭhīk",
+     "Urdu": "ٹھیک",
+     "Arabic": "بخير / جيد",
+     "Image": ""
+    },
+    {
+     "English": "happy",
+     "Transliteration": "xuś",
+     "Urdu": "خوش",
+     "Arabic": "سعيد",
+     "Image": ""
+    },
+    {
+     "English": "unhappy",
+     "Transliteration": "nāxuś",
+     "Urdu": "نا خوش",
+     "Arabic": "غير سعيد",
+     "Image": ""
+    },
+    {
+     "English": "married",
+     "Transliteration": "śādī śuda",
+     "Urdu": "شادی شدہ",
+     "Arabic": "متزوج",
+     "Image": ""
+    },
+    {
+     "English": "Really! Is that so! (excl.)!",
+     "Transliteration": "acchā!",
+     "Urdu": "اچھا!",
+     "Arabic": "حقاً! / أوه!",
+     "Image": ""
+    },
+    {
+     "English": "and; else",
+     "Transliteration": "aur",
+     "Urdu": "اور",
+     "Arabic": "و / آخر",
+     "Image": ""
+    },
+    {
+     "English": "completely, absolutely",
+     "Transliteration": "bilkul",
+     "Urdu": "بالکل",
+     "Arabic": "تماما / مطلقاً",
+     "Image": ""
+    },
+    {
+     "English": "also",
+     "Transliteration": "bhī",
+     "Urdu": "بھی",
+     "Arabic": "أيضا",
+     "Image": ""
+    },
+    {
+     "English": "a lot (of); very",
+     "Transliteration": "bahut",
+     "Urdu": "بہت",
+     "Arabic": "كثير / جداً",
+     "Image": ""
+    },
+    {
+     "English": "both",
+     "Transliteration": "donō̃",
+     "Urdu": "دونوں",
+     "Arabic": "كلاهما",
+     "Image": ""
+    },
+    {
+     "English": "all",
+     "Transliteration": "sab",
+     "Urdu": "سب",
+     "Arabic": "كل",
+     "Image": ""
+    },
+    {
+     "English": "people",
+     "Transliteration": "log (m.pl.)",
+     "Urdu": "لوگ",
+     "Arabic": "ناس / أشخاص",
+     "Image": ""
+    },
+    {
+     "English": "why",
+     "Transliteration": "kyō̃",
+     "Urdu": "کیوں",
+     "Arabic": "لماذا",
+     "Image": ""
+    },
+    {
+     "English": "but",
+     "Transliteration": "lekin",
+     "Urdu": "لیکن",
+     "Arabic": "لكن",
+     "Image": ""
+    },
+    {
+     "English": "or",
+     "Transliteration": "yā",
+     "Urdu": "یا",
+     "Arabic": "أو",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 3,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U01Ch03V01.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "wardrobe, closet, cupboard; shelving unit",
+     "Transliteration": "almārī (f.)",
+     "Urdu": "الماری",
+     "Arabic": "خزانة",
+     "Image": ""
+    },
+    {
+     "English": "bottle",
+     "Transliteration": "botal (f.)",
+     "Urdu": "بوتل",
+     "Arabic": "زجاجة / قارورة",
+     "Image": ""
+    },
+    {
+     "English": "water",
+     "Transliteration": "pānī (m.)",
+     "Urdu": "پانی",
+     "Arabic": "ماء",
+     "Image": ""
+    },
+    {
+     "English": "fan",
+     "Transliteration": "pankhā (m.)",
+     "Urdu": "پنکھا",
+     "Arabic": "مروحة",
+     "Image": ""
+    },
+    {
+     "English": "TV",
+     "Transliteration": "ṭīvī (m.)",
+     "Urdu": "ٹی وی",
+     "Arabic": "تلفزيون",
+     "Image": ""
+    },
+    {
+     "English": "phone",
+     "Transliteration": "fon (m.)",
+     "Urdu": "فون",
+     "Arabic": "هاتف",
+     "Image": ""
+    },
+    {
+     "English": "carpet",
+     "Transliteration": "qālīn (f.)",
+     "Urdu": "قالین",
+     "Arabic": "سجادة / بساط",
+     "Image": ""
+    },
+    {
+     "English": "computer",
+     "Transliteration": "kampyūṭar (m.)",
+     "Urdu": "کمپیوٹر",
+     "Arabic": "حاسوب",
+     "Image": ""
+    },
+    {
+     "English": "food",
+     "Transliteration": "khānā (m.)",
+     "Urdu": "کھانا",
+     "Arabic": "طعام / أكل",
+     "Image": ""
+    },
+    {
+     "English": "vehicle, car",
+     "Transliteration": "gāṛī (f.)",
+     "Urdu": "گاڑی",
+     "Arabic": "سيارة / مركبة",
+     "Image": ""
+    },
+    {
+     "English": "and; more, additional",
+     "Transliteration": "aur",
+     "Urdu": "اور",
+     "Arabic": "و / المزيد",
+     "Image": ""
+    },
+    {
+     "English": "outside",
+     "Transliteration": "bāhar",
+     "Urdu": "باہر",
+     "Arabic": "خارج / في الخارج",
+     "Image": ""
+    },
+    {
+     "English": "more, (too) many; (+ neg.) not many",
+     "Transliteration": "zyāda",
+     "Urdu": "زیادہ",
+     "Arabic": "أكثر / كثير",
+     "Image": ""
+    },
+    {
+     "English": "only",
+     "Transliteration": "sirf",
+     "Urdu": "صرف",
+     "Arabic": "فقط",
+     "Image": ""
+    },
+    {
+     "English": "some, something; a bit (+ adj.)",
+     "Transliteration": "kuch",
+     "Urdu": "کچھ",
+     "Arabic": "بعض / شيء ما",
+     "Image": ""
+    },
+    {
+     "English": "some, someone; any, anyone",
+     "Transliteration": "koī",
+     "Urdu": "کوئی",
+     "Arabic": "بعض / أي شخص",
+     "Image": ""
+    },
+    {
+     "English": "several",
+     "Transliteration": "kaī",
+     "Urdu": "کئی",
+     "Arabic": "عدة",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 4,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U01Ch04V01.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "small",
+     "Transliteration": "choṭā",
+     "Urdu": "چھوٹا",
+     "Arabic": "صغير",
+     "Image": ""
+    },
+    {
+     "English": "thick, fat",
+     "Transliteration": "moṭā",
+     "Urdu": "موٹا",
+     "Arabic": "سميك / بدين",
+     "Image": ""
+    },
+    {
+     "English": "thin",
+     "Transliteration": "patlā",
+     "Urdu": "پتلا",
+     "Arabic": "نحيف / رقيق",
+     "Image": ""
+    },
+    {
+     "English": "high",
+     "Transliteration": "ū̃cā",
+     "Urdu": "اونچا",
+     "Arabic": "عالٍ / مرتفع",
+     "Image": ""
+    },
+    {
+     "English": "low",
+     "Transliteration": "nīcā",
+     "Urdu": "نیچا",
+     "Arabic": "منخفض",
+     "Image": ""
+    },
+    {
+     "English": "long, tall",
+     "Transliteration": "lambā",
+     "Urdu": "لمبا",
+     "Arabic": "طويل",
+     "Image": ""
+    },
+    {
+     "English": "wide",
+     "Transliteration": "caurā",
+     "Urdu": "چوڑا",
+     "Arabic": "واسع / عريض",
+     "Image": ""
+    },
+    {
+     "English": "round",
+     "Transliteration": "gol",
+     "Urdu": "گول",
+     "Arabic": "مستدير / دائري",
+     "Image": ""
+    },
+    {
+     "English": "square",
+     "Transliteration": "caukōr",
+     "Urdu": "چوکور",
+     "Arabic": "مربع",
+     "Image": ""
+    },
+    {
+     "English": "triangular",
+     "Transliteration": "tikonā",
+     "Urdu": "تکونا",
+     "Arabic": "مثلث",
+     "Image": ""
+    },
+    {
+     "English": "rectangular",
+     "Transliteration": "mūstaṭīl",
+     "Urdu": "مستطیل",
+     "Arabic": "مستطيل",
+     "Image": ""
+    },
+    {
+     "English": "oval",
+     "Transliteration": "baiẓvī",
+     "Urdu": "بیضوی",
+     "Arabic": "بيضاوي",
+     "Image": ""
+    },
+    {
+     "English": "heavy",
+     "Transliteration": "bhārī",
+     "Urdu": "بھاری",
+     "Arabic": "ثقيل",
+     "Image": ""
+    },
+    {
+     "English": "light",
+     "Transliteration": "halkā",
+     "Urdu": "ہلکا",
+     "Arabic": "خفيف",
+     "Image": ""
+    },
+    {
+     "English": "color",
+     "Transliteration": "rang (m.)",
+     "Urdu": "رنگ",
+     "Arabic": "لون",
+     "Image": ""
+    },
+    {
+     "English": "white",
+     "Transliteration": "safed",
+     "Urdu": "سفید",
+     "Arabic": "أبيض",
+     "Image": ""
+    },
+    {
+     "English": "black",
+     "Transliteration": "kālā",
+     "Urdu": "کالا",
+     "Arabic": "أسود",
+     "Image": ""
+    },
+    {
+     "English": "red",
+     "Transliteration": "lāl",
+     "Urdu": "لال",
+     "Arabic": "أحمر",
+     "Image": ""
+    },
+    {
+     "English": "green",
+     "Transliteration": "harā",
+     "Urdu": "ہرا",
+     "Arabic": "أخضر",
+     "Image": ""
+    },
+    {
+     "English": "blue",
+     "Transliteration": "nīlā",
+     "Urdu": "نیلا",
+     "Arabic": "أزرق",
+     "Image": ""
+    },
+    {
+     "English": "yellow",
+     "Transliteration": "pīlā",
+     "Urdu": "پیلا",
+     "Arabic": "أصفر",
+     "Image": ""
+    },
+    {
+     "English": "pink",
+     "Transliteration": "gulābī",
+     "Urdu": "گلابی",
+     "Arabic": "وردي",
+     "Image": ""
+    },
+    {
+     "English": "purple",
+     "Transliteration": "jāmunī",
+     "Urdu": "جامنی",
+     "Arabic": "بنفسجي",
+     "Image": ""
+    },
+    {
+     "English": "orange",
+     "Transliteration": "nāranjī",
+     "Urdu": "نارنجی",
+     "Arabic": "برتقالي",
+     "Image": ""
+    },
+    {
+     "English": "brown",
+     "Transliteration": "bhūrā",
+     "Urdu": "بھورا",
+     "Arabic": "بني",
+     "Image": ""
+    },
+    {
+     "English": "brown",
+     "Transliteration": "katthaī",
+     "Urdu": "کتھئی",
+     "Arabic": "بني (غامق)",
+     "Image": ""
+    },
+    {
+     "English": "gray",
+     "Transliteration": "surmaī",
+     "Urdu": "سرمئی",
+     "Arabic": "رمادي",
+     "Image": ""
+    },
+    {
+     "English": "very, a lot",
+     "Transliteration": "bahut",
+     "Urdu": "بہت",
+     "Arabic": "جداً / كثير",
+     "Image": ""
+    },
+    {
+     "English": "a little, a bit",
+     "Transliteration": "thoṛā",
+     "Urdu": "تھوڑا",
+     "Arabic": "قليل",
+     "Image": ""
+    },
+    {
+     "English": "empty",
+     "Transliteration": "xālī",
+     "Urdu": "خالی",
+     "Arabic": "فارغ",
+     "Image": ""
+    },
+    {
+     "English": "more, too much (zyāda...nahī̃: not very...)",
+     "Transliteration": "zyāda (adv.)",
+     "Urdu": "زیادہ",
+     "Arabic": "أكثر / زيادة",
+     "Image": ""
+    },
+    {
+     "English": "quite, rather; enough",
+     "Transliteration": "kāfī",
+     "Urdu": "کافی",
+     "Arabic": "كافي / إلى حد ما",
+     "Image": ""
+    },
+    {
+     "English": "also, too, either; even (+ negation)",
+     "Transliteration": "bhī",
+     "Urdu": "بھی",
+     "Arabic": "أيضاً",
+     "Image": ""
+    },
+    {
+     "English": "only",
+     "Transliteration": "hī",
+     "Urdu": "ہی",
+     "Arabic": "فقط / فقط",
+     "Image": ""
+    },
+    {
+     "English": "good",
+     "Transliteration": "acchā",
+     "Urdu": "اچھا",
+     "Arabic": "جيد",
+     "Image": ""
+    },
+    {
+     "English": "bad",
+     "Transliteration": "burā",
+     "Urdu": "برا",
+     "Arabic": "سيئ",
+     "Image": ""
+    },
+    {
+     "English": "bad, spoiled, in a bad state",
+     "Transliteration": "xarāb",
+     "Urdu": "خراب",
+     "Arabic": "تالف / معطل",
+     "Image": ""
+    },
+    {
+     "English": "new",
+     "Transliteration": "nayā",
+     "Urdu": "نیا",
+     "Arabic": "جديد",
+     "Image": ""
+    },
+    {
+     "English": "old",
+     "Transliteration": "purānā",
+     "Urdu": "پرانا",
+     "Arabic": "قديم",
+     "Image": ""
+    },
+    {
+     "English": "beautiful, handsome",
+     "Transliteration": "xūbsūrat",
+     "Urdu": "خوبصورت",
+     "Arabic": "جميل / وسيم",
+     "Image": ""
+    },
+    {
+     "English": "ugly",
+     "Transliteration": "badsūrat",
+     "Urdu": "بدصورت",
+     "Arabic": "قبيح",
+     "Image": ""
+    },
+    {
+     "English": "excellent, of high quality",
+     "Transliteration": "umda (inv.)*",
+     "Urdu": "عمدہ",
+     "Arabic": "ممتاز / عالي الجودة",
+     "Image": ""
+    },
+    {
+     "English": "appearance; face; shape",
+     "Transliteration": "śakl (f.)",
+     "Urdu": "شکل",
+     "Arabic": "شكل / مظهر",
+     "Image": ""
+    },
+    {
+     "English": "weight",
+     "Transliteration": "vazan (m.)",
+     "Urdu": "وزن",
+     "Arabic": "وزن",
+     "Image": ""
+    },
+    {
+     "English": "big",
+     "Transliteration": "baṛā",
+     "Urdu": "بڑا",
+     "Arabic": "كبير",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 4,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U01Ch04V02.mp3",
+  "table": {
+   "header": {
+    "English": "English",
+    "Transliteration": "Transliteration (Urdu Romanization)",
+    "Urdu": "Urdu Script",
+    "Arabic": "Arabic Translation",
+    "Image": "Image Link (Optional)"
+   },
+   "data": [
+    {
+     "English": "stuff, things",
+     "Transliteration": "sāmān (m. sg.)",
+     "Urdu": "سامان",
+     "Arabic": "أشياء / أغراض",
+     "Image": ""
+    },
+    {
+     "English": "whose",
+     "Transliteration": "kis kā",
+     "Urdu": "کس کا",
+     "Arabic": "لمن / خاص بمن",
+     "Image": ""
+    },
+    {
+     "English": "your, yours (formal)",
+     "Transliteration": "āp kā",
+     "Urdu": "آپ کا",
+     "Arabic": "لك / خاص بك (صيغة رسمية)",
+     "Image": ""
+    },
+    {
+     "English": "your, yours (informal)",
+     "Transliteration": "tumhārā",
+     "Urdu": "تمہارا",
+     "Arabic": "لك / خاص بك (صيغة غير رسمية)",
+     "Image": ""
+    },
+    {
+     "English": "my, mine",
+     "Transliteration": "merā",
+     "Urdu": "میرا",
+     "Arabic": "لي / خاصتي",
+     "Image": ""
+    },
+    {
+     "English": "how much, how many",
+     "Transliteration": "kitnā",
+     "Urdu": "کتنا",
+     "Arabic": "كم (للعدد أو الكمية)",
+     "Image": ""
+    },
+    {
+     "English": "whose",
+     "Transliteration": "kis kā",
+     "Urdu": "کس کا",
+     "Arabic": "لمن / خاص بمن",
+     "Image": ""
+    },
+    {
+     "English": "which",
+     "Transliteration": "kaunsā",
+     "Urdu": "کونسا",
+     "Arabic": "أي",
+     "Image": ""
+    },
+    {
+     "English": "how, in what state; of what kind",
+     "Transliteration": "kaisā",
+     "Urdu": "کیسا",
+     "Arabic": "كيف / أي نوع",
+     "Image": ""
+    }
+   ]
+  }
+ },
+ {
+  "unit": 1,
+  "chapter": 5,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U01Ch05V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 1,
+  "chapter": 5,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U01Ch05V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 7,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U02Ch07V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 7,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U02Ch07V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 7,
+  "type": "Vocabulary",
+  "number": 3,
+  "id": "Pien7788_U02Ch07V03.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 7,
+  "type": "Vocabulary",
+  "number": 4,
+  "id": "Pien7788_U02Ch07V04.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 8,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U02Ch08V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 9,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U02Ch09V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 9,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U02Ch09V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 9,
+  "type": "Vocabulary",
+  "number": 3,
+  "id": "Pien7788_U02Ch09V03.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 10,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U02Ch10V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 10,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U02Ch10V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 11,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U02Ch11V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 2,
+  "chapter": 12,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U02Ch12V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 13,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U03Ch13V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 13,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U03Ch13V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 13,
+  "type": "Vocabulary",
+  "number": 3,
+  "id": "Pien7788_U03Ch13V03.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 13,
+  "type": "Vocabulary",
+  "number": 4,
+  "id": "Pien7788_U03Ch13V04.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 14,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U03Ch14V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 14,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U03Ch14V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 15,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U03Ch15V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 15,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U03Ch15V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 16,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U03Ch16V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 3,
+  "chapter": 16,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U03Ch16V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 4,
+  "chapter": 18,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U04Ch18V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 4,
+  "chapter": 18,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U04Ch18V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 4,
+  "chapter": 19,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U04Ch19V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 4,
+  "chapter": 19,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U04Ch19V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 4,
+  "chapter": 20,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U04Ch20V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 4,
+  "chapter": 21,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U04Ch21V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 5,
+  "chapter": 22,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U05Ch22V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 5,
+  "chapter": 22,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U05Ch22V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 5,
+  "chapter": 23,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U05Ch23V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 5,
+  "chapter": 24,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U05Ch24V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 6,
+  "chapter": 27,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U06Ch27V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 6,
+  "chapter": 28,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U06Ch28V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 6,
+  "chapter": 29,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U06Ch29V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 7,
+  "chapter": 31,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U07Ch31V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 7,
+  "chapter": 32,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U07Ch32V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 7,
+  "chapter": 33,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U07Ch33V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 7,
+  "chapter": 34,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U07Ch34V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 7,
+  "chapter": 35,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U07Ch35V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 7,
+  "chapter": 35,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U07Ch35V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 37,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U08Ch37V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 37,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U08Ch37V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 38,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U08Ch38V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 39,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U08Ch39V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 40,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U08Ch40V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 40,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U08Ch40V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 41,
+  "type": "Vocabulary",
+  "number": 1,
+  "id": "Pien7788_U08Ch41V01.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 41,
+  "type": "Vocabulary",
+  "number": 2,
+  "id": "Pien7788_U08Ch41V02.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 41,
+  "type": "Vocabulary",
+  "number": 3,
+  "id": "Pien7788_U08Ch41V03.mp3",
+  "table": {}
+ },
+ {
+  "unit": 8,
+  "chapter": 41,
+  "type": "Vocabulary",
+  "number": 4,
+  "id": "Pien7788_U08Ch41V04.mp3",
+  "table": {}
+ }
 ]
