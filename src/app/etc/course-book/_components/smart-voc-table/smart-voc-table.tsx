@@ -27,6 +27,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useTune } from "@/hooks/use-tone";
+import { getVocabularyTableData } from "../difinitions";
 // --- Types and Constants ---
 const MODES = {
   REVIEW: "review",
@@ -251,7 +252,7 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
           <TableHeader>
             {mode === MODES.REVIEW ? (
               <TableRow>
-                <TableHead className="w-auto">English</TableHead>
+                <TableHead className="w-auto ">English</TableHead>
                 <TableHead className="w-auto hidden sm:table-cell">
                   Transliteration
                 </TableHead>
@@ -294,12 +295,13 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
   );
 };
 
-export function SmartVocabularyTable({ data }: { data: VocabItem[] }) {
+export function SmartVocabularyTable({ vocId }: { vocId: string }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const data = getVocabularyTableData(vocId);
   const handleSheetClose = () => {
     setIsOpen(false);
   };
+  if (!data) return null;
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>

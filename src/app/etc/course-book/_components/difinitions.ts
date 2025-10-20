@@ -34,7 +34,7 @@ export const getAudioUrl = (item: AudioFile): string => {
 };
 
 export const getVocabularyTableData = (id: string) => {
-  const result = vocsData.find((v) => v.id);
+  const result = vocsData.find((v) => v.id === id);
   if (!result) return null;
   const simplified = result.table?.data?.map((item, index) => ({
     id: index,
@@ -42,7 +42,6 @@ export const getVocabularyTableData = (id: string) => {
     transliteration: item.Transliteration,
     urdu: item.Urdu,
     arabic: item.Arabic,
-    image: item.Image,
   }));
   return simplified;
 };
