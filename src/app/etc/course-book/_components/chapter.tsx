@@ -40,8 +40,6 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
       <Card key={id} className="px-2 border border-gray-800  grid grid-cols-1">
         <FullscreenPlayer item={_voc} disabled={!hasAudio} />
         <SmartVocabularyTable vocId={_voc.id} />
-
-        <Button>button</Button>
         <QuizzerSheet vocId={_voc.id} />
       </Card>
     );
