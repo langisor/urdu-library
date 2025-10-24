@@ -4,6 +4,7 @@ import { useQuizLogic } from "./use-quiz-logic"; // Adjust path as needed
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useTune } from "@/hooks/use-tone";
 import { SheetClose } from "@/components/ui/sheet";
 import { XIcon } from "lucide-react";
 // Helper to determine text direction
@@ -42,16 +43,20 @@ export const Quizzer: React.FC<QuizzerProps> = ({ data, onClose }) => {
   // Map quizMode to a user-friendly label
   const quizModeLabel = data.table.header[quizMode] || quizMode;
 
+
+   
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       if (!isAnswered) {
+    
+          
         checkAnswer();
       } else if (!isFinished) {
         nextWord();
       }
     }
   };
-
+ 
   if (isFinished) {
     return (
       <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-2xl text-center">

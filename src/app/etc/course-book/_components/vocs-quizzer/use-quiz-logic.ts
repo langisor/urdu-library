@@ -2,6 +2,7 @@
 // useQuizLogic.ts
 import { useState, useMemo, useCallback, useEffect } from "react";
 import { QuizData, VocabItem, QuizState, QuizMode } from "./types"; // Assuming types.ts is in the same directory
+import { useTune } from "@/hooks/use-tone";
 
 // Helper function to shuffle an array (Fisher-Yates)
 const shuffleArray = (array: VocabItem[]): VocabItem[] => {
@@ -42,7 +43,7 @@ export const useQuizLogic = (data: QuizData) => {
   const [promptLanguage, setPromptLanguage] = useState<
     "English" | "Transliteration" | "Urdu" | "Arabic"
   >(getPromptLanguage(quizMode));
-
+  const { playCorrectTune, playIncorrectTune } = useTune();
   const initialShuffledWords = useMemo(
     () => shuffleArray(data.table.data),
     [data.table.data]
@@ -91,7 +92,11 @@ export const useQuizLogic = (data: QuizData) => {
     const input = state.userInput.trim().toLowerCase();
 
     const isCorrect = answerOptions.includes(input);
-
+    if (isCorrect) {
+      playCorrectTune();
+    } else {
+      playIncorrectTune();
+    }
     setState((prevState) => ({
       ...prevState,
       isAnswered: true,
