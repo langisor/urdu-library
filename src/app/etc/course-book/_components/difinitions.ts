@@ -35,7 +35,7 @@ export const getAudioUrl = (item: AudioFile): string => {
 
 export const getVocabularyTableData = (id: string) => {
   const result = vocsData.find((v) => v.id === id);
-  if (!result) return {};
+  if (!result) return  null;
   const simplified = result.table?.data?.map((item, index) => ({
     id: index,
     english: item.English,
