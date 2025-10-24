@@ -31,12 +31,10 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
   const feedbackState = useHookstate(quizzerFeedback);
 
   React.useEffect(() => {
-    console.log("Current question", questions[currentStep - 1]);
+    console.log("Current question", questions[currentStep - 1].get());
     const audio = new Audio(questions[currentStep - 1].audio.get());
     audio.play();
-   
   }, [currentStep]);
-
 
   const handleAnswer = (id: string) => {
     console.log("Card clicked", id);
@@ -44,18 +42,14 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
       playCorrectTune();
       feedbackState.isCorrect.set(true);
       feedbackState.message.set("أحسنت");
-      setTimeout(() => {
-      
-      }, 1000);
+      setTimeout(() => {}, 1000);
     } else {
       playIncorrectTune();
       feedbackState.isCorrect.set(false);
       feedbackState.message.set(
         "خطاء، الإجابة الصحيحة " + questions[currentStep - 1].id.get()
       );
-      setTimeout(() => {
-       
-      }, 1000);
+      setTimeout(() => {}, 1000);
     }
     if (actions.canGoToNextStep) {
       actions.goToNextStep();
@@ -65,7 +59,97 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
   };
   console.log("Current question", questions[currentStep - 1]);
 
+  const renderTopCards = () => {
+    const [answer1, answer2] = questions[currentStep - 1].answers.slice(0, 2);
+    return (
+      <div className="grid grid-cols-2 gap-4">
+        <div key={answer1.id.get()}>
+          <Card
+            onClick={() => handleAnswer(answer1.id.get())}
+            className="cursor-pointer hover:bg-gray-100 w-full h-full flex flex-col justify-between items-center"
+          >
+            <CardContent className="w-full h-72 flex flex-col justify-between items-center">
+              <Image
+                src={answer1.image.get()}
+                alt={answer1.text.get()}
+                className="object-cover"
+                width={300}
+                height={300}
+              />
+              <CardFooter className="text-sm urdu-text">
+                {answer1.text.get()}
+              </CardFooter>
+            </CardContent>
+          </Card>
+        </div>
+        <div key={answer2.id.get()}>
+          <Card
+            onClick={() => handleAnswer(answer2.id.get())}
+            className="cursor-pointer hover:bg-gray-100 w-full h-full flex flex-col justify-between items-center"
+          >
+            <CardContent className="w-full h-72 flex flex-col justify-between items-center">
+              <Image
+                src={answer2.image.get()}
+                alt={answer2.text.get()}
+                className="object-cover"
+                width={300}
+                height={300}
+              />
+              <CardFooter className="text-sm urdu-text">
+                {answer2.text.get()}
+              </CardFooter>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  };
 
+  const renderBottomCards = () => {
+    const [answer3, answer4] = questions[currentStep - 1].answers.slice(2, 4);
+    return (
+      <div className="grid grid-cols-2 gap-4">
+        <div key={answer3.id.get()}>
+          <Card
+            onClick={() => handleAnswer(answer3.id.get())}
+            className="cursor-pointer hover:bg-gray-100 w-full h-full flex flex-col justify-between items-center"
+          >
+            <CardContent className="w-full h-72 flex flex-col justify-between items-center">
+              <Image
+                src={answer3.image.get()}
+                alt={answer3.text.get()}
+                className="object-cover"
+                width={300}
+                height={300}
+              />
+              <CardFooter className="text-sm urdu-text">
+                {answer3.text.get()}
+              </CardFooter>
+            </CardContent>
+          </Card>
+        </div>
+        <div key={answer4.id.get()}>
+          <Card
+            onClick={() => handleAnswer(answer4.id.get())}
+            className="cursor-pointer hover:bg-gray-100 w-full h-full flex flex-col justify-between items-center"
+          >
+            <CardContent className="w-full h-72 flex flex-col justify-between items-center">
+              <Image
+                src={answer4.image.get()}
+                alt={answer4.text.get()}
+                className="object-cover"
+                width={300}
+                height={300}
+              />
+              <CardFooter className="text-sm urdu-text">
+                {answer4.text.get()}
+              </CardFooter>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  };
   return (
     <div className="grid grid-cols-2 gap-4">
       {questions[currentStep - 1].answers.map((answer) => (
@@ -87,7 +171,6 @@ export default function QuizP({ quizData, quizzerFeedback }: QuizPProps) {
               </CardFooter>
             </CardContent>
           </Card>
- 
         </div>
       ))}
     </div>
