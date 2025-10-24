@@ -49,6 +49,7 @@ export interface VocabItem {
 // Define the component's props
 interface LanguageDataTableProps {
   data: VocabItem[];
+  onClose: () => void;
 }
 
 // --- Quiz Row Component ---
@@ -173,7 +174,10 @@ const QuizRow: React.FC<QuizRowProps> = ({ item, quizField }) => {
 };
 
 // --- Main Component ---
-const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
+const LanguageDataTable: React.FC<LanguageDataTableProps> = ({
+  data,
+  onClose,
+}) => {
   const [mode, setMode] = useState<Mode>(MODES.REVIEW);
   const [quizField, setQuizField] = useState<QuizField>("urdu");
   const shuffledData = useMemo(() => {
@@ -206,7 +210,7 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
 
       {/* Mode Controls - Fully Responsive Layout */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 p-4 border rounded-lg bg-gray-50">
-        <div className="flex space-x-2 w-full sm:w-auto">
+        <div className="flex gap-2 justify-between w-full sm:w-auto">
           <Button
             onClick={() => setMode(MODES.REVIEW)}
             variant={mode === MODES.REVIEW ? "default" : "outline"}
@@ -221,7 +225,11 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
           >
             🧠 Quiz
           </Button>
-          
+          <SheetClose asChild className=" ">
+            <Button variant="destructive" onClick={onClose}>
+              Close
+            </Button>
+          </SheetClose>
         </div>
 
         {mode === MODES.QUIZ && (
@@ -318,12 +326,7 @@ export function SmartVocabularyTable({ vocId }: { vocId: string }) {
           side="bottom"
         >
           <SheetTitle></SheetTitle>
-          <LanguageDataTable data={data} />
-          <SheetClose asChild>
-            <Button variant="outline" onClick={handleSheetClose}>
-              Close
-            </Button>
-          </SheetClose>
+          <LanguageDataTable data={data} onClose={handleSheetClose} />
         </SheetContent>
       </Sheet>
     </>
