@@ -1,6 +1,8 @@
 "use client";
 import { ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
+
+import { QuizzerSheet } from "./vocs-quizzer/quizzer-sheet";
 import { AudioFile, Chapter, getVocabularyTableData } from "./difinitions";
 import { Button } from "@/components/ui/button";
 import { FullscreenPlayer } from "./fullscrren-player";
@@ -9,6 +11,7 @@ import {
   type VocabItem,
 } from "./smart-voc-table/smart-voc-table";
 import * as React from "react";
+
 // Props for Chapter component
 
 interface SmartVocProps extends VocabItem {
@@ -37,6 +40,7 @@ export const ExpandableChapter: React.FC<ChapterProps> = ({
       <Card key={id} className="px-2 border border-gray-800  grid grid-cols-1">
         <FullscreenPlayer item={_voc} disabled={!hasAudio} />
         <SmartVocabularyTable vocId={_voc.id} />
+        <QuizzerSheet vocId={_voc.id} />
       </Card>
     );
   };
