@@ -221,6 +221,7 @@ const LanguageDataTable: React.FC<LanguageDataTableProps> = ({ data }) => {
           >
             🧠 Quiz
           </Button>
+          
         </div>
 
         {mode === MODES.QUIZ && (
