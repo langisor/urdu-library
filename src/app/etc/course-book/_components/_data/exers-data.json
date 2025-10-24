@@ -38,7 +38,7 @@
     "number": 4,
     "id": "Pien7788_U01Ch04Ex04.mp3",
     "data": {
-      "Dialogue": [
+      "dialogue": [
         {
           "Speaker": "کبير (Kabeer)",
           "Urdu": "یہ سب سامان میرا ہے یا تمہارا؟",
@@ -124,12 +124,12 @@
           "Arabic": "لا، لا توجد ساعة هنا."
         }
       ],
-      "Questions": [
+      "questions": [
         "A. Which items are Kabeer's?",
         "B. Which items are Jameela's?",
         "C. Which items mentioned are not present and to whom do they belong?"
       ],
-      "Answers": {
+      "answers": {
         "A": [
           "Book (کتاب)",
           "Black Pen (کالا قلم)",

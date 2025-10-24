@@ -55,12 +55,10 @@ export const Quizzer: React.FC<QuizzerProps> = ({ data, onClose }) => {
   if (isFinished) {
     return (
       <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-2xl text-center">
-        <h2 className="text-3xl font-bold text-green-600 mb-4">
-          Quiz Complete! 🎉
-        </h2>
+        <h2 className="  font-bold text-green-600 mb-4">Quiz Complete! 🎉</h2>
         <p className="text-xl mb-6">
           Your Final Score:{" "}
-          <strong className="text-4xl block my-2">
+          <strong className="  block my-2">
             {score} / {totalWords}
           </strong>
         </p>
@@ -79,12 +77,6 @@ export const Quizzer: React.FC<QuizzerProps> = ({ data, onClose }) => {
       <h1 className="text-2xl font-bold mb-4 text-center text-gray-800">
         {data.type} Quiz: {data.unit}.{data.chapter}
       </h1>
-      <SheetClose
-        onClick={onClose}
-        className="absolute top-4 right-4 text-blue-500 hover:text-gray-700 cursor-pointer"
-      >
-        <XIcon className="w-6 h-6" />
-      </SheetClose>
 
       {/* Quiz Mode Selector */}
       <div className="flex justify-center space-x-2 mb-6">
@@ -131,7 +123,9 @@ export const Quizzer: React.FC<QuizzerProps> = ({ data, onClose }) => {
         dir={getDir(promptLanguage)}
         className="text-center mb-8 p-4 bg-purple-50 rounded-lg border-2 border-purple-200 min-h-[100px] flex items-center justify-center"
       >
-        <p className="text-3xl font-semibold text-gray-900">{currentPrompt}</p>
+        <p className="md:text-3xl text-xl font-semibold text-gray-900">
+          {currentPrompt}
+        </p>
         <span className="ml-2 text-sm text-gray-500">
           ({data.table.header[promptLanguage]})
         </span>
@@ -206,7 +200,16 @@ export const Quizzer: React.FC<QuizzerProps> = ({ data, onClose }) => {
             Next Word
           </Button>
         )}
+       
       </div>
+      
+          <Button
+            className="w-full my-5  py-3 px-6 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-300"
+            onClick={onClose}
+          >
+            Close
+          </Button>
+    
     </div>
   );
 };
