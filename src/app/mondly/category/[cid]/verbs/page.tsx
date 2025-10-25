@@ -3,14 +3,12 @@ import { Card } from "@/components/ui/card";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 import { Suspense } from "react";
 
-
-
 export default async function LessonPage({
-  searchParams,
+  params,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: Promise<{ cid: string }>;
 }) {
-  const lid = (await searchParams).lid;
+  const cid = (await params).cid;
   /*const lesson = await queryClient`
     SELECT * FROM "Lesson" WHERE "id"=${Number(lid)}
   `;
@@ -26,14 +24,14 @@ export default async function LessonPage({
 
   console.log("quizzes", quizzes);
 */
-console.log("Verbs for Category",)
+  console.log("Verbs for Category", cid);
+
   return (
     <Card>
       <Suspense fallback={<div>Loading...</div>}>
         {/* <Quizzer quizzes={quizzes} /> */}
-
       </Suspense>
-      {/* <JsonViewerComponent data={quizzes} /> */}
+      <JsonViewerComponent data={{cid}} />
     </Card>
   );
 }
