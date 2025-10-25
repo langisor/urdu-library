@@ -36,9 +36,7 @@ export function CategoryDashboard({ categories }: { categories: Category[] }) {
           >
             <Button>مراجعة المفردات </Button>
           </Link>
-          <Link href={`/mondly/category/${category.id}/verbs/`}>
-            <Button>مراجعة الأفعال</Button>
-          </Link>
+          
         </div>
       ))}
     </div>
