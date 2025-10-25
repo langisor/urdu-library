@@ -11,7 +11,7 @@ export default async function LessonPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const lid = (await searchParams).lid;
-  const lesson = await queryClient`
+  /*const lesson = await queryClient`
     SELECT * FROM "Lesson" WHERE "id"=${Number(lid)}
   `;
 
@@ -25,11 +25,13 @@ export default async function LessonPage({
   }
 
   console.log("quizzes", quizzes);
-
+*/
+console.log("Verbs for Category",)
   return (
     <Card>
       <Suspense fallback={<div>Loading...</div>}>
         {/* <Quizzer quizzes={quizzes} /> */}
+
       </Suspense>
       {/* <JsonViewerComponent data={quizzes} /> */}
     </Card>
