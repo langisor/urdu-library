@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { VerbQuizSheet } from "./verb-quiz-sheet";
-import { VerbQuizerSheet } from "./verb-quizzer-sheett";
+import { VerbViewerSheet } from "./verb-viewer-sheet";
+import { VerbQuizerSheet } from "./verb-quizzer-sheet";
 import type { Verb } from "./types";
 import { EyeIcon, SearchIcon, BrainCircuitIcon } from "lucide-react";
 
@@ -118,7 +118,7 @@ export function VerbsTable({ verbs }: VerbsTableProps) {
         </Table>
       </div>
 
-      <VerbQuizSheet
+      <VerbViewerSheet
         verb={selectedVerb}
         open={viewSheetOpen}
         onOpenChange={setViewSheetOpen}

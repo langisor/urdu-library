@@ -45,7 +45,7 @@ interface QuizQuestion {
   conjugation: VerbConjugation;
   statement?: string;
   isCorrectStatement?: boolean;
-  options?: string[];
+  options?: { text: string }[];
 }
 
 export function VerbQuizerSheet({
@@ -147,7 +147,7 @@ export function VerbQuizerSheet({
       tense: randomTense,
       pronounIndex: randomPronounIndex,
       conjugation: correctConjugation,
-      options: allOptions.map((o) => o.text),
+      options: allOptions,
     };
   };
 
@@ -184,7 +184,7 @@ export function VerbQuizerSheet({
         if (
           q.options &&
           typeof answer === "number" &&
-          q.options[answer] === q.conjugation.m.text
+          q.options[answer].text === q.conjugation.m.text
         )
           correct++;
       }
@@ -211,7 +211,8 @@ export function VerbQuizerSheet({
       return (
         currentQuestion.options &&
         typeof answer === "number" &&
-        currentQuestion.options[answer] === currentQuestion.conjugation.m.text
+        currentQuestion.options[answer].text ===
+          currentQuestion.conjugation.m.text
       );
     }
     return false;
@@ -415,7 +416,7 @@ export function VerbQuizerSheet({
                       {currentQuestion.options?.map((option, idx) => {
                         const isSelected = answers[currentStep] === idx;
                         const isCorrect =
-                          option === currentQuestion.conjugation.m.text;
+                          option.text === currentQuestion.conjugation.m.text;
                         const showCorrect = showResult && isCorrect;
                         const showWrong =
                           showResult && isSelected && !isCorrect;
@@ -435,7 +436,9 @@ export function VerbQuizerSheet({
                             onClick={() => !showResult && handleAnswer(idx)}
                           >
                             <div className="flex items-center justify-between">
-                              <p className="text-xl font-medium">{option}</p>
+                              <p className="text-xl font-medium">
+                                {option.text}
+                              </p>
                               {showCorrect && (
                                 <CheckCircle2Icon className="h-6 w-6 text-green-600" />
                               )}
