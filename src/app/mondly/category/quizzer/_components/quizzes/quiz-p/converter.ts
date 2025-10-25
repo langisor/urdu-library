@@ -11,7 +11,7 @@ import { useHookstate, type State } from "@hookstate/core";
 import { useStep } from "@/hooks/use-step";
 import { useTune } from "@/hooks/use-tone";
 
-type Answer = {
+export type Answer = {
   id: string;
   text: string;
   image: string;
@@ -19,31 +19,33 @@ type Answer = {
 type Question = {
   id: string;
   audio: string;
+  text: string;
   answers: Answer[];
 };
 export function convertP(quizData: QuizPItem) {
-  const questions: Question[] = quizData.sols.map((sol) => {
+  const questions: Question[] = quizData.alts.map((alt) => {
     return {
-      id: sol.key,
-      audio: getAudioUrl(sol.key),
+      id: alt.key,
+      audio: getAudioUrl(alt.key),
+      text: alt.text,
 
-      answers: quizData.alts.map((alt) => {
+      answers: quizData.sols.map((sol, index) => {
         return {
-          id: alt.key,
-          text: alt.text,
-          image: getImageUrl(alt.image),
+          id: sol.key,
+          text: sol.text,
+          image: getImageUrl(quizData.alts[index].image),
         };
       }),
     };
   });
-//  shuffle answers
-  const shuffledQuestionAnswers=questions.map((question)=>{
+  //  shuffle answers
+  const shuffledQuestionAnswers = questions.map((question) => {
     return {
       ...question,
-      answers:shuffleArray([...question.answers]),
-    }
-  })
-  return  shuffledQuestionAnswers 
+      answers: shuffleArray([...question.answers]),
+    };
+  });
+  return shuffledQuestionAnswers;
 }
 
 interface UseQuizP {
@@ -54,15 +56,15 @@ interface UseQuizP {
 //   const questions = useHookstate(convertP(quizData));
 //   const [currentStep, actions] = useStep(questions.length);
 //   const { playCorrectTune, playIncorrectTune } = useTune();
-  
+
 //   const currentQuestion=questions[currentStep];
 //   console.log("useQuizP, Current question", currentQuestion,
 //     "Current step", currentStep,
-    
+
 //   );
 //   const nextQuestion = () => {
 //     // shuffle answers
-   
+
 //     actions.goToNextStep();
 //   };
 //   const handleAnswer = (answerId: string, feedbackState: State<Feedback>) => {
@@ -89,8 +91,7 @@ interface UseQuizP {
 //       }
 //     }
 //   };
- 
-  
+
 //   return {
 //     currentQuestion,
 //     handleAnswer,
