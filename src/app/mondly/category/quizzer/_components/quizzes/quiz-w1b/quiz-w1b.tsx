@@ -49,10 +49,12 @@ export default function QuizW1b({ quizData, quizzerFeedback }: QuizW1bState) {
       if (isCorrect) {
         quizzerFeedback.isCorrect.set(true);
         quizzerFeedback.message.set("الإجابة صحيحة");
+        quizzerFeedback.isAnswered.set(true);
         playCorrectTune();
       } else {
         quizzerFeedback.isCorrect.set(false);
         quizzerFeedback.message.set("الإجابة الخاطئة");
+        quizzerFeedback.isAnswered.set(true);
         playIncorrectTune();
       }
     };
@@ -83,12 +85,14 @@ export default function QuizW1b({ quizData, quizzerFeedback }: QuizW1bState) {
       if (isCorrect) {
         quizzerFeedback.isCorrect.set(true);
         quizzerFeedback.message.set("الإجابة صحيحة");
+        quizzerFeedback.isAnswered.set(true);
         playCorrectTune();
       } else {
         quizzerFeedback.isCorrect.set(false);
         quizzerFeedback.message.set(
           `الإجابة الخاطئة، الجواب الصحيح: ${actions.getCorrectAnswer()}`
         );
+        quizzerFeedback.isAnswered.set(true);
         playIncorrectTune();
       }
     };

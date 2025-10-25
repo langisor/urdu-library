@@ -20,7 +20,6 @@ type ConvertW1bReturn = {
     image: string;
   };
   correctAnswer: {
-   
     text: string;
   };
 };
@@ -37,9 +36,8 @@ const convertW1b = (quiz: QuizW1bItem): ConvertW1bReturn => {
     audioFile: getAudioUrl(quiz.sols[0].key),
     text: quiz.sols[0].text,
     image: getImageUrl(quiz.sols[1].image!),
-      };
+  };
   const correctAnswer: ConvertW1bReturn["correctAnswer"] = {
-     
     text: quiz.sols[1].text,
   };
   return {
@@ -58,22 +56,23 @@ export function useQuizW1b(quizData: QuizW1bItem) {
     return token?.id;
   };
   const checkAnswer = (inputText: string) => {
-      const correctOrd = quizState.correctOrd.get();
-       const inputOrd = inputText.split("").map((t) => getTokenId(t));
-       const isCorrect = correctOrd.every((c, i) => c === inputOrd[i]);
-       return isCorrect;
+    const correctOrd = quizState.correctOrd.get();
+    const inputOrd = inputText.split("").map((t) => getTokenId(t));
+    const isCorrect = correctOrd.every((c, i) => c === inputOrd[i]);
+    return isCorrect;
   };
 
   const getCorrectAnswer = () => {
-     const correctOrd = quizState.correctOrd.get();
-     const correctAnswer = correctOrd.map((c) => quizState.tokens.get().find((t) => t.id === c)?.text).join("");
-     return correctAnswer;
+    const correctOrd = quizState.correctOrd.get();
+    const correctAnswer = correctOrd
+      .map((c) => quizState.tokens.get().find((t) => t.id === c)?.text)
+      .join("");
+    return correctAnswer;
   };
- 
+
   const resetQuiz = () => {
     quizState.set(convertW1b(quizData));
-   
-    };
+  };
   return {
     actions: {
       getPrompt: quizState.prompt.get(),
@@ -82,7 +81,6 @@ export function useQuizW1b(quizData: QuizW1bItem) {
       getCorrectAnswer,
       resetQuiz,
     },
-    quizInfo:quizState.get(),
-
+    quizInfo: quizState.get(),
   };
 }
