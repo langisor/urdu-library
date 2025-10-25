@@ -1,19 +1,19 @@
 "use client";
-
+import { QuizC2b } from "./quiz-c2b";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import quizData from "./t1b-samples.json";
+import quizData from "./c2b-samples.json";
 import { useHookstate } from "@hookstate/core";
-import { QuizT1bItem } from "./definitions";
+import { QuizC2bItem } from "./definitions";
 import { JsonViewerComponent } from "@/components/general/json-viewer-component";
 
-const quiz = quizData[0] as QuizT1bItem;
+const quiz = quizData[1] as QuizC2bItem;
+console.log("quizzes length", quizData.length);
 
 export default function DemoPage() {
- return (
+  return (
     <div>
-        <h1>Quiz T1b</h1>
-        {/* <JsonViewerComponent data={quiz} /> */}
+      <JsonViewerComponent data={quizData} />
     </div>
- )
+  );
 }

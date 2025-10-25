@@ -35,6 +35,7 @@ export function CategoryDashboard({ categories }: { categories: Category[] }) {
             >
               <Button>مراجعة المفردات </Button>
               </Link>
+            <Link 
           </div>
         ))}
 

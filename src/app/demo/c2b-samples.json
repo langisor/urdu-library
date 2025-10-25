@@ -1,0 +1,1849 @@
+[
+ {
+  "id": 614902,
+  "ord": [
+   "tuGEwX6eOKP",
+   "tDiXoNrfO_4",
+   "tM7xF7U5Vbr",
+   "tZzOFeJ6Jr1",
+   "tgf9DKSctkM",
+   "tvsXENvri0W",
+   "tmnb_V5biPr"
+  ],
+  "sols": [
+   {
+    "key": "Z8RT1mUuSl3i5DA-rO3VQKTkctE0xe7y",
+    "text": "أنا أريد شطيرة.",
+    "dictionary": [
+     {
+      "raw": "أنا",
+      "translations": []
+     },
+     {
+      "raw": "أريد",
+      "translations": [
+       {
+        "id": 95,
+        "conj": {
+         "fu": [
+          {
+           "m": {
+            "text": "أنا سأريد"
+           },
+           "t": {
+            "key": "ffwsSUESwMBTNyltbzJJUaU2OXi-Iarb",
+            "text": "میں چاہوں گا",
+            "phonetic": "Mein chahoon ga",
+            "audio_updated_at": 1580697050
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ستريد"
+           },
+           "t": {
+            "key": "OL_Au-wytewsdzQQ3ctVpvr0BhMFk0V6",
+            "text": "تم چاہو گے",
+            "phonetic": "Tum chaho gay",
+            "audio_updated_at": 1580697051
+           }
+          },
+          {
+           "m": {
+            "text": "هو سيريد"
+           },
+           "t": {
+            "key": "4vGj8stTVaWe4kbRN4bi4T9o2St4J-c9",
+            "text": "وہ چاہے گا",
+            "phonetic": "Wo chahay ga",
+            "audio_updated_at": 1580697053
+           }
+          },
+          {
+           "m": {
+            "text": "هي ستريد"
+           },
+           "t": {
+            "key": "HR7E91A0m5yVIL3sSEMSFkQP5JJHYRKj",
+            "text": "وہ چاہے گی",
+            "phonetic": "Wo chahay gi",
+            "audio_updated_at": 1580697055
+           }
+          },
+          {
+           "m": {
+            "text": "نحن سنريد"
+           },
+           "t": {
+            "key": "AlNfOnDSb3aBSU6INUer40J4R9aUVWBs",
+            "text": "ہم چاہیں گے",
+            "phonetic": "Hum chahain gay",
+            "audio_updated_at": 1580697058
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ستريدون"
+           },
+           "t": {
+            "key": "27x86se-5XgsZ02LfJLECryjCsZ1E8cT",
+            "text": "آپ چلیں گے",
+            "phonetic": "Aap chahain gay",
+            "audio_updated_at": 1580697060
+           }
+          },
+          {
+           "m": {
+            "text": "هم سيريدون"
+           },
+           "t": {
+            "key": "2mggp8t48ksfi4RjE2yoVEhDMte9em1l",
+            "text": "وہ چلیں گے",
+            "phonetic": "Wo chahain gay",
+            "audio_updated_at": 1580697062
+           }
+          }
+         ],
+         "pa": [
+          {
+           "m": {
+            "text": "أنا أردت"
+           },
+           "t": {
+            "key": "uxFSKGKPyYaOEMoRYAQ8EwJRJzSM4uaV",
+            "text": "میں نے چاہا",
+            "phonetic": "Mein ne chaha",
+            "audio_updated_at": 1580697035
+           }
+          },
+          {
+           "m": {
+            "text": "أنت أردت"
+           },
+           "t": {
+            "key": "Chb76s_onF9prualkkcc1NK4LgeW4ncc",
+            "text": "تم نے چاہا",
+            "phonetic": "Tum ne chaha",
+            "audio_updated_at": 1580697037
+           }
+          },
+          {
+           "m": {
+            "text": "هو أراد"
+           },
+           "t": {
+            "key": "Tjf9iLjE3mwiCcSqmUR8nhmaGXMJ96-I",
+            "text": "اس نے چاہا",
+            "phonetic": "Us ne chaha",
+            "audio_updated_at": 1580697039
+           }
+          },
+          {
+           "m": {
+            "text": "هي أرادت"
+           },
+           "t": {
+            "key": "cRLRaaq1DW_O6dn7dzXmJVemWVt3pZdK",
+            "text": "اس نے چاہا",
+            "phonetic": "Us ne chaha",
+            "audio_updated_at": 1580697041
+           }
+          },
+          {
+           "m": {
+            "text": "نحن أردنا"
+           },
+           "t": {
+            "key": "zqes-v8L8yPv6qzH6_-4eDWstnqsVI6w",
+            "text": "ہم نے چاہا",
+            "phonetic": "Hum ne chaha",
+            "audio_updated_at": 1580697044
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم أردتم"
+           },
+           "t": {
+            "key": "ZMcL6HAnfJTHnwm58uj-i_X_B4DqgFik",
+            "text": "آپ نے چاہا",
+            "phonetic": "Aap ne chaha",
+            "audio_updated_at": 1580697046
+           }
+          },
+          {
+           "m": {
+            "text": "هم أرادوا"
+           },
+           "t": {
+            "key": "lDsr6040lGv9Y-MQJeOHerQml36Zodjv",
+            "text": "انہوں نے چاہا",
+            "phonetic": "Unhon ne chaha",
+            "audio_updated_at": 1580697048
+           }
+          }
+         ],
+         "pr": [
+          {
+           "m": {
+            "text": "أنا أريد"
+           },
+           "t": {
+            "key": "E-ToC__reUwo5Bvp27EjqT7vuz9ovt0U",
+            "text": "میں چاہتا ہوں",
+            "phonetic": "Mein chahta hoon",
+            "audio_updated_at": 1580697020
+           }
+          },
+          {
+           "m": {
+            "text": "أنت تريد"
+           },
+           "t": {
+            "key": "hnPzMKqV0pFoYBxnmNra4T3EAnRCmyO1",
+            "text": "تم چاہتے ہو",
+            "phonetic": "Tum chahtay ho",
+            "audio_updated_at": 1580697022
+           }
+          },
+          {
+           "m": {
+            "text": "هو يريد"
+           },
+           "t": {
+            "key": "pccP9ldBiYqaRRHKpF2SF4VSGm8OkZmZ",
+            "text": "وہ چاہتا ہے",
+            "phonetic": "Wo chahta hai",
+            "audio_updated_at": 1580697024
+           }
+          },
+          {
+           "m": {
+            "text": "هي تريد"
+           },
+           "t": {
+            "key": "3URw8DqmLwaSMuH6uuucOMnhQapK-DGb",
+            "text": "وہ چاہتی ہے",
+            "phonetic": "Wo chahti hai",
+            "audio_updated_at": 1580697026
+           }
+          },
+          {
+           "m": {
+            "text": "نحن نريد"
+           },
+           "t": {
+            "key": "VLyrPncRMnXy_qbXJE3AULZRzISDmmOc",
+            "text": "ہم چاہتے ہیں",
+            "phonetic": "Hum chahtay hain",
+            "audio_updated_at": 1580697030
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم تريدون"
+           },
+           "t": {
+            "key": "oRKQCE-AQYN2vn_fjLEiv1tldfQne7Jx",
+            "text": "آپ چاہتے ہیں",
+            "phonetic": "Aap chahtay hain",
+            "audio_updated_at": 1580697031
+           }
+          },
+          {
+           "m": {
+            "text": "هم يريدون"
+           },
+           "t": {
+            "key": "sOEW1K9TFbh-lLYg2pTfG1naGjrWuEVV",
+            "text": "وہ چاہتے ہیں",
+            "phonetic": "Wo chahtay hain",
+            "audio_updated_at": 1580697033
+           }
+          }
+         ]
+        },
+        "name": {
+         "m": "يريد",
+         "t": "چاہنا",
+         "phonetic": "chahna"
+        },
+        "type": "verb",
+        "tenseNames": {
+         "fu": "مستقبل",
+         "pa": "ماضي",
+         "pr": "الحاضر"
+        }
+       }
+      ]
+     },
+     {
+      "raw": "شطيرة",
+      "translations": [
+       {
+        "text": "سینڈوچ",
+        "type": "dictionary",
+        "phonetic": "sandwich"
+       }
+      ]
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "أنا",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "أريد",
+       "length": 4,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 8
+      }
+     },
+     {
+      "raw": {
+       "text": "شطيرة",
+       "length": 5,
+       "location": 9
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 8
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 9
+      },
+      "suffix": {
+       "text": ".",
+       "length": 1,
+       "location": 14
+      }
+     }
+    ],
+    "audio_updated_at": 1688822200
+   },
+   {
+    "key": "Z8RT1mUuSl3i5DA-rO3VQKTkctE0xe7y",
+    "text": "مجھے سینڈوچ چاہئے۔",
+    "phonetic": "Mujhay sandwich chahiye.",
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "مجھے",
+       "length": 4,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      }
+     },
+     {
+      "raw": {
+       "text": "سینڈوچ",
+       "length": 6,
+       "location": 5
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 4
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 5
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 11
+      }
+     },
+     {
+      "raw": {
+       "text": "چاہئے",
+       "length": 5,
+       "location": 12
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 11
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 12
+      },
+      "suffix": {
+       "text": "۔",
+       "length": 1,
+       "location": 17
+      }
+     }
+    ],
+    "phonetic_tokens": [
+     {
+      "raw": {
+       "text": "Mujhay",
+       "length": 6,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 6
+      }
+     },
+     {
+      "raw": {
+       "text": "sandwich",
+       "length": 8,
+       "location": 7
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 6
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 7
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 15
+      }
+     },
+     {
+      "raw": {
+       "text": "chahiye",
+       "length": 7,
+       "location": 16
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 15
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 16
+      },
+      "suffix": {
+       "text": ".",
+       "length": 1,
+       "location": 23
+      }
+     }
+    ],
+    "audio_updated_at": 1688822200
+   }
+  ],
+  "type": "C2b",
+  "lesson": 503,
+  "tokens": [
+   {
+    "key": "tuGEwX6eOKP",
+    "text": " ",
+    "specialChar": true
+   },
+   {
+    "key": "tDiXoNrfO_4",
+    "text": "س",
+    "group": 1
+   },
+   {
+    "key": "tZzOFeJ6Jr1",
+    "text": "ن",
+    "group": 1
+   },
+   {
+    "key": "tvsXENvri0W",
+    "text": "و",
+    "group": 1
+   },
+   {
+    "key": "tM7xF7U5Vbr",
+    "text": "ی",
+    "group": 1
+   },
+   {
+    "key": "tgf9DKSctkM",
+    "text": "ڈ",
+    "group": 1
+   },
+   {
+    "key": "tmnb_V5biPr",
+    "text": "چ",
+    "group": 1
+   }
+  ],
+  "wordID": 23645,
+  "modifiers": 92,
+  "alternates": [
+   16852
+  ],
+  "ordPhonetic": [
+   "thQ-Eo8uyb2",
+   "t3j7AtQtFMk",
+   "tL73VVl75u3",
+   "tfhT7GFjkPm",
+   "tgGT3hYxtrF",
+   "tNCvE5seA72",
+   "t7vEu-J0N0V",
+   "tdjH4Qto4_O",
+   "t51mxHvoOhk"
+  ],
+  "tokensPhonetic": [
+   {
+    "key": "thQ-Eo8uyb2",
+    "text": " ",
+    "specialChar": true
+   },
+   {
+    "key": "t7vEu-J0N0V",
+    "text": "i",
+    "group": 1
+   },
+   {
+    "key": "tfhT7GFjkPm",
+    "text": "n",
+    "group": 1
+   },
+   {
+    "key": "tNCvE5seA72",
+    "text": "w",
+    "group": 1
+   },
+   {
+    "key": "tgGT3hYxtrF",
+    "text": "d",
+    "group": 1
+   },
+   {
+    "key": "tdjH4Qto4_O",
+    "text": "c",
+    "group": 1
+   },
+   {
+    "key": "tL73VVl75u3",
+    "text": "a",
+    "group": 1
+   },
+   {
+    "key": "t3j7AtQtFMk",
+    "text": "s",
+    "group": 1
+   },
+   {
+    "key": "t51mxHvoOhk",
+    "text": "h",
+    "group": 1
+   }
+  ],
+  "tokensEqualSize": false
+ },
+ {
+  "id": 640089,
+  "ord": [
+   "tka8CzFgkFO",
+   "tvrRvlaqfn3",
+   "txvuMEBqPec",
+   "tO9ITdKXmR8"
+  ],
+  "sols": [
+   {
+    "key": "hm7cwuZB0JwZUJtyUA9-y0bUJIieUKlp",
+    "text": "أين تعمل؟",
+    "dictionary": [
+     {
+      "raw": "أين",
+      "translations": [
+       {
+        "text": "کہاں",
+        "type": "dictionary",
+        "phonetic": "kahan"
+       }
+      ]
+     },
+     {
+      "raw": "تعمل",
+      "translations": [
+       {
+        "id": 99,
+        "conj": {
+         "fu": [
+          {
+           "m": {
+            "text": "أنا سأعمل"
+           },
+           "t": {
+            "key": "81RYMRQKSouX9CLkhy4MSmWJ5nSGH6ty",
+            "text": "میں کام کروں گا",
+            "phonetic": "Mein kaam karoon ga",
+            "audio_updated_at": 1580697226
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ستعمل"
+           },
+           "t": {
+            "key": "6k0D1HX90SOt169OCakKAIZthr-wcJr9",
+            "text": "تم کام کرو گے",
+            "phonetic": "Tum kaam karo gay",
+            "audio_updated_at": 1580697228
+           }
+          },
+          {
+           "m": {
+            "text": "هو سيعمل"
+           },
+           "t": {
+            "key": "fB0h79d4EepzKrR6BehZP6o19koMaF_n",
+            "text": "وہ کام کرے گا",
+            "phonetic": "Wo kaam karay ga",
+            "audio_updated_at": 1580697230
+           }
+          },
+          {
+           "m": {
+            "text": "هي ستعمل"
+           },
+           "t": {
+            "key": "fC_S43X7c0mHR8DwYVPESIM5jzsEdY5N",
+            "text": "وہ کام کرے گی",
+            "phonetic": "Wo kaam karay gi",
+            "audio_updated_at": 1580697232
+           }
+          },
+          {
+           "m": {
+            "text": "نحن سنعمل"
+           },
+           "t": {
+            "key": "2JmuKeVj8aVYyGUPqOow74-HbQ760D1s",
+            "text": "ہم کام کریں گے",
+            "phonetic": "Hum kaam karain gay",
+            "audio_updated_at": 1580697235
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ستعملون"
+           },
+           "t": {
+            "key": "-o560lsRZL8Tm-FDxc2bvmb4qUvm93rR",
+            "text": "آپ کام کریں گے",
+            "phonetic": "Aap kaam karain gay",
+            "audio_updated_at": 1580697237
+           }
+          },
+          {
+           "m": {
+            "text": "هم سيعملون"
+           },
+           "t": {
+            "key": "x1j0JAvfuR_stB52ao7ATW_1JiBYZSKz",
+            "text": "وہ کام کریں گے",
+            "phonetic": "Wo kaam karain gay",
+            "audio_updated_at": 1580697239
+           }
+          }
+         ],
+         "pa": [
+          {
+           "m": {
+            "text": "أنا عملت"
+           },
+           "t": {
+            "key": "Hs2kgzsyvUxaCRhSJuEmUQqsXJsrdq11",
+            "text": "میں نے کام کیا",
+            "phonetic": "Mein ne kaam kiya",
+            "audio_updated_at": 1580697211
+           }
+          },
+          {
+           "m": {
+            "text": "أنت عملت"
+           },
+           "t": {
+            "key": "XURJ7Wj0tEtFFRAKpKrFxX_Jw2jYUpX7",
+            "text": "تم نے کام کیا",
+            "phonetic": "Tum ne kaam kiya",
+            "audio_updated_at": 1580697213
+           }
+          },
+          {
+           "m": {
+            "text": "هو عمل"
+           },
+           "t": {
+            "key": "hm1HRqsvPNYVWUyfa17xI_V1DqzhnjAN",
+            "text": "اس نے کام کیا",
+            "phonetic": "Us ne kaam kiya",
+            "audio_updated_at": 1580697215
+           }
+          },
+          {
+           "m": {
+            "text": "هي عملت"
+           },
+           "t": {
+            "key": "CfyWAZDOTQ7qsb5ftO70Ts7WtADnGbcH",
+            "text": "اس نے کام کیا",
+            "phonetic": "Us ne kaam kiya",
+            "audio_updated_at": 1580697217
+           }
+          },
+          {
+           "m": {
+            "text": "نحن عملنا"
+           },
+           "t": {
+            "key": "twdGPnr9YzLMJFp5uSdILSElERbl_CF0",
+            "text": "ہم نے کام کیا",
+            "phonetic": "Hum ne kaam kiya",
+            "audio_updated_at": 1580697221
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم عملتم"
+           },
+           "t": {
+            "key": "rzO5nYM6g2am8JFnjYzXe81CUH14mfvc",
+            "text": "آپ نے کام کیا",
+            "phonetic": "Aap ne kaam kiya",
+            "audio_updated_at": 1580697223
+           }
+          },
+          {
+           "m": {
+            "text": "هم عملوا"
+           },
+           "t": {
+            "key": "GU58mj3oivroeSA-2OntLZQV33_HN6nt",
+            "text": "انہوں نے کام کیا",
+            "phonetic": "Unhon ne kaam kiya",
+            "audio_updated_at": 1580697224
+           }
+          }
+         ],
+         "pr": [
+          {
+           "m": {
+            "text": "أنا أعمل"
+           },
+           "t": {
+            "key": "qNvsrBhYBbvhk3cYBd6HWf54ok9uEHbF",
+            "text": "میں کام کرتا ہوں",
+            "phonetic": "Mein kaam karta hoon",
+            "audio_updated_at": 1580697196
+           }
+          },
+          {
+           "m": {
+            "text": "أنت تعمل"
+           },
+           "t": {
+            "key": "ooJrdfi7YiOhsOTf92CvnuMUePoJD3Cy",
+            "text": "تم کام کرتے ہو",
+            "phonetic": "Tum kaam kartay ho",
+            "audio_updated_at": 1580697198
+           }
+          },
+          {
+           "m": {
+            "text": "هو يعمل"
+           },
+           "t": {
+            "key": "bPg025XmnjTvAT3oMdLB3Hp8m2l24Ybi",
+            "text": "وہ کام کرتا ہے",
+            "phonetic": "Wo kaam karta hai",
+            "audio_updated_at": 1580697200
+           }
+          },
+          {
+           "m": {
+            "text": "هي تعمل"
+           },
+           "t": {
+            "key": "sx_rNgZ2ty4S6lscBHRomggYlf7xCQfW",
+            "text": "وہ کام کرتی ہے",
+            "phonetic": "Wo kaam karti hai",
+            "audio_updated_at": 1580697202
+           }
+          },
+          {
+           "m": {
+            "text": "نحن نعمل"
+           },
+           "t": {
+            "key": "3mPCLE2fWFHaGz4NDAq5W91EqH-r8tTS",
+            "text": "ہم کام کرتےہیں",
+            "phonetic": "Hum kaam kartay hain",
+            "audio_updated_at": 1580697205
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم تعملون"
+           },
+           "t": {
+            "key": "ON77SSXiPASTQJECqFLcmZSmKfSjpdHA",
+            "text": "آپ کام کرتے ہیں",
+            "phonetic": "Aap kaam kartay hain",
+            "audio_updated_at": 1580697207
+           }
+          },
+          {
+           "m": {
+            "text": "هم يعملون"
+           },
+           "t": {
+            "key": "2VQfJ_RiFDomVc-regczDRzD0hHMYyvX",
+            "text": "وہ کام کرتے ہیں",
+            "phonetic": "Wo kaam kartay hain",
+            "audio_updated_at": 1580697209
+           }
+          }
+         ]
+        },
+        "name": {
+         "m": "يعمل",
+         "t": "کام کرنا",
+         "phonetic": "kaam karna"
+        },
+        "type": "verb",
+        "tenseNames": {
+         "fu": "مستقبل",
+         "pa": "ماضي",
+         "pr": "الحاضر"
+        }
+       }
+      ]
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "أين",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "تعمل",
+       "length": 4,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "؟",
+       "length": 1,
+       "location": 8
+      }
+     }
+    ],
+    "audio_updated_at": 1580701437
+   },
+   {
+    "key": "hm7cwuZB0JwZUJtyUA9-y0bUJIieUKlp",
+    "text": "تم کہاں کام کرتے ہو؟",
+    "phonetic": "Tum kahan kaam kartay ho?",
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "تم",
+       "length": 2,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 2
+      }
+     },
+     {
+      "raw": {
+       "text": "کہاں",
+       "length": 4,
+       "location": 3
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 2
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 7
+      }
+     },
+     {
+      "raw": {
+       "text": "کام",
+       "length": 3,
+       "location": 8
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 7
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 8
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 11
+      }
+     },
+     {
+      "raw": {
+       "text": "کرتے",
+       "length": 4,
+       "location": 12
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 11
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 12
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 16
+      }
+     },
+     {
+      "raw": {
+       "text": "ہو",
+       "length": 2,
+       "location": 17
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 16
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 17
+      },
+      "suffix": {
+       "text": "؟",
+       "length": 1,
+       "location": 19
+      }
+     }
+    ],
+    "phonetic_tokens": [
+     {
+      "raw": {
+       "text": "Tum",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "kahan",
+       "length": 5,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 9
+      }
+     },
+     {
+      "raw": {
+       "text": "kaam",
+       "length": 4,
+       "location": 10
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 9
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 10
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 14
+      }
+     },
+     {
+      "raw": {
+       "text": "kartay",
+       "length": 6,
+       "location": 15
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 14
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 15
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 21
+      }
+     },
+     {
+      "raw": {
+       "text": "ho",
+       "length": 2,
+       "location": 22
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 21
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 22
+      },
+      "suffix": {
+       "text": "?",
+       "length": 1,
+       "location": 24
+      }
+     }
+    ],
+    "audio_updated_at": 1580701437
+   }
+  ],
+  "type": "C2b",
+  "lesson": 3601,
+  "tokens": [
+   {
+    "key": "tO9ITdKXmR8",
+    "text": "م",
+    "group": 2
+   },
+   {
+    "key": "txvuMEBqPec",
+    "text": "ا",
+    "group": 2
+   },
+   {
+    "key": "tka8CzFgkFO",
+    "text": " ",
+    "specialChar": true
+   },
+   {
+    "key": "tvrRvlaqfn3",
+    "text": "ک",
+    "group": 2
+   }
+  ],
+  "wordID": 14361,
+  "modifiers": 92,
+  "alternates": [
+   14335
+  ],
+  "ordPhonetic": [
+   "t530oSa-o-T",
+   "tpbEZH2xJQz",
+   "tT6KyfyPWIe",
+   "tFjjeixBV_6",
+   "ta9ZuMnPO2_",
+   "tBwOLksvMjN",
+   "toaWRMbpcDF"
+  ],
+  "tokensPhonetic": [
+   {
+    "key": "tT6KyfyPWIe",
+    "text": "a",
+    "group": 3
+   },
+   {
+    "key": "toaWRMbpcDF",
+    "text": "y",
+    "group": 3
+   },
+   {
+    "key": "tpbEZH2xJQz",
+    "text": "k",
+    "group": 3
+   },
+   {
+    "key": "tFjjeixBV_6",
+    "text": "r",
+    "group": 3
+   },
+   {
+    "key": "ta9ZuMnPO2_",
+    "text": "t",
+    "group": 3
+   },
+   {
+    "key": "tBwOLksvMjN",
+    "text": "a",
+    "group": 3
+   },
+   {
+    "key": "t530oSa-o-T",
+    "text": " ",
+    "specialChar": true
+   }
+  ],
+  "tokensEqualSize": false
+ },
+ {
+  "id": 625549,
+  "ord": [
+   "tmT-mr_X8d_",
+   "tiTVPRYy94n",
+   "t7OsumOuqzc",
+   "tvuhW69iWk9",
+   "t7vhvbsMkyD"
+  ],
+  "sols": [
+   {
+    "key": "mzbggRrkeOr8s7X95esGyB05mr0Qrx6J",
+    "text": "أين تعيش؟",
+    "dictionary": [
+     {
+      "raw": "أين",
+      "translations": [
+       {
+        "text": "کہاں",
+        "type": "dictionary",
+        "phonetic": "kahan"
+       }
+      ]
+     },
+     {
+      "raw": "تعيش",
+      "translations": [
+       {
+        "id": 56,
+        "conj": {
+         "fu": [
+          {
+           "m": {
+            "text": "أنا سأعيش"
+           },
+           "t": {
+            "key": "j8nsi4dlkEKoAPB66KoPBZ4LW6pk5h6U",
+            "text": "میں رہوں گا",
+            "phonetic": "Mein rahoon ga",
+            "audio_updated_at": 1580695304
+           }
+          },
+          {
+           "m": {
+            "text": "أنت ستعيش"
+           },
+           "t": {
+            "key": "bicAtWVYJnXYB3tBYMJr7QVtwL_4sUfY",
+            "text": "تم رہو گے",
+            "phonetic": "Tum raho gay",
+            "audio_updated_at": 1580695305
+           }
+          },
+          {
+           "m": {
+            "text": "هو سيعيش"
+           },
+           "t": {
+            "key": "I_AOQL-GnxDArWGao73H43W4qDGBiKNZ",
+            "text": "وہ رہے گا",
+            "phonetic": "Wo rahay ga",
+            "audio_updated_at": 1580695307
+           }
+          },
+          {
+           "m": {
+            "text": "هي ستعيش"
+           },
+           "t": {
+            "key": "NuStWRF06MPDp9uNDgIwliN5GThmBhoc",
+            "text": "وہ رہے گی",
+            "phonetic": "Wo rahay gi",
+            "audio_updated_at": 1580695309
+           }
+          },
+          {
+           "m": {
+            "text": "نحن سنعيش"
+           },
+           "t": {
+            "key": "xzpylVDskzOZBjofFtFFs_Vkt6fbgSr5",
+            "text": "ہم رہیں گے",
+            "phonetic": "Hum rahain gay",
+            "audio_updated_at": 1580695312
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم ستعيشون"
+           },
+           "t": {
+            "key": "B32aXW8h0Do07JMykRRBTiPEqoeDjU6f",
+            "text": "آپ رہیں گے",
+            "phonetic": "Aap rahain gay",
+            "audio_updated_at": 1580695314
+           }
+          },
+          {
+           "m": {
+            "text": "هم سيعيشون"
+           },
+           "t": {
+            "key": "e1Qki3ix_jJRujEhccDtnF7v6m6JslUv",
+            "text": "وہ رہیں گے",
+            "phonetic": "Wo rahain gay",
+            "audio_updated_at": 1580695315
+           }
+          }
+         ],
+         "pa": [
+          {
+           "m": {
+            "text": "أنا عشت"
+           },
+           "t": {
+            "key": "EEU4D8Lyws-R__xZclvkHcHqP1pRTEXW",
+            "text": "میں نے رہا",
+            "phonetic": "Mein ne raha",
+            "audio_updated_at": 1580695289
+           }
+          },
+          {
+           "m": {
+            "text": "أنت عشت"
+           },
+           "t": {
+            "key": "oQk40qZHJiUD0sNTvIxCiEy0r55cqVZo",
+            "text": "تم نے رہا",
+            "phonetic": "Tum ne raha",
+            "audio_updated_at": 1580695291
+           }
+          },
+          {
+           "m": {
+            "text": "هو عاش"
+           },
+           "t": {
+            "key": "3nCr_QXQWboIXhbQcahuP6b3AGrQQTOC",
+            "text": "اس نے رہا",
+            "phonetic": "Us ne raha",
+            "audio_updated_at": 1580695293
+           }
+          },
+          {
+           "m": {
+            "text": "هي عاشت"
+           },
+           "t": {
+            "key": "kbcO-OdYm5UtKptVnFF1CJ6BEns5LSl1",
+            "text": "اس نے رہا",
+            "phonetic": "Us ne raha",
+            "audio_updated_at": 1580695295
+           }
+          },
+          {
+           "m": {
+            "text": "نحن عشنا"
+           },
+           "t": {
+            "key": "L7mENT8CrorctzgsfrDWpyX1UK0w7Ais",
+            "text": "ہم نے رہا",
+            "phonetic": "Hum ne raha",
+            "audio_updated_at": 1580695298
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم عشتم"
+           },
+           "t": {
+            "key": "Q3XeaAVcNXAWQYO4XXKBQZVw8eJyCZ-4",
+            "text": "آپ نے رہا",
+            "phonetic": "Aap ne raha",
+            "audio_updated_at": 1580695300
+           }
+          },
+          {
+           "m": {
+            "text": "هم عاشوا"
+           },
+           "t": {
+            "key": "LbCLBSHjeB98l_OZjwuAaTy15tyaLU8Y",
+            "text": "انہوں نے رہا",
+            "phonetic": "Unhon ne raha",
+            "audio_updated_at": 1580695302
+           }
+          }
+         ],
+         "pr": [
+          {
+           "m": {
+            "text": "أنا أعيش"
+           },
+           "t": {
+            "key": "jgqZ_ir-rrYoD1cfcvYeAQ-8ZQpznXbw",
+            "text": "میں رہتا ہوں",
+            "phonetic": "Mein rehta hoon",
+            "audio_updated_at": 1580695274
+           }
+          },
+          {
+           "m": {
+            "text": "أنت تعيش"
+           },
+           "t": {
+            "key": "zdybL6lozYlvhfU5YpaDU16KvlZqXaTB",
+            "text": "تم رہتے ہو",
+            "phonetic": "Tum rehtay ho",
+            "audio_updated_at": 1580695276
+           }
+          },
+          {
+           "m": {
+            "text": "هو يعيش"
+           },
+           "t": {
+            "key": "anSPTsh0-xMZIIjIyx-eLL4hObXSJbsQ",
+            "text": "وہ رہتا ہے",
+            "phonetic": "Wo rehta hai",
+            "audio_updated_at": 1580695277
+           }
+          },
+          {
+           "m": {
+            "text": "هي تعيش"
+           },
+           "t": {
+            "key": "Tk3p7YxWSDqUECwMXmbQ6RsMrWiZdcrB",
+            "text": "وہ رہتی ہے",
+            "phonetic": "Wo rehti hai",
+            "audio_updated_at": 1580695279
+           }
+          },
+          {
+           "m": {
+            "text": "نحن نعيش"
+           },
+           "t": {
+            "key": "V7GX592LapPmH0VQM3IPjJA339TunypA",
+            "text": "ہم رہتے ہیں",
+            "phonetic": "Hum rehtay hain",
+            "audio_updated_at": 1580695283
+           }
+          },
+          {
+           "m": {
+            "text": "أنتم تعيشون"
+           },
+           "t": {
+            "key": "F5wPA0MPxliNWjW8wcD0A7sMAJCfGvF9",
+            "text": "آپ رہتے ہیں",
+            "phonetic": "Aap rehtay hain",
+            "audio_updated_at": 1580695284
+           }
+          },
+          {
+           "m": {
+            "text": "هم يعيشون"
+           },
+           "t": {
+            "key": "s6PZgqoPEb04ZbAzQ-C6symdMu6NsQwO",
+            "text": "وہ رہتے ہیں",
+            "phonetic": "Wo rehtay hain",
+            "audio_updated_at": 1580695286
+           }
+          }
+         ]
+        },
+        "name": {
+         "m": "يعيش",
+         "t": "رہنا",
+         "phonetic": "rehna"
+        },
+        "type": "verb",
+        "tenseNames": {
+         "fu": "مستقبل",
+         "pa": "ماضي",
+         "pr": "الحاضر"
+        }
+       }
+      ]
+     }
+    ],
+    "phraseType": 1,
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "أين",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "تعيش",
+       "length": 4,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "؟",
+       "length": 1,
+       "location": 8
+      }
+     }
+    ],
+    "audio_updated_at": 1580699557
+   },
+   {
+    "key": "mzbggRrkeOr8s7X95esGyB05mr0Qrx6J",
+    "text": "تم کہاں رہتے ہو؟",
+    "phonetic": "Tum kahan rehtay ho?",
+    "text_tokens": [
+     {
+      "raw": {
+       "text": "تم",
+       "length": 2,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 2
+      }
+     },
+     {
+      "raw": {
+       "text": "کہاں",
+       "length": 4,
+       "location": 3
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 2
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 7
+      }
+     },
+     {
+      "raw": {
+       "text": "رہتے",
+       "length": 4,
+       "location": 8
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 7
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 8
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 12
+      }
+     },
+     {
+      "raw": {
+       "text": "ہو",
+       "length": 2,
+       "location": 13
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 12
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 13
+      },
+      "suffix": {
+       "text": "؟",
+       "length": 1,
+       "location": 15
+      }
+     }
+    ],
+    "phonetic_tokens": [
+     {
+      "raw": {
+       "text": "Tum",
+       "length": 3,
+       "location": 0
+      },
+      "linker": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 0
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 3
+      }
+     },
+     {
+      "raw": {
+       "text": "kahan",
+       "length": 5,
+       "location": 4
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 3
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 4
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 9
+      }
+     },
+     {
+      "raw": {
+       "text": "rehtay",
+       "length": 6,
+       "location": 10
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 9
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 10
+      },
+      "suffix": {
+       "text": "",
+       "length": 0,
+       "location": 16
+      }
+     },
+     {
+      "raw": {
+       "text": "ho",
+       "length": 2,
+       "location": 17
+      },
+      "linker": {
+       "text": " ",
+       "length": 1,
+       "location": 16
+      },
+      "prefix": {
+       "text": "",
+       "length": 0,
+       "location": 17
+      },
+      "suffix": {
+       "text": "?",
+       "length": 1,
+       "location": 19
+      }
+     }
+    ],
+    "audio_updated_at": 1580699557
+   }
+  ],
+  "type": "C2b",
+  "lesson": 2503,
+  "tokens": [
+   {
+    "key": "tiTVPRYy94n",
+    "text": "ک",
+    "group": 1
+   },
+   {
+    "key": "tmT-mr_X8d_",
+    "text": " ",
+    "specialChar": true
+   },
+   {
+    "key": "t7OsumOuqzc",
+    "text": "ہ",
+    "group": 1
+   },
+   {
+    "key": "tvuhW69iWk9",
+    "text": "ا",
+    "group": 1
+   },
+   {
+    "key": "t7vhvbsMkyD",
+    "text": "ں",
+    "group": 1
+   }
+  ],
+  "wordID": 15608,
+  "modifiers": 92,
+  "alternates": [
+   17210
+  ],
+  "ordPhonetic": [
+   "t52VwmAIWs9",
+   "tp1psO4Jk32",
+   "tCQ5rnKQdYU",
+   "tyEOvxC6DHX",
+   "tWmrmXXJvh2",
+   "twHYeOMOWiM",
+   "tdXM1pXLhw_"
+  ],
+  "tokensPhonetic": [
+   {
+    "key": "t52VwmAIWs9",
+    "text": " ",
+    "specialChar": true
+   },
+   {
+    "key": "twHYeOMOWiM",
+    "text": "a",
+    "group": 2
+   },
+   {
+    "key": "tWmrmXXJvh2",
+    "text": "t",
+    "group": 2
+   },
+   {
+    "key": "tyEOvxC6DHX",
+    "text": "h",
+    "group": 2
+   },
+   {
+    "key": "tCQ5rnKQdYU",
+    "text": "e",
+    "group": 2
+   },
+   {
+    "key": "tp1psO4Jk32",
+    "text": "r",
+    "group": 2
+   },
+   {
+    "key": "tdXM1pXLhw_",
+    "text": "y",
+    "group": 2
+   }
+  ],
+  "tokensEqualSize": false
+ }
+]

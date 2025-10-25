@@ -15,7 +15,9 @@ type LessonItem = {
   countQuiz: number;
   quizzes: number[];
 };
-
+export type DictionaryItem = {
+    
+}
 type QuizFItem = {
   id: number;
   alts: Array<{
@@ -664,6 +666,135 @@ type QuizC1bItem = {
   }>;
   tokensEqualSize: boolean;
 };
+type QuizC2bItem = {
+  id: number;
+  ord: Array<string>;
+  sols: Array<{
+    key: string;
+    text: string;
+    dictionary?: Array<{
+      raw: string;
+      translations: Array<{
+        id?: number;
+        conj?: {
+          fu: Array<{
+            m: {
+              text: string;
+            };
+            t: {
+              key: string;
+              text: string;
+              phonetic: string;
+              audio_updated_at: number;
+            };
+          }>;
+          pa: Array<{
+            m: {
+              text: string;
+            };
+            t: {
+              key: string;
+              text: string;
+              phonetic: string;
+              audio_updated_at: number;
+            };
+          }>;
+          pr: Array<{
+            m: {
+              text: string;
+            };
+            t: {
+              key: string;
+              text: string;
+              phonetic: string;
+              audio_updated_at: number;
+            };
+          }>;
+        };
+        name?: {
+          m: string;
+          t: string;
+          phonetic: string;
+        };
+        type: string;
+        tenseNames?: {
+          fu: string;
+          pa: string;
+          pr: string;
+        };
+        text?: string;
+        phonetic?: string;
+      }>;
+    }>;
+    phraseType?: number;
+    text_tokens: Array<{
+      raw: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      linker: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      prefix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      suffix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+    }>;
+    audio_updated_at: number;
+    phonetic?: string;
+    phonetic_tokens?: Array<{
+      raw: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      linker: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      prefix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+      suffix: {
+        text: string;
+        length: number;
+        location: number;
+      };
+    }>;
+  }>;
+  type: string;
+  lesson: number;
+  tokens: Array<{
+    key: string;
+    text: string;
+    specialChar?: boolean;
+    group?: number;
+  }>;
+  wordID: number;
+  modifiers: number;
+  alternates: Array<number>;
+  ordPhonetic: Array<string>;
+  tokensPhonetic: Array<{
+    key: string;
+    text: string;
+    specialChar?: boolean;
+    group?: number;
+  }>;
+  tokensEqualSize: boolean;
+};
+
 type SimplifiedC1bItem = {
   id: number;
   ord: Array<string>; // Keys defining the correct order of the target sentence (includes blank keys)
@@ -1031,5 +1162,6 @@ export type {
   QuizT1bItem,
   QuizT2Item,
   QuizW1bItem,
+  QuizC2bItem,
   Feedback,
 };

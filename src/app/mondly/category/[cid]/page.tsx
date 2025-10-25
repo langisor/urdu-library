@@ -78,6 +78,7 @@ export default async function Category({
   const renderLessonCards = () => {
     return (
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3 naskh-text">
+        
         {lessonsData.map((lesson) => (
           <Link
             href={`/mondly/category/quizzer?lid=${lesson.id}`}
