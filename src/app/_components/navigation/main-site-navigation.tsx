@@ -210,7 +210,7 @@ function QuickBookCourseLink() {
   const imgSrc = "/materials/course-book-cover.jpeg";
 
   return (
-    <Link href="/etc/course-book" className="flex items-center justify-center">
+    <Link href="https://bu-book.netlify.app/" className="flex items-center justify-center">
       <Image
         src={imgSrc}
         sizes="100vw"
