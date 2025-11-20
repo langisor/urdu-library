@@ -17,7 +17,7 @@ export const mainNavItems: NavItem[] = [
     items: [
       { title: "Start", href: "/etc" },
      
-      // { title: "Course Book", href: "https://bu-book.netlify.app/" },
+      { title: "Course Book", href: "https://bu-book.netlify.app/" },
       { title: "Alphabets", href: "/etc/alphabets" },
       { title: "Grammar", href: "/etc/grammar" },
       { title: "Urdu Script Book", href: "/etc/urdu-script-book" },
