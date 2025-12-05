@@ -116,7 +116,7 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
       <div className="space-y-4">
         <div className="flex flex-col gap-4   md:items-center md:justify-between p-3">
           <h2 className="text-2xl font-bold text-white">{title}</h2>
-          <Card className="w-full bg-background m-3">
+          <Card className="w-full bg-background m-3 px-5">
           <div className="flex gap-2 relative">
             <Input
               placeholder="Search Arabic or Urdu..."
@@ -161,7 +161,7 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
           </Card>
         </div>
 
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm ">
           Showing {sortedItems.length} of {items.length} vocabulary items
         </p>
       </div>
@@ -171,7 +171,7 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
           <TableHeader>
             <TableRow>
               {visibleColumns.map((col) => (
-                <TableHead key={col.key} className="text-nowrap">
+                <TableHead key={col.key} className="text-nowrap text-white bg-slate-900">
                   {col.sortable ? (
                     <Button
                       variant="ghost"

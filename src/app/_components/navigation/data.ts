@@ -22,6 +22,7 @@ export const mainNavItems: NavItem[] = [
       { title: "Grammar", href: "/etc/grammar" },
       { title: "Urdu Script Book", href: "/etc/urdu-script-book" },
       { title: "Vocabulary", href: "/etc/vocabulary" },
+      { title: "Mondly Stats", href: "/stats" },
     ],
   },
 ];
