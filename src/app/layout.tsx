@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MainSiteNavigation />
-        <main className="flex min-h-screen flex-col    bg-gradient-to-b from-[#2e026d] to-[#2229ad] text-white">
+        <main className="flex min-h-screen flex-col    bg-gradient-to-b from-[#8b580b] to-[#292d81] text-white">
           {children}
         </main>
       </body>
