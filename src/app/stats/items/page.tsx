@@ -13,7 +13,7 @@ interface Item {
 
 async function getStats() {
   const itemsData = await queryClient`
-     SELECT * from "Item" limit 10
+     SELECT * from "Item"
     `;
 
   const items: Item[] = itemsData.map((item) => ({
