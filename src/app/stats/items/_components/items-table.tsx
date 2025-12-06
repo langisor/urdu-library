@@ -1,203 +1,341 @@
-"use client"
+"use client";
 
-import { useState, useMemo } from "react"
-import { Table, TableBody, TableHead, TableHeader, TableRow, TableCell } from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { AudioPlayer } from "./audio-player"
-import { Card } from "@/components/ui/card"
-import { 
-  Download, 
-  ChevronLeft, 
-  ChevronRight, 
-  Star, 
-  PlayCircle,
+import { useState } from "react";
+import {
+  useReactTable,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
+  getPaginationRowModel,
+  ColumnDef,
+  flexRender,
+  ColumnFiltersState,
+  SortingState,
+  VisibilityState,
+} from "@tanstack/react-table";
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableCell,
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { AudioPlayer } from "./audio-player";
+import { Card } from "@/components/ui/card";
+import {
+  Download,
+  ChevronLeft,
+  ChevronRight,
+  Star,
   Filter,
-  RefreshCw
-} from "lucide-react"
+  RefreshCw,
+  ChevronsLeft,
+  ChevronsRight,
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
+} from "lucide-react";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const getAudioUrl = (src: string): string => {
-  return `/media/mondly/audios/${src}`
-}
+  return `/media/mondly/audios/${src}`;
+};
 
 interface Item {
-  id: number
-  word_id: number
-  mother_text: string
-  target_text: string
-  phonetic: string
-  audio_src: string
-}
-
-type SortField = keyof Item
-type SortDirection = "asc" | "desc" | null
-
-interface ColumnConfig {
-  key: SortField
-  label: string
-  visible: boolean
-  sortable: boolean
+  id: number;
+  word_id: number;
+  mother_text: string;
+  target_text: string;
+  phonetic: string;
+  audio_src: string;
 }
 
 interface ItemsTableProps {
-  items: Item[]
-  title?: string
+  items: Item[];
+  title?: string;
 }
 
-const defaultColumns: ColumnConfig[] = [
-  { key: "id", label: "ID", visible: false, sortable: true },
-  { key: "word_id", label: "Word ID", visible: true, sortable: true },
-  { key: "mother_text", label: "Arabic", visible: true, sortable: true },
-  { key: "target_text", label: "Urdu", visible: true, sortable: true },
-  { key: "phonetic", label: "Phonetic", visible: false, sortable: true },
-  { key: "audio_src", label: "Audio", visible: true, sortable: false },
-]
-
-export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProps) {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [sortField, setSortField] = useState<SortField | null>(null)
-  const [sortDirection, setSortDirection] = useState<SortDirection>(null)
-  const [columns, setColumns] = useState<ColumnConfig[]>(defaultColumns)
-  const [columnMenuOpen, setColumnMenuOpen] = useState(false)
-  
-  // Pagination
-  const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage, setItemsPerPage] = useState(25)
-  
-  // Favorites (stored in state, could be moved to localStorage/database)
-  const [favorites, setFavorites] = useState<Set<number>>(new Set())
-  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
-
-  const filteredItems = useMemo(() => {
-    let filtered = items
-
-    // Filter by favorites
-    if (showFavoritesOnly) {
-      filtered = filtered.filter(item => favorites.has(item.id))
-    }
-
-    // Filter by search query
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase()
-      filtered = filtered.filter(
-        (item) => 
-          item.mother_text.toLowerCase().includes(query) || 
-          item.target_text.toLowerCase().includes(query) ||
-          item.phonetic.toLowerCase().includes(query)
-      )
-    }
-
-    return filtered
-  }, [items, searchQuery, showFavoritesOnly, favorites])
-
-  const sortedItems = useMemo(() => {
-    if (!sortField || !sortDirection) return filteredItems
-
-    const sorted = [...filteredItems].sort((a, b) => {
-      const aValue = a[sortField]
-      const bValue = b[sortField]
-
-      if (typeof aValue === "string" && typeof bValue === "string") {
-        return sortDirection === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue)
-      }
-
-      if (typeof aValue === "number" && typeof bValue === "number") {
-        return sortDirection === "asc" ? aValue - bValue : bValue - aValue
-      }
-
-      return 0
-    })
-
-    return sorted
-  }, [filteredItems, sortField, sortDirection])
-
-  // Paginated items
-  const paginatedItems = useMemo(() => {
-    const startIndex = (currentPage - 1) * itemsPerPage
-    const endIndex = startIndex + itemsPerPage
-    return sortedItems.slice(startIndex, endIndex)
-  }, [sortedItems, currentPage, itemsPerPage])
-
-  const totalPages = Math.ceil(sortedItems.length / itemsPerPage)
-
-  const handleSort = (field: SortField) => {
-    if (sortField === field) {
-      if (sortDirection === "asc") {
-        setSortDirection("desc")
-      } else if (sortDirection === "desc") {
-        setSortDirection(null)
-        setSortField(null)
-      }
-    } else {
-      setSortField(field)
-      setSortDirection("asc")
-    }
-  }
-
-  const toggleColumnVisibility = (columnKey: SortField) => {
-    setColumns((prev) => prev.map((col) => (col.key === columnKey ? { ...col, visible: !col.visible } : col)))
-  }
-
-  const getSortIndicator = (field: SortField) => {
-    if (sortField !== field) {
-      return "↕"
-    }
-    return sortDirection === "asc" ? "↑" : "↓"
-  }
+export function ItemsTable({
+  items,
+  title = "Vocabulary Table",
+}: ItemsTableProps) {
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+    id: false,
+    phonetic: false,
+  });
+  const [globalFilter, setGlobalFilter] = useState("");
+  const [favorites, setFavorites] = useState<Set<number>>(new Set());
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
 
   const toggleFavorite = (itemId: number) => {
-    setFavorites(prev => {
-      const newFavorites = new Set(prev)
+    setFavorites((prev) => {
+      const newFavorites = new Set(prev);
       if (newFavorites.has(itemId)) {
-        newFavorites.delete(itemId)
+        newFavorites.delete(itemId);
       } else {
-        newFavorites.add(itemId)
+        newFavorites.add(itemId);
       }
-      return newFavorites
-    })
-  }
+      return newFavorites;
+    });
+  };
+
+  // Define columns using TanStack Table
+  const columns: ColumnDef<Item>[] = [
+    {
+      id: "favorite",
+      header: () => <Star className="h-4 w-4" />,
+      cell: ({ row }) => (
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => toggleFavorite(row.original.id)}
+          className="h-8 w-8 p-0"
+        >
+          <Star
+            className={`h-4 w-4 ${favorites.has(row.original.id) ? "fill-yellow-400 text-yellow-400" : ""}`}
+          />
+        </Button>
+      ),
+      enableSorting: false,
+      enableHiding: false,
+    },
+    {
+      accessorKey: "id",
+      header: ({ column }) => {
+        return (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white"
+          >
+            ID
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-3 w-3" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-3 w-3" />
+            ) : (
+              <ArrowUpDown className="h-3 w-3 opacity-50" />
+            )}
+          </Button>
+        );
+      },
+      cell: ({ row }) => <span className="text-sm">{row.getValue("id")}</span>,
+    },
+    {
+      accessorKey: "word_id",
+      header: ({ column }) => {
+        return (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white"
+          >
+            Word ID
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-3 w-3" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-3 w-3" />
+            ) : (
+              <ArrowUpDown className="h-3 w-3 opacity-50" />
+            )}
+          </Button>
+        );
+      },
+      cell: ({ row }) => (
+        <span className="text-sm">{row.getValue("word_id")}</span>
+      ),
+    },
+    {
+      accessorKey: "mother_text",
+      header: ({ column }) => {
+        return (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white"
+          >
+            Arabic
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-3 w-3" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-3 w-3" />
+            ) : (
+              <ArrowUpDown className="h-3 w-3 opacity-50" />
+            )}
+          </Button>
+        );
+      },
+      cell: ({ row }) => (
+        <span className="text-sm font-medium">
+          {row.getValue("mother_text")}
+        </span>
+      ),
+    },
+    {
+      accessorKey: "target_text",
+      header: ({ column }) => {
+        return (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white"
+          >
+            Urdu
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-3 w-3" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-3 w-3" />
+            ) : (
+              <ArrowUpDown className="h-3 w-3 opacity-50" />
+            )}
+          </Button>
+        );
+      },
+      cell: ({ row }) => (
+        <span className="text-sm font-medium">
+          {row.getValue("target_text")}
+        </span>
+      ),
+    },
+    {
+      accessorKey: "phonetic",
+      header: ({ column }) => {
+        return (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white"
+          >
+            Phonetic
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-3 w-3" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-3 w-3" />
+            ) : (
+              <ArrowUpDown className="h-3 w-3 opacity-50" />
+            )}
+          </Button>
+        );
+      },
+      cell: ({ row }) => (
+        <span className="text-sm text-muted-foreground">
+          {row.getValue("phonetic")}
+        </span>
+      ),
+    },
+    {
+      accessorKey: "audio_src",
+      header: "Audio",
+      cell: ({ row }) => (
+        <AudioPlayer src={getAudioUrl(row.getValue("audio_src"))} />
+      ),
+      enableSorting: false,
+    },
+  ];
+
+  // Filter data based on favorites
+  const filteredData = showFavoritesOnly
+    ? items.filter((item) => favorites.has(item.id))
+    : items;
+
+  const table = useReactTable({
+    data: filteredData,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
+    onColumnVisibilityChange: setColumnVisibility,
+    onGlobalFilterChange: setGlobalFilter,
+    state: {
+      sorting,
+      columnFilters,
+      columnVisibility,
+      globalFilter,
+    },
+    globalFilterFn: (row, columnId, filterValue) => {
+      const searchableFields = [
+        row.original.mother_text,
+        row.original.target_text,
+        row.original.phonetic,
+      ];
+      return searchableFields.some((field) =>
+        field.toLowerCase().includes(filterValue.toLowerCase())
+      );
+    },
+    initialState: {
+      pagination: {
+        pageSize: 25,
+      },
+    },
+  });
 
   const exportToCSV = () => {
-    const headers = visibleColumns.map(col => col.label).join(',')
-    const rows = sortedItems.map(item => 
-      visibleColumns.map(col => {
-        const value = item[col.key]
-        // Escape commas and quotes in CSV
-        return typeof value === 'string' && (value.includes(',') || value.includes('"')) 
-          ? `"${value.replace(/"/g, '""')}"` 
-          : value
-      }).join(',')
-    ).join('\n')
-    
-    const csv = `${headers}\n${rows}`
-    const blob = new Blob([csv], { type: 'text/csv' })
-    const url = window.URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `vocabulary-${new Date().toISOString().split('T')[0]}.csv`
-    a.click()
-    window.URL.revokeObjectURL(url)
-  }
+    const visibleColumns = table
+      .getAllColumns()
+      .filter((col) => col.getIsVisible() && col.id !== "favorite");
+    const headers = visibleColumns.map((col) => col.columnDef.header).join(",");
+
+    const rows = table
+      .getFilteredRowModel()
+      .rows.map((row) =>
+        visibleColumns
+          .map((col) => {
+            const value = row.getValue(col.id);
+            return typeof value === "string" &&
+              (value.includes(",") || value.includes('"'))
+              ? `"${value.replace(/"/g, '""')}"`
+              : value;
+          })
+          .join(",")
+      )
+      .join("\n");
+
+    const csv = `${headers}\n${rows}`;
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `vocabulary-${new Date().toISOString().split("T")[0]}.csv`;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
 
   const resetFilters = () => {
-    setSearchQuery("")
-    setSortField(null)
-    setSortDirection(null)
-    setShowFavoritesOnly(false)
-    setCurrentPage(1)
-  }
-
-  const visibleColumns = columns.filter((col) => col.visible)
+    setGlobalFilter("");
+    setSorting([]);
+    setColumnFilters([]);
+    setShowFavoritesOnly(false);
+    table.resetColumnVisibility();
+    table.setPageIndex(0);
+  };
 
   return (
-    <div className="w-full space-y-4">
+    <div className=" ">
       {/* Header Section */}
       <div className="space-y-4">
         <div className="flex flex-col gap-4 md:items-center md:justify-between p-3">
@@ -215,15 +353,15 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
               </Button>
             </div>
           </div>
-          
+
           <Card className="w-full bg-background m-3 px-5 py-4">
             <div className="flex flex-col gap-3">
               {/* Search and Filter Row */}
               <div className="flex flex-wrap gap-2">
                 <Input
                   placeholder="Search Arabic, Urdu, or Phonetic..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  value={globalFilter ?? ""}
+                  onChange={(e) => setGlobalFilter(e.target.value)}
                   className="flex-1 min-w-[200px]"
                 />
 
@@ -233,42 +371,37 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
                   onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
                   className="gap-2"
                 >
-                  <Star className={`h-4 w-4 ${showFavoritesOnly ? 'fill-current' : ''}`} />
+                  <Star
+                    className={`h-4 w-4 ${showFavoritesOnly ? "fill-current" : ""}`}
+                  />
                   Favorites ({favorites.size})
                 </Button>
 
-                <div className="relative">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="gap-2"
-                    onClick={() => setColumnMenuOpen(!columnMenuOpen)}
-                  >
-                    <Filter className="h-4 w-4" />
-                    Columns
-                  </Button>
-
-                  {columnMenuOpen && (
-                    <div className="absolute right-0 top-full mt-1 w-56 bg-white border rounded-md shadow-lg z-50">
-                      <div className="p-2 border-b">
-                        <h3 className="font-semibold text-sm text-black">Show / Hide Columns</h3>
-                      </div>
-                      <div className="p-1 max-h-64 overflow-y-auto">
-                        {columns.map((col) => (
-                          <Button
-                            key={col.key}
-                            variant="ghost"
-                            onClick={() => toggleColumnVisibility(col.key)}
-                            className="w-full justify-start px-3 py-2 rounded hover:bg-accent text-sm"
-                          >
-                            <span className="w-4 text-center">{col.visible ? "✓" : ""}</span>
-                            <span className="ml-2">{col.label}</span>
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <Filter className="h-4 w-4" />
+                      Columns
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-[180px]">
+                    {table
+                      .getAllColumns()
+                      .filter((column) => column.getCanHide())
+                      .map((column) => (
+                        <DropdownMenuCheckboxItem
+                          key={column.id}
+                          className="capitalize"
+                          checked={column.getIsVisible()}
+                          onCheckedChange={(value) =>
+                            column.toggleVisibility(!!value)
+                          }
+                        >
+                          {column.id.replace(/_/g, " ")}
+                        </DropdownMenuCheckboxItem>
+                      ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
 
                 <Button
                   variant="outline"
@@ -284,14 +417,15 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
               {/* Stats Row */}
               <div className="flex items-center justify-between text-sm text-muted-foreground">
                 <span>
-                  Showing {paginatedItems.length} of {sortedItems.length} items
-                  {sortedItems.length !== items.length && ` (filtered from ${items.length} total)`}
+                  Showing {table.getRowModel().rows.length} of{" "}
+                  {table.getFilteredRowModel().rows.length} items
+                  {table.getFilteredRowModel().rows.length !== items.length &&
+                    ` (filtered from ${items.length} total)`}
                 </span>
                 <Select
-                  value={itemsPerPage.toString()}
+                  value={table.getState().pagination.pageSize.toString()}
                   onValueChange={(value) => {
-                    setItemsPerPage(parseInt(value))
-                    setCurrentPage(1)
+                    table.setPageSize(Number(value));
                   }}
                 >
                   <SelectTrigger className="w-[130px] h-8">
@@ -310,85 +444,85 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
         </div>
       </div>
 
-      {/* Table */}
+      {/* Table with Sticky Header */}
       <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="text-nowrap text-white bg-slate-900 w-[50px]">
-                <Star className="h-4 w-4" />
-              </TableHead>
-              {visibleColumns.map((col) => (
-                <TableHead key={col.key} className="text-nowrap text-white bg-slate-900">
-                  {col.sortable ? (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => handleSort(col.key)}
-                      className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white"
+        <div className="">
+          <Table>
+            <TableHeader className=" ">
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <TableHead
+                      key={header.id}
+                      className="text-nowrap text-white bg-slate-900 shadow-sm"
                     >
-                      {col.label}
-                      <span className="text-xs opacity-50">{getSortIndicator(col.key)}</span>
-                    </Button>
-                  ) : (
-                    col.label
-                  )}
-                </TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {paginatedItems.length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={visibleColumns.length + 1} className="py-8 text-center text-muted-foreground">
-                  {showFavoritesOnly 
-                    ? "No favorite items. Click the star icon to add favorites!"
-                    : "No vocabulary items found. Try adjusting your search."}
-                </TableCell>
-              </TableRow>
-            ) : (
-              paginatedItems.map((item) => (
-                <TableRow key={item.id} className="hover:bg-muted/50">
-                  <TableCell>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => toggleFavorite(item.id)}
-                      className="h-8 w-8 p-0"
-                    >
-                      <Star 
-                        className={`h-4 w-4 ${favorites.has(item.id) ? 'fill-yellow-400 text-yellow-400' : ''}`} 
-                      />
-                    </Button>
-                  </TableCell>
-                  {visibleColumns.map((col) => (
-                    <TableCell key={`${item.id}-${col.key}`} className="text-white">
-                      {col.key === "audio_src" ? (
-                        <AudioPlayer src={getAudioUrl(item.audio_src)} />
-                      ) : (
-                        <span className="text-sm">{String(item[col.key])}</span>
-                      )}
-                    </TableCell>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </TableHead>
                   ))}
                 </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
-      </div>
+              ))}
+            </TableHeader>
+            <TableBody className=" text-white">
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                    className="hover:bg-muted/10 dark:text-background"
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
+                    {showFavoritesOnly
+                      ? "No favorite items. Click the star icon to add favorites!"
+                      : "No vocabulary items found. Try adjusting your search."}
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
 
-      {/* Pagination */}
-      {totalPages > 1 && (
-        <div className="flex items-center justify-between px-2">
-          <div className="text-sm text-muted-foreground">
-            Page {currentPage} of {totalPages}
+        {/* Pagination */}
+        <Card  className="flex items-center justify-between p-1">
+          <div className="flex-1 text-sm">
+            Page {table.getState().pagination.pageIndex + 1} of{" "}
+            {table.getPageCount()}
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-              disabled={currentPage === 1}
+              onClick={() => table.setPageIndex(0)}
+              disabled={!table.getCanPreviousPage()}
+              className={`${!table.getCanPreviousPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+            >
+              <ChevronsLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+              className={`${!table.getCanPreviousPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
             >
               <ChevronLeft className="h-4 w-4" />
               Previous
@@ -396,17 +530,25 @@ export function ItemsTable({ items, title = "Vocabulary Table" }: ItemsTableProp
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-              disabled={currentPage === totalPages}
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+              className={`${!table.getCanNextPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
             >
               Next
               <ChevronRight className="h-4 w-4" />
             </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+              disabled={!table.getCanNextPage()}
+              className={`${!table.getCanNextPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+            >
+              <ChevronsRight className="h-4 w-4" />
+            </Button>
           </div>
-        </div>
-      )}
-
-      {columnMenuOpen && <div className="fixed inset-0 z-40" onClick={() => setColumnMenuOpen(false)} />}
+        </Card>
+      </div>
     </div>
-  )
+  );
 }
