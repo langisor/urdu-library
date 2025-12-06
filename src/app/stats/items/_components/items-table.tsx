@@ -186,7 +186,7 @@ export function ItemsTable({
         );
       },
       cell: ({ row }) => (
-        <span className="text-sm font-medium">
+        <span className="text-sm font-medium arabic-text" dir="ltr">
           {row.getValue("mother_text")}
         </span>
       ),
@@ -213,7 +213,7 @@ export function ItemsTable({
         );
       },
       cell: ({ row }) => (
-        <span className="text-sm font-medium">
+        <span className="text-sm font-medium urdu-text">
           {row.getValue("target_text")}
         </span>
       ),
@@ -226,7 +226,7 @@ export function ItemsTable({
             variant="ghost"
             size="sm"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-            className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white"
+            className="h-auto gap-2 p-0 font-semibold hover:bg-transparent text-white "
           >
             Phonetic
             {column.getIsSorted() === "asc" ? (
@@ -240,7 +240,7 @@ export function ItemsTable({
         );
       },
       cell: ({ row }) => (
-        <span className="text-sm text-muted-foreground">
+        <span className="text-sm text-muted-foreground italic">
           {row.getValue("phonetic")}
         </span>
       ),
@@ -289,7 +289,7 @@ export function ItemsTable({
     },
     initialState: {
       pagination: {
-        pageSize: 25,
+        pageSize: 50,
       },
     },
   });
@@ -335,12 +335,13 @@ export function ItemsTable({
   };
 
   return (
-    <div className=" ">
+    <div className="h-full overflow-hidden flex flex-col">
       {/* Header Section */}
       <div className="space-y-4">
         <div className="flex flex-col gap-4 md:items-center md:justify-between p-3">
           <div className="flex items-center justify-between w-full">
-            <h2 className="text-2xl font-bold text-white">{title}</h2>
+            <h2 className="text-xl font-bold text-white">{title}</h2>
+            {/* activities */}
             <div className="flex gap-2">
               <Button
                 variant="outline"
@@ -354,7 +355,7 @@ export function ItemsTable({
             </div>
           </div>
 
-          <Card className="w-full bg-background m-3 px-5 py-4">
+          <Card className="w-full bg-background m-2 px-2 py-2">
             <div className="flex flex-col gap-3">
               {/* Search and Filter Row */}
               <div className="flex flex-wrap gap-2">
@@ -446,7 +447,7 @@ export function ItemsTable({
 
       {/* Table with Sticky Header */}
       <div className="rounded-md border">
-        <div className="">
+        <div className="overflow-y-auto">
           <Table>
             <TableHeader className=" ">
               {table.getHeaderGroups().map((headerGroup) => (
@@ -502,7 +503,7 @@ export function ItemsTable({
         </div>
 
         {/* Pagination */}
-        <Card  className="flex items-center justify-between p-1">
+        <Card className="flex items-center justify-between p-1">
           <div className="flex-1 text-sm">
             Page {table.getState().pagination.pageIndex + 1} of{" "}
             {table.getPageCount()}
@@ -513,7 +514,7 @@ export function ItemsTable({
               size="sm"
               onClick={() => table.setPageIndex(0)}
               disabled={!table.getCanPreviousPage()}
-              className={`${!table.getCanPreviousPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+              className={`${!table.getCanPreviousPage() ? "" : "bg-blue-600 hover:bg-blue-700 text-white"}`}
             >
               <ChevronsLeft className="h-4 w-4" />
             </Button>
@@ -522,7 +523,7 @@ export function ItemsTable({
               size="sm"
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
-              className={`${!table.getCanPreviousPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+              className={`${!table.getCanPreviousPage() ? "" : "bg-blue-600 hover:bg-blue-700 text-white"}`}
             >
               <ChevronLeft className="h-4 w-4" />
               Previous
@@ -532,7 +533,7 @@ export function ItemsTable({
               size="sm"
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
-              className={`${!table.getCanNextPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+              className={`${!table.getCanNextPage() ? "" : "bg-blue-600 hover:bg-blue-700 text-white"}`}
             >
               Next
               <ChevronRight className="h-4 w-4" />
@@ -542,7 +543,7 @@ export function ItemsTable({
               size="sm"
               onClick={() => table.setPageIndex(table.getPageCount() - 1)}
               disabled={!table.getCanNextPage()}
-              className={`${!table.getCanNextPage() ? 'bg-gray-200 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+              className={`${!table.getCanNextPage() ? "" : "bg-blue-600 hover:bg-blue-700 text-white"}`}
             >
               <ChevronsRight className="h-4 w-4" />
             </Button>
